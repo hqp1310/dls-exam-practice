@@ -276,9 +276,15 @@ function switchTab(tab) {
   document.getElementById('view-flashcards').style.display = tab === 'flashcards' ? 'block' : 'none';
   document.getElementById('view-cheatsheet').style.display = tab === 'cheatsheet' ? 'block' : 'none';
   
+  const isExamTab = (tab === 'exam');
+
+  // ONLY display timer widget and start/pause button during "Thi Thử 80 Câu"!
+  if (timerWidget) timerWidget.style.display = isExamTab ? 'flex' : 'none';
+  if (btnTimerToggle) btnTimerToggle.style.display = isExamTab ? 'inline-flex' : 'none';
+
   const dock = document.getElementById('mobile-exam-dock');
   if (dock) {
-    dock.style.display = tab === 'exam' ? 'flex' : 'none';
+    dock.style.display = isExamTab ? 'flex' : 'none';
   }
 
   const paletteContainer = document.getElementById('sidebar-palette');
@@ -286,7 +292,7 @@ function switchTab(tab) {
   const returnToPaletteBtn = document.getElementById('btn-palette-return');
 
   if (tab === 'exam') {
-    if (paletteContainer) paletteContainer.style.display = 'flex';
+    if (paletteContainer) paletteContainer.style.display = window.innerWidth > 1024 ? 'flex' : 'none';
     if (desktopScratchpad) desktopScratchpad.style.display = 'none';
     if (returnToPaletteBtn) returnToPaletteBtn.style.display = 'none';
     renderExamQuestion(currentQuestionIndex);
@@ -2221,7 +2227,40 @@ function switchCheatsheetSubtab(subtab) {
   try {
     localStorage.setItem('dls_active_cheatsheet_subtab', subtab);
   } catch (e) {}
-  renderCheatsheetView();
+
+  const container = document.getElementById('view-cheatsheet');
+  // If not rendered in DOM yet, render it
+  if (!container || !document.getElementById('cs-sec-formulas')) {
+    renderCheatsheetView();
+    return;
+  }
+
+  // Update active state on subnav buttons without touching scroll position
+  document.querySelectorAll('.cs-subnav-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-subtab') === subtab);
+  });
+
+  const showAll = (subtab === 'all');
+  const secMap = {
+    formulas: document.getElementById('cs-sec-formulas'),
+    encyclopedia: document.getElementById('cs-sec-encyclopedia'),
+    strategy: document.getElementById('cs-sec-strategy'),
+    mnemonics: document.getElementById('cs-sec-mnemonics'),
+    antidotes: document.getElementById('cs-sec-antidotes')
+  };
+
+  Object.keys(secMap).forEach(key => {
+    const el = secMap[key];
+    if (el) {
+      el.style.display = (showAll || key === subtab) ? 'block' : 'none';
+    }
+  });
+
+  // Re-apply search filter if active
+  if (cheatsheetSearchQuery) {
+    onCheatsheetSearchInput({ target: { value: cheatsheetSearchQuery } });
+  }
+
   playChime('click');
 }
 
@@ -2291,6 +2330,12 @@ function renderCheatsheetView() {
   const container = document.getElementById('view-cheatsheet');
   if (!container) return;
 
+  // If already rendered in DOM, do NOT wipe container.innerHTML or reset scroll!
+  if (document.getElementById('cs-sec-formulas')) {
+    switchCheatsheetSubtab(currentCheatsheetSubtab);
+    return;
+  }
+
   const showAll = currentCheatsheetSubtab === 'all';
   const isFormulas = showAll || currentCheatsheetSubtab === 'formulas';
   const isEncyclopedia = showAll || currentCheatsheetSubtab === 'encyclopedia';
@@ -2320,22 +2365,22 @@ function renderCheatsheetView() {
 
     <!-- THANH CHUYỂN TAB CON (SUB-NAVIGATION) -->
     <div class="cs-subnav">
-      <button class="cs-subnav-btn ${currentCheatsheetSubtab === 'formulas' ? 'active' : ''}" onclick="switchCheatsheetSubtab('formulas')">
+      <button class="cs-subnav-btn ${currentCheatsheetSubtab === 'formulas' ? 'active' : ''}" data-subtab="formulas" onclick="switchCheatsheetSubtab('formulas')">
         <span>📐</span> Công Thức &amp; 4 Bài Toán Mẫu
       </button>
-      <button class="cs-subnav-btn ${currentCheatsheetSubtab === 'encyclopedia' ? 'active' : ''}" onclick="switchCheatsheetSubtab('encyclopedia')">
+      <button class="cs-subnav-btn ${currentCheatsheetSubtab === 'encyclopedia' ? 'active' : ''}" data-subtab="encyclopedia" onclick="switchCheatsheetSubtab('encyclopedia')">
         <span>📚</span> Sổ Tay 17 Chuyên Đề &amp; Bẫy Thi
       </button>
-      <button class="cs-subnav-btn ${currentCheatsheetSubtab === 'strategy' ? 'active' : ''}" onclick="switchCheatsheetSubtab('strategy')">
+      <button class="cs-subnav-btn ${currentCheatsheetSubtab === 'strategy' ? 'active' : ''}" data-subtab="strategy" onclick="switchCheatsheetSubtab('strategy')">
         <span>🎯</span> Ma Trận 17 Bài &amp; Chiến Lược 44H
       </button>
-      <button class="cs-subnav-btn ${currentCheatsheetSubtab === 'mnemonics' ? 'active' : ''}" onclick="switchCheatsheetSubtab('mnemonics')">
+      <button class="cs-subnav-btn ${currentCheatsheetSubtab === 'mnemonics' ? 'active' : ''}" data-subtab="mnemonics" onclick="switchCheatsheetSubtab('mnemonics')">
         <span>🧠</span> "Thần Chú" &amp; Cặp Đôi Kinh Điển
       </button>
-      <button class="cs-subnav-btn ${currentCheatsheetSubtab === 'antidotes' ? 'active' : ''}" onclick="switchCheatsheetSubtab('antidotes')">
+      <button class="cs-subnav-btn ${currentCheatsheetSubtab === 'antidotes' ? 'active' : ''}" data-subtab="antidotes" onclick="switchCheatsheetSubtab('antidotes')">
         <span>⚡</span> Cấp Cứu: Giải Độc &amp; Thai Kỳ
       </button>
-      <button class="cs-subnav-btn ${currentCheatsheetSubtab === 'all' ? 'active' : ''}" onclick="switchCheatsheetSubtab('all')">
+      <button class="cs-subnav-btn ${currentCheatsheetSubtab === 'all' ? 'active' : ''}" data-subtab="all" onclick="switchCheatsheetSubtab('all')">
         <span>📑</span> Xem Toàn Bộ Cẩm Nang
       </button>
     </div>
@@ -2345,8 +2390,7 @@ function renderCheatsheetView() {
       <!-- ========================================== -->
       <!-- SECTION 1: CÔNG THỨC & 4 BÀI TOÁN MẪU CÓ LỜI GIẢI CHI TIẾT -->
       <!-- ========================================== -->
-      ${isFormulas ? `
-      <div class="question-card cs-searchable-item" id="cs-sec-formulas">
+      <div class="question-card cs-searchable-item" id="cs-sec-formulas" style="display: ${isFormulas ? 'block' : 'none'};">
         <h2 style="font-size: 1.25rem; color: var(--primary); font-family: var(--font-heading); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
           <span>📐</span> 1. Hệ Thống Công Thức Tính Toán &amp; 4 Bài Toán Mẫu Có Lời Giải Từng Bước
         </h2>
@@ -2788,14 +2832,12 @@ function renderCheatsheetView() {
         </div>
 
       </div>
-      ` : ''}
 
 
       <!-- ========================================== -->
       <!-- SECTION 2: SỔ TAY 17 CHUYÊN ĐỀ TOÀN THƯ (CHI TIẾT & BẪY THI) -->
       <!-- ========================================== -->
-      ${isEncyclopedia ? `
-      <div class="question-card cs-searchable-item" id="cs-sec-encyclopedia">
+      <div class="question-card cs-searchable-item" id="cs-sec-encyclopedia" style="display: ${isEncyclopedia ? 'block' : 'none'};">
         <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
           <h2 style="font-size: 1.25rem; color: var(--primary); font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
             <span>📚</span> 2. Sổ Tay 17 Chuyên Đề Lâm Sàng Toàn Thư (Chi Tiết Chuyên Sâu &amp; Bẫy Thi)
@@ -3266,14 +3308,12 @@ function renderCheatsheetView() {
         </div>
 
       </div>
-      ` : ''}
 
 
       <!-- ========================================== -->
       <!-- SECTION 3: MA TRẬN 17 BÀI & TRỌNG SỐ 44H (80/20) -->
       <!-- ========================================== -->
-      ${isStrategy ? `
-      <div class="question-card cs-searchable-item" id="cs-sec-strategy">
+      <div class="question-card cs-searchable-item" id="cs-sec-strategy" style="display: ${isStrategy ? 'block' : 'none'};">
         <h2 style="font-size: 1.25rem; color: var(--secondary); font-family: var(--font-heading); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
           <span>🎯</span> 3. Ma Trận Đề Thi &amp; Phân Bổ Trọng Số Điểm 44 Giờ (Quy Tắc 80/20)
         </h2>
@@ -3394,14 +3434,12 @@ function renderCheatsheetView() {
           </table>
         </div>
       </div>
-      ` : ''}
 
 
       <!-- ========================================== -->
-      <!-- SECTION 4: THẦN CHÚ & CẶP ĐÔI KINH ĐIỂN -->
+      <!-- SECTION 4: THẦN CHÚ & CẶP ĐOI KINH ĐIỂN -->
       <!-- ========================================== -->
-      ${isMnemonics ? `
-      <div class="question-card cs-searchable-item" id="cs-sec-mnemonics">
+      <div class="question-card cs-searchable-item" id="cs-sec-mnemonics" style="display: ${isMnemonics ? 'block' : 'none'};">
         <h2 style="font-size: 1.25rem; color: var(--accent); font-family: var(--font-heading); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
           <span>🧠</span> 4. "Thần Chú" Lâm Sàng &amp; Phản Xạ 10 Giây Khi Làm Đề Trắc Nghiệm
         </h2>
@@ -3472,14 +3510,12 @@ function renderCheatsheetView() {
 
         </div>
       </div>
-      ` : ''}
 
 
       <!-- ========================================== -->
       <!-- SECTION 5: THUỐC CẤP CỨU & GIẢI ĐỘC (ANTIDOTES) -->
       <!-- ========================================== -->
-      ${isAntidotes ? `
-      <div class="question-card cs-searchable-item" id="cs-sec-antidotes">
+      <div class="question-card cs-searchable-item" id="cs-sec-antidotes" style="display: ${isAntidotes ? 'block' : 'none'};">
         <h2 style="font-size: 1.25rem; color: #dc2626; font-family: var(--font-heading); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
           <span>⚡</span> 5. Bảng Tra Cứu Khẩn Cấp: Thuốc Giải Độc (Antidotes) &amp; Thuốc Cấm Thai Kỳ
         </h2>
@@ -3582,7 +3618,6 @@ function renderCheatsheetView() {
         </div>
 
       </div>
-      ` : ''}
 
     </div>
   `;
