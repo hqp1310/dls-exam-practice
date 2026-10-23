@@ -8,16 +8,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
+  <!-- SKIP LINK (OpenDesign Web Interface Accessibility Rule) -->
+  <a href="#question-card" class="skip-link">Chuyển đến nội dung câu hỏi</a>
 
   <!-- APP HEADER -->
   <header class="app-header">
     <div class="header-container">
       <div class="header-top-row">
         <div class="brand-section">
-          <div class="brand-logo">💊</div>
+          <div class="brand-logo" aria-hidden="true">💊</div>
           <div class="brand-titles">
             <h1>DƯỢC LÂM SÀNG • 80 CÂU</h1>
             <span class="subtitle">Giáo trình Bộ Y tế &amp; Đề thi Thực chiến</span>
@@ -25,37 +27,37 @@
         </div>
 
         <div class="header-actions">
-          <div class="timer-badge" id="timer-widget" title="Thời gian làm bài còn lại">
-            <span id="timer-icon">⏳</span>
+          <div class="timer-badge" id="timer-widget" title="Thời gian làm bài còn lại" aria-live="polite">
+            <span id="timer-icon" aria-hidden="true">⏳</span>
             <span id="timer-display">80:00</span>
           </div>
-          <button class="btn-timer-action" id="btn-timer-toggle" onclick="toggleExamTimerAction()" title="Bắt đầu hoặc Tạm dừng / Tiếp tục tính giờ">
-            <span>▶️</span> Bắt đầu
+          <button class="btn-timer-action" id="btn-timer-toggle" onclick="toggleExamTimerAction()" title="Bắt đầu hoặc Tạm dừng / Tiếp tục tính giờ" aria-label="Bắt đầu hoặc Tạm dừng đếm thời gian thi">
+            <span aria-hidden="true">▶️</span> Bắt đầu
           </button>
-          <button class="btn-icon" id="btn-scratchpad-toggle" onclick="toggleScratchpad()" title="Bảng nháp &amp; Bút vẽ (Tính toán công thức / Nháp đề)">
-            ✏️
+          <button class="btn-icon" id="btn-scratchpad-toggle" onclick="toggleScratchpad()" title="Bảng nháp &amp; Bút vẽ (Tính toán công thức / Nháp đề)" aria-label="Bật hoặc tắt Bảng nháp và bút vẽ">
+            <span aria-hidden="true">✏️</span>
           </button>
-          <button class="btn-icon" id="btn-theme-toggle" title="Đổi giao diện Sáng / Tối">
-            🌙
+          <button class="btn-icon" id="btn-theme-toggle" title="Đổi giao diện Sáng / Tối" aria-label="Chuyển đổi giao diện Sáng hoặc Tối">
+            <span aria-hidden="true">🌙</span>
           </button>
         </div>
       </div>
 
       <nav class="nav-tabs" aria-label="Chế độ học tập">
         <button class="tab-btn active" data-tab="exam" id="tab-exam-btn">
-          <span>⏱️</span> <span class="tab-label">Thi Thử 80 Câu</span>
+          <span aria-hidden="true">⏱️</span> <span class="tab-label">Thi Thử 80 Câu</span>
         </button>
         <button class="tab-btn" data-tab="history" id="tab-history-btn">
-          <span>📜</span> <span class="tab-label">Lịch Sử</span>
+          <span aria-hidden="true">📜</span> <span class="tab-label">Lịch Sử</span>
         </button>
         <button class="tab-btn" data-tab="topic" id="tab-topic-btn">
-          <span>📚</span> <span class="tab-label">Chuyên Đề</span>
+          <span aria-hidden="true">📚</span> <span class="tab-label">Chuyên Đề</span>
         </button>
         <button class="tab-btn" data-tab="flashcards" id="tab-flashcards-btn">
-          <span>💡</span> <span class="tab-label">Câu Hỏi Tủ</span>
+          <span aria-hidden="true">💡</span> <span class="tab-label">Câu Hỏi Tủ</span>
         </button>
         <button class="tab-btn" data-tab="cheatsheet" id="tab-cheatsheet-btn">
-          <span>📐</span> <span class="tab-label">Cẩm Nang &amp; Công Thức</span>
+          <span aria-hidden="true">📐</span> <span class="tab-label">Cẩm Nang &amp; Công Thức</span>
         </button>
       </nav>
     </div>
@@ -121,54 +123,54 @@
       <div class="palette-header">
         <span class="palette-title">Bảng Câu Hỏi (80 Câu)</span>
         <div style="display: flex; gap: 0.35rem; align-items: center;">
-          <button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.72rem; background: var(--secondary-light); color: var(--secondary);" onclick="generateRandomExam()" title="Tạo đề thi mới ngẫu nhiên">
-            🎲 Đề mới
+          <button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.72rem; background: var(--secondary-light); color: var(--secondary);" onclick="generateRandomExam()" title="Tạo đề thi mới ngẫu nhiên" aria-label="Tạo đề thi ngẫu nhiên mới">
+            <span aria-hidden="true">🎲</span> Đề mới
           </button>
-          <button class="btn btn-secondary btn-to-scratchpad" style="padding: 0.25rem 0.5rem; font-size: 0.72rem; color: var(--primary); border-color: var(--primary);" onclick="toggleExamScratchpad()" title="Chuyển sang Bảng nháp tính toán">
-            ✏️ Nháp
+          <button class="btn btn-secondary btn-to-scratchpad" style="padding: 0.25rem 0.5rem; font-size: 0.72rem; color: var(--primary); border-color: var(--primary);" onclick="toggleExamScratchpad()" title="Chuyển sang Bảng nháp tính toán" aria-label="Mở Bảng nháp tính toán">
+            <span aria-hidden="true">✏️</span> Nháp
           </button>
-          <button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.72rem;" onclick="confirmSubmitExam()">
+          <button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.72rem;" onclick="confirmSubmitExam()" aria-label="Nộp bài thi">
             Nộp bài
           </button>
-          <button class="btn-palette-close" onclick="closeMobilePalette()" title="Đóng bảng câu hỏi">
+          <button class="btn-palette-close" onclick="closeMobilePalette()" title="Đóng bảng câu hỏi" aria-label="Đóng bảng câu hỏi">
             ✕
           </button>
         </div>
       </div>
 
       <div class="palette-legend">
-        <div class="legend-item"><span class="legend-dot answered"></span> Đã làm (<span id="answered-count">0 / 80</span>)</div>
-        <div class="legend-item"><span class="legend-dot flagged"></span> Đánh dấu (<span id="flagged-count">0</span>)</div>
-        <div class="legend-item"><span class="legend-dot unanswered"></span> Chưa làm</div>
+        <div class="legend-item"><span class="legend-dot answered" aria-hidden="true"></span> Đã làm (<span id="answered-count">0 / 80</span>)</div>
+        <div class="legend-item"><span class="legend-dot flagged" aria-hidden="true"></span> Đánh dấu (<span id="flagged-count">0</span>)</div>
+        <div class="legend-item"><span class="legend-dot unanswered" aria-hidden="true"></span> Chưa làm</div>
       </div>
 
-      <div class="palette-grid" id="palette-grid">
+      <div class="palette-grid" id="palette-grid" role="region" aria-label="Danh sách 80 câu hỏi">
         <!-- 80 Button Tiles Injected by app.js -->
       </div>
     </aside>
 
     <!-- RIGHT SIDEBAR: DESKTOP CLINICAL SCRATCHPAD (Visible across all tabs on PC) -->
-    <aside class="desktop-scratchpad-panel" id="desktop-scratchpad-panel" style="display: none;">
+    <aside class="desktop-scratchpad-panel" id="desktop-scratchpad-panel" style="display: none;" aria-label="Bảng nháp lâm sàng">
       <div class="scratch-panel-header">
         <div class="scratch-panel-title">
-          <span class="sp-icon">✏️</span>
+          <span class="sp-icon" aria-hidden="true">✏️</span>
           <div>
             <div class="sp-title-text">BẢNG NHÁP LÂM SÀNG</div>
             <div class="sp-subtitle-text">Tính CrCl, độ thanh thải, công thức DLS</div>
           </div>
         </div>
         <div class="scratch-panel-header-actions">
-          <button class="sp-h-btn active" id="btn-toggle-grid" onclick="toggleDesktopScratchGrid()" title="Bật/Tắt lưới ô ly tính toán">
-            <span>📋</span>
+          <button class="sp-h-btn active" id="btn-toggle-grid" onclick="toggleDesktopScratchGrid()" title="Bật/Tắt lưới ô ly tính toán" aria-label="Bật hoặc tắt lưới ô ly tính toán">
+            <span aria-hidden="true">📋</span>
           </button>
-          <button class="sp-h-btn" onclick="undoDesktopScratch()" title="Hoàn tác nét vẽ (Ctrl+Z)">
-            <span>↩️</span>
+          <button class="sp-h-btn" onclick="undoDesktopScratch()" title="Hoàn tác nét vẽ (Ctrl+Z)" aria-label="Hoàn tác nét vẽ">
+            <span aria-hidden="true">↩️</span>
           </button>
-          <button class="sp-h-btn sp-h-clear" onclick="clearDesktopScratch()" title="Xóa toàn bộ nháp">
-            <span>🗑️</span>
+          <button class="sp-h-btn sp-h-clear" onclick="clearDesktopScratch()" title="Xóa toàn bộ nháp" aria-label="Xóa toàn bộ bản nháp">
+            <span aria-hidden="true">🗑️</span>
           </button>
-          <button class="sp-h-btn btn-exam-palette-return" id="btn-palette-return" onclick="toggleExamScratchpad()" title="Quay lại Bảng 80 câu" style="display: none;">
-            <span>🔢 80 Câu</span>
+          <button class="sp-h-btn btn-exam-palette-return" id="btn-palette-return" onclick="toggleExamScratchpad()" title="Quay lại Bảng 80 câu" aria-label="Quay lại Bảng 80 câu" style="display: none;">
+            <span aria-hidden="true">🔢 80 Câu</span>
           </button>
         </div>
       </div>
@@ -176,33 +178,33 @@
       <!-- Scratch Toolbar -->
       <div class="scratch-panel-toolbar">
         <!-- Tool selector -->
-        <div class="sp-tool-btn-group">
-          <button class="sp-tool-tab active" id="d-tool-pen" onclick="setDesktopTool('pen')" title="Bút viết nháp">
-            <span>✏️ Bút</span>
+        <div class="sp-tool-btn-group" role="group" aria-label="Chọn công cụ vẽ">
+          <button class="sp-tool-tab active" id="d-tool-pen" onclick="setDesktopTool('pen')" title="Bút viết nháp" aria-label="Công cụ bút viết">
+            <span aria-hidden="true">✏️</span> Bút
           </button>
-          <button class="sp-tool-tab" id="d-tool-highlighter" onclick="setDesktopTool('highlighter')" title="Bút dạ quang (Tô sáng)">
-            <span>🖍️ Dạ quang</span>
+          <button class="sp-tool-tab" id="d-tool-highlighter" onclick="setDesktopTool('highlighter')" title="Bút dạ quang (Tô sáng)" aria-label="Công cụ bút dạ quang">
+            <span aria-hidden="true">🖍️</span> Dạ quang
           </button>
-          <button class="sp-tool-tab" id="d-tool-eraser" onclick="setDesktopTool('eraser')" title="Tẩy nét">
-            <span>🧽 Tẩy</span>
+          <button class="sp-tool-tab" id="d-tool-eraser" onclick="setDesktopTool('eraser')" title="Tẩy nét" aria-label="Công cụ tẩy xóa nét">
+            <span aria-hidden="true">🧽</span> Tẩy
           </button>
         </div>
 
         <div class="sp-tool-sub-row">
           <!-- Color picker -->
-          <div class="sp-color-picker">
-            <button class="sp-c-dot active" style="--c: #ef4444;" data-color="#ef4444" onclick="setDesktopColor('#ef4444')" title="Mực đỏ"></button>
-            <button class="sp-c-dot" style="--c: #2563eb;" data-color="#2563eb" onclick="setDesktopColor('#2563eb')" title="Mực xanh dương"></button>
-            <button class="sp-c-dot" style="--c: #10b981;" data-color="#10b981" onclick="setDesktopColor('#10b981')" title="Mực xanh lá"></button>
-            <button class="sp-c-dot" style="--c: #eab308;" data-color="#eab308" onclick="setDesktopColor('#eab308')" title="Mực vàng dạ quang"></button>
-            <button class="sp-c-dot" style="--c: #0f172a;" data-color="#0f172a" onclick="setDesktopColor('#0f172a')" title="Mực đen/trắng"></button>
+          <div class="sp-color-picker" role="group" aria-label="Chọn màu mực vẽ">
+            <button class="sp-c-dot active" style="--c: #ef4444;" data-color="#ef4444" onclick="setDesktopColor('#ef4444')" title="Mực đỏ" aria-label="Mực đỏ"></button>
+            <button class="sp-c-dot" style="--c: #2563eb;" data-color="#2563eb" onclick="setDesktopColor('#2563eb')" title="Mực xanh dương" aria-label="Mực xanh dương"></button>
+            <button class="sp-c-dot" style="--c: #10b981;" data-color="#10b981" onclick="setDesktopColor('#10b981')" title="Mực xanh lá" aria-label="Mực xanh lá"></button>
+            <button class="sp-c-dot" style="--c: #eab308;" data-color="#eab308" onclick="setDesktopColor('#eab308')" title="Mực vàng dạ quang" aria-label="Mực vàng dạ quang"></button>
+            <button class="sp-c-dot" style="--c: #0f172a;" data-color="#0f172a" onclick="setDesktopColor('#0f172a')" title="Mực đen/trắng" aria-label="Mực đen"></button>
           </div>
 
           <!-- Size picker -->
-          <div class="sp-size-picker">
-            <button class="sp-s-btn active" id="d-size-2" onclick="setDesktopSize(2)" title="Nét mảnh (2px)">●</button>
-            <button class="sp-s-btn" id="d-size-5" onclick="setDesktopSize(5)" title="Nét vừa (5px)">●●</button>
-            <button class="sp-s-btn" id="d-size-10" onclick="setDesktopSize(10)" title="Nét đậm (10px)">●●●</button>
+          <div class="sp-size-picker" role="group" aria-label="Chọn kích thước nét vẽ">
+            <button class="sp-s-btn active" id="d-size-2" onclick="setDesktopSize(2)" title="Nét mảnh (2px)" aria-label="Nét mảnh 2px">●</button>
+            <button class="sp-s-btn" id="d-size-5" onclick="setDesktopSize(5)" title="Nét vừa (5px)" aria-label="Nét vừa 5px">●●</button>
+            <button class="sp-s-btn" id="d-size-10" onclick="setDesktopSize(10)" title="Nét đậm (10px)" aria-label="Nét đậm 10px">●●●</button>
           </div>
         </div>
       </div>
@@ -214,8 +216,8 @@
 
       <div class="scratch-panel-footer">
         <span class="sp-hint">💡 Rê chuột vào để viết nháp • Nét vẽ tự động lưu</span>
-        <button class="sp-btn-save-img" onclick="saveDesktopScratchImage()" title="Tải hình ảnh bài nháp về máy">
-          📥 Lưu ảnh
+        <button class="sp-btn-save-img" onclick="saveDesktopScratchImage()" title="Tải hình ảnh bài nháp về máy" aria-label="Tải ảnh bài nháp về máy">
+          <span aria-hidden="true">📥</span> Lưu ảnh
         </button>
       </div>
     </aside>
@@ -223,16 +225,16 @@
   </main>
 
   <!-- MOBILE BOTTOM DOCK (Sticky on Phone) -->
-  <div class="mobile-exam-dock" id="mobile-exam-dock">
-    <button class="dock-nav-btn prev-btn" id="dock-btn-prev" onclick="prevQuestion()" title="Câu trước">
-      <span>◀</span> Trước
+  <div class="mobile-exam-dock" id="mobile-exam-dock" role="navigation" aria-label="Điều khiển câu hỏi trên di động">
+    <button class="dock-nav-btn prev-btn" id="dock-btn-prev" onclick="prevQuestion()" title="Câu trước" aria-label="Câu trước">
+      <span aria-hidden="true">◀</span> Trước
     </button>
-    <button class="dock-palette-trigger" onclick="toggleMobilePalette()" title="Mở bảng 80 câu để chọn câu nhanh">
+    <button class="dock-palette-trigger" onclick="toggleMobilePalette()" title="Mở bảng 80 câu để chọn câu nhanh" aria-label="Mở bảng chọn 80 câu hỏi">
       <span class="dock-q-num">Câu <span id="dock-current-q">1</span> / 80</span>
       <span class="dock-q-sub" id="dock-status-text">Bảng câu hỏi ▲</span>
     </button>
-    <button class="dock-nav-btn next-btn" id="dock-btn-next" onclick="nextQuestion()" title="Câu tiếp theo">
-      Tiếp <span>▶</span>
+    <button class="dock-nav-btn next-btn" id="dock-btn-next" onclick="nextQuestion()" title="Câu tiếp theo" aria-label="Câu tiếp theo">
+      Tiếp <span aria-hidden="true">▶</span>
     </button>
   </div>
 
@@ -284,6 +286,6 @@
 
   <script src="questions_800.js"></script>
   <script src="flashcards.js"></script>
-  <script src="app.js?v=9"></script>
+  <script src="app.js?v=10"></script>
 </body>
 </html>

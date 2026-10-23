@@ -63,6 +63,99 @@ body {
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
+/* ==========================================================================
+   OPENDESIGN COMPLIANCE SPECIFICATIONS (nexu-io/open-design)
+   - Vercel Web Interface Guidelines: Accessibility, Visible Focus, Typography
+   - Anti-AI Slop & Editorial Precision
+   - Motion Discipline (prefers-reduced-motion, explicit properties)
+   - Tabular Numbers & Balanced Headings
+   ========================================================================== */
+
+/* Skip Link for Accessibility */
+.skip-link {
+  position: absolute;
+  top: -120px;
+  left: 1rem;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 99999;
+  text-decoration: none;
+  box-shadow: var(--shadow-lg);
+  transition: top 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.skip-link:focus {
+  top: 1rem;
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* OpenDesign Focus Visible Rules (Never outline: none without replacement) */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.tab-btn:focus-visible,
+.btn:focus-visible,
+.palette-btn:focus-visible,
+.opt-row:focus-visible,
+.sp-tool-tab:focus-visible,
+.sp-c-dot:focus-visible,
+.sp-s-btn:focus-visible,
+.chapter-accordion-header:focus-visible,
+.cs-subnav-btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--primary-focus);
+}
+
+/* OpenDesign Typography: Tabular Numbers for Data/Time/Metrics */
+#timer-display,
+.timer-badge,
+.score-num,
+.score-total,
+.val,
+.dock-q-num,
+.badge-count,
+.palette-btn,
+.cs-meta-badge,
+.math-frac,
+.answered-count,
+.flagged-count,
+.history-score-badge,
+.fc-card-count {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* OpenDesign Typography: Balanced Headings */
+h1, h2, h3, h4, h5, h6,
+.brand-titles h1,
+.result-title,
+.chapter-accordion-title,
+.card-question-text {
+  text-wrap: balance;
+}
+
+/* OpenDesign Motion Discipline: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* NAVBAR HEADER */
 header.app-header {
   background: var(--surface);
@@ -3388,7 +3481,7 @@ main.app-main {
    ACADEMIC FORMULA & FRACTION DISPLAY ENGINE (NO SLASH '/')
    ========================================================== */
 .cs-header-banner {
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(99, 102, 241, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.08) 0%, rgba(79, 70, 229, 0.06) 100%);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 1.25rem 1.5rem;
@@ -3418,12 +3511,13 @@ main.app-main {
   padding-bottom: 0.5rem;
   margin-bottom: 1.25rem;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 .cs-subnav::-webkit-scrollbar {
   display: none;
 }
 .cs-subnav-btn {
-  background: var(--surface-card);
+  background: var(--surface);
   border: 1px solid var(--border);
   padding: 0.5rem 1.1rem;
   border-radius: var(--radius-full);
@@ -3434,24 +3528,27 @@ main.app-main {
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  transition: all 0.2s ease;
+  gap: 0.45rem;
+  min-height: 44px; /* OpenDesign 44px touch target */
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .cs-subnav-btn:hover {
   color: var(--text-main);
   border-color: var(--primary);
+  background: var(--surface-alt);
 }
 .cs-subnav-btn.active {
   background: var(--primary);
   color: #ffffff;
   border-color: var(--primary);
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 4px 12px var(--primary-focus);
 }
 
 /* Formula Block & Stacked Fraction Layout */
 .math-card {
-  background: var(--surface-card);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 1.2rem;
@@ -3460,7 +3557,7 @@ main.app-main {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .math-card:hover {
-  border-color: rgba(37, 99, 235, 0.4);
+  border-color: var(--primary);
   box-shadow: var(--shadow-md);
 }
 .math-card-title {
@@ -3543,7 +3640,7 @@ main.app-main {
 }
 
 .math-note {
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
   font-size: 0.84rem;
   color: var(--text-muted);
   line-height: 1.5;
