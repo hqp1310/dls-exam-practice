@@ -705,11 +705,9 @@ function renderExamQuestion(index) {
   if (!isExamStarted && !isExamSubmitted) {
     notStartedBanner = `
       <div class="exam-not-started-banner">
-        <div>
-          <span>⏱️ <strong>Chưa tính giờ:</strong> Thời gian 80 phút sẽ bắt đầu khi bạn ấn nút <strong>"Bắt đầu làm bài"</strong> hoặc chọn đáp án đầu tiên.</span>
-        </div>
-        <button class="btn btn-primary" onclick="startExam()" style="padding: 0.35rem 0.85rem; font-size: 0.82rem; white-space: nowrap; background: linear-gradient(135deg, #059669 0%, #047857 100%);">
-          ▶️ Bắt đầu làm bài
+        <span>⏱️ <strong>Chưa tính giờ:</strong> Thời gian 80 phút sẽ bắt đầu khi bạn chọn đáp án hoặc ấn nút Bắt đầu.</span>
+        <button class="btn btn-primary" onclick="startExam()" style="padding: 0.25rem 0.65rem; font-size: 0.76rem; white-space: nowrap; background: linear-gradient(135deg, #059669 0%, #047857 100%);">
+          ▶️ Bắt đầu
         </button>
       </div>
     `;

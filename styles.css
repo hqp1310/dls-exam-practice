@@ -2114,19 +2114,21 @@ main.app-main {
 
   main.app-main {
     grid-template-columns: 1fr;
-    padding: 1rem;
-    gap: 1rem;
+    padding: 0.75rem 0.75rem calc(85px + env(safe-area-inset-bottom, 20px)) 0.75rem;
+    gap: 0.75rem;
     min-width: 0;
     max-width: 100%;
   }
 
+  /* Hide static palette on mobile / tablet - only shown when opened via dock bottom sheet */
   .palette-container {
+    display: none;
     position: static;
     max-height: none;
   }
 
   .palette-grid {
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     max-height: 240px;
   }
 
@@ -2334,37 +2336,39 @@ main.app-main {
     color: var(--text-muted);
   }
 
-  /* Card Navigation inside question card on mobile */
+  /* Card Navigation inside question card on mobile:
+     Since the sticky bottom dock is always available right under the thumb with [Trước] [Câu 1/80] [Tiếp],
+     we hide the duplicate .card-nav-main to save vertical space on tall phone screens (iPhone 14 Pro / Realme Q5 Pro).
+     Only keep .card-nav-extra (Đề ngẫu nhiên & Nộp bài) as a clean auxiliary row. */
   .card-nav {
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    margin-top: 0.35rem;
   }
 
   .card-nav-main {
-    display: flex;
-    gap: 0.5rem;
-    width: 100%;
-  }
-
-  .card-nav-main .nav-btn-prev,
-  .card-nav-main .nav-btn-next {
-    flex: 1;
-    height: 46px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    border-radius: var(--radius-md);
+    display: none !important;
   }
 
   .card-nav-extra {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.45rem;
     width: 100%;
   }
 
   .card-nav-extra .btn {
     flex: 1;
-    padding: 0.55rem 0.75rem;
-    font-size: 0.82rem;
+    padding: 0.45rem 0.65rem;
+    font-size: 0.78rem;
+  }
+
+  .exam-not-started-banner {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.78rem;
+    margin-bottom: 0.65rem;
+    border-radius: var(--radius-sm);
+    gap: 0.5rem;
   }
 
   /* Hide desktop keyboard shortcuts on mobile */
