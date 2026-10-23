@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luyện Thi Trắc Nghiệm Dược Lâm Sàng - 80 Câu Thực Chiến</title>
+  <meta name="description" content="Hệ thống thi thử và luyện đề trắc nghiệm Dược lâm sàng 80 câu chuẩn đại học Dược, bám sát sách Bộ Y tế và ngân hàng đề thi thực tế.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=9">
+</head>
+<body>
+
+  <!-- APP HEADER -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="header-top-row">
+        <div class="brand-section">
+          <div class="brand-logo">💊</div>
+          <div class="brand-titles">
+            <h1>DƯỢC LÂM SÀNG • 80 CÂU</h1>
+            <span class="subtitle">Giáo trình Bộ Y tế &amp; Đề thi Thực chiến</span>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <div class="timer-badge" id="timer-widget" title="Thời gian làm bài còn lại">
+            <span id="timer-icon">⏳</span>
+            <span id="timer-display">80:00</span>
+          </div>
+          <button class="btn-timer-action" id="btn-timer-toggle" onclick="toggleExamTimerAction()" title="Bắt đầu hoặc Tạm dừng / Tiếp tục tính giờ">
+            <span>▶️</span> Bắt đầu
+          </button>
+          <button class="btn-icon" id="btn-scratchpad-toggle" onclick="toggleScratchpad()" title="Bảng nháp &amp; Bút vẽ (Tính toán công thức / Nháp đề)">
+            ✏️
+          </button>
+          <button class="btn-icon" id="btn-theme-toggle" title="Đổi giao diện Sáng / Tối">
+            🌙
+          </button>
+        </div>
+      </div>
+
+      <nav class="nav-tabs" aria-label="Chế độ học tập">
+        <button class="tab-btn active" data-tab="exam" id="tab-exam-btn">
+          <span>⏱️</span> <span class="tab-label">Thi Thử 80 Câu</span>
+        </button>
+        <button class="tab-btn" data-tab="history" id="tab-history-btn">
+          <span>📜</span> <span class="tab-label">Lịch Sử</span>
+        </button>
+        <button class="tab-btn" data-tab="topic" id="tab-topic-btn">
+          <span>📚</span> <span class="tab-label">Chuyên Đề</span>
+        </button>
+        <button class="tab-btn" data-tab="flashcards" id="tab-flashcards-btn">
+          <span>💡</span> <span class="tab-label">Câu Hỏi Tủ</span>
+        </button>
+        <button class="tab-btn" data-tab="cheatsheet" id="tab-cheatsheet-btn">
+          <span>📐</span> <span class="tab-label">Cẩm Nang &amp; Công Thức</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN APP CONTAINER -->
+  <main class="app-main">
+    
+    <!-- LEFT: MAIN CONTENT AREA -->
+    <div class="exam-container">
+      
+      <!-- VIEW 1: EXAM MODE (80 Questions) -->
+      <section id="view-exam">
+        <div class="exam-controls-bar">
+          <div class="progress-info">
+            <span class="progress-text" id="progress-text">Tiến độ: 0/80 câu (0%)</span>
+            <div class="progress-track">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+            <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary);" onclick="generateRandomExam()" title="Chọn ngẫu nhiên 80 câu từ 820 câu và xáo trộn vị trí đáp án">
+              🎲 Tạo Đề Random Mới (Đảo đáp án)
+            </button>
+            <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem;" onclick="confirmSubmitExam()">
+              Nộp bài sớm
+            </button>
+          </div>
+        </div>
+
+        <div style="margin-top: 1rem;">
+          <div class="question-card" id="question-card">
+            <!-- Dynamic Question Content Injected by app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 2: TOPIC STUDY MODE -->
+      <section id="view-topic" class="topic-container" style="display: none;">
+        <!-- Dynamic Topic Questions Injected by app.js -->
+      </section>
+
+      <!-- VIEW 3: FLASHCARDS / QUICK RECALL FROM PHOTOS -->
+      <section id="view-flashcards" class="flashcard-container" style="display: none;">
+        <!-- Dynamic Flashcards Injected by app.js -->
+      </section>
+
+      <!-- VIEW 4: CHEATSHEET -->
+      <section id="view-cheatsheet" style="display: none;">
+        <!-- Dynamic Formulas Injected by app.js -->
+      </section>
+
+      <!-- VIEW 5: EXAM HISTORY (Lịch sử bài thi & Ôn lại câu sai) -->
+      <section id="view-history" style="display: none;">
+        <!-- Dynamic Exam History Injected by app.js -->
+      </section>
+
+    </div>
+
+    <!-- RIGHT: 80 QUESTION PALETTE SIDEBAR (Shown in Exam Mode) -->
+    <div class="mobile-palette-backdrop" id="mobile-palette-backdrop" onclick="closeMobilePalette()"></div>
+    <aside class="palette-container" id="sidebar-palette">
+      <div class="palette-header">
+        <span class="palette-title">Bảng Câu Hỏi (80 Câu)</span>
+        <div style="display: flex; gap: 0.35rem; align-items: center;">
+          <button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.72rem; background: var(--secondary-light); color: var(--secondary);" onclick="generateRandomExam()" title="Tạo đề thi mới ngẫu nhiên">
+            🎲 Đề mới
+          </button>
+          <button class="btn btn-secondary btn-to-scratchpad" style="padding: 0.25rem 0.5rem; font-size: 0.72rem; color: var(--primary); border-color: var(--primary);" onclick="toggleExamScratchpad()" title="Chuyển sang Bảng nháp tính toán">
+            ✏️ Nháp
+          </button>
+          <button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.72rem;" onclick="confirmSubmitExam()">
+            Nộp bài
+          </button>
+          <button class="btn-palette-close" onclick="closeMobilePalette()" title="Đóng bảng câu hỏi">
+            ✕
+          </button>
+        </div>
+      </div>
+
+      <div class="palette-legend">
+        <div class="legend-item"><span class="legend-dot answered"></span> Đã làm (<span id="answered-count">0 / 80</span>)</div>
+        <div class="legend-item"><span class="legend-dot flagged"></span> Đánh dấu (<span id="flagged-count">0</span>)</div>
+        <div class="legend-item"><span class="legend-dot unanswered"></span> Chưa làm</div>
+      </div>
+
+      <div class="palette-grid" id="palette-grid">
+        <!-- 80 Button Tiles Injected by app.js -->
+      </div>
+    </aside>
+
+    <!-- RIGHT SIDEBAR: DESKTOP CLINICAL SCRATCHPAD (Visible across all tabs on PC) -->
+    <aside class="desktop-scratchpad-panel" id="desktop-scratchpad-panel" style="display: none;">
+      <div class="scratch-panel-header">
+        <div class="scratch-panel-title">
+          <span class="sp-icon">✏️</span>
+          <div>
+            <div class="sp-title-text">BẢNG NHÁP LÂM SÀNG</div>
+            <div class="sp-subtitle-text">Tính CrCl, độ thanh thải, công thức DLS</div>
+          </div>
+        </div>
+        <div class="scratch-panel-header-actions">
+          <button class="sp-h-btn active" id="btn-toggle-grid" onclick="toggleDesktopScratchGrid()" title="Bật/Tắt lưới ô ly tính toán">
+            <span>📋</span>
+          </button>
+          <button class="sp-h-btn" onclick="undoDesktopScratch()" title="Hoàn tác nét vẽ (Ctrl+Z)">
+            <span>↩️</span>
+          </button>
+          <button class="sp-h-btn sp-h-clear" onclick="clearDesktopScratch()" title="Xóa toàn bộ nháp">
+            <span>🗑️</span>
+          </button>
+          <button class="sp-h-btn btn-exam-palette-return" id="btn-palette-return" onclick="toggleExamScratchpad()" title="Quay lại Bảng 80 câu" style="display: none;">
+            <span>🔢 80 Câu</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scratch Toolbar -->
+      <div class="scratch-panel-toolbar">
+        <!-- Tool selector -->
+        <div class="sp-tool-btn-group">
+          <button class="sp-tool-tab active" id="d-tool-pen" onclick="setDesktopTool('pen')" title="Bút viết nháp">
+            <span>✏️ Bút</span>
+          </button>
+          <button class="sp-tool-tab" id="d-tool-highlighter" onclick="setDesktopTool('highlighter')" title="Bút dạ quang (Tô sáng)">
+            <span>🖍️ Dạ quang</span>
+          </button>
+          <button class="sp-tool-tab" id="d-tool-eraser" onclick="setDesktopTool('eraser')" title="Tẩy nét">
+            <span>🧽 Tẩy</span>
+          </button>
+        </div>
+
+        <div class="sp-tool-sub-row">
+          <!-- Color picker -->
+          <div class="sp-color-picker">
+            <button class="sp-c-dot active" style="--c: #ef4444;" data-color="#ef4444" onclick="setDesktopColor('#ef4444')" title="Mực đỏ"></button>
+            <button class="sp-c-dot" style="--c: #2563eb;" data-color="#2563eb" onclick="setDesktopColor('#2563eb')" title="Mực xanh dương"></button>
+            <button class="sp-c-dot" style="--c: #10b981;" data-color="#10b981" onclick="setDesktopColor('#10b981')" title="Mực xanh lá"></button>
+            <button class="sp-c-dot" style="--c: #eab308;" data-color="#eab308" onclick="setDesktopColor('#eab308')" title="Mực vàng dạ quang"></button>
+            <button class="sp-c-dot" style="--c: #0f172a;" data-color="#0f172a" onclick="setDesktopColor('#0f172a')" title="Mực đen/trắng"></button>
+          </div>
+
+          <!-- Size picker -->
+          <div class="sp-size-picker">
+            <button class="sp-s-btn active" id="d-size-2" onclick="setDesktopSize(2)" title="Nét mảnh (2px)">●</button>
+            <button class="sp-s-btn" id="d-size-5" onclick="setDesktopSize(5)" title="Nét vừa (5px)">●●</button>
+            <button class="sp-s-btn" id="d-size-10" onclick="setDesktopSize(10)" title="Nét đậm (10px)">●●●</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Canvas Area -->
+      <div class="scratch-canvas-wrap grid-mode" id="scratch-canvas-wrap">
+        <canvas id="desktop-scratch-canvas"></canvas>
+      </div>
+
+      <div class="scratch-panel-footer">
+        <span class="sp-hint">💡 Rê chuột vào để viết nháp • Nét vẽ tự động lưu</span>
+        <button class="sp-btn-save-img" onclick="saveDesktopScratchImage()" title="Tải hình ảnh bài nháp về máy">
+          📥 Lưu ảnh
+        </button>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- MOBILE BOTTOM DOCK (Sticky on Phone) -->
+  <div class="mobile-exam-dock" id="mobile-exam-dock">
+    <button class="dock-nav-btn prev-btn" id="dock-btn-prev" onclick="prevQuestion()" title="Câu trước">
+      <span>◀</span> Trước
+    </button>
+    <button class="dock-palette-trigger" onclick="toggleMobilePalette()" title="Mở bảng 80 câu để chọn câu nhanh">
+      <span class="dock-q-num">Câu <span id="dock-current-q">1</span> / 80</span>
+      <span class="dock-q-sub" id="dock-status-text">Bảng câu hỏi ▲</span>
+    </button>
+    <button class="dock-nav-btn next-btn" id="dock-btn-next" onclick="nextQuestion()" title="Câu tiếp theo">
+      Tiếp <span>▶</span>
+    </button>
+  </div>
+
+  <!-- RESULTS MODAL -->
+  <div class="modal-overlay" id="results-modal">
+    <div class="modal-card">
+      <div class="score-badge">
+        <span class="score-num" id="modal-score-num">8.5</span>
+        <span class="score-total">Thang điểm 10</span>
+      </div>
+
+      <h2 class="result-title" id="modal-rank">KẾT QUẢ XUẤT SẮC</h2>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">
+        Bạn đã hoàn thành bài thi thử trắc nghiệm Dược lâm sàng 80 câu / 80 phút!
+      </p>
+
+      <div class="result-summary-grid">
+        <div class="summary-box">
+          <div class="val" id="modal-correct-count" style="color: var(--primary);">68 / 80</div>
+          <div class="lbl">Số câu đúng</div>
+        </div>
+        <div class="summary-box">
+          <div class="val" id="modal-pct" style="color: var(--secondary);">85%</div>
+          <div class="lbl">Tỷ lệ chính xác</div>
+        </div>
+        <div class="summary-box">
+          <div class="val" id="modal-time-used" style="color: var(--warning);">42p 15s</div>
+          <div class="lbl">Thời gian làm</div>
+        </div>
+      </div>
+
+      <div style="margin: 0.75rem 0; padding: 0.5rem 0.75rem; background: var(--primary-light); color: var(--primary); border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 0.4rem;">
+        <span>💾</span> Bài thi này đã được tự động lưu vào <strong>Lịch Sử Bài Thi</strong> để bạn xem lại!
+      </div>
+
+      <div class="modal-actions" style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+        <button class="btn btn-secondary" onclick="generateRandomExam(); closeResultsModal();">
+          🎲 Tạo đề 80 câu mới
+        </button>
+        <button class="btn btn-secondary" onclick="viewCurrentExamInHistory(); closeResultsModal();" style="background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary); font-weight: 600;">
+          📜 Xem trong Lịch sử bài thi
+        </button>
+        <button class="btn btn-primary" onclick="closeResultsModal()">
+          🔍 Xem chi tiết trên đề này
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="questions_800.js"></script>
+  <script src="flashcards.js"></script>
+  <script src="app.js?v=9"></script>
+</body>
+</html>

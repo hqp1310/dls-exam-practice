@@ -1,0 +1,12 @@
+# Node modules
+node_modules/
+.npm/
+
+# Scratch and generator scripts
+build_*.js
+raw_bank_*.json
+builder_skeleton.js
+assemble_final_bank.js
+generate_exam_data.js
+biased_questions.json
+*.log
