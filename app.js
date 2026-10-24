@@ -3656,6 +3656,7 @@ function renderCheatsheetView() {
             Gây khuyết tật ống thần kinh (nứt đốt sống / gai đôi cột sống - Spina Bifida).
           </div>
         </div>
+      </div>
 
 
       <!-- ========================================== -->
