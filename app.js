@@ -5240,7 +5240,8 @@ function hexToRgba(hex, alpha = 1) {
 // CROSS-DEVICE DATA SYNC & SMART MERGE SYSTEM
 // ==========================================
 let currentSyncTab = 'send';
-const SYNC_API_ENDPOINT = 'https://api.restful-api.dev/objects';
+const BYTEBIN_POST_URL = 'https://bytebin.lucko.me/post';
+const BYTEBIN_GET_URL = 'https://bytebin.lucko.me/';
 
 function openSyncModal() {
   const modal = document.getElementById('sync-modal');
@@ -5265,20 +5266,73 @@ function switchSyncTab(tab) {
   });
 }
 
-// 1. Pack current device data
+// 1. Pack current device data (Minified with question IDs to stay lightweight & fast)
 function getDeviceSyncPayload() {
   const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+  const rawHistory = getExamHistory();
+  const minifiedHistory = rawHistory.map(exam => {
+    const answers = (exam.questions || []).map(q => ({
+      i: q.id,
+      a: q.userAnswer,
+      f: q.isFlagged ? 1 : 0
+    }));
+    return {
+      id: exam.id,
+      timestamp: exam.timestamp || Date.now(),
+      dateStr: exam.dateStr,
+      score10: exam.score10,
+      pct: exam.pct,
+      correctCount: exam.correctCount,
+      wrongCount: exam.wrongCount,
+      unansweredCount: exam.unansweredCount,
+      totalQuestions: exam.totalQuestions || 80,
+      timeUsedSec: exam.timeUsedSec,
+      timeUsedStr: exam.timeUsedStr,
+      rankText: exam.rankText,
+      answers: answers
+    };
+  });
+
   return {
     version: '1.0',
     timestamp: Date.now(),
     dateStr: new Date().toLocaleString('vi-VN'),
     device: isMobile ? 'Điện thoại' : 'Máy tính',
-    examHistory: getExamHistory(),
+    examHistory: minifiedHistory,
     flashcardStarred: Array.from(flashcardStarred),
     flashcardMastered: Array.from(flashcardMastered),
     studyAnswers: studyAnswers || {},
     theme: localStorage.getItem('dls_theme') || 'light'
   };
+}
+
+// Rehydrate exam questions from ALL_EXAM_BANK
+function rehydrateExam(exam) {
+  if (exam.questions && exam.questions.length && exam.questions[0].question) {
+    return exam; // already has full question text
+  }
+  const bankMap = new Map();
+  if (typeof ALL_EXAM_BANK !== 'undefined') {
+    ALL_EXAM_BANK.forEach(q => bankMap.set(q.id, q));
+  }
+  const answers = exam.answers || [];
+  exam.questions = answers.map((ans, idx) => {
+    const original = bankMap.get(ans.i) || {};
+    return {
+      id: ans.i,
+      examNum: idx + 1,
+      chapter: original.chapter || '',
+      question: original.question || '',
+      options: original.options || [],
+      correct: original.correct,
+      userAnswer: ans.a !== undefined ? ans.a : null,
+      isCorrect: ans.a === original.correct,
+      isFlagged: !!ans.f,
+      explanation: original.explanation || '',
+      reference: original.reference || ''
+    };
+  });
+  return exam;
 }
 
 // 2. Upload to Cloud & Generate QR
@@ -5295,18 +5349,17 @@ async function createCloudSync() {
     if (btn) btn.disabled = true;
 
     const payload = getDeviceSyncPayload();
-    const response = await fetch(SYNC_API_ENDPOINT, {
+    const response = await fetch(BYTEBIN_POST_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: 'DLS_SYNC_DATA',
-        data: payload
-      })
+      body: JSON.stringify(payload)
     });
 
-    if (!response.ok) throw new Error('Không thể kết nối đến máy chủ đồng bộ');
+    if (!response.ok) throw new Error('Máy chủ phản hồi trạng thái: ' + response.status);
     const resData = await response.json();
-    const syncId = resData.id;
+    const syncId = resData.key;
+
+    if (!syncId) throw new Error('Không nhận được mã định danh từ máy chủ');
 
     // Create sync URL that automatically opens and triggers merge when scanned/opened
     const syncUrl = `${window.location.origin}${window.location.pathname}?sync_id=${syncId}`;
@@ -5375,10 +5428,9 @@ async function fetchAndApplySync(explicitId = null) {
       `;
     }
 
-    const response = await fetch(`${SYNC_API_ENDPOINT}/${rawVal}`);
+    const response = await fetch(`${BYTEBIN_GET_URL}${rawVal}`);
     if (!response.ok) throw new Error('Mã đồng bộ không tồn tại hoặc đã hết hạn!');
-    const resData = await response.json();
-    const remoteData = resData.data;
+    const remoteData = await response.json();
 
     if (!remoteData) throw new Error('Dữ liệu đồng bộ bị trống hoặc không hợp lệ');
 
@@ -5422,7 +5474,8 @@ async function fetchAndApplySync(explicitId = null) {
 function smartMergeSyncData(remoteData, mode = 'merge') {
   if (mode === 'overwrite') {
     if (Array.isArray(remoteData.examHistory)) {
-      localStorage.setItem(STORAGE_HISTORY_KEY, JSON.stringify(remoteData.examHistory));
+      const fullHistory = remoteData.examHistory.map(e => rehydrateExam(e));
+      localStorage.setItem(STORAGE_HISTORY_KEY, JSON.stringify(fullHistory));
     }
     if (Array.isArray(remoteData.flashcardStarred)) {
       flashcardStarred = new Set(remoteData.flashcardStarred);
@@ -5464,7 +5517,7 @@ function smartMergeSyncData(remoteData, mode = 'merge') {
       const key = item.id || item.dateStr;
       if (key && !seenKeys.has(key)) {
         seenKeys.add(key);
-        mergedHistory.push(item);
+        mergedHistory.push(rehydrateExam(item));
         addedHistory++;
       }
     });
