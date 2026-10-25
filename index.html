@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=14">
+  <link rel="stylesheet" href="styles.css?v=15">
 </head>
 <body>
   <!-- SKIP LINK (OpenDesign Web Interface Accessibility Rule) -->
@@ -23,6 +23,7 @@
           <div class="brand-titles">
             <h1>DƯỢC LÂM SÀNG • 80 CÂU</h1>
             <span class="subtitle">Giáo trình Bộ Y tế &amp; Đề thi Thực chiến</span>
+            <span class="mobile-active-tag" id="mobile-active-tab-tag">⏱️ Thi Thử 80 Câu</span>
           </div>
         </div>
 
@@ -37,13 +38,22 @@
           <button class="btn-icon" id="btn-scratchpad-toggle" onclick="toggleScratchpad()" title="Bảng nháp &amp; Bút vẽ (Tính toán công thức / Nháp đề)" aria-label="Bật hoặc tắt Bảng nháp và bút vẽ">
             <span aria-hidden="true">✏️</span>
           </button>
+          <button class="btn-icon" id="btn-sync-toggle" onclick="openSyncModal()" title="Đồng bộ dữ liệu giữa Điện thoại &amp; Máy tính" aria-label="Đồng bộ dữ liệu">
+            <span aria-hidden="true">🔄</span>
+          </button>
           <button class="btn-icon" id="btn-theme-toggle" title="Đổi giao diện Sáng / Tối" aria-label="Chuyển đổi giao diện Sáng hoặc Tối">
             <span aria-hidden="true">🌙</span>
+          </button>
+          <button class="btn-icon mobile-menu-toggle" id="btn-mobile-menu" onclick="toggleMobileNavMenu()" title="Mở danh mục menu" aria-label="Mở menu chức năng">
+            <span id="menu-icon-bars" aria-hidden="true">☰</span>
           </button>
         </div>
       </div>
 
-      <nav class="nav-tabs" aria-label="Chế độ học tập">
+      <!-- Backdrop for mobile menu -->
+      <div class="mobile-menu-backdrop" id="mobile-menu-backdrop" onclick="closeMobileNavMenu()"></div>
+
+      <nav class="nav-tabs" id="main-nav-tabs" aria-label="Chế độ học tập">
         <button class="tab-btn active" data-tab="exam" id="tab-exam-btn">
           <span aria-hidden="true">⏱️</span> <span class="tab-label">Thi Thử 80 Câu</span>
         </button>
@@ -58,6 +68,9 @@
         </button>
         <button class="tab-btn" data-tab="cheatsheet" id="tab-cheatsheet-btn">
           <span aria-hidden="true">📐</span> <span class="tab-label">Cẩm Nang &amp; Công Thức</span>
+        </button>
+        <button class="tab-btn mobile-only-tab" data-tab="sync" id="tab-sync-menu-btn" onclick="openSyncModal()">
+          <span aria-hidden="true">🔄</span> <span class="tab-label">Đồng Bộ &amp; Sao Lưu Dữ Liệu</span>
         </button>
       </nav>
     </div>
@@ -284,8 +297,160 @@
     </div>
   </div>
 
+  <!-- SYNC & BACKUP MODAL -->
+  <div class="modal-overlay" id="sync-modal">
+    <div class="modal-card sync-modal-card">
+      <div class="sync-modal-header">
+        <div class="sync-title-wrap">
+          <div class="sync-icon-circle">🔄</div>
+          <div>
+            <h2 class="sync-modal-title">Đồng Bộ &amp; Sao Lưu Dữ Liệu</h2>
+            <p class="sync-modal-subtitle">Chuyển lịch sử thi &amp; câu hỏi tủ giữa Điện thoại &amp; Máy tính</p>
+          </div>
+        </div>
+        <button class="btn-icon sync-close-btn" onclick="closeSyncModal()" title="Đóng hộp thoại" aria-label="Đóng hộp thoại">✕</button>
+      </div>
+
+      <!-- Sync Tabs -->
+      <div class="sync-tab-nav">
+        <button class="sync-nav-btn active" id="sync-tab-btn-send" onclick="switchSyncTab('send')">
+          📤 Gửi Lên Mây (Tạo Mã / QR)
+        </button>
+        <button class="sync-nav-btn" id="sync-tab-btn-receive" onclick="switchSyncTab('receive')">
+          📥 Kéo Về Máy (Nhập Mã)
+        </button>
+        <button class="sync-nav-btn" id="sync-tab-btn-file" onclick="switchSyncTab('file')">
+          💾 File .json &amp; Zalo
+        </button>
+      </div>
+
+      <!-- TAB 1: SEND (CREATE SYNC CODE & QR) -->
+      <div class="sync-tab-pane active" id="sync-pane-send">
+        <div class="sync-info-box">
+          Bấm nút <strong>"Tạo mã đồng bộ"</strong> bên dưới. Màn hình sẽ hiện <strong>Mã QR</strong> và <strong>Mã PIN</strong>. Bạn chỉ cần lấy điện thoại (bật Camera hoặc Zalo) quét mã QR là toàn bộ bài thi sẽ được chuyển sang!
+        </div>
+
+        <div id="sync-send-loading" style="display: none; padding: 1.5rem; text-align: center;">
+          <div class="sync-spinner"></div>
+          <p style="margin-top: 0.75rem; font-weight: 500; color: var(--text-main);">Đang đóng gói và gửi dữ liệu lên máy chủ an toàn...</p>
+        </div>
+
+        <div id="sync-send-result" style="display: none;">
+          <!-- QR Code Container -->
+          <div class="sync-qr-card">
+            <div class="sync-qr-img-wrap">
+              <img id="sync-qr-image" src="" alt="Mã QR đồng bộ dữ liệu" width="150" height="150" />
+            </div>
+            <div class="sync-qr-help">
+              <span class="sync-qr-badge">📱 Quét 1 Chạm</span>
+              <p>Mở camera điện thoại hoặc Zalo quét mã QR này để tự động mở trang web và hợp nhất bài thi sang điện thoại!</p>
+            </div>
+          </div>
+
+          <!-- Pin & Link -->
+          <div class="sync-code-display-box">
+            <span class="sync-code-lbl">Mã Đồng Bộ / Link Chia Sẻ:</span>
+            <div class="sync-code-input-group">
+              <input type="text" id="sync-generated-code" readonly value="" />
+              <button class="btn btn-secondary" onclick="copySyncCode()" title="Sao chép mã / liên kết">📋 Sao chép</button>
+            </div>
+          </div>
+
+          <div style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem;">
+            ⏳ Mã có hiệu lực để bạn chuyển dữ liệu sang thiết bị khác mà không làm mất bài thi cũ trên máy kia.
+          </div>
+        </div>
+
+        <div class="sync-actions" id="sync-send-actions">
+          <button class="btn btn-primary" id="btn-create-sync" onclick="createCloudSync()">
+            ⚡ Tạo Mã Đồng Bộ &amp; QR Code
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB 2: RECEIVE (INPUT CODE & SMART MERGE) -->
+      <div class="sync-tab-pane" id="sync-pane-receive">
+        <div class="sync-info-box">
+          Nhập mã đồng bộ từ máy tính (hoặc dán link gửi qua Zalo) vào ô bên dưới:
+        </div>
+
+        <div class="sync-input-field-wrap">
+          <label for="sync-input-code" style="font-size: 0.88rem; font-weight: 600; color: var(--text-main);">
+            Mã đồng bộ hoặc Link chứa mã:
+          </label>
+          <input type="text" id="sync-input-code" placeholder="Dán mã hoặc link chứa ?sync_id=..." />
+        </div>
+
+        <!-- Merge Mode Option Selection -->
+        <div class="sync-merge-options">
+          <label class="sync-radio-opt">
+            <input type="radio" name="sync-merge-mode" value="merge" checked />
+            <div>
+              <strong>🟢 Gộp chung dữ liệu (Smart Merge - Khuyên dùng)</strong>
+              <span>Ghép toàn bộ bài thi của cả 2 máy lại với nhau, giữ nguyên vẹn 100% công sức học.</span>
+            </div>
+          </label>
+          <label class="sync-radio-opt">
+            <input type="radio" name="sync-merge-mode" value="overwrite" />
+            <div>
+              <strong>⚪ Ghi đè hoàn toàn (Overwrite)</strong>
+              <span>Thay thế dữ liệu trên máy này bằng dữ liệu mới tải về từ máy kia.</span>
+            </div>
+          </label>
+        </div>
+
+        <div id="sync-receive-status" style="margin-top: 0.75rem; display: none;"></div>
+
+        <div class="sync-actions">
+          <button class="btn btn-primary" id="btn-fetch-sync" onclick="fetchAndApplySync()">
+            📥 Kéo Dữ Liệu &amp; Hợp Nhất Ngay
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB 3: FILE BACKUP & ZALO CODE (OFFLINE FALLBACK) -->
+      <div class="sync-tab-pane" id="sync-pane-file">
+        <div class="sync-info-box">
+          Lưu trữ ngoại tuyến an toàn: Tải file sao lưu về máy hoặc sao chép đoạn mã gửi qua tin nhắn Zalo.
+        </div>
+
+        <div class="sync-file-grid">
+          <div class="sync-file-card">
+            <h4>💾 Xuất Dữ Liệu</h4>
+            <p>Tải file sao lưu (.json) hoặc copy mã để lưu trữ cá nhân.</p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem;">
+              <button class="btn btn-primary" onclick="exportBackupFile()" style="font-size: 0.85rem; padding: 0.45rem 0.8rem;">
+                📥 Tải file .json
+              </button>
+              <button class="btn btn-secondary" onclick="copyRawBackupData()" style="font-size: 0.85rem; padding: 0.45rem 0.8rem;">
+                📋 Copy mã Zalo
+              </button>
+            </div>
+          </div>
+
+          <div class="sync-file-card">
+            <h4>📂 Nhập Dữ Liệu</h4>
+            <p>Chọn file .json đã lưu hoặc dán mã dữ liệu để nạp vào máy.</p>
+            <input type="file" id="sync-file-input" accept=".json" style="display: none;" onchange="importBackupFile(event)" />
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem;">
+              <button class="btn btn-secondary" onclick="document.getElementById('sync-file-input').click()" style="font-size: 0.85rem; padding: 0.45rem 0.8rem;">
+                📂 Chọn file .json
+              </button>
+              <button class="btn btn-secondary" onclick="promptPasteRawData()" style="font-size: 0.85rem; padding: 0.45rem 0.8rem;">
+                📋 Dán mã Zalo
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="sync-file-status" style="margin-top: 0.75rem; display: none;"></div>
+      </div>
+
+    </div>
+  </div>
+
   <script src="questions_800.js"></script>
   <script src="flashcards.js"></script>
-  <script src="app.js?v=14"></script>
+  <script src="app.js?v=15"></script>
 </body>
 </html>

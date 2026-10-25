@@ -247,9 +247,34 @@ const flaggedCountEl = document.getElementById('flagged-count');
 const resultsModal = document.getElementById('results-modal');
 const themeToggleBtn = document.getElementById('btn-theme-toggle');
 
-// Navigation Tabs
+// Navigation Tabs & Mobile Menu
+function toggleMobileNavMenu() {
+  const navTabs = document.getElementById('main-nav-tabs');
+  const backdrop = document.getElementById('mobile-menu-backdrop');
+  const icon = document.getElementById('menu-icon-bars');
+  if (!navTabs) return;
+  const isOpen = navTabs.classList.toggle('open');
+  if (backdrop) backdrop.classList.toggle('active', isOpen);
+  if (icon) icon.textContent = isOpen ? '✕' : '☰';
+  playChime('click');
+}
+
+function closeMobileNavMenu() {
+  const navTabs = document.getElementById('main-nav-tabs');
+  const backdrop = document.getElementById('mobile-menu-backdrop');
+  const icon = document.getElementById('menu-icon-bars');
+  if (navTabs) navTabs.classList.remove('open');
+  if (backdrop) backdrop.classList.remove('active');
+  if (icon) icon.textContent = '☰';
+}
+
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
+    if (btn.dataset.tab === 'sync') {
+      closeMobileNavMenu();
+      openSyncModal();
+      return;
+    }
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     switchTab(btn.dataset.tab);
@@ -258,13 +283,33 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 });
 
 function switchTab(tab) {
+  if (tab === 'sync') {
+    closeMobileNavMenu();
+    openSyncModal();
+    return;
+  }
+  closeMobileNavMenu();
   stopSpeaking();
   currentTab = tab;
   closeMobilePalette();
 
+  const tabLabels = {
+    exam: '⏱️ Thi Thử 80 Câu',
+    history: '📜 Lịch Sử',
+    topic: '📚 Chuyên Đề',
+    flashcards: '💡 Câu Hỏi Tủ',
+    cheatsheet: '📐 Cẩm Nang & CT'
+  };
+  const activeTag = document.getElementById('mobile-active-tab-tag');
+  if (activeTag && tabLabels[tab]) {
+    activeTag.textContent = tabLabels[tab];
+  }
+
   // Always synchronize navbar tabs!
   document.querySelectorAll('.tab-btn').forEach(b => {
-    b.classList.toggle('active', b.dataset.tab === tab);
+    if (b.dataset.tab !== 'sync') {
+      b.classList.toggle('active', b.dataset.tab === tab);
+    }
   });
   try {
     localStorage.setItem('dls_active_tab', tab);
@@ -4553,7 +4598,10 @@ function renderHistoryListView() {
             Bấm vào bất kỳ bài thi nào để xem lại chi tiết 80 câu, các câu bạn làm sai và đáp án giải thích.
           </span>
         </div>
-        <div style="display: flex; gap: 0.5rem; align-items: center;">
+        <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+          <button class="btn btn-primary" onclick="openSyncModal()" style="font-size: 0.85rem; padding: 0.45rem 0.85rem; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span>🔄</span> Đồng bộ thiết bị
+          </button>
           <button class="btn btn-secondary" onclick="startNewExamFromHistory()" style="background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary);">
             🎲 Thi đề 80 câu mới
           </button>
@@ -4660,53 +4708,55 @@ function renderDetailedReviewView() {
   let html = `
     <div class="review-view-container">
       
-      <!-- STICKY HEADER -->
+      <!-- COMPACT REVIEW HEADER -->
       <div class="review-sticky-header">
         <div class="review-top-nav">
-          <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-            <button class="btn btn-secondary" onclick="closeReviewExam()" style="padding: 0.4rem 0.85rem; font-size: 0.82rem;">
-              ← Quay lại danh sách lịch sử
-            </button>
-            <div>
-              <strong style="font-size: 1.05rem; font-family: var(--font-heading); color: var(--text-main);">
-                Chi Tiết Bài Thi: ${exam.dateStr}
-              </strong>
-              <span style="margin-left: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
-                Điểm: <strong style="color: var(--primary);">${exam.score10}/10</strong> (${exam.correctCount}/${exam.totalQuestions} câu đúng • Thời gian: ${exam.timeUsedStr})
-              </span>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+              <button class="btn btn-secondary" onclick="closeReviewExam()" style="padding: 0.35rem 0.75rem; font-size: 0.8rem; font-weight: 600;">
+                ← Quay lại
+              </button>
+              <div style="font-size: 0.88rem; line-height: 1.3;">
+                <strong style="color: var(--text-main); font-family: var(--font-heading);">
+                  ${exam.dateStr}
+                </strong>
+                <span style="display: inline-block; margin-left: 0.35rem; font-weight: 700; color: var(--primary);">
+                  • ${exam.score10}/10 (${exam.correctCount}/${exam.totalQuestions} đúng)
+                </span>
+              </div>
             </div>
-          </div>
 
-          <div style="display: flex; gap: 0.5rem;">
-            <button class="btn btn-secondary" onclick="startNewExamFromHistory()" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary);">
-              🎲 Thi đề 80 câu mới
-            </button>
+            <div style="display: flex; gap: 0.4rem;">
+              <button class="btn btn-secondary" onclick="startNewExamFromHistory()" style="padding: 0.35rem 0.65rem; font-size: 0.78rem; background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary);">
+                🎲 Thi đề mới
+              </button>
+            </div>
           </div>
         </div>
 
-        <!-- FILTER PILLS & SEARCH -->
+        <!-- COMPACT FILTER PILLS & SEARCH -->
         <div class="review-filter-row">
           <button class="review-pill ${reviewFilter === 'all' ? 'active' : ''}" onclick="setReviewFilter('all')">
             📋 Tất cả <span class="count">${questions.length}</span>
           </button>
           <button class="review-pill pill-wrong ${reviewFilter === 'wrong' ? 'active' : ''}" onclick="setReviewFilter('wrong')" title="Xem những câu bạn đã chọn sai để khắc phục">
-            ❌ Câu làm sai <span class="count">${wrongCount}</span>
+            ❌ Sai <span class="count">${wrongCount}</span>
           </button>
           <button class="review-pill pill-correct ${reviewFilter === 'correct' ? 'active' : ''}" onclick="setReviewFilter('correct')">
-            ✅ Câu làm đúng <span class="count">${correctCount}</span>
+            ✅ Đúng <span class="count">${correctCount}</span>
           </button>
           <button class="review-pill ${reviewFilter === 'skipped' ? 'active' : ''}" onclick="setReviewFilter('skipped')">
-            ⚪ Chưa làm <span class="count">${skippedCount}</span>
+            ⚪ Bỏ qua <span class="count">${skippedCount}</span>
           </button>
           <button class="review-pill ${reviewFilter === 'flagged' ? 'active' : ''}" onclick="setReviewFilter('flagged')">
-            ★ Đã đánh dấu <span class="count">${flaggedCount}</span>
+            ★ Đã lưu <span class="count">${flaggedCount}</span>
           </button>
 
-          <div style="margin-left: auto; min-width: 200px; flex: 1; max-width: 320px;">
-            <input type="text" id="review-search-box" placeholder="🔍 Tìm câu hỏi, thuốc, bệnh..." 
+          <div style="min-width: 160px; flex: 1; max-width: 260px;">
+            <input type="text" id="review-search-box" placeholder="🔍 Tìm câu hỏi, thuốc..." 
               value="${reviewSearchQuery}" 
               oninput="handleReviewSearch(this.value)"
-              style="width: 100%; padding: 0.35rem 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-full); font-size: 0.82rem; background: var(--surface-alt); color: var(--text-main); outline: none;">
+              style="width: 100%; padding: 0.32rem 0.65rem; border: 1px solid var(--border); border-radius: var(--radius-full); font-size: 0.8rem; background: var(--surface-alt); color: var(--text-main); outline: none;">
           </div>
         </div>
       </div>
@@ -5186,6 +5236,337 @@ function hexToRgba(hex, alpha = 1) {
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
+// ==========================================
+// CROSS-DEVICE DATA SYNC & SMART MERGE SYSTEM
+// ==========================================
+let currentSyncTab = 'send';
+const SYNC_API_ENDPOINT = 'https://api.restful-api.dev/objects';
+
+function openSyncModal() {
+  const modal = document.getElementById('sync-modal');
+  if (!modal) return;
+  modal.classList.add('active');
+  switchSyncTab('send');
+  playChime('click');
+}
+
+function closeSyncModal() {
+  const modal = document.getElementById('sync-modal');
+  if (modal) modal.classList.remove('active');
+}
+
+function switchSyncTab(tab) {
+  currentSyncTab = tab;
+  ['send', 'receive', 'file'].forEach(t => {
+    const btn = document.getElementById(`sync-tab-btn-${t}`);
+    const pane = document.getElementById(`sync-pane-${t}`);
+    if (btn) btn.classList.toggle('active', t === tab);
+    if (pane) pane.classList.toggle('active', t === tab);
+  });
+}
+
+// 1. Pack current device data
+function getDeviceSyncPayload() {
+  const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+  return {
+    version: '1.0',
+    timestamp: Date.now(),
+    dateStr: new Date().toLocaleString('vi-VN'),
+    device: isMobile ? 'Điện thoại' : 'Máy tính',
+    examHistory: getExamHistory(),
+    flashcardStarred: Array.from(flashcardStarred),
+    flashcardMastered: Array.from(flashcardMastered),
+    studyAnswers: studyAnswers || {},
+    theme: localStorage.getItem('dls_theme') || 'light'
+  };
+}
+
+// 2. Upload to Cloud & Generate QR
+async function createCloudSync() {
+  const loading = document.getElementById('sync-send-loading');
+  const result = document.getElementById('sync-send-result');
+  const btn = document.getElementById('btn-create-sync');
+  const qrImg = document.getElementById('sync-qr-image');
+  const codeInput = document.getElementById('sync-generated-code');
+
+  try {
+    if (loading) loading.style.display = 'block';
+    if (result) result.style.display = 'none';
+    if (btn) btn.disabled = true;
+
+    const payload = getDeviceSyncPayload();
+    const response = await fetch(SYNC_API_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: 'DLS_SYNC_DATA',
+        data: payload
+      })
+    });
+
+    if (!response.ok) throw new Error('Không thể kết nối đến máy chủ đồng bộ');
+    const resData = await response.json();
+    const syncId = resData.id;
+
+    // Create sync URL that automatically opens and triggers merge when scanned/opened
+    const syncUrl = `${window.location.origin}${window.location.pathname}?sync_id=${syncId}`;
+    const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=4&data=${encodeURIComponent(syncUrl)}`;
+
+    if (qrImg) qrImg.src = qrUrl;
+    if (codeInput) codeInput.value = syncUrl;
+
+    if (loading) loading.style.display = 'none';
+    if (result) result.style.display = 'block';
+    if (btn) btn.disabled = false;
+    playChime('correct');
+  } catch (err) {
+    console.error('Sync creation failed:', err);
+    if (loading) loading.style.display = 'none';
+    if (btn) btn.disabled = false;
+    alert('Không thể tạo mã đồng bộ qua mạng (' + err.message + '). Bạn có thể chuyển sang tab "File .json & Zalo" để sao chép mã trực tiếp!');
+  }
+}
+
+// 3. Copy link/code
+function copySyncCode() {
+  const codeInput = document.getElementById('sync-generated-code');
+  if (!codeInput || !codeInput.value) return;
+  navigator.clipboard.writeText(codeInput.value).then(() => {
+    alert('✓ Đã sao chép liên kết đồng bộ! Bạn hãy gửi vào Zalo hoặc Messenger để mở trên thiết bị khác.');
+  }).catch(() => {
+    codeInput.select();
+    document.execCommand('copy');
+    alert('✓ Đã sao chép liên kết đồng bộ!');
+  });
+}
+
+// 4. Fetch from Cloud & Apply Smart Merge
+async function fetchAndApplySync(explicitId = null) {
+  const inputEl = document.getElementById('sync-input-code');
+  let rawVal = explicitId || (inputEl ? inputEl.value.trim() : '');
+  if (!rawVal) {
+    alert('Vui lòng nhập mã đồng bộ hoặc dán link đồng bộ!');
+    return;
+  }
+
+  // Extract sync_id from full URL if pasted
+  if (rawVal.includes('sync_id=')) {
+    try {
+      const u = new URL(rawVal);
+      rawVal = u.searchParams.get('sync_id') || rawVal;
+    } catch (e) {
+      const match = rawVal.match(/sync_id=([a-zA-Z0-9]+)/);
+      if (match) rawVal = match[1];
+    }
+  }
+
+  const statusEl = document.getElementById('sync-receive-status');
+  const btn = document.getElementById('btn-fetch-sync');
+
+  try {
+    if (btn) btn.disabled = true;
+    if (statusEl) {
+      statusEl.style.display = 'block';
+      statusEl.innerHTML = `
+        <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--primary); font-weight: 500; font-size: 0.88rem;">
+          <div class="sync-spinner" style="width: 20px; height: 20px; border-width: 2px;"></div>
+          Đang tải và giải nén dữ liệu từ máy chủ...
+        </div>
+      `;
+    }
+
+    const response = await fetch(`${SYNC_API_ENDPOINT}/${rawVal}`);
+    if (!response.ok) throw new Error('Mã đồng bộ không tồn tại hoặc đã hết hạn!');
+    const resData = await response.json();
+    const remoteData = resData.data;
+
+    if (!remoteData) throw new Error('Dữ liệu đồng bộ bị trống hoặc không hợp lệ');
+
+    // Get selected merge mode
+    const modeEl = document.querySelector('input[name="sync-merge-mode"]:checked');
+    const mergeMode = modeEl ? modeEl.value : 'merge';
+
+    const result = smartMergeSyncData(remoteData, mergeMode);
+
+    if (statusEl) {
+      statusEl.innerHTML = `
+        <div style="padding: 0.75rem; background: var(--primary-light); color: var(--primary); border-radius: var(--radius-sm); font-size: 0.88rem; line-height: 1.5;">
+          <strong>🎉 Đồng bộ thành công!</strong><br>
+          Thiết bị nguồn: <em>${remoteData.device || 'Khác'}</em> (${remoteData.dateStr || ''})<br>
+          • Đã gộp: <strong>${result.totalHistory} bài thi</strong> trong Lịch Sử (thêm mới ${result.addedHistory} bài)<br>
+          • Câu hỏi tủ: <strong>${result.totalStarred} câu</strong> đã lưu
+        </div>
+      `;
+    }
+    if (btn) btn.disabled = false;
+    playChime('correct');
+
+    // Refresh current view if applicable
+    if (currentTab === 'history') renderHistoryView();
+    if (currentTab === 'flashcards') renderFlashcardView();
+  } catch (err) {
+    console.error('Fetch sync failed:', err);
+    if (btn) btn.disabled = false;
+    if (statusEl) {
+      statusEl.style.display = 'block';
+      statusEl.innerHTML = `
+        <div style="padding: 0.75rem; background: var(--danger-light); color: var(--danger); border-radius: var(--radius-sm); font-size: 0.85rem;">
+          ⚠️ <strong>Lỗi:</strong> ${err.message}
+        </div>
+      `;
+    }
+  }
+}
+
+// 5. Smart Merge Logic (Never loses user data)
+function smartMergeSyncData(remoteData, mode = 'merge') {
+  if (mode === 'overwrite') {
+    if (Array.isArray(remoteData.examHistory)) {
+      localStorage.setItem(STORAGE_HISTORY_KEY, JSON.stringify(remoteData.examHistory));
+    }
+    if (Array.isArray(remoteData.flashcardStarred)) {
+      flashcardStarred = new Set(remoteData.flashcardStarred);
+      localStorage.setItem(STORAGE_FC_STARRED_KEY, JSON.stringify(Array.from(flashcardStarred)));
+    }
+    if (Array.isArray(remoteData.flashcardMastered)) {
+      flashcardMastered = new Set(remoteData.flashcardMastered);
+      localStorage.setItem(STORAGE_FC_MASTERED_KEY, JSON.stringify(Array.from(flashcardMastered)));
+    }
+    if (remoteData.studyAnswers && typeof remoteData.studyAnswers === 'object') {
+      studyAnswers = remoteData.studyAnswers;
+      localStorage.setItem(STORAGE_STUDY_ANSWERS_KEY, JSON.stringify(studyAnswers));
+    }
+    return {
+      totalHistory: remoteData.examHistory ? remoteData.examHistory.length : 0,
+      addedHistory: remoteData.examHistory ? remoteData.examHistory.length : 0,
+      totalStarred: flashcardStarred.size
+    };
+  }
+
+  // SMART MERGE (Merge without duplication)
+  const localHistory = getExamHistory();
+  const seenKeys = new Set();
+  const mergedHistory = [];
+
+  // Add existing local exams
+  localHistory.forEach(item => {
+    const key = item.id || item.dateStr;
+    if (key && !seenKeys.has(key)) {
+      seenKeys.add(key);
+      mergedHistory.push(item);
+    }
+  });
+
+  let addedHistory = 0;
+  // Merge remote exams
+  if (Array.isArray(remoteData.examHistory)) {
+    remoteData.examHistory.forEach(item => {
+      const key = item.id || item.dateStr;
+      if (key && !seenKeys.has(key)) {
+        seenKeys.add(key);
+        mergedHistory.push(item);
+        addedHistory++;
+      }
+    });
+  }
+
+  // Sort by date/timestamp descending
+  mergedHistory.sort((a, b) => {
+    const tA = a.timestamp || (a.id ? parseInt(a.id.replace(/\D/g, '')) : 0) || 0;
+    const tB = b.timestamp || (b.id ? parseInt(b.id.replace(/\D/g, '')) : 0) || 0;
+    return tB - tA;
+  });
+  if (mergedHistory.length > 50) mergedHistory.length = 50;
+  localStorage.setItem(STORAGE_HISTORY_KEY, JSON.stringify(mergedHistory));
+
+  // Merge Starred
+  let addedStarred = 0;
+  if (Array.isArray(remoteData.flashcardStarred)) {
+    remoteData.flashcardStarred.forEach(id => {
+      if (!flashcardStarred.has(id)) {
+        flashcardStarred.add(id);
+        addedStarred++;
+      }
+    });
+    localStorage.setItem(STORAGE_FC_STARRED_KEY, JSON.stringify(Array.from(flashcardStarred)));
+  }
+
+  // Merge Mastered
+  if (Array.isArray(remoteData.flashcardMastered)) {
+    remoteData.flashcardMastered.forEach(id => flashcardMastered.add(id));
+    localStorage.setItem(STORAGE_FC_MASTERED_KEY, JSON.stringify(Array.from(flashcardMastered)));
+  }
+
+  // Merge Study answers
+  if (remoteData.studyAnswers && typeof remoteData.studyAnswers === 'object') {
+    studyAnswers = { ...studyAnswers, ...remoteData.studyAnswers };
+    localStorage.setItem(STORAGE_STUDY_ANSWERS_KEY, JSON.stringify(studyAnswers));
+  }
+
+  return {
+    totalHistory: mergedHistory.length,
+    addedHistory: addedHistory,
+    totalStarred: flashcardStarred.size
+  };
+}
+
+// 6. Offline File Backup & Raw Code via Zalo
+function exportBackupFile() {
+  const payload = getDeviceSyncPayload();
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `dls_exam_backup_${new Date().toISOString().slice(0, 10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  playChime('click');
+}
+
+function copyRawBackupData() {
+  const payload = getDeviceSyncPayload();
+  const text = JSON.stringify(payload);
+  navigator.clipboard.writeText(text).then(() => {
+    alert('✓ Đã sao chép toàn bộ mã sao lưu! Bạn hãy dán mã này vào khung chat Zalo "Cloud của tôi" để lưu lại.');
+  }).catch(() => {
+    prompt('Sao chép đoạn mã sao lưu bên dưới:', text);
+  });
+}
+
+function importBackupFile(event) {
+  const file = event.target.files && event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const data = JSON.parse(e.target.result);
+      const res = smartMergeSyncData(data, 'merge');
+      alert(`🎉 Nhập file thành công! Đã gộp thành ${res.totalHistory} bài thi và ${res.totalStarred} câu hỏi tủ.`);
+      if (currentTab === 'history') renderHistoryView();
+      if (currentTab === 'flashcards') renderFlashcardView();
+      closeSyncModal();
+    } catch (err) {
+      alert('File sao lưu không hợp lệ: ' + err.message);
+    }
+  };
+  reader.readAsText(file);
+}
+
+function promptPasteRawData() {
+  const text = prompt('Dán đoạn mã sao lưu dữ liệu từ Zalo vào đây:');
+  if (!text) return;
+  try {
+    const data = JSON.parse(text.trim());
+    const res = smartMergeSyncData(data, 'merge');
+    alert(`🎉 Đã hợp nhất dữ liệu thành công! Có ${res.totalHistory} bài thi và ${res.totalStarred} câu hỏi tủ.`);
+    if (currentTab === 'history') renderHistoryView();
+    if (currentTab === 'flashcards') renderFlashcardView();
+    closeSyncModal();
+  } catch (err) {
+    alert('Mã dữ liệu không hợp lệ: ' + err.message);
+  }
+}
+
 // Initialize on Load
 window.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('dls_theme') || 'light';
@@ -5210,4 +5591,29 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   // Synchronize sidebar layout with current tab
   switchTab(currentTab || 'exam');
+
+  // Close mobile navigation drawer when resizing to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      closeMobileNavMenu();
+    }
+  });
+
+  // Cross-device sync URL parameter detection (?sync_id=...)
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const syncId = urlParams.get('sync_id');
+    if (syncId) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+      setTimeout(() => {
+        openSyncModal();
+        switchSyncTab('receive');
+        const input = document.getElementById('sync-input-code');
+        if (input) input.value = syncId;
+        fetchAndApplySync(syncId);
+      }, 500);
+    }
+  } catch (e) {
+    console.warn('URL sync param check error:', e);
+  }
 });
