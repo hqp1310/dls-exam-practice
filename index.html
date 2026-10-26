@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=16">
+  <link rel="stylesheet" href="styles.css?v=17">
 </head>
 <body>
   <!-- SKIP LINK (OpenDesign Web Interface Accessibility Rule) -->
@@ -84,6 +84,15 @@
       
       <!-- VIEW 1: EXAM MODE (80 Questions) -->
       <section id="view-exam">
+        <!-- 44h Curriculum Matrix Banner -->
+        <div class="exam-matrix-banner" id="exam-matrix-banner">
+          <div class="matrix-banner-content">
+            <span class="matrix-banner-icon" aria-hidden="true">🎯</span>
+            <div><strong>Ma trận 44h chuẩn hóa:</strong> Đề thi 80 câu bám sát đúng số tiết thực tế (4h: 7-8 câu, 1h: 2 câu), đã loại bỏ các chương thừa.</div>
+          </div>
+          <button class="matrix-info-btn" onclick="openMatrixModal()" title="Xem chi tiết phân bổ 80 câu theo số tiết">📊 Xem bảng ma trận</button>
+        </div>
+
         <div class="exam-controls-bar">
           <div class="progress-info">
             <span class="progress-text" id="progress-text">Tiến độ: 0/80 câu (0%)</span>
@@ -449,8 +458,70 @@
     </div>
   </div>
 
+  <!-- 44H CURRICULUM MATRIX MODAL -->
+  <div class="modal-overlay" id="matrix-modal">
+    <div class="modal-card matrix-modal-card">
+      <div class="sync-modal-header">
+        <div class="sync-title-wrap">
+          <div class="sync-icon-circle">🎯</div>
+          <div>
+            <h2 class="sync-modal-title">Ma Trận Đề Thi Chuẩn Dược Lâm Sàng (44h)</h2>
+            <p class="sync-modal-subtitle">Đối chiếu 100% thời lượng giảng dạy chính khóa và cấu trúc 80 câu</p>
+          </div>
+        </div>
+        <button class="btn-icon sync-close-btn" onclick="closeMatrixModal()" title="Đóng hộp thoại">✕</button>
+      </div>
+
+      <div class="matrix-table-wrap">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Tên Bài Giảng Theo Khung 44h</th>
+              <th>Số Tiết</th>
+              <th>Số Câu Trong Đề</th>
+              <th>Tỷ Lệ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Bài 1</td><td>Đại cương DLS; Nội dung và cách tiếp cận DLS</td><td>4h</td><td rowspan="2" class="merged-cell"><strong>10 câu</strong><br><small style="color: var(--primary);">(Gộp Bài 1 &amp; 5)</small></td><td rowspan="2" class="merged-cell">12.5%</td></tr>
+            <tr><td>Bài 5</td><td>Thông tin thuốc</td><td>2h</td></tr>
+            <tr><td>Bài 2</td><td>Biến đổi DĐH và SD thuốc ở BN suy gan, suy thận</td><td>2h</td><td><strong>4 câu</strong></td><td>5.0%</td></tr>
+            <tr><td>Bài 3</td><td>Tương tác thuốc &amp; Tương kỵ lâm sàng</td><td>4h</td><td><strong>7 câu</strong></td><td>8.75%</td></tr>
+            <tr><td>Bài 4</td><td>ADR và dị ứng thuốc</td><td>4h</td><td><strong>7 câu</strong></td><td>8.75%</td></tr>
+            <tr><td>Bài 6</td><td>XN LS và nhận định kết quả</td><td>4h</td><td><strong>7 câu</strong></td><td>8.75%</td></tr>
+            <tr><td>Bài 7</td><td>Sử dụng thuốc ở trẻ em</td><td>2h</td><td><strong>4 câu</strong></td><td>5.0%</td></tr>
+            <tr><td>Bài 8</td><td>Sử dụng thuốc ở người cao tuổi</td><td>1h</td><td><strong>2 câu</strong></td><td>2.5%</td></tr>
+            <tr><td>Bài 9</td><td>Sử dụng thuốc ở PNCT và CCB</td><td>3h</td><td><strong>5 câu</strong></td><td>6.25%</td></tr>
+            <tr class="row-muted"><td>Bài 10</td><td>Kiểm tra GHP (1)</td><td>0h</td><td>0 câu <small>(Giờ kiểm tra)</small></td><td>-</td></tr>
+            <tr class="row-highlight"><td>Bài 11</td><td>N/tắc SD kháng sinh trong nhiễm khuẩn</td><td>4h</td><td><strong>8 câu</strong> <small style="color: var(--primary); font-weight: 600;">(Trọng tâm)</small></td><td>10.0%</td></tr>
+            <tr><td>Bài 12</td><td>N/tắc SD glucocorticoid</td><td>4h</td><td><strong>7 câu</strong></td><td>8.75%</td></tr>
+            <tr><td>Bài 13</td><td>N/tắc SD thuốc giảm đau (NSAIDs, Opioid)</td><td>2h</td><td><strong>4 câu</strong></td><td>5.0%</td></tr>
+            <tr><td>Bài 14</td><td>N/tắc SD vit và k/chất (1)</td><td>2h</td><td><strong>4 câu</strong></td><td>5.0%</td></tr>
+            <tr><td>Bài 15</td><td>SD thuốc trong điều trị THA</td><td>2h</td><td><strong>4 câu</strong></td><td>5.0%</td></tr>
+            <tr><td>Bài 16</td><td>SD thuốc trong ĐT Tiêu chảy cấp / TE</td><td>4h</td><td><strong>7 câu</strong></td><td>8.75%</td></tr>
+            <tr class="row-muted"><td>Bài 17</td><td>SD thuốc trong COPD</td><td>0h</td><td>0 câu <small>(Tự học / Đọc thêm)</small></td><td>0%</td></tr>
+            <tr class="row-excluded"><td>Mở rộng</td><td>Loãng xương, Tránh thai &amp; Chuyển hóa</td><td>-</td><td><strong>0 câu (Đã loại trừ)</strong></td><td>0%</td></tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th colspan="2">TỔNG CỘNG CHÍNH KHÓA</th>
+              <th>44h</th>
+              <th>80 CÂU</th>
+              <th>100%</th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div class="matrix-note-box">
+        💡 <strong>Cam kết chuẩn hóa:</strong> Khi làm bài thi 80 câu, hệ thống hoàn toàn không lấy câu hỏi từ chương ngoài chương trình (như Loãng xương) và không lấy bài 0h (COPD). Bạn hoàn toàn yên tâm ôn tập đúng trọng tâm thi kết thúc học phần!
+      </div>
+    </div>
+  </div>
+
   <script src="questions_800.js"></script>
   <script src="flashcards.js"></script>
-  <script src="app.js?v=16"></script>
+  <script src="app.js?v=17"></script>
 </body>
 </html>

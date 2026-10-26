@@ -98,7 +98,35 @@ function shuffle(array) {
   return arr;
 }
 
-// Generate a brand new 80-question test from the 820-question bank
+// ============================================================================
+// MA TRẬN PHÂN BỔ 80 CÂU ĐỀ THI CHUẨN 100% THEO CHƯƠNG TRÌNH DƯỢC LÂM SÀNG (44H)
+// Phân bổ tỷ lệ số câu chuẩn theo số tiết lý thuyết thực tế:
+// - Bài 4h: 7-8 câu (Kháng sinh 8c, Tiêu chảy cấp TE 7c, Glucocorticoid 7c, Tương tác thuốc 7c, ADR 7c, XN lâm sàng 7c)
+// - Bài 6h (Bài 1 Đại cương 4h + Bài 5 Thông tin thuốc 2h): 10 câu
+// - Bài 3h (PNCT & CCB): 5 câu
+// - Bài 2h (DĐH suy gan thận 4c, Tăng huyết áp 4c, Giảm đau 4c, Trẻ em 4c, Vitamin & khoáng chất 4c): 4 câu/bài
+// - Bài 1h (Người cao tuổi): 2 câu
+// - Bài 17 (COPD 0h) và Chương ngoài chương trình (Loãng xương): 0 câu (loại bỏ hoàn toàn khỏi đề thi)
+// TỔNG CỘNG ĐÚNG CHÍNH XÁC: 80 CÂU / 44 GIỜ
+// ============================================================================
+const EXAM_MATRIX_44H = [
+  { chapter: "Kháng sinh & Kháng sinh dự phòng", lesson: "Bài 11", hours: 4, count: 8 },
+  { chapter: "Đại cương DLS & Thông tin thuốc", lesson: "Bài 1 & 5", hours: 6, count: 10 },
+  { chapter: "Tiêu chảy cấp ở trẻ em", lesson: "Bài 16", hours: 4, count: 7 },
+  { chapter: "Glucocorticoid & Phác đồ điều trị", lesson: "Bài 12", hours: 4, count: 7 },
+  { chapter: "Tương tác thuốc & Tương kỵ", lesson: "Bài 3", hours: 4, count: 7 },
+  { chapter: "ADR, Dị ứng & Sốc phản vệ", lesson: "Bài 4", hours: 4, count: 7 },
+  { chapter: "Xét nghiệm lâm sàng & Nhận định KQ", lesson: "Bài 6", hours: 4, count: 7 },
+  { chapter: "Sử dụng thuốc ở Phụ nữ có thai & CCB", lesson: "Bài 9", hours: 3, count: 5 },
+  { chapter: "Dược động học & Suy gan, thận", lesson: "Bài 2", hours: 2, count: 4 },
+  { chapter: "Điều trị Tăng huyết áp & Cấp cứu THA", lesson: "Bài 15", hours: 2, count: 4 },
+  { chapter: "Thuốc giảm đau", lesson: "Bài 13", hours: 2, count: 4 },
+  { chapter: "Sử dụng thuốc ở Trẻ em", lesson: "Bài 7", hours: 2, count: 4 },
+  { chapter: "Vitamin và chất khoáng", lesson: "Bài 14", hours: 2, count: 4 },
+  { chapter: "Sử dụng thuốc ở Người cao tuổi", lesson: "Bài 8", hours: 1, count: 2 }
+];
+
+// Generate a brand new 80-question test from the question bank following the 44h syllabus matrix
 // Shuffles question selection AND shuffles option positions (A, B, C, D)
 function generateRandomExam(force = false) {
   if (typeof ALL_EXAM_BANK === 'undefined' || !ALL_EXAM_BANK.length) {
@@ -107,36 +135,35 @@ function generateRandomExam(force = false) {
   }
 
   if (!force && !isExamSubmitted && Object.keys(userAnswers).length > 0) {
-    if (!confirm('Bạn đang làm bài thi dở dang. Bạn có chắc chắn muốn bỏ bài thi hiện tại và tạo đề thi mới không?')) {
+    if (!confirm('Bạn đang làm bài thi dở dang. Bạn có chắc chắn muốn bỏ bài thi hiện tại và tạo đề thi mới chuẩn 44h không?')) {
       return;
     }
   }
 
   clearExamDraft();
 
-  // 1. Get unique chapters to balance questions across syllabus
-  const chapters = [...new Set(ALL_EXAM_BANK.map(q => q.chapter))];
-  const quotaPerChapter = Math.max(1, Math.floor(80 / chapters.length));
   let chosenQuestions = [];
   const chosenStems = new Set();
 
-  chapters.forEach(ch => {
-    const chQuestions = ALL_EXAM_BANK.filter(q => q.chapter === ch);
+  // 1. Bốc câu hỏi chuẩn theo ma trận số tiết của 14 bài giảng chính khóa 44h
+  EXAM_MATRIX_44H.forEach(rule => {
+    const chQuestions = ALL_EXAM_BANK.filter(q => q.chapter === rule.chapter);
     const shuffled = shuffle(chQuestions);
+    let picked = 0;
     for (const item of shuffled) {
       if (!chosenStems.has(item.question)) {
         chosenQuestions.push(item);
         chosenStems.add(item.question);
-        if (chosenQuestions.filter(q => q.chapter === ch).length >= quotaPerChapter) {
-          break;
-        }
+        picked++;
+        if (picked >= rule.count) break;
       }
     }
   });
 
-  // Fill up to exactly 80 questions randomly from remaining questions
+  // Đảm bảo đủ chính xác 80 câu (chỉ bù từ các chương nằm trong chương trình 44h)
   if (chosenQuestions.length < 80) {
-    const remaining = ALL_EXAM_BANK.filter(q => !chosenStems.has(q.question));
+    const allowedChapters = new Set(EXAM_MATRIX_44H.map(r => r.chapter));
+    const remaining = ALL_EXAM_BANK.filter(q => allowedChapters.has(q.chapter) && !chosenStems.has(q.question));
     const shuffledRemaining = shuffle(remaining);
     for (const item of shuffledRemaining) {
       chosenQuestions.push(item);
@@ -1211,11 +1238,51 @@ function getFilteredTopicQuestions() {
   return list;
 }
 
+const TOPIC_ORDER_44H = [
+  "Tất cả",
+  "Đại cương DLS & Thông tin thuốc",
+  "Dược động học & Suy gan, thận",
+  "Tương tác thuốc & Tương kỵ",
+  "ADR, Dị ứng & Sốc phản vệ",
+  "Xét nghiệm lâm sàng & Nhận định KQ",
+  "Sử dụng thuốc ở Trẻ em",
+  "Sử dụng thuốc ở Người cao tuổi",
+  "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+  "Kháng sinh & Kháng sinh dự phòng",
+  "Glucocorticoid & Phác đồ điều trị",
+  "Thuốc giảm đau",
+  "Vitamin và chất khoáng",
+  "Điều trị Tăng huyết áp & Cấp cứu THA",
+  "Tiêu chảy cấp ở trẻ em",
+  "Hen phế quản & COPD",
+  "Loãng xương, Tránh thai & Chuyển hóa"
+];
+
+const TOPIC_CHIP_LABELS_44H = {
+  "Tất cả": "Tất cả",
+  "Đại cương DLS & Thông tin thuốc": "Bài 1 & 5: Đại Cương DLS & TT Thuốc (6h)",
+  "Dược động học & Suy gan, thận": "Bài 2: DĐH ở BN Suy Gan, Thận (2h)",
+  "Tương tác thuốc & Tương kỵ": "Bài 3: Tương Tác Thuốc (4h)",
+  "ADR, Dị ứng & Sốc phản vệ": "Bài 4: ADR & Dị Ứng Thuốc (4h)",
+  "Xét nghiệm lâm sàng & Nhận định KQ": "Bài 6: Xét Nghiệm Lâm Sàng (4h)",
+  "Sử dụng thuốc ở Trẻ em": "Bài 7: SD Thuốc ở Trẻ Em (2h)",
+  "Sử dụng thuốc ở Người cao tuổi": "Bài 8: SD Thuốc ở Người Cao Tuổi (1h)",
+  "Sử dụng thuốc ở Phụ nữ có thai & CCB": "Bài 9: SD Thuốc ở PNCT & CCB (3h)",
+  "Kháng sinh & Kháng sinh dự phòng": "Bài 11: N/tắc Dùng Kháng Sinh (4h)",
+  "Glucocorticoid & Phác đồ điều trị": "Bài 12: N/tắc Dùng Glucocorticoid (4h)",
+  "Thuốc giảm đau": "Bài 13: Thuốc Giảm Đau (2h)",
+  "Vitamin và chất khoáng": "Bài 14: Vitamin & Khoáng Chất (2h)",
+  "Điều trị Tăng huyết áp & Cấp cứu THA": "Bài 15: Điều Trị Tăng Huyết Áp (2h)",
+  "Tiêu chảy cấp ở trẻ em": "Bài 16: Điều Trị Tiêu Chảy Cấp / TE (4h)",
+  "Hen phế quản & COPD": "Bài 17: Thuốc Trong COPD (0h - Đọc Thêm)",
+  "Loãng xương, Tránh thai & Chuyển hóa": "Tham khảo mở rộng: Loãng Xương (Không thi)"
+};
+
 function renderTopicStudyView() {
   const container = document.getElementById('view-topic');
   if (!container) return;
 
-  const chapters = ["Tất cả", ...new Set(ALL_EXAM_BANK.map(q => q.chapter))];
+  const chapters = TOPIC_ORDER_44H;
   const stats = getTopicChapterStats();
   const filteredQuestions = getFilteredTopicQuestions();
   const visibleQuestions = filteredQuestions.slice(0, topicVisibleLimit);
@@ -1226,9 +1293,10 @@ function renderTopicStudyView() {
     <div class="topic-selector-bar">`;
   chapters.forEach(top => {
     const count = top === 'Tất cả' ? ALL_EXAM_BANK.length : ALL_EXAM_BANK.filter(q => q.chapter === top).length;
+    const label = TOPIC_CHIP_LABELS_44H[top] || top;
     chipsHtml += `
       <button class="topic-chip ${top === activeTopicFilter ? 'active' : ''}" data-topic="${top.replace(/"/g, '&quot;')}" onclick="filterTopic('${top.replace(/'/g, "\\'")}')">
-        <span>${top}</span>
+        <span>${label}</span>
         <span class="chip-count">${count}</span>
       </button>
     `;
@@ -1236,11 +1304,12 @@ function renderTopicStudyView() {
   chipsHtml += `</div></div>`;
 
   // 2. MOBILE TOPIC DASHBOARD
+  const displayTitle = TOPIC_CHIP_LABELS_44H[activeTopicFilter] || activeTopicFilter;
   const dashboardHtml = `
     <div class="topic-dashboard">
       <div class="topic-dash-header">
         <div class="topic-dash-title-wrap">
-          <div class="topic-dash-title">${activeTopicFilter}</div>
+          <div class="topic-dash-title">${displayTitle}</div>
           <div class="topic-dash-sub" id="topic-progress-text">Tiến độ: ${stats.answered}/${stats.total} câu (${stats.pct}% đúng)</div>
         </div>
         <div class="topic-dash-actions">
@@ -1537,7 +1606,7 @@ function filterTopic(topic) {
 
     // 2. Update dashboard title and actions
     const titleEl = container.querySelector('.topic-dash-title');
-    if (titleEl) titleEl.textContent = topic;
+    if (titleEl) titleEl.textContent = TOPIC_CHIP_LABELS_44H[topic] || topic;
 
     const resetBtn = container.querySelector('.btn-topic-reset');
     if (resetBtn) resetBtn.setAttribute('onclick', `resetTopicAnswers('${topic.replace(/'/g, "\\'")}')`);
@@ -5617,6 +5686,22 @@ function promptPasteRawData() {
     closeSyncModal();
   } catch (err) {
     alert('Mã dữ liệu không hợp lệ: ' + err.message);
+  }
+}
+
+function openMatrixModal() {
+  const modal = document.getElementById('matrix-modal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeMatrixModal() {
+  const modal = document.getElementById('matrix-modal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
   }
 }
 

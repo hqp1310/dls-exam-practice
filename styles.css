@@ -4375,3 +4375,136 @@ main.app-main {
     grid-template-columns: 1fr;
   }
 }
+
+/* 44H CURRICULUM MATRIX BANNER & MODAL */
+.exam-matrix-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(99, 102, 241, 0.08) 100%);
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 0.95rem;
+  margin-bottom: 0.85rem;
+}
+
+.matrix-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.matrix-banner-icon {
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.matrix-info-btn {
+  background: #ffffff;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.matrix-info-btn:hover {
+  background: var(--primary);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.matrix-modal-card {
+  max-width: 680px;
+  width: 95%;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.matrix-table-wrap {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 52vh;
+  margin: 0.85rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  text-align: left;
+}
+
+.matrix-table th, .matrix-table td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.matrix-table th {
+  background: var(--bg-surface-hover);
+  color: var(--text-main);
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.matrix-table tfoot th {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 700;
+  position: sticky;
+  bottom: 0;
+}
+
+.matrix-table tr.row-highlight {
+  background: rgba(14, 165, 233, 0.06);
+  font-weight: 500;
+}
+
+.matrix-table tr.row-muted {
+  color: var(--text-muted);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.matrix-table tr.row-excluded {
+  background: rgba(239, 68, 68, 0.05);
+  color: var(--danger);
+}
+
+.matrix-table td.merged-cell {
+  vertical-align: middle;
+  background: rgba(99, 102, 241, 0.03);
+}
+
+.matrix-note-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 640px) {
+  .exam-matrix-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .matrix-info-btn {
+    align-self: flex-end;
+  }
+}
