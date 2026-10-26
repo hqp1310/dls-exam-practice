@@ -4769,10 +4769,26 @@ function renderDetailedReviewView() {
 
   const exam = currentReviewExam;
   const questions = exam.questions || [];
-  const wrongCount = questions.filter(q => q.userAnswer !== null && !q.isCorrect).length;
-  const correctCount = questions.filter(q => q.isCorrect).length;
-  const skippedCount = questions.filter(q => q.userAnswer === null).length;
+  const intact = isExamIntact(exam);
+  const correctCount = typeof exam.correctCount === 'number' ? exam.correctCount : questions.filter(q => q.isCorrect).length;
+  const wrongCount = typeof exam.wrongCount === 'number' ? exam.wrongCount : questions.filter(q => q.userAnswer !== null && !q.isCorrect).length;
+  const skippedCount = typeof exam.unansweredCount === 'number' ? exam.unansweredCount : questions.filter(q => q.userAnswer === null).length;
   const flaggedCount = questions.filter(q => q.isFlagged).length;
+
+  let syncWarningBanner = '';
+  if (!intact) {
+    syncWarningBanner = `
+      <div style="margin: 0.5rem 0 0.85rem 0; padding: 0.75rem 1rem; background: rgba(245, 158, 11, 0.1); border: 1px solid #f59e0b; border-radius: var(--radius-sm); color: var(--text-main); font-size: 0.85rem; line-height: 1.5;">
+        <div style="display: flex; align-items: center; gap: 0.4rem; font-weight: 700; color: #d97706; margin-bottom: 0.25rem;">
+          <span>⚠️</span> Lưu ý đồng bộ: Điểm thi thực tế của bạn là ${exam.score10}/10 (${exam.correctCount}/${exam.totalQuestions || 80} câu đúng)
+        </div>
+        <div>
+          Bài thi này từng đồng bộ từ điện thoại bằng phiên bản cũ khiến vị trí đáp án hiển thị trên máy tính bị lệch. 
+          <strong>Cách khôi phục chuẩn 100%:</strong> Mở lại ứng dụng trên điện thoại (nơi làm bài), chọn <strong>"Đồng bộ & Sao lưu"</strong> để tạo mã mới và quét lại vào máy tính, toàn bộ ${exam.correctCount} câu đúng và đáp án chi tiết sẽ hiển thị khớp hoàn toàn!
+        </div>
+      </div>
+    `;
+  }
 
   let html = `
     <div class="review-view-container">
@@ -4829,6 +4845,8 @@ function renderDetailedReviewView() {
           </div>
         </div>
       </div>
+
+      ${syncWarningBanner}
 
       <!-- QUESTIONS LIST CONTAINER -->
       <div id="review-questions-list" style="display: flex; flex-direction: column; gap: 1rem;">
@@ -5335,39 +5353,29 @@ function switchSyncTab(tab) {
   });
 }
 
-// 1. Pack current device data (Minified with question IDs to stay lightweight & fast)
+// Helper to verify if an exam object in history has fully intact questions and matching scores
+function isExamIntact(exam) {
+  if (!exam || !Array.isArray(exam.questions) || !exam.questions.length) return false;
+  if (!exam.questions[0].options || !Array.isArray(exam.questions[0].options)) return false;
+  if (typeof exam.correctCount === 'number' && exam.correctCount > 0) {
+    const matching = exam.questions.filter(q => q && q.isCorrect).length;
+    return matching === exam.correctCount;
+  }
+  return true;
+}
+
+// 1. Pack current device data (Full fidelity with complete questions & shuffled options intact)
 function getDeviceSyncPayload() {
   const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
   const rawHistory = getExamHistory();
-  const minifiedHistory = rawHistory.map(exam => {
-    const answers = (exam.questions || []).map(q => ({
-      i: q.id,
-      a: q.userAnswer,
-      f: q.isFlagged ? 1 : 0
-    }));
-    return {
-      id: exam.id,
-      timestamp: exam.timestamp || Date.now(),
-      dateStr: exam.dateStr,
-      score10: exam.score10,
-      pct: exam.pct,
-      correctCount: exam.correctCount,
-      wrongCount: exam.wrongCount,
-      unansweredCount: exam.unansweredCount,
-      totalQuestions: exam.totalQuestions || 80,
-      timeUsedSec: exam.timeUsedSec,
-      timeUsedStr: exam.timeUsedStr,
-      rankText: exam.rankText,
-      answers: answers
-    };
-  });
 
+  // Send full intact exam history directly to preserve exact shuffled option positions and true answers
   return {
-    version: '1.0',
+    version: '2.0',
     timestamp: Date.now(),
     dateStr: new Date().toLocaleString('vi-VN'),
     device: isMobile ? 'Điện thoại' : 'Máy tính',
-    examHistory: minifiedHistory,
+    examHistory: rawHistory,
     flashcardStarred: Array.from(flashcardStarred),
     flashcardMastered: Array.from(flashcardMastered),
     studyAnswers: studyAnswers || {},
@@ -5375,10 +5383,10 @@ function getDeviceSyncPayload() {
   };
 }
 
-// Rehydrate exam questions from ALL_EXAM_BANK
+// Rehydrate exam questions from ALL_EXAM_BANK (fallback only for legacy v1 payloads)
 function rehydrateExam(exam) {
-  if (exam.questions && exam.questions.length && exam.questions[0].question) {
-    return exam; // already has full question text
+  if (exam.questions && exam.questions.length && exam.questions[0].question && Array.isArray(exam.questions[0].options)) {
+    return exam; // already has full question text and options preserved
   }
   const bankMap = new Map();
   if (typeof ALL_EXAM_BANK !== 'undefined') {
@@ -5565,32 +5573,44 @@ function smartMergeSyncData(remoteData, mode = 'merge') {
     };
   }
 
-  // SMART MERGE (Merge without duplication)
+  // SMART MERGE (Merge without duplication, and upgrade corrupted exams with intact ones)
   const localHistory = getExamHistory();
-  const seenKeys = new Set();
-  const mergedHistory = [];
+  const historyMap = new Map();
 
   // Add existing local exams
   localHistory.forEach(item => {
     const key = item.id || item.dateStr;
-    if (key && !seenKeys.has(key)) {
-      seenKeys.add(key);
-      mergedHistory.push(item);
+    if (key) {
+      historyMap.set(key, item);
     }
   });
 
   let addedHistory = 0;
+  let upgradedHistory = 0;
   // Merge remote exams
   if (Array.isArray(remoteData.examHistory)) {
     remoteData.examHistory.forEach(item => {
       const key = item.id || item.dateStr;
-      if (key && !seenKeys.has(key)) {
-        seenKeys.add(key);
-        mergedHistory.push(rehydrateExam(item));
+      if (!key) return;
+      const incoming = rehydrateExam(item);
+
+      if (!historyMap.has(key)) {
+        historyMap.set(key, incoming);
         addedHistory++;
+      } else {
+        // If local exam is corrupted (questions don't match score) but remote is intact, upgrade!
+        const existing = historyMap.get(key);
+        const existingIntact = isExamIntact(existing);
+        const incomingIntact = isExamIntact(incoming);
+        if (!existingIntact && incomingIntact) {
+          historyMap.set(key, incoming);
+          upgradedHistory++;
+        }
       }
     });
   }
+
+  const mergedHistory = Array.from(historyMap.values());
 
   // Sort by date/timestamp descending
   mergedHistory.sort((a, b) => {
