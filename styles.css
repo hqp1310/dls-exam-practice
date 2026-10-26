@@ -641,6 +641,100 @@ main.app-main.full-width-view .palette-container {
   border: 1px solid var(--border);
 }
 
+/* University Source Badges */
+.badge-source-hup {
+  background: #ede9fe;
+  color: #6d28d9;
+  border: 1px solid #c4b5fd;
+}
+[data-theme="dark"] .badge-source-hup {
+  background: rgba(109, 40, 217, 0.25);
+  color: #c4b5fd;
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.badge-source-ump {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #7dd3fc;
+}
+[data-theme="dark"] .badge-source-ump {
+  background: rgba(2, 132, 199, 0.25);
+  color: #7dd3fc;
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.badge-source-hmu {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+[data-theme="dark"] .badge-source-hmu {
+  background: rgba(220, 38, 38, 0.25);
+  color: #fca5a5;
+  border-color: rgba(248, 113, 113, 0.4);
+}
+
+.badge-source-byt {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+[data-theme="dark"] .badge-source-byt {
+  background: rgba(100, 116, 139, 0.25);
+  color: #cbd5e1;
+  border-color: rgba(148, 163, 184, 0.3);
+}
+
+/* University Filter Pills */
+.school-filter-ribbon {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding: 0.4rem 0.2rem;
+  margin-bottom: 0.75rem;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.school-filter-ribbon::-webkit-scrollbar {
+  display: none;
+}
+.school-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+.school-pill:hover {
+  background: var(--surface-alt);
+  color: var(--text-main);
+  border-color: var(--border-hover);
+}
+.school-pill.active {
+  background: var(--primary-light);
+  color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.15);
+}
+
+.uni-exam-card {
+  transition: all 0.2s ease;
+}
+.uni-exam-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: var(--primary) !important;
+}
+
 .btn-flag {
   background: transparent;
   border: 1px solid var(--border);

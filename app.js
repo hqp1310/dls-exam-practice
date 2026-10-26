@@ -11,6 +11,7 @@ let examTimer = null;
 const EXAM_DURATION_MINUTES = 80;
 let timeRemaining = EXAM_DURATION_MINUTES * 60; // 80 minutes (4800 seconds)
 let activeTopicFilter = 'Tất cả';
+let topicSourceFilter = 'all'; // 'all' | 'HUP' | 'UMP' | 'HMU' | 'BYT'
 let studyAnswers = {};
 
 // Vietnamese Text-To-Speech (TTS) State
@@ -205,6 +206,8 @@ function generateRandomExam(force = false) {
       id: q.id,
       examNum: idx + 1,
       chapter: q.chapter,
+      source: q.source || "BYT",
+      sourceName: q.sourceName || "Bộ Y tế (Chuẩn Quốc gia)",
       question: q.question,
       options: shuffledOptions,
       correct: newCorrectIdx,
@@ -231,6 +234,118 @@ function generateRandomExam(force = false) {
   updateTimerDisplay();
   updateTimerButton();
   renderExamQuestion(0);
+  saveExamDraft();
+  playChime('click');
+}
+
+// Render University Source Badge
+function renderSourceBadge(source, sourceName) {
+  if (!source) return '';
+  let badgeClass = 'badge-source-byt';
+  let icon = '📋';
+  let label = sourceName || 'Bộ Y tế';
+
+  if (source === 'HUP') {
+    badgeClass = 'badge-source-hup';
+    icon = '🏛️';
+    label = 'ĐH Dược Hà Nội';
+  } else if (source === 'UMP') {
+    badgeClass = 'badge-source-ump';
+    icon = '🏛️';
+    label = 'ĐH Y Dược TP.HCM';
+  } else if (source === 'HMU') {
+    badgeClass = 'badge-source-hmu';
+    icon = '🏛️';
+    label = 'ĐH Y Hà Nội';
+  } else {
+    badgeClass = 'badge-source-byt';
+    icon = '📋';
+    label = 'Chuẩn BYT';
+  }
+  return `<span class="badge ${badgeClass}" title="Nguồn đề: ${sourceName || label}">${icon} ${label}</span>`;
+}
+
+// University Exam Modal & Generation
+function openUniversityExamModal() {
+  const modal = document.getElementById('modal-university-exam');
+  if (modal) modal.classList.add('active');
+  playChime('click');
+}
+
+function closeUniversityExamModal() {
+  const modal = document.getElementById('modal-university-exam');
+  if (modal) modal.classList.remove('active');
+}
+
+function generateUniversityExam(source = 'all', force = false) {
+  if (typeof ALL_EXAM_BANK === 'undefined' || !ALL_EXAM_BANK.length) return;
+
+  if (!force && !isExamSubmitted && Object.keys(userAnswers).length > 0) {
+    if (!confirm('Bạn đang làm bài thi dở dang. Bạn có chắc chắn muốn chuyển sang đề thi mới không?')) {
+      return;
+    }
+  }
+
+  closeUniversityExamModal();
+  clearExamDraft();
+
+  if (source === 'all' || source === 'BYT') {
+    return generateRandomExam(true);
+  }
+
+  let pool = [];
+  let targetCount = 40;
+
+  if (source === 'HUP') {
+    pool = ALL_EXAM_BANK.filter(q => q.source === 'HUP');
+    targetCount = pool.length;
+  } else if (source === 'UMP') {
+    pool = ALL_EXAM_BANK.filter(q => q.source === 'UMP');
+    targetCount = pool.length;
+  } else if (source === 'HMU') {
+    pool = ALL_EXAM_BANK.filter(q => q.source === 'HMU');
+    targetCount = pool.length;
+  }
+
+  let chosen = shuffle(pool).slice(0, targetCount);
+
+  EXAM_QUESTIONS = chosen.map((q, idx) => {
+    const originalCorrectText = q.options[q.correct];
+    const shuffledOptions = shuffle(q.options);
+    const newCorrectIdx = shuffledOptions.indexOf(originalCorrectText);
+
+    return {
+      id: q.id,
+      examNum: idx + 1,
+      chapter: q.chapter,
+      source: q.source || "BYT",
+      sourceName: q.sourceName || "Bộ Y tế (Chuẩn Quốc gia)",
+      question: q.question,
+      options: shuffledOptions,
+      correct: newCorrectIdx,
+      explanation: q.explanation,
+      reference: q.reference
+    };
+  });
+
+  userAnswers = {};
+  flaggedQuestions.clear();
+  isExamSubmitted = false;
+  isExamStarted = false;
+  isExamPaused = false;
+  timeRemaining = targetCount * 60; // 1 min per question (40 mins)
+
+  if (examTimer) {
+    clearInterval(examTimer);
+    examTimer = null;
+  }
+  stopSpeaking();
+
+  if (timerWidget) timerWidget.classList.remove('warning', 'paused');
+  updateTimerDisplay();
+  updateTimerButton();
+  renderExamQuestion(0);
+  updatePalette();
   saveExamDraft();
   playChime('click');
 }
@@ -803,9 +918,10 @@ function renderExamQuestion(index) {
   let html = `
     ${notStartedBanner}
     <div class="question-meta">
-      <div class="badge-group">
+      <div class="badge-group" style="flex-wrap: wrap;">
         <span class="badge badge-num">Câu ${index + 1} / ${EXAM_QUESTIONS.length}</span>
         <span class="badge badge-category">${q.chapter}</span>
+        ${renderSourceBadge(q.source, q.sourceName)}
       </div>
       <button class="btn-flag ${isFlagged ? 'active' : ''}" id="flag-btn" onclick="toggleFlag(${q.id})">
         <span>★</span> ${isFlagged ? 'Đã đánh dấu' : 'Đánh dấu xem lại'}
@@ -1108,6 +1224,8 @@ function submitExam() {
       id: q.id,
       examNum: idx + 1,
       chapter: q.chapter,
+      source: q.source || "BYT",
+      sourceName: q.sourceName || "Bộ Y tế (Chuẩn Quốc gia)",
       question: q.question,
       options: q.options,
       correct: q.correct,
@@ -1192,9 +1310,13 @@ function saveTopicCustomOrder() {
 }
 
 function getTopicChapterStats() {
-  const baseList = activeTopicFilter === 'Tất cả'
+  let baseList = activeTopicFilter === 'Tất cả'
     ? ALL_EXAM_BANK
     : ALL_EXAM_BANK.filter(q => q.chapter === activeTopicFilter);
+
+  if (topicSourceFilter && topicSourceFilter !== 'all') {
+    baseList = baseList.filter(q => q.source === topicSourceFilter);
+  }
 
   const total = baseList.length;
   let correct = 0;
@@ -1216,6 +1338,10 @@ function getFilteredTopicQuestions() {
   let list = activeTopicFilter === 'Tất cả'
     ? ALL_EXAM_BANK
     : ALL_EXAM_BANK.filter(q => q.chapter === activeTopicFilter);
+
+  if (topicSourceFilter && topicSourceFilter !== 'all') {
+    list = list.filter(item => item.source === topicSourceFilter);
+  }
 
   // If a custom shuffled question order exists for this topic
   if (topicCustomOrder[activeTopicFilter] && Array.isArray(topicCustomOrder[activeTopicFilter])) {
@@ -1313,6 +1439,35 @@ function renderTopicStudyView() {
   });
   chipsHtml += `</div></div>`;
 
+  // 1b. SCHOOL SOURCE FILTER RIBBON
+  const schoolOptions = [
+    { id: 'all', label: 'Tất cả nguồn' },
+    { id: 'HUP', label: '🏛️ ĐH Dược Hà Nội' },
+    { id: 'UMP', label: '🏛️ ĐH Y Dược TP.HCM' },
+    { id: 'HMU', label: '🏛️ ĐH Y Hà Nội' },
+    { id: 'BYT', label: '📋 Chuẩn Bộ Y tế' }
+  ];
+
+  const basePoolForCount = activeTopicFilter === 'Tất cả'
+    ? ALL_EXAM_BANK
+    : ALL_EXAM_BANK.filter(q => q.chapter === activeTopicFilter);
+
+  let schoolPillsHtml = `
+    <div class="school-filter-ribbon">
+  `;
+  schoolOptions.forEach(opt => {
+    const count = (opt.id === 'all')
+      ? basePoolForCount.length
+      : basePoolForCount.filter(q => q.source === opt.id).length;
+    const isActive = topicSourceFilter === opt.id;
+    schoolPillsHtml += `
+      <button class="school-pill ${isActive ? 'active' : ''}" onclick="setTopicSourceFilter('${opt.id}')">
+        ${opt.label} (${count})
+      </button>
+    `;
+  });
+  schoolPillsHtml += `</div>`;
+
   // 2. MOBILE TOPIC DASHBOARD
   const displayTitle = TOPIC_CHIP_LABELS_44H[activeTopicFilter] || activeTopicFilter;
   const dashboardHtml = `
@@ -1406,7 +1561,7 @@ function renderTopicStudyView() {
     `;
   }
 
-  container.innerHTML = chipsHtml + dashboardHtml + listHtml + loadMoreHtml;
+  container.innerHTML = chipsHtml + schoolPillsHtml + dashboardHtml + listHtml + loadMoreHtml;
 
   // Auto-center active chapter chip in the horizontal ribbon
   setTimeout(() => {
@@ -1415,6 +1570,13 @@ function renderTopicStudyView() {
       activeChip.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
   }, 40);
+}
+
+function setTopicSourceFilter(src) {
+  topicSourceFilter = src;
+  topicVisibleLimit = 25;
+  renderTopicStudyView();
+  playChime('click');
 }
 
 function renderTopicQuestionCardsHtml(questionsList) {
@@ -1484,6 +1646,7 @@ function renderTopicQuestionCardsHtml(questionsList) {
         <div class="question-meta">
           <span class="badge badge-num">Câu ${idx + 1} (Mã #${q.id})</span>
           <span class="badge badge-category">${q.chapter}</span>
+          ${renderSourceBadge(q.source, q.sourceName)}
           <div class="topic-status-badge-wrap" style="margin-left: auto;">
             ${badgeStatusHtml}
           </div>
@@ -4940,8 +5103,9 @@ function renderDetailedReviewQuestions() {
       <div class="review-question-card ${statusClass}">
         <div class="review-q-header">
           <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">
-            <span class="badge badge-num">Câu ${q.examNum} / 80</span>
+            <span class="badge badge-num">Câu ${q.examNum} / ${currentReviewExam && currentReviewExam.questions ? currentReviewExam.questions.length : 80}</span>
             <span class="badge badge-category">${q.chapter}</span>
+            ${renderSourceBadge(q.source, q.sourceName)}
             ${q.isFlagged ? '<span style="color: var(--warning); font-size: 0.85rem; font-weight: 600;">★ Đã đánh dấu</span>' : ''}
           </div>
           ${statusBadge}
