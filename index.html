@@ -84,13 +84,18 @@
       
       <!-- VIEW 1: EXAM MODE (80 Questions) -->
       <section id="view-exam">
-        <!-- 44h Curriculum Matrix Banner -->
+        <!-- 44h Curriculum Matrix & Coverage Banner -->
         <div class="exam-matrix-banner" id="exam-matrix-banner">
           <div class="matrix-banner-content">
             <span class="matrix-banner-icon" aria-hidden="true">🎯</span>
-            <div><strong>Ma trận 44h chuẩn hóa:</strong> Đề thi 80 câu bám sát đúng số tiết thực tế (4h: 7-8 câu, 1h: 2 câu), đã loại bỏ các chương thừa.</div>
+            <div><strong>Ma trận 44h chuẩn hóa:</strong> Đề thi 80 câu bám sát đúng số tiết thực tế, đã gọt sạch gợi ý lộ liễu.</div>
           </div>
-          <button class="matrix-info-btn" onclick="openMatrixModal()" title="Xem chi tiết phân bổ 80 câu theo số tiết">📊 Xem bảng ma trận</button>
+          <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">
+            <button class="matrix-info-btn coverage-info-btn" onclick="openCoverageModal()" title="Xem độ phủ ngân hàng 1.222 câu hỏi bạn đã từng làm">
+              📈 Độ phủ kho: <span id="header-coverage-badge">-- / 1.222 (0%)</span>
+            </button>
+            <button class="matrix-info-btn" onclick="openMatrixModal()" title="Xem chi tiết phân bổ 80 câu theo số tiết">📊 Ma trận 44h</button>
+          </div>
         </div>
 
         <div class="exam-controls-bar">
@@ -101,8 +106,12 @@
             </div>
           </div>
           <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
-            <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary);" onclick="generateRandomExam()" title="Chọn ngẫu nhiên 80 câu từ kho 1.222 câu chuẩn 44h và xáo trộn vị trí đáp án">
-              🎲 Tạo Đề Random Mới (Đảo đáp án)
+            <label class="toggle-unseen-label" title="Khi bật, hệ thống sẽ ưu tiên chọn các câu bạn CHƯA TỪNG LÀM để quét sạch toàn bộ 1.222 câu nhanh nhất">
+              <input type="checkbox" id="chk-prioritize-unseen" checked onchange="togglePrioritizeUnseen(this.checked)">
+              <span>🎯 Ưu tiên câu chưa làm</span>
+            </label>
+            <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary);" onclick="generateRandomExam()" title="Chọn 80 câu từ kho 1.222 câu chuẩn 44h và xáo trộn vị trí đáp án">
+              🎲 Tạo Đề Random Mới
             </button>
             <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem;" onclick="confirmSubmitExam()">
               Nộp bài sớm
@@ -520,8 +529,22 @@
     </div>
   </div>
 
-  <script src="questions_800.js?v=20"></script>
+  <!-- Modal: Bank Coverage 1,222 Questions -->
+  <div class="modal" id="modal-coverage">
+    <div class="modal-backdrop" onclick="closeCoverageModal()"></div>
+    <div class="modal-card matrix-modal-card">
+      <div class="modal-header">
+        <div class="modal-title">📈 TIẾN ĐỘ ĐỘ PHỦ KHO 1.222 CÂU HỎI</div>
+        <button class="modal-close" onclick="closeCoverageModal()">&times;</button>
+      </div>
+      <div id="coverage-modal-body">
+        <!-- Injected by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <script src="questions_800.js?v=21"></script>
   <script src="flashcards.js"></script>
-  <script src="app.js?v=20"></script>
+  <script src="app.js?v=21"></script>
 </body>
 </html>

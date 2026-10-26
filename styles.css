@@ -4499,12 +4499,94 @@ main.app-main {
   line-height: 1.45;
 }
 
+/* Coverage Tracker & Unseen Prioritization Styles */
+.coverage-info-btn {
+  background: var(--surface);
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+}
+
+.coverage-info-btn:hover {
+  background: var(--secondary);
+  color: #ffffff;
+}
+
+.toggle-unseen-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-light);
+  border: 1px solid rgba(5, 150, 105, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.toggle-unseen-label:hover {
+  background: rgba(5, 150, 105, 0.25);
+}
+
+.toggle-unseen-label input[type="checkbox"] {
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.coverage-stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.65rem;
+  margin-bottom: 0.85rem;
+}
+
+.coverage-card {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.85rem;
+  text-align: center;
+}
+
+.coverage-card .card-val {
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+.coverage-card .card-lbl {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.coverage-progress-bar {
+  height: 8px;
+  background: var(--border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin: 0.5rem 0 0.85rem 0;
+  display: flex;
+}
+
+.coverage-bar-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.coverage-bar-fill.correct { background: var(--primary); }
+.coverage-bar-fill.wrong { background: var(--danger); }
+
 @media (max-width: 640px) {
   .exam-matrix-banner {
     flex-direction: column;
     align-items: flex-start;
   }
   .matrix-info-btn {
-    align-self: flex-end;
+    align-self: flex-start;
   }
 }

@@ -25,6 +25,13 @@ let currentReviewExam = null; // null for list of exams, object for single exam 
 let reviewFilter = 'all'; // 'all' | 'wrong' | 'correct' | 'skipped' | 'flagged'
 let reviewSearchQuery = '';
 let lastSubmittedExamId = null;
+let prioritizeUnseenQuestions = localStorage.getItem('dls_prioritize_unseen') !== '0';
+function togglePrioritizeUnseen(val) {
+  prioritizeUnseenQuestions = !!val;
+  try {
+    localStorage.setItem('dls_prioritize_unseen', prioritizeUnseenQuestions ? '1' : '0');
+  } catch (e) {}
+}
 
 // Draft persistence functions
 function saveExamDraft() {
@@ -100,14 +107,6 @@ function shuffle(array) {
 
 // ============================================================================
 // MA TRẬN PHÂN BỔ 80 CÂU ĐỀ THI CHUẨN 100% THEO CHƯƠNG TRÌNH DƯỢC LÂM SÀNG (44H)
-// Phân bổ tỷ lệ số câu chuẩn theo số tiết lý thuyết thực tế:
-// - Bài 4h: 7-8 câu (Kháng sinh 8c, Tiêu chảy cấp TE 7c, Glucocorticoid 7c, Tương tác thuốc 7c, ADR 7c, XN lâm sàng 7c)
-// - Bài 6h (Bài 1 Đại cương 4h + Bài 5 Thông tin thuốc 2h): 10 câu
-// - Bài 3h (PNCT & CCB): 5 câu
-// - Bài 2h (DĐH suy gan thận 4c, Tăng huyết áp 4c, Giảm đau 4c, Trẻ em 4c, Vitamin & khoáng chất 4c): 4 câu/bài
-// - Bài 1h (Người cao tuổi): 2 câu
-// - Bài 17 (COPD 0h) và Chương ngoài chương trình (Loãng xương): 0 câu (loại bỏ hoàn toàn khỏi đề thi)
-// TỔNG CỘNG ĐÚNG CHÍNH XÁC: 80 CÂU / 44 GIỜ
 // ============================================================================
 const EXAM_MATRIX_44H = [
   { chapter: "Kháng sinh & Kháng sinh dự phòng", lesson: "Bài 11", hours: 4, count: 8 },
@@ -126,8 +125,9 @@ const EXAM_MATRIX_44H = [
   { chapter: "Sử dụng thuốc ở Người cao tuổi", lesson: "Bài 8", hours: 1, count: 2 }
 ];
 
-// Generate a brand new 80-question test from the question bank following the 44h syllabus matrix
+// Generate an 80-question test from the question bank following the 44h syllabus matrix
 // Shuffles question selection AND shuffles option positions (A, B, C, D)
+// When prioritizeUnseenQuestions is ON, picks unseen questions first to cover the 1,222 bank
 function generateRandomExam(force = false) {
   if (typeof ALL_EXAM_BANK === 'undefined' || !ALL_EXAM_BANK.length) {
     console.error('ALL_EXAM_BANK not loaded!');
@@ -144,13 +144,24 @@ function generateRandomExam(force = false) {
 
   let chosenQuestions = [];
   const chosenStems = new Set();
+  const covStats = getBankCoverageStats();
+  const seenIds = covStats.seenIds || new Set();
 
   // 1. Bốc câu hỏi chuẩn theo ma trận số tiết của 14 bài giảng chính khóa 44h
   EXAM_MATRIX_44H.forEach(rule => {
     const chQuestions = ALL_EXAM_BANK.filter(q => q.chapter === rule.chapter);
-    const shuffled = shuffle(chQuestions);
+    let candidatePool = [];
+
+    if (prioritizeUnseenQuestions) {
+      const unseen = shuffle(chQuestions.filter(q => !seenIds.has(q.id)));
+      const seen = shuffle(chQuestions.filter(q => seenIds.has(q.id)));
+      candidatePool = [...unseen, ...seen];
+    } else {
+      candidatePool = shuffle(chQuestions);
+    }
+
     let picked = 0;
-    for (const item of shuffled) {
+    for (const item of candidatePool) {
       if (!chosenStems.has(item.question)) {
         chosenQuestions.push(item);
         chosenStems.add(item.question);
@@ -164,8 +175,15 @@ function generateRandomExam(force = false) {
   if (chosenQuestions.length < 80) {
     const allowedChapters = new Set(EXAM_MATRIX_44H.map(r => r.chapter));
     const remaining = ALL_EXAM_BANK.filter(q => allowedChapters.has(q.chapter) && !chosenStems.has(q.question));
-    const shuffledRemaining = shuffle(remaining);
-    for (const item of shuffledRemaining) {
+    let candidateRemaining = [];
+    if (prioritizeUnseenQuestions) {
+      const unseenRem = shuffle(remaining.filter(q => !seenIds.has(q.id)));
+      const seenRem = shuffle(remaining.filter(q => seenIds.has(q.id)));
+      candidateRemaining = [...unseenRem, ...seenRem];
+    } else {
+      candidateRemaining = shuffle(remaining);
+    }
+    for (const item of candidateRemaining) {
       chosenQuestions.push(item);
       chosenStems.add(item.question);
       if (chosenQuestions.length === 80) break;
@@ -1113,6 +1131,7 @@ function submitExam() {
   saveExamRecord(examRecord);
   lastSubmittedExamId = examRecord.id;
   saveExamDraft();
+  updateCoverageDisplays();
 
   openResultsModal();
   renderExamQuestion(currentQuestionIndex);
@@ -4624,12 +4643,18 @@ function renderHistoryListView() {
   const avgTimeMin = Math.round(history.reduce((acc, h) => acc + (h.timeUsedSec || 0), 0) / totalExams / 60);
   const passExams = history.filter(h => (parseFloat(h.score10) || 0) >= 4.0).length;
   const passRate = Math.round((passExams / totalExams) * 100);
+  const covStats = getBankCoverageStats();
 
   let html = `
     <div class="history-container">
       
       <!-- STATS OVERVIEW -->
       <div class="history-stats-banner">
+        <div class="stat-item" style="cursor: pointer;" onclick="openCoverageModal()" title="Bấm để xem chi tiết độ phủ 1.222 câu hỏi theo 14 bài">
+          <span class="stat-label">Độ phủ kho 1.222 câu</span>
+          <span class="stat-val" style="color: var(--secondary);">${covStats.seenCount} <small style="font-size: 0.85rem; font-weight: normal;">/ ${covStats.totalBank}</small></span>
+          <span class="stat-sub">${covStats.coveragePct}% kho • ${covStats.unseenCount} câu chưa gặp</span>
+        </div>
         <div class="stat-item">
           <span class="stat-label">Tổng bài đã thi</span>
           <span class="stat-val" style="color: var(--secondary);">${totalExams} <small style="font-size: 0.9rem; font-weight: normal;">đề</small></span>
@@ -5725,6 +5750,189 @@ function closeMatrixModal() {
   }
 }
 
+// ============================================================================
+// BANK COVERAGE TRACKER (Theo dõi độ phủ 1.222 câu hỏi đã từng làm)
+// ============================================================================
+function getBankCoverageStats() {
+  const history = getExamHistory();
+  const seenIds = new Set();
+  const correctIds = new Set();
+  const wrongIds = new Set();
+
+  // 1. From exam history
+  history.forEach(exam => {
+    (exam.questions || []).forEach(q => {
+      if (q && q.id) {
+        seenIds.add(q.id);
+        if (q.isCorrect) {
+          correctIds.add(q.id);
+        } else if (q.userAnswer !== null && q.userAnswer !== undefined) {
+          wrongIds.add(q.id);
+        }
+      }
+    });
+  });
+
+  // 2. From topic study mode
+  if (typeof studyAnswers === 'object') {
+    Object.keys(studyAnswers).forEach(idStr => {
+      const qId = parseInt(idStr, 10);
+      const q = (typeof ALL_EXAM_BANK !== 'undefined') ? ALL_EXAM_BANK.find(x => x.id === qId) : null;
+      if (q) {
+        seenIds.add(qId);
+        if (studyAnswers[qId] === q.correct) correctIds.add(qId);
+        else wrongIds.add(qId);
+      }
+    });
+  }
+
+  const totalBank = (typeof ALL_EXAM_BANK !== 'undefined') ? ALL_EXAM_BANK.length : 1222;
+  const seenCount = seenIds.size;
+  const unseenCount = Math.max(0, totalBank - seenCount);
+  const coveragePct = totalBank > 0 ? ((seenCount / totalBank) * 100).toFixed(1) : '0';
+
+  // Per chapter breakdown
+  const chapterBreakdown = {};
+  if (typeof ALL_EXAM_BANK !== 'undefined') {
+    ALL_EXAM_BANK.forEach(q => {
+      if (!chapterBreakdown[q.chapter]) {
+        chapterBreakdown[q.chapter] = { total: 0, seen: 0, correct: 0, wrong: 0 };
+      }
+      chapterBreakdown[q.chapter].total++;
+      if (seenIds.has(q.id)) {
+        chapterBreakdown[q.chapter].seen++;
+        if (correctIds.has(q.id)) chapterBreakdown[q.chapter].correct++;
+        else if (wrongIds.has(q.id)) chapterBreakdown[q.chapter].wrong++;
+      }
+    });
+  }
+
+  return {
+    totalBank,
+    seenCount,
+    unseenCount,
+    correctCount: correctIds.size,
+    wrongCount: wrongIds.size,
+    coveragePct,
+    seenIds,
+    chapterBreakdown
+  };
+}
+
+function updateCoverageDisplays() {
+  const stats = getBankCoverageStats();
+  const badge = document.getElementById('header-coverage-badge');
+  if (badge) {
+    badge.textContent = `${stats.seenCount} / ${stats.totalBank} (${stats.coveragePct}%)`;
+  }
+}
+
+function openCoverageModal() {
+  const modal = document.getElementById('modal-coverage');
+  const body = document.getElementById('coverage-modal-body');
+  if (!modal || !body) return;
+
+  const stats = getBankCoverageStats();
+  const correctPct = stats.totalBank > 0 ? ((stats.correctCount / stats.totalBank) * 100).toFixed(1) : '0';
+  const wrongPct = stats.totalBank > 0 ? ((stats.wrongCount / stats.totalBank) * 100).toFixed(1) : '0';
+
+  let html = `
+    <div>
+      <div class="coverage-stat-cards">
+        <div class="coverage-card">
+          <div class="card-val" style="color: var(--secondary);">${stats.seenCount}</div>
+          <div class="card-lbl">Đã gặp / ${stats.totalBank} câu</div>
+        </div>
+        <div class="coverage-card">
+          <div class="card-val" style="color: var(--primary);">${stats.correctCount}</div>
+          <div class="card-lbl">Đã làm đúng</div>
+        </div>
+        <div class="coverage-card">
+          <div class="card-val" style="color: var(--danger);">${stats.wrongCount}</div>
+          <div class="card-lbl">Từng làm sai</div>
+        </div>
+        <div class="coverage-card">
+          <div class="card-val" style="color: var(--text-muted);">${stats.unseenCount}</div>
+          <div class="card-lbl">Chưa gặp lần nào</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 0.85rem;">
+        <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 0.35rem;">
+          <span>Tiến độ phủ: <strong>${stats.coveragePct}%</strong> kho đề</span>
+          <span style="color: var(--primary);">Đúng: ${correctPct}% • <span style="color: var(--danger);">Sai: ${wrongPct}%</span></span>
+        </div>
+        <div class="coverage-progress-bar">
+          <div class="coverage-bar-fill correct" style="width: ${correctPct}%;"></div>
+          <div class="coverage-bar-fill wrong" style="width: ${wrongPct}%;"></div>
+        </div>
+      </div>
+
+      <div class="matrix-table-wrap" style="max-height: 48vh;">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>Chuyên đề bài giảng (44h)</th>
+              <th style="text-align: center;">Kho câu</th>
+              <th style="text-align: center;">Đã gặp</th>
+              <th style="text-align: center;">Đã đúng</th>
+              <th style="text-align: center;">Chưa làm</th>
+              <th style="text-align: center;">Độ phủ</th>
+            </tr>
+          </thead>
+          <tbody>
+  `;
+
+  // Render rows for official 14 chapters
+  EXAM_MATRIX_44H.forEach(rule => {
+    const chStats = stats.chapterBreakdown[rule.chapter] || { total: 0, seen: 0, correct: 0, wrong: 0 };
+    const un = Math.max(0, chStats.total - chStats.seen);
+    const p = chStats.total > 0 ? Math.round((chStats.seen / chStats.total) * 100) : 0;
+    html += `
+      <tr>
+        <td><strong>${rule.lesson}:</strong> ${rule.chapter}</td>
+        <td style="text-align: center;">${chStats.total}</td>
+        <td style="text-align: center; color: var(--secondary); font-weight: 600;">${chStats.seen}</td>
+        <td style="text-align: center; color: var(--primary); font-weight: 600;">${chStats.correct}</td>
+        <td style="text-align: center; color: var(--text-muted);">${un}</td>
+        <td style="text-align: center;">
+          <span style="display: inline-block; padding: 0.15rem 0.45rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600; background: ${p >= 50 ? 'var(--primary-light)' : 'var(--surface-alt)'}; color: ${p >= 50 ? 'var(--primary)' : 'var(--text-muted)'};">
+            ${p}%
+          </span>
+        </td>
+      </tr>
+    `;
+  });
+
+  html += `
+          </tbody>
+        </table>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem;">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">
+          💡 Bật <em>"🎯 Ưu tiên câu chưa làm"</em> để hệ thống luôn bốc các câu mới vào đề thi 80 câu!
+        </div>
+        <button class="btn btn-primary" onclick="closeCoverageModal(); generateRandomExam();" style="padding: 0.45rem 1rem; font-size: 0.82rem;">
+          🎲 Thi Đề Ưu Tiên Câu Chưa Làm
+        </button>
+      </div>
+    </div>
+  `;
+
+  body.innerHTML = html;
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCoverageModal() {
+  const modal = document.getElementById('modal-coverage');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
 // Initialize on Load
 window.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('dls_theme') || 'light';
@@ -5747,6 +5955,10 @@ window.addEventListener('DOMContentLoaded', () => {
   if (!restored) {
     generateRandomExam(true);
   }
+  updateCoverageDisplays();
+  const chkUnseen = document.getElementById('chk-prioritize-unseen');
+  if (chkUnseen) chkUnseen.checked = prioritizeUnseenQuestions;
+
   // Synchronize sidebar layout with current tab
   switchTab(currentTab || 'exam');
 
