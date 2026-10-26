@@ -542,8 +542,49 @@
     </div>
   </div>
 
-  <script src="questions_800.js?v=22"></script>
+  <!-- Modal: Hướng Dẫn Giọng Đọc Tiếng Việt Chuẩn -->
+  <div class="modal-overlay" id="modal-voice-guide" onclick="if(event.target === this) closeVoiceGuideModal()">
+    <div class="modal-card" style="max-width: 580px; text-align: left;">
+      <div class="modal-header">
+        <div class="modal-title" style="color: var(--secondary);">🔊 KÍCH HOẠT GIỌNG ĐỌC TIẾNG VIỆT CHUẨN</div>
+        <button class="modal-close" onclick="closeVoiceGuideModal()">&times;</button>
+      </div>
+      <div style="padding: 0.5rem 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-main);">
+        <p style="margin-bottom: 0.85rem; color: var(--text-muted);">
+          Trình duyệt này hiện chưa cài gói phát âm <strong>Tiếng Việt</strong>. Để tuyệt đối không phát ra giọng tiếng Anh lơ lớ, hệ thống xin hướng dẫn bạn 3 cách kích hoạt giọng đọc chuẩn 100%:
+        </p>
+
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--radius-md); padding: 0.85rem 1rem; margin-bottom: 0.85rem;">
+          <strong style="color: var(--primary); font-size: 0.95rem;">⚡ Cách 1 (Nhanh nhất - 1 giây): Mở bằng Microsoft Edge</strong>
+          <p style="font-size: 0.86rem; color: var(--text-main); margin-top: 0.35rem;">
+            Trình duyệt <strong>Microsoft Edge</strong> (đã cài sẵn trên mọi máy tính Windows) tích hợp sẵn giọng đọc AI <strong>Hoài My &amp; Nam Minh (Natural)</strong> của Microsoft. Bạn chỉ cần sao chép link và mở trên Edge là nghe đọc cực kỳ tự nhiên, truyền cảm như phát thanh viên!
+          </p>
+        </div>
+
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-left: 4px solid var(--secondary); border-radius: var(--radius-md); padding: 0.85rem 1rem; margin-bottom: 0.85rem;">
+          <strong style="color: var(--secondary); font-size: 0.95rem;">📱 Cách 2: Mở trên Điện thoại (iPhone / Android)</strong>
+          <p style="font-size: 0.86rem; color: var(--text-main); margin-top: 0.35rem;">
+            Điện thoại <strong>iPhone/iPad</strong> (Safari) và <strong>Android</strong> (Chrome) đã tích hợp sẵn giọng đọc tiếng Việt của Apple &amp; Google trong hệ điều hành, bấm vào là nghe đọc chuẩn tiếng Việt ngay.
+          </p>
+        </div>
+
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-left: 4px solid var(--warning); border-radius: var(--radius-md); padding: 0.85rem 1rem;">
+          <strong style="color: #d97706; font-size: 0.95rem;">⚙️ Cách 3: Cài gói Tiếng Việt cho Google Chrome (Windows)</strong>
+          <p style="font-size: 0.86rem; color: var(--text-main); margin-top: 0.35rem;">
+            Vào <strong>Windows Settings</strong> (phím Win + I) &rarr; <strong>Time &amp; language</strong> &rarr; <strong>Speech</strong> &rarr; Chọn <strong>Add voices</strong> &rarr; Chọn <strong>Vietnamese (Việt Nam)</strong> và bấm <strong>Add</strong>. Khởi động lại Chrome là nghe được!
+          </p>
+        </div>
+      </div>
+      <div class="modal-actions" style="margin-top: 1rem; justify-content: flex-end;">
+        <button class="btn btn-primary" onclick="closeVoiceGuideModal()" style="padding: 0.5rem 1.25rem;">
+          Đã hiểu
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="questions_800.js?v=23"></script>
   <script src="flashcards.js"></script>
-  <script src="app.js?v=22"></script>
+  <script src="app.js?v=23"></script>
 </body>
 </html>

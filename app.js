@@ -636,22 +636,11 @@ function initTTS() {
 }
 
 function stopSpeaking() {
-  // 1. Stop Web Speech Synthesis
   if ('speechSynthesis' in window) {
     try {
       window.speechSynthesis.cancel();
     } catch (e) {}
   }
-  // 2. Stop Online Audio Stream & queue
-  if (currentAudio) {
-    try {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
-    } catch (e) {}
-    currentAudio = null;
-  }
-  ttsAudioQueue = [];
-
   isSpeaking = false;
   document.querySelectorAll('.btn-speak-exp').forEach(btn => {
     btn.classList.remove('is-speaking');
@@ -699,86 +688,6 @@ function cleanTextForVietnameseSpeech(rawText) {
     .trim();
 }
 
-function splitTextIntoAudioChunks(text, maxLength = 130) {
-  const sentences = text.match(/[^.!?\n,;]+[.!?\n,;]?/g) || [text];
-  const chunks = [];
-  let currentChunk = '';
-
-  sentences.forEach(s => {
-    s = s.trim();
-    if (!s) return;
-    if ((currentChunk + ' ' + s).trim().length <= maxLength) {
-      currentChunk = (currentChunk + ' ' + s).trim();
-    } else {
-      if (currentChunk) chunks.push(currentChunk);
-      if (s.length <= maxLength) {
-        currentChunk = s;
-      } else {
-        const words = s.split(/\s+/);
-        let sub = '';
-        words.forEach(w => {
-          if ((sub + ' ' + w).trim().length <= maxLength) {
-            sub = (sub + ' ' + w).trim();
-          } else {
-            if (sub) chunks.push(sub);
-            sub = w;
-          }
-        });
-        currentChunk = sub;
-      }
-    }
-  });
-
-  if (currentChunk) chunks.push(currentChunk);
-  return chunks;
-}
-
-function playVietnameseAudioStreamQueue() {
-  if (!isSpeaking || !ttsAudioQueue.length) {
-    stopSpeaking();
-    return;
-  }
-  const chunk = ttsAudioQueue.shift();
-  const url = `https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encodeURIComponent(chunk)}`;
-
-  if (currentAudio) {
-    try {
-      currentAudio.pause();
-    } catch (e) {}
-    currentAudio = null;
-  }
-
-  const audio = document.createElement('audio');
-  audio.setAttribute('referrerpolicy', 'no-referrer');
-  audio.referrerPolicy = 'no-referrer';
-  audio.crossOrigin = 'anonymous';
-  audio.src = url;
-
-  currentAudio = audio;
-
-  audio.onended = () => {
-    if (isSpeaking) {
-      playVietnameseAudioStreamQueue();
-    }
-  };
-
-  audio.onerror = (e) => {
-    console.warn('Audio stream chunk error, trying next:', e);
-    if (ttsAudioQueue.length > 0) {
-      playVietnameseAudioStreamQueue();
-    } else {
-      stopSpeaking();
-      showToast('⚠️ Không tải được giọng đọc. Hãy mở web trên Microsoft Edge để nghe giọng đọc Hoài My tự nhiên!');
-    }
-  };
-
-  audio.play().catch(err => {
-    console.warn('Audio stream play error:', err);
-    stopSpeaking();
-    showToast('⚠️ Trình duyệt chặn phát âm thanh tự động hoặc thiết bị chưa hỗ trợ âm thanh.');
-  });
-}
-
 function speakExplanationFromCard(btn) {
   if (!btn) return;
   const container = btn.closest('.explanation-box') || btn.closest('.review-explanation-box');
@@ -802,11 +711,6 @@ function speakExplanation(btn, rawText) {
   const text = cleanTextForVietnameseSpeech(rawText);
   if (!text) return;
 
-  btn.classList.add('is-speaking');
-  btn.innerHTML = '<span>⏹️</span> Dừng đọc';
-  isSpeaking = true;
-  currentSpeechBtn = btn;
-
   // 1. Try to find genuine Vietnamese voice in Web Speech API
   let viVoice = findVietnameseVoice();
   if (!viVoice && 'speechSynthesis' in window) {
@@ -815,8 +719,13 @@ function speakExplanation(btn, rawText) {
   }
 
   if (viVoice && 'speechSynthesis' in window) {
-    // Mode A: Native Vietnamese Voice (Edge HoaiMy/NamMinh Natural, Google Tiếng Việt, Apple Linh)
+    // Native Vietnamese Voice (Edge HoaiMy/NamMinh Natural, Google Tiếng Việt, Apple Linh)
+    btn.classList.add('is-speaking');
+    btn.innerHTML = '<span>⏹️</span> Dừng đọc';
+    isSpeaking = true;
+    currentSpeechBtn = btn;
     cachedViVoice = viVoice;
+
     try {
       window.speechSynthesis.cancel();
       const utterance = new SpeechSynthesisUtterance(text);
@@ -837,18 +746,15 @@ function speakExplanation(btn, rawText) {
       window.speechSynthesis.speak(utterance);
       return;
     } catch (err) {
-      console.warn('SpeechSynthesis exception, fallback to stream:', err);
+      console.warn('SpeechSynthesis exception:', err);
+      stopSpeaking();
     }
   }
 
-  // Mode B: NO English voice allowed! Use Google Vietnamese Audio Stream (Chị Google Tiếng Việt chuẩn)
-  const chunks = splitTextIntoAudioChunks(text, 130);
-  if (!chunks.length) {
-    stopSpeaking();
-    return;
-  }
-  ttsAudioQueue = chunks;
-  playVietnameseAudioStreamQueue();
+  // If NO Vietnamese voice is found on this device/browser:
+  // STRICT RULE: NEVER play an English voice! Open the friendly guide modal instead!
+  stopSpeaking();
+  openVoiceGuideModal();
 }
 
 // Render Question in Exam Mode
@@ -5117,6 +5023,7 @@ window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeMatrixModal();
     closeCoverageModal();
+    closeVoiceGuideModal();
     closeResultsModal();
     closeSyncModal();
     closeMobilePalette();
@@ -6028,6 +5935,22 @@ function openCoverageModal() {
 
 function closeCoverageModal() {
   const modal = document.getElementById('modal-coverage');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+function openVoiceGuideModal() {
+  const modal = document.getElementById('modal-voice-guide');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeVoiceGuideModal() {
+  const modal = document.getElementById('modal-voice-guide');
   if (modal) {
     modal.classList.remove('active');
     document.body.style.overflow = '';
