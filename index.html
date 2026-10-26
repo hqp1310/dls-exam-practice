@@ -88,11 +88,11 @@
         <div class="exam-matrix-banner" id="exam-matrix-banner">
           <div class="matrix-banner-content">
             <span class="matrix-banner-icon" aria-hidden="true">🎯</span>
-            <div><strong>Ma trận 44h chuẩn hóa:</strong> Ngân hàng 1.342 câu mở rộng (HUP, UMP, HMU, BYT), gọt sạch mọi dấu hiệu dễ đoán.</div>
+            <div><strong>Ma trận 44h chuẩn hóa:</strong> Đề 80 câu tự động mix thông minh ~45% câu từ ĐH Dược Hà Nội, ĐH Y Dược TP.HCM, ĐH Y Hà Nội &amp; ~55% Chuẩn BYT theo đúng 14 bài giảng.</div>
           </div>
           <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">
-            <button class="matrix-info-btn coverage-info-btn" onclick="openCoverageModal()" title="Xem độ phủ ngân hàng 1.342 câu hỏi bạn đã từng làm">
-              📈 Độ phủ kho: <span id="header-coverage-badge">-- / 1.342 (0%)</span>
+            <button class="matrix-info-btn coverage-info-btn" onclick="openCoverageModal()" title="Xem độ phủ ngân hàng 1.402 câu hỏi bạn đã từng làm">
+              📈 Độ phủ kho: <span id="header-coverage-badge">-- / 1.402 (0%)</span>
             </button>
             <button class="matrix-info-btn" onclick="openMatrixModal()" title="Xem chi tiết phân bổ 80 câu theo số tiết">📊 Ma trận 44h</button>
           </div>
@@ -106,14 +106,14 @@
             </div>
           </div>
           <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
-            <label class="toggle-unseen-label" title="Khi bật, hệ thống sẽ ưu tiên chọn các câu bạn CHƯA TỪNG LÀM để quét sạch toàn bộ 1.342 câu nhanh nhất">
+            <label class="toggle-unseen-label" title="Khi bật, hệ thống sẽ ưu tiên chọn các câu bạn CHƯA TỪNG LÀM để quét sạch toàn bộ 1.402 câu nhanh nhất">
               <input type="checkbox" id="chk-prioritize-unseen" checked onchange="togglePrioritizeUnseen(this.checked)">
               <span>🎯 Ưu tiên câu chưa làm</span>
             </label>
             <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--surface-alt); border-color: var(--secondary); color: var(--secondary);" onclick="openUniversityExamModal()" title="Lựa chọn làm đề thi chuyên sâu của ĐH Dược Hà Nội, ĐH Y Dược TP.HCM, ĐH Y Hà Nội">
               🏛️ Đề Các Trường Y Dược
             </button>
-            <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary);" onclick="generateRandomExam()" title="Chọn 80 câu từ kho 1.342 câu chuẩn 44h và xáo trộn vị trí đáp án">
+            <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary);" onclick="generateRandomExam()" title="Tạo đề 80 câu chuẩn ma trận 44h tự động mix câu hỏi ĐH Dược HN, ĐH Y Dược TPHCM, ĐH Y HN và Chuẩn BYT">
               🎲 Tạo Đề Random Mới
             </button>
             <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem;" onclick="confirmSubmitExam()">
@@ -541,7 +541,7 @@
       </div>
       <div style="padding: 0.5rem 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-main);">
         <p style="margin-bottom: 0.85rem; color: var(--text-muted);">
-          Hệ thống đã tích hợp <strong>1.342 câu hỏi</strong> chuẩn hóa gồm kho đề Bộ Y tế và đề thi chính thức từ các trường Đại học Y Dược danh tiếng hàng đầu Việt Nam:
+          Hệ thống đã tích hợp <strong>1.402 câu hỏi</strong> chuẩn hóa gồm kho đề Bộ Y tế và đề thi chính thức từ các trường Đại học Y Dược danh tiếng hàng đầu Việt Nam:
         </p>
 
         <div class="uni-exam-card" onclick="generateUniversityExam('all')" style="border-left: 4px solid var(--primary); margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
@@ -550,37 +550,37 @@
             <span class="badge badge-category">80 câu • 80 phút</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
-            Trộn ngẫu nhiên câu hỏi chuẩn Bộ Y tế & các trường theo đúng ma trận 14 chuyên đề chính khóa.
+            Trộn thông minh ~45% câu hỏi ĐH Dược Hà Nội, ĐH Y Dược TP.HCM, ĐH Y Hà Nội &amp; ~55% Chuẩn Bộ Y tế theo đúng ma trận 14 chuyên đề 44h.
           </div>
         </div>
 
         <div class="uni-exam-card" onclick="generateUniversityExam('HUP')" style="border-left: 4px solid #7c3aed; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
             <strong style="color: #7c3aed; font-size: 1rem;">🏛️ Đại học Dược Hà Nội (HUP)</strong>
-            <span class="badge badge-source-hup">40 câu • 40 phút</span>
+            <span class="badge badge-source-hup">60 câu • 60 phút</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
-            Chuyên sâu: TDM Vancomycin (AUC24/MIC), Aminoglycosid liều 1 lần/ngày, Dược động học phi tuyến tính, Thang Naranjo, Tương tác CYP450/P-gp & Cockcroft-Gault.
+            Chuyên sâu: TDM Vancomycin (AUC24/MIC), Aminoglycosid liều 1 lần/ngày, Dược động học phi tuyến tính, Thang Naranjo, Tương tác CYP450/P-gp, Quy trình 7 bước thông tin thuốc, Nhi khoa, Lão khoa, Corticoid &amp; Cấp cứu.
           </div>
         </div>
 
         <div class="uni-exam-card" onclick="generateUniversityExam('UMP')" style="border-left: 4px solid #0284c7; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
             <strong style="color: #0284c7; font-size: 1rem;">🏛️ Đại học Y Dược TP.HCM (UMP)</strong>
-            <span class="badge badge-source-ump">40 câu • 40 phút</span>
+            <span class="badge badge-source-ump">60 câu • 60 phút</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
-            Chuyên sâu: Tình huống lâm sàng ca bệnh, Xơ gan cổ trướng & SBP (Spironolactone:Furosemide 100:40), Tứ trụ HFrEF, Kháng sinh MDRO (MRSA, Pseudomonas, CRE) & DAPT+NOAC.
+            Chuyên sâu: Tình huống lâm sàng ca bệnh, Xơ gan cổ trướng &amp; SBP, Cẩm nang Trissel's tiêm truyền, Cấp cứu tăng huyết áp Nicardipine, Bù nước IMCI trẻ em, Tiêu chuẩn Beers &amp; STOPP/START.
           </div>
         </div>
 
         <div class="uni-exam-card" onclick="generateUniversityExam('HMU')" style="border-left: 4px solid #dc2626; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
             <strong style="color: #dc2626; font-size: 1rem;">🏛️ Đại học Y Hà Nội (HMU)</strong>
-            <span class="badge badge-source-hmu">40 câu • 40 phút</span>
+            <span class="badge badge-source-hmu">60 câu • 60 phút</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
-            Chuyên sâu: Phác đồ Thông tư 51/2017/TT-BYT Phản vệ Adrenaline, Chất giải độc Antidote (Paracetamol, Opioid, Warfarin, MetHb), Tương tác chết người & Thai kỳ.
+            Chuyên sâu: Phác đồ Thông tư 51/2017/TT-BYT Phản vệ Adrenaline &amp; Glucagon, Thử nghiệm lâm sàng Pha I-IV, Y học thực chứng EBM, Paracetamol nhi khoa, Codeine CYP2D6, Corticoid liều xung &amp; Cấp cứu Wernicke.
           </div>
         </div>
       </div>
@@ -592,11 +592,11 @@
     </div>
   </div>
 
-  <!-- Modal: Bank Coverage 1,342 Questions -->
+  <!-- Modal: Bank Coverage 1,402 Questions -->
   <div class="modal-overlay" id="modal-coverage" onclick="if(event.target === this) closeCoverageModal()">
     <div class="modal-card matrix-modal-card">
       <div class="modal-header">
-        <div class="modal-title">📈 TIẾN ĐỘ ĐỘ PHỦ KHO 1.342 CÂU HỎI</div>
+        <div class="modal-title">📈 TIẾN ĐỘ ĐỘ PHỦ KHO 1.402 CÂU HỎI</div>
         <button class="modal-close" onclick="closeCoverageModal()">&times;</button>
       </div>
       <div id="coverage-modal-body">
@@ -646,8 +646,8 @@
     </div>
   </div>
 
-  <script src="questions_800.js?v=24"></script>
+  <script src="questions_800.js?v=25"></script>
   <script src="flashcards.js"></script>
-  <script src="app.js?v=24"></script>
+  <script src="app.js?v=25"></script>
 </body>
 </html>

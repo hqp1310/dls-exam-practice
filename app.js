@@ -106,6 +106,20 @@ function shuffle(array) {
   return arr;
 }
 
+// Cân bằng tỷ lệ bốc câu hỏi từ các trường đại học (HUP, UMP, HMU)
+function balanceUniversitySchools(uniList) {
+  const hup = shuffle(uniList.filter(q => q.source === 'HUP'));
+  const ump = shuffle(uniList.filter(q => q.source === 'UMP'));
+  const hmu = shuffle(uniList.filter(q => q.source === 'HMU'));
+  const result = [];
+  const maxLen = Math.max(hup.length, ump.length, hmu.length);
+  for (let i = 0; i < maxLen; i++) {
+    const round = shuffle([hup[i], ump[i], hmu[i]].filter(Boolean));
+    result.push(...round);
+  }
+  return result;
+}
+
 // ============================================================================
 // MA TRẬN PHÂN BỔ 80 CÂU ĐỀ THI CHUẨN 100% THEO CHƯƠNG TRÌNH DƯỢC LÂM SÀNG (44H)
 // ============================================================================
@@ -127,8 +141,10 @@ const EXAM_MATRIX_44H = [
 ];
 
 // Generate an 80-question test from the question bank following the 44h syllabus matrix
+// Intelligent Mixing: Blends ~45% top medical/pharmacy university exam questions (HUP, UMP, HMU) with ~55% BYT questions
+// Strictly enforces exact chapter question quotas per 44h curriculum (Total = 80 questions)
 // Shuffles question selection AND shuffles option positions (A, B, C, D)
-// When prioritizeUnseenQuestions is ON, picks unseen questions first to cover the 1,222 bank
+// When prioritizeUnseenQuestions is ON, picks unseen questions first across all sources
 function generateRandomExam(force = false) {
   if (typeof ALL_EXAM_BANK === 'undefined' || !ALL_EXAM_BANK.length) {
     console.error('ALL_EXAM_BANK not loaded!');
@@ -149,25 +165,61 @@ function generateRandomExam(force = false) {
   const seenIds = covStats.seenIds || new Set();
 
   // 1. Bốc câu hỏi chuẩn theo ma trận số tiết của 14 bài giảng chính khóa 44h
+  // Tự động mix thông minh giữa Ngân hàng Chuẩn BYT và Đề thi các trường ĐH Y Dược (HUP, UMP, HMU)
   EXAM_MATRIX_44H.forEach(rule => {
     const chQuestions = ALL_EXAM_BANK.filter(q => q.chapter === rule.chapter);
-    let candidatePool = [];
+    const uniCandidates = chQuestions.filter(q => q.source && q.source !== 'BYT');
+    const bytCandidates = chQuestions.filter(q => !q.source || q.source === 'BYT');
+
+    // Mục tiêu ~45% câu từ các trường ĐH Y Dược, phần còn lại từ Chuẩn BYT
+    const targetUni = Math.min(uniCandidates.length, Math.max(1, Math.round(rule.count * 0.45)));
+    const targetByt = rule.count - targetUni;
+
+    let balancedUni = [];
+    let shuffledByt = [];
 
     if (prioritizeUnseenQuestions) {
-      const unseen = shuffle(chQuestions.filter(q => !seenIds.has(q.id)));
-      const seen = shuffle(chQuestions.filter(q => seenIds.has(q.id)));
-      candidatePool = [...unseen, ...seen];
+      const unseenUni = uniCandidates.filter(q => !seenIds.has(q.id));
+      const seenUni = uniCandidates.filter(q => seenIds.has(q.id));
+      balancedUni = [...balanceUniversitySchools(unseenUni), ...balanceUniversitySchools(seenUni)];
+
+      const unseenByt = shuffle(bytCandidates.filter(q => !seenIds.has(q.id)));
+      const seenByt = shuffle(bytCandidates.filter(q => seenIds.has(q.id)));
+      shuffledByt = [...unseenByt, ...seenByt];
     } else {
-      candidatePool = shuffle(chQuestions);
+      balancedUni = balanceUniversitySchools(uniCandidates);
+      shuffledByt = shuffle(bytCandidates);
     }
 
-    let picked = 0;
-    for (const item of candidatePool) {
-      if (!chosenStems.has(item.question)) {
-        chosenQuestions.push(item);
-        chosenStems.add(item.question);
-        picked++;
-        if (picked >= rule.count) break;
+    let pickedUni = 0;
+    for (const q of balancedUni) {
+      if (!chosenStems.has(q.question)) {
+        chosenQuestions.push(q);
+        chosenStems.add(q.question);
+        pickedUni++;
+        if (pickedUni >= targetUni) break;
+      }
+    }
+
+    let pickedByt = 0;
+    for (const q of shuffledByt) {
+      if (!chosenStems.has(q.question)) {
+        chosenQuestions.push(q);
+        chosenStems.add(q.question);
+        pickedByt++;
+        if (pickedByt >= (rule.count - pickedUni)) break;
+      }
+    }
+
+    // Nếu chưa đủ số lượng rule.count (do trùng stem hoặc hết nguồn), bù từ nguồn còn lại
+    if (pickedUni + pickedByt < rule.count) {
+      const fallbackPool = [...balancedUni, ...shuffledByt];
+      for (const q of fallbackPool) {
+        if (!chosenStems.has(q.question)) {
+          chosenQuestions.push(q);
+          chosenStems.add(q.question);
+          if (chosenQuestions.length >= 80) break;
+        }
       }
     }
   });
@@ -193,7 +245,7 @@ function generateRandomExam(force = false) {
     chosenQuestions = chosenQuestions.slice(0, 80);
   }
 
-  // Shuffle question order
+  // Shuffle question order so university questions and standard questions are mixed naturally
   chosenQuestions = shuffle(chosenQuestions);
 
   // 2. SHUFFLE THE 4 OPTIONS FOR EVERY QUESTION TO ELIMINATE POSITION BIAS
@@ -4810,8 +4862,8 @@ function renderHistoryListView() {
       
       <!-- STATS OVERVIEW -->
       <div class="history-stats-banner">
-        <div class="stat-item" style="cursor: pointer;" onclick="openCoverageModal()" title="Bấm để xem chi tiết độ phủ 1.222 câu hỏi theo 14 bài">
-          <span class="stat-label">Độ phủ kho 1.222 câu</span>
+        <div class="stat-item" style="cursor: pointer;" onclick="openCoverageModal()" title="Bấm để xem chi tiết độ phủ ${covStats.totalBank} câu hỏi theo 14 bài">
+          <span class="stat-label">Độ phủ kho ${covStats.totalBank} câu</span>
           <span class="stat-val" style="color: var(--secondary);">${covStats.seenCount} <small style="font-size: 0.85rem; font-weight: normal;">/ ${covStats.totalBank}</small></span>
           <span class="stat-sub">${covStats.coveragePct}% kho • ${covStats.unseenCount} câu chưa gặp</span>
         </div>
