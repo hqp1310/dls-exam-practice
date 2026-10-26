@@ -1,6 +1,4 @@
-// 60 High-Yield Clinical Pharmacy Questions - Đại học Y Dược TP.HCM (UMP)
-// Chuyên đề: Tim mạch, Cấp cứu THA, Kháng sinh hô hấp, Tiêu hóa trẻ em, Trissel's, Beers, STOPP/START
-
+// 60 High-Yield Clinical Pharmacy Questions
 const UMP_QUESTIONS = [
   {
     "chapter": "Kháng sinh & Kháng sinh dự phòng",
@@ -9,7 +7,7 @@ const UMP_QUESTIONS = [
     "question": "Tại sao kháng sinh Daptomycin có hoạt tính diệt khuẩn rất mạnh trên tụ cầu vàng kháng Methicillin (MRSA) nhưng lại CHỐNG CHỈ ĐỊNH TUYỆT ĐỐI trong điều trị viêm phổi do MRSA?",
     "options": [
       "Daptomycin không thâm nhập được qua hàng rào mao mạch phế nang",
-      "Daptomycin bị chất diện hoạt phế nang (Pulmonary Surfactant) gắn kết và làm bất hoạt hoàn toàn",
+      "Daptomycin bị chất diện hoạt phế nang gắn kết và làm bất hoạt hoàn toàn",
       "Daptomycin gây co thắt phế quản dữ dội và tràn khí màng phổi cấp tính",
       "Daptomycin bị chuyển hóa hoàn toàn bởi enzym cytochrome P450 tại biểu mô đường thở"
     ],
@@ -22,10 +20,10 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Bệnh nhân nam 58 tuổi, tiền sử ĐTĐ tuýp 2 và Tăng huyết áp 5 năm. Xét nghiệm thấy Creatinin máu 1.4 mg/dL, eGFR 52 mL/phút, Tỉ số Albumin/Creatinin niệu (UACR) là 450 mg/g (albumin niệu đại thể). Lựa chọn thuốc hạ áp đầu tay tối ưu nhất theo khuyến cáo KDIGO và ADA là:",
     "options": [
-      "Thuốc chẹn kênh Canxi nhóm DHP (Amlodipin) đơn trị liệu",
-      "Thuốc ức chế men chuyển (ACEI) hoặc chẹn thụ thể Angiotensin II (ARB)",
-      "Thuốc chẹn thụ thể beta giao cảm (Atenolol) liều cao",
-      "Thuốc lợi tiểu Thiazid (Hydrochlorothiazid) đơn độc"
+      "Thuốc chẹn kênh Canxi nhóm DHP đơn trị liệu",
+      "Thuốc ức chế men chuyển hoặc chẹn thụ thể Angiotensin II",
+      "Thuốc chẹn thụ thể beta giao cảm liều cao",
+      "Thuốc lợi tiểu Thiazid đơn độc"
     ],
     "correct": 1,
     "explanation": "Ở bệnh nhân đái tháo đường kèm tăng huyết áp và có albumin niệu (UACR >= 30 mg/g, đặc biệt >= 300 mg/g), ACEI hoặc ARB là lựa chọn bắt buộc hàng đầu nhờ tác dụng giãn tiểu động mạch đi của cầu thận, giúp giảm áp lực trong cầu thận và làm chậm tiến triển bệnh thận mạn."
@@ -50,10 +48,10 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Bệnh nhân xơ gan cổ trướng mức độ vừa đang được điều trị lợi tiểu nội trú. Tỷ lệ liều kết hợp giữa Spironolacton và Furosemid được Hội Nghiên cứu Bệnh gan Hoa Kỳ (AASLD) khuyến cáo để duy trì hiệu quả bài niệu và giữ thăng bằng nồng độ Kali máu là:",
     "options": [
-      "100 mg Spironolacton : 40 mg Furosemid (tỷ lệ 5 : 2)",
-      "25 mg Spironolacton : 100 mg Furosemid (tỷ lệ 1 : 4)",
-      "50 mg Spironolacton : 50 mg Furosemid (tỷ lệ 1 : 1)",
-      "200 mg Spironolacton : 10 mg Furosemid (tỷ lệ 20 : 1)"
+      "100 mg Spironolacton : 40 mg Furosemid",
+      "25 mg Spironolacton : 100 mg Furosemid",
+      "50 mg Spironolacton : 50 mg Furosemid",
+      "200 mg Spironolacton : 10 mg Furosemid"
     ],
     "correct": 0,
     "explanation": "Tỷ lệ chuẩn Spironolactone 100 mg : Furosemide 40 mg (tối đa 400 mg : 160 mg/ngày) giúp phối hợp tác dụng lợi tiểu quai và kháng Aldosterone, đồng thời cân bằng lượng Kali bài tiết qua nước tiểu (Spironolactone giữ K+, Furosemide thải K+), duy trì Kali máu ổn định."
@@ -78,7 +76,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Phác đồ điều trị nền tảng 'Tứ trụ' (Four Pillars) giúp cải thiện tỷ lệ tử vong ở bệnh nhân Suy tim mạn tính phân suất tống máu giảm (HFrEF) theo ESC và AHA bao gồm các nhóm thuốc nào?",
     "options": [
-      "ARNI (hoặc ACEI/ARB) + Thuốc chẹn beta + Thuốc đối kháng thụ thể Mineralocorticoid (MRA) + Thuốc ức chế SGLT2",
+      "ARNI + Thuốc chẹn beta + Thuốc đối kháng thụ thể Mineralocorticoid + Thuốc ức chế SGLT2",
       "Digoxin + Thuốc lợi tiểu Thiazid + Thuốc chẹn Calci DHP + Aspirin",
       "Amlodipin + Nitrate kéo dài + Ivabradin + Furosemid",
       "Thuốc ức chế men chuyển + Thuốc chẹn thụ thể AT1 + Kháng Aldosteron + Canxi tiêm truyền"
@@ -162,9 +160,9 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Bệnh nhân nam 65 tuổi có tiền sử Rung nhĩ không do bệnh van tim (điểm CHA2DS2-VASc = 3) vừa trải qua can thiệp đặt stent mạch vành phủ thuốc (PCI) do Hội chứng vành cấp. Chiến lược chống huyết khối tối ưu hiện nay theo ESC nhằm cân bằng nguy cơ tắc stent và xuất huyết là:",
     "options": [
-      "Dùng liệu pháp 3 thuốc (NOAC + Aspirin + Clopidogrel) kéo dài liên tục 12 tháng",
+      "Dùng liệu pháp 3 thuốc kéo dài liên tục 12 tháng",
       "Chỉ dùng đơn trị liệu Aspirin liều thấp 81 mg duy nhất",
-      "Dùng liệu pháp 3 thuốc trong thời gian ngắn (từ lúc xuất viện đến 1 tuần hoặc 1 tháng), sau đó chuyển sang liệu pháp 2 thuốc (NOAC + Clopidogrel) đến 12 tháng",
+      "Dùng liệu pháp 3 thuốc trong thời gian ngắn, sau đó chuyển sang liệu pháp 2 thuốc đến 12 tháng",
       "Ngừng toàn bộ thuốc chống đông NOAC và chỉ dùng Ticagrelor đơn độc"
     ],
     "correct": 2,
@@ -176,7 +174,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Theo hướng dẫn GOLD, chỉ định dùng kháng sinh trong đợt cấp bệnh phổi tắc nghẽn mạn tính (AECOPD) dựa trên tiêu chuẩn Anthonisen khi bệnh nhân có biểu hiện nào?",
     "options": [
-      "Bệnh nhân có tăng lượng đờm mủ kèm theo tăng khó thở hoặc tăng thể tích đờm (hoặc đợt cấp nặng cần thở máy)",
+      "Bệnh nhân có tăng lượng đờm mủ kèm theo tăng khó thở hoặc tăng thể tích đờm",
       "Chỉ cần bệnh nhân có ho khan đơn thuần không có sốt",
       "Mọi bệnh nhân đợt cấp COPD đều bắt buộc phải dùng kháng sinh tối thiểu 14 ngày",
       "Chỉ dùng kháng sinh khi cấy đờm dương tính sau 7 ngày nuôi cấy vi khuẩn"
@@ -190,7 +188,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Thời gian điều trị bằng Corticoid toàn thân (như Prednison 40 mg đường uống mỗi ngày) được GOLD khuyến cáo trong đợt kịch phát COPD là bao lâu?",
     "options": [
-      "5 ngày (hiệu quả tương đương liệu trình dài ngày nhưng ít tác dụng phụ hơn)",
+      "5 ngày",
       "Tối thiểu 14 đến 21 ngày và phải giảm liều từ từ trong 2 tháng",
       "Duy trì liên tục suốt đời để ngăn ngừa đợt cấp tái phát",
       "Chỉ dùng đúng 1 liều duy nhất trong vòng 1 giờ đầu nhập viện"
@@ -205,7 +203,7 @@ const UMP_QUESTIONS = [
     "question": "Khi bệnh nhân dùng Glucocorticoid đường toàn thân kéo dài trên 3 tuần, nguy cơ suy thượng thận thứ phát xảy ra do cơ chế feedback âm tính tác động lên cấu trúc nào?",
     "options": [
       "Kích thích tuyến tủy thượng thận tăng tiết Catecholamin",
-      "Ức chế trục Hạ đồi - Tuyến yên - Vỏ thượng thận (trục HPA) làm teo vỏ thượng thận",
+      "Ức chế trục Hạ đồi - Tuyến yên - Vỏ thượng thận làm teo vỏ thượng thận",
       "Phá hủy trực tiếp các receptor corticosteroid tại màng tế bào bạch cầu",
       "Tăng cường hoạt tính của enzym 11-beta-HSD1 tại mô mỡ nội tạng"
     ],
@@ -218,7 +216,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Thuốc giảm đau Paracetamol có liều tối đa hàng ngày khuyến cáo cho người lớn có chức năng gan bình thường là bao nhiêu để phòng ngừa hoại tử tế bào gan?",
     "options": [
-      "4 gam / ngày (4000 mg/24 giờ)",
+      "4 gam / ngày",
       "2 gam / ngày",
       "6 gam / ngày",
       "8 gam / ngày"
@@ -233,7 +231,7 @@ const UMP_QUESTIONS = [
     "question": "Khi điều trị cơn Gút cấp tính, Colchicin đường uống nên được dùng với chế độ liều chuẩn hóa theo khuyến cáo hiện đại của ACR và EULAR như thế nào?",
     "options": [
       "Uống 1 mg mỗi giờ cho đến khi bệnh nhân bị tiêu chảy dữ dội thì dừng lại",
-      "Uống liều khởi đầu 1 mg (hoặc 1.2 mg), sau đó 1 giờ uống thêm 0.5 mg (hoặc 0.6 mg), tổng liều ngày đầu không quá 1.5 - 1.8 mg",
+      "Uống liều khởi đầu 1 mg, sau đó 1 giờ uống thêm 0.5 mg, tổng liều ngày đầu không quá 1.5 - 1.8 mg",
       "Uống liều cao 5 mg ngay từ đầu kết hợp truyền dịch kiềm hóa nước tiểu",
       "Dùng duy nhất một viên 0.25 mg mỗi 3 ngày một lần"
     ],
@@ -247,7 +245,7 @@ const UMP_QUESTIONS = [
     "question": "Thuốc hạ Acid Uric máu nhóm ức chế Xanthine Oxidase (Allopurinol) khi khởi đầu điều trị hạ acid uric cho bệnh nhân gút mạn tính bắt buộc phải lưu ý điều gì?",
     "options": [
       "Bắt đầu ngay bằng liều tối đa 800 mg/ngày để làm tan nhanh hạt tophi",
-      "Phải phối hợp đồng thời với thuốc dự phòng cơn gút cấp (Colchicin liều thấp hoặc NSAID) trong 3 đến 6 tháng đầu",
+      "Phải phối hợp đồng thời với thuốc dự phòng cơn gút cấp trong 3 đến 6 tháng đầu",
       "Ngừng toàn bộ các thuốc hạ áp và thuốc tim mạch của bệnh nhân",
       "Chỉ uống khi nồng độ acid uric máu hạ xuống dưới 200 mcmol/L"
     ],
@@ -274,7 +272,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Bệnh nhân nam 62 tuổi mắc Viêm phổi cộng đồng (CAP) điều trị nội trú tại khoa Hô hấp (không nằm ICU), không có yếu tố nguy cơ nhiễm trực khuẩn mủ xanh hay MRSA. Phác đồ kháng sinh kinh nghiệm theo ATS/IDSA và Hội Phổi Việt Nam là:",
     "options": [
-      "Beta-lactam phổ rộng đường tiêm (Ceftriaxon, Cefotaxim hoặc Ampicillin/Sulbactam) phối hợp với Macrolid (Azithromycin) hoặc dùng một Fluoroquinolon hô hấp đơn trị liệu",
+      "Beta-lactam phổ rộng đường tiêm phối hợp với Macrolid hoặc dùng một Fluoroquinolon hô hấp đơn trị liệu",
       "Vancomycin tiêm truyền kết hợp với Gentamicin tiêm bắp",
       "Metronidazol đường uống phối hợp Ciprofloxacin",
       "Cefazolin đơn độc truyền tĩnh mạch mỗi 8 giờ"
@@ -288,7 +286,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Thang điểm CURB-65 được sử dụng để đánh giá độ nặng và định hướng nơi điều trị cho bệnh nhân Viêm phổi cộng đồng (CAP). Năm tiêu chí của thang điểm này là:",
     "options": [
-      "Rối loạn ý thức (Confusion), Ure máu > 7 mmol/L, Tần số thở ≥ 30 lần/phút, Huyết áp (HATT < 90 hoặc HATTr ≤ 60 mmHg), Tuổi ≥ 65",
+      "Rối loạn ý thức, Ure máu > 7 mmol/L, Tần số thở ≥ 30 lần/phút, Huyết áp, Tuổi ≥ 65",
       "Ho nhiều, Ure máu, Rối loạn nhịp tim, Bạch cầu máu > 15 G/L, Tuổi ≥ 60",
       "Hôn mê, Đường huyết > 10 mmol/L, Suy thận cấp, Tụt huyết áp, Tuổi ≥ 65",
       "Khó thở, Creatinin máu > 150 mcmol/L, Suy tim, SpO2 < 90%, Tuổi ≥ 70"
@@ -302,9 +300,9 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Bệnh nhân sau ghép thận đang dùng thuốc ức chế miễn dịch Tacrolimus. Kháng sinh hoặc thuốc chống nấm nào sau đây khi dùng chung sẽ làm TĂNG VỌT nồng độ Tacrolimus trong máu dẫn đến tổn thương thận cấp do ngộ độc?",
     "options": [
-      "Voriconazol và Ketoconazol (chất ức chế rất mạnh enzym CYP3A4)",
-      "Rifampicin và Phenobarbital (chất cảm ứng enzym CYP3A4)",
-      "Amoxicillin và Cefuroxim (kháng sinh beta-lactam)",
+      "Voriconazol và Ketoconazol",
+      "Rifampicin và Phenobarbital",
+      "Amoxicillin và Cefuroxim",
       "Co-trimoxazol liều dự phòng nhiễm PCP"
     ],
     "correct": 0,
@@ -316,10 +314,10 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Bệnh nhân đái tháo đường tuýp 2 mắc kèm Bệnh tim thiếu máu cục bộ do xơ vữa (ASCVD) hoặc Suy tim mạn tính. Nhóm thuốc hạ đường huyết nào được khuyến cáo ưu tiên bổ sung hàng đầu độc lập với mức HbA1c ban đầu?",
     "options": [
-      "Thuốc đồng vận thụ thể GLP-1 (GLP-1 RA) và thuốc ức chế kênh đồng vận chuyển Natri-Glucose 2 (SGLT2i)",
-      "Thuốc nhóm Sulfonylurea thế hệ 1 (Tolbutamid)",
+      "Thuốc đồng vận thụ thể GLP-1 và thuốc ức chế kênh đồng vận chuyển Natri-Glucose 2",
+      "Thuốc nhóm Sulfonylurea thế hệ 1",
       "Insulin NPH tiêm dưới da liều cao buổi tối",
-      "Thuốc ức chế men alpha-glucosidase (Acarbose)"
+      "Thuốc ức chế men alpha-glucosidase"
     ],
     "correct": 0,
     "explanation": "Khuyến cáo ADA và ESC nhấn mạnh: Bệnh nhân ĐTĐ tuýp 2 có bệnh tim mạch xơ vữa (ASCVD) ưu tiên dùng GLP-1 RA có chứng minh lợi ích tim mạch (Liraglutide, Semaglutide) hoặc SGLT2i. Với suy tim (HFrEF/HFpEF) hoặc bệnh thận mạn (CKD), SGLT2i là lựa chọn số 1 để giảm tỷ lệ tử vong và biến cố tim mạch."
@@ -330,7 +328,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Tác dụng phụ hiếm gặp nhưng rất nguy hiểm của thuốc ức chế SGLT2 (Dapagliflozin, Empagliflozin) cần được tư vấn kỹ cho bệnh nhân là:",
     "options": [
-      "Nhiễm toan ceton đái tháo đường với mức đường huyết bình thường hoặc tăng nhẹ (Euglycemic DKA)",
+      "Nhiễm toan ceton đái tháo đường với mức đường huyết bình thường hoặc tăng nhẹ",
       "Xơ gan teo đét và suy gan bùng phát",
       "Tăng huyết áp kịch phát dẫn đến phình tách động mạch chủ",
       "Gây điếc tiếp nhận không hồi phục ở cả hai tai"
@@ -344,7 +342,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Kháng sinh Fosfomycin đường uống dạng hạt cốm tan (Fosfomycin trometamol 3g liều duy nhất) được khuyến cáo là lựa chọn hàng đầu cho chỉ định nhiễm khuẩn nào?",
     "options": [
-      "Nhiễm khuẩn tiết niệu dưới không biến chứng (viêm bàng quang cấp) ở phụ nữ",
+      "Nhiễm khuẩn tiết niệu dưới không biến chứng ở phụ nữ",
       "Viêm bể thận - thận cấp tính có sốt cao và rét run",
       "Nhiễm khuẩn huyết do tụ cầu vàng đa kháng",
       "Viêm tuyến tiền liệt mạn tính do vi khuẩn kỵ khí"
@@ -358,7 +356,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Trong nhiễm trùng huyết do Acinetobacter baumannii kháng Carbapenem (CRAB), phác đồ phối hợp kháng sinh thường được áp dụng bao gồm thuốc nào sau đây?",
     "options": [
-      "Colistin (Polymyxin E) liều nạp phối hợp Ampicillin / Sulbactam liều cao (hoặc Tigecyclin liều cao)",
+      "Colistin liều nạp phối hợp Ampicillin / Sulbactam liều cao",
       "Penicillin G tinh thể tiêm tĩnh mạch phối hợp Metronidazol",
       "Ceftriaxon phối hợp Gentamicin liều thông thường",
       "Erythromycin phối hợp Doxycyclin đường uống"
@@ -400,7 +398,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Thuốc chống loãng xương đường uống nhóm Bisphosphonat (như Alendronat 70 mg uống mỗi tuần một lần) đòi hỏi hướng dẫn sử dụng nghiêm ngặt nào để tránh loét thực quản?",
     "options": [
-      "Uống ngay vào buổi sáng khi bụng đói với một cốc nước lọc đầy (200 ml), giữ tư thế ngồi hoặc đứng thẳng ít nhất 30 phút sau uống và không ăn uống gì khác",
+      "Uống ngay vào buổi sáng khi bụng đói với một cốc nước lọc đầy, giữ tư thế ngồi hoặc đứng thẳng ít nhất 30 phút sau uống và không ăn uống gì khác",
       "Nghiền nát viên thuốc hòa cùng nước cam chua để uống trước khi đi ngủ",
       "Uống cùng với một cốc sữa tươi giàu canxi ngay sau bữa ăn trưa",
       "Nằm nghỉ ngơi trên giường ngay lập tức sau khi nuốt viên thuốc"
@@ -414,7 +412,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Trong cấp cứu cơn Tăng huyết áp khẩn trương hoặc cấp cứu (Hypertensive crisis) có kèm Phình bóc tách động mạch chủ ngực cấp, mục tiêu kiểm soát huyết áp và nhịp tim ban đầu là:",
     "options": [
-      "Hạ nhanh huyết áp tâm thu xuống dưới 120 mmHg và nhịp tim dưới 60 lần/phút trong vòng 20 phút bằng thuốc chẹn beta tĩnh mạch (Esmolol, Labetalol)",
+      "Hạ nhanh huyết áp tâm thu xuống dưới 120 mmHg và nhịp tim dưới 60 lần/phút trong vòng 20 phút bằng thuốc chẹn beta tĩnh mạch",
       "Hạ huyết áp thật chậm từ từ trong 48 giờ để tránh thiếu máu thận",
       "Tăng huyết áp lên cao hơn để duy trì áp lực tưới máu lòng mạch giả",
       "Dùng thuốc kích thích giao cảm để nâng huyết áp trung bình"
@@ -428,7 +426,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Ở bệnh nhân Nhồi máu cơ tim cấp có ST chênh lên (STEMI), thuốc chẹn beta giao cảm đường uống (như Metoprolol succinate, Bisoprolol) KHÔNG NÊN khởi đầu trong 24 giờ đầu nếu bệnh nhân có dấu hiệu nào sau đây?",
     "options": [
-      "Dấu hiệu suy tim cấp tiến triển hoặc nguy cơ cao rơi vào sốc tim (PR > 0.24s, nhịp tim < 60, HA < 100 mmHg)",
+      "Dấu hiệu suy tim cấp tiến triển hoặc nguy cơ cao rơi vào sốc tim",
       "Đau ngực sau xương ức dữ dội kèm theo lo âu",
       "Mức đường huyết tăng nhẹ 8.5 mmol/L",
       "Tăng nhẹ nồng độ Troponin T huyết thanh"
@@ -444,7 +442,7 @@ const UMP_QUESTIONS = [
     "options": [
       "Phong bế thụ thể Muscarinic M3 tại cơ trơn khí phế quản ngăn cản tác dụng gây co thắt của Acetylcholin",
       "Kích thích trực tiếp adenylate cyclase làm tăng tổng hợp cAMP nội bào",
-      "Ức chế enzym phosphodiesterase-4 (PDE4) làm giảm giải phóng cytokine gây viêm",
+      "Ức chế enzym phosphodiesterase-4 làm giảm giải phóng cytokine gây viêm",
       "Đối kháng thụ thể Leukotriene CysLT1 tại niêm mạc phế quản"
     ],
     "correct": 0,
@@ -484,7 +482,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Thuốc chống đông trực tiếp Dabigatran etexilate có chất đối kháng đặc hiệu (Reversal agent) đã được cấp phép sử dụng trong cấp cứu xuất huyết đe dọa tính mạng là:",
     "options": [
-      "Idarucizumab (Praxbind)",
+      "Idarucizumab",
       "Andexanet alfa",
       "Flumazenil",
       "Phytomenadion"
@@ -498,7 +496,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Kháng sinh Ceftriaxon được đào thải qua những con đường sinh học nào trong cơ thể?",
     "options": [
-      "Đào thải kép cân bằng qua cả thận (khoảng 60%) và qua đường mật/phân (khoảng 40%)",
+      "Đào thải kép cân bằng qua cả thận và qua đường mật/phân",
       "Thải trừ 100% nguyên vẹn qua lọc cầu thận",
       "Chuyển hóa 100% tại biểu mô phổi thành acid amin",
       "Chỉ bài xuất qua tuyến mồ hôi và dịch nước bọt"
@@ -512,7 +510,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Bệnh nhân điều trị bằng kháng sinh nhóm Quinolon (Levofloxacin) hoặc Macrolid (Azithromycin) cần được theo dõi điện tâm đồ (ECG) vì nguy cơ gây ra tác dụng phụ tim mạch nguy hiểm nào sau đây?",
     "options": [
-      "Kéo dài khoảng QT (QT prolongation) dẫn đến loạn nhịp xoắn đỉnh (Torsades de Pointes)",
+      "Kéo dài khoảng QT dẫn đến loạn nhịp xoắn đỉnh",
       "Gây rung nhĩ kịch phát do cường giao cảm",
       "Gây tràn dịch màng ngoài tim co thắt",
       "Hẹp van động mạch chủ cấp tính"
@@ -526,10 +524,10 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Kháng sinh nào sau đây được xem là an toàn và được lựa chọn phổ biến nhất trong điều trị nhiễm khuẩn đường tiết niệu hoặc viêm đường hô hấp ở phụ nữ mang thai?",
     "options": [
-      "Beta-lactam (Amoxicillin / Clavulanat hoặc Cephalosporin)",
-      "Fluoroquinolon (Ciprofloxacin)",
-      "Aminoglycosid (Gentamicin)",
-      "Doxycyclin (Tetracyclin)"
+      "Beta-lactam",
+      "Fluoroquinolon",
+      "Aminoglycosid",
+      "Doxycyclin"
     ],
     "correct": 0,
     "explanation": "Kháng sinh Beta-lactam (Penicillin, Cephalosporin) không gây độc tế bào thai và được xếp loại an toàn hàng đầu (FDA nhóm B) trong suốt thai kỳ. Fluoroquinolone gây độc sụn khớp; Aminoglycoside độc tai trong thận; Tetracycline gây hỏng men và vàng răng vĩnh viễn cho thai nhi."
@@ -554,7 +552,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Ở bệnh nhân đái tháo đường, chỉ số HbA1c phản ánh mức độ kiểm soát đường huyết trung bình trong khoảng thời gian nào trước đó?",
     "options": [
-      "2 đến 3 tháng (tương ứng với đời sống trung bình 120 ngày của hồng cầu)",
+      "2 đến 3 tháng",
       "24 đến 48 giờ vừa qua",
       "1 đến 2 tuần lễ gần nhất",
       "1 năm trở lại đây"
@@ -582,7 +580,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Theo Thông tư 22/2011/TT-BYT và các văn bản hiện hành về tổ chức hoạt động dược bệnh viện, việc Dược sĩ lâm sàng phát hiện tương tác thuốc chống chỉ định trong đơn và đề xuất bác sĩ đổi thuốc an toàn được gọi là:",
     "options": [
-      "Can thiệp Dược lâm sàng (Clinical Pharmacy Intervention)",
+      "Can thiệp Dược lâm sàng",
       "Xử phạt hành chính đối với nhân viên y tế",
       "Thay đổi chẩn đoán y khoa của bệnh nhân",
       "Báo cáo vi phạm y đức lên thanh tra sở y tế"
@@ -610,10 +608,10 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Khi phối hợp pha trộn hai thuốc tiêm vào cùng một chai dịch truyền, hiện tượng xuất hiện tủa đục, đổi màu hoặc tách lớp ngay lập tức được phân loại là:",
     "options": [
-      "Tương kỵ vật lý (Physical incompatibility)",
+      "Tương kỵ vật lý",
       "Tương tác dược động học tại gan",
       "Tương tác dược lực học cạnh tranh thụ thể",
-      "Phản ứng có hại của thuốc loại B (ADR Type B)"
+      "Phản ứng có hại của thuốc loại B"
     ],
     "correct": 0,
     "explanation": "Tương kỵ vật lý là hiện tượng nhận biết được bằng mắt thường khi trộn các dung dịch tiêm truyền: kết tủa, vẩn đục, thay đổi màu sắc, tách lớp hoặc sinh khí. Tương kỵ này làm tắc dây truyền, tạo huyết khối vi mạch phổi hoặc làm mất tác dụng của thuốc."
@@ -638,9 +636,9 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Theo hướng dẫn phân loại và xử trí tiêu chảy của Tổ chức Y tế Thế giới (WHO/IMCI), trẻ có các dấu hiệu: li bì, mắt rất trũng, uống nước rất kém hoặc không thể uống được, nếp véo da mất rất chậm (> 2 giây) được phân loại là:",
     "options": [
-      "Tiêu chảy có mất nước nặng (Phác đồ C)",
-      "Tiêu chảy có mất nước nhẹ đến vừa (Phác đồ B)",
-      "Tiêu chảy không mất nước (Phác đồ A)",
+      "Tiêu chảy có mất nước nặng",
+      "Tiêu chảy có mất nước nhẹ đến vừa",
+      "Tiêu chảy không mất nước",
       "Tiêu chảy kéo dài không kèm biến chứng"
     ],
     "correct": 0,
@@ -652,7 +650,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Trong phác đồ điều trị lỵ trực khuẩn cấp tính do Shigella ở trẻ em khi có tình trạng kháng Ampicillin và Cotrimoxazol cao, kháng sinh đường uống nào sau đây được khuyến cáo ưu tiên lựa chọn?",
     "options": [
-      "Azithromycin hoặc Ciprofloxacin liều chuẩn ngắn ngày (3 ngày)",
+      "Azithromycin hoặc Ciprofloxacin liều chuẩn ngắn ngày",
       "Metronidazol đơn độc đường uống",
       "Vancomycin đường uống",
       "Amikacin tiêm bắp kéo dài 14 ngày"
@@ -666,7 +664,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Việc sử dụng thuốc chống nôn như Metoclopramid (Primperan) ở trẻ nhỏ bị tiêu chảy cấp nôn ói nhiều cần hết sức thận trọng và nhìn chung không được khuyến cáo rộng rãi do nguy cơ gặp biến chứng:",
     "options": [
-      "Hội chứng ngoại tháp cấp tính (cơn co giật mắt, xoắn vặn cổ, rối loạn trương lực cơ)",
+      "Hội chứng ngoại tháp cấp tính",
       "Suy gan tối cấp do hoại tử tế bào gan",
       "Thủng dạ dày tá tràng tự phát",
       "Xuất huyết giảm tiểu cầu miễn dịch"
@@ -680,7 +678,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Khi trẻ bị tiêu chảy cấp kèm bất dung nạp Lactose thứ phát (phân chua bọt, hậu môn đỏ rực), biện pháp can thiệp dinh dưỡng Dược lâm sàng thích hợp nhất là:",
     "options": [
-      "Tiếp tục cho trẻ bú mẹ; nếu dùng sữa công thức thì tạm thời chuyển sang loại sữa không chứa đường lactose (Lactose-free) cho đến khi niêm mạc ruột hồi phục",
+      "Tiếp tục cho trẻ bú mẹ; nếu dùng sữa công thức thì tạm thời chuyển sang loại sữa không chứa đường lactose cho đến khi niêm mạc ruột hồi phục",
       "Nhịn ăn hoàn toàn chỉ truyền dịch tĩnh mạch trong 7 ngày",
       "Cho trẻ uống nước đường glucose đậm đặc thay cho toàn bộ các bữa sữa",
       "Bổ sung kháng sinh Metronidazol kết hợp Clindamycin đường uống"
@@ -694,7 +692,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Thuốc hạ sốt giảm đau Ibuprofen được khuyến cáo sử dụng cho trẻ em với liều lượng và khoảng cách đưa liều chuẩn là:",
     "options": [
-      "5 đến 10 mg/kg mỗi liều, cách nhau 6 đến 8 giờ (tối đa không quá 30 - 40 mg/kg/ngày)",
+      "5 đến 10 mg/kg mỗi liều, cách nhau 6 đến 8 giờ",
       "20 đến 25 mg/kg mỗi liều, cách nhau 2 giờ",
       "1 mg/kg mỗi ngày một lần duy nhất vào buổi sáng",
       "50 mg/kg mỗi liều khi trẻ sốt trên 39 độ C"
@@ -708,7 +706,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Ở trẻ sơ sinh và trẻ đẻ non, tỷ lệ nước toàn phần trong cơ thể chiếm khoảng 75 - 80% trọng lượng cơ thể (so với 55 - 60% ở người lớn). Sự khác biệt sinh lý này dẫn đến biến đổi dược động học nào đối với các thuốc tan nhiều trong nước (như Aminoglycosid)?",
     "options": [
-      "Thể tích phân bố biểu kiến (Vd) tính theo kg cân nặng tăng lên, đòi hỏi liều nạp ban đầu tính theo mg/kg phải cao hơn người lớn để đạt nồng độ đỉnh hiệu quả",
+      "Thể tích phân bố biểu kiến tính theo kg cân nặng tăng lên, đòi hỏi liều nạp ban đầu tính theo mg/kg phải cao hơn người lớn để đạt nồng độ đỉnh hiệu quả",
       "Thể tích phân bố biểu kiến giảm xuống mạnh, phải giảm liều nạp ban đầu xuống một nửa",
       "Thuốc tích lũy hoàn toàn vào mô mỡ dưới da",
       "Tốc độ hấp thu thuốc qua đường tiêu hóa tăng gấp 10 lần"
@@ -736,7 +734,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Theo khuyến cáo của Viện Hàn lâm Nhi khoa Hoa Kỳ (AAP) và Bộ Y tế, trẻ sơ sinh bú mẹ hoàn toàn cần được bổ sung Vitamin D3 với liều lượng là bao nhiêu để dự phòng bệnh còi xương?",
     "options": [
-      "400 IU (10 mcg) mỗi ngày, bắt đầu ngay từ những ngày đầu sau sinh",
+      "400 IU mỗi ngày, bắt đầu ngay từ những ngày đầu sau sinh",
       "5000 IU mỗi ngày trong suốt năm đầu đời",
       "100.000 IU uống một lần duy nhất sau khi sinh",
       "Không cần bổ sung vì sữa mẹ đã chứa thừa lượng Vitamin D cần thiết"
@@ -766,7 +764,7 @@ const UMP_QUESTIONS = [
     "options": [
       "Sỏi Canxi Oxalat do acid ascorbic chuyển hóa nội sinh thành oxalat trong nước tiểu",
       "Sỏi Acid Uric do tăng thoái hóa nhân purin",
-      "Sỏi Struvit (nhiễm trùng) do vi khuẩn Proteus",
+      "Sỏi Struvit do vi khuẩn Proteus",
       "Sỏi Cystin do đột biến tái hấp thu acid amin"
     ],
     "correct": 0,
@@ -778,7 +776,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Theo hướng dẫn của Hội Thấp khớp học Hoa Kỳ (ACR) và Bộ Y tế, bệnh nhân người lớn bắt đầu điều trị Glucocorticoid đường toàn thân với liều Prednisolon từ 5 mg/ngày kéo dài trên 3 tháng cần được can thiệp dự phòng loãng xương bằng:",
     "options": [
-      "Bổ sung Canxi (1000 - 1200 mg/ngày), Vitamin D (800 - 1000 IU/ngày) và cân nhắc chỉ định Bisphosphonat uống dựa trên đánh giá phân tầng nguy cơ gãy xương FRAX",
+      "Bổ sung Canxi, Vitamin D và cân nhắc chỉ định Bisphosphonat uống dựa trên đánh giá phân tầng nguy cơ gãy xương FRAX",
       "Chỉ định ngay Estrogen liều cao tiêm tĩnh mạch hàng tuần",
       "Bất động tại giường để tránh va chạm gãy xương",
       "Dùng Paracetamol liều tối đa 4g/ngày để giảm đau mỏi xương"
@@ -806,7 +804,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Tiêu chí STOPP/START (phiên bản 3) trong Dược lâm sàng lão khoa khuyến cáo BẮT ĐẦU (START criteria) nhóm thuốc nào sau đây cho người cao tuổi mắc bệnh suy tim phân suất tống máu giảm (HFrEF) để giảm tỷ lệ tử vong và nhập viện?",
     "options": [
-      "Thuốc ức chế kênh đồng vận Natri-Glucose 2 (SGLT2 inhibitors như Dapagliflozin, Empagliflozin)",
+      "Thuốc ức chế kênh đồng vận Natri-Glucose 2",
       "Thuốc chống loạn thần Haloperidol liều thấp",
       "Thuốc giãn cơ Mephenesin uống duy trì",
       "Thuốc chống co thắt cơ trơn Drotaverin dài ngày"
@@ -820,7 +818,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Bệnh nhân nam 62 tuổi vào cấp cứu trong tình trạng huyết áp 210/120 mmHg kèm đau đầu dữ dội, lú lẫn, phù gai thị (bệnh não tăng huyết áp - Cơn tăng huyết áp cấp cứu). Mục tiêu và nguyên tắc hạ huyết áp trong giờ đầu tiên là:",
     "options": [
-      "Dùng thuốc hạ áp truyền tĩnh mạch (như Nicardipin), hạ huyết áp tâm thu không quá 20 - 25% trong giờ đầu để tránh thiếu máu não cục bộ",
+      "Dùng thuốc hạ áp truyền tĩnh mạch, hạ huyết áp tâm thu không quá 20 - 25% trong giờ đầu để tránh thiếu máu não cục bộ",
       "Hạ huyết áp thật nhanh về mức huyết áp tối ưu 120/80 mmHg ngay trong vòng 15 phút đầu",
       "Cho uống ngay Nifedipin viên nang bóp dưới lưỡi để huyết áp hạ tức thì",
       "Không dùng thuốc hạ áp mà chỉ truyền dung dịch Natri Clorid 0,9% tốc độ nhanh"
@@ -834,7 +832,7 @@ const UMP_QUESTIONS = [
     "sourceName": "Đại học Y Dược TP.HCM",
     "question": "Ở phụ nữ mang thai bị Tăng huyết áp mạn tính hoặc Tăng huyết áp thai kỳ, thuốc nào sau đây là lựa chọn hàng đầu an toàn được khuyến cáo, và nhóm thuốc nào bị CHỐNG CHỈ ĐỊNH TUYỆT ĐỐI do gây quái thai suy thận thai nhi?",
     "options": [
-      "Lựa chọn hàng đầu là Methyldopa, Labetalol hoặc Nifedipin tác dụng kéo dài; Chống chỉ định tuyệt đối thuốc ức chế men chuyển (ACEI) và chẹn thụ thể ARB",
+      "Lựa chọn hàng đầu là Methyldopa, Labetalol hoặc Nifedipin tác dụng kéo dài; Chống chỉ định tuyệt đối thuốc ức chế men chuyển và chẹn thụ thể ARB",
       "Lựa chọn hàng đầu là Captopril và Enalapril; Chống chỉ định Methyldopa",
       "Lựa chọn hàng đầu là Losartan và Telmisartan; Chống chỉ định Labetalol",
       "Lựa chọn hàng đầu là thuốc lợi tiểu Thiazid liều cao; Chống chỉ định Canxi"

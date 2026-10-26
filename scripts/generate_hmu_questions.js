@@ -1,6 +1,4 @@
-// 60 High-Yield Clinical Pharmacy Questions - Đại học Y Hà Nội (HMU)
-// Chuyên đề: Cấp cứu sốc, Thông tư 51, EBM, Pha thử nghiệm lâm sàng, Nhi khoa, Lão khoa, Corticoid xung, Thiamin Wernicke
-
+// 60 High-Yield Clinical Pharmacy Questions
 const HMU_QUESTIONS = [
   {
     "chapter": "ADR, Dị ứng & Sốc phản vệ",
@@ -8,7 +6,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Theo Thông tư 51/2017/TT-BYT của Bộ Y tế, thuốc thiết yếu, quan trọng hàng đầu và bắt buộc phải tiêm ngay lập tức cho người bệnh bị phản vệ từ Độ II trở lên là:",
     "options": [
-      "Adrenalin (Epinephrin)",
+      "Adrenalin",
       "Methylprednisolon đường tĩnh mạch",
       "Diphenhydramin tiêm bắp",
       "Dung dịch Natri bicarbonat 1.4%"
@@ -22,10 +20,10 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Theo Thông tư 51/2017/TT-BYT, liều dùng và đường dùng Adrenalin khởi đầu khuyến cáo cho người lớn khi xử trí phản vệ Độ II hoặc Độ III là:",
     "options": [
-      "Tiêm bắp 1/2 ống (tương đương 0.5 mg) ở mặt trước ngoài đùi",
-      "Tiêm tĩnh mạch trực tiếp 1 ống nguyên chất (1 mg) thật nhanh",
+      "Tiêm bắp 1/2 ống ở mặt trước ngoài đùi",
+      "Tiêm tĩnh mạch trực tiếp 1 ống nguyên chất thật nhanh",
       "Pha loãng 1 ống vào 500 ml Natri Clorid 0.9% truyền nhỏ giọt trong 8 giờ",
-      "Tiêm dưới da 1/4 ống (0.25 mg) tại cẳng tay"
+      "Tiêm dưới da 1/4 ống tại cẳng tay"
     ],
     "correct": 0,
     "explanation": "Liều khởi đầu cho người lớn là tiêm bắp 1/2 ống (0.5 mg) dung dịch Adrenalin 1mg/1ml (1:1000). Vị trí tiêm tối ưu là mặt trước ngoài đùi vì có hệ thống mạch máu phong phú, giúp thuốc hấp thu vào tuần hoàn nhanh và đạt đỉnh cao hơn nhiều so với cơ delta hay tiêm dưới da."
@@ -50,7 +48,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Phân độ phản vệ theo Thông tư 51/2017/TT-BYT chia làm mấy mức độ và phản vệ Độ I (nhẹ) được định nghĩa bởi dấu hiệu nào?",
     "options": [
-      "4 mức độ; Độ I chỉ có các triệu chứng ở da, tổ chức dưới da và niêm mạc (mày đay, ngứa, phù mạch)",
+      "4 mức độ; Độ I chỉ có các triệu chứng ở da, tổ chức dưới da và niêm mạc",
       "3 mức độ; Độ I là tụt huyết áp và mất tri giác hoàn toàn",
       "5 mức độ; Độ I là co thắt thanh quản tím tái",
       "2 mức độ; Độ I là ngừng tuần hoàn hô hấp"
@@ -64,7 +62,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Chất giải độc đặc hiệu (Antidote) trong ngộ độc cấp tính Paracetamol do quá liều dẫn đến tích lũy chất chuyển hóa độc NAPQI gây hoại tử tế bào gan là:",
     "options": [
-      "N-acetylcystein (NAC)",
+      "N-acetylcystein",
       "Flumazenil",
       "Atropin sulfat",
       "Naloxon hydroclorid"
@@ -92,7 +90,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Tam chứng kinh điển gợi ý chẩn đoán Ngộ độc cấp tính các dẫn chất Opioid (Morphin, Heroin, Fentanyl) tại khoa Cấp cứu bao gồm:",
     "options": [
-      "Hôn mê ức chế tri giác, đồng tử co nhỏ như đầu đinh ghim (Pinpoint pupils) và ức chế hô hấp (thở chậm, ngừng thở)",
+      "Hôn mê ức chế tri giác, đồng tử co nhỏ như đầu đinh ghim và ức chế hô hấp",
       "Sốt cao co giật, đồng tử giãn to và tiêu chảy cấp",
       "Tăng huyết áp kịch phát, tim đập nhanh và rung giật nhãn cầu",
       "Vàng da tan máu, nổi ban xuất huyết hoại tử và vô niệu"
@@ -106,7 +104,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Khi tiêm tĩnh mạch Naloxon để hồi sức cấp cứu ngộ độc Morphin gây ngừng thở, lưu ý dược động học quan trọng nhất người thầy thuốc cần ghi nhớ là gì?",
     "options": [
-      "Thời gian bán thải của Naloxon rất ngắn (khoảng 30 đến 90 phút), ngắn hơn nhiều so với Morphin nên có thể tái hôn mê và ngừng thở trở lại sau khi thuốc hết tác dụng",
+      "Thời gian bán thải của Naloxon rất ngắn, ngắn hơn nhiều so với Morphin nên có thể tái hôn mê và ngừng thở trở lại sau khi thuốc hết tác dụng",
       "Naloxon chỉ có tác dụng sau 6 giờ tiêm tĩnh mạch",
       "Thuốc gây hạ đường huyết nghiêm trọng đe dọa phù não",
       "Naloxon gắn kết vĩnh viễn không hồi phục vào thụ thể Mu-opioid"
@@ -134,7 +132,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Chất giải độc đặc hiệu (Antidote) trong cấp cứu ngộ độc thuốc ức chế men cholinesterase nhóm phospho hữu cơ (thuốc trừ sâu Phospho hữu cơ) là sự phối hợp của:",
     "options": [
-      "Atropin sulfat (đối kháng triệu chứng Muscarinic) phối hợp Pralidoxim / PAM (tái hoạt hóa enzym acetylcholinesterase)",
+      "Atropin sulfat phối hợp Pralidoxim / PAM",
       "Naloxon phối hợp Glucose ưu trương",
       "Flumazenil phối hợp Vitamin K1",
       "Canxi gluconat phối hợp Insulin liều cao"
@@ -148,7 +146,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Trong ngộ độc thuốc chống đông Warfarin gây xuất huyết nặng đe dọa tính mạng (hoặc INR > 10 có xuất huyết), biện pháp hồi phục đông máu khẩn cấp nhất được khuyến cáo là:",
     "options": [
-      "Truyền Phức hợp Prothrombin đậm đặc 4 yếu tố (4F-PCC) phối hợp tiêm tĩnh mạch chậm Vitamin K1",
+      "Truyền Phức hợp Prothrombin đậm đặc 4 yếu tố phối hợp tiêm tĩnh mạch chậm Vitamin K1",
       "Chỉ cho uống Vitamin C liều cao",
       "Tiêm bắp Protamin sulfat",
       "Truyền dung dịch Natri Clorid 3% ưu trương"
@@ -218,7 +216,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Thuốc chống viêm không steroid (NSAID như Ibuprofen, Diclofenac) bị chống chỉ định sử dụng từ tuần thứ 28 của thai kỳ (3 tháng cuối thai kỳ) do nguy cơ gây ra biến cố tim mạch nào ở thai nhi?",
     "options": [
-      "Gây đóng sớm ống động mạch (Premature closure of ductus arteriosus) dẫn đến tăng áp động mạch phổi và suy tim thai",
+      "Gây đóng sớm ống động mạch dẫn đến tăng áp động mạch phổi và suy tim thai",
       "Gây thông liên thất lỗ lớn và đảo gốc động mạch",
       "Gây hẹp van hai lá bẩm sinh",
       "Làm ngừng tim thai do block nhĩ thất hoàn toàn"
@@ -232,7 +230,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Thuốc trị mụn trứng cá Isotretinoin (dẫn xuất vitamin A đường uống) được xếp vào phân loại thai kỳ X (chống chỉ định tuyệt đối) do có độc tính gì?",
     "options": [
-      "Khả năng gây quái thai (teratogenicity) cực mạnh với dị tật nghiêm trọng ở hệ thần kinh sọ não, tai, tim mạch và tuyến ức",
+      "Khả năng gây quái thai cực mạnh với dị tật nghiêm trọng ở hệ thần kinh sọ não, tai, tim mạch và tuyến ức",
       "Làm tan máu cấp tính ở người mẹ gây trụy mạch tức thì",
       "Gây ung thư nội mạc tử cung xuất hiện ngay trong thai kỳ",
       "Làm tiêu hủy hoàn toàn lớp mỡ bảo vệ thành tử cung"
@@ -302,7 +300,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Theo Bậc thang giảm đau của Tổ chức Y tế Thế giới (WHO Pain Ladder) cho bệnh nhân đau do ung thư, khi bệnh nhân xuất hiện cơn đau ở mức độ vừa đến nặng (điểm VAS từ 7 đến 10 điểm), bước bậc thang thích hợp là:",
     "options": [
-      "Bậc 3: Sử dụng các thuốc Opioid mạnh (Morphin, Fentanyl, Oxycodon) phối hợp thuốc giảm đau không opioid và thuốc hỗ trợ",
+      "Bậc 3: Sử dụng các thuốc Opioid mạnh phối hợp thuốc giảm đau không opioid và thuốc hỗ trợ",
       "Bậc 1: Chỉ dùng Paracetamol đơn độc liều tối thiểu",
       "Bậc 2: Dùng Codein hoặc Tramadol đơn thuần",
       "Bậc 4: Phẫu thuật cắt bỏ dây thần kinh cảm giác ngoại vi"
@@ -316,7 +314,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Thời điểm tối ưu nhất để tiêm tĩnh mạch liều Kháng sinh dự phòng trong phẫu thuật sạch hoặc sạch - nhiễm (ví dụ dùng Cefazolin) là:",
     "options": [
-      "Trong vòng 30 đến 60 phút trước khi rạch da (hoặc tối đa 120 phút với Vancomycin / Fluoroquinolon)",
+      "Trong vòng 30 đến 60 phút trước khi rạch da",
       "Ngay sau khi kết thúc ca mổ đưa về phòng hồi tỉnh",
       "Trước cuộc mổ 24 đến 48 giờ",
       "Khi phẫu thuật viên bắt đầu đóng vết mổ"
@@ -330,7 +328,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Thời gian sử dụng Kháng sinh dự phòng phẫu thuật theo khuyến cáo của Bộ Y tế và CDC nói chung KHÔNG NÊN kéo dài quá bao lâu sau khi kết thúc phẫu thuật?",
     "options": [
-      "Không quá 24 giờ sau mổ (hầu hết phẫu thuật chỉ cần 1 liều duy nhất trong mổ)",
+      "Không quá 24 giờ sau mổ",
       "Tối thiểu 7 đến 10 ngày để tiệt khuẩn toàn thân",
       "Kéo dài cho đến khi bệnh nhân cắt chỉ vết mổ",
       "Duy trì liên tục trong suốt thời gian nằm viện"
@@ -372,7 +370,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Bệnh nhân điều trị bằng thuốc chống trầm cảm nhóm SSRI (như Sertralin, Fluoxetin) kết hợp thêm thuốc giảm đau Tramadol hoặc Linezolid có nguy cơ xuất hiện biến chứng đe dọa tính mạng nào?",
     "options": [
-      "Hội chứng Serotonin (Serotonin Syndrome) biểu hiện run giật cơ, tăng phản xạ, sốt cao và mê sảng",
+      "Hội chứng Serotonin biểu hiện run giật cơ, tăng phản xạ, sốt cao và mê sảng",
       "Hội chứng nhược cơ cấp tính",
       "Thiếu máu bất sản tủy xương",
       "Viêm tụy cấp xuất huyết hoại tử"
@@ -386,7 +384,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Thuốc giải độc đặc hiệu (Antidote) trong ngộ độc khí Carbon Monoxide (CO) gây thiếu oxy mô và hoại tử tế bào thần kinh là:",
     "options": [
-      "Thở oxy nguyên chất 100% qua mặt nạ có túi dự trữ hoặc liệu pháp Oxy cao áp (Hyperbaric Oxygen - HBO)",
+      "Thở oxy nguyên chất 100% qua mặt nạ có túi dự trữ hoặc liệu pháp Oxy cao áp",
       "Tiêm tĩnh mạch dung dịch Natri thiosulfat",
       "Khí dung Salbutamol liều cao liên tục",
       "Truyền dung dịch Xanh Methylen 1%"
@@ -400,7 +398,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Chất giải độc đặc hiệu trong cấp cứu ngộ độc gây tăng Methemoglobin máu (Methemoglobinemia do Dapsone, Nitrit, thuốc tê Benzocain) là:",
     "options": [
-      "Xanh Methylen (Methylene blue) tiêm tĩnh mạch",
+      "Xanh Methylen tiêm tĩnh mạch",
       "N-acetylcystein",
       "Deferoxamin",
       "Flumazenil"
@@ -414,7 +412,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Thuốc chống đông đường uống Warfarin bị chống chỉ định sử dụng trong 3 tháng đầu thai kỳ (tuần 6 đến 9) do gây ra hội chứng dị tật thai nhi nào?",
     "options": [
-      "Hội chứng Warfarin thai nhi (Fetal Warfarin Syndrome) gây giảm sản xương mũi, dị tật đầu xương đốm và teo thần kinh thị giác",
+      "Hội chứng Warfarin thai nhi gây giảm sản xương mũi, dị tật đầu xương đốm và teo thần kinh thị giác",
       "Hội chứng Down do rối loạn phân bào tam nhiễm sắc thể 21",
       "Gây dính van ba lá tim bẩm sinh",
       "Dị tật thiếu ngón tay bẩm sinh đơn thuần"
@@ -456,7 +454,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Khi tiêm truyền tĩnh mạch dung dịch Kali Clorid (KCl) điều trị hạ kali máu, nguyên tắc an toàn tuyệt đối bắt buộc phải tuân thủ để tránh ngừng tim đột ngột là:",
     "options": [
-      "Bắt buộc phải pha loãng trong chai dịch truyền và truyền tĩnh mạch chậm, TUYỆT ĐỐI KHÔNG BAO GIỜ tiêm tĩnh mạch trực tiếp (Bolus) dung dịch KCl đậm đặc",
+      "Bắt buộc phải pha loãng trong chai dịch truyền và truyền tĩnh mạch chậm, TUYỆT ĐỐI KHÔNG BAO GIỜ tiêm tĩnh mạch trực tiếp dung dịch KCl đậm đặc",
       "Tiêm thật nhanh trong vòng 30 giây để cắt cơn hạ kali cấp",
       "Pha KCl đậm đặc vào nước cất để tiêm bắp sâu",
       "Cho bệnh nhân hít khí dung dung dịch KCl nguyên chất"
@@ -526,7 +524,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Phối hợp giữa thuốc chống viêm không steroid (NSAID như Meloxicam, Celecoxib) với thuốc ức chế men chuyển (ACEI) và thuốc lợi tiểu (Triple Whammy) làm tăng vọt nguy cơ xảy ra biến cố:",
     "options": [
-      "Tổn thương thận cấp (Acute Kidney Injury - AKI) do giảm mạnh áp lực lọc cầu thận",
+      "Tổn thương thận cấp do giảm mạnh áp lực lọc cầu thận",
       "Xuất huyết phế nang lan tỏa ở cả hai phổi",
       "Hội chứng cường giáp kịch phát",
       "Tăng nhãn áp góc mở cấp tính"
@@ -540,10 +538,10 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Aspirin bị chống chỉ định tuyệt đối ở trẻ em và thanh thiếu niên mắc các bệnh nhiễm virus cấp tính (như sốt cúm, thủy đậu) do nguy cơ gây ra hội chứng chết người nào?",
     "options": [
-      "Hội chứng Reye (gây bệnh não cấp và thoái hóa mỡ tế bào gan bùng phát)",
+      "Hội chứng Reye",
       "Hội chứng Fanconi thận",
       "Hội chứng vàng da nhân não",
-      "Hội chứng灰 (Gray syndrome)"
+      "Hội chứng xám"
     ],
     "correct": 0,
     "explanation": "Dùng Aspirin ở trẻ nhiễm virus (cúm A/B, thủy đậu) liên quan mật thiết với Hội chứng Reye - một bệnh lý ty thể cấp tính cực kỳ nguy hiểm đặc trưng bởi thoái hóa mỡ vi thể tế bào gan và phù não cấp tính, tỷ lệ tử vong lên tới 30 - 40%. Do đó, Paracetamol là thuốc hạ sốt an toàn được chỉ định thay thế cho trẻ em."
@@ -582,9 +580,9 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Trong hệ thống phân cấp bằng chứng y học (Hierarchy of Evidence), thiết kế nghiên cứu nào sau đây được xếp ở mức độ bằng chứng cao nhất (Level 1A) để làm cơ sở xây dựng các hướng dẫn điều trị lâm sàng?",
     "options": [
-      "Tổng quan hệ thống và phân tích gộp (Systematic Review & Meta-analysis) từ các thử nghiệm lâm sàng ngẫu nhiên có đối chứng (RCTs)",
-      "Báo cáo loạt ca bệnh (Case series) tại một bệnh viện tuyến trung ương",
-      "Nghiên cứu bệnh - chứng (Case-control study)",
+      "Tổng quan hệ thống và phân tích gộp từ các thử nghiệm lâm sàng ngẫu nhiên có đối chứng",
+      "Báo cáo loạt ca bệnh tại một bệnh viện tuyến trung ương",
+      "Nghiên cứu bệnh - chứng",
       "Ý kiến đồng thuận của các chuyên gia đầu ngành chưa qua nghiên cứu đối chứng"
     ],
     "correct": 0,
@@ -610,7 +608,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Khái niệm 'Sai sót dùng thuốc' (Medication Error - ME) theo định nghĩa của Viện An toàn Thuốc Hoa Kỳ (ISMP) và Bộ Y tế khác với 'Biến cố bất lợi của thuốc' (Adverse Drug Event - ADE) ở đặc điểm mấu chốt nào?",
     "options": [
-      "Sai sót dùng thuốc là biến cố hoàn toàn có thể phòng tránh được (preventable), xảy ra trong bất kỳ khâu nào từ kê đơn, sao chép, cấp phát đến dùng thuốc",
+      "Sai sót dùng thuốc là biến cố hoàn toàn có thể phòng tránh được, xảy ra trong bất kỳ khâu nào từ kê đơn, sao chép, cấp phát đến dùng thuốc",
       "Sai sót dùng thuốc chỉ do lỗi của điều dưỡng khi tiêm thuốc sai giờ",
       "Sai sót dùng thuốc bắt buộc phải gây hậu quả tử vong cho bệnh nhân",
       "Sai sót dùng thuốc không bao giờ được phép ghi vào sổ theo dõi sự cố y khoa"
@@ -624,8 +622,8 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Trong kinh tế y tế ứng dụng tại bệnh viện, phương pháp Phân tích Chi phí - Hiệu quả (Cost-Effectiveness Analysis - CEA) đo lường kết quả đầu ra lâm sàng của thuốc dưới dạng đơn vị nào?",
     "options": [
-      "Đơn vị tự nhiên của hiệu quả y tế (như số năm sống tăng thêm, số đợt tái phát phòng ngừa được, số mmHg huyết áp giảm)",
-      "Đơn vị tiền tệ (VNĐ hoặc USD) của toàn bộ các lợi ích thu được",
+      "Đơn vị tự nhiên của hiệu quả y tế",
+      "Đơn vị tiền tệ của toàn bộ các lợi ích thu được",
       "Số ngày phép nghỉ ốm của nhân viên y tế",
       "Số lượng ấn phẩm nghiên cứu được xuất bản trên tạp chí quốc tế"
     ],
@@ -638,8 +636,8 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Theo hướng dẫn của Bộ Y tế và WHO, trẻ bị tiêu chảy cấp mất nước nặng (Phác đồ C) dưới 1 tuổi được bù dịch tĩnh mạch bằng dung dịch Ringer Lactat với tổng lượng 100 mL/kg theo phân kỳ thời gian nào?",
     "options": [
-      "Truyền 30 mL/kg trong 1 giờ đầu, sau đó truyền 70 mL/kg trong 5 giờ tiếp theo (tổng thời gian 6 giờ)",
-      "Truyền 30 mL/kg trong 30 phút đầu, sau đó 70 mL/kg trong 2,5 giờ tiếp theo (tổng thời gian 3 giờ)",
+      "Truyền 30 mL/kg trong 1 giờ đầu, sau đó truyền 70 mL/kg trong 5 giờ tiếp theo",
+      "Truyền 30 mL/kg trong 30 phút đầu, sau đó 70 mL/kg trong 2,5 giờ tiếp theo",
       "Truyền toàn bộ 100 mL/kg nhỏ giọt thật chậm trong 24 giờ liên tục",
       "Truyền 50 mL/kg dung dịch Glucose 10% tiêm tĩnh mạch trực tiếp trong 10 phút"
     ],
@@ -652,7 +650,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Khi pha dung dịch Oresol tiêu chuẩn (gói pha 1 lít nước hoặc gói pha 200 mL), sai lầm nghiêm trọng nhất dẫn đến nguy cơ ngộ độc muối (tăng natri máu cấp gây co giật, phù não tử vong) là:",
     "options": [
-      "Pha gói Oresol với lượng nước quá ít so với quy định (dung dịch quá đậm đặc) hoặc chia nhỏ gói thuốc để pha nhiều lần",
+      "Pha gói Oresol với lượng nước quá ít so với quy định hoặc chia nhỏ gói thuốc để pha nhiều lần",
       "Pha Oresol bằng nước đun sôi để nguội",
       "Cho trẻ uống từng thìa nhỏ ngắt quãng",
       "Đổ bỏ dung dịch Oresol đã pha sau 24 giờ không dùng hết"
@@ -694,8 +692,8 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Liều dùng Paracetamol đường uống hoặc đặt hậu môn để hạ sốt, giảm đau thông thường cho trẻ em theo khuyến cáo chuẩn của Bộ Y tế là:",
     "options": [
-      "10 đến 15 mg/kg mỗi lần, cách nhau 4 đến 6 giờ (tối đa không quá 60 mg/kg/ngày)",
-      "25 đến 30 mg/kg mỗi lần, cách nhau 2 giờ (tối đa 150 mg/kg/ngày)",
+      "10 đến 15 mg/kg mỗi lần, cách nhau 4 đến 6 giờ",
+      "25 đến 30 mg/kg mỗi lần, cách nhau 2 giờ",
       "Cố định 500 mg cho mỗi lần sốt bất kể cân nặng của trẻ",
       "5 mg/kg mỗi ngày uống một lần duy nhất vào buổi sáng"
     ],
@@ -722,7 +720,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Kháng sinh Aminoglycosid (Gentamicin, Amikacin) khi chỉ định cho trẻ sơ sinh và trẻ đẻ non đòi hỏi phải giám sát chặt chẽ và giãn khoảng cách đưa liều (mỗi 24 - 36 - 48 giờ) chủ yếu nhằm phòng ngừa độc tính tích lũy trên:",
     "options": [
-      "Ống lượn gần của thận (độc thận) và tế bào lông của ốc tai - tiền đình (độc thính giác và thăng bằng)",
+      "Ống lượn gần của thận và tế bào lông của ốc tai - tiền đình",
       "Võng mạc mắt gây bong võng mạc",
       "Tủy xương gây suy tủy giảm tế bào máu",
       "Cơ tim gây viêm cơ tim cấp giãn buồng tim"
@@ -736,7 +734,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Phụ nữ trong độ tuổi sinh đẻ có kế hoạch mang thai được khuyến cáo bổ sung Axit Folic (Vitamin B9) trước khi thụ thai tối thiểu 1 tháng và trong suốt 3 tháng đầu thai kỳ nhằm mục đích chính là:",
     "options": [
-      "Dự phòng dị tật ống thần kinh ở thai nhi (như nứt đốt sống, vô sọ)",
+      "Dự phòng dị tật ống thần kinh ở thai nhi",
       "Tăng cường sản xuất sữa mẹ sau khi sinh",
       "Ngăn ngừa nguy cơ đái tháo đường thai kỳ cho người mẹ",
       "Giúp xương của thai nhi dài nhanh hơn để chống còi xương"
@@ -750,7 +748,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Bệnh nhân nghiện rượu mạn tính nhập viện trong tình trạng lơ mơ, thất điều vận động, rung giật nhãn cầu (hội chứng não Wernicke do thiếu Vitamin B1). Nguyên tắc Dược lâm sàng bắt buộc khi hồi sức cấp cứu là:",
     "options": [
-      "Phải tiêm bắp hoặc truyền tĩnh mạch Thiamin (Vitamin B1) liều cao TRƯỚC KHI truyền dịch ngọt Glucose",
+      "Phải tiêm bắp hoặc truyền tĩnh mạch Thiamin liều cao TRƯỚC KHI truyền dịch ngọt Glucose",
       "Truyền ngay dung dịch Glucose 10% tốc độ nhanh rồi mới dùng Vitamin B1 sau 24 giờ",
       "Cho bệnh nhân uống viên sủi Vitamin C liều cao",
       "Bắt buộc dùng kháng sinh Ceftriaxon liều cao tiêm tĩnh mạch"
@@ -792,7 +790,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Liệu pháp Glucocorticoid liều xung (Pulse therapy, ví dụ Methylprednisolon 500 - 1000 mg truyền tĩnh mạch mỗi ngày trong 3 ngày liên tiếp) thường được chỉ định trong tình huống lâm sàng nào?",
     "options": [
-      "Đợt bùng phát cấp tính đe dọa tính mạng hoặc tổn thương cơ quan đích của bệnh tự miễn (như viêm cầu thận lupus tăng sinh, viêm mạch ANCA, cơn nhược cơ cấp)",
+      "Đợt bùng phát cấp tính đe dọa tính mạng hoặc tổn thương cơ quan đích của bệnh tự miễn",
       "Cảm cúm thông thường có sốt nhẹ và ho có đờm",
       "Đau đầu do căng thẳng sau khi làm việc mệt mỏi",
       "Viêm mũi dị ứng thời tiết theo mùa ở thanh thiếu niên"
@@ -806,7 +804,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Ở người cao tuổi, sự suy giảm lưu lượng tuần hoàn qua gan (giảm 20 - 40%) và giảm hoạt tính enzym chuyển hóa gan dẫn đến hiện tượng gì đối với các thuốc có hệ số chiết xuất qua gan cao (High hepatic extraction ratio như Propranolol, Morphine, Nitroglycerin)?",
     "options": [
-      "Giảm chuyển hóa bước đầu qua gan (First-pass metabolism), làm nồng độ thuốc tự do trong máu và sinh khả dụng tăng vọt, dễ gây ngộ độc nếu không giảm liều",
+      "Giảm chuyển hóa bước đầu qua gan, làm nồng độ thuốc tự do trong máu và sinh khả dụng tăng vọt, dễ gây ngộ độc nếu không giảm liều",
       "Tăng chuyển hóa bước đầu làm thuốc bị mất tác dụng hoàn toàn",
       "Thuốc bị đào thải qua thận tăng lên gấp 5 lần",
       "Thuốc không thể phân bố vào các mô trong cơ thể"
@@ -820,8 +818,8 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Thuốc điều trị đái tháo đường nhóm Sulfonylurea nào sau đây bị CHỐNG CHỈ ĐỊNH hoặc khuyến cáo TRÁNH DÙNG ở người cao tuổi do thời gian bán thải kéo dài và chất chuyển hóa có hoạt tính tích lũy gây hạ đường huyết nặng nề kéo dài?",
     "options": [
-      "Glibenclamid (Glyburid)",
-      "Gliclazid giải phóng biến đổi (MR)",
+      "Glibenclamid",
+      "Gliclazid giải phóng biến đổi",
       "Metformin liều thấp",
       "Vildagliptin"
     ],
@@ -834,7 +832,7 @@ const HMU_QUESTIONS = [
     "sourceName": "Đại học Y Hà Nội",
     "question": "Trong xử trí cấp cứu sốc phản vệ theo Thông tư 51/2017/TT-BYT, trường hợp bệnh nhân tăng huyết áp đang dùng thuốc chẹn thụ thể beta-adrenergic (Beta-blocker như Propranolol, Bisoprolol) bị sốc phản vệ nhưng kém đáp ứng với Adrenaline thì thuốc cấp cứu phối hợp được chỉ định là:",
     "options": [
-      "Glucagon tiêm tĩnh mạch (1 đến 5 mg trong 5 phút, sau đó truyền tĩnh mạch liên tục)",
+      "Glucagon tiêm tĩnh mạch",
       "Truyền thêm dung dịch Canxi Clorid 10% tốc độ cao",
       "Tiêm bắp thêm Morphin sulfat 10 mg",
       "Dùng thuốc ức chế men chuyển Enalaprilat tiêm tĩnh mạch"

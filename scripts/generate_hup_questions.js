@@ -1,6 +1,4 @@
-// 60 High-Yield Clinical Pharmacy Questions - Đại học Dược Hà Nội (HUP)
-// Chuyên đề: Dược động học lâm sàng, TDM, Tương tác thuốc, Thang Naranjo, Thông tin thuốc, Nhi khoa, Lão khoa, Corticoid, Cấp cứu
-
+// 60 High-Yield Clinical Pharmacy Questions
 const HUP_QUESTIONS = [
   {
     "chapter": "Dược động học & Suy gan, thận",
@@ -9,9 +7,9 @@ const HUP_QUESTIONS = [
     "question": "Theo hướng dẫn TDM của Hiệp hội Dược sĩ Bệnh viện Hoa Kỳ (ASHP) và Bộ Y tế, thông số PK/PD tối ưu nhất để theo dõi hiệu quả và giảm độc tính thận của Vancomycin trong điều trị nhiễm khuẩn MRSA nặng là:",
     "options": [
       "Tỉ lệ Cmax / MIC đạt giá trị từ 8 đến 10",
-      "AUC24 / MIC đạt mục tiêu từ 400 đến 600 mg·h/L (giả định MIC = 1 mg/L)",
-      "Nồng độ đáy (C_trough) duy trì ổn định trong khoảng 5 đến 10 mcg/mL",
-      "Thời gian nồng độ thuốc vượt trên MIC (%T > MIC) tối thiểu đạt trên 70% khoảng liều"
+      "AUC24 / MIC đạt mục tiêu từ 400 đến 600 mg·h/L",
+      "Nồng độ đáy duy trì ổn định trong khoảng 5 đến 10 mcg/mL",
+      "Thời gian nồng độ thuốc vượt trên MIC tối thiểu đạt trên 70% khoảng liều"
     ],
     "correct": 1,
     "explanation": "ASHP và khuyến cáo Dược lâm sàng hiện đại khuyến cáo theo dõi Vancomycin theo AUC24/MIC từ 400 - 600 mg·h/L bằng phương pháp Bayes hoặc tính toán 2 điểm nồng độ. Trước đây dùng C_trough 15 - 20 mcg/mL nhưng nồng độ này làm tăng nguy cơ tổn thương thận cấp (AKI)."
@@ -22,8 +20,8 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Liều nạp (Loading dose) của Vancomycin theo khuyến cáo cho bệnh nhân người lớn nhiễm khuẩn nặng/nguy kịch (như sốc nhiễm khuẩn, viêm nội tâm mạc, viêm màng não) là:",
     "options": [
-      "10 đến 15 mg/kg tính theo cân nặng lý tưởng (IBW)",
-      "25 đến 30 mg/kg tính theo cân nặng thực tế (tối đa không quá 2 đến 3 gam)",
+      "10 đến 15 mg/kg tính theo cân nặng lý tưởng",
+      "25 đến 30 mg/kg tính theo cân nặng thực tế",
       "Cố định liều 1 gam duy nhất cho mọi người bệnh bất kể cân nặng",
       "40 đến 50 mg/kg truyền tĩnh mạch thật nhanh trong vòng 15 phút"
     ],
@@ -36,8 +34,8 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Đối với kháng sinh Aminoglycosid (Gentamicin, Tobramycin), việc áp dụng chế độ liều một lần mỗi ngày (Extended-interval / Once-daily dosing) dựa trên đặc tính dược lực học và dược động học nào sau đây?",
     "options": [
-      "Tác dụng diệt khuẩn phụ thuộc thời gian (%T > MIC) và thời gian bán thải dài trên 24 giờ",
-      "Tác dụng diệt khuẩn phụ thuộc nồng độ (Cmax/MIC) và hiệu ứng hậu kháng sinh (PAE) kéo dài",
+      "Tác dụng diệt khuẩn phụ thuộc thời gian và thời gian bán thải dài trên 24 giờ",
+      "Tác dụng diệt khuẩn phụ thuộc nồng độ và hiệu ứng hậu kháng sinh kéo dài",
       "Thuốc chuyển hóa hoàn toàn qua gan thành chất có hoạt tính diệt khuẩn mạnh hơn",
       "Thuốc không có độc tính tích lũy trên ống lượn gần của thận khi nồng độ đáy tăng cao"
     ],
@@ -66,7 +64,7 @@ const HUP_QUESTIONS = [
     "options": [
       "8 đến 12 giờ",
       "16 đến 24 giờ",
-      "32 đến 40 giờ (tương đương 4 đến 5 lần T1/2)",
+      "32 đến 40 giờ",
       "72 đến 96 giờ bất kể trị số thời gian bán thải"
     ],
     "correct": 2,
@@ -92,8 +90,8 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Khi áp dụng công thức Cockcroft-Gault để hiệu chỉnh liều thuốc ở bệnh nhân béo phì (BMI ≥ 30 kg/m² hoặc cân nặng thực tế vượt quá 120% cân nặng lý tưởng), loại cân nặng khuyến cáo sử dụng là:",
     "options": [
-      "Cân nặng thực tế (Actual Body Weight - TBW) vì lượng mỡ giúp đào thải creatinin",
-      "Cân nặng hiệu chỉnh (Adjusted Body Weight - ABW = IBW + 0.4 × [TBW - IBW])",
+      "Cân nặng thực tế vì lượng mỡ giúp đào thải creatinin",
+      "Cân nặng hiệu chỉnh",
       "Mặc định lấy giá trị cố định 70 kg cho tất cả các đối tượng béo phì",
       "Lấy cân nặng lý tưởng trừ đi 20% lượng mỡ thừa ước tính"
     ],
@@ -191,7 +189,7 @@ const HUP_QUESTIONS = [
     "question": "Phenytoin biểu hiện dược động học phi tuyến tính (Non-linear pharmacokinetics) ở nồng độ điều trị vì lý do cốt lõi nào sau đây?",
     "options": [
       "Quá trình hấp thu qua đường tiêu hóa bị bão hòa hoàn toàn ở liều trên 100 mg",
-      "Các enzym chuyển hóa tại gan (CYP2C9/2C19) bị bão hòa theo động học Michaelis-Menten",
+      "Các enzym chuyển hóa tại gan bị bão hòa theo động học Michaelis-Menten",
       "Tỷ lệ liên kết với protein huyết tương giảm dần theo cấp số nhân khi tăng liều",
       "Thuốc bị bài xuất tích cực qua ống thận với tốc độ không đổi bất kể nồng độ"
     ],
@@ -232,8 +230,8 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Kháng sinh nhóm Beta-lactam (Penicillin, Cephalosporin, Carbapenem) có hoạt tính diệt khuẩn phụ thuộc thời gian. Mục tiêu PK/PD quan trọng nhất để tối ưu hóa hiệu quả điều trị là:",
     "options": [
-      "Tối đa hóa tỉ lệ nồng độ đỉnh trên MIC (Cmax / MIC ≥ 10 - 12)",
-      "Tối ưu hóa thời gian nồng độ thuốc tự do vượt trên MIC trong khoảng liều (%fT > MIC)",
+      "Tối đa hóa tỉ lệ nồng độ đỉnh trên MIC",
+      "Tối ưu hóa thời gian nồng độ thuốc tự do vượt trên MIC trong khoảng liều",
       "Duy trì AUC24 trên MIC đạt trên 1000 mg·h/L",
       "Rút ngắn thời gian truyền tĩnh mạch xuống dưới 10 phút để tạo nồng độ đỉnh ồ ạt"
     ],
@@ -260,8 +258,8 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Theo công thức Schwartz cổ điển ước tính mức lọc cầu thận (eGFR) ở trẻ em, thông số cần đo lường bao gồm:",
     "options": [
-      "Chiều cao của trẻ (cm) và nồng độ Creatinin huyết thanh (mg/dL) kết hợp hằng số k theo lứa tuổi",
-      "Cân nặng của trẻ (kg) và diện tích bề mặt cơ thể (m²) đơn thuần",
+      "Chiều cao của trẻ và nồng độ Creatinin huyết thanh kết hợp hằng số k theo lứa tuổi",
+      "Cân nặng của trẻ và diện tích bề mặt cơ thể đơn thuần",
       "Vòng đầu của trẻ và nồng độ Ure máu 24 giờ",
       "Độ thanh thải Albumin nước tiểu và nồng độ Natri huyết tương"
     ],
@@ -275,7 +273,7 @@ const HUP_QUESTIONS = [
     "question": "Thuốc kháng nấm đường uống Itraconazol dạng viên nang thông thường đòi hỏi môi trường nào tại dạ dày để hòa tan và hấp thu tối đa?",
     "options": [
       "Môi trường kiềm hóa mạnh với pH dịch vị trên 6.0",
-      "Môi trường acid dịch vị tự nhiên (bị giảm hấp thu nghiêm trọng khi dùng chung với PPI hoặc kháng H2)",
+      "Môi trường acid dịch vị tự nhiên",
       "Môi trường hoàn toàn trung tính không có dịch vị tiêu hóa",
       "Môi trường nhiều ion kim loại hóa trị hai như Canxi và Nhôm"
     ],
@@ -288,7 +286,7 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Khi một thuốc có tỷ lệ liên kết với protein huyết tương cao (> 95%) và thể tích phân bố nhỏ (Vd < 0.2 L/kg) như Warfarin, việc bị một thuốc khác đẩy khỏi vị trí gắn albumin sẽ dẫn đến hậu quả ban đầu là:",
     "options": [
-      "Nồng độ thuốc dạng tự do (Free drug concentration) tăng đột ngột, làm tăng nguy cơ độc tính trước mắt",
+      "Nồng độ thuốc dạng tự do tăng đột ngột, làm tăng nguy cơ độc tính trước mắt",
       "Nồng độ toàn phần trong huyết tương tăng gấp 10 lần ngay lập tức",
       "Tốc độ lọc qua cầu thận giảm mạnh dẫn đến tích lũy thuốc vô thời hạn",
       "Thuốc mất hoàn toàn tác dụng sinh học do bị thực bào tại lách"
@@ -302,8 +300,8 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Để tính toán liều nạp (Loading Dose - LD) của một thuốc nhằm đạt ngay nồng độ mục tiêu (C_target) trong huyết tương, công thức đúng là:",
     "options": [
-      "LD = (Vd × C_target) / F (với Vd là thể tích phân bố, F là sinh khả dụng)",
-      "LD = (Cl × C_target) / tau (với Cl là độ thanh thải, tau là khoảng liều)",
+      "LD = (Vd × C_target) / F",
+      "LD = (Cl × C_target) / tau",
       "LD = (T1/2 × C_target) / 0.693",
       "LD = (AUC × C_target) / Vd"
     ],
@@ -331,7 +329,7 @@ const HUP_QUESTIONS = [
     "question": "Rifampicin được biết đến trong thực hành dược lâm sàng là một chất có tác động mạnh mẽ nhất đến hệ enzym CYP450 theo hướng nào?",
     "options": [
       "Ức chế chọn lọc không hồi phục enzym CYP2D6 tại gan",
-      "Cảm ứng mạnh mẽ và toàn diện nhiều enzym CYP (CYP3A4, 2C9, 2C19, 1A2) và P-glycoprotein",
+      "Cảm ứng mạnh mẽ và toàn diện nhiều enzym CYP và P-glycoprotein",
       "Cạnh tranh đào thải tại ống thận với các thuốc acid yếu",
       "Làm biến tính hoàn toàn thụ thể nhân PXR tại tế bào gan"
     ],
@@ -372,10 +370,10 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Chỉ số INR (International Normalized Ratio) được chuẩn hóa để theo dõi hiệu quả và an toàn của thuốc chống đông đường uống nào?",
     "options": [
-      "Heparin không phân đoạn (UFH)",
-      "Kháng vitamin K (Warfarin, Acenocoumarol)",
-      "Kháng đông đường uống trực tiếp ức chế yếu tố Xa (Rivaroxaban, Apixaban)",
-      "Thuốc ức chế trực tiếp Thrombin đường tiêm (Argatroban)"
+      "Heparin không phân đoạn",
+      "Kháng vitamin K",
+      "Kháng đông đường uống trực tiếp ức chế yếu tố Xa",
+      "Thuốc ức chế trực tiếp Thrombin đường tiêm"
     ],
     "correct": 1,
     "explanation": "INR là chỉ số chuẩn hóa quốc tế của thời gian Prothrombin (PT), dùng chuyên biệt để theo dõi thuốc kháng vitamin K (Warfarin). Mục tiêu điều trị thường từ 2.0 - 3.0 (hoặc 2.5 - 3.5 với van tim cơ học). Heparin UFH thì theo dõi bằng aPTT."
@@ -386,8 +384,8 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Xét nghiệm aPTT (thời gian thromboplastin một phần hoạt hóa) được sử dụng chuẩn mực để theo dõi và hiệu chỉnh liều của thuốc chống đông nào sau đây?",
     "options": [
-      "Heparin trọng lượng phân tử thấp (Enoxaparin)",
-      "Heparin không phân đoạn đường tĩnh mạch (Unfractionated Heparin - UFH)",
+      "Heparin trọng lượng phân tử thấp",
+      "Heparin không phân đoạn đường tĩnh mạch",
       "Aspirin liều thấp 81 mg chống kết tập tiểu cầu",
       "Dabigatran etexilate đường uống"
     ],
@@ -400,9 +398,9 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Khi cần giám sát tác dụng chống đông của Heparin trọng lượng phân tử thấp (LMWH như Enoxaparin) ở đối tượng đặc biệt (suy thận nặng, phụ nữ có thai hoặc béo phì nặng), xét nghiệm phù hợp nhất là:",
     "options": [
-      "Định lượng hoạt tính kháng yếu tố Xa (Anti-Xa assay)",
+      "Định lượng hoạt tính kháng yếu tố Xa",
       "Thời gian máu đông Lee-White",
-      "Đo thời gian prothrombin (PT/INR)",
+      "Đo thời gian prothrombin",
       "Đếm số lượng hồng cầu lưới trong máu ngoại vi"
     ],
     "correct": 0,
@@ -415,7 +413,7 @@ const HUP_QUESTIONS = [
     "question": "Phân loại ADR theo nguyên nhân phát sinh Type C (Continuing / Chronic) có đặc tính nhận diện nào sau đây?",
     "options": [
       "Xuất hiện tức thì sau mũi tiêm đầu tiên do cơ chế sốc phản vệ",
-      "Liên quan đến liều tích lũy và thời gian dùng thuốc kéo dài (ví dụ: hội chứng Cushing do lạm dụng Glucocorticoid)",
+      "Liên quan đến liều tích lũy và thời gian dùng thuốc kéo dài",
       "Chỉ xảy ra khi ngừng thuốc đột ngột do hiện tượng dội ngược",
       "Phát sinh sau nhiều thế hệ do đột biến nhiễm sắc thể dòng tế bào mầm"
     ],
@@ -429,7 +427,7 @@ const HUP_QUESTIONS = [
     "question": "Phản ứng có hại Type D (Delayed) theo phân loại của Rawlins và Thompson thường biểu hiện dưới dạng nào?",
     "options": [
       "Co thắt thanh quản và trụy mạch cấp tính",
-      "Tác dụng gây quái thai (teratogenicity) hoặc gây ung thư xuất hiện muộn sau khi dùng thuốc",
+      "Tác dụng gây quái thai hoặc gây ung thư xuất hiện muộn sau khi dùng thuốc",
       "Hội chứng cai thuốc xuất hiện ngay sau khi ngắt liều cuối cùng",
       "Tăng huyết áp dội ngược sau khi quên một liều Clonidin"
     ],
@@ -443,7 +441,7 @@ const HUP_QUESTIONS = [
     "question": "Phản ứng có hại Type E (End of use) theo phân loại Rawlins & Thompson được minh họa điển hình bởi hiện tượng nào?",
     "options": [
       "Suy thượng thận cấp khi ngừng đột ngột Corticoid dùng kéo dài hoặc nhịp tim nhanh dội ngược khi ngừng đột ngột chẹn beta",
-      "Phản ứng hoại tử thượng bì nhiễm độc (TEN) xảy ra sau 2 tuần dùng Allopurinol",
+      "Phản ứng hoại tử thượng bì nhiễm độc xảy ra sau 2 tuần dùng Allopurinol",
       "Xuất huyết tiêu hóa do quá liều dẫn chất kháng vitamin K",
       "Tổn thương thính lực vĩnh viễn sau liệu trình Amikacin dài ngày"
     ],
@@ -470,7 +468,7 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Tại sao liều khởi đầu của các thuốc tan nhiều trong nước (Hydrophilic drugs như Aminoglycosid) ở bệnh nhân sốc nhiễm khuẩn nặng thường cần phải tăng cao hơn so với bình thường?",
     "options": [
-      "Vì thể tích phân bố (Vd) của dịch ngoại bào tăng mạnh do hiện tượng rò rỉ mao mạch và bù dịch tích cực",
+      "Vì thể tích phân bố của dịch ngoại bào tăng mạnh do hiện tượng rò rỉ mao mạch và bù dịch tích cực",
       "Vì độ thanh thải qua thận tăng gấp 10 lần ở pha đầu của sốc nhiễm khuẩn",
       "Vì thuốc bị enzym nội bào thực bào phân hủy ngay trong lòng mạch",
       "Vì thuốc bị gắn kết bất thuận nghịch vào các thụ thể Toll-like trên bạch cầu đa nhân"
@@ -484,7 +482,7 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Kháng sinh Ceftriaxon chống chỉ định tuyệt đối phối hợp cùng lúc hoặc truyền cùng đường truyền với dung dịch chứa Canxi (như Ringer Lactat) ở đối tượng nào?",
     "options": [
-      "Trẻ sơ sinh (≤ 28 ngày tuổi) do nguy cơ kết tủa muối Ceftriaxon-Canxi gây tử vong tại phổi và thận",
+      "Trẻ sơ sinh do nguy cơ kết tủa muối Ceftriaxon-Canxi gây tử vong tại phổi và thận",
       "Bệnh nhân cao tuổi trên 80 tuổi mắc bệnh sa sút trí tuệ",
       "Người bệnh suy giáp đang điều trị bằng Levothyroxin",
       "Phụ nữ đang trong thời kỳ cho con bú sau 6 tháng đầu"
@@ -513,7 +511,7 @@ const HUP_QUESTIONS = [
     "question": "Tương tác giữa thuốc ức chế enzym MAO (như Selegilin, Phenelzin) và các thực phẩm giàu Tyramin (như phô mai lên men, rượu vang đỏ) gây ra biến chứng nguy hiểm nào?",
     "options": [
       "Hạ đường huyết nghiêm trọng dẫn đến co giật và hôn mê sâu",
-      "Cơn tăng huyết áp kịch phát ác tính (Hypertensive crisis) và xuất huyết não",
+      "Cơn tăng huyết áp kịch phát ác tính và xuất huyết não",
       "Hội chứng Stevens-Johnson hoại tử bong tróc niêm mạc toàn thân",
       "Tê liệt thần kinh vận động ngoại biên tạm thời"
     ],
@@ -540,8 +538,8 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Độ thanh thải toàn phần của cơ thể (Total Body Clearance - Cl) của một thuốc được định nghĩa chính xác nhất theo dược động học là:",
     "options": [
-      "Lượng thuốc tuyệt đối bị loại bỏ ra khỏi cơ thể trong một đơn vị thời gian (mg/phút)",
-      "Thể tích huyết tương được cơ thể làm sạch thuốc hoàn toàn trong một đơn vị thời gian (mL/phút hoặc L/giờ)",
+      "Lượng thuốc tuyệt đối bị loại bỏ ra khỏi cơ thể trong một đơn vị thời gian",
+      "Thể tích huyết tương được cơ thể làm sạch thuốc hoàn toàn trong một đơn vị thời gian",
       "Phần trăm liều thuốc được lọc qua màng cầu thận trong một chu kỳ tuần hoàn",
       "Tỷ số giữa nồng độ thuốc trong nước tiểu và nồng độ thuốc trong huyết tương"
     ],
@@ -554,10 +552,10 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Khi điều trị Tăng lipid máu bằng Statin phối hợp với Fibrat (như Fenofibrat), chỉ số xét nghiệm men cơ nào cần được giám sát chặt chẽ nhất để phát hiện sớm tổn thương cơ vân?",
     "options": [
-      "Alanine aminotransferase (ALT)",
-      "Creatine kinase (CK hoặc CPK)",
-      "Alkaline phosphatase (ALP)",
-      "Lactate dehydrogenase (LDH)"
+      "Alanine aminotransferase",
+      "Creatine kinase",
+      "Alkaline phosphatase",
+      "Lactate dehydrogenase"
     ],
     "correct": 1,
     "explanation": "Creatine kinase (CK) là men đặc hiệu giải phóng từ cơ vân. Khi phối hợp Statin với Fibrat (đặc biệt Gemfibrozil chống chỉ định, Fenofibrat an toàn hơn nhưng vẫn cần giám sát), nếu bệnh nhân đau cơ kèm CK tăng gấp trên 5 - 10 lần giới hạn trên bình thường (ULN) thì phải ngừng thuốc ngay để tránh tiêu cơ vân cấp và suy thận."
@@ -613,7 +611,7 @@ const HUP_QUESTIONS = [
       "Ưu điểm là thông tin đã được tổng hợp, thẩm định và dễ tiếp cận; nhược điểm là thông tin có độ trễ thời gian so với các nghiên cứu mới nhất",
       "Ưu điểm là cung cấp dữ liệu thử nghiệm lâm sàng gốc mới nhất trong ngày; nhược điểm là chưa qua phản biện đồng cấp",
       "Ưu điểm là hoàn toàn miễn phí và không bao giờ có sai sót; nhược điểm là không có thông tin về liều lượng thuốc",
-      "Ưu điểm là chứa đựng toàn bộ các bài tóm tắt trừu tượng (abstract); nhược điểm là không thể tra cứu trên internet"
+      "Ưu điểm là chứa đựng toàn bộ các bài tóm tắt trừu tượng; nhược điểm là không thể tra cứu trên internet"
     ],
     "correct": 0,
     "explanation": "Nguồn cấp 3 (sách giáo khoa Dược thư quốc gia, Martindale, AHFS, Micromedex) tổng hợp từ nguồn cấp 1 và cấp 2, rất thuận tiện và dễ dùng cho thực hành, nhưng có độ trễ cập nhật (time lag) từ 1 - 2 năm so với các ấn phẩm khoa học mới nhất."
@@ -624,10 +622,10 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Trong đánh giá chất lượng y văn lâm sàng, thang điểm Jadad thường được Dược sĩ lâm sàng sử dụng để thẩm định thiết kế nghiên cứu nào sau đây?",
     "options": [
-      "Thử nghiệm lâm sàng ngẫu nhiên có đối chứng (Randomized Controlled Trials - RCT)",
-      "Báo cáo một ca bệnh hiếm gặp (Case report)",
-      "Nghiên cứu mô tả cắt ngang tại một thời điểm (Cross-sectional study)",
-      "Nghiên cứu đoàn hệ hồi cứu qua hồ sơ bệnh án (Retrospective cohort study)"
+      "Thử nghiệm lâm sàng ngẫu nhiên có đối chứng",
+      "Báo cáo một ca bệnh hiếm gặp",
+      "Nghiên cứu mô tả cắt ngang tại một thời điểm",
+      "Nghiên cứu đoàn hệ hồi cứu qua hồ sơ bệnh án"
     ],
     "correct": 0,
     "explanation": "Thang điểm Jadad (thang điểm 5 điểm) là công cụ kinh điển thẩm định chất lượng phương pháp luận của các thử nghiệm ngẫu nhiên có đối chứng (RCT), đánh giá 3 yếu tố then chốt: ngẫu nhiên hóa (randomization), làm mù (blinding), và báo cáo theo dõi/bỏ cuộc (withdrawals and dropouts)."
@@ -666,7 +664,7 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Trường hợp nào sau đây ở trẻ em bị tiêu chảy cấp có chỉ định BẮT BUỘC phải dùng kháng sinh đường toàn thân?",
     "options": [
-      "Tiêu chảy phân có máu mũi nhầy (hội chứng lỵ) kèm sốt cao do nghi ngờ nhiễm vi khuẩn Shigella hoặc Campylobacter",
+      "Tiêu chảy phân có máu mũi nhầy kèm sốt cao do nghi ngờ nhiễm vi khuẩn Shigella hoặc Campylobacter",
       "Tiêu chảy phân toàn nước màu trắng đục như nước vo gạo không kèm sốt ở trẻ dưới 1 tuổi",
       "Trẻ nôn ói nhiều lần ngay sau khi uống dung dịch bù nước Oresol",
       "Tiêu chảy xuất hiện sau khi trẻ vừa tiêm phòng vaccine Rotavirus được 3 ngày"
@@ -694,7 +692,7 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Thuốc Chloramphenicol bị chống chỉ định hoặc phải kiểm soát nồng độ hết sức nghiêm ngặt ở trẻ sơ sinh (đặc biệt trẻ sinh non) do nguy cơ gây Hội chứng xám (Gray baby syndrome). Cơ chế sinh học chính dẫn đến hội chứng này là:",
     "options": [
-      "Gan trẻ sơ sinh thiếu hụt enzym Glucuronyl transferase (UGT) và thận chưa hoàn thiện dẫn đến tích lũy Chloramphenicol tự do nồng độ cao",
+      "Gan trẻ sơ sinh thiếu hụt enzym Glucuronyl transferase và thận chưa hoàn thiện dẫn đến tích lũy Chloramphenicol tự do nồng độ cao",
       "Thuốc làm tan máu ồ ạt do phá hủy trực tiếp màng hồng cầu",
       "Thuốc ức chế tủy xương không hồi phục gây xuất huyết não",
       "Thuốc lắng đọng tạo vi tinh thể gây tắc nghẽn toàn bộ ống thận"
@@ -736,10 +734,10 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Bệnh nhân điều trị lao bằng phác đồ có Isoniazid (INH) cần được bổ sung đồng thời Vitamin nào sau đây để dự phòng biến chứng viêm dây thần kinh ngoại biên?",
     "options": [
-      "Vitamin B6 (Pyridoxin) liều 10 đến 25 mg/ngày",
-      "Vitamin B12 (Cyanocobalamin) liều cao tiêm bắp",
-      "Vitamin C (Acid ascorbic) liều 1000 mg/ngày",
-      "Vitamin D3 (Cholecalciferol) liều 2000 IU/ngày"
+      "Vitamin B6 liều 10 đến 25 mg/ngày",
+      "Vitamin B12 liều cao tiêm bắp",
+      "Vitamin C liều 1000 mg/ngày",
+      "Vitamin D3 liều 2000 IU/ngày"
     ],
     "correct": 0,
     "explanation": "Isoniazid (INH) cạnh tranh với Pyridoxal phosphat (dạng hoạt động của Vitamin B6) và làm tăng bài tiết B6 qua nước tiểu, dẫn đến thiếu hụt B6 gây tổn thương bao myelin và viêm dây thần kinh ngoại vi (tê bì, kiến bò). Bổ sung Pyridoxin (B6) là bắt buộc ở người có nguy cơ cao (đái tháo đường, suy dinh dưỡng, phụ nữ có thai)."
@@ -750,7 +748,7 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Hướng dẫn Dược lâm sàng chuẩn khi cho bệnh nhân uống viên sắt (Ferrous sulfate) điều trị thiếu máu thiếu sắt là:",
     "options": [
-      "Uống lúc bụng đói với nước cam (giàu Vitamin C) để tăng hấp thu; không uống cùng sữa, trà hoặc thuốc kháng acid (Antacid)",
+      "Uống lúc bụng đói với nước cam để tăng hấp thu; không uống cùng sữa, trà hoặc thuốc kháng acid",
       "Uống ngay cùng bữa ăn có nhiều canxi và uống kèm một cốc sữa đặc có đường",
       "Nhai nát viên thuốc trước khi nuốt cùng nước chè đặc để giảm buồn nôn",
       "Uống chung cùng viên Canxi cacbonat 1000mg để sắt và canxi cùng hấp thu tốt hơn"
@@ -764,7 +762,7 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Việc sử dụng Vitamin A liều cao kéo dài ở phụ nữ có thai hoặc người lớn có thể dẫn đến nguy cơ ngộ độc nghiêm trọng nào sau đây?",
     "options": [
-      "Dị tật thai nhi bẩm sinh nghiêm trọng (sọ mặt, tim mạch) và hội chứng tăng áp lực nội sọ giả u não ở người lớn",
+      "Dị tật thai nhi bẩm sinh nghiêm trọng và hội chứng tăng áp lực nội sọ giả u não ở người lớn",
       "Viêm loét đại tràng chảy máu toàn bộ",
       "Đột quỵ thiếu máu não do tắc mạch",
       "Thiếu máu tan máu cấp tính kèm tiểu huyết sắc tố"
@@ -792,7 +790,7 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Ở bệnh nhân dùng Glucocorticoid đường toàn thân kéo dài trên 3 tuần, nguyên tắc giảm liều trước khi ngừng hẳn thuốc (tapering) là bắt buộc nhằm mục đích chính là:",
     "options": [
-      "Giúp trục hạ đồi - tuyến yên - vỏ thượng thận (HPA) có thời gian phục hồi bài tiết cortisol nội sinh, tránh suy thượng thận cấp",
+      "Giúp trục hạ đồi - tuyến yên - vỏ thượng thận có thời gian phục hồi bài tiết cortisol nội sinh, tránh suy thượng thận cấp",
       "Đảm bảo nồng độ thuốc trong máu giảm dần để cơ thể quen với tình trạng tăng đường huyết",
       "Tránh hiện tượng tăng calci huyết tái phát đột ngột",
       "Kích thích tủy xương tăng sinh tế bào lympho T và B"
@@ -820,7 +818,7 @@ const HUP_QUESTIONS = [
     "sourceName": "Đại học Dược Hà Nội",
     "question": "Thuốc nào sau đây có hoạt tính kháng cholinergic mạnh (Anticholinergic burden) và được khuyến cáo TRÁNH dùng ở người cao tuổi có sa sút trí tuệ hoặc phì đại lành tính tuyến tiền liệt?",
     "options": [
-      "Amitriptylin (kháng trầm cảm 3 vòng) và Diphenhydramin (kháng histamin H1 thế hệ 1)",
+      "Amitriptylin và Diphenhydramin",
       "Paracetamol và Cefuroxim axetil",
       "Metformin và Gliclazid",
       "Atorvastatin và Amlodipin"
