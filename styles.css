@@ -51,6 +51,12 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  height: auto;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--bg);
@@ -60,6 +66,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -518,6 +525,18 @@ main.app-main {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 380px;
   gap: 1.5rem;
+}
+
+main.app-main.full-width-view {
+  display: block;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+}
+
+main.app-main.full-width-view .desktop-scratchpad-panel,
+main.app-main.full-width-view .palette-container {
+  display: none !important;
 }
 
 /* LEFT COLUMN: EXAM VIEW */
@@ -3084,13 +3103,18 @@ main.app-main {
 .review-view-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
   animation: fadeIn 0.25s ease-out;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  padding-bottom: 6rem;
+  overflow: visible;
 }
 
 .review-sticky-header {
   position: sticky;
-  top: 60px;
+  top: 70px;
   z-index: 40;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -3100,6 +3124,14 @@ main.app-main {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .review-sticky-header {
+    position: static !important;
+    top: auto !important;
+    padding: 0.75rem 0.85rem;
+  }
 }
 
 .review-top-nav {

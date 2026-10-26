@@ -377,6 +377,19 @@ function switchTab(tab) {
     dock.style.display = isExamTab ? 'flex' : 'none';
   }
 
+  // Always reset any trapped body overflow
+  document.body.style.overflow = '';
+  if (document.documentElement) document.documentElement.style.overflow = '';
+
+  const appMain = document.querySelector('main.app-main');
+  if (appMain) {
+    if (tab === 'history') {
+      appMain.classList.add('full-width-view');
+    } else {
+      appMain.classList.remove('full-width-view');
+    }
+  }
+
   const paletteContainer = document.getElementById('sidebar-palette');
   const desktopScratchpad = document.getElementById('desktop-scratchpad-panel');
   const returnToPaletteBtn = document.getElementById('btn-palette-return');
@@ -388,12 +401,12 @@ function switchTab(tab) {
     renderExamQuestion(currentQuestionIndex);
     updatePalette();
   } else {
-    // In Chuyên Đề, Câu Hỏi Tủ, Lịch Sử, Công Thức:
-    // Palette is hidden, and Desktop Scratchpad is automatically visible on PC!
+    // In Lịch Sử: Palette is hidden and Scratchpad is hidden to give 100% full width and smooth scrolling!
+    // In Chuyên Đề, Câu Hỏi Tủ, Công Thức: Desktop Scratchpad is visible on PC.
     if (paletteContainer) paletteContainer.style.display = 'none';
     if (returnToPaletteBtn) returnToPaletteBtn.style.display = 'none';
     if (desktopScratchpad) {
-      if (window.innerWidth > 1024) {
+      if (window.innerWidth > 1024 && tab !== 'history') {
         desktopScratchpad.style.display = 'flex';
         setTimeout(resizeDesktopScratchCanvas, 50);
       } else {
@@ -552,15 +565,31 @@ function updateTimerDisplay() {
 }
 
 // Dual-Engine Vietnamese Text-To-Speech (TTS) Engine
-// GUARANTEE: Never uses an English voice to read Vietnamese
+// STRICT GUARANTEE: NEVER plays an English voice to read Vietnamese
 let ttsAudioQueue = [];
 let currentAudio = null;
 
 function isVietnameseVoice(v) {
   if (!v) return false;
-  const l = (v.lang || '').toLowerCase();
+  const l = (v.lang || '').toLowerCase().replace(/_/g, '-');
   const n = (v.name || '').toLowerCase();
-  return l.startsWith('vi') || l.includes('vn') || n.includes('vietnam') || n.includes('hoaimy') || n.includes('namminh') || n.includes('google tiếng việt');
+
+  // Strict blacklist: Never match foreign voices
+  if (l.startsWith('en') || l.startsWith('fr') || l.startsWith('de') || 
+      l.startsWith('ja') || l.startsWith('zh') || l.startsWith('ko') || 
+      l.startsWith('es') || l.startsWith('ru') || l.startsWith('it')) {
+    return false;
+  }
+
+  return l.startsWith('vi') || 
+         l === 'vi-vn' || 
+         n.includes('vietnam') || 
+         n.includes('tiếng việt') || 
+         n.includes('tieng viet') || 
+         n.includes('hoaimy') || 
+         n.includes('namminh') || 
+         n.includes('linh') || 
+         n.includes('an (vietnamese');
 }
 
 function findVietnameseVoice() {
@@ -568,12 +597,27 @@ function findVietnameseVoice() {
   try {
     const voices = window.speechSynthesis.getVoices() || [];
     if (!voices.length) return null;
-    // 1st priority: Microsoft Natural Vietnamese voices (HoaiMy, NamMinh on Edge)
-    let vi = voices.find(v => isVietnameseVoice(v) && (v.name.toLowerCase().includes('natural') || v.name.toLowerCase().includes('online')));
-    if (!vi) {
-      vi = voices.find(v => isVietnameseVoice(v));
-    }
-    return vi || null;
+
+    const viVoices = voices.filter(isVietnameseVoice);
+    if (!viVoices.length) return null;
+
+    // 1st priority: Microsoft Edge Natural Online voices (HoaiMy, NamMinh) - siêu mượt & tự nhiên
+    let topVoice = viVoices.find(v => {
+      const n = v.name.toLowerCase();
+      return (n.includes('natural') || n.includes('online')) && (n.includes('hoaimy') || n.includes('namminh'));
+    });
+    if (topVoice) return topVoice;
+
+    // 2nd priority: Google Tiếng Việt (Chrome / Android)
+    topVoice = viVoices.find(v => v.name.toLowerCase().includes('google'));
+    if (topVoice) return topVoice;
+
+    // 3rd priority: Apple Linh (iOS Safari / macOS)
+    topVoice = viVoices.find(v => v.name.toLowerCase().includes('linh'));
+    if (topVoice) return topVoice;
+
+    // 4th priority: Any genuine Vietnamese voice
+    return viVoices[0];
   } catch (e) {
     return null;
   }
@@ -588,6 +632,7 @@ function initTTS() {
   if (window.speechSynthesis.onvoiceschanged !== undefined) {
     window.speechSynthesis.onvoiceschanged = updateVoices;
   }
+  window.speechSynthesis.addEventListener('voiceschanged', updateVoices);
 }
 
 function stopSpeaking() {
@@ -620,16 +665,22 @@ function cleanTextForVietnameseSpeech(rawText) {
   return rawText
     .replace(/<[^>]*>/g, ' ')
     .replace(/•/g, ', ')
-    .replace(/✓/g, 'Đúng. ')
-    .replace(/✗/g, 'Sai. ')
+    .replace(/✓/g, 'Đáp án đúng: ')
+    .replace(/✗/g, 'Đáp án sai: ')
     .replace(/\bCrCl\b/gi, 'độ thanh thải Creatinine')
     .replace(/\beGFR\b/gi, 'mức lọc cầu thận')
     .replace(/\bNSAIDs?\b/gi, 'thuốc kháng viêm không steroid')
     .replace(/\bADR\b/gi, 'tác dụng không mong muốn')
+    .replace(/\bTHA\b/g, 'tăng huyết áp')
+    .replace(/\bĐTĐ\b/g, 'đái tháo đường')
+    .replace(/\bPNCT\b/g, 'phụ nữ có thai')
+    .replace(/\bCCB\b/g, 'thuốc chẹn kênh canxi')
+    .replace(/\bACEI\b/g, 'thuốc ức chế men chuyển')
+    .replace(/\bARB\b/g, 'thuốc chẹn thụ thể AT một')
     .replace(/\bCYP(\d+[A-Z]\d+)\b/gi, 'men gan CYP $1')
     .replace(/\bAUC\b/gi, 'diện tích dưới đường cong')
     .replace(/\bCmax\b/gi, 'nồng độ đỉnh C max')
-    .replace(/\bT1\/2\b/gi, 'thời gian bán thải T 1 phần 2')
+    .replace(/\bT1\/2\b/gi, 'thời gian bán thải T một phần hai')
     .replace(/\bmg\/dl\b/gi, 'miligram trên đê xi lít')
     .replace(/\bml\/phút\b/gi, 'mili lít trên phút')
     .replace(/\bmg\/ngày\b/gi, 'miligram mỗi ngày')
@@ -648,7 +699,7 @@ function cleanTextForVietnameseSpeech(rawText) {
     .trim();
 }
 
-function splitTextIntoAudioChunks(text, maxLength = 180) {
+function splitTextIntoAudioChunks(text, maxLength = 130) {
   const sentences = text.match(/[^.!?\n,;]+[.!?\n,;]?/g) || [text];
   const chunks = [];
   let currentChunk = '';
@@ -689,18 +740,42 @@ function playVietnameseAudioStreamQueue() {
   }
   const chunk = ttsAudioQueue.shift();
   const url = `https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encodeURIComponent(chunk)}`;
-  
-  currentAudio = new Audio(url);
-  currentAudio.onended = () => {
-    playVietnameseAudioStreamQueue();
+
+  if (currentAudio) {
+    try {
+      currentAudio.pause();
+    } catch (e) {}
+    currentAudio = null;
+  }
+
+  const audio = document.createElement('audio');
+  audio.setAttribute('referrerpolicy', 'no-referrer');
+  audio.referrerPolicy = 'no-referrer';
+  audio.crossOrigin = 'anonymous';
+  audio.src = url;
+
+  currentAudio = audio;
+
+  audio.onended = () => {
+    if (isSpeaking) {
+      playVietnameseAudioStreamQueue();
+    }
   };
-  currentAudio.onerror = (e) => {
+
+  audio.onerror = (e) => {
     console.warn('Audio stream chunk error, trying next:', e);
-    playVietnameseAudioStreamQueue();
+    if (ttsAudioQueue.length > 0) {
+      playVietnameseAudioStreamQueue();
+    } else {
+      stopSpeaking();
+      showToast('⚠️ Không tải được giọng đọc. Hãy mở web trên Microsoft Edge để nghe giọng đọc Hoài My tự nhiên!');
+    }
   };
-  currentAudio.play().catch(err => {
-    console.warn('Audio play error:', err);
+
+  audio.play().catch(err => {
+    console.warn('Audio stream play error:', err);
     stopSpeaking();
+    showToast('⚠️ Trình duyệt chặn phát âm thanh tự động hoặc thiết bị chưa hỗ trợ âm thanh.');
   });
 }
 
@@ -732,38 +807,48 @@ function speakExplanation(btn, rawText) {
   isSpeaking = true;
   currentSpeechBtn = btn;
 
-  // Check if browser has a genuine verified Vietnamese voice
-  const viVoice = cachedViVoice || findVietnameseVoice();
+  // 1. Try to find genuine Vietnamese voice in Web Speech API
+  let viVoice = findVietnameseVoice();
+  if (!viVoice && 'speechSynthesis' in window) {
+    window.speechSynthesis.getVoices();
+    viVoice = findVietnameseVoice();
+  }
 
   if (viVoice && 'speechSynthesis' in window) {
-    // Mode A: Native Vietnamese Voice (Edge HoaiMy/NamMinh Natural, Google Tiếng Việt)
+    // Mode A: Native Vietnamese Voice (Edge HoaiMy/NamMinh Natural, Google Tiếng Việt, Apple Linh)
     cachedViVoice = viVoice;
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.voice = viVoice;
-    utterance.lang = 'vi-VN';
-    utterance.rate = 0.95;
-    utterance.pitch = 1.0;
+    try {
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.voice = viVoice;
+      utterance.lang = viVoice.lang || 'vi-VN';
+      utterance.rate = 0.95;
+      utterance.pitch = 1.0;
 
-    utterance.onend = () => {
-      stopSpeaking();
-    };
+      utterance.onend = () => {
+        stopSpeaking();
+      };
 
-    utterance.onerror = (e) => {
-      console.warn('SpeechSynthesis error:', e);
-      stopSpeaking();
-    };
+      utterance.onerror = (e) => {
+        console.warn('SpeechSynthesis error:', e);
+        stopSpeaking();
+      };
 
-    window.speechSynthesis.speak(utterance);
-  } else {
-    // Mode B: NO English voice allowed! Use Google Vietnamese Audio Stream (Chị Google)
-    const chunks = splitTextIntoAudioChunks(text, 180);
-    if (!chunks.length) {
-      stopSpeaking();
+      window.speechSynthesis.speak(utterance);
       return;
+    } catch (err) {
+      console.warn('SpeechSynthesis exception, fallback to stream:', err);
     }
-    ttsAudioQueue = chunks;
-    playVietnameseAudioStreamQueue();
   }
+
+  // Mode B: NO English voice allowed! Use Google Vietnamese Audio Stream (Chị Google Tiếng Việt chuẩn)
+  const chunks = splitTextIntoAudioChunks(text, 130);
+  if (!chunks.length) {
+    stopSpeaking();
+    return;
+  }
+  ttsAudioQueue = chunks;
+  playVietnameseAudioStreamQueue();
 }
 
 // Render Question in Exam Mode
@@ -4581,14 +4666,20 @@ function openReviewExam(id) {
   currentReviewExam = found;
   reviewFilter = 'all';
   reviewSearchQuery = '';
+  document.body.style.overflow = '';
+  if (document.documentElement) document.documentElement.style.overflow = '';
+  const appMain = document.querySelector('main.app-main');
+  if (appMain) appMain.classList.add('full-width-view');
   renderHistoryView();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
 function closeReviewExam() {
   currentReviewExam = null;
+  document.body.style.overflow = '';
+  if (document.documentElement) document.documentElement.style.overflow = '';
   renderHistoryView();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
 function setReviewFilter(filter) {
@@ -5023,6 +5114,16 @@ themeToggleBtn.addEventListener('click', () => {
 
 // Keyboard Navigation
 window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeMatrixModal();
+    closeCoverageModal();
+    closeResultsModal();
+    closeSyncModal();
+    closeMobilePalette();
+    closeMobileNavMenu();
+    document.body.style.overflow = '';
+    return;
+  }
   if (e.key === 'p' || e.key === 'P') {
     if (document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA')) return;
     toggleScratchpad();

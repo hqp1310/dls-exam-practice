@@ -530,8 +530,7 @@
   </div>
 
   <!-- Modal: Bank Coverage 1,222 Questions -->
-  <div class="modal" id="modal-coverage">
-    <div class="modal-backdrop" onclick="closeCoverageModal()"></div>
+  <div class="modal-overlay" id="modal-coverage" onclick="if(event.target === this) closeCoverageModal()">
     <div class="modal-card matrix-modal-card">
       <div class="modal-header">
         <div class="modal-title">📈 TIẾN ĐỘ ĐỘ PHỦ KHO 1.222 CÂU HỎI</div>
@@ -543,8 +542,8 @@
     </div>
   </div>
 
-  <script src="questions_800.js?v=21"></script>
+  <script src="questions_800.js?v=22"></script>
   <script src="flashcards.js"></script>
-  <script src="app.js?v=21"></script>
+  <script src="app.js?v=22"></script>
 </body>
 </html>
