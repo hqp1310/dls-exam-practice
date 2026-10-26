@@ -1,5 +1,5 @@
-// Ngân hàng 822 Câu hỏi Trắc nghiệm Dược Lâm Sàng Chuẩn Hóa 100% Không Trùng Lặp
-// Đầy đủ 16 chương trọng tâm, 4 phương án cân đối, triệt tiêu thiên kiến vị trí & độ dài, chuẩn đại học Dược
+// Ngân hàng 1,222 Câu hỏi Trắc nghiệm Dược Lâm Sàng Chuẩn Hóa 100% Không Trùng Lặp
+// Phân bổ chuẩn theo khung 14 bài giảng 44h Bộ Y tế, 4 phương án cân đối, triệt tiêu thiên kiến vị trí & độ dài
 const ALL_EXAM_BANK = [
   {
     "id": 1,
@@ -11508,5 +11508,5605 @@ const ALL_EXAM_BANK = [
     "correct": 3,
     "explanation": "Omega-3 (EPA/DHA) ức chế enzym DGAT và tăng oxy hóa beta acid béo gan làm giảm tổng hợp VLDL giàu triglycerid.",
     "reference": "Sách DLS tr. 725"
+  },
+  {
+    "id": 823,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Quy trình chăm sóc dược lâm sàng theo mô hình SOAP, chữ viết tắt 'O' (Objective) bao gồm dữ liệu nào sau đây?",
+    "options": [
+      "Kết quả đo huyết áp, xét nghiệm ure máu và điện tâm đồ",
+      "Kế hoạch theo dõi nồng độ thuốc trong máu kỳ tiếp theo",
+      "Lời kể chủ quan của bệnh nhân về cơn đau đầu",
+      "Đánh giá của dược sĩ về nguyên nhân thất bại điều trị"
+    ],
+    "correct": 0,
+    "explanation": "Mục Objective (khách quan) bao gồm dấu hiệu sinh tồn, thăm khám thực thể và kết quả xét nghiệm cận lâm sàng.",
+    "reference": "Sách DLS tr. 32"
+  },
+  {
+    "id": 824,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Trong mô hình SOAP, nội dung nào sau đây thuộc phần 'A' (Assessment)?",
+    "options": [
+      "Bệnh nhân than phiền chóng mặt sau khi uống viên thuốc đầu tiên",
+      "Nhận định bệnh nhân xuất hiện cơn tụt huyết áp tư thế do tác dụng phụ của thuốc chẹn alpha-1",
+      "Kê đơn đổi sang nhóm thuốc chẹn thụ thể Angiotensin II",
+      "Huyết áp đo tại giường bệnh là 160/95 mmHg"
+    ],
+    "correct": 1,
+    "explanation": "Assessment là phân tích, đánh giá chuyên môn của dược sĩ lâm sàng dựa trên dữ liệu S và O.",
+    "reference": "Sách DLS tr. 33"
+  },
+  {
+    "id": 825,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Tiêu chí quan trọng nhất khi đánh giá mức độ tin cậy của một bài báo thử nghiệm lâm sàng (nguồn cấp 1) là:",
+    "options": [
+      "Bài báo được tài trợ toàn bộ bởi công ty dược phẩm đa quốc gia",
+      "Tác giả bài báo là bác sĩ thực tập tại cơ sở y tế tư nhân",
+      "Thiết kế thử nghiệm ngẫu nhiên mù đôi có đối chứng và cỡ mẫu đủ lớn",
+      "Bài báo được đăng trên trang tin tức mạng xã hội phổ thông"
+    ],
+    "correct": 2,
+    "explanation": "RCT ngẫu nhiên, mù đôi, đối chứng là chuẩn vàng cao nhất để chứng minh hiệu quả và an toàn của can thiệp y học.",
+    "reference": "Sách DLS tr. 125"
+  },
+  {
+    "id": 826,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Hệ số tương quan P-value trong y văn lâm sàng được coi là có ý nghĩa thống kê khi:",
+    "options": [
+      "P lớn hơn 0,5",
+      "P nằm trong khoảng 0,1 đến 0,2",
+      "P bằng đúng 1,0",
+      "P nhỏ hơn 0,05"
+    ],
+    "correct": 3,
+    "explanation": "P < 0,05 chỉ ra xác suất kết quả xảy ra do ngẫu nhiên là dưới 5%, được chấp nhận có ý nghĩa thống kê.",
+    "reference": "Sách DLS tr. 127"
+  },
+  {
+    "id": 827,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Đơn vị tính DDD (Defined Daily Dose) theo quy ước chuẩn của WHO có đặc điểm nào?",
+    "options": [
+      "Là liều duy trì trung bình mỗi ngày cho chỉ định chính ở người lớn",
+      "Là liều tối đa cho phép sử dụng trong 24 giờ cho mọi bệnh nhân",
+      "Là liều nạp tĩnh mạch cấp cứu duy nhất cho trẻ em",
+      "Là liều gây độc trên 50% động vật thí nghiệm"
+    ],
+    "correct": 0,
+    "explanation": "DDD là liều duy trì trung bình giả định mỗi ngày của một thuốc dùng cho chỉ định chính ở người trưởng thành.",
+    "reference": "Sách DLS tr. 25"
+  },
+  {
+    "id": 828,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Chỉ số DU90% (Drug Utilization 90%) phản ánh thông tin nào trong phân tích sử dụng thuốc bệnh viện?",
+    "options": [
+      "Khoảng thời gian 90 ngày sau khi thuốc hết hạn sử dụng",
+      "Danh mục các loại thuốc chiếm 90% tổng lượng tiêu thụ hoặc chi phí",
+      "Liều lượng thuốc cần giảm 90% khi bệnh nhân suy thận nặng",
+      "Tỷ lệ 90% số bệnh nhân bị dị ứng thuốc trong khoa điều trị"
+    ],
+    "correct": 1,
+    "explanation": "DU90% thể hiện các thuốc nằm trong nhóm chiếm 90% tổng số lượng tiêu thụ (theo DDD) của bệnh viện.",
+    "reference": "Sách DLS tr. 28"
+  },
+  {
+    "id": 829,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Tài liệu nào sau đây được xếp vào nguồn thông tin thuốc cấp 3 chính thống tại Việt Nam?",
+    "options": [
+      "Cơ sở dữ liệu trích dẫn mục lục Scopus",
+      "Tập san bài báo nghiên cứu lâm sàng của Viện Dược liệu",
+      "Dược thư Quốc gia Việt Nam bản cập nhật mới nhất",
+      "Hệ thống tóm tắt đề tài Pubmed/Medline"
+    ],
+    "correct": 2,
+    "explanation": "Dược thư Quốc gia Việt Nam là nguồn cấp 3 tổng hợp thông tin đã được thẩm định và phê duyệt.",
+    "reference": "Sách DLS tr. 123"
+  },
+  {
+    "id": 830,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Trong quy trình 6 bước trả lời thông tin thuốc của dược sĩ lâm sàng, bước đầu tiên cần thực hiện là:",
+    "options": [
+      "Tra cứu ngay lập tức cơ sở dữ liệu UpToDate",
+      "Viết văn bản trả lời chính thức đóng dấu bệnh viện",
+      "Từ chối trả lời nếu người hỏi là người bệnh trực tiếp",
+      "Xác định rõ người hỏi thông tin, nhu cầu thực sự và bối cảnh lâm sàng"
+    ],
+    "correct": 3,
+    "explanation": "Bước 1 là thu thập thông tin về người yêu cầu, bối cảnh người bệnh và mục đích cốt lõi của câu hỏi.",
+    "reference": "Sách DLS tr. 130"
+  },
+  {
+    "id": 831,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Chỉ tiêu 'Số thuốc trung bình trong một đơn' tăng quá cao tại phòng khám ngoại trú cảnh báo nguy cơ nào?",
+    "options": [
+      "Tăng nguy cơ tương tác thuốc bất lợi và giảm tuân thủ điều trị",
+      "Giảm chi phí tiền thuốc tổng thể cho ngân sách bảo hiểm y tế",
+      "Tăng tỷ lệ khỏi bệnh dứt điểm trong thời gian ngắn nhất",
+      "Loại bỏ hoàn toàn phản ứng có hại của thuốc"
+    ],
+    "correct": 0,
+    "explanation": "Đa dược (polypharmacy) làm tăng theo cấp số nhân tỷ lệ tương tác bất lợi và chi phí điều trị.",
+    "reference": "Sách DLS tr. 22"
+  },
+  {
+    "id": 832,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Khái niệm 'Dược động học cá thể hóa' (TDM) đặc biệt bắt buộc với nhóm thuốc nào sau đây?",
+    "options": [
+      "Thuốc giảm đau hạ sốt thông thường paracetamol đường uống",
+      "Thuốc có khoảng điều trị hẹp và độc tính nguy hiểm liên quan đến nồng độ",
+      "Dung dịch bù nước điện giải đường uống Oresol",
+      "Các loại vitamin tan trong nước như vitamin C và B1"
+    ],
+    "correct": 1,
+    "explanation": "TDM chỉ định cho thuốc có khoảng điều trị hẹp như aminosid, vancomycin, digoxin, theophyllin, lithium.",
+    "reference": "Sách DLS tr. 65"
+  },
+  {
+    "id": 833,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Trong phân tích kinh tế dược, phương pháp Phân tích Chi phí - Hiệu quả (CEA) đo lường kết quả đầu ra bằng đơn vị nào?",
+    "options": [
+      "Năm sống hiệu chỉnh theo chất lượng (QALY)",
+      "Điểm số mức độ hài lòng cảm tính của thân nhân bệnh nhân",
+      "Đơn vị đo lâm sàng thực tế như số năm sống thêm, mmHg huyết áp giảm",
+      "Đơn vị tiền tệ đồng nhất như VNĐ hoặc USD"
+    ],
+    "correct": 2,
+    "explanation": "CEA so sánh chi phí tính bằng tiền với hiệu quả lâm sàng đo bằng đơn vị tự nhiên (năm sống thêm, chỉ số HbA1c giảm).",
+    "reference": "Sách DLS tr. 45"
+  },
+  {
+    "id": 834,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Phương pháp phân tích kinh tế dược Phân tích Chi phí - Thỏa dụng (CUA) đo lường hiệu quả điều trị bằng đơn vị nào?",
+    "options": [
+      "Tổng số ngày nằm viện điều trị tại khoa hồi sức cấp cứu",
+      "Số lượng viên thuốc bệnh nhân uống trong một đợt",
+      "Tỷ lệ phần trăm thuốc kê theo tên generic",
+      "Số năm sống điều chỉnh theo chất lượng sống (QALY)"
+    ],
+    "correct": 3,
+    "explanation": "CUA đo lường kết quả dựa trên số năm sống có chất lượng (Quality-Adjusted Life Years - QALY).",
+    "reference": "Sách DLS tr. 47"
+  },
+  {
+    "id": 835,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Thử nghiệm lâm sàng pha 1 của một thuốc mới trên người thường được tiến hành trên đối tượng nào?",
+    "options": [
+      "Một nhóm nhỏ người tình nguyện khỏe mạnh từ 20 đến 80 người",
+      "Hàng chục ngàn bệnh nhân nặng tại nhiều quốc gia khác nhau",
+      "Trẻ sơ sinh non tháng tại khoa sơ sinh chuyên sâu",
+      "Phụ nữ có thai trong 3 tháng đầu thai kỳ"
+    ],
+    "correct": 0,
+    "explanation": "Pha 1 tiến hành trên người tình nguyện khỏe mạnh nhằm đánh giá an toàn, dung nạp và dược động học.",
+    "reference": "Sách DLS tr. 140"
+  },
+  {
+    "id": 836,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Thử nghiệm lâm sàng pha 3 có mục tiêu cơ bản là:",
+    "options": [
+      "Xác định độ tinh khiết hóa học của hoạt chất chiết xuất",
+      "Khẳng định hiệu lực điều trị và an toàn trên quần thể bệnh nhân lớn đa trung tâm",
+      "Tìm kiếm độc tính gây đột biến gen trên tế bào vi khuẩn",
+      "Thử nghiệm liều độc gây chết trên chuột cống trắng"
+    ],
+    "correct": 1,
+    "explanation": "Pha 3 thử nghiệm trên quy mô lớn (hàng ngàn bệnh nhân) để khẳng định hiệu quả và cấp phép lưu hành.",
+    "reference": "Sách DLS tr. 142"
+  },
+  {
+    "id": 837,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Nhiệm vụ then chốt của Hội đồng Thuốc và Điều trị bệnh viện là:",
+    "options": [
+      "Quản lý lịch phân công trực cấp cứu của toàn bộ bác sĩ lâm sàng",
+      "Ký duyệt hợp đồng kinh tế mua sắm trang thiết bị văn phòng",
+      "Xây dựng danh mục thuốc bệnh viện hợp lý và giám sát sử dụng thuốc an toàn",
+      "Trực tiếp thu tiền viện phí của bệnh nhân tại quầy thanh toán"
+    ],
+    "correct": 2,
+    "explanation": "Hội đồng Thuốc và Điều trị có vai trò cố vấn cho giám đốc về danh mục thuốc và hướng dẫn sử dụng thuốc an toàn.",
+    "reference": "Sách DLS tr. 55"
+  },
+  {
+    "id": 838,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Hệ thống phân loại thuốc theo giải phẫu, điều trị và hóa học ATC do tổ chức nào quản lý chuẩn hóa?",
+    "options": [
+      "Hiệp hội Tim mạch Hoa Kỳ (AHA)",
+      "Cơ quan Quản lý Dược phẩm Châu Âu (EMA)",
+      "Cục Quản lý Thực phẩm và Dược phẩm Hoa Kỳ (FDA)",
+      "Tổ chức Y tế Thế giới (WHO)"
+    ],
+    "correct": 3,
+    "explanation": "Hệ thống mã ATC (Anatomical Therapeutic Chemical) do Trung tâm Hợp tác của WHO tại Oslo quản lý.",
+    "reference": "Sách DLS tr. 24"
+  },
+  {
+    "id": 839,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Trong mã ATC, bậc 1 phản ánh thông tin nào sau đây?",
+    "options": [
+      "Nhóm cơ quan giải phẫu chính mà thuốc tác động",
+      "Hoạt chất hóa học cụ thể của phân tử thuốc",
+      "Nhóm tác dụng dược lý trị liệu chuyên biệt",
+      "Đường dùng và dạng bào chế của thuốc"
+    ],
+    "correct": 0,
+    "explanation": "Bậc 1 gồm 1 chữ cái chỉ cơ quan giải phẫu chính (ví dụ: C cho hệ tim mạch, J cho chống nhiễm khuẩn).",
+    "reference": "Sách DLS tr. 24"
+  },
+  {
+    "id": 840,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Khi tra cứu thông tin về tương kỵ thuốc tiêm truyền tĩnh mạch phối hợp, tài liệu tham khảo chuẩn mực nhất là:",
+    "options": [
+      "Từ điển tiếng Việt chuyên ngành y học cổ truyền",
+      "Sách Cẩm nang Handbook on Injectable Drugs (Trissel's)",
+      "Báo cáo tài chính thường niên của công ty bảo hiểm",
+      "Sách Hóa dược các hợp chất thiên nhiên"
+    ],
+    "correct": 1,
+    "explanation": "Trissel's Handbook on Injectable Drugs là cẩm nang kinh điển quốc tế về tương kỵ và độ ổn định thuốc tiêm.",
+    "reference": "Sách DLS tr. 135"
+  },
+  {
+    "id": 841,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Theo Thông tư của Bộ Y tế, số ngày kê đơn tối đa cho thuốc điều trị bệnh mạn tính ngoại trú thông thường là:",
+    "options": [
+      "Tối thiểu 180 ngày",
+      "Không quá 7 ngày",
+      "Không quá 30 ngày",
+      "Không quá 90 ngày"
+    ],
+    "correct": 2,
+    "explanation": "Quy chế kê đơn quy định đơn thuốc điều trị bệnh mạn tính ngoại trú được kê tối đa 30 ngày.",
+    "reference": "Thông tư 52/2017/TT-BYT"
+  },
+  {
+    "id": 842,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Nội dung nào sau đây là chỉ số đánh giá kê đơn thuốc an toàn tại cơ sở điều trị ngoại trú theo chuẩn WHO?",
+    "options": [
+      "Tỷ lệ bác sĩ có bằng tiến sĩ y khoa trong bệnh viện",
+      "Số lượng giường bệnh được kê trong khoa nội trú",
+      "Khoảng cách địa lý từ nhà bệnh nhân đến bệnh viện",
+      "Tỷ lệ phần trăm đơn thuốc có kê vitamin không cần thiết"
+    ],
+    "correct": 3,
+    "explanation": "Tỷ lệ đơn có vitamin, tỷ lệ đơn có kháng sinh, tỷ lệ đơn có thuốc tiêm là các chỉ số cốt lõi của WHO.",
+    "reference": "Sách DLS tr. 22"
+  },
+  {
+    "id": 843,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Thuật ngữ 'Generic drug' (thuốc gốc/thuốc tương đương) được định nghĩa chuẩn là chế phẩm:",
+    "options": [
+      "Có cùng hoạt chất, hàm lượng, dạng bào chế và tương đương sinh học với thuốc biệt dược gốc",
+      "Thuốc được bào chế thủ công từ thảo mộc chưa qua chiết xuất",
+      "Có giá thành đắt đỏ gấp nhiều lần thuốc phát minh ban đầu",
+      "Thuốc thử nghiệm chưa được cấp số đăng ký lưu hành"
+    ],
+    "correct": 0,
+    "explanation": "Thuốc generic là thuốc tương đương bào chế và tương đương sinh học với thuốc phát minh (biệt dược gốc).",
+    "reference": "Sách DLS tr. 15"
+  },
+  {
+    "id": 844,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Hành vi nào của người bệnh được coi là 'không tuân thủ điều trị' (Non-adherence)?",
+    "options": [
+      "Đi tái khám đúng hẹn theo chỉ định của bác sĩ chuyên khoa",
+      "Tự ý ngừng thuốc khi thấy triệu chứng thuyên giảm hoặc tự thay đổi liều dùng",
+      "Thông báo kịp thời cho dược sĩ khi xuất hiện ban đỏ da",
+      "Bảo quản thuốc nơi khô ráo, tránh ánh sáng trực tiếp"
+    ],
+    "correct": 1,
+    "explanation": "Tự ý giảm liều, quên liều hoặc bỏ thuốc giữa chừng là biểu hiện phổ biến của không tuân thủ điều trị.",
+    "reference": "Sách DLS tr. 38"
+  },
+  {
+    "id": 845,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Chỉ số NNT (Number Needed to Treat) trong y văn điều trị phản ánh ý nghĩa nào?",
+    "options": [
+      "Số bác sĩ cần thiết để hội chẩn 1 ca bệnh khó tại khoa hồi sức",
+      "Số lượng xét nghiệm máu cần thực hiện trước khi kê kháng sinh",
+      "Số bệnh nhân cần được điều trị để ngăn ngừa thêm 1 biến cố bất lợi lâm sàng",
+      "Số viên thuốc tối thiểu người bệnh phải nuốt trong một đợt điều trị"
+    ],
+    "correct": 2,
+    "explanation": "NNT là số bệnh nhân cần điều trị bằng liệu pháp mới để ngăn ngừa 1 kết cục xấu so với nhóm đối chứng.",
+    "reference": "Sách DLS tr. 128"
+  },
+  {
+    "id": 846,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Chỉ số NNH (Number Needed to Harm) càng nhỏ chứng tỏ thuốc có đặc tính nào?",
+    "options": [
+      "Giá thành điều trị trên một đợt càng rẻ",
+      "Khả năng hấp thu qua đường tiêu hóa càng nhanh",
+      "Độ an toàn càng cao và ít nguy cơ gây tác dụng phụ",
+      "Độc tính càng cao, nguy cơ gây hại cho người bệnh càng lớn"
+    ],
+    "correct": 3,
+    "explanation": "NNH càng thấp nghĩa là chỉ cần điều trị ít người đã có 1 người gặp biến cố có hại (độc tính cao).",
+    "reference": "Sách DLS tr. 129"
+  },
+  {
+    "id": 847,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Cơ sở dữ liệu điện tử nào sau đây cung cấp thông tin cập nhật y học chứng cứ tóm tắt hàng đầu thế giới?",
+    "options": [
+      "UpToDate và Micromedex",
+      "Hệ thống định vị dẫn đường vệ tinh",
+      "Mạng xã hội giải trí đa phương tiện",
+      "Trang tìm kiếm việc làm trực tuyến"
+    ],
+    "correct": 0,
+    "explanation": "UpToDate và Micromedex là các cơ sở dữ liệu y học chứng cứ hàng đầu được tin cậy trong thực hành lâm sàng.",
+    "reference": "Sách DLS tr. 124"
+  },
+  {
+    "id": 848,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Trong báo cáo tương tác thuốc, mức độ tương tác 'Chống chỉ định phối hợp' (Contraindicated) đòi hỏi hành động gì?",
+    "options": [
+      "Cứ dùng bình thường và tăng liều của cả hai thuốc lên gấp đôi",
+      "Tuyệt đối không được phối hợp hai thuốc này trong mọi hoàn cảnh lâm sàng",
+      "Chỉ cần uống thuốc cách nhau 15 phút là an toàn",
+      "Cho bệnh nhân uống nhiều nước lọc để trung hòa tương tác"
+    ],
+    "correct": 1,
+    "explanation": "Mức độ chống chỉ định (tương tác độ 1/mức độ nghiêm trọng) bắt buộc phải tránh phối hợp tuyệt đối.",
+    "reference": "Sách DLS tr. 185"
+  },
+  {
+    "id": 849,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Trong y học chứng cứ, cấp độ bằng chứng (Level of Evidence) cao nhất thường xuất phát từ:",
+    "options": [
+      "Báo cáo chùm ca bệnh đơn lẻ tại một phòng khám tư",
+      "Ý kiến chủ quan của một chuyên gia duy nhất không có số liệu",
+      "Tổng quan hệ thống và phân tích gộp (Systematic Review & Meta-analysis) các thử nghiệm RCT",
+      "Thử nghiệm in vitro trên ống nghiệm nhân tạo"
+    ],
+    "correct": 2,
+    "explanation": "Phân tích gộp các thử nghiệm lâm sàng ngẫu nhiên có đối chứng đứng ở đỉnh tháp bằng chứng y học.",
+    "reference": "Sách DLS tr. 126"
+  },
+  {
+    "id": 850,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Sai sót liên quan đến thuốc (Medication Error) giai đoạn 'Giao nhận và dùng thuốc' (Administration) có thể hạn chế bằng quy tắc nào?",
+    "options": [
+      "Quy tắc dùng kháng sinh phổ rộng cho tất cả các ca sốt",
+      "Quy tắc cho bệnh nhân uống thuốc trước khi thăm khám",
+      "Quy tắc kê đơn thuốc đắt tiền nhất cho mọi bệnh nhân",
+      "Quy tắc 5 đúng: Đúng người bệnh, đúng thuốc, đúng liều, đúng đường dùng, đúng thời gian"
+    ],
+    "correct": 3,
+    "explanation": "Quy tắc 5 đúng (hoặc 7 đúng) của điều dưỡng và dược sĩ là chuẩn mực ngăn ngừa sai sót dùng thuốc.",
+    "reference": "Sách DLS tr. 40"
+  },
+  {
+    "id": 851,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Khái niệm 'Off-label use' trong thực hành lâm sàng được hiểu là việc sử dụng thuốc:",
+    "options": [
+      "Ngoài phạm vi chỉ định, liều lượng hoặc đối tượng đã được phê duyệt trong tờ hướng dẫn sử dụng",
+      "Sử dụng thuốc giả mạo nguồn gốc xuất xứ",
+      "Sử dụng thuốc đã quá hạn sử dụng trên 5 năm",
+      "Dùng thuốc không có hoạt chất trị liệu bên trong"
+    ],
+    "correct": 0,
+    "explanation": "Off-label là chỉ định thuốc ngoài hướng dẫn cấp phép của cơ quan quản lý (cần hội chẩn và bằng chứng khoa học).",
+    "reference": "Sách DLS tr. 35"
+  },
+  {
+    "id": 852,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Để giảm thiểu sai sót do thuốc có tên đọc hoặc viết nhìn giống nhau (LASA - Look-alike, Sound-alike), biện pháp hiệu quả là:",
+    "options": [
+      "Xếp tất cả các thuốc LASA vào chung một ngăn kéo duy nhất",
+      "Sử dụng kỹ thuật chữ in hoa nổi bật (Tall Man lettering) trên nhãn và tủ thuốc",
+      "Ghi tên thuốc bằng chữ viết tay ngoáy tắt trong hồ sơ",
+      "Bỏ hoàn toàn nhãn phụ trên hộp thuốc để tránh nhầm"
+    ],
+    "correct": 1,
+    "explanation": "Tall Man lettering (ví dụ: predniSONE và prednisoLONE) giúp mắt người đọc nhận biết ngay điểm khác biệt.",
+    "reference": "Sách DLS tr. 42"
+  },
+  {
+    "id": 853,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Tại sao dạng thuốc viên giải phóng kéo dài (XR, ER, CR) tuyệt đối không được nghiền nát trước khi uống?",
+    "options": [
+      "Vì thuốc sẽ bị đông cứng lại làm tắc ống tiêu hóa",
+      "Vì làm cho thuốc bị đổi màu sang màu đen nguy hiểm",
+      "Vì phá hủy cấu trúc màng phóng thích dẫn đến phóng thích ồ ạt toàn bộ liều gây ngộ độc cấp tính",
+      "Vì nghiền ra sẽ làm tăng khối lượng thuốc lên gấp mười lần"
+    ],
+    "correct": 2,
+    "explanation": "Dose dumping: Nghiền viên giải phóng kéo dài giải phóng tức thì liều dùng 12-24h gây ngộ độc đe dọa tính mạng.",
+    "reference": "Sách DLS tr. 78"
+  },
+  {
+    "id": 854,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Dạng viên nén bao tan trong ruột (Enteric-coated) có mục đích chính là:",
+    "options": [
+      "Giúp thuốc ngấm thẳng qua da mà không cần nuốt",
+      "Kéo dài thời gian bán thải của thuốc trong máu lên nhiều tháng",
+      "Làm cho viên thuốc tan ngay trong khoang miệng khi vừa ngậm",
+      "Bảo vệ dược chất không bị phá hủy bởi acid dạ dày hoặc bảo vệ niêm mạc dạ dày khỏi kích ứng"
+    ],
+    "correct": 3,
+    "explanation": "Màng bao kháng acid giúp viên đi qua dạ dày nguyên vẹn và chỉ tan rã ở pH kiềm của ruột non.",
+    "reference": "Sách DLS tr. 80"
+  },
+  {
+    "id": 855,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Thử nghiệm lâm sàng pha 4 (Post-marketing surveillance) có vai trò then chốt nào?",
+    "options": [
+      "Theo dõi phản ứng có hại hiếm gặp và đánh giá hiệu quả lâu dài của thuốc trong cộng đồng",
+      "Tìm kiếm công thức tổng hợp hóa học rẻ tiền nhất",
+      "Xác định cấu trúc hóa học bằng quang phổ hồng ngoại",
+      "Thử nghiệm độc tính cấp tính trên động vật gặm nhấm"
+    ],
+    "correct": 0,
+    "explanation": "Pha 4 theo dõi giám sát hậu mại trên diện rộng phát hiện các ADR hiếm gặp (tần suất < 1/10.000).",
+    "reference": "Sách DLS tr. 143"
+  },
+  {
+    "id": 856,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Khi tra cứu thông tin tương hợp của thuốc tiêm với dung dịch truyền NaCl 0,9% hay Glucose 5%, thông tin này thuộc nhóm:",
+    "options": [
+      "Phân loại mã số bảo hiểm y tế chi trả",
+      "Tương hợp hóa lý và độ ổn định dung dịch tiêm truyền",
+      "Đặc tính hấp thu qua da và niêm mạc mắt",
+      "Cơ chế tác dụng dược lý ở mức độ thụ thể"
+    ],
+    "correct": 1,
+    "explanation": "Độ ổn định và tương hợp (Compatibility & Stability) là yêu cầu tra cứu bắt buộc trước khi pha truyền tĩnh mạch.",
+    "reference": "Sách DLS tr. 136"
+  },
+  {
+    "id": 857,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Hệ thống báo cáo phản ứng có hại của thuốc (ADR) tự nguyện tại các cơ sở y tế ở Việt Nam gửi về:",
+    "options": [
+      "Trung tâm Kiểm soát và Phòng ngừa Dịch bệnh Hoa Kỳ",
+      "Ủy ban Thể dục thể thao quốc gia",
+      "Trung tâm Quốc gia về Thông tin thuốc và Theo dõi phản ứng có hại của thuốc",
+      "Cơ quan Cảnh sát điều tra tội phạm môi trường"
+    ],
+    "correct": 2,
+    "explanation": "Báo cáo ADR gửi về Trung tâm Quốc gia (Hà Nội) hoặc Trung tâm Khu vực (TP.HCM) thuộc Bộ Y tế.",
+    "reference": "Sách DLS tr. 150"
+  },
+  {
+    "id": 858,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Khi tư vấn sử dụng thuốc đặt dưới lưỡi (như Nitroglycerin), hướng dẫn bắt buộc cho người bệnh là:",
+    "options": [
+      "Nhai nát viên thuốc rồi uống ngay với một cốc nước nóng đầy",
+      "Nghiền nhỏ thuốc pha vào sữa tươi để uống trước bữa ăn",
+      "Hòa tan thuốc vào 500ml nước lọc rồi thụt tháo đại tràng",
+      "Đặt thuốc dưới lưỡi để tan tự nhiên, tuyệt đối không nhai và không nuốt chửng với nước"
+    ],
+    "correct": 3,
+    "explanation": "Thuốc ngậm dưới lưỡi hấp thu trực tiếp qua tĩnh mạch dưới lưỡi vào tuần hoàn chung, tránh chuyển hóa qua gan lần đầu.",
+    "reference": "Sách DLS tr. 82"
+  },
+  {
+    "id": 859,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Lý do thuốc dạng xịt hít định liều (MDI) điều trị hen phế quản cần súc miệng sạch bằng nước sau khi dùng là:",
+    "options": [
+      "Dự phòng tác dụng phụ nhiễm nấm Candida miệng họng và khản tiếng do corticoid đọng lại",
+      "Giúp làm tăng hấp thu thuốc qua niêm mạc lưỡi vào máu",
+      "Làm cho hơi thở có mùi thơm dịu nhẹ sau khi dùng thuốc",
+      "Ngăn ngừa thuốc gây đổi màu răng vĩnh viễn"
+    ],
+    "correct": 0,
+    "explanation": "Súc họng nhổ bỏ nước sau khi xịt Corticoid dạng hít (ICS) loại trừ thuốc lắng đọng ở hầu họng, tránh nấm miệng.",
+    "reference": "Sách DLS tr. 85"
+  },
+  {
+    "id": 860,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Trong quản lý chất lượng sử dụng kháng sinh (AMS - Antimicrobial Stewardship), chỉ số DOT (Days of Therapy) được tính là:",
+    "options": [
+      "Khoảng thời gian bệnh nhân được cách ly trong phòng áp lực âm",
+      "Số ngày người bệnh nhận ít nhất một liều của một kháng sinh cụ thể",
+      "Tổng số viên kháng sinh bệnh nhân đã mua tại quầy thuốc",
+      "Số ngày cần thiết để vi khuẩn sinh sôi trong môi trường cấy"
+    ],
+    "correct": 1,
+    "explanation": "DOT là số ngày điều trị bằng kháng sinh, độc lập với liều lượng sử dụng.",
+    "reference": "Sách DLS tr. 30"
+  },
+  {
+    "id": 861,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Phương châm thực hành cốt lõi của người Dược sĩ lâm sàng hiện đại là:",
+    "options": [
+      "Tập trung tối đa hóa doanh thu và lợi nhuận bán thuốc của bệnh viện",
+      "Chỉ làm việc khép kín trong kho dược và không tiếp xúc với nhân viên y tế khác",
+      "Lấy người bệnh làm trung tâm, tối ưu hóa hiệu quả và an toàn trong điều trị dùng thuốc",
+      "Thay thế hoàn toàn vai trò chẩn đoán bệnh của bác sĩ điều trị"
+    ],
+    "correct": 2,
+    "explanation": "Dược lâm sàng hướng vào người bệnh (Patient-centered care) nhằm tối ưu hóa kết cục điều trị.",
+    "reference": "Sách DLS tr. 10"
+  },
+  {
+    "id": 862,
+    "chapter": "Đại cương DLS & Thông tin thuốc",
+    "question": "Khi người bệnh quên một liều thuốc tim mạch uống hàng ngày, khuyến cáo xử trí chung an toàn nhất là:",
+    "options": [
+      "Bỏ thuốc luôn 1 tuần lễ rồi mới bắt đầu uống lại từ đầu",
+      "Tự ý mua thêm một loại thuốc huyết áp khác để uống kèm",
+      "Uống dồn ngay 2 liều vào thời điểm liều kế tiếp để bù lại",
+      "Uống ngay khi nhớ ra nếu chưa gần liều kế tiếp; tuyệt đối không uống gấp đôi liều"
+    ],
+    "correct": 3,
+    "explanation": "Không bao giờ uống gấp đôi liều để bù liều quên vì nguy cơ quá liều độc tính nghiêm trọng.",
+    "reference": "Sách DLS tr. 39"
+  },
+  {
+    "id": 863,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Ở bệnh nhân xơ gan nặng mất bù, thông số sinh khả dụng đường uống (F%) của thuốc có tỷ lệ chiết xuất qua gan cao (E > 0,7) biến đổi như thế nào?",
+    "options": [
+      "Tăng mạnh do giảm chuyển hóa qua gan bước đầu và hiện tượng tuần hoàn bàng hệ cửa - chủ",
+      "Hoàn toàn không thay đổi do hấp thu chỉ diễn ra tại dạ dày",
+      "Biến thiên thất thường không theo bất kỳ quy luật nào",
+      "Giảm nghiêm trọng về mức 0% do gan không hấp thu thuốc"
+    ],
+    "correct": 0,
+    "explanation": "Thuốc có E cao (như propranolol, morphin) khi suy gan nặng sẽ giảm chuyển hóa bước đầu, làm tăng vọt sinh khả dụng F.",
+    "reference": "Sách DLS tr. 98"
+  },
+  {
+    "id": 864,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Hiện tượng giảm nồng độ Albumin huyết tương ở bệnh nhân hội chứng thận hư dẫn đến hậu quả dược động học nào?",
+    "options": [
+      "Làm tăng tốc độ lọc của cầu thận lên gấp 10 lần",
+      "Tăng tỷ lệ thuốc ở dạng tự do không liên kết, làm tăng tác dụng và nguy cơ độc tính",
+      "Làm cho toàn bộ thuốc bị giữ chặt không thể phân bố đến mô",
+      "Làm giảm thể tích phân bố Vd của các thuốc tan nhiều trong mỡ"
+    ],
+    "correct": 1,
+    "explanation": "Albumin giảm làm tăng nồng độ thuốc dạng tự do (dạng có hoạt tính sinh học và độc tính).",
+    "reference": "Sách DLS tr. 102"
+  },
+  {
+    "id": 865,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Công thức Cockcroft-Gault chuẩn để ước tính độ thanh thải Creatinin (CrCl) trên bệnh nhân nam giới tính theo đơn vị mL/phút là:",
+    "options": [
+      "CrCl = [72 x Tuổi] / [(140 - Cân nặng) x Creatinin huyết thanh]",
+      "CrCl = [140 x Creatinin huyết thanh] / [Tuổi x Cân nặng]",
+      "CrCl = [(140 - Tuổi) x Cân nặng (kg)] / [72 x Creatinin huyết thanh (mg/dL)]",
+      "CrCl = [Tuổi x Cân nặng] / [140 x Creatinin huyết thanh]"
+    ],
+    "correct": 2,
+    "explanation": "Công thức Cockcroft-Gault kinh điển dùng trong hiệu chỉnh liều thuốc đào thải qua thận.",
+    "reference": "Sách DLS tr. 105"
+  },
+  {
+    "id": 866,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Khi áp dụng công thức Cockcroft-Gault để tính CrCl cho bệnh nhân nữ giới, cần nhân kết quả với hệ số hiệu chỉnh nào?",
+    "options": [
+      "Hệ số 0,50",
+      "Hệ số 2,00",
+      "Hệ số 1,15",
+      "Hệ số 0,85"
+    ],
+    "correct": 3,
+    "explanation": "Khối lượng cơ ở phụ nữ thấp hơn nam giới khoảng 15%, nên kết quả nhân với 0,85.",
+    "reference": "Sách DLS tr. 106"
+  },
+  {
+    "id": 867,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Khi bệnh nhân bị béo phì (BMI > 30 hoặc cân nặng thực tế vượt 120% cân nặng lý tưởng IBW), cân nặng đưa vào công thức Cockcroft-Gault nên dùng là:",
+    "options": [
+      "Cân nặng hiệu chỉnh (Adjusted Body Weight - ABW)",
+      "Cân nặng khi bệnh nhân mới sinh ra",
+      "Cân nặng thực tế đo trên cân",
+      "Cân nặng trung bình của dân số thế giới"
+    ],
+    "correct": 0,
+    "explanation": "Bệnh nhân béo phì dùng ABW = IBW + 0,4 x (Cân nặng thực tế - IBW) để tránh ước tính quá cao CrCl.",
+    "reference": "Sách DLS tr. 108"
+  },
+  {
+    "id": 868,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Kháng sinh nào sau đây đào thải chủ yếu qua thận ở dạng còn hoạt tính (fe > 90%) và bắt buộc phải giảm liều khi suy thận?",
+    "options": [
+      "Doxycyclin",
+      "Gentamicin và Amikacin",
+      "Erythromycin",
+      "Clindamycin"
+    ],
+    "correct": 1,
+    "explanation": "Aminosid (gentamicin, amikacin) đào thải qua thận > 90% dưới dạng không đổi, nguy cơ độc thận và thính giác cao.",
+    "reference": "Sách DLS tr. 110"
+  },
+  {
+    "id": 869,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Thuốc kháng sinh nhóm macrolid nào sau đây đào thải chủ yếu qua gan và mật, ít phụ thuộc vào chức năng thận?",
+    "options": [
+      "Tobramycin tiêm bắp",
+      "Vancomycin tiêm truyền",
+      "Azithromycin và Erythromycin",
+      "Colistin tiêm tĩnh mạch"
+    ],
+    "correct": 2,
+    "explanation": "Azithromycin và erythromycin thải trừ chủ yếu qua gan/mật, không cần chỉnh liều ở bệnh nhân suy thận nhẹ - vừa.",
+    "reference": "Sách DLS tr. 112"
+  },
+  {
+    "id": 870,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Hệ số phân bố lại Q (hệ số Dettli) trong hiệu chỉnh liều cho bệnh nhân suy thận phụ thuộc vào hai yếu tố cốt lõi nào?",
+    "options": [
+      "Nhịp thở của người bệnh và nồng độ oxy trong phòng bệnh",
+      "Chiều cao của người bệnh và thể tích hồng cầu lắng đọng",
+      "Hàm lượng thuốc trong viên nén và hạn sử dụng của thuốc",
+      "Tỷ lệ thuốc thải qua thận dạng không đổi (fe) và mức độ suy giảm chức năng thận (Rf)"
+    ],
+    "correct": 3,
+    "explanation": "Công thức Dettli: Q = 1 - fe x (1 - Rf), phản ánh mức độ giảm thải trừ thuốc theo chức năng thận suy giảm.",
+    "reference": "Sách DLS tr. 115"
+  },
+  {
+    "id": 871,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Biện pháp hiệu chỉnh liều thuốc bằng cách 'Kéo dài khoảng cách đưa thuốc' (nới rộng khoảng cách) thường phù hợp nhất với nhóm thuốc nào?",
+    "options": [
+      "Thuốc có tác dụng diệt khuẩn phụ thuộc nồng độ đỉnh như Aminosid",
+      "Thuốc diệt khuẩn phụ thuộc thời gian như Penicillin truyền liên tục",
+      "Thuốc giãn phế quản dạng khí dung tác dụng ngắn",
+      "Dung dịch truyền dinh dưỡng glucose 10%"
+    ],
+    "correct": 0,
+    "explanation": "Aminosid cần Cmax cao để diệt khuẩn tối đa và Cmin thấp để tránh độc tính, nên ưu tiên nới rộng khoảng cách đưa thuốc.",
+    "reference": "Sách DLS tr. 116"
+  },
+  {
+    "id": 872,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Thang điểm Child-Pugh phân loại mức độ suy giảm chức năng gan dựa trên 5 thông số gồm:",
+    "options": [
+      "AST, ALT, GGT, Bạch cầu đa nhân và Tiểu cầu",
+      "Bilirubin, Albumin, INR/Tỷ lệ Prothrombin, Cổ trướng và Bệnh não gan",
+      "Creatinin, Ure, Acid uric, Kali máu và Glucose máu",
+      "Huyết áp tâm thu, Nhịp tim, SpO2, Chiều cao và Cân nặng"
+    ],
+    "correct": 1,
+    "explanation": "Child-Pugh đánh giá 5 tiêu chí lâm sàng và cận lâm sàng để phân độ suy gan A (5-6đ), B (7-9đ), C (10-15đ).",
+    "reference": "Sách DLS tr. 95"
+  },
+  {
+    "id": 873,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Thuốc giảm đau an thần nhóm Opioid nào cần đặc biệt thận trọng hoặc chống chỉ định cho bệnh nhân xơ gan nặng vì nguy cơ thúc đẩy hôn mê gan?",
+    "options": [
+      "Gel nhôm hydroxyd uống",
+      "Dung dịch nước muối sinh lý",
+      "Morphin",
+      "Paracetamol liều thấp"
+    ],
+    "correct": 2,
+    "explanation": "Opioid ức chế thần kinh trung ương và giảm nhu động ruột, dễ khởi phát hội chứng não gan ở bệnh nhân xơ gan nặng.",
+    "reference": "Sách DLS tr. 100"
+  },
+  {
+    "id": 874,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Thuốc điều trị đái tháo đường Metformin có nguy cơ gây biến chứng nguy hiểm nào khi dùng cho bệnh nhân suy thận nặng (eGFR < 30 mL/ph/1,73m2)?",
+    "options": [
+      "Cơn hạ đường huyết sâu kéo dài",
+      "Hội chứng Steven-Johnson toàn thân",
+      "Gây xuất huyết tiêu hóa do thủng dạ dày",
+      "Nhiễm toan acid lactic đe dọa tử vong"
+    ],
+    "correct": 3,
+    "explanation": "Metformin thải qua thận; suy thận nặng gây tích lũy thuốc ức chế tân tạo glucose từ lactat dẫn đến nhiễm toan lactic.",
+    "reference": "Sách DLS tr. 205"
+  },
+  {
+    "id": 875,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Chất chuyển hóa Morphin-6-glucuronid (M6G) của morphin có đặc tính nào khi tích lũy ở bệnh nhân suy thận?",
+    "options": [
+      "Có hoạt tính giảm đau mạnh hơn cả morphin và gây ức chế hô hấp kéo dài",
+      "Chuyển hóa ngược lại thành thuốc kích thích thần kinh gây mất ngủ",
+      "Gây tăng huyết áp kịch phát ác tính",
+      "Mất hoàn toàn hoạt tính và được đào thải nhanh qua phân"
+    ],
+    "correct": 0,
+    "explanation": "M6G là chất chuyển hóa có hoạt tính mạnh đào thải qua thận, suy thận tích lũy M6G gây ngừng thở hôn mê.",
+    "reference": "Sách DLS tr. 104"
+  },
+  {
+    "id": 876,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Thuốc kháng virus Acyclovir dùng đường tiêm truyền tĩnh mạch liều cao có thể gây suy thận cấp theo cơ chế nào?",
+    "options": [
+      "Gây hạ huyết áp tụt kẹp làm mất dòng máu đến thận",
+      "Lắng đọng tinh thể acyclovir trong lòng ống thận gây tắc nghẽn ống thận",
+      "Phá hủy trực tiếp cầu thận do lắng đọng phức hợp miễn dịch",
+      "Co thắt toàn bộ động mạch thận hai bên"
+    ],
+    "correct": 1,
+    "explanation": "Acyclovir ít tan trong nước tiểu; truyền nhanh làm lắng đọng tinh thể gây hoại tử ống thận (cần truyền chậm và bù dịch).",
+    "reference": "Sách DLS tr. 118"
+  },
+  {
+    "id": 877,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Để phòng ngừa suy thận cấp do lắng đọng tinh thể khi tiêm truyền Acyclovir hoặc Methotrexat liều cao, biện pháp bắt buộc là:",
+    "options": [
+      "Truyền thật nhanh trong vòng 2 phút",
+      "Hạn chế uống nước tối đa để cô đặc nước tiểu",
+      "Bù đủ dịch đường truyền và kiềm hóa nước tiểu bằng Natri hydrocarbonat",
+      "Acid hóa nước tiểu bằng vitamin C liều cao"
+    ],
+    "correct": 2,
+    "explanation": "Hydrat hóa đầy đủ và kiềm hóa nước tiểu (pH > 7) làm tăng độ tan của tinh thể, ngăn ngừa tắc nghẽn ống thận.",
+    "reference": "Sách DLS tr. 119"
+  },
+  {
+    "id": 878,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Bệnh nhân có mức lọc cầu thận eGFR = 20 mL/ph/1,73m2 thuộc giai đoạn nào của bệnh thận mạn (CKD) theo phân loại KDIGO?",
+    "options": [
+      "Giai đoạn 1 (Bình thường hoặc tăng lọc)",
+      "Giai đoạn 5 (Suy thận giai đoạn cuối)",
+      "Giai đoạn 2 (Giảm nhẹ)",
+      "Giai đoạn 4 (Suy thận nặng)"
+    ],
+    "correct": 3,
+    "explanation": "KDIGO: G1 >= 90, G2: 60-89, G3a: 45-59, G3b: 30-44, G4: 15-29, G5 < 15 mL/ph/1,73m2.",
+    "reference": "Sách DLS tr. 103"
+  },
+  {
+    "id": 879,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Thuốc chống đông đường uống thế hệ mới (DOAC) nào đào thải qua thận cao nhất (khoảng 80%) và cần giám sát chức năng thận chặt chẽ nhất?",
+    "options": [
+      "Dabigatran",
+      "Warfarin",
+      "Apixaban",
+      "Rivaroxaban"
+    ],
+    "correct": 0,
+    "explanation": "Dabigatran đào thải qua thận 80% (so với Rivaroxaban 33%, Apixaban 27%), nguy cơ chảy máu rất cao khi suy thận.",
+    "reference": "Sách DLS tr. 210"
+  },
+  {
+    "id": 880,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Thuốc lợi tiểu quai Furosemid khi dùng liều cao cho bệnh nhân suy thận nặng cần lưu ý độc tính đặc thù nào?",
+    "options": [
+      "Gây tăng kali máu nghiêm trọng",
+      "Độc tính trên ốc tai gây điếc tạm thời hoặc vĩnh viễn",
+      "Gây co thắt khí phế quản cấp",
+      "Gây sỏi thận canxi oxalat"
+    ],
+    "correct": 1,
+    "explanation": "Furosemid liều cao tiêm tĩnh mạch nhanh gây độc tế bào lông ốc tai, đặc biệt khi phối hợp với Aminosid.",
+    "reference": "Sách DLS tr. 188"
+  },
+  {
+    "id": 881,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Ở bệnh nhân xơ gan có cổ trướng nặng, thể tích phân bố (Vd) của các thuốc tan trong nước (như Aminosid, Beta-lactam) thay đổi như thế nào?",
+    "options": [
+      "Không bị ảnh hưởng bởi dịch cổ trướng",
+      "Hoàn toàn bằng 0 do thuốc không phân bố được",
+      "Tăng đáng kể do lượng dịch ngoại bào tích tụ trong ổ bụng rất lớn",
+      "Giảm nghiêm trọng do cơ thể bị teo cơ"
+    ],
+    "correct": 2,
+    "explanation": "Dịch cổ trướng làm tăng thể tích khoang dịch ngoại bào, dẫn đến Vd của thuốc thân nước tăng cao, cần tăng liều nạp ban đầu.",
+    "reference": "Sách DLS tr. 99"
+  },
+  {
+    "id": 882,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Biến đổi hoạt tính enzym CYP450 ở gan trong xơ gan tiến triển thường diễn ra theo chiều hướng nào?",
+    "options": [
+      "Chuyển đổi enzym gan thành enzym tiêu hóa dịch tụy",
+      "Hoạt tính enzym giữ nguyên ổn định vĩnh viễn",
+      "Tăng vọt hoạt tính lên gấp 5 lần so với người bình thường",
+      "Giảm sút hoạt tính của hầu hết các enzym oxy hóa, đặc biệt là CYP2C19 và CYP1A2"
+    ],
+    "correct": 3,
+    "explanation": "Xơ hóa nhu mô gan làm giảm lưu lượng máu và phá hủy tế bào gan, làm giảm tổng hợp enzym cytochrom P450.",
+    "reference": "Sách DLS tr. 97"
+  },
+  {
+    "id": 883,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Thuốc điều hòa lipid máu nhóm Statin nào sau đây chuyển hóa chủ yếu qua gan và ít bị ảnh hưởng nhất bởi suy giảm chức năng thận?",
+    "options": [
+      "Atorvastatin",
+      "Simvastatin",
+      "Rosuvastatin",
+      "Pravastatin"
+    ],
+    "correct": 0,
+    "explanation": "Atorvastatin thải trừ qua thận dưới 2%, là lựa chọn ưu tiên an toàn cho bệnh nhân suy giảm chức năng thận.",
+    "reference": "Sách DLS tr. 215"
+  },
+  {
+    "id": 884,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Khi tiến hành thẩm tách máu định kỳ (chạy thận nhân tạo), yếu tố nào của phân tử thuốc giúp thuốc dễ bị đào thải qua màng lọc nhân tạo?",
+    "options": [
+      "Trọng lượng phân tử khổng lồ trên 50.000 Dalton",
+      "Trọng lượng phân tử nhỏ, tan nhiều trong nước, tỷ lệ gắn protein thấp và thể tích phân bố nhỏ",
+      "Tỷ lệ gắn albumin huyết tương đạt 99%",
+      "Thể tích phân bố cực lớn trên 10 L/kg"
+    ],
+    "correct": 1,
+    "explanation": "Thuốc phân tử nhỏ, ít gắn protein (< 80%), Vd nhỏ (< 1 L/kg), tan trong nước dễ bị màng lọc nhân tạo loại bỏ.",
+    "reference": "Sách DLS tr. 120"
+  },
+  {
+    "id": 885,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Kháng sinh Glycopeptid Vancomycin khi sử dụng cho bệnh nhân chạy thận nhân tạo cần dùng thuốc vào thời điểm nào?",
+    "options": [
+      "Uống ngay trước khi cắm kim lọc máu 5 phút",
+      "Truyền liên tục trong suốt quá trình lọc máu",
+      "Dùng sau khi kết thúc buổi lọc máu nhân tạo",
+      "Chỉ dùng vào buổi sáng sớm ngày không lọc máu"
+    ],
+    "correct": 2,
+    "explanation": "Vancomycin tiêm truyền sau buổi lọc máu để tránh việc thuốc bị thất thoát một phần qua quả lọc thế hệ mới.",
+    "reference": "Sách DLS tr. 121"
+  },
+  {
+    "id": 886,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Kháng sinh Cephalosporin nào sau đây đào thải kép qua cả gan và thận (khoảng 50% qua mật, 50% qua thận), ít phải chỉnh liều khi suy thận đơn thuần?",
+    "options": [
+      "Ceftazidime",
+      "Cefazolin",
+      "Cefepime",
+      "Ceftriaxone"
+    ],
+    "correct": 3,
+    "explanation": "Ceftriaxone có đường đào thải kép (gan và thận), suy thận đơn thuần không cần hiệu chỉnh liều trừ khi có suy gan kèm theo.",
+    "reference": "Sách DLS tr. 111"
+  },
+  {
+    "id": 887,
+    "chapter": "Dược động học & Suy gan, thận",
+    "question": "Khi nồng độ Creatinin huyết thanh ở người cao tuổi gầy yếu teo cơ nằm trong khoảng bình thường (ví dụ 0,7 mg/dL), điều này phản ánh:",
+    "options": [
+      "Nồng độ creatinin bình thường giả tạo do giảm khối lượng cơ sinh creatinin; chức năng thận thực tế có thể đã suy giảm",
+      "Bệnh nhân hoàn toàn không có nguy cơ tích lũy thuốc đào thải qua thận",
+      "Thận người bệnh hoạt động vượt mức bình thường",
+      "Chức năng lọc của cầu thận hoàn hảo 100% như người trẻ"
+    ],
+    "correct": 0,
+    "explanation": "Người già teo cơ sản sinh ít creatinin nội sinh, creatinin máu bình thường che giấu mức lọc cầu thận đã giảm sút.",
+    "reference": "Sách DLS tr. 107"
+  },
+  {
+    "id": 888,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Kháng sinh Clarithromycin phối hợp với Simvastatin gây ra hậu quả tương tác dược động học nguy hiểm nào?",
+    "options": [
+      "Gây kết tủa trực tiếp trong dạ dày làm thủng ruột",
+      "Ức chế mạnh CYP3A4 làm tăng nồng độ Simvastatin gây tiêu cơ vân cấp và suy thận",
+      "Làm giảm hấp thu kháng sinh qua đường tiêu hóa",
+      "Cảm ứng CYP3A4 làm mất hoàn toàn tác dụng hạ mỡ máu"
+    ],
+    "correct": 1,
+    "explanation": "Clarithromycin ức chế mạnh CYP3A4 làm tăng AUC của simvastatin lên nhiều lần, nguy cơ tiêu cơ vân cấp cực cao.",
+    "reference": "Sách DLS tr. 175"
+  },
+  {
+    "id": 889,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Nước ép bưởi chùm (Grapefruit juice) làm tăng sinh khả dụng của Felodipin và Amlodipin do cơ chế phân tử nào?",
+    "options": [
+      "Kích thích tăng tiết acid dịch vị dạ dày",
+      "Gắn kết trực tiếp vào thụ thể canxi màng tế bào",
+      "Ức chế không hồi phục enzym CYP3A4 và P-glycoprotein tại thành ruột non",
+      "Làm kiềm hóa dòng máu tuần hoàn"
+    ],
+    "correct": 2,
+    "explanation": "Furanocoumarin trong bưởi chùm phá hủy enzym CYP3A4 ở ruột non làm giảm chuyển hóa bước đầu của thuốc chẹn kênh canxi.",
+    "reference": "Sách DLS tr. 178"
+  },
+  {
+    "id": 890,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Thuốc chống lao Rifampicin làm mất tác dụng ngừa thai của thuốc viên tránh thai đường uống phối hợp do:",
+    "options": [
+      "Rifampicin tiêu diệt toàn bộ vi khuẩn đường ruột sản xuất progesteron",
+      "Rifampicin tạo phức chelat không tan với thuốc tránh thai trong dạ dày",
+      "Rifampicin kích thích rụng trứng ngay lập tức",
+      "Rifampicin là chất cảm ứng enzym CYP3A4 cực mạnh làm tăng thoái giáng estrogen và progestin"
+    ],
+    "correct": 3,
+    "explanation": "Rifampicin cảm ứng mạnh hệ enzym gan, tăng chuyển hóa thuốc tránh thai dẫn đến vỡ phác đồ và mang thai ngoài ý muốn.",
+    "reference": "Sách DLS tr. 176"
+  },
+  {
+    "id": 891,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Khi phối hợp thuốc chống đông Warfarin với thuốc chống co giật Carbamazepin, hiệu quả chống đông bị thay đổi như thế nào?",
+    "options": [
+      "Giảm tác dụng chống đông, chỉ số INR giảm, tăng nguy cơ huyết khối tắc mạch",
+      "Hoàn toàn không có bất kỳ tương tác nào xảy ra",
+      "Chỉ số INR tăng vọt lên trên 10",
+      "Tăng vọt tác dụng chống đông gây xuất huyết ồ ạt nguy kịch"
+    ],
+    "correct": 0,
+    "explanation": "Carbamazepin cảm ứng CYP2C9 và CYP3A4, làm tăng chuyển hóa warfarin làm giảm INR (cần tăng liều warfarin).",
+    "reference": "Sách DLS tr. 180"
+  },
+  {
+    "id": 892,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Tương tác giữa kháng sinh nhóm Quinolon (Ciprofloxacin) với viên sắt hoặc thuốc kháng acid chứa Nhôm/Magnesi xảy ra theo cơ chế:",
+    "options": [
+      "Cảm ứng enzym chuyển hóa vi thể tại gan",
+      "Tạo phức chelat vòng càng không tan không hấp thu được qua niêm mạc ruột",
+      "Ức chế cạnh tranh trên thụ thể bài tiết ở ống thận",
+      "Cạnh tranh liên kết với albumin huyết tương"
+    ],
+    "correct": 1,
+    "explanation": "Ion kim loại đa hóa trị (Al3+, Mg2+, Fe2+, Ca2+) tạo chelat với Quinolon và Tetracyclin, làm giảm hấp thu đến 80-90%.",
+    "reference": "Sách DLS tr. 170"
+  },
+  {
+    "id": 893,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Khoảng cách thời gian uống tối thiểu khuyến cáo giữa kháng sinh Ciprofloxacin và thuốc kháng acid chứa nhôm là:",
+    "options": [
+      "Chỉ cần uống cách nhau đúng 5 phút",
+      "Uống cùng một lúc để tăng hiệu quả hòa tan",
+      "Uống Ciprofloxacin trước 2 giờ hoặc sau 4-6 giờ so với thuốc kháng acid",
+      "Phải uống cách nhau tròn 3 ngày"
+    ],
+    "correct": 2,
+    "explanation": "Cách xa ít nhất 2 giờ trước hoặc 4-6 giờ sau giúp thuốc hấp thu xong trước khi gặp ion kim loại.",
+    "reference": "Sách DLS tr. 171"
+  },
+  {
+    "id": 894,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Thuốc ức chế bơm proton Omeprazol làm giảm hoạt tính chống kết tập tiểu cầu của Clopidogrel do cơ chế nào?",
+    "options": [
+      "Omeprazol cạnh tranh gắn kết trực tiếp lên thụ thể P2Y12 của tiểu cầu",
+      "Omeprazol làm trung hòa acid phá hủy phân tử Clopidogrel",
+      "Omeprazol gây loét dạ dày làm mất tiểu cầu qua đường tiêu hóa",
+      "Omeprazol ức chế enzym CYP2C19 ngăn cản chuyển Clopidogrel thành chất chuyển hóa có hoạt tính"
+    ],
+    "correct": 3,
+    "explanation": "Clopidogrel là tiền chất cần CYP2C19 hoạt hóa; omeprazol ức chế CYP2C19 làm giảm hiệu quả chống huyết khối (nên dùng pantoprazol).",
+    "reference": "Sách DLS tr. 182"
+  },
+  {
+    "id": 895,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Phối hợp thuốc ức chế men chuyển Enalapril với thuốc lợi tiểu giữ kali Spironolacton cần theo dõi chặt chẽ nguy cơ:",
+    "options": [
+      "Tăng kali máu nghiêm trọng có thể gây ngừng tim",
+      "Hạ đường huyết sâu không hồi phục",
+      "Tăng natri máu ác tính gây phù não",
+      "Hạ kali máu kịch phát gây rung thất"
+    ],
+    "correct": 0,
+    "explanation": "Cả ƯCMC và spironolacton đều giữ kali, phối hợp làm tăng vọt kali máu nguy cơ rối loạn nhịp tim tử vong.",
+    "reference": "Sách DLS tr. 187"
+  },
+  {
+    "id": 896,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Hội chứng Serotonin đe dọa tính mạng (sốt cao, co giật, run rẩy, mê sảng) xuất hiện khi phối hợp nhóm thuốc nào?",
+    "options": [
+      "Thuốc hạ sốt Paracetamol với Vitamin C",
+      "Thuốc ức chế tái hấp thu chọn lọc Serotonin (SSRI) với thuốc ức chế MAO (MAOI) hoặc Tramadol",
+      "Kháng sinh Amoxicillin với Acid Clavulanic",
+      "Thuốc kháng acid dạ dày Gel nhôm với Simethicon"
+    ],
+    "correct": 1,
+    "explanation": "Phối hợp các thuốc làm tăng nồng độ serotonin synap dẫn đến bão hòa thụ thể 5-HT gây hội chứng Serotonin cấp tính.",
+    "reference": "Sách DLS tr. 192"
+  },
+  {
+    "id": 897,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Thuốc chống viêm không steroid (NSAID) làm giảm tác dụng hạ huyết áp của thuốc ức chế men chuyển do cơ chế:",
+    "options": [
+      "Phá hủy cấu trúc phân tử của thuốc ức chế men chuyển trong máu",
+      "Kích thích tim đập nhanh làm tăng cung lượng tim lên gấp đôi",
+      "Ức chế tổng hợp Prostaglandin tại thận làm co tiểu động mạch đến và giữ muối nước",
+      "Tăng đào thải thuốc ức chế men chuyển qua đường mật"
+    ],
+    "correct": 2,
+    "explanation": "NSAID ức chế COX làm giảm PGE2 và PGI2 ở thận, gây co mạch thận, ứ muối nước, triệt tiêu tác dụng hạ áp.",
+    "reference": "Sách DLS tr. 190"
+  },
+  {
+    "id": 898,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Phối hợp ba thuốc nào sau đây tạo nên 'Bộ ba chết chóc' (Triple Whammy) gây suy thận cấp nghiêm trọng?",
+    "options": [
+      "Amoxicillin + Clavulanat + Men vi sinh Probiotic",
+      "Atorvastatin + Metformin + Insulin",
+      "Paracetamol + Vitamin B1 + Dung dịch Oresol",
+      "Thuốc ức chế men chuyển + Thuốc lợi tiểu + Thuốc chống viêm không steroid (NSAID)"
+    ],
+    "correct": 3,
+    "explanation": "Triple Whammy: Lợi tiểu giảm thể tích, NSAID co tiểu động mạch đến, ƯCMC giãn tiểu động mạch đi => sụt giảm GFR cấp.",
+    "reference": "Sách DLS tr. 191"
+  },
+  {
+    "id": 899,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Khi phối hợp Kháng sinh Aminosid (Gentamicin) với thuốc giãn cơ không khử cực (Pancuronium) trong phẫu thuật:",
+    "options": [
+      "Làm tăng cường và kéo dài tác dụng ức chế thần kinh cơ, nguy cơ ngừng thở sau mổ",
+      "Làm tăng huyết áp kịch phát",
+      "Làm mất hoàn toàn tác dụng giãn cơ làm bệnh nhân co giật",
+      "Gây sốt cao ác tính không hạ được"
+    ],
+    "correct": 0,
+    "explanation": "Aminosid ức chế giải phóng acetylcholin tại bản vận động, làm tăng sâu tác dụng của thuốc giãn cơ.",
+    "reference": "Sách DLS tr. 189"
+  },
+  {
+    "id": 900,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Tương kỵ vật lý xảy ra khi truyền tĩnh mạch phối hợp kháng sinh Ceftriaxone với dung dịch nào sau đây?",
+    "options": [
+      "Dung dịch Glucose 5%",
+      "Dung dịch Ringer lactat hoặc các dung dịch tiêm truyền có chứa Calci",
+      "Dung dịch Natri clorid 0,9%",
+      "Dung dịch Nước cất pha tiêm"
+    ],
+    "correct": 1,
+    "explanation": "Ceftriaxone tạo phức kết tủa không tan Ceftriaxone-Calci gây tắc mạch phổi và suy thận tử vong, đặc biệt ở trẻ sơ sinh.",
+    "reference": "Sách DLS tr. 195"
+  },
+  {
+    "id": 901,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Phối hợp kháng sinh Ceftriaxone với dung dịch chứa Calci bị chống chỉ định tuyệt đối ở đối tượng nào?",
+    "options": [
+      "Phụ nữ mãn kinh bị loãng xương",
+      "Bệnh nhân nam giới trưởng thành khỏe mạnh",
+      "Trẻ sơ sinh (dưới 28 ngày tuổi) kể cả truyền qua các đường truyền riêng rẽ",
+      "Người cao tuổi bị thoái hóa khớp gối"
+    ],
+    "correct": 2,
+    "explanation": "FDA và Bộ Y tế chống chỉ định tuyệt đối phối hợp Ceftriaxone và Calci ở trẻ sơ sinh do nguy cơ tử vong do kết tủa vi mạch.",
+    "reference": "Sách DLS tr. 196"
+  },
+  {
+    "id": 902,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Thuốc chống loạn nhịp tim Amiodaron làm tăng gấp đôi nồng độ Digoxin trong huyết tương theo cơ chế:",
+    "options": [
+      "Cạnh tranh gắn kết với glycogen tại tế bào cơ tim",
+      "Làm giảm chuyển hóa Digoxin qua hệ enzym CYP1A2",
+      "Kích thích dạ dày tăng tiết dịch vị hòa tan Digoxin",
+      "Ức chế bơm tống thuốc P-glycoprotein tại ruột và ống thận làm giảm bài xuất Digoxin"
+    ],
+    "correct": 3,
+    "explanation": "Amiodaron ức chế P-gp làm giảm thải trừ Digoxin qua thận và mật, phải chủ động giảm 50% liều Digoxin khi bắt đầu phối hợp.",
+    "reference": "Sách DLS tr. 184"
+  },
+  {
+    "id": 903,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Hiện tượng tương tác 'Disulfiram-like' (bừng mặt, nôn mửa, tụt huyết áp, đánh trống ngực) xảy ra khi người bệnh uống rượu cùng với thuốc nào?",
+    "options": [
+      "Kháng sinh Metronidazol hoặc Cefoperazon",
+      "Thuốc chống dị ứng Loratadin",
+      "Thuốc giảm đau Paracetamol",
+      "Kháng sinh Amoxicillin"
+    ],
+    "correct": 0,
+    "explanation": "Metronidazol và các cephalosporin có nhánh N-methylthiotetrazol (NMTT) ức chế enzym Aldehyd dehydrogenase gây tích tụ acetaldehyd.",
+    "reference": "Sách DLS tr. 193"
+  },
+  {
+    "id": 904,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Kháng sinh Doxycyclin bị giảm hấp thu nghiêm trọng khi uống cùng lúc với thực phẩm nào?",
+    "options": [
+      "Nước cam vắt chứa nhiều acid citric",
+      "Sữa và các chế phẩm từ sữa chứa nhiều calci",
+      "Thịt bò luộc chứa nhiều protein",
+      "Bánh mì chứa nhiều tinh bột"
+    ],
+    "correct": 1,
+    "explanation": "Calci trong sữa tạo phức chelat không hấp thu với Tetracyclin/Doxycyclin, phải uống cách xa sữa ít nhất 2 giờ.",
+    "reference": "Sách DLS tr. 172"
+  },
+  {
+    "id": 905,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Phối hợp Allopurinol với thuốc ức chế miễn dịch Azathioprin đòi hỏi phải xử trí liều như thế nào?",
+    "options": [
+      "Tăng liều Azathioprin lên gấp ba lần",
+      "Ngừng hoàn toàn Allopurinol và tăng gấp đôi liều Azathioprin",
+      "Giảm liều Azathioprin xuống còn 1/3 đến 1/4 liều thông thường để tránh suy tủy xương",
+      "Giữ nguyên liều của cả hai thuốc"
+    ],
+    "correct": 2,
+    "explanation": "Allopurinol ức chế xanthin oxidase (enzym thoái giáng 6-mercaptopurin/azathioprin), gây tích lũy cực độc tủy xương.",
+    "reference": "Sách DLS tr. 186"
+  },
+  {
+    "id": 906,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Thuốc hấp phụ than hoạt tính (Activated Charcoal) tương tác với các thuốc uống khác theo cơ chế nào?",
+    "options": [
+      "Làm kiềm hóa dòng máu tuần hoàn lên pH = 9",
+      "Tăng tốc độ tháo rỗng dạ dày đẩy thuốc xuống đại tràng",
+      "Cảm ứng toàn bộ enzym gan làm tiêu hủy thuốc trong 5 phút",
+      "Hấp phụ các phân tử thuốc trên bề mặt xốp rộng lớn làm ngăn cản thuốc hấp thu vào máu"
+    ],
+    "correct": 3,
+    "explanation": "Than hoạt hấp phụ vật lý thuốc trên bề mặt diện tích lớn, dùng cấp cứu ngộ độc nhưng làm mất tác dụng thuốc uống cùng.",
+    "reference": "Sách DLS tr. 169"
+  },
+  {
+    "id": 907,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Thuốc kháng nấm Itraconazol dạng viên nang cần môi trường nào ở dạ dày để hòa tan và hấp thu tối ưu?",
+    "options": [
+      "Môi trường acid dịch vị dạ dày đầy đủ",
+      "Môi trường hoàn toàn trung hòa hoặc kiềm hóa",
+      "Môi trường chứa nhiều ion nhôm hydroxyd",
+      "Dạ dày hoàn toàn rỗng và không có acid"
+    ],
+    "correct": 0,
+    "explanation": "Itraconazol cần acid để ion hóa và hòa tan; thuốc ức chế acid (PPI, H2) làm giảm nghiêm trọng hấp thu itraconazol.",
+    "reference": "Sách DLS tr. 173"
+  },
+  {
+    "id": 908,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Phối hợp thuốc chẹn thụ thể Beta (Atenolol) với thuốc chẹn kênh Calci nhóm Non-DHP (Verapamil) có nguy cơ gây tai biến nào?",
+    "options": [
+      "Hội chứng xuất huyết dưới da diện rộng",
+      "Chậm nhịp tim nghiêm trọng, block nhĩ thất hoàn toàn và suy tim cấp",
+      "Cơn co giật động kinh toàn thể",
+      "Cơn tăng huyết áp kịch phát ác tính"
+    ],
+    "correct": 1,
+    "explanation": "Cả hai thuốc đều ức chế nút xoang và nút nhĩ thất, phối hợp đường tiêm tĩnh mạch là chống chỉ định tuyệt đối.",
+    "reference": "Sách DLS tr. 194"
+  },
+  {
+    "id": 909,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Thuốc chống động kinh Phenytoin bị tăng nồng độ tự do và độc tính khi dùng cùng Valproat natri do cơ chế:",
+    "options": [
+      "Valproat làm biến đổi cấu trúc thụ thể GABA não bộ",
+      "Valproat kích thích hấp thu Phenytoin qua niêm mạc ruột",
+      "Valproat cạnh tranh gắn kết với albumin huyết tương và ức chế chuyển hóa của Phenytoin",
+      "Valproat ức chế bài tiết Phenytoin qua mồ hôi"
+    ],
+    "correct": 2,
+    "explanation": "Valproat đẩy phenytoin ra khỏi albumin và ức chế enzym gan làm tăng nồng độ phenytoin tự do gây độc tính lú lẫn, rung giật nhãn cầu.",
+    "reference": "Sách DLS tr. 183"
+  },
+  {
+    "id": 910,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Kháng sinh Linezolid khi dùng chung với thực phẩm giàu Tyramine (như phô mai lên men, rượu vang đỏ) có thể gây biến chứng gì?",
+    "options": [
+      "Tiêu chảy cấp mất nước nghiêm trọng",
+      "Hạ đường huyết sâu gây hôn mê co giật",
+      "Suy giảm tiểu cầu cấp tính đe dọa tính mạng",
+      "Cơn tăng huyết áp kịch phát nguy hiểm do Linezolid có hoạt tính ức chế nhẹ enzym MAO"
+    ],
+    "correct": 3,
+    "explanation": "Linezolid ức chế MAO không chọn lọc có hồi phục; tích tụ tyramine gây giải phóng catecholamin ồ ạt làm vọt huyết áp.",
+    "reference": "Sách DLS tr. 198"
+  },
+  {
+    "id": 911,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Dung dịch thuốc tiêm Diazepam khi pha loãng trực tiếp vào chai dịch truyền NaCl 0,9% thường xảy ra hiện tượng gì?",
+    "options": [
+      "Tạo vẩn đục kết tủa trắng đục do Diazepam rất ít tan trong nước",
+      "Bốc khói và tỏa nhiệt lượng cực lớn",
+      "Dung dịch hoàn toàn trong suốt ổn định trong 48 giờ",
+      "Dung dịch chuyển sang màu đỏ rực"
+    ],
+    "correct": 0,
+    "explanation": "Diazepam pha trong dung môi hỗn hợp (propylen glycol/ethanol); khi vào dung dịch nước sẽ kết tủa ngay lập tức.",
+    "reference": "Sách DLS tr. 197"
+  },
+  {
+    "id": 912,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Thuốc hạ đường huyết nhóm Sulfonylure (Gliclazid) khi dùng phối hợp với kháng sinh Cotrimoxazol có nguy cơ cao xảy ra:",
+    "options": [
+      "Mất tác dụng diệt khuẩn của Cotrimoxazol",
+      "Hạ đường huyết nặng kéo dài do Sulfamethoxazol ức chế chuyển hóa Gliclazid qua CYP2C9",
+      "Suy thận cấp do sỏi acid uric",
+      "Tăng đường huyết kháng trị dẫn đến hôn mê nhiễm toan ceton"
+    ],
+    "correct": 1,
+    "explanation": "Cotrimoxazol ức chế CYP2C9 làm tăng thời gian bán thải và nồng độ sulfonylure, gây hạ đường huyết sâu nguy hiểm.",
+    "reference": "Sách DLS tr. 181"
+  },
+  {
+    "id": 913,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Hút thuốc lá nhiều điếu mỗi ngày ảnh hưởng đến dược động học của Theophyllin như thế nào?",
+    "options": [
+      "Làm giảm hấp thu Theophyllin qua đường tiêu hóa",
+      "Làm ức chế hoàn toàn chuyển hóa làm tăng độc tính Theophyllin",
+      "Các hydrocacbon thơm trong khói thuốc cảm ứng enzym CYP1A2 làm tăng thanh thải và giảm nồng độ Theophyllin",
+      "Không có bất kỳ ảnh hưởng nào đến Theophyllin"
+    ],
+    "correct": 2,
+    "explanation": "Khói thuốc lá cảm ứng CYP1A2 mạnh, người hút thuốc cần liều theophyllin cao hơn người không hút thuốc.",
+    "reference": "Sách DLS tr. 177"
+  },
+  {
+    "id": 914,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Thuốc ức chế men Protease điều trị HIV (Ritonavir) thường được phối hợp ở liều thấp (Booster) với thuốc kháng virus khác nhằm mục đích:",
+    "options": [
+      "Tiêu diệt trực tiếp các tế bào lympho T bị nhiễm virus",
+      "Tăng cường sản sinh kháng thể tự nhiên",
+      "Làm giảm độc tính trên gan của thuốc phối hợp",
+      "Ức chế mạnh CYP3A4 để làm tăng nồng độ và kéo dài tác dụng của thuốc phối hợp"
+    ],
+    "correct": 3,
+    "explanation": "Ritonavir là chất ức chế CYP3A4 cực mạnh, dùng liều thấp để 'tăng cường' (boost) sinh khả dụng của lopinavir, atazanavir.",
+    "reference": "Sách DLS tr. 179"
+  },
+  {
+    "id": 915,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Khi phối hợp Kháng sinh Aminosid với thuốc cản quang chứa iod trong cùng một ngày chụp CT-scanner, nguy cơ tai biến là:",
+    "options": [
+      "Cộng dồn độc tính trên ống thận dẫn đến suy thận cấp do thuốc",
+      "Làm mất tác dụng kháng khuẩn của Aminosid",
+      "Làm mất hoàn toàn độ tương phản của phim chụp X-quang",
+      "Gây xuất huyết não tự phát diện rộng"
+    ],
+    "correct": 0,
+    "explanation": "Cả hai đều gây độc tế bào biểu mô ống thận và co mạch thận, phối hợp làm tăng vọt tỷ lệ suy thận cấp.",
+    "reference": "Sách DLS tr. 188"
+  },
+  {
+    "id": 916,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Để tránh tương tác thuốc bất lợi trên bệnh nhân ngoại trú điều trị nhiều bệnh phối hợp, nguyên tắc hàng đầu của dược sĩ là:",
+    "options": [
+      "Tự động thay thế toàn bộ thuốc kê đơn bằng thực phẩm chức năng",
+      "Rà soát đối chiếu toàn bộ đơn thuốc và tiền sử dùng thuốc, ưu tiên đơn giản hóa phác đồ",
+      "Khuyên bệnh nhân uống tất cả các loại thuốc cùng lúc vào đầu giờ sáng",
+      "Tăng liều gấp đôi của các thuốc để bù trừ tương tác"
+    ],
+    "correct": 1,
+    "explanation": "Medication reconciliation (đối chiếu thuốc) là biện pháp cốt lõi để phát hiện và ngăn chặn tương tác thuốc bất lợi.",
+    "reference": "Sách DLS tr. 200"
+  },
+  {
+    "id": 917,
+    "chapter": "Tương tác thuốc & Tương kỵ",
+    "question": "Thuốc kháng virus Remdesivir tiêm truyền tĩnh mạch không được pha chung với các thuốc khác trên cùng một đường truyền vì:",
+    "options": [
+      "Làm cho chai dịch truyền bị đông đặc ngay lập tức",
+      "Làm giảm thân nhiệt bệnh nhân xuống dưới 30 độ C",
+      "Nguy cơ tương kỵ hóa lý làm biến đổi hoạt tính và tăng nguy cơ phản ứng truyền dịch",
+      "Làm tăng vọt nồng độ natri trong máu"
+    ],
+    "correct": 2,
+    "explanation": "Remdesivir cần truyền trên đường truyền riêng biệt để bảo đảm tính tương hợp và vô khuẩn tối đa.",
+    "reference": "Sách DLS tr. 199"
+  },
+  {
+    "id": 918,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Phản ứng có hại của thuốc loại A (Type A - Augmented) có đặc điểm nổi bật nào sau đây?",
+    "options": [
+      "Hoàn toàn không tiên đoán được và không liên quan đến liều lượng",
+      "Chỉ xuất hiện sau nhiều năm dùng thuốc liên tục",
+      "Tỷ lệ tử vong rất cao nhưng tỷ lệ mắc rất thấp",
+      "Tiên đoán được dựa trên tác dụng dược lý và phụ thuộc vào liều dùng"
+    ],
+    "correct": 3,
+    "explanation": "Type A (chiếm > 80% ADR) là sự phóng đại tác dụng dược lý, phụ thuộc liều, tiên đoán được, tỷ lệ tử vong thấp.",
+    "reference": "Sách DLS tr. 145"
+  },
+  {
+    "id": 919,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Ví dụ nào sau đây là phản ứng có hại của thuốc thuộc loại B (Type B - Bizarre)?",
+    "options": [
+      "Sốc phản vệ đe dọa tính mạng sau khi tiêm Penicillin",
+      "Chảy máu đường tiêu hóa do dùng Aspirin liều cao",
+      "Nhịp tim chậm do dùng thuốc chẹn thụ thể beta",
+      "Hạ đường huyết do dùng quá liều Insulin"
+    ],
+    "correct": 0,
+    "explanation": "Type B là phản ứng dị ứng hoặc bất dung nạp do di truyền, không phụ thuộc liều, không tiên đoán được.",
+    "reference": "Sách DLS tr. 146"
+  },
+  {
+    "id": 920,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Phản ứng có hại của thuốc loại C (Type C - Chronic) có đặc điểm nào?",
+    "options": [
+      "Xuất hiện tức thì trong vòng 5 phút sau khi dùng thuốc",
+      "Liên quan đến liều tích lũy và thời gian dùng thuốc kéo dài",
+      "Chỉ xảy ra ở thế hệ con cái của người dùng thuốc",
+      "Xảy ra ngay lập tức sau khi ngừng thuốc đột ngột"
+    ],
+    "correct": 1,
+    "explanation": "Type C liên quan đến tích lũy liều dài ngày, ví dụ: hội chứng Cushing do lạm dụng Glucocorticoid kéo dài.",
+    "reference": "Sách DLS tr. 147"
+  },
+  {
+    "id": 921,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Hội chứng 'người đỏ' (Red man syndrome) khi truyền kháng sinh Vancomycin xuất hiện do cơ chế nào?",
+    "options": [
+      "Do phản ứng dị ứng qua trung gian kháng thể IgE thực sự",
+      "Do vi khuẩn gram dương bị tiêu diệt giải phóng độc tố",
+      "Do giải phóng Histamin trực tiếp từ dưỡng bào khi tốc độ truyền tĩnh mạch quá nhanh",
+      "Do tổn thương tế bào gan làm ứ đọng bilirubin trong máu"
+    ],
+    "correct": 2,
+    "explanation": "Hội chứng người đỏ là phản ứng giả dị ứng do truyền Vancomycin nhanh; khắc phục bằng cách truyền chậm >= 60 phút.",
+    "reference": "Sách DLS tr. 155"
+  },
+  {
+    "id": 922,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Thuốc đầu tay bắt buộc phải sử dụng ngay lập tức không chậm trễ khi xảy ra Sốc phản vệ là:",
+    "options": [
+      "Kháng histamin H1 Diphenhydramin tiêm tĩnh mạch",
+      "Hydrocortison hoặc Methylprednisolon tiêm tĩnh mạch",
+      "Dung dịch truyền Glucose 5% nhỏ giọt chậm",
+      "Adrenalin tiêm bắp sâu ở mặt trước ngoài đùi"
+    ],
+    "correct": 3,
+    "explanation": "Adrenalin tiêm bắp là thuốc cấp cứu sống còn số 1, phải dùng ngay khi có chẩn đoán phản vệ độ 2 trở lên.",
+    "reference": "Thông tư 51/2017/TT-BYT"
+  },
+  {
+    "id": 923,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Liều Adrenalin tiêm bắp ban đầu khuyến cáo cho người lớn khi xử trí sốc phản vệ theo Bộ Y tế là:",
+    "options": [
+      "1/2 ống (tương đương 0,5 mg) tiêm bắp",
+      "Tiêm tĩnh mạch trực tiếp nguyên 1 ống 1 mg",
+      "Uống 2 ống Adrenalin pha với nước đường",
+      "Chỉ bôi Adrenalin ngoài da vùng tiêm thuốc"
+    ],
+    "correct": 0,
+    "explanation": "Người lớn tiêm bắp 1/2 ống (0,5 ml dung dịch 1mg/ml), trẻ em dùng theo cân nặng (khoảng 0,01 mg/kg).",
+    "reference": "Thông tư 51/2017/TT-BYT"
+  },
+  {
+    "id": 924,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Vai trò chính của Glucocorticoid (Methylprednisolon/Hydrocortison) trong phác đồ xử trí phản vệ là:",
+    "options": [
+      "Trung hòa phân tử dị nguyên đang lưu hành trong máu",
+      "Dự phòng phản vệ pha 2 (phản vệ muộn xuất hiện sau 4 - 8 giờ)",
+      "Làm giãn phế quản cắt cơn khó thở cấp cứu",
+      "Làm co mạch nâng huyết áp tức thì trong 30 giây đầu"
+    ],
+    "correct": 1,
+    "explanation": "Corticoid có tác dụng khởi phát chậm (sau vài giờ), mục đích cốt lõi là ngăn chặn cơn phản vệ pha 2 muộn.",
+    "reference": "Sách DLS tr. 158"
+  },
+  {
+    "id": 925,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Thang điểm Naranjo được sử dụng trong thực hành dược lâm sàng nhằm mục đích gì?",
+    "options": [
+      "Tính toán mức lọc cầu thận cho bệnh nhân suy dinh dưỡng",
+      "Xác định liều nạp ban đầu của kháng sinh Aminosid",
+      "Đánh giá mối quan hệ nhân quả giữa việc dùng thuốc và phản ứng có hại nghi ngờ (ADR)",
+      "Phân loại độ nặng của bệnh nhân tăng huyết áp kịch phát"
+    ],
+    "correct": 2,
+    "explanation": "Thang Naranjo gồm 10 câu hỏi để phân loại quan hệ nhân quả: Chắc chắn (>9), Có khả năng (5-8), Có thể (1-4), Nghi ngờ (0).",
+    "reference": "Sách DLS tr. 152"
+  },
+  {
+    "id": 926,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Hội chứng ho khan dai dẳng do thuốc ức chế men chuyển (như Enalapril, Captopril) liên quan đến sự tích lũy chất nào?",
+    "options": [
+      "Bạch cầu ái toan trong dịch màng phổi",
+      "Acid uric và Ure trong mô kẽ phổi",
+      "Histamin và Serotonin trong phế nang",
+      "Bradykinin và Chất P tại đường hô hấp trên"
+    ],
+    "correct": 3,
+    "explanation": "Enzym chuyển ACE đồng thời thoái biến Bradykinin; ức chế ACE làm tích tụ Bradykinin kích thích phản xạ ho khan.",
+    "reference": "Sách DLS tr. 160"
+  },
+  {
+    "id": 927,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Khi bệnh nhân gặp tác dụng phụ ho khan dữ dội do Enalapril, biện pháp xử trí thích hợp nhất là:",
+    "options": [
+      "Chuyển sang nhóm thuốc chẹn thụ thể Angiotensin II (như Losartan, Telmisartan)",
+      "Tăng gấp đôi liều Enalapril để cơ thể quen dần",
+      "Khuyên bệnh nhân ngừng toàn bộ thuốc và không điều trị huyết áp",
+      "Kê thêm thuốc giảm ho morphin liều cao dài ngày"
+    ],
+    "correct": 0,
+    "explanation": "Nhóm ARB (chẹn thụ thể AT1) không ức chế thoái biến Bradykinin nên hầu như không gây ho khan.",
+    "reference": "Sách DLS tr. 161"
+  },
+  {
+    "id": 928,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Hội chứng Stevens-Johnson (SJS) và Hoại tử thượng bì nhiễm độc (TEN) là các phản ứng có hại nghiêm trọng trên da phân biệt dựa vào:",
+    "options": [
+      "Thời điểm xuất hiện luôn xảy ra trong vòng 10 giây",
+      "Diện tích da bị bong trợt: SJS < 10%, TEN > 30% diện tích bề mặt cơ thể",
+      "Vị trí xuất hiện chỉ khu trú ở lòng bàn chân",
+      "Màu sắc của dịch bóng nước bên trong thượng bì"
+    ],
+    "correct": 1,
+    "explanation": "SJS bong trợt < 10% BSA, thể trung gian 10-30%, TEN bong trợt nặng > 30% BSA với tỷ lệ tử vong rất cao.",
+    "reference": "Sách DLS tr. 163"
+  },
+  {
+    "id": 929,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Xét nghiệm gen nào sau đây được khuyến cáo sàng lọc trước khi chỉ định thuốc Allopurinol để tránh nguy cơ SJS/TEN trên người châu Á?",
+    "options": [
+      "Đột biến gen EGFR",
+      "Đột biến gen BRCA1",
+      "Alen HLA-B*5801",
+      "Alen HLA-B*1502"
+    ],
+    "correct": 2,
+    "explanation": "Alen HLA-B*5801 liên quan chặt chẽ với phản ứng da nghiêm trọng SCAR (SJS/TEN) do Allopurinol ở người châu Á/Việt Nam.",
+    "reference": "Sách DLS tr. 164"
+  },
+  {
+    "id": 930,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Alen HLA-B*1502 có mối liên quan mạnh mẽ với nguy cơ hội chứng Stevens-Johnson khi điều trị bằng thuốc chống động kinh nào?",
+    "options": [
+      "Acid Valproic",
+      "Levetiracetam",
+      "Gabapentin",
+      "Carbamazepin"
+    ],
+    "correct": 3,
+    "explanation": "Sàng lọc HLA-B*1502 bắt buộc trước khi dùng Carbamazepin cho bệnh nhân gốc Á để dự phòng SJS/TEN.",
+    "reference": "Sách DLS tr. 165"
+  },
+  {
+    "id": 931,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Phản ứng có hại gây suy tủy xương mất bạch cầu hạt không hồi phục là tai biến nổi tiếng của kháng sinh nào?",
+    "options": [
+      "Cloramphenicol",
+      "Cefalexin",
+      "Spiramycin",
+      "Amoxicillin"
+    ],
+    "correct": 0,
+    "explanation": "Cloramphenicol gây suy tủy bất sản không phụ thuộc liều (Type B, tỷ lệ 1/30.000) với tỷ lệ tử vong rất cao.",
+    "reference": "Sách DLS tr. 162"
+  },
+  {
+    "id": 932,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Hội chứng xám (Gray baby syndrome) ở trẻ sơ sinh khi dùng Cloramphenicol xảy ra do cơ chế nào?",
+    "options": [
+      "Thuốc phá hủy enzym tổng hợp hemoglobin ở tủy xương",
+      "Gan trẻ thiếu enzym Glucuronyl transferase và thận chưa hoàn thiện làm tích lũy nồng độ Cloramphenicol cực độc",
+      "Thuốc làm tan máu ồ ạt qua màng hồng cầu",
+      "Thuốc gây co thắt toàn bộ tĩnh mạch chủ dưới"
+    ],
+    "correct": 1,
+    "explanation": "Trẻ sơ sinh thiếu enzym liên hợp glucuronic, tích lũy Cloramphenicol gây trụy tim mạch tím tái (da xám) và tử vong.",
+    "reference": "Sách DLS tr. 166"
+  },
+  {
+    "id": 933,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Viêm gân gót (gân Achilles) và nguy cơ đứt gân là tác dụng không mong muốn đặc thù của nhóm kháng sinh nào?",
+    "options": [
+      "Kháng sinh nhóm Macrolid (như Clarithromycin)",
+      "Kháng sinh nhóm Penicillin phổ rộng",
+      "Kháng sinh nhóm Fluoroquinolon (như Levofloxacin, Ciprofloxacin)",
+      "Kháng sinh nhóm Cephalosporin thế hệ 3"
+    ],
+    "correct": 2,
+    "explanation": "Fluoroquinolon ức chế chuyển hóa tế bào sụn gân, cảnh báo hộp đen về nguy cơ viêm và đứt gân gót gót chân.",
+    "reference": "Sách DLS tr. 167"
+  },
+  {
+    "id": 934,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Độc tính trên mắt gây viêm dây thần kinh thị giác làm giảm thị lực và mất khả năng phân biệt màu đỏ - xanh lá cây là của thuốc nào?",
+    "options": [
+      "Pyrazinamid",
+      "Isoniazid",
+      "Rifampicin",
+      "Ethambutol (thuốc chống lao)"
+    ],
+    "correct": 3,
+    "explanation": "Ethambutol gây viêm thần kinh thị giác hậu nhãn cầu, cần kiểm tra thị lực và sắc giác định kỳ khi điều trị.",
+    "reference": "Sách DLS tr. 225"
+  },
+  {
+    "id": 935,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Dị ứng thuốc qua trung gian tế bào T chậm (Type IV theo phân loại Gell và Coombs) thường khởi phát trong khoảng thời gian nào?",
+    "options": [
+      "Sau vài ngày đến vài tuần sau khi tiếp xúc với thuốc",
+      "Chỉ sau khi ngừng thuốc 6 tháng",
+      "Ngay tức thì trong vòng 5 phút đầu tiên",
+      "Trong vòng 30 phút sau khi uống thuốc"
+    ],
+    "correct": 0,
+    "explanation": "Type IV là đáp ứng miễn dịch qua trung gian tế bào T chậm, khởi phát muộn sau 48h đến nhiều tuần.",
+    "reference": "Sách DLS tr. 149"
+  },
+  {
+    "id": 936,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Tác dụng không mong muốn gây hoại tử vô khuẩn chỏm xương đùi thường liên quan đến việc lạm dụng nhóm thuốc nào?",
+    "options": [
+      "Kháng sinh Penicillin đường uống",
+      "Glucocorticoid liều cao kéo dài",
+      "Thuốc ức chế bơm proton Omeprazol",
+      "Thuốc kháng histamin H1 Loratadin"
+    ],
+    "correct": 1,
+    "explanation": "Corticoid liều cao kéo dài làm tăng áp lực tủy xương và tắc mạch nuôi, dẫn đến hoại tử vô mạch chỏm xương đùi.",
+    "reference": "Sách DLS tr. 230"
+  },
+  {
+    "id": 937,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Thuốc giải độc đặc hiệu (Antidote) khi bị ngộ độc quá liều Paracetamol gây hoại tử tế bào gan cấp là:",
+    "options": [
+      "Atropin sulfat tiêm bắp",
+      "Naloxon tiêm tĩnh mạch",
+      "N-acetylcystein (NAC)",
+      "Flumazenil tiêm tĩnh mạch"
+    ],
+    "correct": 2,
+    "explanation": "NAC cung cấp nhóm -SH để tái tạo glutathion, trung hòa chất chuyển hóa độc NAPQI của paracetamol.",
+    "reference": "Sách DLS tr. 168"
+  },
+  {
+    "id": 938,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Thời điểm vàng dùng N-acetylcystein đường uống hoặc truyền tĩnh mạch để bảo vệ gan tối đa sau khi uống quá liều Paracetamol là:",
+    "options": [
+      "Sau 7 ngày khi men gan tăng vọt",
+      "Sau 48 giờ khi đã có vàng da rõ rệt",
+      "Bất cứ lúc nào trong vòng 1 tháng",
+      "Trong vòng 8 giờ đầu sau khi uống thuốc"
+    ],
+    "correct": 3,
+    "explanation": "Dùng NAC trong vòng 8 giờ đầu đem lại hiệu quả bảo vệ gan gần như 100% trước độc tính của NAPQI.",
+    "reference": "Sách DLS tr. 168"
+  },
+  {
+    "id": 939,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Thuốc giải độc đặc hiệu khi ngộ độc quá liều thuốc giảm đau nhóm Opioid (như Morphin, Fentanyl) gây ngừng thở là:",
+    "options": [
+      "Naloxon",
+      "Protamin sulfat",
+      "Vitamin K1",
+      "N-acetylcystein"
+    ],
+    "correct": 0,
+    "explanation": "Naloxon là chất đối kháng cạnh tranh đặc hiệu trên thụ thể mu-opioid, giúp hồi phục nhịp thở ngay lập tức.",
+    "reference": "Sách DLS tr. 235"
+  },
+  {
+    "id": 940,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Thuốc đối kháng đặc hiệu dùng để đảo ngược tác dụng an thần quá liều của nhóm Benzodiazepin (như Diazepam, Midazolam) là:",
+    "options": [
+      "Naloxon",
+      "Flumazenil",
+      "Atropin",
+      "Pralidoxim"
+    ],
+    "correct": 1,
+    "explanation": "Flumazenil đối kháng cạnh tranh tại vị trí gắn kết của benzodiazepin trên phức hợp thụ thể GABA-A.",
+    "reference": "Sách DLS tr. 236"
+  },
+  {
+    "id": 941,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Thuốc đối kháng trung hòa tác dụng chống đông của Heparin không phân đoạn trong trường hợp chảy máu đe dọa tính mạng là:",
+    "options": [
+      "Acid tranexamic",
+      "Huyết tương tươi đông lạnh",
+      "Protamin sulfat",
+      "Vitamin K1 tiêm bắp"
+    ],
+    "correct": 2,
+    "explanation": "Protamin sulfat tích điện dương mạnh tạo phức trung hòa tĩnh điện bền vững với phân tử heparin tích điện âm.",
+    "reference": "Sách DLS tr. 212"
+  },
+  {
+    "id": 942,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Tác dụng phụ gây đổi màu nước tiểu, mồ hôi và nước mắt thành màu đỏ cam vô hại là của thuốc nào?",
+    "options": [
+      "Isoniazid",
+      "Metronidazol",
+      "Ciprofloxacin",
+      "Rifampicin"
+    ],
+    "correct": 3,
+    "explanation": "Rifampicin có màu đỏ tự nhiên và đào thải qua dịch cơ thể, cần tư vấn trước để người bệnh không hoảng sợ.",
+    "reference": "Sách DLS tr. 224"
+  },
+  {
+    "id": 943,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Phản ứng có hại gây phì đại lợi (quá sản nướu răng) thường gặp ở bệnh nhân dùng dài ngày thuốc nào?",
+    "options": [
+      "Phenytoin hoặc Amlodipin",
+      "Amoxicillin",
+      "Aspirin liều thấp",
+      "Paracetamol"
+    ],
+    "correct": 0,
+    "explanation": "Phenytoin và các thuốc chẹn kênh calci (đặc biệt nifedipin, amlodipin) có thể kích thích tăng sinh mô liên kết lợi.",
+    "reference": "Sách DLS tr. 166"
+  },
+  {
+    "id": 944,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Tác dụng không mong muốn gây giảm tiểu cầu qua trung gian miễn dịch (HIT - Heparin-induced Thrombocytopenia) đặc biệt nguy hiểm vì:",
+    "options": [
+      "Làm cho máu không thể đông vĩnh viễn",
+      "Gây hoạt hóa tiểu cầu dẫn đến huyết khối tắc mạch nghịch lý đe dọa tính mạng",
+      "Làm tụt huyết áp kẹp không nâng được",
+      "Gây phá hủy toàn bộ hồng cầu gây thiếu máu cấp"
+    ],
+    "correct": 1,
+    "explanation": "Kháng thể kháng phức hợp Heparin-PF4 hoạt hóa tiểu cầu gây huyết khối tắc mạch sâu và hoại tử chi (nguy cơ tử vong 20%).",
+    "reference": "Sách DLS tr. 213"
+  },
+  {
+    "id": 945,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Khi bệnh nhân được chẩn đoán xác định bị giảm tiểu cầu do Heparin (HIT typ 2), biện pháp xử trí tức thì là:",
+    "options": [
+      "Truyền ngay lập tức khối tiểu cầu đậm đặc",
+      "Tăng gấp đôi liều Heparin để trung hòa kháng thể",
+      "Ngừng ngay lập tức mọi chế phẩm Heparin và chuyển sang thuốc chống đông không heparin (như Argatroban, Fondaparinux)",
+      "Tiêm vitamin K1 liều cao qua đường tĩnh mạch"
+    ],
+    "correct": 2,
+    "explanation": "Ngừng triệt để heparin và dùng thuốc chống đông thay thế; truyền tiểu cầu chống chỉ định vì làm bùng phát huyết khối.",
+    "reference": "Sách DLS tr. 214"
+  },
+  {
+    "id": 946,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Phản ứng Jarisch-Herxheimer (sốt, rét run, tụt huyết áp tạm thời) xảy ra sau liều kháng sinh đầu tiên điều trị bệnh gì?",
+    "options": [
+      "Viêm bàng quang cấp do E. coli",
+      "Nhiễm nấm candida miệng họng",
+      "Nhiễm virus cúm mùa",
+      "Bệnh Giang mai (Syphilis) do vi khuẩn xoắn khuẩn Treponema pallidum bị tiêu diệt hàng loạt"
+    ],
+    "correct": 3,
+    "explanation": "Phóng thích ồ ạt nội độc tố khi tiêu diệt lượng lớn xoắn khuẩn giang mai gây phản ứng viêm toàn thân cấp tính.",
+    "reference": "Sách DLS tr. 159"
+  },
+  {
+    "id": 947,
+    "chapter": "ADR, Dị ứng & Sốc phản vệ",
+    "question": "Khái niệm 'Phản ứng dị ứng chéo' (Cross-reactivity) giữa Penicillin và Cephalosporin thế hệ 1 có tỷ lệ khoảng bao nhiêu?",
+    "options": [
+      "Khoảng 3% đến 5% (liên quan đến cấu trúc chuỗi nhánh tương đồng)",
+      "Hoàn toàn 0% không bao giờ xảy ra",
+      "Chính xác 100% cho mọi thế hệ cephalosporin",
+      "Khoảng 90% ở người trưởng thành"
+    ],
+    "correct": 0,
+    "explanation": "Dị ứng chéo chủ yếu do tương đồng chuỗi nhánh bên R1 (đặc biệt giữa ampicillin/amoxicillin và cephalosporin thế hệ 1), tỷ lệ thực tế khoảng 3-5%.",
+    "reference": "Sách DLS tr. 148"
+  },
+  {
+    "id": 948,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Chỉ số xét nghiệm Procalcitonin (PCT) trong huyết thanh có giá trị đặc thù nào trong thực hành lâm sàng?",
+    "options": [
+      "Đánh giá chính xác mức độ suy giảm chức năng lọc cầu thận",
+      "Phân biệt nhiễm khuẩn do vi khuẩn với nhiễm virus và hướng dẫn bắt đầu/ngừng kháng sinh",
+      "Phát hiện tình trạng thiếu máu do thiếu sắt",
+      "Chẩn đoán sớm bệnh lý nhồi máu cơ tim cấp"
+    ],
+    "correct": 1,
+    "explanation": "PCT tăng mạnh trong nhiễm khuẩn vi khuẩn toàn thân và giảm nhanh khi điều trị hiệu quả, giúp định hướng dùng kháng sinh.",
+    "reference": "Sách DLS tr. 68"
+  },
+  {
+    "id": 949,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Giá trị Procalcitonin (PCT) dưới 0,1 mcg/L ở bệnh nhân viêm đường hô hấp gợi ý điều gì?",
+    "options": [
+      "Cần phối hợp ngay 3 loại kháng sinh phổ rộng",
+      "Bệnh nhân đang bị sốc nhiễm khuẩn huyết cực kỳ nguy kịch",
+      "Rất ít khả năng nhiễm khuẩn, căn nguyên phần lớn do virus; khuyến cáo không dùng kháng sinh",
+      "Bệnh nhân bị suy tủy xương mất bạch cầu hạt"
+    ],
+    "correct": 2,
+    "explanation": "PCT < 0,1 - 0,25 mcg/L ủng hộ nguyên nhân do virus, khuyến cáo không chỉ định kháng sinh.",
+    "reference": "Sách DLS tr. 69"
+  },
+  {
+    "id": 950,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Chỉ số CRP (C-reactive protein) trong huyết tương phản ánh tình trạng nào của cơ thể?",
+    "options": [
+      "Tình trạng đông máu nội mạch rải rác",
+      "Độ thanh thải thuốc tại tiểu cầu thận",
+      "Mức độ hủy hoại tế bào cơ vân xương",
+      "Phản ứng viêm cấp tính không đặc hiệu do gan tổng hợp dưới tác động của IL-6"
+    ],
+    "correct": 3,
+    "explanation": "CRP là protein pha cấp nhạy cảm với phản ứng viêm, chấn thương hoặc nhiễm trùng.",
+    "reference": "Sách DLS tr. 70"
+  },
+  {
+    "id": 951,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Xét nghiệm men gan ALT (Alanin Aminotransferase) có đặc điểm ưu việt hơn AST (Aspartat Aminotransferase) ở điểm nào?",
+    "options": [
+      "ALT đặc hiệu cho tổn thương tế bào gan hơn do AST còn phân bố nhiều ở cơ tim và cơ vân",
+      "ALT chỉ tăng khi bệnh nhân bị bệnh lý tuyến tụy",
+      "ALT hoàn toàn không bị ảnh hưởng khi gan bị hoại tử",
+      "ALT đào thải hoàn toàn qua phân"
+    ],
+    "correct": 0,
+    "explanation": "ALT tập trung chủ yếu trong bào tương tế bào gan; AST còn có trong ty thể tế bào cơ tim, cơ xương, thận.",
+    "reference": "Sách DLS tr. 72"
+  },
+  {
+    "id": 952,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Tỷ số men gan AST/ALT (Chỉ số De Ritis) lớn hơn 2 kèm GGT tăng cao thường gợi ý căn nguyên tổn thương gan nào?",
+    "options": [
+      "Viêm gan cấp tính do virus viêm gan A",
+      "Bệnh gan do rượu (viêm gan do lạm dụng rượu bia)",
+      "Ngộ độc Paracetamol cấp tính giai đoạn sớm",
+      "Tắc mật cơ học do giun chui ống mật"
+    ],
+    "correct": 1,
+    "explanation": "Rượu gây tổn thương ty thể phóng thích AST và thiếu pyridoxin làm giảm tổng hợp ALT, dẫn đến tỷ số AST/ALT > 2.",
+    "reference": "Sách DLS tr. 73"
+  },
+  {
+    "id": 953,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Xét nghiệm phosphatase kiềm (ALP) và GGT (Gamma-glutamyl transferase) cùng tăng cao trong máu gợi ý hội chứng nào?",
+    "options": [
+      "Bệnh lý viêm cầu thận mạn tính mất protein",
+      "Hội chứng tiêu cơ vân do chấn thương đè ép",
+      "Hội chứng ứ mật trong gan hoặc tắc mật ngoài gan",
+      "Hội chứng hoại tử tế bào cơ tim cấp tính"
+    ],
+    "correct": 2,
+    "explanation": "ALP và GGT là các enzym màng tế bào biểu mô đường mật; cùng tăng khẳng định tổn thương ứ mật/tắc mật.",
+    "reference": "Sách DLS tr. 74"
+  },
+  {
+    "id": 954,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Khi nồng độ Bilirubin gián tiếp (tự do) trong máu tăng ưu thế đơn độc, nguyên nhân lâm sàng hay gặp nhất là:",
+    "options": [
+      "Ung thư đầu tụy chèn ép đường mật ngoài gan",
+      "Viêm xơ đường mật nguyên phát",
+      "Tắc ống mật chủ do sỏi mật lớn",
+      "Tăng tan máu (huyết tán) hoặc hội chứng Gilbert bẩm sinh"
+    ],
+    "correct": 3,
+    "explanation": "Bilirubin tự do tăng khi sản sinh vượt quá khả năng liên hợp của gan (như huyết tán) hoặc thiếu enzym glucuronyl transferase.",
+    "reference": "Sách DLS tr. 75"
+  },
+  {
+    "id": 955,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Thời gian xét nghiệm lại chỉ số HbA1c định kỳ để đánh giá sự thay đổi phác đồ điều trị đái tháo đường khuyến cáo là:",
+    "options": [
+      "Khoảng 3 tháng một lần (ít nhất 2 lần/năm nếu đạt mục tiêu, 4 lần/năm nếu đổi phác đồ)",
+      "Chỉ xét nghiệm 1 lần duy nhất trong đời",
+      "Đo hàng ngày trước mỗi bữa ăn",
+      "Định kỳ mỗi tuần 1 lần"
+    ],
+    "correct": 0,
+    "explanation": "ADA khuyến cáo kiểm tra HbA1c ít nhất 2 lần/năm ở người đạt mục tiêu và mỗi 3 tháng (4 lần/năm) khi thay đổi điều trị.",
+    "reference": "Sách DLS tr. 202"
+  },
+  {
+    "id": 956,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Mục tiêu HbA1c chung khuyến cáo cho đa số người trưởng thành không mang thai mắc đái tháo đường là:",
+    "options": [
+      "Trên 12,0%",
+      "Dưới 7,0% (53 mmol/mol)",
+      "Từ 9,0% đến 11,0%",
+      "Dưới 4,0%"
+    ],
+    "correct": 1,
+    "explanation": "Hiệp hội Đái tháo đường Hoa Kỳ (ADA) và Bộ Y tế khuyến cáo mục tiêu chung HbA1c < 7,0% để ngừa biến chứng vi mạch.",
+    "reference": "Sách DLS tr. 203"
+  },
+  {
+    "id": 957,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Chỉ số INR (International Normalized Ratio) được chuẩn hóa để theo dõi hiệu quả điều trị của thuốc nào?",
+    "options": [
+      "Kháng sinh tiêm truyền Ceftriaxone",
+      "Thuốc chống kết tập tiểu cầu Aspirin",
+      "Thuốc chống đông kháng vitamin K (Warfarin, Acenocoumarol)",
+      "Thuốc hạ mỡ máu nhóm Statin"
+    ],
+    "correct": 2,
+    "explanation": "INR chuẩn hóa thời gian prothrombin (PT), dùng để theo dõi và chỉnh liều thuốc chống đông kháng vitamin K (mục tiêu 2,0-3,0).",
+    "reference": "Sách DLS tr. 208"
+  },
+  {
+    "id": 958,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Mục tiêu INR điều trị chống đông bằng Warfarin khuyến cáo cho bệnh nhân rung nhĩ không do bệnh van tim là:",
+    "options": [
+      "Dưới 1,0",
+      "Từ 4,0 đến 5,5",
+      "Trên 6,0",
+      "Từ 2,0 đến 3,0"
+    ],
+    "correct": 3,
+    "explanation": "Khoảng điều trị tối ưu của INR cho rung nhĩ và huyết khối tĩnh mạch sâu là 2,0 - 3,0 (van tim cơ học là 2,5 - 3,5).",
+    "reference": "Sách DLS tr. 209"
+  },
+  {
+    "id": 959,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Chỉ số xét nghiệm aPTT (thời gian thromboplastin một phần hoạt hóa) được dùng chủ yếu để giám sát thuốc nào?",
+    "options": [
+      "Heparin không phân đoạn (UFH) truyền tĩnh mạch",
+      "Thuốc chống đông đường uống Rivaroxaban",
+      "Thuốc chống kết tập tiểu cầu Clopidogrel",
+      "Heparin trọng lượng phân tử thấp (LMWH)"
+    ],
+    "correct": 0,
+    "explanation": "aPTT phản ánh con đường đông máu nội sinh, dùng chỉnh liều heparin tiêu chuẩn (mục tiêu gấp 1,5 - 2,5 lần chứng).",
+    "reference": "Sách DLS tr. 211"
+  },
+  {
+    "id": 960,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Xét nghiệm định lượng hoạt tính Anti-Xa là tiêu chuẩn vàng để giám sát tác dụng chống đông của thuốc nào khi cần thiết?",
+    "options": [
+      "Aspirin liều thấp phòng ngừa đột quỵ",
+      "Heparin trọng lượng phân tử thấp (Enoxaparin) trên bệnh nhân suy thận nặng hoặc béo phì",
+      "Dung dịch tiêm truyền Natri clorid 0,9%",
+      "Warfarin đường uống ở bệnh nhân rung nhĩ"
+    ],
+    "correct": 1,
+    "explanation": "Anti-Xa dùng theo dõi LMWH trên các đối tượng đặc biệt (suy thận, béo phì, thai phụ) vì LMWH ít kéo dài aPTT.",
+    "reference": "Sách DLS tr. 212"
+  },
+  {
+    "id": 961,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Xét nghiệm Troponin tim (cTnI hoặc cTnT hs) có ý nghĩa quyết định trong chẩn đoán cấp cứu bệnh lý nào?",
+    "options": [
+      "Đột quỵ nhồi máu não diện rộng",
+      "Viêm ruột thừa cấp vỡ mủ",
+      "Nhồi máu cơ tim cấp",
+      "Viêm tụy cấp hoại tử"
+    ],
+    "correct": 2,
+    "explanation": "Troponin là dấu ấn sinh học đặc hiệu cao nhất cho tổn thương hoại tử tế bào cơ tim trong hội chứng vành cấp.",
+    "reference": "Sách DLS tr. 218"
+  },
+  {
+    "id": 962,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Chỉ số xét nghiệm BNP hoặc NT-proBNP tăng cao trong máu có giá trị hàng đầu giúp:",
+    "options": [
+      "Đánh giá mức độ nhiễm giun sán đường ruột",
+      "Chẩn đoán chính xác bệnh lý viêm loét dạ dày tá tràng",
+      "Đo lường nồng độ cồn trong máu người lái xe",
+      "Chẩn đoán xác định, phân loại độ nặng và theo dõi đáp ứng điều trị suy tim"
+    ],
+    "correct": 3,
+    "explanation": "BNP và NT-proBNP được tâm thất tiết ra khi thành cơ tim bị căng giãn quá mức, là tiêu chuẩn vàng chẩn đoán suy tim.",
+    "reference": "Sách DLS tr. 219"
+  },
+  {
+    "id": 963,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Xét nghiệm Creatin Kinase toàn phần (CK) tăng vọt trên 10 lần giới hạn trên bình thường ở bệnh nhân dùng Statin cảnh báo tai biến nào?",
+    "options": [
+      "Tổn thương cơ vân nghiêm trọng và nguy cơ tiêu cơ vân cấp (Rhabdomyolysis)",
+      "Bệnh nhân đang bị viêm cầu thận do liên cầu khuẩn",
+      "Suy tuyến thượng thận mạn tính nguyên phát",
+      "Hạ calci máu do suy tuyến cận giáp"
+    ],
+    "correct": 0,
+    "explanation": "CK tăng > 10 lần kèm đau cơ là tiêu chuẩn dừng statin ngay để ngăn ngừa myoglobin làm tắc ống thận gây suy thận cấp.",
+    "reference": "Sách DLS tr. 216"
+  },
+  {
+    "id": 964,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Xét nghiệm D-dimer trong huyết tương có giá trị âm tính giả rất thấp, do đó ứng dụng lâm sàng chính là:",
+    "options": [
+      "Theo dõi nồng độ thuốc kháng sinh trong máu",
+      "Loại trừ huyết khối tĩnh mạch sâu (DVT) và thuyên tắc động mạch phổi (PE) khi có nguy cơ thấp - vừa",
+      "Khẳng định bệnh nhân chắc chắn bị nhồi máu não",
+      "Đo độ thanh thải của cầu thận"
+    ],
+    "correct": 1,
+    "explanation": "D-dimer có giá trị dự đoán âm tính rất cao (> 95%), nếu âm tính thì loại trừ an toàn thuyên tắc huyết khối tĩnh mạch.",
+    "reference": "Sách DLS tr. 220"
+  },
+  {
+    "id": 965,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Nồng độ Kali huyết thanh vượt quá 6,5 mmol/L trên điện tâm đồ (ECG) thường biểu hiện dấu hiệu cảnh báo nguy hiểm nào?",
+    "options": [
+      "Sóng T dẹt và xuất hiện sóng U nổi rõ",
+      "Điện tâm đồ hoàn toàn bình thường không thay đổi",
+      "Sóng T cao nhọn đối xứng đáy hẹp, phức bộ QRS giãn rộng và nguy cơ rung thất ngừng tim",
+      "Đoạn ST chênh xuống hình đáy chén"
+    ],
+    "correct": 2,
+    "explanation": "Tăng kali máu gây sóng T cao nhọn, PR dài, QRS giãn rộng thành hình sin, có thể dẫn đến ngừng tim trong thì tâm trương.",
+    "reference": "Sách DLS tr. 187"
+  },
+  {
+    "id": 966,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Dấu hiệu hạ Kali máu (K+ < 3,5 mmol/L) trên điện tâm đồ (ECG) thường đặc trưng bởi:",
+    "options": [
+      "Khoảng PR ngắn lại dưới 0,10 giây",
+      "Mất hoàn toàn phức bộ QRS",
+      "Sóng T cao nhọn khổng lồ đáy hẹp",
+      "Sóng T dẹt hoặc đảo ngược và xuất hiện sóng U đi sau sóng T"
+    ],
+    "correct": 3,
+    "explanation": "Hạ kali máu gây tái cực chậm: sóng T dẹt, ST chênh xuống và xuất hiện sóng U nổi bật, tăng nguy cơ xoắn đỉnh.",
+    "reference": "Sách DLS tr. 187"
+  },
+  {
+    "id": 967,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Khi nồng độ Natri huyết tương giảm xuống dưới 120 mmol/L (hạ natri máu nặng), biểu hiện lâm sàng nguy hiểm nhất là:",
+    "options": [
+      "Phù não dẫn đến lú lẫn, co giật, hôn mê và tử vong do tụt kẹt hạnh nhân tiểu não",
+      "Xuất huyết tiêu hóa dưới ồ ạt",
+      "Tăng huyết áp kịch phát gây đứt mạch máu não",
+      "Co giật cứng cơ do tăng canxi máu"
+    ],
+    "correct": 0,
+    "explanation": "Hạ natri máu cấp gây nước nhược trương di chuyển vào tế bào não gây phù tế bào não, co giật và hôn mê.",
+    "reference": "Sách DLS tr. 221"
+  },
+  {
+    "id": 968,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Nguyên tắc điều chỉnh hạ Natri máu mạn tính là không được bù quá nhanh (không quá 8 - 10 mmol/L trong 24 giờ đầu) để phòng ngừa hội chứng:",
+    "options": [
+      "Phù phổi cấp huyết động học",
+      "Hủy hoại myelin cầu não trung tâm (Hội chứng thoái hóa myelin thẩm thấu)",
+      "Đột quỵ xuất huyết khoang dưới nhện",
+      "Hội chứng thận hư thứ phát"
+    ],
+    "correct": 1,
+    "explanation": "Bù natri quá nhanh làm teo tế bào thần kinh đột ngột, phá hủy bao myelin cầu não gây liệt tứ chi vĩnh viễn.",
+    "reference": "Sách DLS tr. 222"
+  },
+  {
+    "id": 969,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Xét nghiệm nồng độ Acid Uric huyết thanh tăng cao trên 420 mcmol/L (7 mg/dL) ở nam giới là tiêu chuẩn định hướng chẩn đoán bệnh:",
+    "options": [
+      "Loãng xương sau mãn kinh",
+      "Viêm khớp dạng thấp tiến triển",
+      "Bệnh Gút (Gout) và tăng acid uric máu",
+      "Thoái hóa khớp gối tuổi già"
+    ],
+    "correct": 2,
+    "explanation": "Acid uric > 420 mcmol/L vượt ngưỡng bão hòa trong dịch khớp, dễ lắng đọng tinh thể urat gây cơn gút cấp.",
+    "reference": "Sách DLS tr. 223"
+  },
+  {
+    "id": 970,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Thời điểm lấy mẫu máu chuẩn để đo nồng độ đáy (Crough/Trough level) của một thuốc trong quy trình TDM là:",
+    "options": [
+      "Ngay sau khi vừa uống thuốc xong 5 phút",
+      "Đúng thời điểm nồng độ thuốc đạt đỉnh cao nhất",
+      "Bất kỳ thời điểm ngẫu nhiên nào trong ngày",
+      "Ngay trước thời điểm dùng liều tiếp theo (khoảng 15 đến 30 phút trước liều mới)"
+    ],
+    "correct": 3,
+    "explanation": "Nồng độ đáy (Cmin) đo nồng độ thấp nhất trước liều tiếp theo, giúp đánh giá nguy cơ tích lũy độc tính của thuốc.",
+    "reference": "Sách DLS tr. 66"
+  },
+  {
+    "id": 971,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Thời điểm đo nồng độ đỉnh (Peak level) của kháng sinh Aminosid tiêm truyền tĩnh mạch ngắt quãng 30 phút là:",
+    "options": [
+      "Khoảng 30 phút sau khi kết thúc buổi truyền tĩnh mạch",
+      "Sau khi truyền 12 giờ đồng hồ",
+      "Trước khi truyền liều tiếp theo 1 giờ",
+      "Ngay khi vừa cắm kim truyền dịch"
+    ],
+    "correct": 0,
+    "explanation": "Cmax đo sau khi kết thúc truyền 30 phút (khi pha phân bố mô đã hoàn tất) để đánh giá hiệu lực diệt khuẩn.",
+    "reference": "Sách DLS tr. 67"
+  },
+  {
+    "id": 972,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Khoảng nồng độ điều trị tối ưu trong máu của Digoxin ở bệnh nhân suy tim mạn tính là:",
+    "options": [
+      "15 đến 20 ng/mL",
+      "0,5 đến 0,9 ng/mL (hoặc tối đa 1,0 ng/mL)",
+      "5,0 đến 10,0 ng/mL",
+      "Trên 50 ng/mL"
+    ],
+    "correct": 1,
+    "explanation": "Nghiên cứu DIG chứng minh nồng độ digoxin 0,5 - 0,9 ng/mL giảm tử vong suy tim; nồng độ > 1,2 ng/mL làm tăng độc tính tim.",
+    "reference": "Sách DLS tr. 68"
+  },
+  {
+    "id": 973,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Khi nồng độ bạch cầu đa nhân trung tính (Neutrophil) trong máu giảm sâu dưới 500 tế bào/mcL, nguy cơ lâm sàng lớn nhất là:",
+    "options": [
+      "Gây cơn tăng huyết áp ác tính",
+      "Tắc mạch máu não do máu bị đặc quánh",
+      "Nhiễm khuẩn cơ hội đe dọa tính mạng (Sốt giảm bạch cầu trung tính)",
+      "Xuất huyết đường tiêu hóa tự phát"
+    ],
+    "correct": 2,
+    "explanation": "Neutrophil < 500/mcL (hoặc dự kiến < 500 trong 48h) là sốt hạ bạch cầu, bắt buộc dùng kháng sinh phổ rộng khẩn cấp.",
+    "reference": "Sách DLS tr. 71"
+  },
+  {
+    "id": 974,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Xét nghiệm độ bão hòa Transferrin (TSAT) và Ferritin huyết thanh được dùng để đánh giá tình trạng:",
+    "options": [
+      "Nồng độ canxi tự do trong xương",
+      "Mức độ phân hủy protein ở gan",
+      "Chức năng bài tiết dịch mật",
+      "Dự trữ sắt trong cơ thể và chẩn đoán thiếu máu thiếu sắt"
+    ],
+    "correct": 3,
+    "explanation": "Ferritin phản ánh kho dự trữ sắt ở mô; TSAT phản ánh lượng sắt sẵn có gắn với transferrin để tạo hồng cầu.",
+    "reference": "Sách DLS tr. 226"
+  },
+  {
+    "id": 975,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Chỉ số xét nghiệm MCV (thể tích trung bình hồng cầu) dưới 80 fL đặc trưng cho loại thiếu máu nào?",
+    "options": [
+      "Thiếu máu hồng cầu nhỏ nhược sắc (thường do thiếu sắt hoặc Thalassemia)",
+      "Thiếu máu kích thước hồng cầu bình thường do suy tủy",
+      "Thiếu máu hồng cầu to do thiếu vitamin B12 hoặc acid folic",
+      "Thiếu máu tan máu tự miễn cấp tính"
+    ],
+    "correct": 0,
+    "explanation": "MCV < 80 fL là hồng cầu nhỏ (thiếu sắt, tan máu bẩm sinh); MCV > 100 fL là hồng cầu to (thiếu B12, folat).",
+    "reference": "Sách DLS tr. 227"
+  },
+  {
+    "id": 976,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Xét nghiệm nồng độ Cortisol máu vào thời điểm 8 giờ sáng được ứng dụng chủ yếu để:",
+    "options": [
+      "Xác định nhóm máu hệ ABO",
+      "Đánh giá chức năng tuyến thượng thận và hội chứng suy thượng thận do thuốc",
+      "Đo lường mức độ đào thải kháng sinh qua thận",
+      "Chẩn đoán sớm bệnh lý ung thư dạ dày"
+    ],
+    "correct": 1,
+    "explanation": "Cortisol có nhịp sinh học cao nhất lúc 8h sáng; nồng độ thấp gợi ý suy tuyến thượng thận (ví dụ sau cai corticoid).",
+    "reference": "Sách DLS tr. 228"
+  },
+  {
+    "id": 977,
+    "chapter": "Xét nghiệm lâm sàng & Nhận định KQ",
+    "question": "Tình trạng hạ Canxi máu trên lâm sàng thường biểu hiện qua hai dấu hiệu kinh điển nào khi thăm khám?",
+    "options": [
+      "Dấu hiệu rung gan và phản hồi gan cổ",
+      "Dấu hiệu vỗ hông lưng và chạm thận",
+      "Dấu hiệu Chvostek (gõ vùng tuyến mang tai gây co cơ mặt) và Dấu hiệu Trousseau (co thắt bàn tay khi bơm bao đo HA)",
+      "Dấu hiệu Mac-Burney và Dấu hiệu Murphy"
+    ],
+    "correct": 2,
+    "explanation": "Chvostek và Trousseau là dấu hiệu tăng kích thích thần kinh - cơ kinh điển do hạ canxi máu gây co cứng tetani.",
+    "reference": "Sách DLS tr. 229"
+  },
+  {
+    "id": 978,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Kháng sinh nhóm Tetracyclin bị chống chỉ định cho trẻ em dưới 8 tuổi do tác dụng không mong muốn nào?",
+    "options": [
+      "Gây suy gan hoại tử tế bào gan cấp",
+      "Gây xuất huyết giảm tiểu cầu cấp tính",
+      "Gây điếc tiếp nhận vĩnh viễn không hồi phục",
+      "Gắn kết với calci gây hỏng men răng, ố vàng răng vĩnh viễn và chậm phát triển xương"
+    ],
+    "correct": 3,
+    "explanation": "Tetracyclin tạo phức chelat với calci phosphate lắng đọng ở xương và mầm răng đang phát triển, làm hỏng men và vàng răng.",
+    "reference": "Sách DLS tr. 235"
+  },
+  {
+    "id": 979,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Kháng sinh nhóm Fluoroquinolon (như Ciprofloxacin) thường hạn chế dùng cho trẻ dưới 18 tuổi vì nguy cơ gì?",
+    "options": [
+      "Gây thoái hóa mô sụn khớp chịu lực trên các khớp vận động của động vật non",
+      "Làm trẻ bị béo phì không kiểm soát được",
+      "Làm cho trẻ bị dậy thì sớm",
+      "Gây đóng sớm các đường khớp sọ não"
+    ],
+    "correct": 0,
+    "explanation": "Quinolon gây tổn thương sụn khớp chịu lực ở súc vật non, chỉ dùng cho trẻ khi nhiễm khuẩn nặng kháng thuốc không còn lựa chọn.",
+    "reference": "Sách DLS tr. 236"
+  },
+  {
+    "id": 980,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Hội chứng Reye (phù não cấp và thoái hóa mỡ gan) có nguy cơ bùng phát khi dùng Aspirin cho trẻ em bị:",
+    "options": [
+      "Sâu răng sữa",
+      "Nhiễm virus như Cúm mùa (Influenza) hoặc Thủy đậu (Varicella)",
+      "Chấn thương phần mềm",
+      "Gãy xương cẳng tay do ngã"
+    ],
+    "correct": 1,
+    "explanation": "Aspirin chống chỉ định hạ sốt cho trẻ nhiễm virus do nguy cơ hội chứng Reye với tỷ lệ tử vong 30-40%.",
+    "reference": "Sách DLS tr. 237"
+  },
+  {
+    "id": 981,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Thuốc giảm đau hạ sốt được khuyến cáo là lựa chọn ưu tiên an toàn hàng đầu cho trẻ em là:",
+    "options": [
+      "Indomethacin viên nang uống",
+      "Aspirin liều cao 50 mg/kg mỗi ngày",
+      "Paracetamol liều 10 - 15 mg/kg mỗi lần, cách 4 - 6 giờ",
+      "Piroxicam dạng tiêm bắp sâu"
+    ],
+    "correct": 2,
+    "explanation": "Paracetamol là thuốc hạ sốt đầu tay cho trẻ em (10-15 mg/kg/lần, tối đa 60 mg/kg/ngày).",
+    "reference": "Sách DLS tr. 238"
+  },
+  {
+    "id": 982,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Khi dùng Ibuprofen hạ sốt cho trẻ em, khoảng liều và khoảng cách đưa thuốc khuyến cáo là:",
+    "options": [
+      "30 - 50 mg/kg mỗi lần, cách mỗi 2 giờ",
+      "Dùng liều người lớn 400 mg chia làm 10 lần",
+      "Chỉ dùng một liều duy nhất 100 mg/kg",
+      "5 - 10 mg/kg mỗi lần, cách mỗi 6 - 8 giờ"
+    ],
+    "correct": 3,
+    "explanation": "Ibuprofen dùng khi trẻ sốt cao không đáp ứng paracetamol, liều 5-10 mg/kg/lần (tối đa 30 mg/kg/ngày).",
+    "reference": "Sách DLS tr. 239"
+  },
+  {
+    "id": 983,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Chống chỉ định dùng Ibuprofen hạ sốt cho trẻ em trong trường hợp lâm sàng nào sau đây?",
+    "options": [
+      "Nghi ngờ trẻ bị Sốt xuất huyết Dengue hoặc đang bị mất nước, loét tiêu hóa",
+      "Trẻ bị viêm tai giữa cấp do phế cầu",
+      "Trẻ bị sốt do mọc răng sữa thông thường",
+      "Trẻ bị viêm họng cấp mủ"
+    ],
+    "correct": 0,
+    "explanation": "Sốt xuất huyết chống chỉ định NSAID vì ức chế ngưng tập tiểu cầu làm tăng nguy cơ xuất huyết tiêu hóa ồ ạt.",
+    "reference": "Sách DLS tr. 240"
+  },
+  {
+    "id": 984,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Lượng nước ngoại bào (Extracellular water) ở trẻ sơ sinh chiếm tỷ lệ khoảng bao nhiêu so với người lớn?",
+    "options": [
+      "Chiếm dưới 5% trọng lượng cơ thể",
+      "Chiếm khoảng 40% trọng lượng cơ thể (gấp đôi so với mức 20% ở người trưởng thành)",
+      "Giống hệt người già 80 tuổi",
+      "Hoàn toàn bằng 0 do nước chỉ ở nội bào"
+    ],
+    "correct": 1,
+    "explanation": "Nước ngoại bào ở trẻ sơ sinh chiếm 40% thể tích cơ thể (người lớn 20%), làm thể tích phân bố của thuốc thân nước như aminosid tăng gấp đôi.",
+    "reference": "Sách DLS tr. 232"
+  },
+  {
+    "id": 985,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Đặc điểm thể tích phân bố Vd của các thuốc tan nhiều trong nước (như Aminosid) ở trẻ sơ sinh là:",
+    "options": [
+      "Nhỏ hơn rất nhiều so với người lớn",
+      "Giống hệt người già teo cơ",
+      "Lớn hơn đáng kể so với người lớn, đòi hỏi liều nạp ban đầu tính theo mg/kg phải cao hơn",
+      "Hoàn toàn bằng 0 do thuốc không phân bố được"
+    ],
+    "correct": 2,
+    "explanation": "Vd của aminosid ở trẻ sơ sinh lên tới 0,4-0,5 L/kg (người lớn ~ 0,25 L/kg), nên cần liều mg/kg cao hơn để đạt Cmax hiệu quả.",
+    "reference": "Sách DLS tr. 233"
+  },
+  {
+    "id": 986,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Kháng sinh Ceftriaxone cần tránh chỉ định cho trẻ sơ sinh bị vàng da vì nguy cơ nào?",
+    "options": [
+      "Làm cho gan trẻ ngừng hoạt động lọc mật hoàn toàn",
+      "Làm cho trẻ bị rụng tóc vĩnh viễn",
+      "Làm giảm thân nhiệt của trẻ xuống dưới 34 độ C",
+      "Cạnh tranh vị trí gắn Albumin đẩy Bilirubin tự do gây vàng da nhân não (Kernicterus)"
+    ],
+    "correct": 3,
+    "explanation": "Ceftriaxone có ái lực cao với albumin, đẩy bilirubin vào dịch não tủy gây độc tế bào não (vàng da nhân não).",
+    "reference": "Sách DLS tr. 242"
+  },
+  {
+    "id": 987,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Kháng sinh nhóm Sulfamid (như Cotrimoxazol) chống chỉ định cho trẻ sơ sinh dưới 2 tháng tuổi vì:",
+    "options": [
+      "Nguy cơ đẩy Bilirubin khỏi Albumin huyết tương gây vàng da nhân não",
+      "Làm cho xương sọ của trẻ bị mềm",
+      "Làm tăng sinh quá mức tế bào mỡ",
+      "Làm trẻ bị co giật động kinh"
+    ],
+    "correct": 0,
+    "explanation": "Sulfamid cạnh tranh vị trí gắn bilirubin trên albumin ở trẻ dưới 2 tháng tuổi, gây hội chứng vàng da nhân não.",
+    "reference": "Sách DLS tr. 243"
+  },
+  {
+    "id": 988,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Thuốc nhỏ mũi chứa hoạt chất co mạch Naphazolin chống chỉ định cho trẻ dưới bao nhiêu tuổi?",
+    "options": [
+      "Trẻ em dưới 15 tuổi",
+      "Trẻ em dưới 6 tuổi (và đặc biệt nguy cơ ngộ độc hôn mê ở trẻ dưới 2 tuổi)",
+      "Chỉ cấm cho trẻ dưới 1 tháng tuổi",
+      "Không cấm đối với bất kỳ lứa tuổi nào"
+    ],
+    "correct": 1,
+    "explanation": "Naphazolin hấp thu qua niêm mạc mũi trẻ gây ức chế thần kinh trung ương, hạ thân nhiệt, nhịp tim chậm và hôn mê.",
+    "reference": "Sách DLS tr. 245"
+  },
+  {
+    "id": 989,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Tại sao việc tính liều thuốc cho trẻ em dựa trên Diện tích bề mặt cơ thể (BSA) chuẩn xác hơn dựa trên cân nặng đơn thuần?",
+    "options": [
+      "BSA không thay đổi trong suốt cả cuộc đời",
+      "BSA chỉ phụ thuộc vào chiều dài ngón tay của trẻ",
+      "BSA tương quan chặt chẽ hơn với mức lọc cầu thận và chuyển hóa nội tạng của cơ thể",
+      "BSA dễ dàng đo bằng mắt thường không cần dụng cụ"
+    ],
+    "correct": 2,
+    "explanation": "Diện tích bề mặt cơ thể tương quan trực tiếp với cung lượng tim, dòng máu qua gan và chức năng lọc thận.",
+    "reference": "Sách DLS tr. 234"
+  },
+  {
+    "id": 990,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Công thức Mosteller chuẩn để tính Diện tích bề mặt cơ thể (BSA tính theo m2) từ chiều cao (cm) và cân nặng (kg) là:",
+    "options": [
+      "BSA = (Chiều cao x Cân nặng) / 1000",
+      "BSA = Căn bậc hai của (Chiều cao x 72)",
+      "BSA = (Chiều cao + Cân nặng) / 100",
+      "BSA = Căn bậc hai của [(Chiều cao x Cân nặng) / 3600]"
+    ],
+    "correct": 3,
+    "explanation": "Công thức Mosteller: BSA (m2) = căn bậc hai của [Chiều cao (cm) x Cân nặng (kg) / 3600].",
+    "reference": "Sách DLS tr. 234"
+  },
+  {
+    "id": 991,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Thuốc giảm ho giảm đau Codein bị chống chỉ định tuyệt đối cho trẻ em dưới 12 tuổi và sau phẫu thuật cắt amiđan vì:",
+    "options": [
+      "Nguy cơ trẻ có kiểu gen chuyển hóa siêu nhanh qua CYP2D6 biến đổi ồ ạt Codein thành Morphin gây ngừng thở tử vong",
+      "Codein làm teo cơ bắp chân của trẻ",
+      "Codein gây loét thủng dạ dày trẻ em",
+      "Codein làm mất hoàn toàn phản xạ nuốt thức ăn"
+    ],
+    "correct": 0,
+    "explanation": "Cơ quan quản lý cấm dùng codein cho trẻ < 12 tuổi do biến dị gen CYP2D6 siêu nhanh gây ngộ độc morphin gây ngừng thở.",
+    "reference": "Sách DLS tr. 246"
+  },
+  {
+    "id": 992,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Biểu hiện ngộ độc thuốc chống nôn Metoclopramid (Primperan) thường gặp ở trẻ em là:",
+    "options": [
+      "Cơn hạ đường huyết sâu kéo dài",
+      "Hội chứng ngoại tháp với cơn xoắn vặn cơ mặt, co giật nhãn cầu và cứng cổ",
+      "Xuất huyết dưới móng tay hai bên",
+      "Tiêu chảy phân mỡ kéo dài nhiều tuần"
+    ],
+    "correct": 1,
+    "explanation": "Metoclopramid chẹn thụ thể dopamin D2 trung ương, hàng rào máu não trẻ chưa hoàn thiện dễ gây hội chứng ngoại tháp cấp.",
+    "reference": "Sách DLS tr. 247"
+  },
+  {
+    "id": 993,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Hàng rào máu não của trẻ sơ sinh có đặc điểm dược động học nổi bật nào?",
+    "options": [
+      "Hoàn toàn không cho bất kỳ phân tử nào đi qua",
+      "Chỉ cho phép các phân tử protein kích thước lớn đi qua",
+      "Tính thấm rất cao do các liên kết tế bào nội mô chưa hoàn thiện, thuốc dễ ngấm vào não gây độc",
+      "Dày đặc gấp 10 lần người lớn ngăn cản mọi loại thuốc"
+    ],
+    "correct": 2,
+    "explanation": "Hàng rào máu não trẻ sơ sinh chưa hoàn thiện, thuốc như morphin, kháng sinh, bilirubin rất dễ ngấm vào não.",
+    "reference": "Sách DLS tr. 233"
+  },
+  {
+    "id": 994,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Độ pH dịch vị dạ dày ở trẻ sơ sinh trong những ngày đầu sau sinh có đặc điểm gì?",
+    "options": [
+      "Giống hệt người trưởng thành khỏe mạnh",
+      "Cực kỳ kiềm với pH = 14",
+      "Rất acid với pH < 1,0",
+      "Gần như trung tính (pH từ 6 đến 8) do giảm tiết acid hydrochloric"
+    ],
+    "correct": 3,
+    "explanation": "Trẻ sơ sinh tiết ít acid dạ dày, pH cao làm tăng sinh khả dụng của kháng sinh kém bền trong acid như Ampicillin.",
+    "reference": "Sách DLS tr. 231"
+  },
+  {
+    "id": 995,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Kháng sinh Ampicillin và Penicillin hấp thu qua đường uống ở trẻ sơ sinh so với người lớn như thế nào?",
+    "options": [
+      "Hấp thu cao hơn do dịch vị ít acid nên thuốc ít bị phá hủy",
+      "Bị phân hủy 100% trong đường tiêu hóa",
+      "Hấp thu chậm hơn gấp 20 lần",
+      "Hoàn toàn không hấp thu được qua ruột"
+    ],
+    "correct": 0,
+    "explanation": "pH dạ dày cao ở trẻ sơ sinh bảo vệ các kháng sinh penicillin uống khỏi bị acid phân hủy, làm tăng hấp thu.",
+    "reference": "Sách DLS tr. 232"
+  },
+  {
+    "id": 996,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Thuốc nhỏ tai chứa kháng sinh Aminosid (Neomycin, Gentamicin) chống chỉ định nhỏ tai cho trẻ khi nào?",
+    "options": [
+      "Khi trẻ bị ngứa vành tai ngoài",
+      "Khi màng nhĩ đã bị thủng do nguy cơ ngấm vào tai trong gây điếc ốc tai vĩnh viễn",
+      "Khi trẻ bị viêm tai giữa ứ mủ màng nhĩ còn nguyên",
+      "Chỉ dùng được khi màng nhĩ bị thủng hoàn toàn"
+    ],
+    "correct": 1,
+    "explanation": "Màng nhĩ thủng làm thuốc ngấm trực tiếp vào hòm nhĩ tiếp xúc tai trong gây độc tế bào thính giác không hồi phục.",
+    "reference": "Sách DLS tr. 248"
+  },
+  {
+    "id": 997,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Chế phẩm siro bổ sung Kẽm (Zinc) cho trẻ em bị tiêu chảy cấp nên được uống vào thời điểm nào?",
+    "options": [
+      "Uống ngay vào đầu bữa ăn nhiều chất xơ",
+      "Chỉ uống vào lúc nửa đêm khi trẻ đang ngủ say",
+      "Uống xa bữa ăn (trước ăn 1 giờ hoặc sau ăn 2 giờ) hoặc giữa hai bữa ăn để tránh thức ăn cản trở hấp thu",
+      "Pha chung vào bình sữa bột nóng của trẻ"
+    ],
+    "correct": 2,
+    "explanation": "Phytat và calci trong thức ăn/sữa cạnh tranh làm giảm hấp thu kẽm; uống xa bữa ăn giúp hấp thu kẽm tối đa.",
+    "reference": "Sách DLS tr. 249"
+  },
+  {
+    "id": 998,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Liều bổ sung Kẽm nguyên tố khuyến cáo theo WHO trong điều trị tiêu chảy cấp cho trẻ dưới 6 tháng tuổi là:",
+    "options": [
+      "50 mg mỗi ngày trong 1 tháng",
+      "100 mg mỗi ngày trong 2 ngày",
+      "2 mg mỗi ngày trong 3 ngày",
+      "10 mg mỗi ngày, liên tục trong 10 đến 14 ngày"
+    ],
+    "correct": 3,
+    "explanation": "Phác đồ WHO: Trẻ < 6 tháng uống 10 mg/ngày, trẻ >= 6 tháng uống 20 mg/ngày, liên tục đủ 10-14 ngày.",
+    "reference": "Sách DLS tr. 250"
+  },
+  {
+    "id": 999,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Thời gian làm rỗng dạ dày (Gastric emptying time) ở trẻ sơ sinh và nhũ nhi dưới 6 tháng tuổi có đặc điểm:",
+    "options": [
+      "Kéo dài và chậm hơn so với người lớn, làm chậm tốc độ đạt nồng độ đỉnh của thuốc uống",
+      "Nhanh gấp 5 lần so với người lớn",
+      "Không bao giờ co bóp tống thức ăn",
+      "Cố định đúng 10 phút sau ăn"
+    ],
+    "correct": 0,
+    "explanation": "Thời gian tháo rỗng dạ dày ở trẻ nhỏ kéo dài (tới 6-8 tháng tuổi mới như người lớn), làm tốc độ hấp thu thuốc chậm hơn.",
+    "reference": "Sách DLS tr. 231"
+  },
+  {
+    "id": 1000,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Đặc điểm da của trẻ sơ sinh và trẻ nhỏ làm tăng nguy cơ ngộ độc thuốc bôi ngoài da (như Corticoid bôi) do:",
+    "options": [
+      "Da trẻ hoàn toàn không có khả năng ngấm nước",
+      "Lớp sừng mỏng, giàu mạch máu và tỷ lệ diện tích da trên khối lượng cơ thể rất lớn",
+      "Lớp biểu bì dày gấp 3 lần người lớn",
+      "Da trẻ không có tuyến mồ hôi"
+    ],
+    "correct": 1,
+    "explanation": "Tỷ lệ diện tích bề mặt da/cân nặng của trẻ lớn gấp 3 lần người lớn, da mỏng dễ gây hấp thu toàn thân và ngộ độc thuốc bôi.",
+    "reference": "Sách DLS tr. 232"
+  },
+  {
+    "id": 1001,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Chất bảo quản Benzyl alcohol trong các lọ thuốc tiêm đa liều chống chỉ định dùng cho trẻ sơ sinh vì gây ra:",
+    "options": [
+      "Hội chứng rụng lông mi hàng loạt",
+      "Bệnh lý gãy xương đùi tự phát",
+      "Hội chứng thở ngáp và tử vong (Gasping syndrome)",
+      "Cơn co giật do tăng đường huyết"
+    ],
+    "correct": 2,
+    "explanation": "Gan trẻ sơ sinh không chuyển hóa được benzyl alcohol thành acid benzoic, gây toan chuyển hóa, thở ngáp và suy đa tạng.",
+    "reference": "Sách DLS tr. 251"
+  },
+  {
+    "id": 1002,
+    "chapter": "Sử dụng thuốc ở Trẻ em",
+    "question": "Dạng thuốc viên nén hoặc viên nang nuốt nguyên viên thường chỉ phù hợp cho trẻ em từ độ tuổi nào?",
+    "options": [
+      "Trẻ sơ sinh ngay sau khi cắt rốn",
+      "Trẻ nhũ nhi 3 tháng tuổi",
+      "Bất kỳ lứa tuổi nào kể cả trẻ 6 tháng tuổi",
+      "Trẻ từ 6 tuổi trở lên khi đã có khả năng nuốt thuốc an toàn không bị sặc"
+    ],
+    "correct": 3,
+    "explanation": "Trẻ < 6 tuổi ưu tiên dạng siro, dung dịch, hỗn dịch; viên nén/nang nuốt chỉ an toàn khi trẻ >= 6-7 tuổi.",
+    "reference": "Sách DLS tr. 252"
+  },
+  {
+    "id": 1003,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Sự thay đổi thành phần cơ thể ở người cao tuổi có đặc điểm dược động học nổi bật nào?",
+    "options": [
+      "Giảm tỷ lệ nước toàn phần và khối cơ, tăng tỷ lệ khối mỡ cơ thể",
+      "Giảm hoàn toàn khối mỡ dưới da về mức 0%",
+      "Khối lượng cơ bắp tăng gấp đôi so với tuổi thanh niên",
+      "Tăng tỷ lệ nước toàn phần lên tới 90%"
+    ],
+    "correct": 0,
+    "explanation": "Người cao tuổi giảm nước (từ 60% xuống 50%), giảm cơ teo cơ, tăng tỷ lệ mỡ (từ 15-20% lên 30-40%).",
+    "reference": "Sách DLS tr. 255"
+  },
+  {
+    "id": 1004,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Do tăng khối mỡ cơ thể ở người cao tuổi, các thuốc tan nhiều trong mỡ (như Diazepam) có biến đổi DĐH nào?",
+    "options": [
+      "Đào thải sạch khỏi cơ thể chỉ sau 15 phút",
+      "Thể tích phân bố (Vd) tăng lên và thời gian bán thải (T1/2) kéo dài đáng kể, dễ tích lũy an thần",
+      "Bị bất hoạt hoàn toàn trước khi vào máu",
+      "Không thể phân bố vào mô não"
+    ],
+    "correct": 1,
+    "explanation": "Thuốc tan trong mỡ tích lũy trong khoang mỡ mở rộng, Vd tăng, T1/2 của diazepam có thể kéo dài lên tới 80-100 giờ ở người già.",
+    "reference": "Sách DLS tr. 256"
+  },
+  {
+    "id": 1005,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Do giảm lượng nước toàn phần ở người già, các thuốc tan nhiều trong nước (như Digoxin, Aminosid) có biến đổi gì?",
+    "options": [
+      "Thời gian bán thải giảm chỉ còn vài giây",
+      "Nồng độ trong máu giảm sút nghiêm trọng",
+      "Thể tích phân bố giảm làm nồng độ đỉnh trong huyết tương tăng cao, dễ gây ngộ độc ở liều thông thường",
+      "Thuốc không thể hòa tan trong tuần hoàn"
+    ],
+    "correct": 2,
+    "explanation": "Khoang nước thu hẹp làm Vd thuốc thân nước giảm, nồng độ tự do tăng vọt dễ vượt ngưỡng độc tính.",
+    "reference": "Sách DLS tr. 257"
+  },
+  {
+    "id": 1006,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Tiêu chí Beers (Beers Criteria) của Hiệp hội Lão khoa Hoa Kỳ (AGS) được xây dựng nhằm mục đích gì?",
+    "options": [
+      "Lựa chọn bài tập thể dục dưỡng sinh cho người cao tuổi",
+      "Đo lường dung tích sống của phổi người cao tuổi",
+      "Tính toán chế độ dinh dưỡng hàng ngày cho người già",
+      "Xác định danh mục các thuốc có nguy cơ không phù hợp tiềm tàng cần tránh dùng cho người cao tuổi"
+    ],
+    "correct": 3,
+    "explanation": "Beers Criteria là hướng dẫn quốc tế hàng đầu cảnh báo các thuốc có nguy cơ cao hơn lợi ích trên người cao tuổi.",
+    "reference": "Sách DLS tr. 265"
+  },
+  {
+    "id": 1007,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Nhóm thuốc an thần gây ngủ Benzodiazepin tác dụng kéo dài (như Diazepam, Flurazepam) cần tránh dùng cho người già vì:",
+    "options": [
+      "Tích lũy gây an thần quá mức, lú lẫn, rối loạn điều hòa vận động và tăng nguy cơ ngã gãy xương đùi",
+      "Gây cơn tăng huyết áp kịch phát",
+      "Làm cho xương giòn tan ngay sau 1 ngày dùng",
+      "Gây mù mắt đột ngột"
+    ],
+    "correct": 0,
+    "explanation": "Beers criteria khuyến cáo tránh benzodiazepin ở người già do tăng nguy cơ sa sút trí tuệ, ngã chấn thương sọ não và gãy cổ xương đùi.",
+    "reference": "Sách DLS tr. 266"
+  },
+  {
+    "id": 1008,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Thuốc kháng Histamin H1 thế hệ 1 (như Clorpheniramin, Diphenhydramin) bị hạn chế dùng cho người cao tuổi chủ yếu do:",
+    "options": [
+      "Gây xuất huyết tiêu hóa ồ ạt",
+      "Tác dụng kháng cholinergic (kháng Muscarinic) gây bí tiểu, táo bón nặng, khô miệng và lú lẫn",
+      "Làm tăng men gan hoại tử tế bào gan",
+      "Làm giảm thân nhiệt xuống dưới 30 độ C"
+    ],
+    "correct": 1,
+    "explanation": "Tác dụng kháng muscarinic mạnh gây bí tiểu cấp (đặc biệt u xơ tiền liệt tuyến), táo bón và suy giảm nhận thức cấp.",
+    "reference": "Sách DLS tr. 267"
+  },
+  {
+    "id": 1009,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Hiện tượng 'Thác kê đơn' (Prescribing Cascade) trong điều trị người cao tuổi được hiểu là tình huống:",
+    "options": [
+      "Bệnh nhân tự ý mua hàng chục loại thuốc trên mạng internet",
+      "Người bệnh uống thuốc cùng một lúc dưới vòi nước chảy",
+      "Một tác dụng phụ của thuốc này bị hiểu nhầm là bệnh mới và bác sĩ kê thêm thuốc thứ hai để điều trị tác dụng phụ đó",
+      "Bác sĩ giảm đồng loạt liều lượng của toàn bộ các thuốc"
+    ],
+    "correct": 2,
+    "explanation": "Ví dụ: Dùng Amlodipin bị phù chân => tưởng suy tim kê thêm Furosemid => hạ kali máu kê thêm Kali... làm trầm trọng đa dược.",
+    "reference": "Sách DLS tr. 268"
+  },
+  {
+    "id": 1010,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Tụt huyết áp tư thế đứng (Orthostatic hypotension) ở người già thường tăng vọt khi điều trị bằng nhóm thuốc nào?",
+    "options": [
+      "Dung dịch bù nước Oresol",
+      "Thuốc bổ sung vitamin C đường uống",
+      "Men vi sinh hỗ trợ tiêu hóa",
+      "Thuốc chẹn thụ thể alpha-1 (như Doxazosin, Terazosin) hoặc thuốc chống trầm cảm 3 vòng"
+    ],
+    "correct": 3,
+    "explanation": "Phản xạ thụ thể áp lực (baroreceptor) ở người già bị suy giảm, thuốc giãn mạch chẹn alpha dễ gây ngất khi đứng dậy.",
+    "reference": "Sách DLS tr. 259"
+  },
+  {
+    "id": 1011,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Nguyên tắc vàng trong khởi đầu điều trị thuốc cho người cao tuổi được tóm gọn bằng khẩu hiệu kinh điển nào?",
+    "options": [
+      "Start low, go slow (Bắt đầu với liều thấp, tăng liều từ từ và thận trọng)",
+      "No pain, no gain (Càng nhiều tác dụng phụ càng mau khỏi bệnh)",
+      "Polypharmacy is best (Kê càng nhiều thuốc phối hợp càng an toàn)",
+      "Start high, hit hard (Khởi đầu liều cao nhất để dập tắt bệnh)"
+    ],
+    "correct": 0,
+    "explanation": "Nguyên tắc 'Bắt đầu liều thấp, tăng liều chậm' giúp cơ thể người già thích ứng và giảm thiểu độc tính tích lũy.",
+    "reference": "Sách DLS tr. 269"
+  },
+  {
+    "id": 1012,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Lưu lượng máu đến gan ở người 70 tuổi giảm khoảng bao nhiêu phần trăm so với người trẻ tuổi 20?",
+    "options": [
+      "Hoàn toàn không thay đổi",
+      "Giảm khoảng 35% đến 40%",
+      "Tăng lên gấp đôi",
+      "Giảm 99% làm gan ngừng hoạt động"
+    ],
+    "correct": 1,
+    "explanation": "Lưu lượng máu qua gan giảm 35-40% cùng với khối lượng gan giảm, làm chậm tốc độ chuyển hóa thuốc qua gan bước đầu.",
+    "reference": "Sách DLS tr. 258"
+  },
+  {
+    "id": 1013,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Mức lọc cầu thận (GFR) sinh lý trung bình ở người bình thường bắt đầu suy giảm từ sau tuổi 40 với tốc độ khoảng:",
+    "options": [
+      "Khoảng 50 mL/phút mỗi năm",
+      "Không bao giờ suy giảm theo tuổi tác",
+      "Khoảng 1 mL/phút mỗi năm",
+      "Khoảng 10 mL/phút mỗi tháng"
+    ],
+    "correct": 2,
+    "explanation": "Sau 40 tuổi, GFR giảm sinh lý khoảng 0,8 - 1 mL/phút/năm; người 70 tuổi GFR có thể giảm 30-40% so với tuổi trẻ.",
+    "reference": "Sách DLS tr. 258"
+  },
+  {
+    "id": 1014,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Thuốc chống viêm không steroid (NSAID) dùng đường toàn thân kéo dài cho người cao tuổi có nguy cơ cao nhất là:",
+    "options": [
+      "Làm giảm lượng mỡ trong máu về mức 0",
+      "Làm cho tóc mọc dài quá mức",
+      "Gây sâu răng hàng loạt",
+      "Loét và xuất huyết tiêu hóa, suy thận cấp và làm nặng thêm bệnh tăng huyết áp, suy tim"
+    ],
+    "correct": 3,
+    "explanation": "Người già có niêm mạc dạ dày mỏng manh và chức năng thận suy giảm, dùng NSAID làm tăng gấp 4 lần nguy cơ loét xuất huyết tiêu hóa.",
+    "reference": "Sách DLS tr. 260"
+  },
+  {
+    "id": 1015,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Thuốc giảm đau an thần Opioid khi dùng cho người già cần đặc biệt lưu ý tác dụng không mong muốn mạn tính nào?",
+    "options": [
+      "Táo bón nặng kéo dài (không có hiện tượng dung nạp) đòi hỏi phải dùng kèm thuốc nhuận tràng",
+      "Gây tiêu chảy xối xả mất nước",
+      "Làm răng lung lay rụng hàng loạt",
+      "Làm tăng vọt thị lực nhìn rõ ban đêm"
+    ],
+    "correct": 0,
+    "explanation": "Tác dụng phụ táo bón của opioid không bao giờ dung nạp theo thời gian; người già rất dễ bị tắc ruột do u phân.",
+    "reference": "Sách DLS tr. 261"
+  },
+  {
+    "id": 1016,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Độ nhạy cảm của thụ thể với thuốc ở người già (Dược lực học) có đặc điểm biến đổi nào sau đây?",
+    "options": [
+      "Giảm nhạy cảm hoàn toàn với tất cả các loại thuốc",
+      "Tăng nhạy cảm với tác dụng an thần của Benzodiazepin và thuốc ức chế thần kinh trung ương",
+      "Kháng lại tác dụng của thuốc chống đông máu",
+      "Mất hoàn toàn thụ thể thần kinh"
+    ],
+    "correct": 1,
+    "explanation": "Người già tăng nhạy cảm dược lực học với thuốc ức chế TKTW, chỉ một liều nhỏ diazepam đã có thể gây lú lẫn ngủ gà kéo dài.",
+    "reference": "Sách DLS tr. 262"
+  },
+  {
+    "id": 1017,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Thuốc điều trị phì đại lành tính tuyến tiền liệt nhóm chẹn alpha-1 nào ít gây tụt huyết áp tư thế đứng nhất?",
+    "options": [
+      "Terazosin",
+      "Doxazosin",
+      "Tamsulosin và Silodosin (chọn lọc trên phân typ alpha-1A)",
+      "Prazosin"
+    ],
+    "correct": 2,
+    "explanation": "Tamsulosin chọn lọc trên thụ thể alpha-1A tại cổ bàng quang và tuyến tiền liệt, ít tác động trên mạch máu toàn thân.",
+    "reference": "Sách DLS tr. 263"
+  },
+  {
+    "id": 1018,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Thuốc chống trầm cảm ba vòng (như Amitriptylin) nằm trong danh mục Beers cần tránh dùng cho người già vì:",
+    "options": [
+      "Làm cho người già bị béo phì cấp tính",
+      "Làm tăng đường huyết lên trên 30 mmol/L",
+      "Làm cho xương sọ dày lên",
+      "Tác dụng phụ kháng cholinergic mạnh gây lú lẫn, hạ huyết áp tư thế và độc tính tim mạch loạn nhịp"
+    ],
+    "correct": 3,
+    "explanation": "Amitriptylin có độc tính kháng cholinergic và an thần rất nặng, ưu tiên thay bằng nhóm SSRI (như Sertralin) an toàn hơn.",
+    "reference": "Sách DLS tr. 264"
+  },
+  {
+    "id": 1019,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Mục tiêu huyết áp điều trị khuyến cáo cho người cao tuổi (> 65 tuổi) theo Hội Tim mạch học Việt Nam thường là:",
+    "options": [
+      "Huyết áp tâm thu từ 130 đến 139 mmHg nếu dung nạp tốt, không hạ huyết áp tâm thu xuống dưới 120 mmHg",
+      "Không cần điều trị bằng thuốc hạ áp",
+      "Hạ huyết áp xuống càng thấp càng tốt dưới 90/60 mmHg",
+      "Duy trì huyết áp ở mức 180/100 mmHg"
+    ],
+    "correct": 0,
+    "explanation": "Khuyến cáo VSH: Người cao tuổi hạ HA tâm thu về 130-139 mmHg; tránh hạ quá mức (< 120/70) gây thiếu máu tưới máu não và thận.",
+    "reference": "Sách DLS tr. 270"
+  },
+  {
+    "id": 1020,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Để nâng cao tuân thủ điều trị cho người cao tuổi mắt kém hay quên sống một mình, biện pháp tối ưu là:",
+    "options": [
+      "Kê đơn thuốc chia thành 6 cữ uống khác nhau rải rác cả ngày lẫn đêm",
+      "Sử dụng hộp chia thuốc theo ngày (Pillbox) có nắp mở dễ dàng và chữ in to rõ ràng",
+      "Bắt bệnh nhân tự nhớ tên biệt dược tiếng Latinh phức tạp",
+      "Chỉ kê dạng thuốc bột tự pha không có thìa lường"
+    ],
+    "correct": 1,
+    "explanation": "Hộp chia liều theo buổi (sáng/trưa/chiều/tối) giúp người già nhận biết ngay cữ thuốc đã uống hay chưa, giảm nhầm lẫn.",
+    "reference": "Sách DLS tr. 272"
+  },
+  {
+    "id": 1021,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Thuốc giãn cơ ngoại biên (như Cyclobenzaprin, Carisoprodol) bị khuyến cáo tránh dùng cho người cao tuổi vì:",
+    "options": [
+      "Gây viêm gan nhiễm mỡ cấp tính",
+      "Làm teo cơ toàn thân nhanh chóng",
+      "Tác dụng an thần, kháng cholinergic và tăng nguy cơ ngã chấn thương trong khi hiệu quả điều trị thấp",
+      "Gây sốt cao liên tục không dứt"
+    ],
+    "correct": 2,
+    "explanation": "Các thuốc giãn cơ trung ương/ngoại biên có hồ sơ dung nạp rất kém ở người già theo tiêu chí Beers.",
+    "reference": "Sách DLS tr. 271"
+  },
+  {
+    "id": 1022,
+    "chapter": "Sử dụng thuốc ở Người cao tuổi",
+    "question": "Khi đánh giá chức năng thận ở bệnh nhân cao tuổi 85 tuổi có cân nặng 40 kg, cách làm chuẩn xác nhất là:",
+    "options": [
+      "Không cần quan tâm đến chức năng thận",
+      "Mặc định thận của người già đã hỏng 100% không thể dùng bất kỳ thuốc nào",
+      "Chỉ nhìn chỉ số creatinin máu thấy 0,8 mg/dL là kết luận thận hoàn toàn bình thường",
+      "Tính toán CrCl bằng công thức Cockcroft-Gault hoặc eGFR để hiệu chỉnh liều, không chỉ dựa vào Creatinin máu đơn thuần"
+    ],
+    "correct": 3,
+    "explanation": "Bắt buộc tính CrCl ước tính để chỉnh liều thuốc đào thải qua thận, tránh ngộ độc do creatinin máu bình thường giả tạo.",
+    "reference": "Sách DLS tr. 258"
+  },
+  {
+    "id": 1023,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Theo thang phân loại nguy cơ của FDA trên thai kỳ, nhóm A được định nghĩa là:",
+    "options": [
+      "Các thử nghiệm có đối chứng trên phụ nữ mang thai không chứng minh được nguy cơ đối với thai nhi trong suốt thai kỳ",
+      "Thuốc hoàn toàn chưa từng được thử nghiệm trên bất kỳ sinh vật nào",
+      "Chống chỉ định tuyệt đối cho mọi phụ nữ trong độ tuổi sinh đẻ",
+      "Có bằng chứng quái thai rõ ràng trên thai nhi người nhưng vẫn được dùng tự do"
+    ],
+    "correct": 0,
+    "explanation": "Nhóm A: Nghiên cứu có đối chứng trên thai phụ chứng minh an toàn tuyệt đối (ví dụ: acid folic liều bổ sung).",
+    "reference": "Sách DLS tr. 275"
+  },
+  {
+    "id": 1024,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Đặc điểm của nhóm thuốc thuộc phân loại nguy cơ C theo FDA trên thai kỳ là:",
+    "options": [
+      "An toàn tuyệt đối không có bất kỳ rủi ro nào",
+      "Nghiên cứu trên động vật cho thấy có độc tính trên thai hoặc chưa có nghiên cứu đầy đủ trên người; chỉ dùng khi lợi ích vượt trội nguy cơ",
+      "Chống chỉ định tuyệt đối không được dùng trong mọi hoàn cảnh",
+      "Thuốc đã bị cấm lưu hành vĩnh viễn trên toàn thế giới"
+    ],
+    "correct": 1,
+    "explanation": "Nhóm C: Thiếu dữ liệu đối chứng trên người; cân nhắc chỉ định khi bệnh đe dọa mẹ và không có thuốc thay thế nhóm A/B.",
+    "reference": "Sách DLS tr. 276"
+  },
+  {
+    "id": 1025,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Hệ thống ghi nhãn quy định mới của FDA (PLLR - Pregnancy and Lactation Labeling Rule) đã thay thế hệ thống chữ cái A-B-C-D-X bằng:",
+    "options": [
+      "Hệ thống chấm điểm từ 1 sao đến 5 sao theo bảng xếp hạng",
+      "Hệ thống mã vạch quét bằng điện thoại thông minh",
+      "Bản tóm tắt tường giải nguy cơ chi tiết và dữ liệu lâm sàng thực tế cho từng phân mục Thai kỳ, Cho con bú và Khả năng sinh sản",
+      "Bỏ hoàn toàn nhãn cảnh báo trên vỏ hộp thuốc"
+    ],
+    "correct": 2,
+    "explanation": "PLLR loại bỏ A/B/C/D/X để cung cấp thông tin tường giải chi tiết về nguy cơ, cân nhắc lâm sàng và dữ liệu người bệnh.",
+    "reference": "Sách DLS tr. 277"
+  },
+  {
+    "id": 1026,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Thuốc hạ huyết áp nào sau đây được xem là lựa chọn an toàn hàng đầu để điều trị tăng huyết áp thai kỳ mạn tính?",
+    "options": [
+      "Spironolacton viên nén",
+      "Losartan viên uống",
+      "Captopril viên ngậm",
+      "Methyldopa hoặc Labetalol"
+    ],
+    "correct": 3,
+    "explanation": "Methyldopa, Labetalol và Nifedipin tác dụng kéo dài là các thuốc hạ áp chuẩn hàng đầu cho phụ nữ có thai.",
+    "reference": "Sách DLS tr. 280"
+  },
+  {
+    "id": 1027,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Biến chứng nguy hiểm trên thai nhi khi mẹ dùng thuốc ức chế men chuyển (như Enalapril) trong 6 tháng cuối thai kỳ là:",
+    "options": [
+      "Thiểu ối, suy thận thai nhi vô niệu, kém phát triển xương sọ và tử vong thai nhi",
+      "Dị tật sứt môi hở hàm ếch đơn thuần",
+      "Gây đục thủy tinh thể hai mắt bẩm sinh",
+      "Làm thai nhi phát triển to quá khổ trên 5 kg"
+    ],
+    "correct": 0,
+    "explanation": "ƯCMC làm mất tưới máu thận thai nhi gây suy thận vô niệu, cạn ối dẫn đến co cứng chi, teo phổi và tử vong.",
+    "reference": "Sách DLS tr. 281"
+  },
+  {
+    "id": 1028,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Thuốc chống co giật Magnesium sulfat (MgSO4) truyền tĩnh mạch được lựa chọn hàng đầu trong sản khoa nhằm mục đích:",
+    "options": [
+      "Hạ đường huyết cấp cứu trong đái tháo đường thai kỳ",
+      "Dự phòng và cắt cơn co giật trong sản giật nặng",
+      "Gây chuyển dạ đẻ chỉ huy bằng đường truyền",
+      "Kích thích tuyến sữa bài tiết sữa non ngay lập tức"
+    ],
+    "correct": 1,
+    "explanation": "MgSO4 là chuẩn vàng toàn cầu để điều trị cắt cơn và dự phòng co giật ở thai phụ tiền sản giật nặng/sản giật.",
+    "reference": "Sách DLS tr. 282"
+  },
+  {
+    "id": 1029,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Dấu hiệu lâm sàng sớm nhất cảnh báo ngộ độc Magnesium sulfat (MgSO4) khi tiêm truyền cần giám sát là:",
+    "options": [
+      "Bệnh nhân đột ngột sốt cao 41 độ C",
+      "Huyết áp tăng vọt lên trên 200 mmHg",
+      "Mất phản xạ gân xương bánh chè (phản xạ gân gối)",
+      "Xuất hiện ban đỏ da dạng mề đay toàn thân"
+    ],
+    "correct": 2,
+    "explanation": "Mất phản xạ gân gối xuất hiện ở nồng độ Mg2+ 3,5-5 mmol/L; nồng độ cao hơn sẽ gây ức chế hô hấp và ngừng tim.",
+    "reference": "Sách DLS tr. 283"
+  },
+  {
+    "id": 1030,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Thuốc giải độc đặc hiệu bắt buộc phải chuẩn bị sẵn đầu giường khi truyền Magnesium sulfat cấp cứu sản giật là:",
+    "options": [
+      "N-acetylcystein truyền tĩnh mạch",
+      "Naloxon tiêm bắp",
+      "Vitamin K1 tiêm dưới da",
+      "Calci gluconat 10% tiêm tĩnh mạch chậm"
+    ],
+    "correct": 3,
+    "explanation": "Calci tiêm tĩnh mạch đối kháng trực tiếp tác dụng ức chế thần kinh cơ của ion magnesi, giải độc ngộ độc MgSO4.",
+    "reference": "Sách DLS tr. 284"
+  },
+  {
+    "id": 1031,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Kháng sinh nhóm Macrolid nào sau đây được ưu tiên lựa chọn an toàn cho phụ nữ có thai khi dị ứng Penicillin?",
+    "options": [
+      "Erythromycin hoặc Azithromycin",
+      "Clarithromycin liều cao",
+      "Tetracyclin viên nang",
+      "Levofloxacin truyền dịch"
+    ],
+    "correct": 0,
+    "explanation": "Erythromycin (dạng base/stearat) và Azithromycin (FDA nhóm B) an toàn trong thai kỳ; tránh dạng estolat vì gây độc gan.",
+    "reference": "Sách DLS tr. 285"
+  },
+  {
+    "id": 1032,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Erythromycin dạng muối nào sau đây chống chỉ định cho phụ nữ mang thai vì nguy cơ gây ứ mật vàng da độc gan cho mẹ?",
+    "options": [
+      "Erythromycin base",
+      "Erythromycin estolat",
+      "Erythromycin stearat",
+      "Erythromycin ethylsuccinat"
+    ],
+    "correct": 1,
+    "explanation": "Dạng muối Estolat có nguy cơ cao gây viêm gan ứ mật hoại tử ở phụ nữ mang thai, chống chỉ định trong thai kỳ.",
+    "reference": "Sách DLS tr. 286"
+  },
+  {
+    "id": 1033,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Thuốc chống trầm cảm nhóm SSRI nào sau đây bị cảnh báo nguy cơ gây dị tật tim mạch bẩm sinh (thông liên thất) khi dùng 3 tháng đầu thai kỳ?",
+    "options": [
+      "Citalopram",
+      "Fluoxetin",
+      "Paroxetin (FDA nhóm D)",
+      "Sertralin"
+    ],
+    "correct": 2,
+    "explanation": "Paroxetin bị FDA xếp loại D do tăng nguy cơ dị tật tim mạch thai nhi, ưu tiên dùng Sertralin nếu cần điều trị trầm cảm.",
+    "reference": "Sách DLS tr. 287"
+  },
+  {
+    "id": 1034,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Thuốc chống nôn Metoclopramid dùng cho phụ nữ sau sinh có tác dụng phụ nào trên sự bài tiết sữa mẹ?",
+    "options": [
+      "Làm mất hoàn toàn sữa mẹ vĩnh viễn",
+      "Gây đông vón sữa ngay trong ống dẫn sữa",
+      "Làm cho sữa mẹ chuyển thành màu xanh lá cây",
+      "Kích thích tăng tiết prolactin làm tăng lượng sữa mẹ bài xuất"
+    ],
+    "correct": 3,
+    "explanation": "Metoclopramid đối kháng dopamin giải phóng prolactin từ tuyến yên, đôi khi được dùng off-label để kích thích tạo sữa.",
+    "reference": "Sách DLS tr. 288"
+  },
+  {
+    "id": 1035,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Để giảm thiểu tối đa lượng thuốc bài xuất vào sữa mẹ khi người mẹ đang nuôi con bú cần uống thuốc:",
+    "options": [
+      "Cho trẻ bú ngay trước khi mẹ uống thuốc hoặc uống thuốc ngay sau cữ bú của trẻ",
+      "Cho trẻ bú đúng vào thời điểm nồng độ thuốc trong máu mẹ đạt đỉnh cao nhất",
+      "Tăng gấp đôi liều thuốc của mẹ để trẻ được bảo vệ gián tiếp",
+      "Uống thuốc liên tục cách nhau mỗi 1 giờ"
+    ],
+    "correct": 0,
+    "explanation": "Uống thuốc ngay sau khi cho con bú giúp nồng độ thuốc trong máu mẹ giảm xuống mức thấp trước cữ bú tiếp theo.",
+    "reference": "Sách DLS tr. 289"
+  },
+  {
+    "id": 1036,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Chỉ số RID (Relative Infant Dose - Liều tương đối của trẻ bú mẹ) được tính bằng công thức:",
+    "options": [
+      "RID = Số lần trẻ đi tiểu trong 24 giờ",
+      "RID = [Liều thuốc trẻ nhận qua sữa mỗi ngày (mg/kg/ngày) / Liều thuốc mẹ dùng (mg/kg/ngày)] x 100%",
+      "RID = Cân nặng của mẹ chia cho cân nặng của con",
+      "RID = Thể tích sữa trẻ bú nhân với nồng độ glucose"
+    ],
+    "correct": 1,
+    "explanation": "RID so sánh liều tính theo mg/kg của trẻ với liều mg/kg của mẹ; RID < 10% được coi là an toàn chấp nhận được.",
+    "reference": "Sách DLS tr. 290"
+  },
+  {
+    "id": 1037,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Thuốc giảm đau chống viêm Ibuprofen có an toàn cho phụ nữ đang cho con bú không?",
+    "options": [
+      "Gây dị tật tim mạch cho trẻ bú mẹ",
+      "Rất độc hại chống chỉ định tuyệt đối khi cho con bú",
+      "Rất an toàn vì tỷ lệ gắn protein huyết tương cao (> 99%), lượng thuốc qua sữa cực kỳ thấp (RID < 1%)",
+      "Chỉ dùng được khi trẻ đã cai sữa hoàn toàn"
+    ],
+    "correct": 2,
+    "explanation": "Ibuprofen gắn albumin rất mạnh và thời gian bán thải ngắn, lượng qua sữa không đáng kể, là NSAID đầu tay cho mẹ cho con bú.",
+    "reference": "Sách DLS tr. 291"
+  },
+  {
+    "id": 1038,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Kháng sinh Cotrimoxazol cần tránh dùng cho người mẹ đang cho con bú ở tình huống nào?",
+    "options": [
+      "Khi trẻ bú mẹ hoàn toàn khỏe mạnh trên 1 tuổi",
+      "Khi trẻ đã bắt đầu ăn dặm",
+      "Khi mẹ bị nhiễm khuẩn tiết niệu do E. coli",
+      "Khi trẻ dưới 2 tháng tuổi hoặc trẻ bị thiếu hụt men G6PD do nguy cơ tan máu và vàng da nhân não"
+    ],
+    "correct": 3,
+    "explanation": "Sulfamid qua sữa có thể cạnh tranh gắn kết bilirubin ở trẻ non tháng hoặc gây tan máu cấp nếu trẻ thiếu G6PD.",
+    "reference": "Sách DLS tr. 292"
+  },
+  {
+    "id": 1039,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Thuốc chống đông máu nào an toàn tuyệt đối cho phụ nữ đang cho con bú?",
+    "options": [
+      "Heparin, Enoxaparin và Warfarin",
+      "Dabigatran viên nang uống",
+      "Rivaroxaban viên nén",
+      "Không có thuốc chống đông nào dùng được"
+    ],
+    "correct": 0,
+    "explanation": "Heparin không qua sữa; Warfarin gắn protein huyết tương 99% và qua sữa cực ít nên dùng an toàn cho mẹ cho con bú.",
+    "reference": "Sách DLS tr. 293"
+  },
+  {
+    "id": 1040,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Thuốc hạ sốt Paracetamol có nồng độ trong sữa mẹ so với huyết tương mẹ (Tỷ số M/P) khoảng:",
+    "options": [
+      "Bằng 0% hoàn toàn không qua sữa",
+      "Khoảng 0,7 đến 1,0 và RID rất thấp (< 2%), an toàn tối đa cho trẻ bú mẹ",
+      "Khoảng 50 lần làm ngộ độc gan trẻ ngay lập tức",
+      "Không thể đo lường được"
+    ],
+    "correct": 1,
+    "explanation": "Paracetamol qua sữa ở lượng rất thấp, là thuốc hạ sốt an toàn hàng đầu được Học viện Nhi khoa Hoa Kỳ khuyên dùng.",
+    "reference": "Sách DLS tr. 294"
+  },
+  {
+    "id": 1041,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Thuốc điều trị loét dạ dày kháng thụ thể H2 nào sau đây được ưu tiên cho phụ nữ cho con bú hơn Ranitidin/Cimetidin?",
+    "options": [
+      "Misoprostol",
+      "Cimetidin liều cao",
+      "Famotidin (ít bài xuất vào sữa hơn và không có tác dụng kháng androgen)",
+      "Bismuth subsalicylat"
+    ],
+    "correct": 2,
+    "explanation": "Famotidin qua sữa ít hơn nhiều so với cimetidin và không gây tương tác enzym gan, là lựa chọn ưu tiên.",
+    "reference": "Sách DLS tr. 295"
+  },
+  {
+    "id": 1042,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Thuốc ức chế co bóp tử cung Nifedipin dùng trong dọa sinh non có cơ chế tác dụng dược lý là:",
+    "options": [
+      "Làm co thắt động mạch rốn thai nhi",
+      "Ức chế sản sinh hormon prolactin",
+      "Kích thích trực tiếp thụ thể oxytocin",
+      "Chẹn kênh calci làm giảm nồng độ calci nội bào trong tế bào cơ tử cung"
+    ],
+    "correct": 3,
+    "explanation": "Nifedipin chẹn kênh calci type L làm giảm canxi nội bào, giãn cơ trơn tử cung, cắt cơn co chuyển dạ sinh non hiệu quả.",
+    "reference": "Sách DLS tr. 296"
+  },
+  {
+    "id": 1043,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Thuốc đồng vận thụ thể Beta-2 giao cảm Salbutamol dạng khí dung có an toàn trong thai kỳ khi điều trị cơn hen phế quản cấp không?",
+    "options": [
+      "An toàn và là lựa chọn hàng đầu cắt cơn hen cho phụ nữ mang thai",
+      "Chỉ dùng được sau khi đã sinh em bé",
+      "Chống chỉ định tuyệt đối vì gây sảy thai ngay lập tức",
+      "Gây dị tật tim mạch bẩm sinh cho thai nhi"
+    ],
+    "correct": 0,
+    "explanation": "SABA dạng hít (như Salbutamol) hấp thu toàn thân tối thiểu, an toàn tuyệt đối và bắt buộc dùng để đảm bảo oxy cho thai.",
+    "reference": "Sách DLS tr. 297"
+  },
+  {
+    "id": 1044,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Thiếu oxy do cơn hen phế quản không được kiểm soát ở người mẹ gây ra hậu quả gì cho thai nhi?",
+    "options": [
+      "Thai nhi phát triển nhanh vượt mức bình thường",
+      "Thai chậm phát triển trong tử cung, sinh non, nhẹ cân và tăng tỷ lệ tử vong chu sinh",
+      "Không gây bất kỳ ảnh hưởng nào lên thai",
+      "Giúp phổi thai nhi mau trưởng thành hơn"
+    ],
+    "correct": 1,
+    "explanation": "Cơn hen không kiểm soát gây thiếu oxy máu thai nghiêm trọng, nguy hiểm hơn nhiều so với việc dùng thuốc hen đúng chỉ định.",
+    "reference": "Sách DLS tr. 298"
+  },
+  {
+    "id": 1045,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Thuốc điều trị suy tim nhóm Digoxin qua nhau thai như thế nào?",
+    "options": [
+      "Tích lũy trong bánh nhau làm hoại tử bánh nhau",
+      "Bị enzym nhau thai phá hủy hoàn toàn trong 1 giây",
+      "Qua nhau thai dễ dàng, nồng độ thuốc trong máu thai nhi tương đương nồng độ trong máu mẹ",
+      "Hoàn toàn không đi qua được nhau thai"
+    ],
+    "correct": 2,
+    "explanation": "Digoxin qua nhau thai tốt và thậm chí được dùng để điều trị rối loạn nhịp nhanh tim thai nhi qua tuần hoàn mẹ.",
+    "reference": "Sách DLS tr. 299"
+  },
+  {
+    "id": 1046,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Liều lượng sắt nguyên tố khuyến cáo bổ sung hàng ngày cho mọi phụ nữ mang thai từ khi phát hiện có thai là:",
+    "options": [
+      "500 mg sắt nguyên tố mỗi ngày",
+      "Chỉ bổ sung 1 mg sắt nguyên tố mỗi tuần",
+      "Không cần bổ sung sắt cho phụ nữ mang thai",
+      "30 đến 60 mg sắt nguyên tố kèm 400 mcg acid folic mỗi ngày"
+    ],
+    "correct": 3,
+    "explanation": "WHO và Bộ Y tế khuyến cáo bổ sung 30-60 mg sắt nguyên tố + 400 mcg acid folic suốt thai kỳ để dự phòng thiếu máu thiếu sắt.",
+    "reference": "Sách DLS tr. 300"
+  },
+  {
+    "id": 1047,
+    "chapter": "Sử dụng thuốc ở Phụ nữ có thai & CCB",
+    "question": "Thuốc điều trị táo bón được coi là an toàn và ưu tiên lựa chọn đầu tay cho phụ nữ mang thai là:",
+    "options": [
+      "Thuốc nhuận tràng tạo khối (như Psyllium, chất xơ) hoặc nhuận tràng thẩm thấu (Lactulose, Macrogol)",
+      "Thuốc nhuận tràng kích thích dầu thầu dầu (Castor oil)",
+      "Thuốc thụt tháo natri phosphat liều cao",
+      "Viên uống muối tẩy magie sulfat đậm đặc"
+    ],
+    "correct": 0,
+    "explanation": "Nhuận tràng tạo khối và thẩm thấu (lactulose, PEG) không hấp thu vào máu, an toàn tuyệt đối cho thai nhi.",
+    "reference": "Sách DLS tr. 301"
+  },
+  {
+    "id": 1048,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Thông số PK/PD quyết định hiệu quả diệt khuẩn của kháng sinh nhóm Beta-lactam (Penicillin, Cephalosporin) là:",
+    "options": [
+      "Tỷ số giữa nồng độ đỉnh trên MIC (Cmax/MIC)",
+      "Tỷ lệ phần trăm thời gian nồng độ thuốc tự do trên nồng độ ức chế tối thiểu (%T > MIC)",
+      "Tốc độ lọc của cầu thận trong 24 giờ",
+      "Diện tích dưới đường cong trên MIC (AUC24/MIC)"
+    ],
+    "correct": 1,
+    "explanation": "Beta-lactam là kháng sinh diệt khuẩn phụ thuộc thời gian, mục tiêu %T > MIC đạt >= 40-70% khoảng liều.",
+    "reference": "Sách DLS tr. 310"
+  },
+  {
+    "id": 1049,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Biện pháp tối ưu hóa PK/PD của Beta-lactam để tăng %T > MIC trong điều trị nhiễm khuẩn nặng là:",
+    "options": [
+      "Chỉ dùng thuốc cách ngày để vi khuẩn không kịp quen",
+      "Tiêm tĩnh mạch trực tiếp thật nhanh trong 30 giây",
+      "Truyền tĩnh mạch kéo dài (trong 3-4 giờ) hoặc truyền liên tục 24 giờ",
+      "Dồn toàn bộ liều cả ngày vào một lần duy nhất buổi sáng"
+    ],
+    "correct": 2,
+    "explanation": "Truyền kéo dài (extended infusion) hoặc truyền liên tục tối ưu hóa thời gian nồng độ duy trì trên MIC, cải thiện tỷ lệ sống sót.",
+    "reference": "Sách DLS tr. 311"
+  },
+  {
+    "id": 1050,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Thông số PK/PD quyết định hiệu quả diệt khuẩn của kháng sinh nhóm Aminosid (Gentamicin, Amikacin) là:",
+    "options": [
+      "Thời gian bán thải T1/2 đạt trên 48 giờ",
+      "Tỷ lệ phần trăm thời gian nồng độ trên MIC (%T > MIC)",
+      "Tỷ số giữa thể tích phân bố trên cân nặng",
+      "Tỷ số nồng độ đỉnh tự do trên MIC (Cmax/MIC) với mục tiêu đạt từ 8 đến 10"
+    ],
+    "correct": 3,
+    "explanation": "Aminosid là kháng sinh diệt khuẩn phụ thuộc nồng độ, Cmax/MIC đạt 8-10 giúp tối đa hóa hiệu lực diệt khuẩn và hiệu ứng hậu kháng sinh (PAE).",
+    "reference": "Sách DLS tr. 312"
+  },
+  {
+    "id": 1051,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Chế độ liều dùng Kháng sinh Aminosid một lần duy nhất trong ngày (ODTD - Once Daily) đem lại ưu điểm gì?",
+    "options": [
+      "Đạt nồng độ đỉnh Cmax cao tối ưu diệt khuẩn và nồng độ đáy Cmin rất thấp giúp giảm độc tính trên thận và tai",
+      "Giúp giảm giá thành sản xuất thuốc của nhà máy",
+      "Làm cho thuốc không bị đào thải qua thận",
+      "Tiêu diệt được cả virus và nấm"
+    ],
+    "correct": 0,
+    "explanation": "ODTD tận dụng tính diệt khuẩn phụ thuộc nồng độ và PAE kéo dài, nồng độ đáy hạ thấp giúp tế bào thận hồi phục.",
+    "reference": "Sách DLS tr. 313"
+  },
+  {
+    "id": 1052,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Thông số PK/PD chuẩn để theo dõi và chuẩn hóa liều của kháng sinh Glycopeptid Vancomycin là:",
+    "options": [
+      "Chỉ đo nồng độ đỉnh Cmax vượt trên 100 mcg/mL",
+      "Tỷ số diện tích dưới đường cong trên MIC (AUC24/MIC) đạt mục tiêu từ 400 đến 600",
+      "Thời gian duy trì nồng độ thuốc trong dạ dày",
+      "Tỷ lệ gắn kết protein huyết tương trên 99%"
+    ],
+    "correct": 1,
+    "explanation": "Hướng dẫn ASHP/IDSA khuyến cáo theo dõi Vancomycin theo AUC24/MIC = 400-600 (đối với tụ cầu vàng MRSA) để đạt hiệu quả và giảm độc thận.",
+    "reference": "Sách DLS tr. 314"
+  },
+  {
+    "id": 1053,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh nhóm Carbapenem nào sau đây không có hoạt tính trên trực khuẩn mủ xanh (Pseudomonas aeruginosa)?",
+    "options": [
+      "Meropenem",
+      "Doripenem",
+      "Ertapenem",
+      "Imipenem"
+    ],
+    "correct": 2,
+    "explanation": "Ertapenem không diệt được Pseudomonas aeruginosa và Acinetobacter, chỉ dùng điều trị nhiễm khuẩn cộng đồng hoặc vi khuẩn đường ruột.",
+    "reference": "Sách DLS tr. 318"
+  },
+  {
+    "id": 1054,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Thuốc ức chế men Dehydropeptidase-1 (Cilastatin) được phối hợp cùng Imipenem nhằm mục đích:",
+    "options": [
+      "Mở rộng phổ diệt khuẩn sang vi khuẩn kỵ khí",
+      "Làm giảm đau buốt tại vị trí tiêm bắp",
+      "Làm cho Imipenem có thể uống được qua đường tiêu hóa",
+      "Ngăn cản thận phân hủy Imipenem và làm giảm độc tính trên ống thận"
+    ],
+    "correct": 3,
+    "explanation": "Enzym dehydropeptidase-1 ở bờ bàn chải ống thận phân hủy imipenem; cilastatin ức chế enzym này giúp duy trì nồng độ imipenem.",
+    "reference": "Sách DLS tr. 319"
+  },
+  {
+    "id": 1055,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh được coi là lựa chọn hàng đầu điều trị viêm phổi do vi khuẩn nội bào không điển hình (Mycoplasma, Chlamydia) là:",
+    "options": [
+      "Kháng sinh nhóm Macrolid (như Azithromycin, Clarithromycin) hoặc Doxycyclin",
+      "Kháng sinh nhóm Cephalosporin thế hệ 1 (Cefazolin)",
+      "Kháng sinh nhóm Aminosid (Gentamicin)",
+      "Kháng sinh nhóm Penicillin tự nhiên (Penicillin G)"
+    ],
+    "correct": 0,
+    "explanation": "Vi khuẩn không điển hình không có vách peptidoglycan nên đề kháng tự nhiên với Beta-lactam; cần dùng Macrolid, Tetracyclin hoặc Quinolon.",
+    "reference": "Sách DLS tr. 320"
+  },
+  {
+    "id": 1056,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh nào sau đây là lựa chọn hàng đầu điều trị viêm đại tràng giả mạc do trực khuẩn Clostridioides difficile đường uống?",
+    "options": [
+      "Vancomycin tiêm truyền tĩnh mạch",
+      "Vancomycin đường uống hoặc Fidaxomicin",
+      "Ciprofloxacin viên nén uống",
+      "Amoxicillin viên nang uống"
+    ],
+    "correct": 1,
+    "explanation": "Vancomycin uống không hấp thu vào máu, tập trung 100% nồng độ trong lòng đại tràng tiêu diệt C. difficile (Vancomycin tiêm không có tác dụng).",
+    "reference": "Sách DLS tr. 322"
+  },
+  {
+    "id": 1057,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Thời gian vàng để tiêm kháng sinh dự phòng trong phẫu thuật (Surgical Prophylaxis) là:",
+    "options": [
+      "Trước khi phẫu thuật 48 giờ đồng hồ",
+      "Chỉ tiêm khi vết mổ đã có dấu hiệu chảy mủ",
+      "Trong vòng 60 phút trước khi rạch da (đối với Vancomycin/Quinolon là trong vòng 120 phút)",
+      "Sau khi ca mổ đã kết thúc và bệnh nhân về phòng hậu phẫu"
+    ],
+    "correct": 2,
+    "explanation": "Kháng sinh dự phòng cần đạt nồng độ tối đa tại mô trước nhát dao rạch da đầu tiên (trong vòng 60 phút trước rạch da).",
+    "reference": "Sách DLS tr. 325"
+  },
+  {
+    "id": 1058,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh được lựa chọn phổ biến và chuẩn mực nhất cho hầu hết các phẫu thuật sạch và sạch - nhiễm là:",
+    "options": [
+      "Meropenem (Carbapenem)",
+      "Vancomycin phối hợp Amikacin",
+      "Colistin tiêm tĩnh mạch",
+      "Cefazolin (Cephalosporin thế hệ 1)"
+    ],
+    "correct": 3,
+    "explanation": "Cefazolin có phổ bao phủ tốt tụ cầu da và liên cầu, thời gian bán thải phù hợp, độc tính thấp và chi phí rẻ nhất.",
+    "reference": "Sách DLS tr. 326"
+  },
+  {
+    "id": 1059,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Thời gian duy trì kháng sinh dự phòng sau một ca phẫu thuật thông thường (không nhiễm khuẩn từ trước) khuyến cáo là:",
+    "options": [
+      "Ngừng trong vòng 24 giờ sau khi kết thúc phẫu thuật (tốt nhất là liều duy nhất)",
+      "Tiếp tục truyền kháng sinh cho đến khi bệnh nhân xuất viện",
+      "Uống kéo dài tối thiểu 1 tháng sau khi cắt chỉ",
+      "Kéo dài liên tục từ 10 đến 14 ngày"
+    ],
+    "correct": 0,
+    "explanation": "Kéo dài kháng sinh dự phòng > 24 giờ không làm giảm nhiễm khuẩn vết mổ mà làm tăng độc tính và vi khuẩn kháng thuốc.",
+    "reference": "Sách DLS tr. 327"
+  },
+  {
+    "id": 1060,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Cần bổ sung một liều kháng sinh dự phòng Cefazolin trong khi phẫu thuật khi ca mổ kéo dài trên bao nhiêu thời gian?",
+    "options": [
+      "Không bao giờ được tiêm thêm liều thứ hai",
+      "Kéo dài trên 3 đến 4 giờ (gấp đôi thời gian bán thải của Cefazolin) hoặc mất máu > 1500 mL",
+      "Khi ca mổ kéo dài trên 30 phút",
+      "Chỉ khi ca mổ kéo dài tròn 24 giờ"
+    ],
+    "correct": 1,
+    "explanation": "Nếu phẫu thuật kéo dài quá 2 lần T1/2 của kháng sinh (T1/2 của cefazolin ~ 1,8h) hoặc mất máu nhiều, cần tiêm lặp lại để duy trì nồng độ mô.",
+    "reference": "Sách DLS tr. 328"
+  },
+  {
+    "id": 1061,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Cơ chế kháng kháng sinh Beta-lactam chủ yếu của Tụ cầu vàng kháng Methicillin (MRSA) là:",
+    "options": [
+      "Thay đổi tính thấm màng tế bào của vi khuẩn gram âm",
+      "Tiết men beta-lactamase thông thường phá hủy vòng beta-lactam",
+      "Đột biến gen mecA tạo ra protein gắn penicillin mới PBP2a có ái lực cực thấp với beta-lactam",
+      "Bơm tống thuốc Efflux pump đẩy kháng sinh ra ngoài"
+    ],
+    "correct": 2,
+    "explanation": "Gen mecA mã hóa PBP2a không gắn kết với hầu hết các beta-lactam (trừ Cephalosporin thế hệ 5 Ceftaroline), kháng toàn bộ penicillin và cephalosporin.",
+    "reference": "Sách DLS tr. 316"
+  },
+  {
+    "id": 1062,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh nào sau đây là lựa chọn hàng đầu điều trị nhiễm khuẩn huyết do MRSA (Tụ cầu vàng kháng Methicillin)?",
+    "options": [
+      "Amoxicillin phối hợp Acid clavulanic",
+      "Cefuroxim tiêm truyền",
+      "Erythromycin đường uống",
+      "Vancomycin hoặc Teicoplanin"
+    ],
+    "correct": 3,
+    "explanation": "Glycopeptid (Vancomycin, Teicoplanin) là kháng sinh chuẩn mực hàng đầu điều trị các nhiễm khuẩn nặng do MRSA.",
+    "reference": "Sách DLS tr. 317"
+  },
+  {
+    "id": 1063,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh nhóm Oxazolidinon (Linezolid) có ưu điểm nổi bật nào trong điều trị viêm phổi do MRSA?",
+    "options": [
+      "Thâm nhập rất tốt vào dịch lót biểu mô phế nang phổi và có dạng uống sinh khả dụng 100%",
+      "Không cần đào thải qua gan hay thận",
+      "Diệt trừ được cả vi khuẩn trực khuẩn mủ xanh đa kháng",
+      "Có hoạt tính diệt khuẩn trong 10 giây"
+    ],
+    "correct": 0,
+    "explanation": "Linezolid phân bố vào dịch biểu mô phế nang cao gấp nhiều lần huyết tương, sinh khả dụng uống 100% tiện lợi xuống thang.",
+    "reference": "Sách DLS tr. 324"
+  },
+  {
+    "id": 1064,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Tại sao kháng sinh Daptomycin tuyệt đối không được chỉ định để điều trị Viêm phổi?",
+    "options": [
+      "Làm tăng áp lực động mạch phổi ác tính",
+      "Bị bất hoạt hoàn toàn bởi chất hoạt động bề mặt Surfactant trong phế nang phổi",
+      "Không thể phân bố vào các mô có mạch máu",
+      "Làm cho phế nang bị đông đặc ngay lập tức"
+    ],
+    "correct": 1,
+    "explanation": "Daptomycin gắn kết với phospholipid của surfactant phổi làm mất hoạt tính kháng khuẩn, thất bại điều trị viêm phổi.",
+    "reference": "Sách DLS tr. 323"
+  },
+  {
+    "id": 1065,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh nào sau đây là lựa chọn điều trị hàng đầu cho nhiễm khuẩn do vi khuẩn Gram âm sinh men ESBL (Beta-lactamase phổ rộng)?",
+    "options": [
+      "Penicillin G tiêm bắp",
+      "Amoxicillin đơn thuần",
+      "Carbapenem (như Meropenem, Imipenem)",
+      "Cephalosporin thế hệ 3 (như Ceftriaxone, Ceftazidime)"
+    ],
+    "correct": 2,
+    "explanation": "Men ESBL phá hủy penicillin và cephalosporin thế hệ 1, 2, 3, 4; Carbapenem là chuẩn vàng điều trị nhiễm khuẩn nặng do ESBL.",
+    "reference": "Sách DLS tr. 315"
+  },
+  {
+    "id": 1066,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh nhóm Polypeptid (Colistin - Polymyxin E) thường được giữ lại làm vũ khí cuối cùng để điều trị:",
+    "options": [
+      "Viêm họng do liên cầu khuẩn tan máu beta nhóm A",
+      "Nhiễm nấm candida thực quản",
+      "Bệnh cúm do virus Influenza gây ra",
+      "Trực khuẩn Gram âm đa kháng và toàn kháng (Acinetobacter, Pseudomonas, K. pneumoniae sinh men carbapenemase)"
+    ],
+    "correct": 3,
+    "explanation": "Colistin là kháng sinh cứu cánh cuối cùng cho vi khuẩn gram âm đường ruột kháng Carbapenem (CRE, CRAB, CRPA).",
+    "reference": "Sách DLS tr. 330"
+  },
+  {
+    "id": 1067,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Độc tính đáng ngại nhất cần giám sát chặt chẽ khi sử dụng kháng sinh Colistin tiêm tĩnh mạch là:",
+    "options": [
+      "Độc tính trên thận gây hoại tử ống thận cấp và độc tính thần kinh cơ",
+      "Gây đứt gân gót chân tự phát",
+      "Độc tính trên mắt gây mù lòa",
+      "Gây nhồi máu cơ tim cấp"
+    ],
+    "correct": 0,
+    "explanation": "Colistin phá hủy màng tế bào gây độc thận (tỷ lệ 30-50%) và chẹn thần kinh cơ (dị cảm, yếu cơ, liệt hô hấp).",
+    "reference": "Sách DLS tr. 331"
+  },
+  {
+    "id": 1068,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh nào sau đây đào thải chủ yếu qua gan và mật, tạo nồng độ cao trong đường mật thích hợp cho viêm đường mật?",
+    "options": [
+      "Vancomycin",
+      "Ceftriaxone và Cefoperazon",
+      "Tobramycin",
+      "Gentamicin"
+    ],
+    "correct": 1,
+    "explanation": "Ceftriaxone và Cefoperazon thải trừ nhiều qua mật, nồng độ trong dịch mật cao gấp nhiều lần huyết tương.",
+    "reference": "Sách DLS tr. 321"
+  },
+  {
+    "id": 1069,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh Macrolid (Erythromycin) phối hợp với thuốc chống loạn nhịp tim (Amiodaron) có nguy cơ gây tai biến điện tim nào?",
+    "options": [
+      "Làm mất hoàn toàn sóng P trên điện tâm đồ",
+      "Làm tăng biên độ sóng R lên gấp mười lần",
+      "Kéo dài khoảng QT trên điện tâm đồ và gây cơn xoắn đỉnh (Torsades de pointes) ngừng tim",
+      "Làm ngắn khoảng PR gây hội chứng Wolff-Parkinson-White"
+    ],
+    "correct": 2,
+    "explanation": "Macrolid và Quinolon chẹn kênh kali IKr làm kéo dài khoảng QT, phối hợp với thuốc loạn nhịp làm tăng nguy cơ xoắn đỉnh tử vong.",
+    "reference": "Sách DLS tr. 329"
+  },
+  {
+    "id": 1070,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh nhóm Tetracyclin nào sau đây ít phụ thuộc vào chức năng thận nhất và an toàn khi bệnh nhân suy thận?",
+    "options": [
+      "Tetracyclin hydroclorid",
+      "Oxytetracyclin",
+      "Chlortetracyclin",
+      "Doxycyclin"
+    ],
+    "correct": 3,
+    "explanation": "Doxycyclin đào thải chủ yếu qua phân và gan mật dưới dạng bất hoạt, không tích lũy ở bệnh nhân suy thận.",
+    "reference": "Sách DLS tr. 332"
+  },
+  {
+    "id": 1071,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Hiện tượng 'Kháng thuốc cảm ứng' (Inducible resistance) kiểu hình MLSB ở Tụ cầu và Liên cầu được phát hiện bằng thử nghiệm vi sinh nào?",
+    "options": [
+      "Thử nghiệm D-test (D-zone test)",
+      "Thử nghiệm lắng đọng hồng cầu",
+      "Nhuộm soi phân tươi tìm amip",
+      "Thử nghiệm E-test đo MIC"
+    ],
+    "correct": 0,
+    "explanation": "D-test đặt đĩa Clindamycin cạnh Erythromycin; nếu có gen erm cảm ứng sẽ tạo vùng ức chế hình chữ D khuyết cạnh.",
+    "reference": "Sách DLS tr. 333"
+  },
+  {
+    "id": 1072,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh Fosfomycin đường uống (dạng gói hạt 3g pha nước uống liều duy nhất) được chỉ định ưu tiên cho:",
+    "options": [
+      "Viêm xương tủy xương mạn tính",
+      "Nhiễm khuẩn đường tiết niệu dưới (Viêm bàng quang cấp không biến chứng) ở phụ nữ",
+      "Áp xe phổi kích thước lớn",
+      "Viêm màng não mủ do phế cầu"
+    ],
+    "correct": 1,
+    "explanation": "Fosfomycin trometamol 3g liều duy nhất đạt nồng độ cực cao trong nước tiểu kéo dài 48h, là thuốc đầu tay viêm bàng quang cấp.",
+    "reference": "Sách DLS tr. 334"
+  },
+  {
+    "id": 1073,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Tại sao kháng sinh Ceftriaxone không được sử dụng để điều trị nhiễm khuẩn huyết do trực khuẩn Listeria monocytogenes?",
+    "options": [
+      "Listeria chỉ nhạy cảm duy nhất với Colistin",
+      "Ceftriaxone bị Listeria phá hủy thành chất độc",
+      "Listeria monocytogenes đề kháng tự nhiên với toàn bộ kháng sinh nhóm Cephalosporin",
+      "Ceftriaxone không đi qua được hàng rào máu não"
+    ],
+    "correct": 2,
+    "explanation": "Listeria đề kháng nội tại với Cephalosporin do PBP không gắn thuốc; thuốc lựa chọn bắt buộc là Ampicillin phối hợp Gentamicin.",
+    "reference": "Sách DLS tr. 335"
+  },
+  {
+    "id": 1074,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh Nitrofurantoin chống chỉ định sử dụng khi mức lọc cầu thận eGFR của bệnh nhân dưới bao nhiêu?",
+    "options": [
+      "Không phụ thuộc vào mức lọc cầu thận",
+      "Chỉ cấm khi eGFR = 0 mL/phút",
+      "Dưới 90 mL/phút",
+      "Dưới 30 mL/phút (do nồng độ thuốc trong nước tiểu không đạt hiệu quả và tăng tích lũy độc tính thần kinh)"
+    ],
+    "correct": 3,
+    "explanation": "Khi eGFR < 30 mL/ph/1,73m2, nitrofurantoin không đạt nồng độ kháng khuẩn trong nước tiểu và tích lũy gây độc dây thần kinh ngoại biên.",
+    "reference": "Sách DLS tr. 336"
+  },
+  {
+    "id": 1075,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh Cotrimoxazol là dạng phối hợp tỷ lệ 5:1 giữa hai hoạt chất nào?",
+    "options": [
+      "Sulfamethoxazol và Trimethoprim",
+      "Amoxicillin và Sulbactam",
+      "Piperacillin và Tazobactam",
+      "Sulfadiazin và Pyrimethamin"
+    ],
+    "correct": 0,
+    "explanation": "Cotrimoxazol phối hợp Sulfamethoxazol và Trimethoprim tỷ lệ 5:1, ức chế 2 bước liên tiếp tổng hợp acid folic của vi khuẩn.",
+    "reference": "Sách DLS tr. 337"
+  },
+  {
+    "id": 1076,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh Cephalosporin thế hệ 4 (Cefepime) có ưu điểm vượt trội nào so với Ceftriaxone?",
+    "options": [
+      "Có tác dụng diệt trừ được nấm men Candida",
+      "Bao phủ được Trực khuẩn mủ xanh (Pseudomonas aeruginosa) và bền vững hơn trước men AmpC beta-lactamase",
+      "Không gây bất kỳ phản ứng dị ứng nào",
+      "Chỉ cần uống mỗi tuần 1 viên duy nhất"
+    ],
+    "correct": 1,
+    "explanation": "Cefepime là cephalosporin thế hệ 4 phổ rộng, diệt Pseudomonas và xâm nhập qua màng ngoài vi khuẩn gram âm nhanh hơn.",
+    "reference": "Sách DLS tr. 338"
+  },
+  {
+    "id": 1077,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Cơ chế tác dụng diệt khuẩn của kháng sinh nhóm Quinolon (như Levofloxacin, Moxifloxacin) là:",
+    "options": [
+      "Ức chế tổng hợp vách tế bào peptidoglycan",
+      "Ức chế tiểu đơn vị 50S của ribosom",
+      "Ức chế enzym DNA-gyrase (Topoisomerase II) và Topoisomerase IV ngăn cản sao chép ADN vi khuẩn",
+      "Phá hủy màng lipid ngoại bào trực tiếp"
+    ],
+    "correct": 2,
+    "explanation": "Fluoroquinolon ức chế enzym tháo xoắn ADN (DNA gyrase ở gram âm và Topoisomerase IV ở gram dương), làm đứt gãy ADN vi khuẩn.",
+    "reference": "Sách DLS tr. 339"
+  },
+  {
+    "id": 1078,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh Tigecyclin (nhóm Glycylcyclin) được cảnh báo hộp đen của FDA về vấn đề nào?",
+    "options": [
+      "Làm bệnh nhân bị rụng răng toàn bộ",
+      "Làm cho xương sọ bệnh nhân bị tiêu biến",
+      "Gây mù mắt hai bên không hồi phục",
+      "Tăng tỷ lệ tử vong do mọi nguyên nhân so với các kháng sinh đối chứng trong thử nghiệm lâm sàng"
+    ],
+    "correct": 3,
+    "explanation": "FDA cảnh báo Tigecyclin tăng nguy cơ tử vong do nồng độ trong máu thấp; chỉ dùng khi không còn lựa chọn thay thế.",
+    "reference": "Sách DLS tr. 340"
+  },
+  {
+    "id": 1079,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Tại sao kháng sinh Tigecyclin không được chỉ định điều trị nhiễm khuẩn đường tiết niệu và nhiễm khuẩn huyết?",
+    "options": [
+      "Nồng độ thuốc trong huyết tương và nước tiểu rất thấp do thể tích phân bố Vd cực lớn (Vd ~ 7-10 L/kg)",
+      "Không hòa tan được trong nước tiểu",
+      "Bị thận đào thải sạch trong vòng 1 giây",
+      "Bị bất hoạt hoàn toàn bởi hồng cầu trong máu"
+    ],
+    "correct": 0,
+    "explanation": "Tigecyclin phân bố chủ yếu vào mô sâu, nồng độ tự do trong máu và nước tiểu cực thấp, không đạt hiệu quả diệt khuẩn tại đây.",
+    "reference": "Sách DLS tr. 341"
+  },
+  {
+    "id": 1080,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh nào sau đây có hoạt tính diệt khuẩn trên cả Tụ cầu vàng MRSA và Phế cầu kháng thuốc thuộc nhóm Cephalosporin thế hệ 5?",
+    "options": [
+      "Cefotaxim natri",
+      "Ceftaroline fosamil",
+      "Ceftriaxone natri",
+      "Cefuroxim axetil"
+    ],
+    "correct": 1,
+    "explanation": "Ceftaroline là Cephalosporin thế hệ 5 gắn kết đặc hiệu với PBP2a của MRSA và PBP2x của phế cầu kháng penicillin.",
+    "reference": "Sách DLS tr. 342"
+  },
+  {
+    "id": 1081,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Trong điều trị theo kinh nghiệm sốc nhiễm khuẩn huyết, nguyên tắc vàng về thời gian bắt đầu dùng kháng sinh là:",
+    "options": [
+      "Chỉ dùng kháng sinh sau khi bệnh nhân đã hết sốt",
+      "Chỉ dùng khi người bệnh tự nguyện đồng ý",
+      "Bắt đầu kháng sinh phổ rộng đường tĩnh mạch trong vòng 1 giờ đầu tiên sau khi nhận diện sốc",
+      "Chờ đợi đủ 3 ngày có kết quả kháng sinh đồ mới bắt đầu dùng"
+    ],
+    "correct": 2,
+    "explanation": "Chiến dịch Cứu sống bệnh nhân nhiễm khuẩn huyết (SSC) khuyến cáo dùng kháng sinh phổ rộng trong vòng 1h đầu (Giờ vàng).",
+    "reference": "Sách DLS tr. 343"
+  },
+  {
+    "id": 1082,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Khái niệm 'Xuống thang kháng sinh' (De-escalation) trong thực hành lâm sàng được hiểu là:",
+    "options": [
+      "Giảm liều lượng kháng sinh xuống mức dưới ngưỡng điều trị",
+      "Bỏ hoàn toàn việc điều trị kháng sinh khi bệnh nhân còn sốt",
+      "Chuyển bệnh nhân từ tầng 3 xuống tầng 1 của bệnh viện",
+      "Chuyển từ kháng sinh phổ rộng sang kháng sinh phổ hẹp hơn hoặc giảm số lượng thuốc dựa trên kết quả kháng sinh đồ"
+    ],
+    "correct": 3,
+    "explanation": "Xuống thang (sau 48-72h) thu hẹp phổ kháng sinh nhằm tối ưu hiệu quả, giảm chi phí và hạn chế phát sinh chủng vi khuẩn kháng thuốc.",
+    "reference": "Sách DLS tr. 344"
+  },
+  {
+    "id": 1083,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh nhóm Aminosid nào sau đây có hoạt tính mạnh nhất trên trực khuẩn mủ xanh Pseudomonas aeruginosa?",
+    "options": [
+      "Tobramycin",
+      "Kanamycin",
+      "Streptomycin",
+      "Spectinomycin"
+    ],
+    "correct": 0,
+    "explanation": "Tobramycin có hoạt lực in vitro mạnh nhất trên P. aeruginosa trong các aminosid, thường dùng dạng khí dung trị viêm phổi xơ nang.",
+    "reference": "Sách DLS tr. 345"
+  },
+  {
+    "id": 1084,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Kháng sinh Metronidazol có phổ tác dụng đặc hiệu vượt trội trên nhóm vi sinh vật nào?",
+    "options": [
+      "Virus herpes simplex ngoài da",
+      "Vi khuẩn kỵ khí tuyệt đối (như Bacteroides fragilis, Clostridium) và động vật nguyên sinh (Amip, Trichomonas)",
+      "Vi khuẩn gram âm hiếu khí Pseudomonas aeruginosa",
+      "Nấm sợi Aspergillus màng phổi"
+    ],
+    "correct": 1,
+    "explanation": "Metronidazol chỉ bị khử thành gốc tự do độc hại trong môi trường khử của vi khuẩn kỵ khí và đơn bào ký sinh.",
+    "reference": "Sách DLS tr. 346"
+  },
+  {
+    "id": 1085,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Phối hợp kháng sinh Piperacillin với Tazobactam có tỷ lệ phối hợp hoạt chất chuẩn là:",
+    "options": [
+      "Tỷ lệ 1:5",
+      "Tỷ lệ 1:1",
+      "Tỷ lệ 8:1 (ví dụ lọ Piperacillin 4g phối hợp Tazobactam 0,5g)",
+      "Tỷ lệ 20:1"
+    ],
+    "correct": 2,
+    "explanation": "Chế phẩm chuẩn đóng gói tỷ lệ 8 phần piperacillin và 1 phần chất ức chế beta-lactamase tazobactam (lọ 2,25g hoặc 4,5g).",
+    "reference": "Sách DLS tr. 347"
+  },
+  {
+    "id": 1086,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Thuốc ức chế men Beta-lactamase thế hệ mới Avibactam khi phối hợp với Ceftazidime có khả năng ức chế được men nào?",
+    "options": [
+      "Chỉ ức chế được men penicillinase thông thường",
+      "Chỉ diệt trừ được nấm men candida",
+      "Hoàn toàn không có tác dụng trên enzym vi khuẩn",
+      "Cả men lớp A (ESBL, KPC), lớp C (AmpC) và một số lớp D (OXA-48)"
+    ],
+    "correct": 3,
+    "explanation": "Avibactam là chất ức chế non-beta-lactam ức chế được carbapenemase KPC và men AmpC, khôi phục hoạt tính của ceftazidime.",
+    "reference": "Sách DLS tr. 348"
+  },
+  {
+    "id": 1087,
+    "chapter": "Kháng sinh & Kháng sinh dự phòng",
+    "question": "Thời gian điều trị bằng kháng sinh cho bệnh nhân Viêm phổi mắc phải tại cộng đồng (CAP) đáp ứng tốt thường là:",
+    "options": [
+      "Khoảng 5 đến 7 ngày (khi người bệnh đã hết sốt 48 giờ và ổn định lâm sàng)",
+      "Kéo dài tối thiểu 6 tháng liên tục",
+      "Bắt buộc kéo dài tròn 30 ngày",
+      "Chỉ cần dùng đúng 1 liều duy nhất"
+    ],
+    "correct": 0,
+    "explanation": "Hướng dẫn IDSA/ATS và Bộ Y tế: CAP điều trị 5-7 ngày nếu lâm sàng cải thiện và hết sốt > 48h, không cần kéo dài 10-14 ngày.",
+    "reference": "Sách DLS tr. 349"
+  },
+  {
+    "id": 1088,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Liều tương đương chống viêm của các Glucocorticoid chuẩn (Hydrocortison, Prednisolon, Methylprednisolon, Dexamethason) theo thứ tự là:",
+    "options": [
+      "Hydrocortison 100 mg = Prednisolon 1 mg = Dexamethason 50 mg",
+      "Hydrocortison 20 mg = Prednisolon 5 mg = Methylprednisolon 4 mg = Dexamethason 0,75 mg",
+      "Hydrocortison 5 mg = Prednisolon 20 mg = Methylprednisolon 40 mg = Dexamethason 10 mg",
+      "Tất cả các thuốc trên có liều chống viêm bằng nhau là 10 mg"
+    ],
+    "correct": 1,
+    "explanation": "Bảng tương đương liều kinh điển: Hydrocortison 20mg tương đương Prednisolon 5mg, Methylprednisolon 4mg, Dexamethason 0,75mg.",
+    "reference": "Sách DLS tr. 350"
+  },
+  {
+    "id": 1089,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Glucocorticoid nào sau đây có hoạt tính giữ muối nước (Mineralocorticoid) yếu nhất hoặc gần như bằng 0?",
+    "options": [
+      "Cortison acetat",
+      "Fludrocortison",
+      "Dexamethason và Betamethason",
+      "Hydrocortison"
+    ],
+    "correct": 2,
+    "explanation": "Dexamethason và Betamethason là corticoid tổng hợp tác dụng kéo dài, hầu như không có tác dụng giữ muối nước (Mineralocorticoid = 0).",
+    "reference": "Sách DLS tr. 351"
+  },
+  {
+    "id": 1090,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Thời điểm uống Glucocorticoid (liều duy nhất mỗi ngày) tốt nhất để giảm thiểu ức chế trục dưới đồi - tuyến yên - thượng thận (HPA) là:",
+    "options": [
+      "Vào lúc 11 giờ đêm trước khi đi ngủ",
+      "Uống rải rác mỗi 3 giờ một lần suốt cả ngày lẫn đêm",
+      "Uống vào lúc 2 giờ chiều khi bụng đói",
+      "Vào khoảng 7 đến 8 giờ sáng cùng hoặc ngay sau bữa ăn sáng"
+    ],
+    "correct": 3,
+    "explanation": "Uống 1 lần lúc 8h sáng trùng với đỉnh tiết cortisol sinh lý tự nhiên của cơ thể, giảm thiểu nguy cơ teo vỏ thượng thận.",
+    "reference": "Sách DLS tr. 352"
+  },
+  {
+    "id": 1091,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Chế độ dùng Glucocorticoid cách ngày (Alternate-day therapy) có ưu điểm nổi bật nào?",
+    "options": [
+      "Cho phép trục HPA và mô đích có 1 ngày nghỉ hồi phục sinh lý, giảm nguy cơ suy thượng thận và chậm lớn ở trẻ em",
+      "Loại bỏ 100% tác dụng phụ loét dạ dày",
+      "Làm cho thuốc có tác dụng vĩnh viễn suốt đời",
+      "Giúp chữa khỏi hoàn toàn bệnh đái tháo đường"
+    ],
+    "correct": 0,
+    "explanation": "Dùng cách ngày (uống liều gấp đôi vào sáng cách nhật bằng corticoid tác dụng trung bình) bảo tồn chức năng tuyến thượng thận.",
+    "reference": "Sách DLS tr. 353"
+  },
+  {
+    "id": 1092,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Corticoid nào sau đây là lựa chọn tối ưu nhất để áp dụng chế độ điều trị cách ngày?",
+    "options": [
+      "Dexamethason (thời gian bán thải kéo dài 36-54 giờ)",
+      "Prednisolon hoặc Methylprednisolon (thời gian bán thải sinh học trung bình 18-36 giờ)",
+      "Hydrocortison (thời gian tác dụng quá ngắn 8-12 giờ)",
+      "Fludrocortison"
+    ],
+    "correct": 1,
+    "explanation": "Corticoid tác dụng trung bình (Prednison, Prednisolon, Methylprednisolon) là ứng viên duy nhất thích hợp cho liệu pháp cách ngày.",
+    "reference": "Sách DLS tr. 354"
+  },
+  {
+    "id": 1093,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Nguy cơ suy vỏ thượng thận cấp nguy kịch (Cơn suy thượng thận Addison cấp) dễ xảy ra nhất khi nào?",
+    "options": [
+      "Chuyển từ dạng tiêm sang dạng uống cùng liều tương đương",
+      "Uống thuốc đúng giờ cùng bữa ăn sáng",
+      "Ngừng thuốc Glucocorticoid đột ngột sau một đợt điều trị liều cao kéo dài trên 2-3 tuần",
+      "Bắt đầu uống liều đầu tiên của đợt điều trị"
+    ],
+    "correct": 2,
+    "explanation": "Dùng corticoid > 2-3 tuần gây teo vỏ thượng thận thứ phát; ngừng đột ngột làm cơ thể thiếu hụt cortisol cấp tính dẫn đến trụy mạch tử vong.",
+    "reference": "Sách DLS tr. 355"
+  },
+  {
+    "id": 1094,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Nguyên tắc bắt buộc khi muốn kết thúc một đợt điều trị Glucocorticoid kéo dài trên 3 tuần là:",
+    "options": [
+      "Ngừng ngay lập tức để tống sạch thuốc ra khỏi cơ thể",
+      "Chuyển sang tiêm truyền tĩnh mạch liều cao",
+      "Tăng gấp đôi liều trong tuần cuối cùng",
+      "Giảm liều từ từ theo bậc thang trước khi ngừng hẳn (Cai thuốc corticoid)"
+    ],
+    "correct": 3,
+    "explanation": "Bắt buộc giảm liều từng bước để tuyến thượng thận có thời gian tự sản xuất cortisol bù đắp trở lại.",
+    "reference": "Sách DLS tr. 356"
+  },
+  {
+    "id": 1095,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Khi bệnh nhân đang trong liệu trình cai giảm liều Glucocorticoid mà gặp stress nặng (phẫu thuật, chấn thương, nhiễm trùng nặng):",
+    "options": [
+      "Phải tạm thời tăng liều Glucocorticoid lên để đáp ứng nhu cầu stress của cơ thể",
+      "Giữ nguyên liều cai không thay đổi",
+      "Chỉ cho bệnh nhân uống nước đường",
+      "Phải cắt bỏ hoàn toàn Glucocorticoid ngay"
+    ],
+    "correct": 0,
+    "explanation": "Tuyến thượng thận teo không thể tự tăng tiết cortisol khi stress; thiếu cortisol trong stress sẽ dẫn đến tụt huyết áp sốc tử vong.",
+    "reference": "Sách DLS tr. 357"
+  },
+  {
+    "id": 1096,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Tác dụng phụ gây loãng xương và gãy xương bệnh lý do Glucocorticoid xuất hiện qua cơ chế nào?",
+    "options": [
+      "Làm tăng tiết hormon cận giáp PTH thứ phát phá hủy xương",
+      "Ức chế nguyên bào xương, tăng hủy cốt bào và giảm hấp thu canxi ở ruột, tăng thải canxi qua thận",
+      "Làm cho xương tích lũy quá nhiều canxi làm xương bị giòn",
+      "Phá hủy tủy đỏ tạo máu của xương"
+    ],
+    "correct": 1,
+    "explanation": "Corticoid ức chế tạo xương, giảm hấp thu Ca2+ ở ruột và tăng đào thải Ca2+ qua nước tiểu, gây loãng xương xốp xương.",
+    "reference": "Sách DLS tr. 358"
+  },
+  {
+    "id": 1097,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Để phòng ngừa loãng xương do Glucocorticoid ở bệnh nhân điều trị dài ngày (>= 3 tháng), khuyến cáo bổ sung:",
+    "options": [
+      "Nước khoáng có ga đậm đặc",
+      "Vitamin C liều cao 5000 mg mỗi ngày",
+      "Canxi (1000-1200 mg/ngày) phối hợp Vitamin D (800-1000 UI/ngày) và thuốc Bisphosphonat nếu có nguy cơ cao",
+      "Thuốc giảm đau Paracetamol hàng ngày"
+    ],
+    "correct": 2,
+    "explanation": "Hướng dẫn ACR: Tất cả bệnh nhân dùng Prednisone >= 2,5 mg/ngày kéo dài >= 3 tháng cần bổ sung Calci + Vitamin D và đánh giá mật độ xương.",
+    "reference": "Sách DLS tr. 359"
+  },
+  {
+    "id": 1098,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Biến chứng loét dạ dày - tá tràng do Glucocorticoid tăng lên gấp nhiều lần khi phối hợp với nhóm thuốc nào?",
+    "options": [
+      "Thuốc kháng histamin H2 Famotidin",
+      "Thuốc ức chế bơm proton Omeprazol",
+      "Dung dịch sữa uống bảo vệ niêm mạc",
+      "Thuốc chống viêm không steroid (NSAID) như Aspirin, Ibuprofen, Diclofenac"
+    ],
+    "correct": 3,
+    "explanation": "Phối hợp Corticoid + NSAID làm tăng nguy cơ loét và xuất huyết tiêu hóa lên gấp 4 đến 10 lần so với dùng đơn độc.",
+    "reference": "Sách DLS tr. 360"
+  },
+  {
+    "id": 1099,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Hội chứng Cushing do thuốc (mặt tròn như mặt trăng, bướu trâu ở gáy, teo cơ gốc chi, rạn da đỏ tím) đặc trưng cho:",
+    "options": [
+      "Tác dụng phụ mạn tính do lạm dụng Glucocorticoid liều cao kéo dài",
+      "Ngộ độc cấp tính kháng sinh Penicillin",
+      "Thiếu hụt vitamin D mạn tính",
+      "Bệnh lý suy thận mạn giai đoạn cuối"
+    ],
+    "correct": 0,
+    "explanation": "Cushing do thuốc là biểu hiện tái phân bố mỡ (mặt, cổ, bụng) và dị hóa protein (teo cơ, mỏng da) do thừa glucocorticoid.",
+    "reference": "Sách DLS tr. 361"
+  },
+  {
+    "id": 1100,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Glucocorticoid làm tăng nguy cơ nhiễm trùng cơ hội (Lao, nấm Candida, virus Zona) chủ yếu do cơ chế:",
+    "options": [
+      "Làm cho nhiệt độ cơ thể hạ thấp tạo điều kiện cho vi khuẩn",
+      "Ức chế miễn dịch qua trung gian tế bào, giảm số lượng và chức năng của tế bào lympho T",
+      "Làm mất hoàn toàn kháng thể IgE trong máu",
+      "Kích thích vi khuẩn sinh sản nhanh hơn"
+    ],
+    "correct": 1,
+    "explanation": "Corticoid ức chế giải phóng cytokine (IL-1, IL-2, TNF-alpha) làm suy yếu hệ miễn dịch qua trung gian tế bào T.",
+    "reference": "Sách DLS tr. 362"
+  },
+  {
+    "id": 1101,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Trước khi bắt đầu điều trị Glucocorticoid toàn thân liều cao kéo dài, xét nghiệm sàng lọc bắt buộc cần làm là:",
+    "options": [
+      "Xét nghiệm nhóm máu hệ Rh",
+      "Đo mật độ tóc trên da đầu",
+      "Sàng lọc bệnh Lao tiềm ẩn (chụp X-quang phổi, test Mantoux hoặc IGRA) và xét nghiệm Viêm gan virus B, C",
+      "Điện não đồ giấc ngủ"
+    ],
+    "correct": 2,
+    "explanation": "Corticoid liều cao có thể làm bùng phát lao kịch phát hoặc tái hoạt động virus viêm gan B gây suy gan tối cấp.",
+    "reference": "Sách DLS tr. 363"
+  },
+  {
+    "id": 1102,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Tác dụng phụ trên mắt của Glucocorticoid dùng kéo dài (kể cả dạng thuốc nhỏ mắt) là:",
+    "options": [
+      "Gây cận thị học đường tiến triển",
+      "Làm mắt bị lồi ra ngoài vĩnh viễn",
+      "Gây bong võng mạc do rách giác mạc",
+      "Tăng nhãn áp (Glaucoma) và Đục thủy tinh thể dưới bao sau"
+    ],
+    "correct": 3,
+    "explanation": "Corticoid làm tăng nhãn áp do cản trở lưu thông thủy dịch và gây đục thủy tinh thể không hồi phục, cần kiểm tra mắt định kỳ.",
+    "reference": "Sách DLS tr. 364"
+  },
+  {
+    "id": 1103,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Tác dụng của Glucocorticoid lên chuyển hóa Glucose trong cơ thể dẫn đến nguy cơ lâm sàng nào?",
+    "options": [
+      "Tăng tân tạo đường tại gan và giảm nhạy cảm insulin ở mô ngoại vi, gây tăng đường huyết hoặc khởi phát đái tháo đường",
+      "Làm tụy tăng sản xuất insulin gấp 10 lần",
+      "Hạ đường huyết sâu gây hôn mê co giật",
+      "Làm cho glucose biến mất hoàn toàn khỏi máu"
+    ],
+    "correct": 0,
+    "explanation": "Corticoid kích thích tân tạo glucose ở gan và đối kháng tác dụng insulin, dễ gây đái tháo đường do corticoid (Steroid-induced diabetes).",
+    "reference": "Sách DLS tr. 365"
+  },
+  {
+    "id": 1104,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Phác đồ Glucocorticoid liều xung (Pulse therapy) tiêm truyền Methylprednisolon liều cực cao (500 - 1000 mg/ngày) chỉ định cho:",
+    "options": [
+      "Giảm đau sau nhổ răng sữa",
+      "Các bệnh lý tự miễn bùng phát đe dọa tính mạng (Viêm thận Lupus cấp, viêm mạch máu hoại tử, thải ghép cấp)",
+      "Hạ sốt thông thường trong cảm lạnh mùa",
+      "Viêm họng đỏ cấp tính do thời tiết"
+    ],
+    "correct": 1,
+    "explanation": "Liệu pháp xung dùng Methylprednisolon 500-1000mg truyền tĩnh mạch chậm trong 3 ngày liên tiếp để dập tắt cơn bão miễn dịch cấp cứu.",
+    "reference": "Sách DLS tr. 366"
+  },
+  {
+    "id": 1105,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Khi truyền tĩnh mạch Methylprednisolon liều xung (Pulse therapy), tai biến cấp tính nguy hiểm nhất cần theo dõi là:",
+    "options": [
+      "Gây đông đặc toàn bộ máu trong lòng mạch",
+      "Gây co thắt khí phế quản cấp",
+      "Rối loạn nhịp tim nguy hiểm và tụt huyết áp do tốc độ truyền quá nhanh",
+      "Làm cho bệnh nhân hôn mê do hạ kali máu"
+    ],
+    "correct": 2,
+    "explanation": "Truyền methylprednisolon liều xung quá nhanh có thể gây loạn nhịp tim ngừng tim; bắt buộc truyền chậm tối thiểu trong 60 phút.",
+    "reference": "Sách DLS tr. 367"
+  },
+  {
+    "id": 1106,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Tác dụng chống viêm của Glucocorticoid ở mức độ phân tử đạt được chủ yếu thông qua việc ức chế enzym nào?",
+    "options": [
+      "Ức chế enzym Telomerase tế bào mầm",
+      "Ức chế trực tiếp enzym Pepsin dịch vị",
+      "Ức chế enzym Amylase nước bọt",
+      "Ức chế enzym Phospholipase A2 (qua việc kích thích tổng hợp Lipocortin/Annexin A1)"
+    ],
+    "correct": 3,
+    "explanation": "Lipocortin-1 (Annexin A1) do corticoid kích thích tổng hợp sẽ ức chế Phospholipase A2, chặn đứng giải phóng acid arachidonic.",
+    "reference": "Sách DLS tr. 349"
+  },
+  {
+    "id": 1107,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Nhóm thuốc nào sau đây là Glucocorticoid dạng khí dung hít (ICS) dùng kiểm soát hen phế quản dài hạn?",
+    "options": [
+      "Budesonid và Fluticason",
+      "Ipratropium và Tiotropium",
+      "Theophyllin và Aminophyllin",
+      "Salbutamol và Terbutalin"
+    ],
+    "correct": 0,
+    "explanation": "Budesonid, Fluticason, Beclomethason là các ICS chống viêm tại chỗ hàng đầu kiểm soát bệnh hen suyễn.",
+    "reference": "Sách DLS tr. 368"
+  },
+  {
+    "id": 1108,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Thuốc Glucocorticoid bôi ngoài da loại tác dụng rất mạnh (như Clobetasol propionat 0,05%) tuyệt đối không được bôi ở vùng nào?",
+    "options": [
+      "Vùng da lòng bàn chân dày sừng",
+      "Vùng da mặt, mí mắt, vùng nếp kẽ và vùng sinh dục",
+      "Vùng da cùi chỏ bị vảy nến dày",
+      "Vùng móng tay bị nấm mạn tính"
+    ],
+    "correct": 1,
+    "explanation": "Da mặt và nếp kẽ hấp thu thuốc rất mạnh, dễ gây teo da, giãn mạch, mụn trứng cá và hấp thu toàn thân gây ức chế trục HPA.",
+    "reference": "Sách DLS tr. 369"
+  },
+  {
+    "id": 1109,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Khi bệnh nhân đang dùng Glucocorticoid liều cao kéo dài cần tiêm chủng vaccin, khuyến cáo là:",
+    "options": [
+      "Vaccin sống sẽ giúp chữa khỏi tác dụng phụ của corticoid",
+      "Tiêm tăng gấp ba liều lượng vaccin sống",
+      "Chống chỉ định tiêm các loại vaccin sống giảm độc lực (như Sởi, Quai bị, Rubella, Thủy đậu)",
+      "Chỉ được tiêm vaccin sống mà không được tiêm vaccin giải độc tố"
+    ],
+    "correct": 2,
+    "explanation": "Corticoid liều cao ức chế miễn dịch, vaccin sống giảm độc lực có thể nhân lên không kiểm soát gây bệnh cảnh nhiễm trùng vaccine toàn thân.",
+    "reference": "Sách DLS tr. 370"
+  },
+  {
+    "id": 1110,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Triệu chứng của 'Cơn suy vỏ thượng thận cấp' (Adrenal Crisis) bao gồm những dấu hiệu nào sau đây?",
+    "options": [
+      "Mặt tròn béo phì và rạn da đỏ tím",
+      "Huyết áp tăng vọt lên 220/140 mmHg",
+      "Tăng natri máu và hạ kali máu nghiêm trọng",
+      "Tụt huyết áp trụy tim mạch không đáp ứng bù dịch, sốt cao, đau bụng dữ dội, nôn mửa, hạ natri và tăng kali máu"
+    ],
+    "correct": 3,
+    "explanation": "Cơn bão suy thượng thận cấp đặc trưng bởi trụy tim mạch tụt huyết áp, sốc vô niệu, hạ đường huyết, hạ natri và tăng kali máu.",
+    "reference": "Sách DLS tr. 355"
+  },
+  {
+    "id": 1111,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Xử trí cấp cứu khẩn cấp cho bệnh nhân bị Cơn suy vỏ thượng thận cấp đe dọa tính mạng là:",
+    "options": [
+      "Tiêm tĩnh mạch ngay lập tức Hydrocortison 100 mg kèm truyền nhanh dung dịch Natri clorid 0,9% pha Glucose",
+      "Cho bệnh nhân uống nước khoáng chanh đường",
+      "Tiêm ngay insulin liều cao qua đường tĩnh mạch",
+      "Cho uống thuốc nhuận tràng để tống chất độc"
+    ],
+    "correct": 0,
+    "explanation": "Hydrocortison 100mg tiêm TM ngay lập tức + bù dịch NaCl 0,9% và Glucose 5% là phác đồ cấp cứu hồi sinh trong suy thượng thận cấp.",
+    "reference": "Sách DLS tr. 356"
+  },
+  {
+    "id": 1112,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Tại sao trẻ em dùng Glucocorticoid toàn thân kéo dài có nguy cơ bị chậm phát triển chiều cao?",
+    "options": [
+      "Do làm tăng đào thải vitamin C qua phân",
+      "Do ức chế sụn tiếp hợp đầu xương và ức chế giải phóng hormon tăng trưởng GH",
+      "Do làm cho trẻ biếng ăn suy dinh dưỡng",
+      "Do làm xương dài ra quá nhanh làm gãy chân"
+    ],
+    "correct": 1,
+    "explanation": "Corticoid ức chế phân chia tế bào sụn tiếp hợp và đối kháng tác dụng của GH/IGF-1, gây chậm lớn lùn ở trẻ em.",
+    "reference": "Sách DLS tr. 371"
+  },
+  {
+    "id": 1113,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Glucocorticoid dùng đồng thời với thuốc lợi tiểu thải kali (như Furosemid, Thiazid) có nguy cơ gây tai biến:",
+    "options": [
+      "Gây bí tiểu hoàn toàn do phì đại tuyến tiền liệt",
+      "Tăng kali máu gây ngừng tim trong thì tâm thu",
+      "Hạ kali máu nghiêm trọng làm tăng độc tính tim mạch của Digoxin",
+      "Làm cho huyết áp tụt kẹp sâu"
+    ],
+    "correct": 2,
+    "explanation": "Cả hai đều làm tăng thải kali qua ống thận, phối hợp gây hạ kali máu sâu, làm tăng nguy cơ loạn nhịp thất chết người.",
+    "reference": "Sách DLS tr. 372"
+  },
+  {
+    "id": 1114,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Để hạn chế nguy cơ loét dạ dày khi bắt buộc phải dùng Glucocorticoid kéo dài cho bệnh nhân có tiền sử viêm loét, nên phối hợp thêm:",
+    "options": [
+      "Thuốc giảm đau Aspirin liều thấp",
+      "Thuốc kháng sinh Ciprofloxacin",
+      "Viên sắt sulfat uống",
+      "Thuốc ức chế bơm proton (PPI như Omeprazol, Pantoprazol)"
+    ],
+    "correct": 3,
+    "explanation": "PPI ức chế bài tiết acid dịch vị mạnh mẽ, là liệu pháp bảo vệ niêm mạc dạ dày tiêu chuẩn khi dùng corticoid kéo dài ở đối tượng nguy cơ.",
+    "reference": "Sách DLS tr. 373"
+  },
+  {
+    "id": 1115,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Chỉ số nào sau đây được coi là liều sinh lý hàng ngày của Hydrocortison ở người trưởng thành khỏe mạnh không stress?",
+    "options": [
+      "Khoảng 15 đến 20 mg Hydrocortison mỗi ngày",
+      "Tương đương 80 mg Prednisolon mỗi ngày",
+      "Khoảng 100 đến 200 mg mỗi ngày",
+      "Chỉ khoảng 0,1 mg mỗi ngày"
+    ],
+    "correct": 0,
+    "explanation": "Vỏ thượng thận bình thường tiết khoảng 15-20 mg cortisol (hydrocortison)/ngày, tương đương khoảng 5 mg Prednisolon.",
+    "reference": "Sách DLS tr. 350"
+  },
+  {
+    "id": 1116,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Sau một đợt dùng Glucocorticoid ngắn ngày dưới bao nhiêu thời gian thì có thể ngừng thuốc ngay mà không cần giảm liều theo bậc thang?",
+    "options": [
+      "Dưới 3 tháng",
+      "Dưới 14 ngày (2 tuần) nếu dùng liều thông thường",
+      "Bắt buộc giảm liều kể cả khi chỉ dùng 1 ngày duy nhất",
+      "Dưới 6 tháng"
+    ],
+    "correct": 1,
+    "explanation": "Dùng corticoid dưới 2 tuần chưa đủ thời gian gây teo vỏ thượng thận thứ phát, có thể ngừng thuốc trực tiếp mà không cần giảm liều.",
+    "reference": "Sách DLS tr. 356"
+  },
+  {
+    "id": 1117,
+    "chapter": "Glucocorticoid & Phác đồ điều trị",
+    "question": "Thuốc Glucocorticoid nào qua được hàng rào nhau thai tốt nhất và được dùng để kích thích trưởng thành phổi thai nhi dọa sinh non?",
+    "options": [
+      "Prednisolon",
+      "Hydrocortison",
+      "Betamethason hoặc Dexamethason (ít bị enzym 11-beta-HSD2 của nhau thai chuyển hóa)",
+      "Methylprednisolon"
+    ],
+    "correct": 2,
+    "explanation": "Betamethason và Dexamethason không bị enzym 11-beta-HSD2 nhau thai bất hoạt, qua nhau thai tối đa thúc đẩy tổng hợp surfactant phổi thai.",
+    "reference": "Sách DLS tr. 374"
+  },
+  {
+    "id": 1118,
+    "chapter": "Thuốc giảm đau",
+    "question": "Bậc 1 trong Thang bậc thang giảm đau 3 bước kinh điển của WHO bao gồm nhóm thuốc nào?",
+    "options": [
+      "Phương pháp phẫu thuật cắt dây thần kinh cảm giác",
+      "Opioid mạnh như Morphin, Fentanyl",
+      "Opioid yếu như Codein, Tramadol",
+      "Thuốc giảm đau không Opioid (như Paracetamol, NSAID) có hoặc không có thuốc bổ trợ"
+    ],
+    "correct": 3,
+    "explanation": "Bậc 1 dùng cho đau nhẹ đến vừa: Paracetamol, NSAID; Bậc 2: Opioid yếu (codein); Bậc 3: Opioid mạnh (morphin).",
+    "reference": "Sách DLS tr. 380"
+  },
+  {
+    "id": 1119,
+    "chapter": "Thuốc giảm đau",
+    "question": "Liều tối đa của Paracetamol cho người lớn có chức năng gan thận bình thường được khuyến cáo là:",
+    "options": [
+      "Không quá 4000 mg (4 gam) trong 24 giờ",
+      "Tối đa 10 gam mỗi ngày",
+      "Không giới hạn liều tối đa",
+      "Không quá 1000 mg trong 24 giờ"
+    ],
+    "correct": 0,
+    "explanation": "Liều tối đa paracetamol là 4g/ngày (FDA khuyến cáo không kê đơn nên giới hạn 3g/ngày) để tránh cạn kiệt glutathion hoại tử gan.",
+    "reference": "Sách DLS tr. 382"
+  },
+  {
+    "id": 1120,
+    "chapter": "Thuốc giảm đau",
+    "question": "Cơ chế tác dụng giảm đau, hạ sốt của Paracetamol khác biệt với NSAID ở điểm nào sau đây?",
+    "options": [
+      "Gây ức chế kết tập tiểu cầu kéo dài thời gian chảy máu",
+      "Tác dụng chủ yếu tại hệ thần kinh trung ương và hầu như không có tác dụng chống viêm ở ngoại vi",
+      "Gây viêm loét niêm mạc dạ dày dữ dội",
+      "Ức chế mạnh mẽ cả hai enzym COX-1 và COX-2 tại ổ viêm ngoại biên"
+    ],
+    "correct": 1,
+    "explanation": "Paracetamol ức chế tổng hợp PG tại não bộ nhưng bị nồng độ cao peroxyd tại ổ viêm ngoại vi bất hoạt nên không chống viêm.",
+    "reference": "Sách DLS tr. 383"
+  },
+  {
+    "id": 1121,
+    "chapter": "Thuốc giảm đau",
+    "question": "Thuốc chống viêm không steroid (NSAID) chọn lọc trên COX-2 (như Celecoxib, Etoricoxib) có ưu điểm và nhược điểm nổi bật nào?",
+    "options": [
+      "An toàn tuyệt đối cho bệnh nhân có tiền sử nhồi máu cơ tim",
+      "Hoàn toàn không có tác dụng giảm đau",
+      "Giảm nguy cơ loét đường tiêu hóa nhưng làm tăng nguy cơ biến cố huyết khối tim mạch (nhồi máu cơ tim, đột quỵ)",
+      "Gây xuất huyết tiêu hóa nặng hơn thuốc ức chế không chọn lọc"
+    ],
+    "correct": 2,
+    "explanation": "Ức chế chọn lọc COX-2 bảo vệ niêm mạc dạ dày nhưng làm mất cân bằng PGI2 (giãn mạch, chống đông) và TXA2 (co mạch, đông máu), tăng nguy cơ huyết khối tim mạch.",
+    "reference": "Sách DLS tr. 385"
+  },
+  {
+    "id": 1122,
+    "chapter": "Thuốc giảm đau",
+    "question": "Thuốc giảm đau chống viêm NSAID nào sau đây có nguy cơ gây độc tính tim mạch thấp nhất trong các NSAID truyền thống?",
+    "options": [
+      "Meloxicam",
+      "Etoricoxib",
+      "Diclofenac",
+      "Naproxen"
+    ],
+    "correct": 3,
+    "explanation": "Naproxen ức chế COX-1 kéo dài tương tự aspirin liều thấp, được các hướng dẫn tim mạch đánh giá có nguy cơ tim mạch thấp nhất trong các NSAID.",
+    "reference": "Sách DLS tr. 386"
+  },
+  {
+    "id": 1123,
+    "chapter": "Thuốc giảm đau",
+    "question": "Tam chứng ngộ độc quá liều Opioid (như ngộ độc Morphin, Heroin) bao gồm những dấu hiệu kinh điển nào?",
+    "options": [
+      "Hôn mê ức chế thần kinh, ức chế hô hấp (thở chậm < 8 lần/phút) và co đồng tử nhỏ như đầu đinh ghim",
+      "Tăng huyết áp kịch phát, tim đập nhanh và tiêu chảy",
+      "Sốt cao 41 độ C, co giật toàn thể và giãn to đồng tử",
+      "Mặt đỏ bừng bừng, vã mồ hôi và run rẩy tay chân"
+    ],
+    "correct": 0,
+    "explanation": "Tam chứng ngộ độc opioid: Hôn mê + Thở chậm ngừng thở + Co đồng tử nhỏ hình đinh ghim (Pinpoint pupils).",
+    "reference": "Sách DLS tr. 390"
+  },
+  {
+    "id": 1124,
+    "chapter": "Thuốc giảm đau",
+    "question": "Aspirin liều thấp (75 - 100 mg/ngày) được dùng để phòng ngừa huyết khối tim mạch dựa trên cơ chế phân tử nào?",
+    "options": [
+      "Ức chế cạnh tranh thụ thể Beta-1 giao cảm ở cơ tim",
+      "Ức chế không hồi phục enzym COX-1 của tiểu cầu làm ngăn cản tổng hợp Thromboxan A2 (TXA2) suốt đời sống tiểu cầu",
+      "Làm kiềm hóa dòng máu tuần hoàn",
+      "Tiêu hủy trực tiếp sợi tơ huyết Fibrin trong cục máu đông"
+    ],
+    "correct": 1,
+    "explanation": "Tiểu cầu không có nhân để tổng hợp COX-1 mới, acetyl hóa không hồi phục của aspirin ức chế TXA2 suốt 7-10 ngày đời sống tiểu cầu.",
+    "reference": "Sách DLS tr. 384"
+  },
+  {
+    "id": 1125,
+    "chapter": "Thuốc giảm đau",
+    "question": "Thuốc giảm đau Opioid nào sau đây có thể dùng đường dán qua da (Transdermal patch) điều trị đau mạn tính ung thư kéo dài 72 giờ?",
+    "options": [
+      "Pethidin viên uống",
+      "Morphin tiêm bắp",
+      "Fentanyl dạng miếng dán",
+      "Codein viên nén"
+    ],
+    "correct": 2,
+    "explanation": "Fentanyl tan trong mỡ cực mạnh và phân tử lượng nhỏ, ngấm đều qua da cung cấp nồng độ giảm đau ổn định liên tục 72h.",
+    "reference": "Sách DLS tr. 392"
+  },
+  {
+    "id": 1126,
+    "chapter": "Thuốc giảm đau",
+    "question": "Tác dụng không mong muốn nào của Morphin không bao giờ có hiện tượng dung nạp (quen thuốc) dù điều trị kéo dài nhiều tháng?",
+    "options": [
+      "Tác dụng ức chế hô hấp",
+      "Tác dụng an thần gây ngủ",
+      "Cảm giác buồn nôn và nôn",
+      "Táo bón và Co đồng tử"
+    ],
+    "correct": 3,
+    "explanation": "Hiện tượng dung nạp xuất hiện với tác dụng giảm đau, an thần, ức chế hô hấp; nhưng táo bón và co đồng tử không bao giờ dung nạp.",
+    "reference": "Sách DLS tr. 391"
+  },
+  {
+    "id": 1127,
+    "chapter": "Thuốc giảm đau",
+    "question": "Khi bệnh nhân ung thư xuất hiện cơn đau bùng phát (Breakthrough pain) trên nền đang dùng Opioid kéo dài, xử trí là:",
+    "options": [
+      "Sử dụng thêm một liều Opioid tác dụng nhanh, giải phóng tức thì (bằng 10-15% tổng liều 24 giờ)",
+      "Tăng gấp mười lần liều thuốc miếng dán",
+      "Chỉ cho bệnh nhân chườm lạnh tại chỗ",
+      "Ngừng hoàn toàn mọi loại thuốc giảm đau"
+    ],
+    "correct": 0,
+    "explanation": "Cơn đau bùng phát cần cắt cơn bằng opioid tác dụng ngắn phóng thích tức thì (morphin uống tác dụng nhanh liều cứu hộ).",
+    "reference": "Sách DLS tr. 393"
+  },
+  {
+    "id": 1128,
+    "chapter": "Thuốc giảm đau",
+    "question": "Thuốc giảm đau phối hợp Paracetamol với Tramadol đem lại hiệu quả điều trị vượt trội nhờ cơ chế:",
+    "options": [
+      "Làm tăng thời gian bán thải lên 1 tháng",
+      "Hiệp đồng tác dụng giảm đau đa cơ chế: ức chế PG trung ương + kích thích thụ thể mu-opioid + ức chế tái hấp thu Serotonin/Noradrenalin",
+      "Làm mất hoàn toàn tác dụng phụ của cả hai thuốc",
+      "Tiêu diệt được cả vi khuẩn gây viêm"
+    ],
+    "correct": 1,
+    "explanation": "Phối hợp đa phương thức (multimodal analgesia) hiệp đồng tác dụng giảm đau ở liều thấp hơn của từng hoạt chất, giảm tác dụng phụ.",
+    "reference": "Sách DLS tr. 388"
+  },
+  {
+    "id": 1129,
+    "chapter": "Thuốc giảm đau",
+    "question": "Thuốc giảm đau Opioid Pethidin (Meperidin) hiện nay bị hạn chế sử dụng kéo dài chủ yếu do:",
+    "options": [
+      "Thuốc làm rụng răng toàn bộ",
+      "Thuốc làm tăng cân béo phì quá mức",
+      "Chất chuyển hóa Normeperidin tích lũy gây kích thích thần kinh, run giật cơ và co giật",
+      "Thuốc gây hạ đường huyết không hồi phục"
+    ],
+    "correct": 2,
+    "explanation": "Normeperidin là chất chuyển hóa độc đào thải qua thận, tích lũy gây rung giật cơ, ảo giác và co giật động kinh.",
+    "reference": "Sách DLS tr. 394"
+  },
+  {
+    "id": 1130,
+    "chapter": "Thuốc giảm đau",
+    "question": "Thuốc giảm đau nào sau đây là lựa chọn hàng đầu điều trị Đau thần kinh (Neuropathic pain) như đau sau Zona, đau dây V?",
+    "options": [
+      "Morphin đơn thuần",
+      "Aspirin liều cao",
+      "Paracetamol đơn thuần",
+      "Gabapentin hoặc Pregabalin"
+    ],
+    "correct": 3,
+    "explanation": "Đau do tổn thương thần kinh (neuropathic) đáp ứng kém với NSAID/Opioid đơn thuần; thuốc chỉnh đau đầu tay là Gabapentinoids và SNRI.",
+    "reference": "Sách DLS tr. 395"
+  },
+  {
+    "id": 1131,
+    "chapter": "Thuốc giảm đau",
+    "question": "Chống chỉ định tuyệt đối sử dụng thuốc chống viêm không steroid (NSAID) trong trường hợp nào sau đây?",
+    "options": [
+      "Bệnh nhân đang bị Loét dạ dày - tá tràng tiến triển có xuất huyết hoặc suy tim nặng, suy thận nặng",
+      "Bệnh nhân bị thoái hóa khớp gối đơn thuần",
+      "Người bị đau mỏi vai gáy do tư thế",
+      "Bệnh nhân bị đau bụng kinh nguyên phát"
+    ],
+    "correct": 0,
+    "explanation": "Loét tiêu hóa đang tiến triển, suy tim độ III-IV, suy thận nặng (CrCl < 30) là chống chỉ định tuyệt đối của mọi NSAID toàn thân.",
+    "reference": "Sách DLS tr. 387"
+  },
+  {
+    "id": 1132,
+    "chapter": "Thuốc giảm đau",
+    "question": "Kháng sinh nhóm Cephalosporin nào phối hợp với NSAID làm tăng nguy cơ chảy máu do hạ Prothrombin máu?",
+    "options": [
+      "Cefazolin",
+      "Cefoperazon (do có nhánh N-methylthiotetrazol ức chế vitamin K epoxide reductase)",
+      "Cefalexin",
+      "Cefuroxim"
+    ],
+    "correct": 1,
+    "explanation": "Cephalosporin chứa gốc NMTT ức chế tái tạo vitamin K, phối hợp NSAID ức chế tiểu cầu làm tăng vọt nguy cơ xuất huyết nặng.",
+    "reference": "Sách DLS tr. 389"
+  },
+  {
+    "id": 1133,
+    "chapter": "Thuốc giảm đau",
+    "question": "Thuốc giảm đau chống viêm Diclofenac có đặc điểm nào về độc tính tim mạch so với các NSAID khác?",
+    "options": [
+      "Giúp làm tan cục máu đông trong lòng mạch",
+      "Làm hạ huyết áp và làm chậm nhịp tim",
+      "Có nguy cơ huyết khối tim mạch tương đương với các thuốc ức chế chọn lọc COX-2 (Celecoxib)",
+      "Hoàn toàn an toàn tuyệt đối cho người bị nhồi máu cơ tim"
+    ],
+    "correct": 2,
+    "explanation": "Các phân tích gộp chứng minh Diclofenac ở liều thông thường 150mg/ngày làm tăng nguy cơ biến cố tim mạch ngang với thuốc ức chế COX-2.",
+    "reference": "Sách DLS tr. 386"
+  },
+  {
+    "id": 1134,
+    "chapter": "Thuốc giảm đau",
+    "question": "Thuốc ức chế chọn lọc COX-2 Rofecoxib (Vioxx) bị rút khỏi thị trường dược phẩm toàn cầu vào năm 2004 vì lý do gì?",
+    "options": [
+      "Gây suy tủy xương mất bạch cầu hạt",
+      "Làm cho người bệnh bị mù lòa hai mắt",
+      "Gây ung thư biểu mô gan",
+      "Làm tăng đáng kể nguy cơ Nhồi máu cơ tim và Đột quỵ trong thử nghiệm lâm sàng kéo dài"
+    ],
+    "correct": 3,
+    "explanation": "Nghiên cứu APPROVe chứng minh Vioxx tăng gấp đôi nguy cơ nhồi máu cơ tim và đột quỵ, dẫn đến việc rút số đăng ký lịch sử.",
+    "reference": "Sách DLS tr. 385"
+  },
+  {
+    "id": 1135,
+    "chapter": "Thuốc giảm đau",
+    "question": "Thuốc giải độc đặc hiệu Naloxon khi tiêm tĩnh mạch cấp cứu ngộ độc Morphin có thời gian tác dụng khoảng bao lâu?",
+    "options": [
+      "Khoảng 30 đến 90 phút (ngắn hơn nhiều so với thời gian tác dụng của Morphin)",
+      "Chỉ kéo dài đúng 5 giây",
+      "Kéo dài liên tục trong 72 giờ",
+      "Tác dụng vĩnh viễn suốt đời"
+    ],
+    "correct": 0,
+    "explanation": "T1/2 của Naloxon rất ngắn (30-90p); trong khi morphin tác dụng kéo dài 4-6h, bệnh nhân có thể tái ngộ độc ngừng thở trở lại nếu không theo dõi.",
+    "reference": "Sách DLS tr. 390"
+  },
+  {
+    "id": 1136,
+    "chapter": "Thuốc giảm đau",
+    "question": "Thuốc giảm co thắt cơ trơn đường tiêu hóa và tiết niệu Drotaverin (No-Spa) có cơ chế tác dụng dược lý là:",
+    "options": [
+      "Chẹn kênh natri tại sợi trục thần kinh",
+      "Ức chế enzym Phosphodiesterase-4 (PDE-4) làm tăng nồng độ AMP vòng trong tế bào cơ trơn",
+      "Ức chế tổng hợp Prostaglandin ở ngoại vi",
+      "Kích thích trực tiếp thụ thể cholinergic"
+    ],
+    "correct": 1,
+    "explanation": "Drotaverin ức chế chọn lọc PDE-4 ở cơ trơn, làm tăng cAMP nội bào gây giãn cơ trơn tiêu hóa, niệu quản mà không có tác dụng kháng muscarinic.",
+    "reference": "Sách DLS tr. 396"
+  },
+  {
+    "id": 1137,
+    "chapter": "Thuốc giảm đau",
+    "question": "Khuyến cáo liều dùng Paracetamol cho bệnh nhân suy dinh dưỡng nặng hoặc nghiện rượu mạn tính là:",
+    "options": [
+      "Vẫn dùng liều tối đa 4 gam mỗi ngày",
+      "Tăng liều lên 6 gam để bù đắp chuyển hóa",
+      "Giảm liều tối đa xuống không quá 2000 mg (2 gam) trong 24 giờ",
+      "Không bao giờ được dùng Paracetamol"
+    ],
+    "correct": 2,
+    "explanation": "Người nghiện rượu hoặc suy dinh dưỡng có lượng glutathion nội sinh rất thấp, liều an toàn tối đa khuyến cáo là 2g/ngày.",
+    "reference": "Sách DLS tr. 382"
+  },
+  {
+    "id": 1138,
+    "chapter": "Thuốc giảm đau",
+    "question": "Thuốc giảm đau Methadon được sử dụng trong chương trình điều trị thay thế nghiện chất dạng thuốc phiện nhờ đặc tính:",
+    "options": [
+      "Không hề gắn kết với thụ thể opioid",
+      "Làm cho người bệnh chán ghét hoàn toàn mọi loại thuốc",
+      "Chỉ có tác dụng trong 10 phút",
+      "Hấp thu tốt qua đường uống và có thời gian bán thải sinh học rất dài (24 đến 36 giờ), không gây hội chứng cai rầm rộ"
+    ],
+    "correct": 3,
+    "explanation": "Methadon là chất chủ vận toàn phần thụ thể mu có T1/2 dài (24-36h), uống 1 lần/ngày giúp cắt cơn thèm mà không tạo cảm giác phê sướng đỉnh nhọn.",
+    "reference": "Sách DLS tr. 397"
+  },
+  {
+    "id": 1139,
+    "chapter": "Thuốc giảm đau",
+    "question": "Hội chứng cai thuốc Opioid (chảy nước mũi, ngáp, vã mồ hôi, tiêu chảy, đau cơ, giật cơ) xuất hiện khi nào?",
+    "options": [
+      "Ngừng đột ngột hoặc dùng chất đối kháng (Naloxon) trên bệnh nhân đã dung nạp và lệ thuộc thực thể vào Opioid",
+      "Khi bệnh nhân uống nhiều nước lọc",
+      "Khi bệnh nhân uống quá liều Paracetamol",
+      "Khi dùng kèm thuốc giảm đau chống viêm NSAID"
+    ],
+    "correct": 0,
+    "explanation": "Lệ thuộc thể chất phát triển sau vài tuần dùng opioid; ngừng đột ngột hoặc tiêm naloxon sẽ giải phóng kích thích giao cảm gây hội chứng cai cấp.",
+    "reference": "Sách DLS tr. 398"
+  },
+  {
+    "id": 1140,
+    "chapter": "Thuốc giảm đau",
+    "question": "Thuốc giảm đau chống viêm tại chỗ dạng gel bôi ngoài da Diclofenac (Voltaren Emulgel) có ưu điểm nổi bật là:",
+    "options": [
+      "Hấp thu vào máu cao hơn gấp 10 lần viên uống",
+      "Tập trung nồng độ cao tại khớp và mô dưới da bị viêm trong khi nồng độ trong máu rất thấp, giảm thiểu tác dụng phụ toàn thân",
+      "Chữa khỏi hoàn toàn bệnh thoái hóa khớp trong 1 ngày",
+      "Làm cho khớp bị đông cứng lại"
+    ],
+    "correct": 1,
+    "explanation": "NSAID bôi ngoài da đạt nồng độ mô đích tốt nhưng nồng độ huyết tương chỉ bằng 1-2% đường uống, an toàn vượt trội trên dạ dày và tim.",
+    "reference": "Sách DLS tr. 387"
+  },
+  {
+    "id": 1141,
+    "chapter": "Thuốc giảm đau",
+    "question": "Thuốc giảm đau Colchicin có chỉ định đặc hiệu trong bệnh lý nào sau đây?",
+    "options": [
+      "Gãy xương cẳng chân do tai nạn",
+      "Đau đầu do căng thẳng thần kinh",
+      "Cơn viêm khớp Gút (Gout) cấp tính",
+      "Đau bụng sau phẫu thuật ruột thừa"
+    ],
+    "correct": 2,
+    "explanation": "Colchicin gắn kết tubulin ức chế di chuyển và thực bào của bạch cầu đa nhân tại tinh thể urat, đặc hiệu cắt cơn gút cấp.",
+    "reference": "Sách DLS tr. 399"
+  },
+  {
+    "id": 1142,
+    "chapter": "Thuốc giảm đau",
+    "question": "Phác đồ điều trị cơn Gút cấp bằng Colchicin theo khuyến cáo hiện đại của Bộ Y tế và ACR là:",
+    "options": [
+      "Tiêm tĩnh mạch trực tiếp 10 mg Colchicin",
+      "Uống 1 mg mỗi 2 giờ cho đến khi bệnh nhân bị tiêu chảy dữ dội",
+      "Uống 10 viên Colchicin cùng một lúc",
+      "Uống 1 mg ngay khi khởi phát cơn, sau 1 giờ uống thêm 0,5 mg (tổng liều 1,5 mg trong ngày đầu)"
+    ],
+    "correct": 3,
+    "explanation": "Phác đồ liều thấp hiện đại (1mg khởi đầu + 0,5mg sau 1h) có hiệu quả tương đương phác đồ liều cao cổ điển nhưng giảm 80% tác dụng phụ tiêu chảy.",
+    "reference": "Sách DLS tr. 400"
+  },
+  {
+    "id": 1143,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Hội chứng não Wernicke và loạn thần Korsakoff ở người nghiện rượu mạn tính xuất hiện do thiếu hụt cấp tính vitamin nào?",
+    "options": [
+      "Vitamin B1 (Thiamin)",
+      "Vitamin C (Acid ascorbic)",
+      "Vitamin D3 (Cholecalciferol)",
+      "Vitamin A (Retinol)"
+    ],
+    "correct": 0,
+    "explanation": "Thiếu Thiamin (B1) làm suy giảm chuyển hóa năng lượng não bộ ở vùng đồi thị và thể vú, gây thất điều, liệt vận nhãn và mất trí nhớ ngắn hạn.",
+    "reference": "Sách DLS tr. 405"
+  },
+  {
+    "id": 1144,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Khi cấp cứu bệnh nhân hôn mê hạ đường huyết do nghiện rượu mạn tính, nguyên tắc bắt buộc khi truyền dung dịch Glucose là:",
+    "options": [
+      "Không được truyền bất kỳ dịch nào",
+      "Tiêm tĩnh mạch Vitamin B1 (Thiamin) trước hoặc đồng thời với truyền dung dịch Glucose ưu trương",
+      "Chỉ tiêm Insulin liều cao mà không truyền glucose",
+      "Truyền ngay 5 lít Glucose 20% mà không cần bổ sung gì thêm"
+    ],
+    "correct": 1,
+    "explanation": "Truyền glucose đơn độc làm cạn kiệt lượng Thiamin dự trữ ít ỏi còn lại, thúc đẩy bùng phát hội chứng não Wernicke cấp tính tử vong.",
+    "reference": "Sách DLS tr. 406"
+  },
+  {
+    "id": 1145,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Để hạn chế độc tính viêm dây thần kinh ngoại biên khi điều trị bệnh lao bằng Isoniazid (INH), cần bổ sung hàng ngày:",
+    "options": [
+      "Vitamin C liều cao 1000 mg",
+      "Canxi carbonat dạng viên sủi",
+      "Vitamin B6 (Pyridoxin) liều 25 đến 50 mg mỗi ngày",
+      "Vitamin B12 dạng tiêm bắp"
+    ],
+    "correct": 2,
+    "explanation": "Isoniazid liên kết và tăng đào thải pyridoxin qua nước tiểu, bổ sung vitamin B6 ngăn ngừa biến chứng viêm đa dây thần kinh.",
+    "reference": "Sách DLS tr. 407"
+  },
+  {
+    "id": 1146,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Bệnh Pellagra đặc trưng bởi tam chứng kinh điển '3D' (Dermatitis - Viêm da, Diarrhea - Tiêu chảy, Dementia - Sa sút trí tuệ) do thiếu hụt:",
+    "options": [
+      "Vitamin B2",
+      "Vitamin B1",
+      "Vitamin K",
+      "Vitamin B3 (Niacin / Acid nicotinic)"
+    ],
+    "correct": 3,
+    "explanation": "Thiếu Niacin (Vitamin B3) hoặc acid amin tiền chất Tryptophan dẫn đến bệnh Pellagra với tam chứng 3D (Viêm da, Tiêu chảy, Sa sút trí tuệ).",
+    "reference": "Sách DLS tr. 408"
+  },
+  {
+    "id": 1147,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Thiếu máu hồng cầu to ác tính (Megaloblastic anemia) kèm tổn thương thoái hóa tủy sống kết hợp là hậu quả của thiếu hụt:",
+    "options": [
+      "Vitamin B12 (Cobalamin)",
+      "Kẽm nguyên tố",
+      "Vitamin K",
+      "Sắt nguyên tố"
+    ],
+    "correct": 0,
+    "explanation": "Thiếu B12 cản trở tổng hợp ADN và bao myelin thần kinh, gây thiếu máu hồng cầu khổng lồ kèm thoái hóa cột sau và cột bên tủy sống.",
+    "reference": "Sách DLS tr. 409"
+  },
+  {
+    "id": 1148,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Vitamin B12 được hấp thu tại đoạn cuối hồi tràng bắt buộc phải có sự gắn kết của chất nào do tế bào viền dạ dày tiết ra?",
+    "options": [
+      "Enzym Pepsinogen",
+      "Yếu tố nội tại (Intrinsic Factor - IF)",
+      "Acid hydrochloric (HCl)",
+      "Hormon Gastrin"
+    ],
+    "correct": 1,
+    "explanation": "Tế bào thành dạ dày tiết Yếu tố nội; phức hợp B12-IF gắn vào thụ thể cubilin ở hồi tràng để hấp thu vào máu.",
+    "reference": "Sách DLS tr. 410"
+  },
+  {
+    "id": 1149,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Bổ sung Acid folic (Vitamin B9) đơn độc ở bệnh nhân thiếu máu do thiếu Vitamin B12 có nguy cơ tiềm ẩn nào?",
+    "options": [
+      "Làm cho bệnh nhân bị ngộ độc acid folic ngay lập tức",
+      "Gây xuất huyết tiêu hóa ồ ạt",
+      "Khắc phục được tình trạng thiếu máu nhưng che giấu và làm tổn thương thần kinh do thiếu B12 tiến triển nặng hơn không hồi phục",
+      "Làm giảm tiểu cầu cấp tính"
+    ],
+    "correct": 2,
+    "explanation": "Folat làm bình thường hóa huyết học nhưng không ngăn được tổn thương thoái hóa tủy sống do thiếu B12; bắt buộc định lượng cả B12 và folat.",
+    "reference": "Sách DLS tr. 411"
+  },
+  {
+    "id": 1150,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Bệnh Scorbut (Scuroy) đặc trưng bởi chảy máu chân răng, xuất huyết dưới da, vết thương chậm liền do thiếu hụt vitamin nào?",
+    "options": [
+      "Vitamin E",
+      "Vitamin D",
+      "Vitamin A",
+      "Vitamin C (Acid ascorbic)"
+    ],
+    "correct": 3,
+    "explanation": "Vitamin C là co-enzym cho prolyl hydroxylase tổng hợp collagen sợi; thiếu vitamin C mạch máu giòn dễ vỡ gây bệnh Scorbut.",
+    "reference": "Sách DLS tr. 412"
+  },
+  {
+    "id": 1151,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Dùng Vitamin C liều cao kéo dài (trên 1 - 2 gam mỗi ngày) có nguy cơ gây tai biến nào tại đường tiết niệu?",
+    "options": [
+      "Tăng đào thải Oxalat qua nước tiểu dẫn đến tạo sỏi thận Calci Oxalat",
+      "Làm tắc nghẽn niệu đạo do viêm bàng quang cấp",
+      "Gây suy thận cấp do phá hủy cầu thận",
+      "Làm cho nước tiểu có màu đen sẫm"
+    ],
+    "correct": 0,
+    "explanation": "Acid ascorbic chuyển hóa thành acid oxalic; liều cao acid hóa nước tiểu tạo sỏi thận canxi oxalat.",
+    "reference": "Sách DLS tr. 413"
+  },
+  {
+    "id": 1152,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Vitamin A (Retinol) dùng liều cao cho phụ nữ mang thai có nguy cơ gây tai biến nguy hiểm nào?",
+    "options": [
+      "Làm mẹ chuyển dạ đẻ non trước tháng thứ 5",
+      "Gây quái thai dị tật sọ mặt, tai, hệ thần kinh trung ương và tim mạch thai nhi",
+      "Gây đái tháo đường thai kỳ ác tính",
+      "Làm cho thai nhi bị vàng da sơ sinh"
+    ],
+    "correct": 1,
+    "explanation": "Vitamin A liều cao (> 10.000 UI/ngày) gây quái thai dị tật sọ mặt và tim mạch; chống chỉ định bổ sung liều cao cho phụ nữ có thai.",
+    "reference": "Sách DLS tr. 414"
+  },
+  {
+    "id": 1153,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Biểu hiện sớm nhất của tình trạng thiếu hụt Vitamin A là:",
+    "options": [
+      "Mềm toàn bộ các xương dài",
+      "Chảy máu nướu răng tự phát",
+      "Quáng gà (giảm thị lực khi trời nhá nhem tối) và khô giác mạc",
+      "Rụng toàn bộ lông tóc"
+    ],
+    "correct": 2,
+    "explanation": "Vitamin A cấu tạo sắc tố Rhodopsin của tế bào que võng mạc; thiếu hụt gây quáng gà và dày sừng khô kết mạc (vệt Bitot).",
+    "reference": "Sách DLS tr. 415"
+  },
+  {
+    "id": 1154,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Dạng hoạt tính sinh học cuối cùng của Vitamin D được tổng hợp tại thận có tên khoa học là:",
+    "options": [
+      "Cholecalciferol (Vitamin D3)",
+      "25-hydroxycholecalciferol (Calcidiol)",
+      "Ergocalciferol (Vitamin D2)",
+      "1,25-dihydroxycholecalciferol (Calcitriol)"
+    ],
+    "correct": 3,
+    "explanation": "Calcitriol là dạng hormon hoạt tính mạnh nhất của vitamin D sau khi qua 2 lần hydroxyl hóa tại gan (vị trí 25) và thận (vị trí 1).",
+    "reference": "Sách DLS tr. 416"
+  },
+  {
+    "id": 1155,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Trên bệnh nhân suy thận mạn giai đoạn cuối, dạng Vitamin D nào bắt buộc phải sử dụng để điều trị loãng xương và cường cận giáp thứ phát?",
+    "options": [
+      "Calcitriol (dạng hoạt tính 1,25-OH)",
+      "Ergocalciferol dạng dầu",
+      "Chỉ cần tắm nắng sáng sớm",
+      "Cholecalciferol (Vitamin D3 thông thường)"
+    ],
+    "correct": 0,
+    "explanation": "Thận suy mất enzym 1-alpha-hydroxylase nên không thể hoạt hóa D3 thành Calcitriol; bắt buộc dùng Calcitriol ngoại sinh.",
+    "reference": "Sách DLS tr. 417"
+  },
+  {
+    "id": 1156,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Vitamin K1 (Phytomenadion) có vai trò sinh học thiết yếu trong quá trình nào sau đây?",
+    "options": [
+      "Kích thích tạo tiểu cầu ở tủy xương",
+      "Hoạt hóa (gamma-carboxyl hóa) các yếu tố đông máu II, VII, IX, X và protein C, S tại gan",
+      "Tổng hợp huyết sắc tố Hemoglobin",
+      "Tiêu hủy các cục máu đông vi mạch"
+    ],
+    "correct": 1,
+    "explanation": "Vitamin K là coenzym của carboxylase gắn carboxyl vào gốc acid glutamic của yếu tố đông máu II, VII, IX, X để gắn canxi hoạt động.",
+    "reference": "Sách DLS tr. 418"
+  },
+  {
+    "id": 1157,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Tất cả trẻ sơ sinh ngay sau khi chào đời đều được khuyến cáo tiêm bắp một liều Vitamin K1 nhằm mục đích:",
+    "options": [
+      "Ngăn ngừa vàng da sinh lý",
+      "Kích thích trẻ bú mẹ khỏe hơn",
+      "Dự phòng bệnh xuất huyết giảm prothrombin ở trẻ sơ sinh (đặc biệt là xuất huyết não - màng não)",
+      "Giúp trẻ tăng cân nhanh trong tháng đầu"
+    ],
+    "correct": 2,
+    "explanation": "Trẻ sơ sinh có lượng vitamin K dự trữ rất thấp và vi khuẩn đường ruột chưa tổng hợp đủ; tiêm K1 ngừa xuất huyết não tử vong.",
+    "reference": "Sách DLS tr. 419"
+  },
+  {
+    "id": 1158,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Thuốc viên sắt uống điều trị thiếu máu thiếu sắt nên được uống vào thời điểm nào để hấp thu tốt nhất?",
+    "options": [
+      "Nhai nát viên sắt cùng với thức ăn nhiều dầu mỡ",
+      "Uống chung với nước chè đặc hoặc cà phê",
+      "Uống cùng lúc với cốc sữa bò tươi nguyên chất",
+      "Uống khi bụng đói (trước bữa ăn 1 giờ hoặc sau ăn 2 giờ) cùng với nước cam hoặc vitamin C"
+    ],
+    "correct": 3,
+    "explanation": "Môi trường acid dạ dày và vitamin C giúp khử Fe3+ thành Fe2+ tan hấp thu tốt; sữa, trà, thức ăn chứa tanin làm giảm hấp thu sắt.",
+    "reference": "Sách DLS tr. 420"
+  },
+  {
+    "id": 1159,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Tác dụng không mong muốn phổ biến nhất khiến người bệnh hay bỏ thuốc viên sắt đường uống là:",
+    "options": [
+      "Kích ứng đường tiêu hóa gây buồn nôn, đau thượng vị, táo bón và phân có màu đen sẫm",
+      "Gây mất ngủ co giật kéo dài",
+      "Làm cho da bị đổi sang màu vàng chanh",
+      "Gây cơn tăng huyết áp ác tính"
+    ],
+    "correct": 0,
+    "explanation": "Sắt tự do kích ứng niêm mạc dạ dày gây cồn cào buồn nôn, táo bón và làm phân đen vô hại nhưng làm bệnh nhân lo lắng.",
+    "reference": "Sách DLS tr. 421"
+  },
+  {
+    "id": 1160,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Để hạn chế tác dụng phụ kích ứng dạ dày của viên sắt uống, biện pháp can thiệp thích hợp là:",
+    "options": [
+      "Nghiền nát viên sắt pha với nước ngọt có ga",
+      "Uống thuốc sau bữa ăn nhẹ hoặc bắt đầu với liều thấp tăng dần",
+      "Tăng gấp đôi liều uống để kết thúc đợt điều trị sớm",
+      "Chuyển ngay sang tiêm truyền sắt tĩnh mạch cho mọi bệnh nhân"
+    ],
+    "correct": 1,
+    "explanation": "Uống sau ăn làm giảm nhẹ hấp thu nhưng cải thiện rõ rệt dung nạp dạ dày, giúp bệnh nhân kiên trì tuân thủ điều trị.",
+    "reference": "Sách DLS tr. 422"
+  },
+  {
+    "id": 1161,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Chất khoáng Magnesi đóng vai trò sinh lý then chốt nào trong cơ thể?",
+    "options": [
+      "Có tác dụng kích thích đông máu tức thì",
+      "Đào thải hoàn toàn qua tuyến mồ hôi",
+      "Là đồng yếu tố (co-factor) cho hơn 300 phản ứng enzym sử dụng ATP và điều hòa tính kích thích màng tế bào cơ - thần kinh",
+      "Chỉ cấu tạo nên men răng bên ngoài"
+    ],
+    "correct": 2,
+    "explanation": "Magnesi tham gia mọi phản ứng gắn với ATP, điều hòa hoạt động của bơm Na+/K+-ATPase và dẫn truyền thần kinh cơ.",
+    "reference": "Sách DLS tr. 423"
+  },
+  {
+    "id": 1162,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Tình trạng hạ Magnesi máu nặng thường đi kèm với rối loạn điện giải khó điều chỉnh nào sau đây?",
+    "options": [
+      "Tăng Canxi máu nặng",
+      "Tăng Natri máu kịch phát",
+      "Tăng Kali máu ác tính",
+      "Hạ Kali máu và Hạ Canxi máu kháng trị (không bù được nếu chưa bù Magnesi)"
+    ],
+    "correct": 3,
+    "explanation": "Thiếu Mg2+ làm bất hoạt bơm Na+/K+-ATPase gây mất kali qua nước tiểu và ức chế tiết PTH gây hạ canxi; phải bù Mg2+ trước.",
+    "reference": "Sách DLS tr. 424"
+  },
+  {
+    "id": 1163,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Bổ sung Kẽm (Zinc) trong điều trị tiêu chảy cấp ở trẻ em mang lại lợi ích lâm sàng nào?",
+    "options": [
+      "Rút ngắn thời gian và mức độ nặng của tiêu chảy, phục hồi niêm mạc ruột và phòng ngừa tái phát trong 2-3 tháng tiếp theo",
+      "Làm trẻ ngừng đi ngoài ngay lập tức trong 5 phút",
+      "Thay thế hoàn toàn nhu cầu bù nước bằng Oresol",
+      "Tiêu diệt trực tiếp mọi loại virus rota trong ruột"
+    ],
+    "correct": 0,
+    "explanation": "Kẽm kích thích tái tạo biểu mô ruột, tăng cường miễn dịch niêm mạc ruột, giảm 20% thời gian tiêu chảy theo khuyến cáo WHO.",
+    "reference": "Sách DLS tr. 425"
+  },
+  {
+    "id": 1164,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Bệnh lý thừa sắt mạn tính tích tụ trong cơ thể (Bệnh ứ sắt - Hemochromatosis hoặc sau truyền máu nhiều lần) được điều trị bằng thuốc thải sắt nào?",
+    "options": [
+      "Protamin sulfat",
+      "Deferoxamin hoặc Deferasirox",
+      "N-acetylcystein",
+      "Flumazenil"
+    ],
+    "correct": 1,
+    "explanation": "Deferoxamin (tiêm) và Deferasirox (uống) là các chất tạo chelat vòng càng gắn sắt tự do đào thải qua nước tiểu và phân.",
+    "reference": "Sách DLS tr. 426"
+  },
+  {
+    "id": 1165,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Thừa Vitamin D do lạm dụng thuốc liều cao kéo dài có thể dẫn đến hậu quả bệnh lý nguy hiểm nào?",
+    "options": [
+      "Làm teo cơ bắp chân vĩnh viễn",
+      "Gây nhuyễn xương còi xương nặng",
+      "Tăng Canxi máu ác tính gây vôi hóa các mô mềm (thận, mạch máu, cơ tim) và suy thận",
+      "Làm cho xương sọ bị mềm nhũn"
+    ],
+    "correct": 2,
+    "explanation": "Ngộ độc vitamin D làm tăng canxi máu, lắng đọng canxi ở thận gây sỏi thận, vôi hóa ống thận và suy thận mạn.",
+    "reference": "Sách DLS tr. 427"
+  },
+  {
+    "id": 1166,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Bổ sung quá nhiều Vitamin E liều cao (trên 400 - 800 UI/ngày) kéo dài bị cảnh báo làm tăng nguy cơ:",
+    "options": [
+      "Làm cho da bị đông cứng lại",
+      "Gây suy gan hoại tử tế bào gan cấp",
+      "Gây cơn hen phế quản ác tính",
+      "Biến cố xuất huyết não và làm tăng tỷ lệ tử vong chung theo một số phân tích gộp"
+    ],
+    "correct": 3,
+    "explanation": "Vitamin E liều cao có hoạt tính chống đông kháng vitamin K nhẹ, làm tăng nguy cơ xuất huyết não và tai biến mạch máu.",
+    "reference": "Sách DLS tr. 428"
+  },
+  {
+    "id": 1167,
+    "chapter": "Vitamin và chất khoáng",
+    "question": "Hội chứng thiếu hụt kẽm bẩm sinh (Acrodermatitis enteropathica) đặc trưng bởi các biểu hiện lâm sàng nào?",
+    "options": [
+      "Viêm da đầu chi quanh các hốc tự nhiên, rụng tóc toàn bộ và tiêu chảy kéo dài",
+      "Xương khớp phát triển khổng lồ",
+      "Tăng cân béo phì quá mức",
+      "Mặt tròn đỏ như mặt trăng"
+    ],
+    "correct": 0,
+    "explanation": "Bệnh viêm da đầu chi ruột do đột biến gen vận chuyển kẽm SLC39A4, gây tổn thương da quanh hốc tự nhiên, rụng tóc và tiêu chảy.",
+    "reference": "Sách DLS tr. 429"
+  },
+  {
+    "id": 1168,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Theo Hội Tim mạch học Việt Nam (VSH/VNHA 2022), Tăng huyết áp độ 1 được định nghĩa khi huyết áp đo tại phòng khám là:",
+    "options": [
+      "Huyết áp tâm thu 120 - 129 mmHg và tâm trương 80 - 84 mmHg",
+      "Huyết áp tâm thu 140 - 159 mmHg và/hoặc huyết áp tâm trương 90 - 99 mmHg",
+      "Huyết áp tâm thu < 120 mmHg và tâm trương < 80 mmHg",
+      "Huyết áp tâm thu >= 180 mmHg và/hoặc tâm trương >= 110 mmHg"
+    ],
+    "correct": 1,
+    "explanation": "Độ 1: 140-159 và/hoặc 90-99 mmHg; Độ 2: 160-179 và/hoặc 100-109 mmHg; Độ 3: >= 180 và/hoặc >= 110 mmHg.",
+    "reference": "Sách DLS tr. 435"
+  },
+  {
+    "id": 1169,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Chiến lược điều trị khởi đầu chuẩn cho đa số bệnh nhân tăng huyết áp theo khuyến cáo hiện đại là:",
+    "options": [
+      "Luôn luôn dùng đơn trị liệu liều tối đa trước khi thêm thuốc thứ hai",
+      "Chỉ dùng thuốc lợi tiểu quai liều cao",
+      "Khởi đầu phối hợp 2 thuốc liều thấp cố định (Single-pill combination) ngay từ đầu",
+      "Bắt buộc dùng ngay 4 loại thuốc phối hợp"
+    ],
+    "correct": 2,
+    "explanation": "Khởi đầu bằng viên phối hợp 2 thuốc liều cố định (ƯCMC/ARB + Chẹn canxi hoặc Lợi tiểu thiazid) giúp kiểm soát huyết áp nhanh và tăng tuân thủ.",
+    "reference": "Sách DLS tr. 436"
+  },
+  {
+    "id": 1170,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Nhóm thuốc hạ huyết áp nào được xem là lựa chọn ưu tiên bắt buộc cho bệnh nhân tăng huyết áp có kèm Đái tháo đường và đạm niệu (Microalbumin niệu)?",
+    "options": [
+      "Thuốc chẹn thụ thể beta giao cảm đơn thuần",
+      "Thuốc chẹn kênh canxi DHP tác dụng ngắn",
+      "Thuốc lợi tiểu quai liều cao",
+      "Thuốc ức chế men chuyển (ƯCMC) hoặc Thuốc chẹn thụ thể Angiotensin II (ARB)"
+    ],
+    "correct": 3,
+    "explanation": "ƯCMC và ARB làm giãn tiểu động mạch đi của cầu thận, giảm áp lực lọc cầu thận, bảo vệ thận và giảm đạm niệu ở bệnh nhân đái tháo đường.",
+    "reference": "Sách DLS tr. 437"
+  },
+  {
+    "id": 1171,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Thuốc chẹn kênh Calci nhóm Dihydropyridin (như Amlodipin) có tác dụng phụ phổ biến thường gặp là:",
+    "options": [
+      "Phù hai chi dưới (phù mắt cá chân) do giãn tiểu động mạch tiền mao mạch",
+      "Gây hạ đường huyết sâu",
+      "Gây co thắt phế quản làm khó thở",
+      "Gây suy tủy xương mất bạch cầu hạt"
+    ],
+    "correct": 0,
+    "explanation": "Amlodipin gây giãn tiểu động mạch đến mạnh hơn tiểu động mạch đi, tăng áp lực thủy tĩnh mao mạch gây thoát dịch phù mắt cá chân.",
+    "reference": "Sách DLS tr. 438"
+  },
+  {
+    "id": 1172,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Để khắc phục hoặc giảm thiểu tác dụng phụ phù chân do Amlodipin, giải pháp phối hợp thuốc tối ưu là:",
+    "options": [
+      "Tăng gấp đôi liều Amlodipin",
+      "Phối hợp Amlodipin cùng với thuốc ức chế men chuyển (hoặc ARB)",
+      "Kê thêm thuốc lợi tiểu quai liều cao Furosemid",
+      "Bắt bệnh nhân đứng bất động cả ngày"
+    ],
+    "correct": 1,
+    "explanation": "ƯCMC/ARB làm giãn tiểu động mạch đi giúp tái lập cân bằng áp lực mao mạch, giảm tỷ lệ phù chân do DHP xuống rõ rệt.",
+    "reference": "Sách DLS tr. 439"
+  },
+  {
+    "id": 1173,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Thuốc lợi tiểu Thiazid-like nào sau đây có bằng chứng lâm sàng vượt trội và thời gian tác dụng kéo dài hơn Hydrochlorothiazid?",
+    "options": [
+      "Amilorid",
+      "Spironolacton",
+      "Indapamid và Chlorthalidon",
+      "Furosemid"
+    ],
+    "correct": 2,
+    "explanation": "Indapamid và Chlorthalidon có T1/2 dài, hạ áp ổn định 24h và giảm biến cố tim mạch tốt hơn hydrochlorothiazid trong các thử nghiệm lâm sàng.",
+    "reference": "Sách DLS tr. 440"
+  },
+  {
+    "id": 1174,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Tác dụng không mong muốn chuyển hóa thường gặp khi sử dụng thuốc lợi tiểu nhóm Thiazid kéo dài là:",
+    "options": [
+      "Tăng Kali máu nghiêm trọng",
+      "Gây nhiễm toan acid lactic",
+      "Gây giảm canxi máu nặng",
+      "Hạ Kali máu, tăng Acid Uric máu và tăng nhẹ Đường huyết"
+    ],
+    "correct": 3,
+    "explanation": "Thiazid cạnh tranh đào thải acid uric ở ống thận gây tăng acid uric (dễ khởi phát gút cấp) và gây mất kali qua nước tiểu.",
+    "reference": "Sách DLS tr. 441"
+  },
+  {
+    "id": 1175,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Chống chỉ định tuyệt đối sử dụng thuốc ức chế men chuyển (ACEi) và chẹn thụ thể (ARB) trong trường hợp:",
+    "options": [
+      "Phụ nữ có thai trong 6 tháng cuối thai kỳ và bệnh nhân hẹp động mạch thận hai bên",
+      "Người cao tuổi bị tăng huyết áp tâm thu đơn độc",
+      "Bệnh nhân sau nhồi máu cơ tim có suy tim",
+      "Bệnh nhân đái tháo đường có đạm niệu"
+    ],
+    "correct": 0,
+    "explanation": "Hẹp động mạch thận 2 bên dùng ACEi/ARB làm sụt giảm đột ngột mức lọc cầu thận gây suy thận cấp vô niệu.",
+    "reference": "Sách DLS tr. 442"
+  },
+  {
+    "id": 1176,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Thuốc chẹn thụ thể Beta giao cảm nào có tác dụng giãn mạch bổ sung thông qua kích thích giải phóng Nitric Oxide (NO)?",
+    "options": [
+      "Propranolol",
+      "Nebivolol",
+      "Atenolol",
+      "Metoprolol"
+    ],
+    "correct": 1,
+    "explanation": "Nebivolol là chẹn beta-1 siêu chọn lọc thế hệ 3, kích thích nội mạc tiết NO gây giãn mạch, ít tác dụng phụ trên cương dương.",
+    "reference": "Sách DLS tr. 443"
+  },
+  {
+    "id": 1177,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Thuốc chẹn Beta giao cảm nào có tác dụng ức chế hỗn hợp cả thụ thể Beta và Alpha-1 ngoại biên?",
+    "options": [
+      "Esmolol",
+      "Bisoprolol",
+      "Carvedilol và Labetalol",
+      "Atenolol"
+    ],
+    "correct": 2,
+    "explanation": "Carvedilol và Labetalol chẹn cả beta và alpha-1, giúp hạ huyết áp mạnh mẽ qua giãn mạch ngoại biên và bảo vệ tim trong suy tim.",
+    "reference": "Sách DLS tr. 444"
+  },
+  {
+    "id": 1178,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Chống chỉ định tuyệt đối sử dụng thuốc chẹn Beta giao cảm không chọn lọc (như Propranolol) ở bệnh nhân có tiền sử:",
+    "options": [
+      "Bệnh nhân bị đau thắt ngực ổn định",
+      "Tăng huyết áp kèm nhịp tim nhanh xoang",
+      "Bệnh nhân sau nhồi máu cơ tim",
+      "Hen phế quản hoặc bệnh phổi tắc nghẽn mạn tính (COPD) có co thắt phế quản"
+    ],
+    "correct": 3,
+    "explanation": "Chẹn thụ thể beta-2 trên cơ trơn phế quản gây co thắt phế quản dữ dội, nguy cơ suy hô hấp cấp tử vong ở bệnh nhân hen suyễn.",
+    "reference": "Sách DLS tr. 445"
+  },
+  {
+    "id": 1179,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Thuốc chẹn Beta giao cảm có thể che lấp các dấu hiệu cảnh báo của cơn hạ đường huyết ở bệnh nhân đái tháo đường, NGOẠI TRỪ dấu hiệu:",
+    "options": [
+      "Vã mồ hôi (đổ mồ hôi trộm)",
+      "Cảm giác hồi hộp run rẩy tay chân",
+      "Nhịp tim nhanh đánh trống ngực",
+      "Cảm giác lo âu bồn chồn"
+    ],
+    "correct": 0,
+    "explanation": "Chẹn beta ức chế phản ứng giao cảm (nhịp nhanh, run tay) nhưng KHÔNG che lấp triệu chứng vã mồ hôi (qua sợi cholinergic).",
+    "reference": "Sách DLS tr. 446"
+  },
+  {
+    "id": 1180,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Phân biệt giữa Cơn tăng huyết áp khẩn cấp (Hypertensive Urgency) và Cơn tăng huyết áp cấp cứu (Hypertensive Emergency) dựa vào:",
+    "options": [
+      "Tuổi tác và giới tính của người bệnh",
+      "Sự hiện diện của tổn thương cơ quan đích cấp tính đang tiến triển (như phù phổi cấp, nhồi máu não, bóc tách động mạch chủ)",
+      "Thời gian bệnh nhân mắc bệnh tăng huyết áp từ trước",
+      "Con số huyết áp tuyệt đối đo được bằng máy đo"
+    ],
+    "correct": 1,
+    "explanation": "Tăng huyết áp cấp cứu: HA rất cao (> 180/120) KÈM tổn thương cơ quan đích cấp tính đe dọa mạng sống (cần hạ áp bằng đường tiêm tĩnh mạch).",
+    "reference": "Sách DLS tr. 450"
+  },
+  {
+    "id": 1181,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Nguyên tắc hạ huyết áp trong đa số các trường hợp Cơn tăng huyết áp cấp cứu (trừ bóc tách động mạch chủ) là:",
+    "options": [
+      "Không can thiệp gì chờ huyết áp tự hạ",
+      "Hạ huyết áp xuống càng thấp càng tốt dưới 90/60 mmHg",
+      "Hạ huyết áp từ từ, giảm không quá 25% huyết áp động mạch trung bình trong giờ đầu tiên",
+      "Hạ huyết áp thật nhanh về ngay mức bình thường 120/80 mmHg trong 10 phút"
+    ],
+    "correct": 2,
+    "explanation": "Hạ huyết áp quá nhanh làm tụt áp lực tưới máu não và vành, có thể gây nhồi máu não diện rộng hoặc nhồi máu cơ tim thiếu máu cục bộ.",
+    "reference": "Sách DLS tr. 451"
+  },
+  {
+    "id": 1182,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Thuốc hạ áp đường tiêm tĩnh mạch liên tục được lựa chọn hàng đầu trong xử trí Cơn tăng huyết áp cấp cứu tại phòng hồi sức là:",
+    "options": [
+      "Amlodipin viên uống",
+      "Captopril viên uống nuốt nước",
+      "Nifedipin viên nang nhỏ giọt dưới lưỡi",
+      "Nicardipin truyền tĩnh mạch"
+    ],
+    "correct": 3,
+    "explanation": "Nicardipin truyền TM có khởi phát nhanh, dễ chỉnh liều theo đích huyết áp và không làm tăng áp lực nội sọ.",
+    "reference": "Sách DLS tr. 452"
+  },
+  {
+    "id": 1183,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Tại sao thủ thuật 'Bóp thủng viên nang Nifedipin nhỏ dưới lưỡi' hiện nay bị CẤM TUYỆT ĐỐI trong xử trí cơn tăng huyết áp?",
+    "options": [
+      "Gây tụt huyết áp đột ngột không thể kiểm soát, dẫn đến thiếu máu não, nhồi máu não và tử vong",
+      "Làm cho miệng bệnh nhân bị bỏng rát hoại tử",
+      "Làm cho huyết áp vọt lên gấp đôi ngay lập tức",
+      "Thuốc bị bất hoạt hoàn toàn bởi nước bọt"
+    ],
+    "correct": 0,
+    "explanation": "FDA và Bộ Y tế cấm nifedipin ngậm/nhỏ dưới lưỡi vì tụt huyết áp không kiểm soát gây đột quỵ nhồi máu não và tử vong.",
+    "reference": "Sách DLS tr. 453"
+  },
+  {
+    "id": 1184,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Trong Cơn tăng huyết áp cấp cứu do Bóc tách động mạch chủ cấp (Aortic dissection), mục tiêu hạ áp khẩn cấp trong 20 phút đầu là:",
+    "options": [
+      "Tăng nhịp tim lên trên 100 chu kỳ/phút",
+      "Hạ nhanh huyết áp tâm thu xuống dưới 120 mmHg và nhịp tim dưới 60 chu kỳ/phút bằng thuốc chẹn beta TM (Esmolol, Labetalol)",
+      "Chỉ cần truyền dịch bù thể tích tuần hoàn",
+      "Duy trì huyết áp ở mức 160/100 mmHg"
+    ],
+    "correct": 1,
+    "explanation": "Bóc tách ĐMC là ngoại lệ cần hạ áp và nhịp tim cực nhanh trong 20p để giảm lực xé dP/dt lên thành mạch rách.",
+    "reference": "Sách DLS tr. 454"
+  },
+  {
+    "id": 1185,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Thuốc hạ huyết áp tác động trung ương Clonidin khi ngừng thuốc đột ngột có thể gây ra hiện tượng nguy hiểm nào?",
+    "options": [
+      "Gây co thắt khí phế quản ngừng thở",
+      "Hôn mê hạ đường huyết sâu",
+      "Hiện tượng huyết áp dội ngược kịch phát (Rebound hypertension) với huyết áp tăng vọt ác tính",
+      "Gây trụy tim mạch không thể hồi phục"
+    ],
+    "correct": 2,
+    "explanation": "Ngừng đột ngột Clonidin làm giải phóng catecholamin ồ ạt sau thời gian bị ức chế, gây cơn tăng huyết áp dội ngược đe dọa tính mạng.",
+    "reference": "Sách DLS tr. 447"
+  },
+  {
+    "id": 1186,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Tăng huyết áp kháng trị (Resistant hypertension) được định nghĩa khi huyết áp không đạt mục tiêu mặc dù đã:",
+    "options": [
+      "Uống nước sắc lá cây thảo mộc 1 tháng",
+      "Uống 1 loại thuốc hạ áp trong vòng 3 ngày liên tục",
+      "Được phẫu thuật cắt bỏ một bên thận",
+      "Dùng phối hợp tối ưu 3 thuốc hạ áp thuộc 3 nhóm khác nhau ở liều tối đa dung nạp (trong đó bắt buộc có 1 thuốc lợi tiểu)"
+    ],
+    "correct": 3,
+    "explanation": "Tăng huyết áp kháng trị: Không đạt mục tiêu dù phối hợp 3 thuốc (gồm ƯCMC/ARB + DHP + Thiazid) ở liều tối ưu có kiểm soát tuân thủ.",
+    "reference": "Sách DLS tr. 448"
+  },
+  {
+    "id": 1187,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Thuốc được khuyến cáo bổ sung hàng đầu bước 4 khi điều trị Tăng huyết áp kháng trị là:",
+    "options": [
+      "Thuốc kháng thụ thể Mineralocorticoid Spironolacton (liều 25 - 50 mg/ngày)",
+      "Dùng thêm kháng sinh Penicillin",
+      "Tăng gấp bốn liều Amlodipin lên 40 mg/ngày",
+      "Tiêm insulin dưới da liều cao"
+    ],
+    "correct": 0,
+    "explanation": "Nghiên cứu PATHWAY-2 khẳng định Spironolacton là thuốc bước 4 hiệu quả nhất cho tăng huyết áp kháng trị.",
+    "reference": "Sách DLS tr. 449"
+  },
+  {
+    "id": 1188,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Bệnh nhân tăng huyết áp có kèm Gút cấp tái phát nhiều lần, nhóm thuốc hạ áp nào cần thận trọng hoặc tránh dùng?",
+    "options": [
+      "Thuốc chẹn thụ thể Angiotensin Losartan",
+      "Thuốc lợi tiểu nhóm Thiazid và lợi tiểu quai",
+      "Thuốc ức chế men chuyển Enalapril",
+      "Thuốc chẹn kênh calci Amlodipin"
+    ],
+    "correct": 1,
+    "explanation": "Thuốc lợi tiểu ức chế bài tiết acid uric tại ống thận, làm tăng acid uric máu và khởi phát cơn gút cấp.",
+    "reference": "Sách DLS tr. 441"
+  },
+  {
+    "id": 1189,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Thuốc chẹn thụ thể Angiotensin II nào sau đây có tác dụng phụ độc đáo là tăng đào thải acid uric qua nước tiểu (hạ acid uric máu)?",
+    "options": [
+      "Candesartan",
+      "Valsartan",
+      "Losartan",
+      "Telmisartan"
+    ],
+    "correct": 2,
+    "explanation": "Losartan ức chế chất vận chuyển URAT-1 ở ống lượn gần giúp tăng thải acid uric, là lựa chọn hạ áp lý tưởng cho bệnh nhân gút.",
+    "reference": "Sách DLS tr. 442"
+  },
+  {
+    "id": 1190,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Thời điểm đo huyết áp bằng máy đo huyết áp tự động tại nhà (HBPM) chuẩn nhất để theo dõi điều trị là:",
+    "options": [
+      "Đo lúc đang cãi nhau căng thẳng",
+      "Đo ngay sau khi vừa chạy bộ leo cầu thang 5 tầng",
+      "Chỉ đo một lần duy nhất vào lúc nửa đêm",
+      "Đo 2 lần/ngày: Buổi sáng sau khi thức dậy đi tiểu xong trước khi uống thuốc và buổi tối trước khi đi ngủ"
+    ],
+    "correct": 3,
+    "explanation": "Đo huyết áp tại nhà 2 lần/ngày (sáng trước uống thuốc, tối trước ngủ), mỗi lần đo 2 lần cách nhau 1-2 phút lấy trung bình.",
+    "reference": "Sách DLS tr. 434"
+  },
+  {
+    "id": 1191,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Hiện tượng 'Tăng huyết áp áo choàng trắng' (White-coat hypertension) được xác định khi:",
+    "options": [
+      "Huyết áp tăng cao khi đo tại phòng khám bệnh viện nhưng hoàn toàn bình thường khi đo tại nhà hoặc qua Holter 24 giờ",
+      "Bác sĩ mặc áo choàng trắng bị tăng huyết áp",
+      "Huyết áp tụt kẹp khi gặp nhân viên y tế",
+      "Huyết áp luôn luôn cao trong mọi hoàn cảnh kể cả khi ngủ"
+    ],
+    "correct": 0,
+    "explanation": "Tăng huyết áp áo choàng trắng do tâm lý lo lắng khi gặp bác sĩ; cần chẩn đoán phân biệt bằng theo dõi huyết áp lưu động 24h (ABPM).",
+    "reference": "Sách DLS tr. 433"
+  },
+  {
+    "id": 1192,
+    "chapter": "Điều trị Tăng huyết áp & Cấp cứu THA",
+    "question": "Biện pháp thay đổi lối sống nào sau đây đem lại hiệu quả hạ huyết áp tâm thu mạnh mẽ nhất (giảm khoảng 8 - 14 mmHg)?",
+    "options": [
+      "Ăn thật nhiều đồ hộp ngâm muối đậm đà",
+      "Áp dụng chế độ ăn kiêng DASH (giàu rau xanh, trái cây, hạt nguyên cám, sản phẩm sữa ít béo và giảm chất béo bão hòa)",
+      "Uống nhiều cà phê đậm đặc hàng ngày",
+      "Ngủ nướng cả ngày không vận động"
+    ],
+    "correct": 1,
+    "explanation": "Chế độ ăn DASH và giảm muối (< 5g muối/ngày) là biện pháp không dùng thuốc hạ huyết áp hiệu quả nhất được chứng minh lâm sàng.",
+    "reference": "Sách DLS tr. 435"
+  },
+  {
+    "id": 1193,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Định nghĩa Tiêu chảy cấp ở trẻ em theo tiêu chuẩn của Tổ chức Y tế Thế giới (WHO) là:",
+    "options": [
+      "Đi ngoài phân lỏng kéo dài liên tục trên 30 ngày",
+      "Đi ngoài phân khuôn rắn chắc 2 ngày 1 lần",
+      "Đi ngoài phân lỏng hoặc tóe nước từ 3 lần trở lên trong 24 giờ và kéo dài không quá 14 ngày",
+      "Đi ngoài phân sệt 1 lần trong ngày"
+    ],
+    "correct": 2,
+    "explanation": "Tiêu chảy cấp: Đi ngoài phân lỏng >= 3 lần/24h và thời gian kéo dài dưới 14 ngày (trên 14 ngày là tiêu chảy kéo dài).",
+    "reference": "Sách DLS tr. 460"
+  },
+  {
+    "id": 1194,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Dung dịch Oresol chuẩn độ thẩm thấu thấp (Reduced osmolarity ORS) theo khuyến cáo hiện hành của WHO có tổng áp lực thẩm thấu là:",
+    "options": [
+      "150 mOsm/L",
+      "500 mOsm/L",
+      "311 mOsm/L",
+      "245 mOsm/L"
+    ],
+    "correct": 3,
+    "explanation": "ORS thẩm thấu thấp 245 mOsm/L (75 mEq/L Na+, 75 mmol/L Glucose) giảm tỷ lệ nôn, giảm lượng phân và giảm nhu cầu truyền dịch so với ORS cũ.",
+    "reference": "Sách DLS tr. 462"
+  },
+  {
+    "id": 1195,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Cơ chế sinh lý học phân tử làm nền tảng cho hiệu quả bù nước đường uống của dung dịch Oresol là:",
+    "options": [
+      "Hiện tượng đồng vận chuyển liên kết 1 phân tử Glucose với 1 ion Natri qua kênh SGLT-1 tại diềm bàn chải ruột non",
+      "Khuếch tán thụ động của nước qua màng lipid",
+      "Kích thích tăng tiết chất nhầy bảo vệ niêm mạc đại tràng",
+      "Ức chế trực tiếp độc tố vi khuẩn tả"
+    ],
+    "correct": 0,
+    "explanation": "Kênh đồng vận chuyển Na+-Glucose (SGLT-1) vẫn nguyên vẹn khi bị tiêu chảy cấp; hấp thu glucose kéo theo natri và nước vào tuần hoàn.",
+    "reference": "Sách DLS tr. 461"
+  },
+  {
+    "id": 1196,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Tác hại nguy hiểm khi pha gói Oresol quá đặc (pha ít nước hơn hướng dẫn ghi trên bao bì) là:",
+    "options": [
+      "Làm giảm tác dụng bù nước của dung dịch",
+      "Gây tăng áp lực thẩm thấu lòng ruột làm tiêu chảy nặng hơn và gây tăng natri máu nguy hiểm, phù não, co giật tử vong",
+      "Làm cho trẻ bị hạ đường huyết đột ngột",
+      "Gây dị ứng da dạng mề đay toàn thân"
+    ],
+    "correct": 1,
+    "explanation": "Pha quá đặc làm tăng gánh nặng thẩm thấu hút nước từ tế bào vào lòng ruột, gây tăng natri máu ưu trương, teo tế bào não và tử vong.",
+    "reference": "Sách DLS tr. 463"
+  },
+  {
+    "id": 1197,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Khi trẻ bị nôn sau khi uống Oresol, hướng dẫn chăm sóc đúng cho người mẹ là:",
+    "options": [
+      "Cho trẻ uống bù ngay lập tức 500 ml thật nhanh",
+      "Chuyển ngay sang tiêm truyền tĩnh mạch cấp cứu",
+      "Tạm dừng cho uống trong 5 - 10 phút, sau đó cho trẻ uống lại từng thìa nhỏ chậm hơn",
+      "Bắt trẻ nhịn uống hoàn toàn trong 24 giờ"
+    ],
+    "correct": 2,
+    "explanation": "Nôn thường do uống quá nhanh; nghỉ 5-10 phút rồi đút từng thìa nhỏ mỗi 1-2 phút giúp trẻ hấp thu tốt không bị nôn trớ.",
+    "reference": "Sách DLS tr. 464"
+  },
+  {
+    "id": 1198,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Đánh giá mức độ mất nước theo WHO: Trẻ tỉnh táo, mắt bình thường, uống nước bình thường, nếp véo da mất nhanh thuộc phân loại:",
+    "options": [
+      "Sốc giảm thể tích tuần hoàn",
+      "Phác đồ C (Mất nước nặng)",
+      "Phác đồ B (Có mất nước)",
+      "Phác đồ A (Không mất nước)"
+    ],
+    "correct": 3,
+    "explanation": "Không có đủ 2 dấu hiệu của mất nước => Phân loại Không mất nước, điều trị tại nhà theo Phác đồ A.",
+    "reference": "Sách DLS tr. 465"
+  },
+  {
+    "id": 1199,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Bốn nguyên tắc điều trị tại nhà theo Phác đồ A cho trẻ tiêu chảy cấp không mất nước bao gồm:",
+    "options": [
+      "Cho trẻ uống nhiều nước hơn bình thường + Bổ sung Kẽm + Tiếp tục cho ăn/bú mẹ + Đưa trẻ tái khám khi có dấu hiệu nguy hiểm",
+      "Uống nước ngọt có ga + Nhịn ăn tinh bột + Uống thuốc chống nôn",
+      "Cho trẻ nhịn ăn tuyệt đối + Dùng kháng sinh phổ rộng + Uống thuốc cầm đi ngoài + Nằm bất động",
+      "Chỉ truyền dịch tĩnh mạch tại trạm y tế + Nhịn bú mẹ hoàn toàn"
+    ],
+    "correct": 0,
+    "explanation": "Phác đồ A: Uống nhiều dịch hơn, bổ sung kẽm 10-14 ngày, tiếp tục dinh dưỡng đầy đủ, nhận biết dấu hiệu nguy hiểm cần khám ngay.",
+    "reference": "Sách DLS tr. 466"
+  },
+  {
+    "id": 1200,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Lượng dung dịch Oresol khuyến cáo cho trẻ uống sau mỗi lần đi ngoài phân lỏng ở trẻ dưới 2 tuổi theo Phác đồ A là:",
+    "options": [
+      "Uống tùy thích đến khi trẻ no nê",
+      "50 đến 100 mL sau mỗi lần đi ngoài",
+      "Chỉ cho uống đúng 1 thìa cà phê (5 mL)",
+      "100 đến 200 mL sau mỗi lần đi ngoài"
+    ],
+    "correct": 1,
+    "explanation": "WHO: Trẻ < 2 tuổi uống 50-100 mL sau mỗi lần đi ngoài; trẻ 2-10 tuổi uống 100-200 mL; trẻ lớn uống theo nhu cầu.",
+    "reference": "Sách DLS tr. 467"
+  },
+  {
+    "id": 1201,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Lượng dung dịch Oresol khuyến cáo cho trẻ từ 2 đến 10 tuổi uống sau mỗi lần đi ngoài phân lỏng là:",
+    "options": [
+      "500 mL sau mỗi lần đi ngoài",
+      "50 mL sau mỗi lần đi ngoài",
+      "100 đến 200 mL sau mỗi lần đi ngoài",
+      "Chỉ cho uống nước đun sôi để nguội"
+    ],
+    "correct": 2,
+    "explanation": "Trẻ từ 2 đến 10 tuổi uống 100-200 mL Oresol sau mỗi lần đi ngoài phân lỏng để bù lượng dịch vừa mất.",
+    "reference": "Sách DLS tr. 467"
+  },
+  {
+    "id": 1202,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Dấu hiệu phân loại trẻ bị Tiêu chảy cấp 'Có mất nước' (Phác đồ B) theo WHO khi có ít nhất 2 trong 4 dấu hiệu:",
+    "options": [
+      "Trẻ bị sốt cao kèm ho có đờm xanh",
+      "Hôn mê sâu, tay chân lạnh ngắt, mạch không bắt được",
+      "Trẻ hoàn toàn vui chơi bình thường không khát nước",
+      "Vật vã li bì khó chịu, mắt trũng, uống nước háo hức/khát, nếp véo da mất chậm (< 2 giây)"
+    ],
+    "correct": 3,
+    "explanation": "Phác đồ B (Có mất nước): 2 trong 4 dấu hiệu: Kích thích/vật vã, mắt trũng, khát uống háo hức, nếp véo da mất chậm.",
+    "reference": "Sách DLS tr. 468"
+  },
+  {
+    "id": 1203,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Số lượng dung dịch Oresol cần bù trong 4 giờ đầu cho trẻ có mất nước theo Phác đồ B được tính theo công thức:",
+    "options": [
+      "Số lượng ORS (mL) = Cân nặng của trẻ (kg) x 75",
+      "Số lượng ORS (mL) = Cân nặng của trẻ (kg) x 100",
+      "Cố định 1000 mL cho mọi trẻ em",
+      "Số lượng ORS (mL) = Tuổi của trẻ (tháng) x 50"
+    ],
+    "correct": 0,
+    "explanation": "Phác đồ B: Lượng Oresol bù trong 4 giờ đầu = Cân nặng (kg) x 75 mL (ví dụ trẻ 10 kg cần 750 mL trong 4 giờ).",
+    "reference": "Sách DLS tr. 469"
+  },
+  {
+    "id": 1204,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Trẻ được phân loại Tiêu chảy cấp 'Mất nước nặng' (Phác đồ C) khi có ít nhất 2 trong 4 dấu hiệu nào?",
+    "options": [
+      "Khóc to đòi ăn liên tục",
+      "Li bì hoặc khó đánh thức, mắt rất trũng, không uống được hoặc uống rất kém, nếp véo da mất rất chậm (> 2 giây)",
+      "Uống nước háo hức đòi uống thêm",
+      "Nếp véo da mất ngay tức thì dưới 1 giây"
+    ],
+    "correct": 1,
+    "explanation": "Phác đồ C: Có >= 2 dấu hiệu: Li bì/hôn mê, mắt rất trũng, không uống được/uống kém, nếp véo da mất rất chậm (> 2s).",
+    "reference": "Sách DLS tr. 470"
+  },
+  {
+    "id": 1205,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Phác đồ C bù dịch đường tĩnh mạch cấp cứu cho trẻ em bị mất nước nặng sử dụng loại dịch truyền ưu tiên số 1 là:",
+    "options": [
+      "Dung dịch Dextran phân tử cao",
+      "Dung dịch Glucose 5% đơn thuần",
+      "Dung dịch Ringer lactat (hoặc Natri clorid 0,9% nếu không có sẵn Ringer lactat)",
+      "Dung dịch Albumin người đậm đặc"
+    ],
+    "correct": 2,
+    "explanation": "Ringer lactat có thành phần điện giải gần với dịch ngoại bào nhất và có lactat chuyển hóa thành bicarbonat chống toan máu.",
+    "reference": "Sách DLS tr. 471"
+  },
+  {
+    "id": 1206,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Tổng lượng dịch truyền tĩnh mạch theo Phác đồ C cho trẻ mất nước nặng là 100 mL/kg, tốc độ truyền cho trẻ dưới 12 tháng tuổi là:",
+    "options": [
+      "Truyền xối xả toàn bộ 100 mL/kg trong vòng 15 phút",
+      "30 mL/kg trong 30 phút, sau đó 70 mL/kg trong 2,5 giờ (tổng 3 giờ)",
+      "Truyền liên tục 100 mL/kg trong 24 giờ",
+      "30 mL/kg trong 1 giờ đầu, sau đó 70 mL/kg trong 5 giờ tiếp theo (tổng 6 giờ)"
+    ],
+    "correct": 3,
+    "explanation": "Trẻ < 12 tháng: Truyền 100 ml/kg trong 6 giờ (30 ml/kg trong 1h đầu + 70 ml/kg trong 5h sau).",
+    "reference": "Sách DLS tr. 472"
+  },
+  {
+    "id": 1207,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Tốc độ truyền tĩnh mạch Phác đồ C (100 mL/kg) cho trẻ từ 12 tháng tuổi trở lên (1 đến 5 tuổi) là:",
+    "options": [
+      "30 mL/kg trong 30 phút đầu, sau đó 70 mL/kg trong 2,5 giờ tiếp theo (tổng 3 giờ)",
+      "30 mL/kg trong 1 giờ đầu, sau đó 70 mL/kg trong 5 giờ tiếp theo",
+      "Truyền thật chậm trong 12 giờ",
+      "Chỉ truyền 10 mL/kg"
+    ],
+    "correct": 0,
+    "explanation": "Trẻ >= 12 tháng: Bù nhanh hơn, tổng 3 giờ (30 ml/kg trong 30 phút đầu + 70 ml/kg trong 2,5 giờ tiếp theo).",
+    "reference": "Sách DLS tr. 472"
+  },
+  {
+    "id": 1208,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Thuốc làm giảm nhu động ruột Loperamid (Imodium) có được chỉ định cho trẻ em bị tiêu chảy cấp không?",
+    "options": [
+      "Là thuốc được khuyên dùng hàng đầu cho mọi trẻ em",
+      "Chống chỉ định tuyệt đối cho trẻ em vì nguy cơ liệt ruột tắc ruột, ứ đọng độc tố và ức chế hô hấp",
+      "Chỉ dùng khi trẻ dưới 6 tháng tuổi",
+      "Dùng phối hợp cùng men vi sinh"
+    ],
+    "correct": 1,
+    "explanation": "WHO và Bộ Y tế cấm dùng Loperamid cho trẻ em vì nguy cơ liệt ruột hoại tử, nhiễm độc toàn thân và tử vong.",
+    "reference": "Sách DLS tr. 475"
+  },
+  {
+    "id": 1209,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Thuốc ức chế enzym Enkephalinase niêm mạc ruột Racecadotril (Hidrasec) có cơ chế tác dụng là:",
+    "options": [
+      "Tiêu diệt vi khuẩn tả và E. coli trong lòng ruột",
+      "Bọc niêm mạc dạ dày chống nôn trớ",
+      "Chống xuất tiết chọn lọc ở ruột, giảm mất nước và điện giải mà không làm thay đổi nhu động ruột",
+      "Gây liệt cơ trơn đại tràng làm ngừng đi ngoài tức thì"
+    ],
+    "correct": 2,
+    "explanation": "Racecadotril bảo vệ enkephalin nội sinh, ức chế tăng tiết dịch do độc tố mà không ảnh hưởng nhu động ruột, an toàn hơn loperamid.",
+    "reference": "Sách DLS tr. 476"
+  },
+  {
+    "id": 1210,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Chỉ định dùng kháng sinh trong điều trị tiêu chảy cấp ở trẻ em chỉ bắt buộc trong tình huống nào sau đây?",
+    "options": [
+      "Tiêu chảy do nhiễm virus Rota",
+      "Trẻ bị tiêu chảy sau khi uống sữa bột",
+      "Tất cả các trường hợp tiêu chảy phân lỏng tóe nước",
+      "Tiêu chảy phân có máu (Hội chứng lỵ) hoặc nghi ngờ dịch tả nặng có mất nước"
+    ],
+    "correct": 3,
+    "explanation": "Đa số tiêu chảy cấp là do virus (Rotavirus); kháng sinh CHỈ dùng khi có lỵ (phân có máu, mót rặn, sốt) hoặc nghi ngờ tả.",
+    "reference": "Sách DLS tr. 477"
+  },
+  {
+    "id": 1211,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Kháng sinh được Bộ Y tế và WHO khuyến cáo lựa chọn hàng đầu điều trị Hội chứng lỵ do trực khuẩn Shigella ở trẻ em là:",
+    "options": [
+      "Ciprofloxacin (15 mg/kg x 2 lần/ngày trong 3 ngày) hoặc Azithromycin",
+      "Ampicillin đường uống",
+      "Cloramphenicol",
+      "Cotrimoxazol"
+    ],
+    "correct": 0,
+    "explanation": "Shigella đã kháng rộng với cotrimoxazol/ampicillin; Ciprofloxacin (hoặc Azithromycin/Ceftriaxone) là lựa chọn đầu tay.",
+    "reference": "Sách DLS tr. 478"
+  },
+  {
+    "id": 1212,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Căn nguyên virus phổ biến nhất gây tiêu chảy cấp mất nước nặng ở trẻ em dưới 2 tuổi trên toàn cầu là:",
+    "options": [
+      "Adenovirus",
+      "Rotavirus",
+      "Coronavirus",
+      "Norovirus"
+    ],
+    "correct": 1,
+    "explanation": "Rotavirus là tác nhân hàng đầu gây tiêu chảy mùa đông xuân mất nước nặng ở trẻ < 2 tuổi (đã có vaccin uống dự phòng).",
+    "reference": "Sách DLS tr. 460"
+  },
+  {
+    "id": 1213,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Chế độ dinh dưỡng đúng đắn cho trẻ trong thời gian bị tiêu chảy cấp là:",
+    "options": [
+      "Chỉ cho trẻ ăn cháo muối trắng không có đạm và dầu mỡ",
+      "Cho trẻ nhịn ăn hoàn toàn chỉ uống nước lọc",
+      "Tiếp tục cho trẻ bú mẹ tăng cường và ăn chế độ giàu dinh dưỡng, không kiêng khem",
+      "Pha loãng sữa mẹ với nước lã"
+    ],
+    "correct": 2,
+    "explanation": "Tiếp tục cho ăn/bú bình thường giúp niêm mạc ruột hồi phục nhanh, tránh sụt cân và suy dinh dưỡng sau tiêu chảy.",
+    "reference": "Sách DLS tr. 479"
+  },
+  {
+    "id": 1214,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Thuốc hấp phụ bảo vệ niêm mạc ruột Diosmectite (Smecta) khi sử dụng cần lưu ý điều gì đối với các thuốc khác?",
+    "options": [
+      "Nghiền nát trộn chung với bột ăn dặm",
+      "Uống cùng lúc với kháng sinh để tăng tác dụng diệt khuẩn",
+      "Pha chung vào bình sữa cho trẻ bú",
+      "Phải uống cách xa các thuốc khác ít nhất 2 giờ để tránh làm giảm hấp thu các thuốc đó"
+    ],
+    "correct": 3,
+    "explanation": "Diosmectite có diện tích bề mặt lớn hấp phụ thuốc khác; bắt buộc uống cách xa các thuốc khác tối thiểu 2 giờ.",
+    "reference": "Sách DLS tr. 480"
+  },
+  {
+    "id": 1215,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Men vi sinh Probiotics (như Saccharomyces boulardii, Lactobacillus rhamnosus GG) có vai trò gì trong tiêu chảy cấp?",
+    "options": [
+      "Hỗ trợ cân bằng hệ vi sinh đường ruột và rút ngắn thời gian tiêu chảy khoảng 1 ngày",
+      "Cầm đi ngoài ngay lập tức trong vòng 10 phút",
+      "Thay thế hoàn toàn dung dịch bù nước Oresol",
+      "Tiêu diệt trực tiếp toàn bộ vi khuẩn gram âm trong ruột"
+    ],
+    "correct": 0,
+    "explanation": "Men vi sinh là liệu pháp bổ trợ giúp cạnh tranh vị trí bám của mầm bệnh, rút ngắn thời gian tiêu chảy khoảng 17-24 giờ.",
+    "reference": "Sách DLS tr. 481"
+  },
+  {
+    "id": 1216,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Dấu hiệu 'Nếp véo da mất rất chậm' trong đánh giá mất nước được quy ước thời gian là:",
+    "options": [
+      "Nếp véo da phẳng lại trong vòng 1 giây",
+      "Nếp véo da phẳng lại sau trên 2 giây",
+      "Nếp véo da không biến mất sau 1 giờ",
+      "Da bị bầm tím sau khi véo"
+    ],
+    "correct": 1,
+    "explanation": "Kỹ thuật véo da bụng: Mất nhanh (< 1s), Mất chậm (1-2s: Phác đồ B), Mất rất chậm (> 2s: Phác đồ C mất nước nặng).",
+    "reference": "Sách DLS tr. 465"
+  },
+  {
+    "id": 1217,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Tại sao các loại nước ngọt công nghiệp có ga, nước ép hoa quả đóng hộp đậm đặc không được dùng bù nước cho trẻ tiêu chảy?",
+    "options": [
+      "Làm cho trẻ bị nghiện đồ ngọt vĩnh viễn",
+      "Chứa quá nhiều muối natri gây ngộ độc muối",
+      "Áp lực thẩm thấu quá cao và hàm lượng đường cao làm kéo nước vào lòng ruột gây tiêu chảy thẩm thấu nặng hơn",
+      "Làm giảm thân nhiệt của trẻ đột ngột"
+    ],
+    "correct": 2,
+    "explanation": "Nước ngọt đóng hộp có áp lực thẩm thấu rất cao (> 500 mOsm/L), hút nước vào lòng ruột gây tiêu chảy thẩm thấu trầm trọng hơn.",
+    "reference": "Sách DLS tr. 463"
+  },
+  {
+    "id": 1218,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Dấu hiệu nguy hiểm cảnh báo người mẹ cần đưa trẻ bị tiêu chảy đi khám bệnh viện ngay lập tức là:",
+    "options": [
+      "Trẻ vẫn chơi ngoan và đi ngoài phân lỏng 2 lần trong ngày",
+      "Trẻ đòi bú mẹ nhiều hơn bình thường",
+      "Trẻ đi tiểu nước tiểu màu vàng trong",
+      "Trẻ sốt cao li bì, nôn tất cả mọi thứ, khát nước dữ dội hoặc không uống được, đi ngoài phân có máu"
+    ],
+    "correct": 3,
+    "explanation": "Dấu hiệu nguy hiểm: Sốt cao, nôn liên tục, khát nhiều, không uống được, phân có máu, li bì khó đánh thức => Khám ngay.",
+    "reference": "Sách DLS tr. 466"
+  },
+  {
+    "id": 1219,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Biến chứng toan chuyển hóa (Metabolic acidosis) trong tiêu chảy cấp nặng xảy ra chủ yếu do:",
+    "options": [
+      "Mất một lượng lớn ion Bicarbonat (HCO3-) qua phân lỏng",
+      "Phổi giảm đào thải khí carbon dioxide (CO2)",
+      "Dạ dày tăng tiết acid chlohydric gấp 10 lần",
+      "Thận tăng tái hấp thu ion Hydro (H+)"
+    ],
+    "correct": 0,
+    "explanation": "Dịch ruột và phân lỏng chứa nhiều bicarbonat (HCO3-); tiêu chảy ồ ạt làm mất kiềm dẫn đến toan chuyển hóa thở sâu Kussmaul.",
+    "reference": "Sách DLS tr. 461"
+  },
+  {
+    "id": 1220,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Biến chứng hạ Kali máu trong tiêu chảy cấp kéo dài biểu hiện lâm sàng qua dấu hiệu nào?",
+    "options": [
+      "Tăng phản xạ gân xương co giật",
+      "Chướng bụng, giảm nhu động ruột, yếu cơ toàn thân và rối loạn nhịp tim",
+      "Huyết áp tăng vọt ác tính",
+      "Nước tiểu đỏ như máu"
+    ],
+    "correct": 1,
+    "explanation": "Mất kali qua phân gây hạ kali máu dẫn đến giảm trương lực cơ trơn (chướng bụng liệt ruột), yếu cơ và sóng U trên điện tim.",
+    "reference": "Sách DLS tr. 462"
+  },
+  {
+    "id": 1221,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Dung dịch Oresol sau khi pha với nước đun sôi để nguội chỉ được sử dụng tối đa trong vòng bao lâu?",
+    "options": [
+      "Có thể dùng trong 1 tháng nếu để ngăn mát tủ lạnh",
+      "Chỉ được dùng trong 15 phút đầu",
+      "Trong vòng 24 giờ, sau 24 giờ phải đổ bỏ và pha gói mới",
+      "Có thể lưu trữ trong 7 ngày ở nhiệt độ phòng"
+    ],
+    "correct": 2,
+    "explanation": "Dung dịch Oresol để quá 24 giờ dễ bị nhiễm khuẩn phát triển trong môi trường giàu glucose và điện giải, phải bỏ đi.",
+    "reference": "Sách DLS tr. 464"
+  },
+  {
+    "id": 1222,
+    "chapter": "Tiêu chảy cấp ở trẻ em",
+    "question": "Biện pháp phòng ngừa đặc hiệu và hiệu quả nhất bệnh tiêu chảy cấp nặng do Rotavirus ở trẻ nhỏ là:",
+    "options": [
+      "Uống men vi sinh hàng ngày liên tục 2 năm",
+      "Không cho trẻ bú sữa mẹ trong năm đầu",
+      "Uống kháng sinh dự phòng hàng tuần",
+      "Cho trẻ uống vaccin phòng Rotavirus đầy đủ trước 6-8 tháng tuổi"
+    ],
+    "correct": 3,
+    "explanation": "Vaccin Rotavirus uống (Rotarix, RotaTeq, Rotavin) trước 6-8 tháng tuổi giúp giảm > 85-90% ca tiêu chảy nặng do rotavirus nhập viện.",
+    "reference": "Sách DLS tr. 482"
   }
 ];
