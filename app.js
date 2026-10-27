@@ -1067,9 +1067,11 @@ function closeTtsSettingsModal() {
   stopSpeaking();
 }
 
-function hasLocalTtsServer() {
+function canUseServerTts() {
+  // Only GitHub Pages (*.github.io) lacks a backend /api/tts endpoint
+  // Works seamlessly on: Cloudflare Pages, Vercel, VPS, Localhost, or custom domains
   const h = window.location.hostname;
-  return h === '127.0.0.1' || h === 'localhost';
+  return !h.endsWith('github.io');
 }
 
 function renderTtsVoiceList() {
@@ -1080,10 +1082,10 @@ function renderTtsVoiceList() {
   const viVoices = getAvailableVietnameseVoices();
   const currentVoice = findVietnameseVoice();
   const savedVoiceName = localStorage.getItem('dls_preferred_voice');
-  const hasServer = hasLocalTtsServer();
+  const hasServer = canUseServerTts();
   select.innerHTML = '';
 
-  // 1. Google Tiếng Việt (Cloud AI Online): available if local dev server is running
+  // 1. Google Tiếng Việt (Cloud AI Online): available on Cloudflare, Vercel, VPS & Localhost
   if (hasServer) {
     const googleOpt = document.createElement('option');
     googleOpt.value = '__google_online__';
@@ -1241,8 +1243,8 @@ function speakExplanation(btn, rawText) {
   const preferredVoice = localStorage.getItem('dls_preferred_voice');
   const isGoogleOnlineChosen = (preferredVoice === '__google_online__');
 
-  // If local server is running and Google Online is chosen (or default on local server):
-  if (hasLocalTtsServer() && (isGoogleOnlineChosen || !preferredVoice)) {
+  // If backend TTS API is available (Cloudflare Pages, Vercel, VPS, Localhost) and Google Online is chosen (or default):
+  if (canUseServerTts() && (isGoogleOnlineChosen || !preferredVoice)) {
     playGoogleOnlineTts(btn, text);
     return;
   }
