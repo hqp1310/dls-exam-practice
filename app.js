@@ -1068,10 +1068,13 @@ function closeTtsSettingsModal() {
 }
 
 function canUseServerTts() {
-  // Only GitHub Pages (*.github.io) lacks a backend /api/tts endpoint
-  // Works seamlessly on: Cloudflare Pages, Vercel, VPS, Localhost, or custom domains
   const h = window.location.hostname;
-  return !h.endsWith('github.io');
+  // Cloudflare Pages (*.pages.dev) and GitHub Pages (*.github.io) are blocked by Google's datacenter anti-scraping firewall.
+  // Direct Web Speech API is required on static hosts for instant, reliable playback.
+  if (h.endsWith('pages.dev') || h.endsWith('github.io')) {
+    return false;
+  }
+  return h === '127.0.0.1' || h === 'localhost';
 }
 
 function renderTtsVoiceList() {
