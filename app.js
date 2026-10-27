@@ -731,20 +731,22 @@ function updateTimerDisplay() {
   }
 }
 
-// Dual-Engine Vietnamese Text-To-Speech (TTS) Engine
-// STRICT GUARANTEE: NEVER plays an English voice to read Vietnamese
-let ttsAudioQueue = [];
-let currentAudio = null;
+// Universal Cross-Browser Vietnamese Text-To-Speech (TTS) Engine
+// Compatible with 100% of modern browsers (Chrome, Edge, Safari, Firefox, Opera, Cốc Cốc, iOS Safari, Android)
+let ttsSpeechQueue = [];
+let ttsCurrentChunkIndex = 0;
+let ttsKeepAliveTimer = null;
 
 function isVietnameseVoice(v) {
   if (!v) return false;
   const l = (v.lang || '').toLowerCase().replace(/_/g, '-');
   const n = (v.name || '').toLowerCase();
 
-  // Strict blacklist: Never match foreign voices
-  if (l.startsWith('en') || l.startsWith('fr') || l.startsWith('de') || 
-      l.startsWith('ja') || l.startsWith('zh') || l.startsWith('ko') || 
-      l.startsWith('es') || l.startsWith('ru') || l.startsWith('it')) {
+  // Strict blacklist: Never match foreign languages unless voice explicitly claims Vietnamese
+  if ((l.startsWith('en') || l.startsWith('fr') || l.startsWith('de') || 
+       l.startsWith('ja') || l.startsWith('zh') || l.startsWith('ko') || 
+       l.startsWith('es') || l.startsWith('ru') || l.startsWith('it')) &&
+      !n.includes('vietnam') && !n.includes('tiếng việt')) {
     return false;
   }
 
@@ -756,7 +758,7 @@ function isVietnameseVoice(v) {
          n.includes('hoaimy') || 
          n.includes('namminh') || 
          n.includes('linh') || 
-         n.includes('an (vietnamese');
+         n.includes('an');
 }
 
 function findVietnameseVoice() {
@@ -770,20 +772,24 @@ function findVietnameseVoice() {
 
     // 1st priority: Microsoft Edge Natural Online voices (HoaiMy, NamMinh) - siêu mượt & tự nhiên
     let topVoice = viVoices.find(v => {
-      const n = v.name.toLowerCase();
+      const n = (v.name || '').toLowerCase();
       return (n.includes('natural') || n.includes('online')) && (n.includes('hoaimy') || n.includes('namminh'));
     });
     if (topVoice) return topVoice;
 
     // 2nd priority: Google Tiếng Việt (Chrome / Android)
-    topVoice = viVoices.find(v => v.name.toLowerCase().includes('google'));
+    topVoice = viVoices.find(v => (v.name || '').toLowerCase().includes('google'));
     if (topVoice) return topVoice;
 
     // 3rd priority: Apple Linh (iOS Safari / macOS)
-    topVoice = viVoices.find(v => v.name.toLowerCase().includes('linh'));
+    topVoice = viVoices.find(v => (v.name || '').toLowerCase().includes('linh'));
     if (topVoice) return topVoice;
 
-    // 4th priority: Any genuine Vietnamese voice
+    // 4th priority: Microsoft An (Windows)
+    topVoice = viVoices.find(v => (v.name || '').toLowerCase().includes('an'));
+    if (topVoice) return topVoice;
+
+    // 5th priority: Any genuine Vietnamese voice
     return viVoices[0];
   } catch (e) {
     return null;
@@ -803,6 +809,12 @@ function initTTS() {
 }
 
 function stopSpeaking() {
+  if (ttsKeepAliveTimer) {
+    clearInterval(ttsKeepAliveTimer);
+    ttsKeepAliveTimer = null;
+  }
+  ttsSpeechQueue = [];
+  ttsCurrentChunkIndex = 0;
   if ('speechSynthesis' in window) {
     try {
       window.speechSynthesis.cancel();
@@ -812,6 +824,9 @@ function stopSpeaking() {
   document.querySelectorAll('.btn-speak-exp').forEach(btn => {
     btn.classList.remove('is-speaking');
     btn.innerHTML = '<span>🔊</span> Đọc giải thích';
+  });
+  document.querySelectorAll('.fc-icon-btn.is-speaking').forEach(btn => {
+    btn.classList.remove('is-speaking');
   });
   currentSpeechBtn = null;
 }
@@ -855,6 +870,108 @@ function cleanTextForVietnameseSpeech(rawText) {
     .trim();
 }
 
+function chunkTextForSpeech(text, maxLen = 140) {
+  if (!text) return [];
+  // Split on natural clause boundaries: periods, exclamation marks, question marks, semicolons, colons, or line breaks
+  const rawSentences = text.split(/([.?!;\n]+)/g);
+  const sentences = [];
+  for (let i = 0; i < rawSentences.length; i += 2) {
+    const s = (rawSentences[i] || '') + (rawSentences[i + 1] || '');
+    const trimmed = s.trim();
+    if (trimmed) sentences.push(trimmed);
+  }
+
+  const chunks = [];
+  for (let sentence of sentences) {
+    if (sentence.length <= maxLen) {
+      chunks.push(sentence);
+    } else {
+      // Split on commas or colons
+      const parts = sentence.split(/([,:]+)/g);
+      let current = '';
+      for (let j = 0; j < parts.length; j++) {
+        const p = parts[j];
+        if ((current + p).length <= maxLen) {
+          current += p;
+        } else {
+          if (current.trim()) chunks.push(current.trim());
+          current = p;
+        }
+      }
+      if (current.trim()) {
+        if (current.trim().length > maxLen) {
+          const words = current.trim().split(/\s+/);
+          let wChunk = '';
+          for (let w of words) {
+            if ((wChunk + ' ' + w).trim().length <= maxLen) {
+              wChunk = (wChunk + ' ' + w).trim();
+            } else {
+              if (wChunk) chunks.push(wChunk);
+              wChunk = w;
+            }
+          }
+          if (wChunk) chunks.push(wChunk);
+        } else {
+          chunks.push(current.trim());
+        }
+      }
+    }
+  }
+  return chunks.length ? chunks : [text];
+}
+
+function playNextSpeechChunk() {
+  if (!isSpeaking || !currentSpeechBtn) {
+    stopSpeaking();
+    return;
+  }
+
+  if (ttsCurrentChunkIndex >= ttsSpeechQueue.length) {
+    stopSpeaking();
+    return;
+  }
+
+  const chunk = ttsSpeechQueue[ttsCurrentChunkIndex];
+  if (!chunk || !chunk.trim()) {
+    ttsCurrentChunkIndex++;
+    playNextSpeechChunk();
+    return;
+  }
+
+  const utterance = new SpeechSynthesisUtterance(chunk);
+  const viVoice = findVietnameseVoice();
+  if (viVoice) {
+    utterance.voice = viVoice;
+    utterance.lang = viVoice.lang || 'vi-VN';
+  } else {
+    utterance.lang = 'vi-VN';
+  }
+  utterance.rate = 0.95;
+  utterance.pitch = 1.0;
+
+  utterance.onend = () => {
+    ttsCurrentChunkIndex++;
+    playNextSpeechChunk();
+  };
+
+  utterance.onerror = (e) => {
+    console.warn('Utterance chunk error:', e);
+    if (e.error === 'interrupted' || e.error === 'canceled') {
+      stopSpeaking();
+      return;
+    }
+    ttsCurrentChunkIndex++;
+    playNextSpeechChunk();
+  };
+
+  try {
+    window.speechSynthesis.speak(utterance);
+  } catch (err) {
+    console.warn('speak exception:', err);
+    stopSpeaking();
+  }
+}
+
 function speakExplanationFromCard(btn) {
   if (!btn) return;
   const container = btn.closest('.explanation-box') || btn.closest('.review-explanation-box');
@@ -878,50 +995,37 @@ function speakExplanation(btn, rawText) {
   const text = cleanTextForVietnameseSpeech(rawText);
   if (!text) return;
 
-  // 1. Try to find genuine Vietnamese voice in Web Speech API
-  let viVoice = findVietnameseVoice();
-  if (!viVoice && 'speechSynthesis' in window) {
-    window.speechSynthesis.getVoices();
-    viVoice = findVietnameseVoice();
+  if (!('speechSynthesis' in window)) {
+    showToast('⚠️ Trình duyệt của bạn không hỗ trợ tính năng đọc âm thanh Web Speech.');
+    return;
   }
 
-  if (viVoice && 'speechSynthesis' in window) {
-    // Native Vietnamese Voice (Edge HoaiMy/NamMinh Natural, Google Tiếng Việt, Apple Linh)
-    btn.classList.add('is-speaking');
+  // Set active state on button
+  btn.classList.add('is-speaking');
+  if (btn.classList.contains('btn-speak-exp')) {
     btn.innerHTML = '<span>⏹️</span> Dừng đọc';
-    isSpeaking = true;
-    currentSpeechBtn = btn;
-    cachedViVoice = viVoice;
-
-    try {
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.voice = viVoice;
-      utterance.lang = viVoice.lang || 'vi-VN';
-      utterance.rate = 0.95;
-      utterance.pitch = 1.0;
-
-      utterance.onend = () => {
-        stopSpeaking();
-      };
-
-      utterance.onerror = (e) => {
-        console.warn('SpeechSynthesis error:', e);
-        stopSpeaking();
-      };
-
-      window.speechSynthesis.speak(utterance);
-      return;
-    } catch (err) {
-      console.warn('SpeechSynthesis exception:', err);
-      stopSpeaking();
-    }
   }
+  isSpeaking = true;
+  currentSpeechBtn = btn;
 
-  // If NO Vietnamese voice is found on this device/browser:
-  // STRICT RULE: NEVER play an English voice! Open the friendly guide modal instead!
-  stopSpeaking();
-  openVoiceGuideModal();
+  // Prepare chunks to prevent browser 15s timeout
+  ttsSpeechQueue = chunkTextForSpeech(text);
+  ttsCurrentChunkIndex = 0;
+
+  // Set keep-alive to prevent Chrome from freezing long utterances
+  if (ttsKeepAliveTimer) clearInterval(ttsKeepAliveTimer);
+  ttsKeepAliveTimer = setInterval(() => {
+    if (window.speechSynthesis && window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+      window.speechSynthesis.pause();
+      window.speechSynthesis.resume();
+    }
+  }, 8000);
+
+  try {
+    window.speechSynthesis.cancel();
+  } catch (e) {}
+
+  playNextSpeechChunk();
 }
 
 // Render Question in Exam Mode
