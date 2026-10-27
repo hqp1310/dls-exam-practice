@@ -736,6 +736,7 @@ function updateTimerDisplay() {
 let ttsSpeechQueue = [];
 let ttsCurrentChunkIndex = 0;
 let ttsKeepAliveTimer = null;
+let currentTtsAudio = null;
 
 function isVietnameseVoice(v) {
   if (!v) return false;
@@ -849,6 +850,13 @@ function initTTS() {
 }
 
 function stopSpeaking() {
+  if (currentTtsAudio) {
+    try {
+      currentTtsAudio.pause();
+      currentTtsAudio.currentTime = 0;
+    } catch (e) {}
+    currentTtsAudio = null;
+  }
   if (ttsKeepAliveTimer) {
     clearInterval(ttsKeepAliveTimer);
     ttsKeepAliveTimer = null;
@@ -1066,46 +1074,48 @@ function renderTtsVoiceList() {
 
   const viVoices = getAvailableVietnameseVoices();
   const currentVoice = findVietnameseVoice();
+  const savedVoiceName = localStorage.getItem('dls_preferred_voice');
   select.innerHTML = '';
 
-  if (viVoices.length === 0) {
-    const opt = document.createElement('option');
-    opt.value = '';
-    opt.textContent = 'Mặc định hệ thống (Chưa có giọng Việt chuyên biệt)';
-    select.appendChild(opt);
-    if (noteEl) {
-      noteEl.innerHTML = '<span style="color: var(--warning);">⚠️ Thiết bị hiện dùng giọng đọc dự phòng. Nên mở trên <strong>Microsoft Edge</strong> hoặc <strong>Điện thoại</strong> để có giọng Việt cực mượt.</span>';
-    }
-    return;
+  // 1. Google Tiếng Việt (Cloud AI Online - Cực mượt & Tự nhiên nhất)
+  const googleOpt = document.createElement('option');
+  googleOpt.value = '__google_online__';
+  googleOpt.textContent = '🌟 Google Tiếng Việt (Cloud AI - Cực mượt & Tự nhiên nhất)';
+  if (savedVoiceName === '__google_online__' || !savedVoiceName) {
+    googleOpt.selected = true;
   }
+  select.appendChild(googleOpt);
 
+  // 2. Available system / browser voices
   viVoices.forEach(v => {
     const opt = document.createElement('option');
     opt.value = v.name;
     let label = v.name;
     if (v.name.includes('Natural') || v.name.includes('Online')) {
-      label += ' ⭐ (AI Tự nhiên - Rất mượt)';
+      label += ' ⭐ (Edge AI Tự nhiên)';
     } else if (v.name.includes('Google')) {
-      label += ' 🌟 (Google Chuẩn)';
+      label += ' 🌐 (Google System)';
     } else if (v.name.includes('Microsoft An')) {
-      label += ' 🖥️ (Windows Tiêu chuẩn)';
+      label += ' 🖥️ (Windows Microsoft An)';
     } else if (v.name.includes('Linh')) {
       label += ' 🍎 (Apple Tiếng Việt)';
     }
     opt.textContent = label;
-    if (currentVoice && v.name === currentVoice.name) {
+    if (savedVoiceName === v.name) {
       opt.selected = true;
     }
     select.appendChild(opt);
   });
 
   if (noteEl) {
-    if (currentVoice && (currentVoice.name.includes('Natural') || currentVoice.name.includes('Online'))) {
-      noteEl.innerHTML = '<span style="color: var(--primary); font-weight: 600;">✨ Đang dùng giọng AI Natural cao cấp nhất của Microsoft!</span>';
-    } else if (currentVoice && currentVoice.name.includes('Microsoft An')) {
-      noteEl.innerHTML = '<span>Đang dùng giọng đọc tiếng Việt của Windows. Nếu nghe muốn tự nhiên hơn, hãy thử mở web bằng <strong>Microsoft Edge</strong>.</span>';
+    if (savedVoiceName === '__google_online__' || !savedVoiceName) {
+      noteEl.innerHTML = '<span style="color: var(--primary); font-weight: 600;">✨ Đang dùng giọng đọc Google Tiếng Việt Cloud AI (chuẩn Google Dịch / Trợ lý ảo cực kỳ ấm áp và tự nhiên)!</span>';
+    } else if (savedVoiceName && (savedVoiceName.includes('Natural') || savedVoiceName.includes('Online'))) {
+      noteEl.innerHTML = '<span style="color: var(--primary); font-weight: 600;">✨ Đang dùng giọng AI Natural cao cấp của Microsoft Edge!</span>';
+    } else if (savedVoiceName && savedVoiceName.includes('Microsoft An')) {
+      noteEl.innerHTML = '<span>Đang dùng giọng đọc tiếng Việt của Windows (Microsoft An). Bạn có thể đổi sang <strong>Google Tiếng Việt</strong> ở trên để nghe mượt hơn.</span>';
     } else {
-      noteEl.textContent = 'Đã nhận diện ' + viVoices.length + ' giọng đọc tiếng Việt trên thiết bị của bạn.';
+      noteEl.textContent = 'Đã nhận diện ' + (viVoices.length + 1) + ' tùy chọn giọng đọc tiếng Việt.';
     }
   }
 }
@@ -1218,12 +1228,61 @@ function speakExplanation(btn, rawText) {
   const text = cleanTextForVietnameseSpeech(rawText);
   if (!text) return;
 
+  const preferredVoice = localStorage.getItem('dls_preferred_voice');
+  const isGoogleOnlineChosen = (preferredVoice === '__google_online__' || !preferredVoice);
+
+  // If Google Online Cloud AI is chosen, play via high quality Google TTS audio stream
+  if (isGoogleOnlineChosen) {
+    playGoogleOnlineTts(btn, text);
+    return;
+  }
+
+  // Otherwise, use browser Web Speech API
+  playWebSpeechTts(btn, text);
+}
+
+function playGoogleOnlineTts(btn, text) {
+  btn.classList.add('is-speaking');
+  if (btn.classList.contains('btn-speak-exp')) {
+    btn.innerHTML = '<span>⏹️</span> Dừng đọc';
+  } else if (btn.id === 'btn-test-tts-voice') {
+    btn.innerHTML = '<span>⏹️</span> Dừng thử';
+    btn.classList.remove('btn-primary');
+    btn.classList.add('btn-danger');
+  }
+  isSpeaking = true;
+  currentSpeechBtn = btn;
+
+  const audio = new Audio('/api/tts?text=' + encodeURIComponent(text));
+  const rate = getTtsRate();
+  if (rate >= 0.75 && rate <= 1.5) {
+    audio.playbackRate = rate;
+  }
+
+  audio.onended = () => {
+    stopSpeaking();
+  };
+
+  audio.onerror = (e) => {
+    console.warn('Google Online TTS audio stream failed or offline, fallback to Web Speech API', e);
+    currentTtsAudio = null;
+    playWebSpeechTts(btn, text);
+  };
+
+  currentTtsAudio = audio;
+  audio.play().catch(err => {
+    console.warn('Audio play failed, fallback to Web Speech API', err);
+    currentTtsAudio = null;
+    playWebSpeechTts(btn, text);
+  });
+}
+
+function playWebSpeechTts(btn, text) {
   if (!('speechSynthesis' in window)) {
     showToast('⚠️ Trình duyệt của bạn không hỗ trợ tính năng đọc âm thanh Web Speech.');
     return;
   }
 
-  // Set active state on button
   btn.classList.add('is-speaking');
   if (btn.classList.contains('btn-speak-exp')) {
     btn.innerHTML = '<span>⏹️</span> Dừng đọc';
