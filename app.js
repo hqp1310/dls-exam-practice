@@ -868,6 +868,12 @@ function stopSpeaking() {
   document.querySelectorAll('.fc-icon-btn.is-speaking').forEach(btn => {
     btn.classList.remove('is-speaking');
   });
+  const testBtn = document.getElementById('btn-test-tts-voice');
+  if (testBtn) {
+    testBtn.innerHTML = '<span>▶️</span> Nghe thử ngay';
+    testBtn.classList.remove('btn-danger');
+    testBtn.classList.add('btn-primary');
+  }
   currentSpeechBtn = null;
 }
 
@@ -875,16 +881,18 @@ function cleanTextForVietnameseSpeech(rawText) {
   if (!rawText) return '';
   return rawText
     .replace(/<[^>]*>/g, ' ')
-    .replace(/•/g, ', ')
-    .replace(/✓/g, 'Đáp án đúng: ')
-    .replace(/✗/g, 'Đáp án sai: ')
+    .replace(/[•*#_~|]/g, ' ')
+    .replace(/✓/g, 'Đáp án đúng. ')
+    .replace(/✗/g, 'Đáp án chưa đúng. ')
+    // Date formats (e.g. ngày 11/02/1998, tháng 11/1990)
+    .replace(/(?:ngày\s*)?(\d{1,2})\/(\d{1,2})\/(\d{4})/gi, 'ngày $1 tháng $2 năm $3')
+    .replace(/(?:tháng\s*)?(\d{1,2})\/(\d{4})/gi, 'tháng $1 năm $2')
     // Common math & medical symbols
     .replace(/≥/g, ' lớn hơn hoặc bằng ')
     .replace(/≤/g, ' nhỏ hơn hoặc bằng ')
     .replace(/>/g, ' lớn hơn ')
     .replace(/</g, ' nhỏ hơn ')
     .replace(/%/g, ' phần trăm ')
-    .replace(/~/g, ' khoảng ')
     .replace(/°C/g, ' độ C ')
     .replace(/±/g, ' cộng trừ ')
     // Units of measurement
@@ -897,9 +905,18 @@ function cleanTextForVietnameseSpeech(rawText) {
     .replace(/\bmcg\/ml\b/gi, 'microgam trên mili lít')
     .replace(/\bµg\/ml\b/gi, 'microgam trên mili lít')
     .replace(/\bmmHg\b/gi, 'milimét thủy ngân')
-    // Medical abbreviations & acronyms
+    // Academic & institutional abbreviations
+    .replace(/\bĐH\b/g, 'Đại học')
+    .replace(/\bDLS\b/g, 'Dược lâm sàng')
+    .replace(/\bDSLS\b/g, 'Dược sĩ lâm sàng')
+    .replace(/\bDS\b/g, 'Dược sĩ')
+    .replace(/\bKCB\b/g, 'khám chữa bệnh')
+    .replace(/\bTKTW\b/g, 'thần kinh trung ương')
+    .replace(/\bHĐ\b/g, 'hoạt động')
+    .replace(/\bĐ\/S\b/g, 'đúng sai')
+    // Medical abbreviations & acronyms (natural spoken phrases)
     .replace(/\bCrCl\b/gi, 'độ thanh thải Creatinine')
-    .replace(/\beGFR\b/gi, 'mức lọc cầu thận e G F R')
+    .replace(/\beGFR\b/gi, 'mức lọc cầu thận')
     .replace(/\bNSAIDs?\b/gi, 'thuốc kháng viêm không steroid')
     .replace(/\bADR\b/gi, 'tác dụng không mong muốn')
     .replace(/\bTHA\b/g, 'tăng huyết áp')
@@ -908,27 +925,27 @@ function cleanTextForVietnameseSpeech(rawText) {
     .replace(/\bCCB\b/g, 'thuốc chẹn kênh canxi')
     .replace(/\bACEI?\b/gi, 'thuốc ức chế men chuyển')
     .replace(/\bARB\b/g, 'thuốc chẹn thụ thể Angiotensin')
-    .replace(/\bCYP(\d+[A-Z]\d+)\b/gi, 'men gan C Y P $1')
-    .replace(/\bAUC\b/gi, 'diện tích dưới đường cong A U C')
+    .replace(/\bCYP(\d+[A-Z]\d+)\b/gi, 'men gan CYP $1')
+    .replace(/\bAUC\b/gi, 'diện tích dưới đường cong AUC')
     .replace(/\bCmax\b/gi, 'nồng độ đỉnh C max')
     .replace(/\bCmin\b/gi, 'nồng độ đáy C min')
-    .replace(/\bMIC\b/gi, 'nồng độ ức chế tối thiểu M I C')
+    .replace(/\bMIC\b/gi, 'nồng độ ức chế tối thiểu MIC')
     .replace(/\bT1\/2\b/gi, 'thời gian bán thải T một phần hai')
     .replace(/\bMRSA\b/gi, 'tụ cầu vàng kháng Methicillin')
-    .replace(/\bCOPD\b/gi, 'bệnh phổi tắc nghẽn mạn tính C O P D')
-    .replace(/\bSABA\b/gi, 'thuốc chủ vận beta hai tác dụng ngắn')
-    .replace(/\bLABA\b/gi, 'thuốc chủ vận beta hai tác dụng kéo dài')
+    .replace(/\bCOPD\b/gi, 'bệnh phổi tắc nghẽn mạn tính')
+    .replace(/\bSABA\b/gi, 'thuốc chủ vận beta 2 tác dụng ngắn')
+    .replace(/\bLABA\b/gi, 'thuốc chủ vận beta 2 tác dụng kéo dài')
     .replace(/\bLAMA\b/gi, 'thuốc kháng cholinergic tác dụng kéo dài')
-    .replace(/\bICS\b/gi, 'corticoid dạng hít I C S')
+    .replace(/\bICS\b/gi, 'corticoid dạng hít')
     .replace(/\bHPA\b/gi, 'trục hạ đồi tuyến yên thượng thận')
     .replace(/\bIV\b/g, 'tiêm tĩnh mạch')
     .replace(/\bIM\b/g, 'tiêm bắp')
     .replace(/\bSC\b/g, 'tiêm dưới da')
     .replace(/\bPO\b/g, 'đường uống')
-    .replace(/\bHbA1c\b/gi, 'H b A một c')
-    .replace(/\bLDL-C\b/gi, 'L D L cholesterol')
-    .replace(/\bHDL-C\b/gi, 'H D L cholesterol')
-    .replace(/\bWHO\b/gi, 'Tổ chức Y tế Thế giới W H O')
+    .replace(/\bHbA1c\b/gi, 'HbA1c')
+    .replace(/\bLDL-C\b/gi, 'LDL cholesterol')
+    .replace(/\bHDL-C\b/gi, 'HDL cholesterol')
+    .replace(/\bWHO\b/gi, 'Tổ chức Y tế Thế giới')
     .replace(/\bBYT\b/gi, 'Bộ Y tế')
     .replace(/\bBN\b/g, 'bệnh nhân')
     .replace(/\bKS\b/g, 'kháng sinh')
@@ -939,54 +956,29 @@ function cleanTextForVietnameseSpeech(rawText) {
     .trim();
 }
 
-function chunkTextForSpeech(text, maxLen = 140) {
+function chunkTextForSpeech(text, maxLen = 800) {
   if (!text) return [];
-  // Split on natural clause boundaries: periods, exclamation marks, question marks, semicolons, colons, or line breaks
-  const rawSentences = text.split(/([.?!;\n]+)/g);
-  const sentences = [];
-  for (let i = 0; i < rawSentences.length; i += 2) {
-    const s = (rawSentences[i] || '') + (rawSentences[i + 1] || '');
-    const trimmed = s.trim();
-    if (trimmed) sentences.push(trimmed);
+  const clean = text.trim();
+  // Keep as one continuous utterance whenever possible to avoid stuttering / pauses
+  if (clean.length <= maxLen) {
+    return [clean];
   }
-
+  // If exceptionally long, only split on full sentence ends (period, ?, ! followed by whitespace)
+  const sentences = clean.split(/(?<=[.?!])\s+/g);
   const chunks = [];
-  for (let sentence of sentences) {
-    if (sentence.length <= maxLen) {
-      chunks.push(sentence);
+  let current = '';
+  for (let s of sentences) {
+    s = s.trim();
+    if (!s) continue;
+    if ((current + ' ' + s).trim().length <= maxLen) {
+      current = (current + ' ' + s).trim();
     } else {
-      // Split on commas or colons
-      const parts = sentence.split(/([,:]+)/g);
-      let current = '';
-      for (let j = 0; j < parts.length; j++) {
-        const p = parts[j];
-        if ((current + p).length <= maxLen) {
-          current += p;
-        } else {
-          if (current.trim()) chunks.push(current.trim());
-          current = p;
-        }
-      }
-      if (current.trim()) {
-        if (current.trim().length > maxLen) {
-          const words = current.trim().split(/\s+/);
-          let wChunk = '';
-          for (let w of words) {
-            if ((wChunk + ' ' + w).trim().length <= maxLen) {
-              wChunk = (wChunk + ' ' + w).trim();
-            } else {
-              if (wChunk) chunks.push(wChunk);
-              wChunk = w;
-            }
-          }
-          if (wChunk) chunks.push(wChunk);
-        } else {
-          chunks.push(current.trim());
-        }
-      }
+      if (current) chunks.push(current);
+      current = s;
     }
   }
-  return chunks.length ? chunks : [text];
+  if (current) chunks.push(current);
+  return chunks.length ? chunks : [clean];
 }
 
 function playNextSpeechChunk() {
@@ -1020,7 +1012,11 @@ function playNextSpeechChunk() {
 
   utterance.onend = () => {
     ttsCurrentChunkIndex++;
-    playNextSpeechChunk();
+    if (ttsCurrentChunkIndex < ttsSpeechQueue.length) {
+      playNextSpeechChunk();
+    } else {
+      stopSpeaking();
+    }
   };
 
   utterance.onerror = (e) => {
@@ -1030,7 +1026,11 @@ function playNextSpeechChunk() {
       return;
     }
     ttsCurrentChunkIndex++;
-    playNextSpeechChunk();
+    if (ttsCurrentChunkIndex < ttsSpeechQueue.length) {
+      playNextSpeechChunk();
+    } else {
+      stopSpeaking();
+    }
   };
 
   try {
@@ -1150,7 +1150,7 @@ function testTtsSampleSpeech() {
     stopSpeaking();
     return;
   }
-  const sampleText = 'Xin chào! Đây là hệ thống ôn thi Dược Lâm Sàng 80 câu chuẩn Bộ Y tế. Thuốc ức chế men chuyển phối hợp với thuốc chẹn kênh can xi liều thấp.';
+  const sampleText = 'Xin chào! Đây là hệ thống ôn thi Dược Lâm Sàng 80 câu chuẩn Bộ Y tế. Thuốc ức chế men chuyển phối hợp với thuốc chẹn kênh canxi liều thấp giúp hạ huyết áp an toàn và kiểm soát tốt nguy cơ tim mạch.';
   speakExplanation(btn, sampleText);
 }
 
@@ -1186,22 +1186,27 @@ function speakExplanation(btn, rawText) {
   btn.classList.add('is-speaking');
   if (btn.classList.contains('btn-speak-exp')) {
     btn.innerHTML = '<span>⏹️</span> Dừng đọc';
+  } else if (btn.id === 'btn-test-tts-voice') {
+    btn.innerHTML = '<span>⏹️</span> Dừng thử';
+    btn.classList.remove('btn-primary');
+    btn.classList.add('btn-danger');
   }
   isSpeaking = true;
   currentSpeechBtn = btn;
 
-  // Prepare chunks to prevent browser 15s timeout
-  ttsSpeechQueue = chunkTextForSpeech(text);
+  // Single smooth utterance for entire explanation (no stuttery chopping)
+  ttsSpeechQueue = chunkTextForSpeech(text, 800);
   ttsCurrentChunkIndex = 0;
 
-  // Set keep-alive to prevent Chrome from freezing long utterances
+  // Passive watchdog: only resume if browser unexpectedly paused mid-speech
   if (ttsKeepAliveTimer) clearInterval(ttsKeepAliveTimer);
   ttsKeepAliveTimer = setInterval(() => {
-    if (window.speechSynthesis && window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
-      window.speechSynthesis.pause();
-      window.speechSynthesis.resume();
+    if (window.speechSynthesis && window.speechSynthesis.paused && isSpeaking) {
+      try {
+        window.speechSynthesis.resume();
+      } catch (e) {}
     }
-  }, 8000);
+  }, 3000);
 
   try {
     window.speechSynthesis.cancel();
