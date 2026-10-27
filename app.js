@@ -1272,6 +1272,8 @@ function submitExam() {
     timeUsedSec: timeUsed,
     timeUsedStr: timeUsedStr,
     rankText: rankText,
+    note: '',
+    noteUpdatedAt: null,
     questions: EXAM_QUESTIONS.map((q, idx) => ({
       id: q.id,
       examNum: idx + 1,
@@ -1300,6 +1302,25 @@ function submitExam() {
 
 function openResultsModal() {
   resultsModal.classList.add('active');
+  const input = document.getElementById('modal-quick-note-input');
+  if (input) input.value = '';
+  const msg = document.getElementById('modal-quick-note-msg');
+  if (msg) msg.style.display = 'none';
+}
+
+function saveQuickNoteFromResultsModal() {
+  if (!lastSubmittedExamId) return;
+  const input = document.getElementById('modal-quick-note-input');
+  if (!input) return;
+  const val = input.value.trim();
+  saveExamNote(lastSubmittedExamId, val, false);
+  const msg = document.getElementById('modal-quick-note-msg');
+  if (msg) {
+    msg.style.display = 'block';
+    msg.textContent = val ? '✓ Đã lưu ghi chú cho đề thi này!' : '✓ Đã xóa ghi chú!';
+  }
+  showToast('📝 Đã lưu ghi chú bài thi!');
+  playChime('click');
 }
 
 function closeResultsModal() {
@@ -4704,6 +4725,125 @@ function renderCheatsheetView() {
 // ==========================================
 // EXAM HISTORY & DETAILED REVIEW SYSTEM
 // ==========================================
+let activeNoteExamId = null;
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+function saveExamNote(examId, noteText, showToast = true) {
+  try {
+    const history = getExamHistory();
+    const item = history.find(e => e.id === examId);
+    if (!item) return;
+    item.note = (noteText || '').trim();
+    item.noteUpdatedAt = Date.now();
+    localStorage.setItem(STORAGE_HISTORY_KEY, JSON.stringify(history));
+    if (currentReviewExam && currentReviewExam.id === examId) {
+      currentReviewExam.note = item.note;
+      currentReviewExam.noteUpdatedAt = item.noteUpdatedAt;
+    }
+    if (currentTab === 'history') {
+      renderHistoryView();
+    }
+    if (showToast) {
+      showToast('📝 Đã lưu ghi chú bài thi!');
+      playChime('click');
+    }
+  } catch (e) {
+    console.error('Error saving exam note:', e);
+  }
+}
+
+function openExamNoteModal(examId) {
+  const history = getExamHistory();
+  const exam = history.find(e => e.id === examId);
+  if (!exam) return;
+  activeNoteExamId = examId;
+
+  const modal = document.getElementById('modal-exam-note');
+  const title = document.getElementById('note-modal-title');
+  const info = document.getElementById('note-modal-exam-info');
+  const textarea = document.getElementById('exam-note-textarea');
+  const deleteBtn = document.getElementById('btn-delete-note');
+  const charCount = document.getElementById('note-char-count');
+
+  if (title) {
+    const totalExams = history.length;
+    const examIndex = history.findIndex(e => e.id === examId);
+    const examNum = examIndex !== -1 ? (totalExams - examIndex) : '';
+    title.innerHTML = `<span>📝</span> <span>GHI CHÚ BÀI THI ${examNum ? '#' + examNum : ''}</span>`;
+  }
+
+  if (info) {
+    const scoreVal = parseFloat(exam.score10) || 0;
+    info.innerHTML = `
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.35rem;">
+        <span>📅 <strong>${exam.dateStr}</strong></span>
+        <span>🎯 Điểm: <strong style="color: var(--primary); font-size: 0.95rem;">${scoreVal.toFixed(2)}/10</strong> (${exam.correctCount}/${exam.totalQuestions || 80} câu đúng)</span>
+        <span>⏱️ Thời gian: <strong>${exam.timeUsedStr || 'N/A'}</strong></span>
+      </div>
+    `;
+  }
+
+  if (textarea) {
+    textarea.value = exam.note || '';
+    if (charCount) charCount.textContent = `${textarea.value.length} / 1000 ký tự`;
+  }
+
+  if (deleteBtn) {
+    deleteBtn.style.display = (exam.note && exam.note.trim()) ? 'inline-block' : 'none';
+  }
+
+  if (modal) {
+    modal.classList.add('active');
+    setTimeout(() => {
+      if (textarea) textarea.focus();
+    }, 100);
+  }
+}
+
+function closeExamNoteModal() {
+  const modal = document.getElementById('modal-exam-note');
+  if (modal) modal.classList.remove('active');
+  activeNoteExamId = null;
+}
+
+function saveCurrentExamNote() {
+  if (!activeNoteExamId) return;
+  const textarea = document.getElementById('exam-note-textarea');
+  const noteText = textarea ? textarea.value : '';
+  saveExamNote(activeNoteExamId, noteText, true);
+  closeExamNoteModal();
+}
+
+function deleteCurrentExamNote() {
+  if (!activeNoteExamId) return;
+  if (!confirm('Bạn có chắc chắn muốn xóa ghi chú của bài thi này?')) return;
+  saveExamNote(activeNoteExamId, '', true);
+  closeExamNoteModal();
+}
+
+function insertNoteTag(tagText) {
+  const textarea = document.getElementById('exam-note-textarea');
+  if (!textarea) return;
+  const cur = textarea.value.trim();
+  if (!cur) {
+    textarea.value = tagText + '\n';
+  } else {
+    textarea.value = cur + '\n' + tagText;
+  }
+  const charCount = document.getElementById('note-char-count');
+  if (charCount) charCount.textContent = `${textarea.value.length} / 1000 ký tự`;
+  textarea.focus();
+}
+
 function formatHistoryDate(d) {
   const pad = (n) => n.toString().padStart(2, '0');
   const day = pad(d.getDate());
@@ -4943,6 +5083,11 @@ function renderHistoryListView() {
             <span class="history-date">📅 ${item.dateStr}</span>
           </div>
           <div style="display: flex; align-items: center; gap: 0.5rem;">
+            ${item.note && item.note.trim() ? `
+              <span class="history-note-badge" title="Bài thi có ghi chú cá nhân - Bấm để xem và sửa" onclick="openExamNoteModal('${item.id}')">
+                📝 Có ghi chú
+              </span>
+            ` : ''}
             <span class="badge" style="background: ${scoreVal >= 7.0 ? 'var(--primary-light)' : (scoreVal >= 5.0 ? 'var(--warning-light)' : 'var(--danger-light)')}; color: ${scoreColor}; font-weight: 700;">
               ${item.rankText || 'HOÀN THÀNH'}
             </span>
@@ -4975,11 +5120,24 @@ function renderHistoryListView() {
             <button class="btn btn-primary" onclick="openReviewExam('${item.id}')" style="padding: 0.55rem 1rem; font-size: 0.85rem;">
               🔍 Xem lại & Ôn câu sai
             </button>
+            <button class="btn btn-secondary" onclick="openExamNoteModal('${item.id}')" title="${item.note && item.note.trim() ? 'Xem hoặc chỉnh sửa ghi chú' : 'Thêm ghi chú cho bài thi này'}" style="padding: 0.55rem 0.85rem; font-size: 0.82rem; display: inline-flex; align-items: center; gap: 0.35rem; color: var(--secondary); border-color: var(--secondary);">
+              <span>📝</span> <span>${item.note && item.note.trim() ? 'Ghi chú' : '+ Ghi chú'}</span>
+            </button>
             <button class="btn btn-secondary" onclick="deleteHistoryItem('${item.id}')" title="Xóa bài thi này" style="padding: 0.55rem 0.75rem; color: var(--danger);">
               🗑️
             </button>
           </div>
         </div>
+
+        ${item.note && item.note.trim() ? `
+          <div class="history-card-note-box" onclick="openExamNoteModal('${item.id}')" title="Bấm để xem và chỉnh sửa ghi chú này">
+            <div class="note-box-header">
+              <span class="note-box-icon">📝 Ghi chú bài thi:</span>
+              <span class="note-box-edit-hint">✏️ Sửa</span>
+            </div>
+            <div class="note-box-content">${escapeHtml(item.note)}</div>
+          </div>
+        ` : ''}
       </div>
     `;
   });
@@ -5049,6 +5207,9 @@ function renderDetailedReviewView() {
             </div>
 
             <div style="display: flex; gap: 0.4rem;">
+              <button class="btn btn-secondary" onclick="openExamNoteModal('${exam.id}')" style="padding: 0.35rem 0.65rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.3rem;">
+                <span>📝</span> ${exam.note && exam.note.trim() ? 'Sửa ghi chú' : '+ Ghi chú'}
+              </button>
               <button class="btn btn-secondary" onclick="startNewExamFromHistory()" style="padding: 0.35rem 0.65rem; font-size: 0.78rem; background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary);">
                 🎲 Thi đề mới
               </button>
@@ -5082,6 +5243,25 @@ function renderDetailedReviewView() {
           </div>
         </div>
       </div>
+
+      <!-- EXAM NOTE IN DETAILED REVIEW -->
+      ${exam.note && exam.note.trim() ? `
+        <div class="review-exam-note-card" onclick="openExamNoteModal('${exam.id}')" title="Bấm để chỉnh sửa ghi chú bài thi">
+          <div class="review-note-header">
+            <span class="review-note-title">
+              <span>📝</span> GHI CHÚ BÀI THI CỦA BẠN:
+            </span>
+            <span class="review-note-edit-btn">✏️ Chỉnh sửa</span>
+          </div>
+          <div class="review-note-body">
+            ${escapeHtml(exam.note)}
+          </div>
+        </div>
+      ` : `
+        <div class="review-exam-note-card empty" onclick="openExamNoteModal('${exam.id}')" title="Bấm để thêm ghi chú cho bài thi này">
+          <span>📝 Chưa có ghi chú cho bài thi này. <strong>Bấm vào đây để thêm ghi chú &amp; nhắc nhở ôn tập!</strong></span>
+        </div>
+      `}
 
       ${syncWarningBanner}
 
@@ -5854,6 +6034,12 @@ function smartMergeSyncData(remoteData, mode = 'merge') {
         if (!existingIntact && incomingIntact) {
           historyMap.set(key, incoming);
           upgradedHistory++;
+        }
+        // Preserve and merge notes if incoming has note
+        const currentExam = historyMap.get(key);
+        if (incoming.note && (!currentExam.note || (incoming.noteUpdatedAt || 0) > (currentExam.noteUpdatedAt || 0))) {
+          currentExam.note = incoming.note;
+          currentExam.noteUpdatedAt = incoming.noteUpdatedAt || Date.now();
         }
       }
     });

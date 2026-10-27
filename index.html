@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=18">
+  <link rel="stylesheet" href="styles.css?v=19">
 </head>
 <body>
   <!-- SKIP LINK (OpenDesign Web Interface Accessibility Rule) -->
@@ -302,6 +302,22 @@
 
       <div style="margin: 0.75rem 0; padding: 0.5rem 0.75rem; background: var(--primary-light); color: var(--primary); border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 0.4rem;">
         <span>💾</span> Bài thi này đã được tự động lưu vào <strong>Lịch Sử Bài Thi</strong> để bạn xem lại!
+      </div>
+
+      <!-- Quick Note in Results Modal -->
+      <div class="results-quick-note-box">
+        <label for="modal-quick-note-input" style="font-size: 0.84rem; font-weight: 600; color: var(--text-main); display: flex; align-items: center; gap: 0.35rem; margin-bottom: 0.35rem;">
+          <span>📝</span> Ghi chú nhanh cho đề này (tùy chọn):
+        </label>
+        <div style="display: flex; gap: 0.4rem;">
+          <input type="text" id="modal-quick-note-input" placeholder="Ví dụ: Đề khó phần TDM, cần ôn kỹ tương tác CYP3A4..." maxlength="300" style="flex: 1; padding: 0.45rem 0.65rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.85rem; background: var(--surface); color: var(--text-main); outline: none;" onkeydown="if(event.key==='Enter') saveQuickNoteFromResultsModal()">
+          <button class="btn btn-secondary" id="btn-save-quick-note" onclick="saveQuickNoteFromResultsModal()" style="padding: 0.45rem 0.85rem; font-size: 0.82rem; white-space: nowrap;">
+            💾 Lưu
+          </button>
+        </div>
+        <div id="modal-quick-note-msg" style="display: none; font-size: 0.8rem; color: var(--primary); font-weight: 600; margin-top: 0.35rem;">
+          ✓ Đã lưu ghi chú vào bài thi thành công!
+        </div>
       </div>
 
       <div class="modal-actions" style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
@@ -646,8 +662,63 @@
     </div>
   </div>
 
+  <!-- Modal: Ghi chú bài thi 80 câu -->
+  <div class="modal-overlay" id="modal-exam-note" onclick="if(event.target === this) closeExamNoteModal()">
+    <div class="modal-card note-modal-card">
+      <div class="modal-header">
+        <div class="modal-title" id="note-modal-title" style="color: var(--secondary); display: flex; align-items: center; gap: 0.5rem;">
+          <span>📝</span> <span>GHI CHÚ BÀI THI</span>
+        </div>
+        <button class="modal-close" onclick="closeExamNoteModal()">&times;</button>
+      </div>
+      <div class="note-modal-body" style="padding: 0.5rem 0;">
+        <div class="note-modal-exam-info" id="note-modal-exam-info">
+          <!-- Exam date, score, correct count injected here -->
+        </div>
+
+        <div style="margin-bottom: 0.65rem;">
+          <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">
+            🏷️ Thêm nhanh thẻ nhắc nhở:
+          </span>
+          <div class="note-quick-tags" style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+            <button type="button" class="btn-note-tag" onclick="insertNoteTag('⚠️ Cần ôn kỹ Dược động học & TDM')">⚠️ DĐH &amp; TDM</button>
+            <button type="button" class="btn-note-tag" onclick="insertNoteTag('💊 Chú ý liều Kháng sinh & Aminoglycosid')">💊 Liều Kháng sinh</button>
+            <button type="button" class="btn-note-tag" onclick="insertNoteTag('🩺 Xem lại tương tác thuốc & enzym gan')">🩺 Tương tác thuốc</button>
+            <button type="button" class="btn-note-tag" onclick="insertNoteTag('⏱️ Cần tăng tốc độ làm bài & phân tích')">⏱️ Rèn tốc độ</button>
+            <button type="button" class="btn-note-tag" onclick="insertNoteTag('🏆 Đề làm tốt, giữ vững phong độ')">🏆 Đạt mục tiêu</button>
+          </div>
+        </div>
+
+        <label for="exam-note-textarea" style="font-size: 0.88rem; font-weight: 600; color: var(--text-main); display: block; margin-bottom: 0.35rem;">
+          Nội dung ghi chú cá nhân:
+        </label>
+        <textarea id="exam-note-textarea" rows="5" placeholder="Ghi chú kinh nghiệm làm đề này, những câu hay nhầm lẫn, công thức cần ôn lại..." style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-md); font-family: inherit; font-size: 0.9rem; background: var(--surface); color: var(--text-main); resize: vertical; line-height: 1.5; outline: none;" oninput="const c = document.getElementById('note-char-count'); if(c) c.textContent = this.value.length + ' / 1000 ký tự';" maxlength="1000"></textarea>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.35rem; font-size: 0.8rem; color: var(--text-muted);">
+          <span id="note-char-count">0 / 1000 ký tự</span>
+          <span id="note-auto-save-hint">💡 Ghi chú tự động đồng bộ khi chuyển thiết bị</span>
+        </div>
+      </div>
+
+      <div class="modal-actions" style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+        <div>
+          <button class="btn btn-secondary" id="btn-delete-note" onclick="deleteCurrentExamNote()" style="color: var(--danger); border-color: var(--danger-light); padding: 0.45rem 0.85rem; font-size: 0.85rem; display: none;">
+            🗑️ Xóa ghi chú
+          </button>
+        </div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button class="btn btn-secondary" onclick="closeExamNoteModal()" style="padding: 0.45rem 1rem;">
+            Đóng
+          </button>
+          <button class="btn btn-primary" onclick="saveCurrentExamNote()" style="padding: 0.45rem 1.25rem;">
+            💾 Lưu ghi chú
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="questions_800.js?v=27"></script>
   <script src="flashcards.js"></script>
-  <script src="app.js?v=27"></script>
+  <script src="app.js?v=28"></script>
 </body>
 </html>
