@@ -596,26 +596,6 @@ const mathFormulaIds = new Set([865, 990, 1228, 1244]);
 let totalParensStripped = 0;
 bank.forEach(q => {
   if (mathFormulaIds.has(q.id)) return;
-  if (q.id === 1257) {
-    q.options = [
-      "Trẻ sơ sinh từ 28 ngày tuổi trở xuống",
-      "Bệnh nhân cao tuổi trên 80 tuổi",
-      "Người bệnh suy giáp đang điều trị bằng Levothyroxin",
-      "Phụ nữ đang trong thời kỳ cho con bú sau 6 tháng đầu"
-    ];
-    q.correct = 0;
-    return;
-  }
-  if (q.id === 1296) {
-    q.options = [
-      "5 ngày",
-      "Tối thiểu 14 đến 21 ngày",
-      "Duy trì liên tục từ 1 đến 2 tháng",
-      "Chỉ dùng đúng 1 liều duy nhất trong vòng 1 giờ đầu nhập viện"
-    ];
-    q.correct = 0;
-    return;
-  }
 
   q.options = q.options.map(opt => {
     let s = opt.replace(/Hội chứng灰/g, 'Hội chứng xám');
