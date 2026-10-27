@@ -742,54 +742,94 @@ function isVietnameseVoice(v) {
   const l = (v.lang || '').toLowerCase().replace(/_/g, '-');
   const n = (v.name || '').toLowerCase();
 
-  // Strict blacklist: Never match foreign languages unless voice explicitly claims Vietnamese
-  if ((l.startsWith('en') || l.startsWith('fr') || l.startsWith('de') || 
-       l.startsWith('ja') || l.startsWith('zh') || l.startsWith('ko') || 
-       l.startsWith('es') || l.startsWith('ru') || l.startsWith('it')) &&
-      !n.includes('vietnam') && !n.includes('tiếng việt')) {
-    return false;
+  // Primary check: ISO language code must start with 'vi'
+  if (l.startsWith('vi')) return true;
+
+  // Secondary check: Name explicitly indicates Vietnamese / Tiếng Việt
+  if (n.includes('vietnam') || n.includes('vietnamese') || n.includes('tiếng việt') || n.includes('tieng viet')) {
+    return true;
+  }
+  if (n.includes('hoaimy') || n.includes('namminh')) {
+    return true;
+  }
+  if (n.includes('microsoft an -') || n.includes('microsoft an (')) {
+    return true;
   }
 
-  return l.startsWith('vi') || 
-         l === 'vi-vn' || 
-         n.includes('vietnam') || 
-         n.includes('tiếng việt') || 
-         n.includes('tieng viet') || 
-         n.includes('hoaimy') || 
-         n.includes('namminh') || 
-         n.includes('linh') || 
-         n.includes('an');
+  return false;
+}
+
+function getAvailableVietnameseVoices() {
+  if (!('speechSynthesis' in window)) return [];
+  try {
+    const voices = window.speechSynthesis.getVoices() || [];
+    return voices.filter(isVietnameseVoice);
+  } catch (e) {
+    return [];
+  }
+}
+
+function getTtsRate() {
+  try {
+    const saved = parseFloat(localStorage.getItem('dls_tts_rate'));
+    if (!isNaN(saved) && saved >= 0.7 && saved <= 1.4) {
+      return saved;
+    }
+  } catch (e) {}
+  return 0.92; // 0.92x is optimal for clear, steady pharmacology pronunciation
 }
 
 function findVietnameseVoice() {
   if (!('speechSynthesis' in window)) return null;
   try {
-    const voices = window.speechSynthesis.getVoices() || [];
-    if (!voices.length) return null;
-
-    const viVoices = voices.filter(isVietnameseVoice);
+    const viVoices = getAvailableVietnameseVoices();
     if (!viVoices.length) return null;
 
-    // 1st priority: Microsoft Edge Natural Online voices (HoaiMy, NamMinh) - siêu mượt & tự nhiên
+    // 0. User custom preferred voice from settings
+    const savedVoiceName = localStorage.getItem('dls_preferred_voice');
+    if (savedVoiceName) {
+      const userChoice = viVoices.find(v => v.name === savedVoiceName);
+      if (userChoice) return userChoice;
+    }
+
+    // 1st priority: Microsoft Edge Natural Online voices (HoaiMy, NamMinh) - siêu mượt & tự nhiên nhất
     let topVoice = viVoices.find(v => {
       const n = (v.name || '').toLowerCase();
       return (n.includes('natural') || n.includes('online')) && (n.includes('hoaimy') || n.includes('namminh'));
     });
     if (topVoice) return topVoice;
 
-    // 2nd priority: Google Tiếng Việt (Chrome / Android)
-    topVoice = viVoices.find(v => (v.name || '').toLowerCase().includes('google'));
+    // 2nd priority: Google Tiếng Việt (Chrome / Android) - must have 'vi' lang code
+    topVoice = viVoices.find(v => {
+      const n = (v.name || '').toLowerCase();
+      const l = (v.lang || '').toLowerCase();
+      return n.includes('google') && (l.startsWith('vi') || n.includes('tiếng việt') || n.includes('vietnam'));
+    });
     if (topVoice) return topVoice;
 
     // 3rd priority: Apple Linh (iOS Safari / macOS)
-    topVoice = viVoices.find(v => (v.name || '').toLowerCase().includes('linh'));
+    topVoice = viVoices.find(v => (v.name || '').toLowerCase().includes('linh') && (v.lang || '').toLowerCase().startsWith('vi'));
     if (topVoice) return topVoice;
 
-    // 4th priority: Microsoft An (Windows)
-    topVoice = viVoices.find(v => (v.name || '').toLowerCase().includes('an'));
+    // 4th priority: Microsoft HoaiMy or NamMinh (local)
+    topVoice = viVoices.find(v => {
+      const n = (v.name || '').toLowerCase();
+      return n.includes('hoaimy') || n.includes('namminh');
+    });
     if (topVoice) return topVoice;
 
-    // 5th priority: Any genuine Vietnamese voice
+    // 5th priority: Microsoft An (Windows built-in offline)
+    topVoice = viVoices.find(v => {
+      const n = (v.name || '').toLowerCase();
+      const l = (v.lang || '').toLowerCase();
+      return (n.includes('microsoft an') || n.includes('an - vietnamese')) && (l.startsWith('vi') || n.includes('vietnam'));
+    });
+    if (topVoice) return topVoice;
+
+    // 6th priority: Any voice whose lang starts with 'vi'
+    topVoice = viVoices.find(v => (v.lang || '').toLowerCase().startsWith('vi'));
+    if (topVoice) return topVoice;
+
     return viVoices[0];
   } catch (e) {
     return null;
@@ -838,25 +878,49 @@ function cleanTextForVietnameseSpeech(rawText) {
     .replace(/•/g, ', ')
     .replace(/✓/g, 'Đáp án đúng: ')
     .replace(/✗/g, 'Đáp án sai: ')
+    // Common math & medical symbols
+    .replace(/≥/g, ' lớn hơn hoặc bằng ')
+    .replace(/≤/g, ' nhỏ hơn hoặc bằng ')
+    .replace(/>/g, ' lớn hơn ')
+    .replace(/</g, ' nhỏ hơn ')
+    .replace(/%/g, ' phần trăm ')
+    .replace(/~/g, ' khoảng ')
+    .replace(/°C/g, ' độ C ')
+    .replace(/±/g, ' cộng trừ ')
+    // Units of measurement
+    .replace(/\bml\/phút\b/gi, 'mili lít trên phút')
+    .replace(/\bmg\/kg\/ngày\b/gi, 'miligram trên kilogam mỗi ngày')
+    .replace(/\bmg\/ngày\b/gi, 'miligram mỗi ngày')
+    .replace(/\bg\/ngày\b/gi, 'gam mỗi ngày')
+    .replace(/\bmg\/dl\b/gi, 'miligram trên đê xi lít')
+    .replace(/\bmmol\/l\b/gi, 'mili mol trên lít')
+    .replace(/\bmcg\/ml\b/gi, 'microgam trên mili lít')
+    .replace(/\bµg\/ml\b/gi, 'microgam trên mili lít')
+    .replace(/\bmmHg\b/gi, 'milimét thủy ngân')
+    // Medical abbreviations & acronyms
     .replace(/\bCrCl\b/gi, 'độ thanh thải Creatinine')
-    .replace(/\beGFR\b/gi, 'mức lọc cầu thận')
+    .replace(/\beGFR\b/gi, 'mức lọc cầu thận e G F R')
     .replace(/\bNSAIDs?\b/gi, 'thuốc kháng viêm không steroid')
     .replace(/\bADR\b/gi, 'tác dụng không mong muốn')
     .replace(/\bTHA\b/g, 'tăng huyết áp')
     .replace(/\bĐTĐ\b/g, 'đái tháo đường')
     .replace(/\bPNCT\b/g, 'phụ nữ có thai')
     .replace(/\bCCB\b/g, 'thuốc chẹn kênh canxi')
-    .replace(/\bACEI\b/g, 'thuốc ức chế men chuyển')
-    .replace(/\bARB\b/g, 'thuốc chẹn thụ thể AT một')
-    .replace(/\bCYP(\d+[A-Z]\d+)\b/gi, 'men gan CYP $1')
-    .replace(/\bAUC\b/gi, 'diện tích dưới đường cong')
+    .replace(/\bACEI?\b/gi, 'thuốc ức chế men chuyển')
+    .replace(/\bARB\b/g, 'thuốc chẹn thụ thể Angiotensin')
+    .replace(/\bCYP(\d+[A-Z]\d+)\b/gi, 'men gan C Y P $1')
+    .replace(/\bAUC\b/gi, 'diện tích dưới đường cong A U C')
     .replace(/\bCmax\b/gi, 'nồng độ đỉnh C max')
+    .replace(/\bCmin\b/gi, 'nồng độ đáy C min')
+    .replace(/\bMIC\b/gi, 'nồng độ ức chế tối thiểu M I C')
     .replace(/\bT1\/2\b/gi, 'thời gian bán thải T một phần hai')
-    .replace(/\bmg\/dl\b/gi, 'miligram trên đê xi lít')
-    .replace(/\bml\/phút\b/gi, 'mili lít trên phút')
-    .replace(/\bmg\/ngày\b/gi, 'miligram mỗi ngày')
-    .replace(/\bg\/ngày\b/gi, 'gam mỗi ngày')
-    .replace(/\bmmol\/l\b/gi, 'mili mol trên lít')
+    .replace(/\bMRSA\b/gi, 'tụ cầu vàng kháng Methicillin')
+    .replace(/\bCOPD\b/gi, 'bệnh phổi tắc nghẽn mạn tính C O P D')
+    .replace(/\bSABA\b/gi, 'thuốc chủ vận beta hai tác dụng ngắn')
+    .replace(/\bLABA\b/gi, 'thuốc chủ vận beta hai tác dụng kéo dài')
+    .replace(/\bLAMA\b/gi, 'thuốc kháng cholinergic tác dụng kéo dài')
+    .replace(/\bICS\b/gi, 'corticoid dạng hít I C S')
+    .replace(/\bHPA\b/gi, 'trục hạ đồi tuyến yên thượng thận')
     .replace(/\bIV\b/g, 'tiêm tĩnh mạch')
     .replace(/\bIM\b/g, 'tiêm bắp')
     .replace(/\bSC\b/g, 'tiêm dưới da')
@@ -864,6 +928,11 @@ function cleanTextForVietnameseSpeech(rawText) {
     .replace(/\bHbA1c\b/gi, 'H b A một c')
     .replace(/\bLDL-C\b/gi, 'L D L cholesterol')
     .replace(/\bHDL-C\b/gi, 'H D L cholesterol')
+    .replace(/\bWHO\b/gi, 'Tổ chức Y tế Thế giới W H O')
+    .replace(/\bBYT\b/gi, 'Bộ Y tế')
+    .replace(/\bBN\b/g, 'bệnh nhân')
+    .replace(/\bKS\b/g, 'kháng sinh')
+    .replace(/\bVK\b/g, 'vi khuẩn')
     .replace(/\bvs\b/gi, 'so với')
     .replace(/([0-9]+)\s*-\s*([0-9]+)/g, '$1 đến $2')
     .replace(/\s+/g, ' ')
@@ -946,7 +1015,7 @@ function playNextSpeechChunk() {
   } else {
     utterance.lang = 'vi-VN';
   }
-  utterance.rate = 0.95;
+  utterance.rate = getTtsRate();
   utterance.pitch = 1.0;
 
   utterance.onend = () => {
@@ -970,6 +1039,119 @@ function playNextSpeechChunk() {
     console.warn('speak exception:', err);
     stopSpeaking();
   }
+}
+
+// ==========================================
+// TTS SETTINGS MODAL & VOICE CONTROLS
+// ==========================================
+function openTtsSettingsModal() {
+  const modal = document.getElementById('modal-voice-settings');
+  if (!modal) return;
+  modal.classList.add('active');
+  renderTtsVoiceList();
+  renderTtsSpeedButtons();
+}
+
+function closeTtsSettingsModal() {
+  const modal = document.getElementById('modal-voice-settings');
+  if (modal) modal.classList.remove('active');
+  stopSpeaking();
+}
+
+function renderTtsVoiceList() {
+  const select = document.getElementById('tts-voice-select');
+  const noteEl = document.getElementById('tts-voice-note');
+  if (!select) return;
+
+  const viVoices = getAvailableVietnameseVoices();
+  const currentVoice = findVietnameseVoice();
+  select.innerHTML = '';
+
+  if (viVoices.length === 0) {
+    const opt = document.createElement('option');
+    opt.value = '';
+    opt.textContent = 'Mặc định hệ thống (Chưa có giọng Việt chuyên biệt)';
+    select.appendChild(opt);
+    if (noteEl) {
+      noteEl.innerHTML = '<span style="color: var(--warning);">⚠️ Thiết bị hiện dùng giọng đọc dự phòng. Nên mở trên <strong>Microsoft Edge</strong> hoặc <strong>Điện thoại</strong> để có giọng Việt cực mượt.</span>';
+    }
+    return;
+  }
+
+  viVoices.forEach(v => {
+    const opt = document.createElement('option');
+    opt.value = v.name;
+    let label = v.name;
+    if (v.name.includes('Natural') || v.name.includes('Online')) {
+      label += ' ⭐ (AI Tự nhiên - Rất mượt)';
+    } else if (v.name.includes('Google')) {
+      label += ' 🌟 (Google Chuẩn)';
+    } else if (v.name.includes('Microsoft An')) {
+      label += ' 🖥️ (Windows Tiêu chuẩn)';
+    } else if (v.name.includes('Linh')) {
+      label += ' 🍎 (Apple Tiếng Việt)';
+    }
+    opt.textContent = label;
+    if (currentVoice && v.name === currentVoice.name) {
+      opt.selected = true;
+    }
+    select.appendChild(opt);
+  });
+
+  if (noteEl) {
+    if (currentVoice && (currentVoice.name.includes('Natural') || currentVoice.name.includes('Online'))) {
+      noteEl.innerHTML = '<span style="color: var(--primary); font-weight: 600;">✨ Đang dùng giọng AI Natural cao cấp nhất của Microsoft!</span>';
+    } else if (currentVoice && currentVoice.name.includes('Microsoft An')) {
+      noteEl.innerHTML = '<span>Đang dùng giọng đọc tiếng Việt của Windows. Nếu nghe muốn tự nhiên hơn, hãy thử mở web bằng <strong>Microsoft Edge</strong>.</span>';
+    } else {
+      noteEl.textContent = 'Đã nhận diện ' + viVoices.length + ' giọng đọc tiếng Việt trên thiết bị của bạn.';
+    }
+  }
+}
+
+function onUserChangeTtsVoice() {
+  const select = document.getElementById('tts-voice-select');
+  if (!select) return;
+  const chosen = select.value;
+  if (chosen) {
+    localStorage.setItem('dls_preferred_voice', chosen);
+  } else {
+    localStorage.removeItem('dls_preferred_voice');
+  }
+  renderTtsVoiceList();
+  showToast('Đã lưu giọng đọc: ' + (chosen || 'Mặc định'));
+}
+
+function renderTtsSpeedButtons() {
+  const currentRate = getTtsRate();
+  document.querySelectorAll('.tts-speed-btn').forEach(btn => {
+    const sp = parseFloat(btn.getAttribute('data-speed'));
+    if (Math.abs(sp - currentRate) < 0.04) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+}
+
+function setTtsSpeed(rate) {
+  localStorage.setItem('dls_tts_rate', rate.toString());
+  renderTtsSpeedButtons();
+  showToast('Đã chỉnh tốc độ đọc: ' + rate + 'x');
+  // If speaking sample, re-speak
+  if (isSpeaking) {
+    stopSpeaking();
+  }
+}
+
+function testTtsSampleSpeech() {
+  const btn = document.getElementById('btn-test-tts-voice');
+  if (isSpeaking && currentSpeechBtn === btn) {
+    stopSpeaking();
+    return;
+  }
+  const sampleText = 'Xin chào! Đây là hệ thống ôn thi Dược Lâm Sàng 80 câu chuẩn Bộ Y tế. Thuốc ức chế men chuyển phối hợp với thuốc chẹn kênh can xi liều thấp.';
+  speakExplanation(btn, sampleText);
 }
 
 function speakExplanationFromCard(btn) {
@@ -1136,9 +1318,12 @@ function renderExamQuestion(index) {
           <div class="explanation-header" style="color: ${badgeColor};">
             ${badgeTitle} • ĐÁP ÁN ĐÚNG: [${letters[q.correct]}]
           </div>
-          <button class="btn-speak-exp" onclick="speakExplanationFromCard(this)" title="Nghe đọc giải thích lâm sàng bằng giọng tiếng Việt">
-            <span>🔊</span> Đọc giải thích
-          </button>
+          <div style="display: flex; gap: 0.35rem; align-items: center;">
+            <button class="btn-speak-exp" onclick="speakExplanationFromCard(this)" title="Nghe đọc giải thích lâm sàng bằng giọng tiếng Việt">
+              <span>🔊</span> Đọc giải thích
+            </button>
+            <button class="btn-speak-settings" onclick="openTtsSettingsModal()" title="Cài đặt giọng đọc &amp; tốc độ" aria-label="Cài đặt giọng đọc">⚙️</button>
+          </div>
         </div>
         <div class="explanation-content">${q.explanation}</div>
         <div class="explanation-ref">📖 Nguồn tài liệu: ${q.reference}</div>
@@ -1808,9 +1993,12 @@ function renderTopicQuestionCardsHtml(questionsList) {
             <div class="explanation-header" style="color: ${isCorrect ? 'var(--primary)' : 'var(--danger)'}">
               ${isCorrect ? '✓ CHÍNH XÁC' : '✗ CHƯA ĐÚNG'} • ĐÁP ÁN: ${letters[q.correct]}
             </div>
-            <button class="btn-speak-exp" onclick="speakExplanationFromCard(this)" title="Nghe đọc giải thích lâm sàng bằng giọng tiếng Việt">
-              <span>🔊</span> Đọc giải thích
-            </button>
+            <div style="display: flex; gap: 0.35rem; align-items: center;">
+              <button class="btn-speak-exp" onclick="speakExplanationFromCard(this)" title="Nghe đọc giải thích lâm sàng bằng giọng tiếng Việt">
+                <span>🔊</span> Đọc giải thích
+              </button>
+              <button class="btn-speak-settings" onclick="openTtsSettingsModal()" title="Cài đặt giọng đọc &amp; tốc độ" aria-label="Cài đặt giọng đọc">⚙️</button>
+            </div>
           </div>
           <div class="explanation-content">${q.explanation}</div>
           <div class="explanation-ref">📖 Nguồn: ${q.reference || 'Giáo trình Dược lâm sàng - Bộ Y tế'}</div>
@@ -1894,9 +2082,12 @@ function updateStudyCardDOM(qId, oIdx, q) {
       <div class="explanation-header" style="color: ${isCorrect ? 'var(--primary)' : 'var(--danger)'}">
         ${isCorrect ? '✓ CHÍNH XÁC' : '✗ CHƯA ĐÚNG'} • ĐÁP ÁN: ${letters[q.correct]}
       </div>
-      <button class="btn-speak-exp" onclick="speakExplanationFromCard(this)" title="Nghe đọc giải thích lâm sàng bằng giọng tiếng Việt">
-        <span>🔊</span> Đọc giải thích
-      </button>
+      <div style="display: flex; gap: 0.35rem; align-items: center;">
+        <button class="btn-speak-exp" onclick="speakExplanationFromCard(this)" title="Nghe đọc giải thích lâm sàng bằng giọng tiếng Việt">
+          <span>🔊</span> Đọc giải thích
+        </button>
+        <button class="btn-speak-settings" onclick="openTtsSettingsModal()" title="Cài đặt giọng đọc &amp; tốc độ" aria-label="Cài đặt giọng đọc">⚙️</button>
+      </div>
     </div>
     <div class="explanation-content">${q.explanation}</div>
     <div class="explanation-ref">📖 Nguồn: ${q.reference || 'Giáo trình Dược lâm sàng - Bộ Y tế'}</div>
@@ -5490,9 +5681,12 @@ function renderDetailedReviewQuestions() {
             <div class="exp-title">
               <span>💡</span> Phân Tích &amp; Giải Thích Lâm Sàng
             </div>
-            <button class="btn-speak-exp" onclick="speakExplanationFromCard(this)" title="Nghe đọc giải thích lâm sàng bằng giọng tiếng Việt">
-              <span>🔊</span> Đọc giải thích
-            </button>
+            <div style="display: flex; gap: 0.35rem; align-items: center;">
+              <button class="btn-speak-exp" onclick="speakExplanationFromCard(this)" title="Nghe đọc giải thích lâm sàng bằng giọng tiếng Việt">
+                <span>🔊</span> Đọc giải thích
+              </button>
+              <button class="btn-speak-settings" onclick="openTtsSettingsModal()" title="Cài đặt giọng đọc &amp; tốc độ" aria-label="Cài đặt giọng đọc">⚙️</button>
+            </div>
           </div>
           <div class="exp-text">
             ${q.explanation}

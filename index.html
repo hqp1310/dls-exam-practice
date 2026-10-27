@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=19">
+  <link rel="stylesheet" href="styles.css?v=20">
 </head>
 <body>
   <!-- SKIP LINK (OpenDesign Web Interface Accessibility Rule) -->
@@ -40,6 +40,9 @@
           </button>
           <button class="btn-icon" id="btn-sync-toggle" onclick="openSyncModal()" title="Đồng bộ dữ liệu giữa Điện thoại &amp; Máy tính" aria-label="Đồng bộ dữ liệu">
             <span aria-hidden="true">🔄</span>
+          </button>
+          <button class="btn-icon" id="btn-tts-settings" onclick="openTtsSettingsModal()" title="Cài đặt giọng đọc giải thích &amp; tốc độ" aria-label="Cài đặt giọng đọc">
+            <span aria-hidden="true">🔊</span>
           </button>
           <button class="btn-icon" id="btn-theme-toggle" title="Đổi giao diện Sáng / Tối" aria-label="Chuyển đổi giao diện Sáng hoặc Tối">
             <span aria-hidden="true">🌙</span>
@@ -621,42 +624,60 @@
     </div>
   </div>
 
-  <!-- Modal: Hướng Dẫn Giọng Đọc Tiếng Việt Chuẩn -->
-  <div class="modal-overlay" id="modal-voice-guide" onclick="if(event.target === this) closeVoiceGuideModal()">
-    <div class="modal-card" style="max-width: 580px; text-align: left;">
+  <!-- Modal: Cài Đặt Giọng Đọc & Tốc Độ Phát Âm (TTS Settings) -->
+  <div class="modal-overlay" id="modal-voice-settings" onclick="if(event.target === this) closeTtsSettingsModal()">
+    <div class="modal-card" style="max-width: 540px; text-align: left;">
       <div class="modal-header">
-        <div class="modal-title" style="color: var(--secondary);">🔊 KÍCH HOẠT GIỌNG ĐỌC TIẾNG VIỆT CHUẨN</div>
-        <button class="modal-close" onclick="closeVoiceGuideModal()">&times;</button>
+        <div class="modal-title" style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem;">
+          <span>🔊</span> CÀI ĐẶT GIỌNG ĐỌC GIẢI THÍCH
+        </div>
+        <button class="modal-close" onclick="closeTtsSettingsModal()">&times;</button>
       </div>
+
       <div style="padding: 0.5rem 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-main);">
-        <p style="margin-bottom: 0.85rem; color: var(--text-muted);">
-          Trình duyệt này hiện chưa cài gói phát âm <strong>Tiếng Việt</strong>. Để tuyệt đối không phát ra giọng tiếng Anh lơ lớ, hệ thống xin hướng dẫn bạn 3 cách kích hoạt giọng đọc chuẩn 100%:
-        </p>
-
-        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--radius-md); padding: 0.85rem 1rem; margin-bottom: 0.85rem;">
-          <strong style="color: var(--primary); font-size: 0.95rem;">⚡ Cách 1 (Nhanh nhất - 1 giây): Mở bằng Microsoft Edge</strong>
-          <p style="font-size: 0.86rem; color: var(--text-main); margin-top: 0.35rem;">
-            Trình duyệt <strong>Microsoft Edge</strong> (đã cài sẵn trên mọi máy tính Windows) tích hợp sẵn giọng đọc AI <strong>Hoài My &amp; Nam Minh (Natural)</strong> của Microsoft. Bạn chỉ cần sao chép link và mở trên Edge là nghe đọc cực kỳ tự nhiên, truyền cảm như phát thanh viên!
-          </p>
+        <!-- Active Voice Display & Selector -->
+        <div style="margin-bottom: 1rem;">
+          <label style="font-weight: 600; display: block; margin-bottom: 0.35rem;">
+            🎙️ Giọng đọc tiếng Việt:
+          </label>
+          <select id="tts-voice-select" onchange="onUserChangeTtsVoice()" style="width: 100%; padding: 0.55rem 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); color: var(--text-main); font-size: 0.9rem; outline: none;">
+            <!-- Populated dynamically via JS -->
+          </select>
+          <div id="tts-voice-note" style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.35rem; line-height: 1.4;"></div>
         </div>
 
-        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-left: 4px solid var(--secondary); border-radius: var(--radius-md); padding: 0.85rem 1rem; margin-bottom: 0.85rem;">
-          <strong style="color: var(--secondary); font-size: 0.95rem;">📱 Cách 2: Mở trên Điện thoại (iPhone / Android)</strong>
-          <p style="font-size: 0.86rem; color: var(--text-main); margin-top: 0.35rem;">
-            Điện thoại <strong>iPhone/iPad</strong> (Safari) và <strong>Android</strong> (Chrome) đã tích hợp sẵn giọng đọc tiếng Việt của Apple &amp; Google trong hệ điều hành, bấm vào là nghe đọc chuẩn tiếng Việt ngay.
-          </p>
+        <!-- Speed / Rate Selector -->
+        <div style="margin-bottom: 1.25rem;">
+          <label style="font-weight: 600; display: block; margin-bottom: 0.35rem;">
+            ⚡ Tốc độ phát âm:
+          </label>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button type="button" class="btn btn-secondary tts-speed-btn" data-speed="0.85" onclick="setTtsSpeed(0.85)" style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">0.85x (Chậm, rõ từng chữ)</button>
+            <button type="button" class="btn btn-secondary tts-speed-btn" data-speed="0.92" onclick="setTtsSpeed(0.92)" style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">0.92x (Tiêu chuẩn)</button>
+            <button type="button" class="btn btn-secondary tts-speed-btn" data-speed="1.05" onclick="setTtsSpeed(1.05)" style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">1.05x (Nhanh vừa)</button>
+          </div>
         </div>
 
-        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-left: 4px solid var(--warning); border-radius: var(--radius-md); padding: 0.85rem 1rem;">
-          <strong style="color: #d97706; font-size: 0.95rem;">⚙️ Cách 3: Cài gói Tiếng Việt cho Google Chrome (Windows)</strong>
-          <p style="font-size: 0.86rem; color: var(--text-main); margin-top: 0.35rem;">
-            Vào <strong>Windows Settings</strong> (phím Win + I) &rarr; <strong>Time &amp; language</strong> &rarr; <strong>Speech</strong> &rarr; Chọn <strong>Add voices</strong> &rarr; Chọn <strong>Vietnamese (Việt Nam)</strong> và bấm <strong>Add</strong>. Khởi động lại Chrome là nghe được!
-          </p>
+        <!-- Test Voice Button -->
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 0.85rem 1rem; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+          <div>
+            <div style="font-weight: 600; font-size: 0.9rem;">Thử nghiệm âm thanh</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Nghe thử giọng đọc với câu mẫu Dược lâm sàng</div>
+          </div>
+          <button class="btn btn-primary" id="btn-test-tts-voice" onclick="testTtsSampleSpeech()" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+            <span>▶️</span> Nghe thử ngay
+          </button>
+        </div>
+
+        <!-- Tip for Microsoft Edge Natural Voice -->
+        <div style="background: rgba(37, 99, 235, 0.08); border: 1px solid rgba(37, 99, 235, 0.25); border-radius: var(--radius-md); padding: 0.75rem 1rem; font-size: 0.84rem; color: var(--text-main); line-height: 1.5;">
+          💡 <strong>Mẹo nghe giọng AI siêu mượt:</strong> Trình duyệt <strong>Microsoft Edge</strong> (có sẵn trên mọi máy tính Windows) tích hợp miễn phí giọng AI <em>Hoài My &amp; Nam Minh (Natural)</em> đọc cực kỳ mượt mà, diễn cảm tự nhiên như phát thanh viên VTV!
         </div>
       </div>
+
       <div class="modal-actions" style="margin-top: 1rem; justify-content: flex-end;">
-        <button class="btn btn-primary" onclick="closeVoiceGuideModal()" style="padding: 0.5rem 1.25rem;">
-          Đã hiểu
+        <button class="btn btn-primary" onclick="closeTtsSettingsModal()" style="padding: 0.5rem 1.25rem;">
+          Đóng
         </button>
       </div>
     </div>
@@ -719,6 +740,6 @@
 
   <script src="questions_800.js?v=30"></script>
   <script src="flashcards.js?v=30"></script>
-  <script src="app.js?v=30"></script>
+  <script src="app.js?v=31"></script>
 </body>
 </html>

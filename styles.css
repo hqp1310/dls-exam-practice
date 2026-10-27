@@ -515,6 +515,35 @@ header.app-header {
   50% { opacity: 0.88; transform: scale(1.03); }
 }
 
+.btn-speak-settings {
+  padding: 0.35rem 0.55rem;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.btn-speak-settings:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: var(--surface-alt);
+  transform: translateY(-1px);
+}
+
+.tts-speed-btn.active {
+  background: var(--primary) !important;
+  color: white !important;
+  border-color: var(--primary) !important;
+  font-weight: 600;
+}
+
 /* MAIN LAYOUT */
 main.app-main {
   flex: 1;
