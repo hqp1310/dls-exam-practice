@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20">
+  <link rel="stylesheet" href="styles.css?v=21">
 </head>
 <body>
   <!-- SKIP LINK (OpenDesign Web Interface Accessibility Rule) -->
@@ -647,7 +647,7 @@
         </div>
 
         <!-- Speed / Rate Selector -->
-        <div style="margin-bottom: 1.25rem;">
+        <div style="margin-bottom: 1rem;">
           <label style="font-weight: 600; display: block; margin-bottom: 0.35rem;">
             ⚡ Tốc độ phát âm:
           </label>
@@ -655,6 +655,18 @@
             <button type="button" class="btn btn-secondary tts-speed-btn" data-speed="0.85" onclick="setTtsSpeed(0.85)" style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">0.85x (Chậm, rõ từng chữ)</button>
             <button type="button" class="btn btn-secondary tts-speed-btn" data-speed="0.92" onclick="setTtsSpeed(0.92)" style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">0.92x (Tiêu chuẩn)</button>
             <button type="button" class="btn btn-secondary tts-speed-btn" data-speed="1.05" onclick="setTtsSpeed(1.05)" style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">1.05x (Nhanh vừa)</button>
+          </div>
+        </div>
+
+        <!-- Pitch Selector -->
+        <div style="margin-bottom: 1.25rem;">
+          <label style="font-weight: 600; display: block; margin-bottom: 0.35rem;">
+            🎵 Cao độ giọng (Âm sắc):
+          </label>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button type="button" class="btn btn-secondary tts-pitch-btn" data-pitch="0.9" onclick="setTtsPitch(0.9)" style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">0.9x (Trầm ấm, đỡ the thé)</button>
+            <button type="button" class="btn btn-secondary tts-pitch-btn" data-pitch="1.0" onclick="setTtsPitch(1.0)" style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">1.0x (Tiêu chuẩn)</button>
+            <button type="button" class="btn btn-secondary tts-pitch-btn" data-pitch="1.1" onclick="setTtsPitch(1.1)" style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">1.1x (Thanh sáng)</button>
           </div>
         </div>
 
@@ -670,8 +682,18 @@
         </div>
 
         <!-- Tip for Microsoft Edge Natural Voice -->
-        <div style="background: rgba(37, 99, 235, 0.08); border: 1px solid rgba(37, 99, 235, 0.25); border-radius: var(--radius-md); padding: 0.75rem 1rem; font-size: 0.84rem; color: var(--text-main); line-height: 1.5;">
-          💡 <strong>Mẹo nghe giọng AI siêu mượt:</strong> Trình duyệt <strong>Microsoft Edge</strong> (có sẵn trên mọi máy tính Windows) tích hợp miễn phí giọng AI <em>Hoài My &amp; Nam Minh (Natural)</em> đọc cực kỳ mượt mà, diễn cảm tự nhiên như phát thanh viên VTV!
+        <div style="background: rgba(37, 99, 235, 0.08); border: 1px solid rgba(37, 99, 235, 0.25); border-radius: var(--radius-md); padding: 0.85rem 1rem; font-size: 0.85rem; color: var(--text-main); line-height: 1.5;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+              <strong style="color: var(--primary); font-size: 0.92rem;">✨ Muốn giọng đọc tự nhiên 100% như người thật?</strong>
+              <div style="margin-top: 0.25rem; font-size: 0.84rem; color: var(--text-main);">
+                Trình duyệt <strong>Microsoft Edge</strong> (đã cài sẵn trên Windows) tích hợp miễn phí giọng AI <em>Hoài My &amp; Nam Minh (Natural)</em>, đọc truyền cảm và ngắt nghỉ tự nhiên như phát thanh viên VTV!
+              </div>
+            </div>
+            <button type="button" class="btn btn-secondary" onclick="copyExamLinkForEdge()" style="padding: 0.35rem 0.75rem; font-size: 0.82rem; white-space: nowrap; border-color: var(--primary); color: var(--primary);">
+              📋 Copy link mở trên Edge
+            </button>
+          </div>
         </div>
       </div>
 
@@ -740,6 +762,6 @@
 
   <script src="questions_800.js?v=30"></script>
   <script src="flashcards.js?v=30"></script>
-  <script src="app.js?v=32"></script>
+  <script src="app.js?v=33"></script>
 </body>
 </html>

@@ -537,7 +537,8 @@ header.app-header {
   transform: translateY(-1px);
 }
 
-.tts-speed-btn.active {
+.tts-speed-btn.active,
+.tts-pitch-btn.active {
   background: var(--primary) !important;
   color: white !important;
   border-color: var(--primary) !important;

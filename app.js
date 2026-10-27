@@ -1008,7 +1008,7 @@ function playNextSpeechChunk() {
     utterance.lang = 'vi-VN';
   }
   utterance.rate = getTtsRate();
-  utterance.pitch = 1.0;
+  utterance.pitch = getTtsPitch();
 
   utterance.onend = () => {
     ttsCurrentChunkIndex++;
@@ -1050,6 +1050,7 @@ function openTtsSettingsModal() {
   modal.classList.add('active');
   renderTtsVoiceList();
   renderTtsSpeedButtons();
+  renderTtsPitchButtons();
 }
 
 function closeTtsSettingsModal() {
@@ -1142,6 +1143,46 @@ function setTtsSpeed(rate) {
   if (isSpeaking) {
     stopSpeaking();
   }
+}
+
+function getTtsPitch() {
+  try {
+    const saved = parseFloat(localStorage.getItem('dls_tts_pitch'));
+    if (!isNaN(saved) && saved >= 0.7 && saved <= 1.4) {
+      return saved;
+    }
+  } catch (e) {}
+  return 1.0;
+}
+
+function renderTtsPitchButtons() {
+  const currentPitch = getTtsPitch();
+  document.querySelectorAll('.tts-pitch-btn').forEach(btn => {
+    const p = parseFloat(btn.getAttribute('data-pitch'));
+    if (Math.abs(p - currentPitch) < 0.04) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+}
+
+function setTtsPitch(pitch) {
+  localStorage.setItem('dls_tts_pitch', pitch.toString());
+  renderTtsPitchButtons();
+  showToast('Đã chỉnh cao độ: ' + pitch + 'x');
+  if (isSpeaking) {
+    stopSpeaking();
+  }
+}
+
+function copyExamLinkForEdge() {
+  const url = window.location.href;
+  navigator.clipboard.writeText(url).then(() => {
+    showToast('📋 Đã sao chép link! Mở Microsoft Edge và dán link vào để nghe giọng AI siêu mượt.');
+  }).catch(() => {
+    showToast('Link: ' + url);
+  });
 }
 
 function testTtsSampleSpeech() {
