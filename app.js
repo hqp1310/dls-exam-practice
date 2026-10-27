@@ -1067,6 +1067,11 @@ function closeTtsSettingsModal() {
   stopSpeaking();
 }
 
+function hasLocalTtsServer() {
+  const h = window.location.hostname;
+  return h === '127.0.0.1' || h === 'localhost';
+}
+
 function renderTtsVoiceList() {
   const select = document.getElementById('tts-voice-select');
   const noteEl = document.getElementById('tts-voice-note');
@@ -1075,16 +1080,19 @@ function renderTtsVoiceList() {
   const viVoices = getAvailableVietnameseVoices();
   const currentVoice = findVietnameseVoice();
   const savedVoiceName = localStorage.getItem('dls_preferred_voice');
+  const hasServer = hasLocalTtsServer();
   select.innerHTML = '';
 
-  // 1. Google Tiếng Việt (Cloud AI Online - Cực mượt & Tự nhiên nhất)
-  const googleOpt = document.createElement('option');
-  googleOpt.value = '__google_online__';
-  googleOpt.textContent = '🌟 Google Tiếng Việt (Cloud AI - Cực mượt & Tự nhiên nhất)';
-  if (savedVoiceName === '__google_online__' || !savedVoiceName) {
-    googleOpt.selected = true;
+  // 1. Google Tiếng Việt (Cloud AI Online): available if local dev server is running
+  if (hasServer) {
+    const googleOpt = document.createElement('option');
+    googleOpt.value = '__google_online__';
+    googleOpt.textContent = '🌟 Google Tiếng Việt (Cloud AI - Cực mượt & Tự nhiên nhất)';
+    if (savedVoiceName === '__google_online__' || !savedVoiceName) {
+      googleOpt.selected = true;
+    }
+    select.appendChild(googleOpt);
   }
-  select.appendChild(googleOpt);
 
   // 2. Available system / browser voices
   viVoices.forEach(v => {
@@ -1092,30 +1100,32 @@ function renderTtsVoiceList() {
     opt.value = v.name;
     let label = v.name;
     if (v.name.includes('Natural') || v.name.includes('Online')) {
-      label += ' ⭐ (Edge AI Tự nhiên)';
+      label += ' ⭐ (Edge AI Tự nhiên - Rất hay)';
     } else if (v.name.includes('Google')) {
-      label += ' 🌐 (Google System)';
+      label += ' 🌐 (Google Tiếng Việt Thiết Bị)';
     } else if (v.name.includes('Microsoft An')) {
       label += ' 🖥️ (Windows Microsoft An)';
     } else if (v.name.includes('Linh')) {
       label += ' 🍎 (Apple Tiếng Việt)';
     }
     opt.textContent = label;
-    if (savedVoiceName === v.name) {
+    if (savedVoiceName === v.name || (!hasServer && currentVoice && v.name === currentVoice.name && !savedVoiceName)) {
       opt.selected = true;
     }
     select.appendChild(opt);
   });
 
   if (noteEl) {
-    if (savedVoiceName === '__google_online__' || !savedVoiceName) {
+    if (hasServer && (savedVoiceName === '__google_online__' || !savedVoiceName)) {
       noteEl.innerHTML = '<span style="color: var(--primary); font-weight: 600;">✨ Đang dùng giọng đọc Google Tiếng Việt Cloud AI (chuẩn Google Dịch / Trợ lý ảo cực kỳ ấm áp và tự nhiên)!</span>';
-    } else if (savedVoiceName && (savedVoiceName.includes('Natural') || savedVoiceName.includes('Online'))) {
+    } else if (currentVoice && (currentVoice.name.includes('Natural') || currentVoice.name.includes('Online'))) {
       noteEl.innerHTML = '<span style="color: var(--primary); font-weight: 600;">✨ Đang dùng giọng AI Natural cao cấp của Microsoft Edge!</span>';
-    } else if (savedVoiceName && savedVoiceName.includes('Microsoft An')) {
-      noteEl.innerHTML = '<span>Đang dùng giọng đọc tiếng Việt của Windows (Microsoft An). Bạn có thể đổi sang <strong>Google Tiếng Việt</strong> ở trên để nghe mượt hơn.</span>';
+    } else if (currentVoice && currentVoice.name.includes('Google')) {
+      noteEl.innerHTML = '<span style="color: var(--primary); font-weight: 600;">✨ Đang dùng giọng Google Tiếng Việt chính hãng của thiết bị!</span>';
+    } else if (currentVoice && currentVoice.name.includes('Microsoft An')) {
+      noteEl.innerHTML = '<span>Đang dùng giọng đọc của Windows (Microsoft An). Mở trên <strong>Microsoft Edge</strong> hoặc <strong>Điện thoại</strong> để nghe giọng AI mượt mà 100%.</span>';
     } else {
-      noteEl.textContent = 'Đã nhận diện ' + (viVoices.length + 1) + ' tùy chọn giọng đọc tiếng Việt.';
+      noteEl.textContent = 'Đã nhận diện ' + (viVoices.length + (hasServer ? 1 : 0)) + ' tùy chọn giọng đọc.';
     }
   }
 }
@@ -1229,15 +1239,15 @@ function speakExplanation(btn, rawText) {
   if (!text) return;
 
   const preferredVoice = localStorage.getItem('dls_preferred_voice');
-  const isGoogleOnlineChosen = (preferredVoice === '__google_online__' || !preferredVoice);
+  const isGoogleOnlineChosen = (preferredVoice === '__google_online__');
 
-  // If Google Online Cloud AI is chosen, play via high quality Google TTS audio stream
-  if (isGoogleOnlineChosen) {
+  // If local server is running and Google Online is chosen (or default on local server):
+  if (hasLocalTtsServer() && (isGoogleOnlineChosen || !preferredVoice)) {
     playGoogleOnlineTts(btn, text);
     return;
   }
 
-  // Otherwise, use browser Web Speech API
+  // Otherwise (on GitHub Pages or static host, or when a system voice is chosen), use Web Speech API immediately
   playWebSpeechTts(btn, text);
 }
 
