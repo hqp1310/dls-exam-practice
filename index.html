@@ -94,8 +94,8 @@
             <div><strong>Ma trận 44h chuẩn hóa:</strong> Đề 80 câu tự động mix thông minh ~45% câu từ ĐH Dược Hà Nội, ĐH Y Dược TP.HCM, ĐH Y Hà Nội &amp; ~55% Chuẩn BYT theo đúng 14 bài giảng.</div>
           </div>
           <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">
-            <button class="matrix-info-btn coverage-info-btn" onclick="openCoverageModal()" title="Xem độ phủ ngân hàng 1.402 câu hỏi bạn đã từng làm">
-              📈 Độ phủ kho: <span id="header-coverage-badge">-- / 1.402 (0%)</span>
+            <button class="matrix-info-btn coverage-info-btn" onclick="openCoverageModal()" title="Xem độ phủ ngân hàng 1.486 câu hỏi bạn đã từng làm">
+              📈 Độ phủ kho: <span id="header-coverage-badge">-- / 1.486 (0%)</span>
             </button>
             <button class="matrix-info-btn" onclick="openMatrixModal()" title="Xem chi tiết phân bổ 80 câu theo số tiết">📊 Ma trận 44h</button>
           </div>
@@ -109,7 +109,7 @@
             </div>
           </div>
           <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
-            <label class="toggle-unseen-label" title="Khi bật, hệ thống sẽ ưu tiên chọn các câu bạn CHƯA TỪNG LÀM để quét sạch toàn bộ 1.402 câu nhanh nhất">
+            <label class="toggle-unseen-label" title="Khi bật, hệ thống sẽ ưu tiên chọn các câu bạn CHƯA TỪNG LÀM để quét sạch toàn bộ 1.486 câu nhanh nhất">
               <input type="checkbox" id="chk-prioritize-unseen" checked onchange="togglePrioritizeUnseen(this.checked)">
               <span>🎯 Ưu tiên câu chưa làm</span>
             </label>
@@ -560,7 +560,7 @@
       </div>
       <div style="padding: 0.5rem 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-main);">
         <p style="margin-bottom: 0.85rem; color: var(--text-muted);">
-          Hệ thống đã tích hợp <strong>1.402 câu hỏi</strong> chuẩn hóa gồm kho đề Bộ Y tế và đề thi chính thức từ các trường Đại học Y Dược danh tiếng hàng đầu Việt Nam:
+          Hệ thống đã tích hợp <strong>1.486 câu hỏi</strong> chuẩn hóa gồm kho đề Bộ Y tế, đề thi thực tế (Dls.pdf) và đề thi chính thức từ các trường Đại học Y Dược danh tiếng hàng đầu Việt Nam:
         </p>
 
         <div class="uni-exam-card" onclick="generateUniversityExam('all')" style="border-left: 4px solid var(--primary); margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
@@ -569,7 +569,17 @@
             <span class="badge badge-category">80 câu • 80 phút</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
-            Trộn thông minh ~45% câu hỏi ĐH Dược Hà Nội, ĐH Y Dược TP.HCM, ĐH Y Hà Nội &amp; ~55% Chuẩn Bộ Y tế theo đúng ma trận 14 chuyên đề 44h.
+            Trộn thông minh câu hỏi Đề thi thực tế (Dls.pdf), ĐH Dược Hà Nội, ĐH Y Dược TP.HCM, ĐH Y Hà Nội &amp; Chuẩn Bộ Y tế theo đúng ma trận 14 chuyên đề 44h.
+          </div>
+        </div>
+
+        <div class="uni-exam-card" onclick="generateUniversityExam('DLS_PDF')" style="border-left: 4px solid #10b981; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+            <strong style="color: #10b981; font-size: 1rem;">📝 Đề thi Dược Lâm Sàng Thực Tế (Dls.pdf)</strong>
+            <span class="badge badge-source-dls">84 câu • 84 phút</span>
+          </div>
+          <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
+            Trọn bộ 84 câu hỏi thi thực tế từ đề thi Dược Lâm Sàng (Dls.pdf): THA, Tiêu chảy cấp ORS/Racecadotril, Tránh thai Implanon, Nghị định 131/2020, Cockcroft-Gault, Xét nghiệm, Tương tác thuốc, ADR, Corticoid &amp; Giảm đau ung thư.
           </div>
         </div>
 
@@ -615,7 +625,7 @@
   <div class="modal-overlay" id="modal-coverage" onclick="if(event.target === this) closeCoverageModal()">
     <div class="modal-card matrix-modal-card">
       <div class="modal-header">
-        <div class="modal-title">📈 TIẾN ĐỘ ĐỘ PHỦ KHO 1.402 CÂU HỎI</div>
+        <div class="modal-title">📈 TIẾN ĐỘ ĐỘ PHỦ KHO 1.486 CÂU HỎI</div>
         <button class="modal-close" onclick="closeCoverageModal()">&times;</button>
       </div>
       <div id="coverage-modal-body">

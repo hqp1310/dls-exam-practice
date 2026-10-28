@@ -370,5 +370,78 @@ const FLASHCARD_DATA = [
     "topic": "Glucocorticoid",
     "q": "Cần lưu ý gì khi truyền tĩnh mạch Glucocorticoid liều cao?",
     "a": "Truyền tĩnh mạch chậm, theo dõi điện tim và huyết áp để tránh nguy cơ tụt huyết áp, loạn nhịp tim hoặc ngừng tim."
+  },
+  {
+    "id": 99,
+    "topic": "Tiêu chảy cấp",
+    "q": "Chỉ định và liều dùng Racecadotril trong tiêu chảy cấp ở trẻ em?",
+    "a": "1,5 mg/kg mỗi lần, uống 3 lần/ngày (cách nhau 8 giờ), tối đa không quá 7 ngày, phối hợp với bù dịch Oresol. Giảm tiết nước và điện giải niêm mạc ruột mà không làm giảm nhu động ruột."
+  },
+  {
+    "id": 100,
+    "topic": "Tiêu chảy cấp",
+    "q": "Tại sao không dùng Ondansetron thường quy cho trẻ chỉ tiêu chảy phân nước đơn thuần?",
+    "a": "Làm tăng lượng phân và kéo dài thời gian tiêu chảy do giữ độc tố lại trong ruột. Chỉ dùng liều duy nhất khi trẻ nôn nhiều thất bại với bù dịch bằng đường uống."
+  },
+  {
+    "id": 101,
+    "topic": "Tiêu chảy cấp",
+    "q": "Phân loại mức độ mất nước theo nồng độ Natri huyết thanh?",
+    "a": "Đẳng trương: 130 - 150 mmol/L (chiếm 70-80%); Nhược trương: < 130 mmol/L; Ưu trương: > 150 mmol/L."
+  },
+  {
+    "id": 102,
+    "topic": "Đại cương DLS",
+    "q": "Định mức nhân lực Dược lâm sàng theo Nghị định 131/2020/NĐ-CP?",
+    "a": "Nội trú: tối thiểu 01 người cho mỗi 150 giường bệnh. Ngoại trú: tối thiểu 01 người cho mỗi 1.000 đơn thuốc cấp phát trong ngày. Người phụ trách DLS tại BV YHCT phải có bằng Dược sĩ đại học trở lên."
+  },
+  {
+    "id": 103,
+    "topic": "Dược động học",
+    "q": "Tại sao ưu tiên Oxazepam thay vì Diazepam ở người cao tuổi hoặc suy gan?",
+    "a": "Oxazepam chỉ qua liên hợp Glucuronic ở Pha II tạo chất không hoạt tính thải qua thận; Diazepam qua Pha I tạo chất chuyển hóa Nordiazepam có T1/2 > 100h dễ tích lũy gây lú lẫn, an thần kéo dài và té ngã."
+  },
+  {
+    "id": 104,
+    "topic": "Dược động học",
+    "q": "Thuốc giãn cơ Rocuronium dùng trong mổ lấy thai có đặc điểm dược động học gì?",
+    "a": "Là phân tử amin bậc 4 tích điện cao, tan kém trong lipid nên hầu như không qua được hàng rào nhau thai, rất an toàn cho thai nhi trong mổ lấy thai."
+  },
+  {
+    "id": 105,
+    "topic": "Glucocorticoid",
+    "q": "Nguyên tắc giảm liều (cai thuốc) Glucocorticoid toàn thân?",
+    "a": "Bắt buộc giảm liều từ từ khi dùng liều tương đương Prednisolon >= 7,5 mg/ngày trên 3 tuần để phòng suy thượng thận cấp. Dùng < 2 tuần có thể ngừng ngay không cần giảm liều."
+  },
+  {
+    "id": 106,
+    "topic": "Glucocorticoid",
+    "q": "Tại sao không tiêm vaccine vi sinh vật sống giảm độc lực khi dùng Corticoid liều cao?",
+    "a": "Corticoid liều cao ức chế miễn dịch mạnh làm vi sinh vật sống trong vaccine có thể nhân lên gây nhiễm trùng toàn thân đe dọa tính mạng. Cần ngừng thuốc ít nhất 1 tháng trước khi tiêm."
+  },
+  {
+    "id": 107,
+    "topic": "Giảm đau",
+    "q": "Nguyên tắc dùng thuốc giảm đau cho bệnh nhân ung thư giai đoạn cuối đau nhiều?",
+    "a": "Sử dụng Opioid mạnh (Morphin) theo thang bậc 3 WHO, uống cố định theo giờ ('by the clock'), kèm liều cứu nghẹt và BẮT BUỘC phối hợp sẵn thuốc nhuận tràng kích thích phòng táo bón."
+  },
+  {
+    "id": 108,
+    "topic": "Kháng sinh",
+    "q": "Thời điểm tối ưu sử dụng kháng sinh dự phòng trong phẫu thuật?",
+    "a": "Trong vòng 30 - 60 phút TRƯỚC KHI rạch da (thường tiêm cùng lúc khởi mê) để nồng độ kháng sinh tại mô vết mổ đạt đỉnh ngay khi rạch da."
+  },
+  {
+    "id": 109,
+    "topic": "Tiêu chảy cấp",
+    "q": "Lưu ý quan trọng khi dùng thuốc Smecta (Diosmectite)?",
+    "a": "Uống cách xa các thuốc khác ít nhất 2 giờ vì đặc tính hấp phụ vật lý rất mạnh của Smecta sẽ làm giảm hấp thu các thuốc dùng kèm."
+  },
+  {
+    "id": 110,
+    "topic": "Vitamin & Khoáng chất",
+    "q": "Chỉ định Vitamin A liều cao ở trẻ em mắc bệnh Sởi nhằm mục đích gì?",
+    "a": "Bổ sung lượng vitamin A bị tiêu hao cấp tính do virus sởi, phòng ngừa biến chứng loét giác mạc gây mù lòa và giảm tỷ lệ tử vong ở trẻ em."
   }
 ];
+

@@ -107,14 +107,17 @@ function shuffle(array) {
 }
 
 // Cân bằng tỷ lệ bốc câu hỏi từ các trường đại học (HUP, UMP, HMU)
+// Cân bằng tỷ lệ bốc câu hỏi từ các trường đại học & đề thi Dls.pdf
 function balanceUniversitySchools(uniList) {
   const hup = shuffle(uniList.filter(q => q.source === 'HUP'));
   const ump = shuffle(uniList.filter(q => q.source === 'UMP'));
   const hmu = shuffle(uniList.filter(q => q.source === 'HMU'));
+  const dls = shuffle(uniList.filter(q => q.source === 'DLS_PDF'));
+  const other = shuffle(uniList.filter(q => !['HUP', 'UMP', 'HMU', 'DLS_PDF'].includes(q.source)));
   const result = [];
-  const maxLen = Math.max(hup.length, ump.length, hmu.length);
+  const maxLen = Math.max(hup.length, ump.length, hmu.length, dls.length, other.length);
   for (let i = 0; i < maxLen; i++) {
-    const round = shuffle([hup[i], ump[i], hmu[i]].filter(Boolean));
+    const round = shuffle([hup[i], ump[i], hmu[i], dls[i], other[i]].filter(Boolean));
     result.push(...round);
   }
   return result;
@@ -309,6 +312,10 @@ function renderSourceBadge(source, sourceName) {
     badgeClass = 'badge-source-hmu';
     icon = '🏛️';
     label = 'ĐH Y Hà Nội';
+  } else if (source === 'DLS_PDF') {
+    badgeClass = 'badge-source-dls';
+    icon = '📝';
+    label = 'Đề thi Dls.pdf';
   } else {
     badgeClass = 'badge-source-byt';
     icon = '📋';
@@ -356,6 +363,9 @@ function generateUniversityExam(source = 'all', force = false) {
     targetCount = pool.length;
   } else if (source === 'HMU') {
     pool = ALL_EXAM_BANK.filter(q => q.source === 'HMU');
+    targetCount = pool.length;
+  } else if (source === 'DLS_PDF') {
+    pool = ALL_EXAM_BANK.filter(q => q.source === 'DLS_PDF');
     targetCount = pool.length;
   }
 
@@ -1924,6 +1934,7 @@ function renderTopicStudyView() {
   // 1b. SCHOOL SOURCE FILTER RIBBON
   const schoolOptions = [
     { id: 'all', label: 'Tất cả nguồn' },
+    { id: 'DLS_PDF', label: '📝 Đề thi Dls.pdf' },
     { id: 'HUP', label: '🏛️ ĐH Dược Hà Nội' },
     { id: 'UMP', label: '🏛️ ĐH Y Dược TP.HCM' },
     { id: 'HMU', label: '🏛️ ĐH Y Hà Nội' },
