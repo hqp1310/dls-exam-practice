@@ -116,6 +116,9 @@
             <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--surface-alt); border-color: var(--secondary); color: var(--secondary);" onclick="openUniversityExamModal()" title="Lựa chọn làm đề thi chuyên sâu của ĐH Dược Hà Nội, ĐH Y Dược TP.HCM, ĐH Y Hà Nội">
               🏛️ Đề Các Trường Y Dược
             </button>
+            <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: #ecfdf5; color: #047857; border-color: #10b981; font-weight: 600;" onclick="generateGradedExam()" title="Tạo đề thi 80 câu phân hóa chuẩn 3 cấp độ: 16 Nhận biết (20%), 32 Vận dụng (40%), 32 Vận dụng cao (40%) theo ma trận 44h">
+              🎯 Đề Phân Hóa (2:4:4)
+            </button>
             <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary);" onclick="generateRandomExam()" title="Tạo đề 80 câu chuẩn ma trận 44h tự động mix câu hỏi ĐH Dược HN, ĐH Y Dược TPHCM, ĐH Y HN và Chuẩn BYT">
               🎲 Tạo Đề Random Mới
             </button>
@@ -303,6 +306,31 @@
         </div>
       </div>
 
+      <!-- Cognitive Level Performance Breakdown -->
+      <div class="level-breakdown-card" style="margin: 0.75rem 0; padding: 0.65rem 0.85rem; background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md);">
+        <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.25rem;">
+          <span>🎯 Đánh giá theo Cấp độ Nhận thức (Tỉ lệ 2:4:4):</span>
+          <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: normal;">Nhận biết (20%) • Vận dụng (40%) • VDC (40%)</span>
+        </div>
+        <div class="level-breakdown-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; text-align: center;">
+          <div class="level-box nb" style="padding: 0.45rem 0.25rem; border-radius: var(--radius-sm); background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3);">
+            <div style="font-size: 0.75rem; font-weight: 600; color: #16a34a;">🟢 Nhận biết</div>
+            <div id="modal-level-nb" style="font-size: 1.05rem; font-weight: 800; color: #15803d; margin: 0.15rem 0;">-- / --</div>
+            <div id="modal-pct-nb" style="font-size: 0.72rem; color: var(--text-muted);">--%</div>
+          </div>
+          <div class="level-box vd" style="padding: 0.45rem 0.25rem; border-radius: var(--radius-sm); background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3);">
+            <div style="font-size: 0.75rem; font-weight: 600; color: #d97706;">🟡 Vận dụng</div>
+            <div id="modal-level-vd" style="font-size: 1.05rem; font-weight: 800; color: #b45309; margin: 0.15rem 0;">-- / --</div>
+            <div id="modal-pct-vd" style="font-size: 0.72rem; color: var(--text-muted);">--%</div>
+          </div>
+          <div class="level-box vdc" style="padding: 0.45rem 0.25rem; border-radius: var(--radius-sm); background: rgba(225, 29, 72, 0.1); border: 1px solid rgba(225, 29, 72, 0.3);">
+            <div style="font-size: 0.75rem; font-weight: 600; color: #e11d48;">🔴 Vận dụng cao</div>
+            <div id="modal-level-vdc" style="font-size: 1.05rem; font-weight: 800; color: #be123c; margin: 0.15rem 0;">-- / --</div>
+            <div id="modal-pct-vdc" style="font-size: 0.72rem; color: var(--text-muted);">--%</div>
+          </div>
+        </div>
+      </div>
+
       <div style="margin: 0.75rem 0; padding: 0.5rem 0.75rem; background: var(--primary-light); color: var(--primary); border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 0.4rem;">
         <span>💾</span> Bài thi này đã được tự động lưu vào <strong>Lịch Sử Bài Thi</strong> để bạn xem lại!
       </div>
@@ -324,8 +352,11 @@
       </div>
 
       <div class="modal-actions" style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+        <button class="btn btn-secondary" onclick="generateGradedExam(); closeResultsModal();" style="background: #ecfdf5; color: #047857; border-color: #10b981; font-weight: 600;">
+          🎯 Đề Phân Hóa (2:4:4) Mới
+        </button>
         <button class="btn btn-secondary" onclick="generateRandomExam(); closeResultsModal();">
-          🎲 Tạo đề 80 câu mới
+          🎲 Tạo đề ngẫu nhiên
         </button>
         <button class="btn btn-secondary" onclick="viewCurrentExamInHistory(); closeResultsModal();" style="background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary); font-weight: 600;">
           📜 Xem trong Lịch sử bài thi
@@ -562,6 +593,16 @@
         <p style="margin-bottom: 0.85rem; color: var(--text-muted);">
           Hệ thống đã tích hợp <strong>1.486 câu hỏi</strong> chuẩn hóa gồm kho đề Bộ Y tế, đề thi thực tế (Dls.pdf) và đề thi chính thức từ các trường Đại học Y Dược danh tiếng hàng đầu Việt Nam:
         </p>
+
+        <div class="uni-exam-card" onclick="generateGradedExam()" style="border-left: 4px solid #10b981; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+            <strong style="color: #059669; font-size: 1rem;">🎯 Đề Phân Hóa Năng Lực Chuẩn (Tỉ lệ 2:4:4)</strong>
+            <span class="badge" style="background: #d1fae5; color: #047857; font-weight: 700;">80 câu • 16 NB : 32 VD : 32 VDC</span>
+          </div>
+          <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
+            Cấu trúc phân loại 3 cấp độ chuẩn hóa: <strong>16 câu Nhận biết (20%)</strong> • <strong>32 câu Vận dụng (40%)</strong> • <strong>32 câu Vận dụng cao (40%)</strong> theo đúng ma trận 14 chuyên đề 44h.
+          </div>
+        </div>
 
         <div class="uni-exam-card" onclick="generateUniversityExam('all')" style="border-left: 4px solid var(--primary); margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">

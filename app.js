@@ -11,7 +11,8 @@ let examTimer = null;
 const EXAM_DURATION_MINUTES = 80;
 let timeRemaining = EXAM_DURATION_MINUTES * 60; // 80 minutes (4800 seconds)
 let activeTopicFilter = 'Tất cả';
-let topicSourceFilter = 'all'; // 'all' | 'HUP' | 'UMP' | 'HMU' | 'BYT'
+let topicSourceFilter = 'all'; // 'all' | 'HUP' | 'UMP' | 'HMU' | 'BYT' | 'DLS_PDF'
+let topicLevelFilter = 'all';  // 'all' | 'Nhận biết' | 'Vận dụng' | 'Vận dụng cao'
 let studyAnswers = {};
 
 // Vietnamese Text-To-Speech (TTS) State
@@ -261,6 +262,7 @@ function generateRandomExam(force = false) {
       id: q.id,
       examNum: idx + 1,
       chapter: q.chapter,
+      level: q.level || 'Vận dụng',
       source: q.source || "BYT",
       sourceName: q.sourceName || "Bộ Y tế (Chuẩn Quốc gia)",
       question: q.question,
@@ -324,6 +326,192 @@ function renderSourceBadge(source, sourceName) {
   return `<span class="badge ${badgeClass}" title="Nguồn đề: ${sourceName || label}">${icon} ${label}</span>`;
 }
 
+// Render Cognitive Difficulty Level Badge (Nhận biết, Vận dụng, Vận dụng cao)
+function renderLevelBadge(level) {
+  if (!level) return '';
+  let badgeClass = 'badge-level-vd';
+  let icon = '🟡';
+  let label = level;
+
+  if (level === 'Nhận biết') {
+    badgeClass = 'badge-level-nb';
+    icon = '🟢';
+  } else if (level === 'Vận dụng cao') {
+    badgeClass = 'badge-level-vdc';
+    icon = '🔴';
+  } else {
+    badgeClass = 'badge-level-vd';
+    icon = '🟡';
+  }
+  return `<span class="badge ${badgeClass}" title="Mức độ nhận thức: ${label}">${icon} ${label}</span>`;
+}
+
+// Generate an 80-question test graded into 3 cognitive difficulty tiers:
+// Exact 2 : 4 : 4 Ratio = 16 Nhận biết (20%), 32 Vận dụng (40%), 32 Vận dụng cao (40%)
+// Total = 80 questions strictly distributed across 14 chapters per 44h matrix
+function generateGradedExam(force = false) {
+  if (typeof ALL_EXAM_BANK === 'undefined' || !ALL_EXAM_BANK.length) {
+    console.error('ALL_EXAM_BANK not loaded!');
+    return;
+  }
+
+  if (!force && !isExamSubmitted && Object.keys(userAnswers).length > 0) {
+    if (!confirm('Bạn đang làm bài thi dở dang. Bạn có chắc chắn muốn bỏ bài thi hiện tại và tạo đề thi phân hóa năng lực (tỉ lệ 2:4:4) không?')) {
+      return;
+    }
+  }
+
+  closeUniversityExamModal();
+  clearExamDraft();
+
+  const covStats = getBankCoverageStats();
+  const seenIds = covStats.seenIds || new Set();
+
+  const targetLevels = { 'Nhận biết': 16, 'Vận dụng': 32, 'Vận dụng cao': 32 };
+  const currentLevels = { 'Nhận biết': 0, 'Vận dụng': 0, 'Vận dụng cao': 0 };
+  let chosenQuestions = [];
+  const chosenStems = new Set();
+
+  // Helper to shuffle & prioritize unseen
+  function getPrioritizedPool(pool) {
+    if (prioritizeUnseenQuestions) {
+      const unseen = pool.filter(q => !seenIds.has(q.id));
+      const seen = pool.filter(q => seenIds.has(q.id));
+      return [...shuffle(unseen), ...shuffle(seen)];
+    }
+    return shuffle(pool);
+  }
+
+  // Phase 1: Allocate questions per chapter following 44h matrix with 2:4:4 proportion
+  EXAM_MATRIX_44H.forEach(rule => {
+    const chQuestions = ALL_EXAM_BANK.filter(q => q.chapter === rule.chapter);
+    const nbPool = getPrioritizedPool(chQuestions.filter(q => q.level === 'Nhận biết'));
+    const vdPool = getPrioritizedPool(chQuestions.filter(q => q.level === 'Vận dụng'));
+    const vdcPool = getPrioritizedPool(chQuestions.filter(q => q.level === 'Vận dụng cao'));
+
+    let targetNbCh = Math.max(0, Math.round(rule.count * 0.2));
+    let targetVdcCh = Math.max(0, Math.round(rule.count * 0.4));
+    let targetVdCh = rule.count - targetNbCh - targetVdcCh;
+
+    // Pick VDC
+    let pickedVdc = 0;
+    for (const q of vdcPool) {
+      if (pickedVdc < targetVdcCh && currentLevels['Vận dụng cao'] < targetLevels['Vận dụng cao'] && !chosenStems.has(q.question)) {
+        chosenQuestions.push(q);
+        chosenStems.add(q.question);
+        pickedVdc++;
+        currentLevels['Vận dụng cao']++;
+      }
+    }
+
+    // Pick NB
+    let pickedNb = 0;
+    for (const q of nbPool) {
+      if (pickedNb < targetNbCh && currentLevels['Nhận biết'] < targetLevels['Nhận biết'] && !chosenStems.has(q.question)) {
+        chosenQuestions.push(q);
+        chosenStems.add(q.question);
+        pickedNb++;
+        currentLevels['Nhận biết']++;
+      }
+    }
+
+    // Pick VD to fulfill remaining for chapter
+    let pickedVd = 0;
+    const neededForCh = rule.count - (pickedVdc + pickedNb);
+    for (const q of vdPool) {
+      if (pickedVd < neededForCh && currentLevels['Vận dụng'] < targetLevels['Vận dụng'] && !chosenStems.has(q.question)) {
+        chosenQuestions.push(q);
+        chosenStems.add(q.question);
+        pickedVd++;
+        currentLevels['Vận dụng']++;
+      }
+    }
+
+    // Chapter fallback if needed
+    let totalChPicked = pickedVdc + pickedNb + pickedVd;
+    if (totalChPicked < rule.count) {
+      const remainingCh = getPrioritizedPool(chQuestions.filter(q => !chosenStems.has(q.question)));
+      for (const q of remainingCh) {
+        if (currentLevels[q.level] < targetLevels[q.level]) {
+          chosenQuestions.push(q);
+          chosenStems.add(q.question);
+          currentLevels[q.level]++;
+          totalChPicked++;
+          if (totalChPicked >= rule.count) break;
+        }
+      }
+    }
+  });
+
+  // Phase 2: Guarantee exact 16:32:32 quotas
+  const levels = ['Nhận biết', 'Vận dụng', 'Vận dụng cao'];
+  const allowedChapters = new Set(EXAM_MATRIX_44H.map(r => r.chapter));
+  for (const lvl of levels) {
+    while (currentLevels[lvl] < targetLevels[lvl]) {
+      const pool = getPrioritizedPool(ALL_EXAM_BANK.filter(q => q.level === lvl && allowedChapters.has(q.chapter) && !chosenStems.has(q.question)));
+      if (pool.length === 0) {
+        const globalPool = getPrioritizedPool(ALL_EXAM_BANK.filter(q => q.level === lvl && !chosenStems.has(q.question)));
+        if (globalPool.length === 0) break;
+        const q = globalPool[0];
+        chosenQuestions.push(q);
+        chosenStems.add(q.question);
+        currentLevels[lvl]++;
+      } else {
+        const q = pool[0];
+        chosenQuestions.push(q);
+        chosenStems.add(q.question);
+        currentLevels[lvl]++;
+      }
+    }
+  }
+
+  // Shuffle questions so levels and chapters mix naturally
+  chosenQuestions = shuffle(chosenQuestions);
+
+  // Shuffle options for every question
+  EXAM_QUESTIONS = chosenQuestions.map((q, idx) => {
+    const originalCorrectText = q.options[q.correct];
+    const shuffledOptions = shuffle(q.options);
+    const newCorrectIdx = shuffledOptions.indexOf(originalCorrectText);
+
+    return {
+      id: q.id,
+      examNum: idx + 1,
+      chapter: q.chapter,
+      level: q.level || 'Vận dụng',
+      source: q.source || "BYT",
+      sourceName: q.sourceName || "Bộ Y tế (Chuẩn Quốc gia)",
+      question: q.question,
+      options: shuffledOptions,
+      correct: newCorrectIdx,
+      explanation: q.explanation,
+      reference: q.reference
+    };
+  });
+
+  // Reset exam session state
+  userAnswers = {};
+  flaggedQuestions.clear();
+  isExamSubmitted = false;
+  isExamStarted = false;
+  isExamPaused = false;
+  timeRemaining = EXAM_DURATION_MINUTES * 60;
+
+  if (examTimer) {
+    clearInterval(examTimer);
+    examTimer = null;
+  }
+  stopSpeaking();
+
+  if (timerWidget) timerWidget.classList.remove('warning', 'paused');
+  updateTimerDisplay();
+  updateTimerButton();
+  renderExamQuestion(0);
+  updatePalette();
+  saveExamDraft();
+  playChime('click');
+}
+
 // University Exam Modal & Generation
 function openUniversityExamModal() {
   const modal = document.getElementById('modal-university-exam');
@@ -380,6 +568,7 @@ function generateUniversityExam(source = 'all', force = false) {
       id: q.id,
       examNum: idx + 1,
       chapter: q.chapter,
+      level: q.level || 'Vận dụng',
       source: q.source || "BYT",
       sourceName: q.sourceName || "Bộ Y tế (Chuẩn Quốc gia)",
       question: q.question,
@@ -1389,6 +1578,7 @@ function renderExamQuestion(index) {
       <div class="badge-group" style="flex-wrap: wrap;">
         <span class="badge badge-num">Câu ${index + 1} / ${EXAM_QUESTIONS.length}</span>
         <span class="badge badge-category">${q.chapter}</span>
+        ${renderLevelBadge(q.level)}
         ${renderSourceBadge(q.source, q.sourceName)}
       </div>
       <button class="btn-flag ${isFlagged ? 'active' : ''}" id="flag-btn" onclick="toggleFlag(${q.id})">
@@ -1647,11 +1837,22 @@ function submitExam() {
   let wrongCount = 0;
   let unansweredCount = 0;
 
+  const levelStats = {
+    'Nhận biết': { total: 0, correct: 0 },
+    'Vận dụng': { total: 0, correct: 0 },
+    'Vận dụng cao': { total: 0, correct: 0 }
+  };
+
   EXAM_QUESTIONS.forEach(q => {
+    const lvl = q.level || 'Vận dụng';
+    if (!levelStats[lvl]) levelStats[lvl] = { total: 0, correct: 0 };
+    levelStats[lvl].total++;
+
     if (userAnswers[q.id] === undefined) {
       unansweredCount++;
     } else if (userAnswers[q.id] === q.correct) {
       correctCount++;
+      levelStats[lvl].correct++;
     } else {
       wrongCount++;
     }
@@ -1669,6 +1870,21 @@ function submitExam() {
   document.getElementById('modal-correct-count').textContent = `${correctCount}/${EXAM_QUESTIONS.length}`;
   document.getElementById('modal-pct').textContent = `${pct}%`;
   document.getElementById('modal-time-used').textContent = timeUsedStr;
+
+  // Render cognitive level breakdown in results modal
+  const nbBox = document.getElementById('modal-level-nb');
+  const vdBox = document.getElementById('modal-level-vd');
+  const vdcBox = document.getElementById('modal-level-vdc');
+  const nbPct = document.getElementById('modal-pct-nb');
+  const vdPct = document.getElementById('modal-pct-vd');
+  const vdcPct = document.getElementById('modal-pct-vdc');
+
+  if (nbBox) nbBox.textContent = `${levelStats['Nhận biết'].correct} / ${levelStats['Nhận biết'].total}`;
+  if (nbPct) nbPct.textContent = `${levelStats['Nhận biết'].total ? Math.round((levelStats['Nhận biết'].correct / levelStats['Nhận biết'].total) * 100) : 0}%`;
+  if (vdBox) vdBox.textContent = `${levelStats['Vận dụng'].correct} / ${levelStats['Vận dụng'].total}`;
+  if (vdPct) vdPct.textContent = `${levelStats['Vận dụng'].total ? Math.round((levelStats['Vận dụng'].correct / levelStats['Vận dụng'].total) * 100) : 0}%`;
+  if (vdcBox) vdcBox.textContent = `${levelStats['Vận dụng cao'].correct} / ${levelStats['Vận dụng cao'].total}`;
+  if (vdcPct) vdcPct.textContent = `${levelStats['Vận dụng cao'].total ? Math.round((levelStats['Vận dụng cao'].correct / levelStats['Vận dụng cao'].total) * 100) : 0}%`;
 
   let rankText = "ĐẠT YÊU CẦU";
   if (score10 >= 8.5) rankText = "XUẤT SẮC - ĐỖ CAO";
@@ -1688,6 +1904,7 @@ function submitExam() {
     wrongCount: wrongCount,
     unansweredCount: unansweredCount,
     totalQuestions: EXAM_QUESTIONS.length,
+    levelStats: levelStats,
     timeUsedSec: timeUsed,
     timeUsedStr: timeUsedStr,
     rankText: rankText,
@@ -1697,6 +1914,7 @@ function submitExam() {
       id: q.id,
       examNum: idx + 1,
       chapter: q.chapter,
+      level: q.level || 'Vận dụng',
       source: q.source || "BYT",
       sourceName: q.sourceName || "Bộ Y tế (Chuẩn Quốc gia)",
       question: q.question,
@@ -1809,6 +2027,9 @@ function getTopicChapterStats() {
   if (topicSourceFilter && topicSourceFilter !== 'all') {
     baseList = baseList.filter(q => q.source === topicSourceFilter);
   }
+  if (topicLevelFilter && topicLevelFilter !== 'all') {
+    baseList = baseList.filter(q => q.level === topicLevelFilter);
+  }
 
   const total = baseList.length;
   let correct = 0;
@@ -1833,6 +2054,9 @@ function getFilteredTopicQuestions() {
 
   if (topicSourceFilter && topicSourceFilter !== 'all') {
     list = list.filter(item => item.source === topicSourceFilter);
+  }
+  if (topicLevelFilter && topicLevelFilter !== 'all') {
+    list = list.filter(item => item.level === topicLevelFilter);
   }
 
   // If a custom shuffled question order exists for this topic
@@ -1961,6 +2185,33 @@ function renderTopicStudyView() {
   });
   schoolPillsHtml += `</div>`;
 
+  // 1c. COGNITIVE DIFFICULTY LEVEL FILTER RIBBON
+  const levelOptions = [
+    { id: 'all', label: 'Tất cả mức độ' },
+    { id: 'Nhận biết', label: '🟢 Nhận biết' },
+    { id: 'Vận dụng', label: '🟡 Vận dụng' },
+    { id: 'Vận dụng cao', label: '🔴 Vận dụng cao' }
+  ];
+
+  let levelPillsHtml = `
+    <div class="level-filter-ribbon">
+  `;
+  levelOptions.forEach(opt => {
+    const poolForLevel = (topicSourceFilter === 'all')
+      ? basePoolForCount
+      : basePoolForCount.filter(q => q.source === topicSourceFilter);
+    const count = (opt.id === 'all')
+      ? poolForLevel.length
+      : poolForLevel.filter(q => q.level === opt.id).length;
+    const isActive = topicLevelFilter === opt.id;
+    levelPillsHtml += `
+      <button class="level-pill ${isActive ? 'active' : ''}" onclick="setTopicLevelFilter('${opt.id}')">
+        ${opt.label} (${count})
+      </button>
+    `;
+  });
+  levelPillsHtml += `</div>`;
+
   // 2. MOBILE TOPIC DASHBOARD
   const displayTitle = TOPIC_CHIP_LABELS_44H[activeTopicFilter] || activeTopicFilter;
   const dashboardHtml = `
@@ -2054,7 +2305,7 @@ function renderTopicStudyView() {
     `;
   }
 
-  container.innerHTML = chipsHtml + schoolPillsHtml + dashboardHtml + listHtml + loadMoreHtml;
+  container.innerHTML = chipsHtml + schoolPillsHtml + levelPillsHtml + dashboardHtml + listHtml + loadMoreHtml;
 
   // Auto-center active chapter chip in the horizontal ribbon
   setTimeout(() => {
@@ -2067,6 +2318,13 @@ function renderTopicStudyView() {
 
 function setTopicSourceFilter(src) {
   topicSourceFilter = src;
+  topicVisibleLimit = 25;
+  renderTopicStudyView();
+  playChime('click');
+}
+
+function setTopicLevelFilter(lvl) {
+  topicLevelFilter = lvl;
   topicVisibleLimit = 25;
   renderTopicStudyView();
   playChime('click');
@@ -2142,6 +2400,7 @@ function renderTopicQuestionCardsHtml(questionsList) {
         <div class="question-meta">
           <span class="badge badge-num">Câu ${idx + 1} (Mã #${q.id})</span>
           <span class="badge badge-category">${q.chapter}</span>
+          ${renderLevelBadge(q.level)}
           ${renderSourceBadge(q.source, q.sourceName)}
           <div class="topic-status-badge-wrap" style="margin-left: auto;">
             ${badgeStatusHtml}
@@ -5763,6 +6022,7 @@ function renderDetailedReviewQuestions() {
           <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">
             <span class="badge badge-num">Câu ${q.examNum} / ${currentReviewExam && currentReviewExam.questions ? currentReviewExam.questions.length : 80}</span>
             <span class="badge badge-category">${q.chapter}</span>
+            ${renderLevelBadge(q.level)}
             ${renderSourceBadge(q.source, q.sourceName)}
             ${q.isFlagged ? '<span style="color: var(--warning); font-size: 0.85rem; font-weight: 600;">★ Đã đánh dấu</span>' : ''}
           </div>

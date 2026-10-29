@@ -727,6 +727,71 @@ main.app-main.full-width-view .palette-container {
   border-color: rgba(52, 211, 153, 0.4);
 }
 
+/* Cognitive Level Badges (Nhận biết, Vận dụng, Vận dụng cao) */
+.badge-level-nb {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+[data-theme="dark"] .badge-level-nb {
+  background: rgba(34, 197, 94, 0.2);
+  color: #86efac;
+  border-color: rgba(74, 222, 128, 0.4);
+}
+
+.badge-level-vd {
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+[data-theme="dark"] .badge-level-vd {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fde68a;
+  border-color: rgba(251, 191, 36, 0.4);
+}
+
+.badge-level-vdc {
+  background: #ffe4e6;
+  color: #be123c;
+  border: 1px solid #fecdd3;
+}
+[data-theme="dark"] .badge-level-vdc {
+  background: rgba(244, 63, 94, 0.2);
+  color: #fda4af;
+  border-color: rgba(251, 113, 133, 0.4);
+}
+
+/* Level Filter Ribbon */
+.level-filter-ribbon {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding: 0.25rem 0.5rem;
+  margin-top: 0.25rem;
+  -webkit-overflow-scrolling: touch;
+}
+.level-pill {
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+.level-pill:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.level-pill.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
 
 /* University Filter Pills */
 .school-filter-ribbon {
