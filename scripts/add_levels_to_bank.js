@@ -77,3 +77,4 @@ const updatedContent = header + JSON.stringify(updatedBank, null, 2) + `;\n\nif 
 
 fs.writeFileSync(bankPath, updatedContent, 'utf8');
 console.log('Successfully wrote updated questions_800.js with level field!');
+

@@ -761,6 +761,40 @@ main.app-main.full-width-view .palette-container {
   border-color: rgba(251, 113, 133, 0.4);
 }
 
+/* Unseen Exam Badges & Buttons */
+.badge-unseen {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+[data-theme="dark"] .badge-unseen {
+  background: rgba(59, 130, 246, 0.25);
+  color: #93c5fd;
+  border-color: rgba(96, 165, 250, 0.4);
+}
+
+.btn-unseen-exam {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #3b82f6;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+.btn-unseen-exam:hover {
+  background: #dbeafe;
+  border-color: #2563eb;
+  color: #1e40af;
+}
+[data-theme="dark"] .btn-unseen-exam {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  border-color: rgba(96, 165, 250, 0.5);
+}
+[data-theme="dark"] .btn-unseen-exam:hover {
+  background: rgba(59, 130, 246, 0.35);
+  color: #bfdbfe;
+}
+
 /* Level Filter Ribbon */
 .level-filter-ribbon {
   display: flex;

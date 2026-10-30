@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="vi" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Luyện Thi Trắc Nghiệm Dược Lâm Sàng - 80 Câu Thực Chiến</title>
-  <meta name="description" content="Hệ thống thi thử và luyện đề trắc nghiệm Dược lâm sàng 80 câu chuẩn đại học Dược, bám sát sách Bộ Y tế và ngân hàng đề thi thực tế.">
+  <meta name="description"
+    content="Hệ thống thi thử và luyện đề trắc nghiệm Dược lâm sàng 80 câu chuẩn đại học Dược, bám sát sách Bộ Y tế và ngân hàng đề thi thực tế.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=21">
 </head>
+
 <body>
   <!-- SKIP LINK (OpenDesign Web Interface Accessibility Rule) -->
   <a href="#question-card" class="skip-link">Chuyển đến nội dung câu hỏi</a>
@@ -32,22 +37,29 @@
             <span id="timer-icon" aria-hidden="true">⏳</span>
             <span id="timer-display">80:00</span>
           </div>
-          <button class="btn-timer-action" id="btn-timer-toggle" onclick="toggleExamTimerAction()" title="Bắt đầu hoặc Tạm dừng / Tiếp tục tính giờ" aria-label="Bắt đầu hoặc Tạm dừng đếm thời gian thi">
+          <button class="btn-timer-action" id="btn-timer-toggle" onclick="toggleExamTimerAction()"
+            title="Bắt đầu hoặc Tạm dừng / Tiếp tục tính giờ" aria-label="Bắt đầu hoặc Tạm dừng đếm thời gian thi">
             <span aria-hidden="true">▶️</span> Bắt đầu
           </button>
-          <button class="btn-icon" id="btn-scratchpad-toggle" onclick="toggleScratchpad()" title="Bảng nháp &amp; Bút vẽ (Tính toán công thức / Nháp đề)" aria-label="Bật hoặc tắt Bảng nháp và bút vẽ">
+          <button class="btn-icon" id="btn-scratchpad-toggle" onclick="toggleScratchpad()"
+            title="Bảng nháp &amp; Bút vẽ (Tính toán công thức / Nháp đề)"
+            aria-label="Bật hoặc tắt Bảng nháp và bút vẽ">
             <span aria-hidden="true">✏️</span>
           </button>
-          <button class="btn-icon" id="btn-sync-toggle" onclick="openSyncModal()" title="Đồng bộ dữ liệu giữa Điện thoại &amp; Máy tính" aria-label="Đồng bộ dữ liệu">
+          <button class="btn-icon" id="btn-sync-toggle" onclick="openSyncModal()"
+            title="Đồng bộ dữ liệu giữa Điện thoại &amp; Máy tính" aria-label="Đồng bộ dữ liệu">
             <span aria-hidden="true">🔄</span>
           </button>
-          <button class="btn-icon" id="btn-tts-settings" onclick="openTtsSettingsModal()" title="Cài đặt giọng đọc giải thích &amp; tốc độ" aria-label="Cài đặt giọng đọc">
+          <button class="btn-icon" id="btn-tts-settings" onclick="openTtsSettingsModal()"
+            title="Cài đặt giọng đọc giải thích &amp; tốc độ" aria-label="Cài đặt giọng đọc">
             <span aria-hidden="true">🔊</span>
           </button>
-          <button class="btn-icon" id="btn-theme-toggle" title="Đổi giao diện Sáng / Tối" aria-label="Chuyển đổi giao diện Sáng hoặc Tối">
+          <button class="btn-icon" id="btn-theme-toggle" title="Đổi giao diện Sáng / Tối"
+            aria-label="Chuyển đổi giao diện Sáng hoặc Tối">
             <span aria-hidden="true">🌙</span>
           </button>
-          <button class="btn-icon mobile-menu-toggle" id="btn-mobile-menu" onclick="toggleMobileNavMenu()" title="Mở danh mục menu" aria-label="Mở menu chức năng">
+          <button class="btn-icon mobile-menu-toggle" id="btn-mobile-menu" onclick="toggleMobileNavMenu()"
+            title="Mở danh mục menu" aria-label="Mở menu chức năng">
             <span id="menu-icon-bars" aria-hidden="true">☰</span>
           </button>
         </div>
@@ -81,23 +93,26 @@
 
   <!-- MAIN APP CONTAINER -->
   <main class="app-main">
-    
+
     <!-- LEFT: MAIN CONTENT AREA -->
     <div class="exam-container">
-      
+
       <!-- VIEW 1: EXAM MODE (80 Questions) -->
       <section id="view-exam">
         <!-- 44h Curriculum Matrix & Coverage Banner -->
         <div class="exam-matrix-banner" id="exam-matrix-banner">
           <div class="matrix-banner-content">
             <span class="matrix-banner-icon" aria-hidden="true">🎯</span>
-            <div><strong>Ma trận 44h chuẩn hóa:</strong> Đề 80 câu tự động mix thông minh ~45% câu từ ĐH Dược Hà Nội, ĐH Y Dược TP.HCM, ĐH Y Hà Nội &amp; ~55% Chuẩn BYT theo đúng 14 bài giảng.</div>
+            <div><strong>Ma trận 44h chuẩn hóa:</strong> Đề 80 câu tự động mix thông minh ~45% câu từ ĐH Dược Hà Nội, ĐH
+              Y Dược TP.HCM, ĐH Y Hà Nội &amp; ~55% Chuẩn BYT theo đúng 14 bài giảng.</div>
           </div>
           <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">
-            <button class="matrix-info-btn coverage-info-btn" onclick="openCoverageModal()" title="Xem độ phủ ngân hàng 1.486 câu hỏi bạn đã từng làm">
+            <button class="matrix-info-btn coverage-info-btn" onclick="openCoverageModal()"
+              title="Xem độ phủ ngân hàng 1.486 câu hỏi bạn đã từng làm">
               📈 Độ phủ kho: <span id="header-coverage-badge">-- / 1.486 (0%)</span>
             </button>
-            <button class="matrix-info-btn" onclick="openMatrixModal()" title="Xem chi tiết phân bổ 80 câu theo số tiết">📊 Ma trận 44h</button>
+            <button class="matrix-info-btn" onclick="openMatrixModal()"
+              title="Xem chi tiết phân bổ 80 câu theo số tiết">📊 Ma trận 44h</button>
           </div>
         </div>
 
@@ -109,20 +124,37 @@
             </div>
           </div>
           <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
-            <label class="toggle-unseen-label" title="Khi bật, hệ thống sẽ ưu tiên chọn các câu bạn CHƯA TỪNG LÀM để quét sạch toàn bộ 1.486 câu nhanh nhất">
+            <label class="toggle-unseen-label"
+              title="Khi bật, hệ thống sẽ ưu tiên chọn các câu bạn CHƯA TỪNG LÀM để quét sạch toàn bộ 1.486 câu nhanh nhất">
               <input type="checkbox" id="chk-prioritize-unseen" checked onchange="togglePrioritizeUnseen(this.checked)">
               <span>🎯 Ưu tiên câu chưa làm</span>
             </label>
-            <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--surface-alt); border-color: var(--secondary); color: var(--secondary);" onclick="openUniversityExamModal()" title="Lựa chọn làm đề thi chuyên sâu của ĐH Dược Hà Nội, ĐH Y Dược TP.HCM, ĐH Y Hà Nội">
+            <button class="btn btn-secondary btn-unseen-exam"
+              style="padding: 0.4rem 0.85rem; font-size: 0.82rem;"
+              onclick="generateUnseenExam()"
+              title="Tạo đề thi 80 câu với 100% là các câu bạn CHƯA TỪNG LÀM để quét sạch toàn bộ 1.486 câu trong ngân hàng đề">
+              ✨ Đề 80 Câu Chưa Làm
+            </button>
+            <button class="btn btn-secondary"
+              style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--surface-alt); border-color: var(--secondary); color: var(--secondary);"
+              onclick="openUniversityExamModal()"
+              title="Lựa chọn làm đề thi chuyên sâu của ĐH Dược Hà Nội, ĐH Y Dược TP.HCM, ĐH Y Hà Nội">
               🏛️ Đề Các Trường Y Dược
             </button>
-            <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: #ecfdf5; color: #047857; border-color: #10b981; font-weight: 600;" onclick="generateGradedExam()" title="Tạo đề thi 80 câu phân hóa chuẩn 3 cấp độ: 16 Nhận biết (20%), 32 Vận dụng (40%), 32 Vận dụng cao (40%) theo ma trận 44h">
+            <button class="btn btn-secondary"
+              style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: #ecfdf5; color: #047857; border-color: #10b981; font-weight: 600;"
+              onclick="generateGradedExam()"
+              title="Tạo đề thi 80 câu phân hóa chuẩn 3 cấp độ: 16 Nhận biết (20%), 32 Vận dụng (40%), 32 Vận dụng cao (40%) theo ma trận 44h">
               🎯 Đề Phân Hóa (2:4:4)
             </button>
-            <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary);" onclick="generateRandomExam()" title="Tạo đề 80 câu chuẩn ma trận 44h tự động mix câu hỏi ĐH Dược HN, ĐH Y Dược TPHCM, ĐH Y HN và Chuẩn BYT">
+            <button class="btn btn-secondary"
+              style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary);"
+              onclick="generateRandomExam()"
+              title="Tạo đề 80 câu chuẩn ma trận 44h tự động mix câu hỏi ĐH Dược HN, ĐH Y Dược TPHCM, ĐH Y HN và Chuẩn BYT">
               🎲 Tạo Đề Random Mới
             </button>
-            <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem;" onclick="confirmSubmitExam()">
+            <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem;"
+              onclick="confirmSubmitExam()">
               Nộp bài sớm
             </button>
           </div>
@@ -163,24 +195,33 @@
       <div class="palette-header">
         <span class="palette-title">Bảng Câu Hỏi (80 Câu)</span>
         <div style="display: flex; gap: 0.35rem; align-items: center;">
-          <button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.72rem; background: var(--secondary-light); color: var(--secondary);" onclick="generateRandomExam()" title="Tạo đề thi mới ngẫu nhiên" aria-label="Tạo đề thi ngẫu nhiên mới">
+          <button class="btn btn-secondary"
+            style="padding: 0.25rem 0.5rem; font-size: 0.72rem; background: var(--secondary-light); color: var(--secondary);"
+            onclick="generateRandomExam()" title="Tạo đề thi mới ngẫu nhiên" aria-label="Tạo đề thi ngẫu nhiên mới">
             <span aria-hidden="true">🎲</span> Đề mới
           </button>
-          <button class="btn btn-secondary btn-to-scratchpad" style="padding: 0.25rem 0.5rem; font-size: 0.72rem; color: var(--primary); border-color: var(--primary);" onclick="toggleExamScratchpad()" title="Chuyển sang Bảng nháp tính toán" aria-label="Mở Bảng nháp tính toán">
+          <button class="btn btn-secondary btn-to-scratchpad"
+            style="padding: 0.25rem 0.5rem; font-size: 0.72rem; color: var(--primary); border-color: var(--primary);"
+            onclick="toggleExamScratchpad()" title="Chuyển sang Bảng nháp tính toán"
+            aria-label="Mở Bảng nháp tính toán">
             <span aria-hidden="true">✏️</span> Nháp
           </button>
-          <button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.72rem;" onclick="confirmSubmitExam()" aria-label="Nộp bài thi">
+          <button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.72rem;"
+            onclick="confirmSubmitExam()" aria-label="Nộp bài thi">
             Nộp bài
           </button>
-          <button class="btn-palette-close" onclick="closeMobilePalette()" title="Đóng bảng câu hỏi" aria-label="Đóng bảng câu hỏi">
+          <button class="btn-palette-close" onclick="closeMobilePalette()" title="Đóng bảng câu hỏi"
+            aria-label="Đóng bảng câu hỏi">
             ✕
           </button>
         </div>
       </div>
 
       <div class="palette-legend">
-        <div class="legend-item"><span class="legend-dot answered" aria-hidden="true"></span> Đã làm (<span id="answered-count">0 / 80</span>)</div>
-        <div class="legend-item"><span class="legend-dot flagged" aria-hidden="true"></span> Đánh dấu (<span id="flagged-count">0</span>)</div>
+        <div class="legend-item"><span class="legend-dot answered" aria-hidden="true"></span> Đã làm (<span
+            id="answered-count">0 / 80</span>)</div>
+        <div class="legend-item"><span class="legend-dot flagged" aria-hidden="true"></span> Đánh dấu (<span
+            id="flagged-count">0</span>)</div>
         <div class="legend-item"><span class="legend-dot unanswered" aria-hidden="true"></span> Chưa làm</div>
       </div>
 
@@ -190,7 +231,8 @@
     </aside>
 
     <!-- RIGHT SIDEBAR: DESKTOP CLINICAL SCRATCHPAD (Visible across all tabs on PC) -->
-    <aside class="desktop-scratchpad-panel" id="desktop-scratchpad-panel" style="display: none;" aria-label="Bảng nháp lâm sàng">
+    <aside class="desktop-scratchpad-panel" id="desktop-scratchpad-panel" style="display: none;"
+      aria-label="Bảng nháp lâm sàng">
       <div class="scratch-panel-header">
         <div class="scratch-panel-title">
           <span class="sp-icon" aria-hidden="true">✏️</span>
@@ -200,16 +242,20 @@
           </div>
         </div>
         <div class="scratch-panel-header-actions">
-          <button class="sp-h-btn active" id="btn-toggle-grid" onclick="toggleDesktopScratchGrid()" title="Bật/Tắt lưới ô ly tính toán" aria-label="Bật hoặc tắt lưới ô ly tính toán">
+          <button class="sp-h-btn active" id="btn-toggle-grid" onclick="toggleDesktopScratchGrid()"
+            title="Bật/Tắt lưới ô ly tính toán" aria-label="Bật hoặc tắt lưới ô ly tính toán">
             <span aria-hidden="true">📋</span>
           </button>
-          <button class="sp-h-btn" onclick="undoDesktopScratch()" title="Hoàn tác nét vẽ (Ctrl+Z)" aria-label="Hoàn tác nét vẽ">
+          <button class="sp-h-btn" onclick="undoDesktopScratch()" title="Hoàn tác nét vẽ (Ctrl+Z)"
+            aria-label="Hoàn tác nét vẽ">
             <span aria-hidden="true">↩️</span>
           </button>
-          <button class="sp-h-btn sp-h-clear" onclick="clearDesktopScratch()" title="Xóa toàn bộ nháp" aria-label="Xóa toàn bộ bản nháp">
+          <button class="sp-h-btn sp-h-clear" onclick="clearDesktopScratch()" title="Xóa toàn bộ nháp"
+            aria-label="Xóa toàn bộ bản nháp">
             <span aria-hidden="true">🗑️</span>
           </button>
-          <button class="sp-h-btn btn-exam-palette-return" id="btn-palette-return" onclick="toggleExamScratchpad()" title="Quay lại Bảng 80 câu" aria-label="Quay lại Bảng 80 câu" style="display: none;">
+          <button class="sp-h-btn btn-exam-palette-return" id="btn-palette-return" onclick="toggleExamScratchpad()"
+            title="Quay lại Bảng 80 câu" aria-label="Quay lại Bảng 80 câu" style="display: none;">
             <span aria-hidden="true">🔢 80 Câu</span>
           </button>
         </div>
@@ -219,13 +265,16 @@
       <div class="scratch-panel-toolbar">
         <!-- Tool selector -->
         <div class="sp-tool-btn-group" role="group" aria-label="Chọn công cụ vẽ">
-          <button class="sp-tool-tab active" id="d-tool-pen" onclick="setDesktopTool('pen')" title="Bút viết nháp" aria-label="Công cụ bút viết">
+          <button class="sp-tool-tab active" id="d-tool-pen" onclick="setDesktopTool('pen')" title="Bút viết nháp"
+            aria-label="Công cụ bút viết">
             <span aria-hidden="true">✏️</span> Bút
           </button>
-          <button class="sp-tool-tab" id="d-tool-highlighter" onclick="setDesktopTool('highlighter')" title="Bút dạ quang (Tô sáng)" aria-label="Công cụ bút dạ quang">
+          <button class="sp-tool-tab" id="d-tool-highlighter" onclick="setDesktopTool('highlighter')"
+            title="Bút dạ quang (Tô sáng)" aria-label="Công cụ bút dạ quang">
             <span aria-hidden="true">🖍️</span> Dạ quang
           </button>
-          <button class="sp-tool-tab" id="d-tool-eraser" onclick="setDesktopTool('eraser')" title="Tẩy nét" aria-label="Công cụ tẩy xóa nét">
+          <button class="sp-tool-tab" id="d-tool-eraser" onclick="setDesktopTool('eraser')" title="Tẩy nét"
+            aria-label="Công cụ tẩy xóa nét">
             <span aria-hidden="true">🧽</span> Tẩy
           </button>
         </div>
@@ -233,18 +282,26 @@
         <div class="sp-tool-sub-row">
           <!-- Color picker -->
           <div class="sp-color-picker" role="group" aria-label="Chọn màu mực vẽ">
-            <button class="sp-c-dot active" style="--c: #ef4444;" data-color="#ef4444" onclick="setDesktopColor('#ef4444')" title="Mực đỏ" aria-label="Mực đỏ"></button>
-            <button class="sp-c-dot" style="--c: #2563eb;" data-color="#2563eb" onclick="setDesktopColor('#2563eb')" title="Mực xanh dương" aria-label="Mực xanh dương"></button>
-            <button class="sp-c-dot" style="--c: #10b981;" data-color="#10b981" onclick="setDesktopColor('#10b981')" title="Mực xanh lá" aria-label="Mực xanh lá"></button>
-            <button class="sp-c-dot" style="--c: #eab308;" data-color="#eab308" onclick="setDesktopColor('#eab308')" title="Mực vàng dạ quang" aria-label="Mực vàng dạ quang"></button>
-            <button class="sp-c-dot" style="--c: #0f172a;" data-color="#0f172a" onclick="setDesktopColor('#0f172a')" title="Mực đen/trắng" aria-label="Mực đen"></button>
+            <button class="sp-c-dot active" style="--c: #ef4444;" data-color="#ef4444"
+              onclick="setDesktopColor('#ef4444')" title="Mực đỏ" aria-label="Mực đỏ"></button>
+            <button class="sp-c-dot" style="--c: #2563eb;" data-color="#2563eb" onclick="setDesktopColor('#2563eb')"
+              title="Mực xanh dương" aria-label="Mực xanh dương"></button>
+            <button class="sp-c-dot" style="--c: #10b981;" data-color="#10b981" onclick="setDesktopColor('#10b981')"
+              title="Mực xanh lá" aria-label="Mực xanh lá"></button>
+            <button class="sp-c-dot" style="--c: #eab308;" data-color="#eab308" onclick="setDesktopColor('#eab308')"
+              title="Mực vàng dạ quang" aria-label="Mực vàng dạ quang"></button>
+            <button class="sp-c-dot" style="--c: #0f172a;" data-color="#0f172a" onclick="setDesktopColor('#0f172a')"
+              title="Mực đen/trắng" aria-label="Mực đen"></button>
           </div>
 
           <!-- Size picker -->
           <div class="sp-size-picker" role="group" aria-label="Chọn kích thước nét vẽ">
-            <button class="sp-s-btn active" id="d-size-2" onclick="setDesktopSize(2)" title="Nét mảnh (2px)" aria-label="Nét mảnh 2px">●</button>
-            <button class="sp-s-btn" id="d-size-5" onclick="setDesktopSize(5)" title="Nét vừa (5px)" aria-label="Nét vừa 5px">●●</button>
-            <button class="sp-s-btn" id="d-size-10" onclick="setDesktopSize(10)" title="Nét đậm (10px)" aria-label="Nét đậm 10px">●●●</button>
+            <button class="sp-s-btn active" id="d-size-2" onclick="setDesktopSize(2)" title="Nét mảnh (2px)"
+              aria-label="Nét mảnh 2px">●</button>
+            <button class="sp-s-btn" id="d-size-5" onclick="setDesktopSize(5)" title="Nét vừa (5px)"
+              aria-label="Nét vừa 5px">●●</button>
+            <button class="sp-s-btn" id="d-size-10" onclick="setDesktopSize(10)" title="Nét đậm (10px)"
+              aria-label="Nét đậm 10px">●●●</button>
           </div>
         </div>
       </div>
@@ -256,7 +313,8 @@
 
       <div class="scratch-panel-footer">
         <span class="sp-hint">💡 Rê chuột vào để viết nháp • Nét vẽ tự động lưu</span>
-        <button class="sp-btn-save-img" onclick="saveDesktopScratchImage()" title="Tải hình ảnh bài nháp về máy" aria-label="Tải ảnh bài nháp về máy">
+        <button class="sp-btn-save-img" onclick="saveDesktopScratchImage()" title="Tải hình ảnh bài nháp về máy"
+          aria-label="Tải ảnh bài nháp về máy">
           <span aria-hidden="true">📥</span> Lưu ảnh
         </button>
       </div>
@@ -266,14 +324,17 @@
 
   <!-- MOBILE BOTTOM DOCK (Sticky on Phone) -->
   <div class="mobile-exam-dock" id="mobile-exam-dock" role="navigation" aria-label="Điều khiển câu hỏi trên di động">
-    <button class="dock-nav-btn prev-btn" id="dock-btn-prev" onclick="prevQuestion()" title="Câu trước" aria-label="Câu trước">
+    <button class="dock-nav-btn prev-btn" id="dock-btn-prev" onclick="prevQuestion()" title="Câu trước"
+      aria-label="Câu trước">
       <span aria-hidden="true">◀</span> Trước
     </button>
-    <button class="dock-palette-trigger" onclick="toggleMobilePalette()" title="Mở bảng 80 câu để chọn câu nhanh" aria-label="Mở bảng chọn 80 câu hỏi">
+    <button class="dock-palette-trigger" onclick="toggleMobilePalette()" title="Mở bảng 80 câu để chọn câu nhanh"
+      aria-label="Mở bảng chọn 80 câu hỏi">
       <span class="dock-q-num">Câu <span id="dock-current-q">1</span> / 80</span>
       <span class="dock-q-sub" id="dock-status-text">Bảng câu hỏi ▲</span>
     </button>
-    <button class="dock-nav-btn next-btn" id="dock-btn-next" onclick="nextQuestion()" title="Câu tiếp theo" aria-label="Câu tiếp theo">
+    <button class="dock-nav-btn next-btn" id="dock-btn-next" onclick="nextQuestion()" title="Câu tiếp theo"
+      aria-label="Câu tiếp theo">
       Tiếp <span aria-hidden="true">▶</span>
     </button>
   </div>
@@ -307,58 +368,81 @@
       </div>
 
       <!-- Cognitive Level Performance Breakdown -->
-      <div class="level-breakdown-card" style="margin: 0.75rem 0; padding: 0.65rem 0.85rem; background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md);">
-        <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.25rem;">
+      <div class="level-breakdown-card"
+        style="margin: 0.75rem 0; padding: 0.65rem 0.85rem; background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md);">
+        <div
+          style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.25rem;">
           <span>🎯 Đánh giá theo Cấp độ Nhận thức (Tỉ lệ 2:4:4):</span>
-          <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: normal;">Nhận biết (20%) • Vận dụng (40%) • VDC (40%)</span>
+          <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: normal;">Nhận biết (20%) • Vận dụng
+            (40%) • VDC (40%)</span>
         </div>
-        <div class="level-breakdown-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; text-align: center;">
-          <div class="level-box nb" style="padding: 0.45rem 0.25rem; border-radius: var(--radius-sm); background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3);">
+        <div class="level-breakdown-grid"
+          style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; text-align: center;">
+          <div class="level-box nb"
+            style="padding: 0.45rem 0.25rem; border-radius: var(--radius-sm); background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3);">
             <div style="font-size: 0.75rem; font-weight: 600; color: #16a34a;">🟢 Nhận biết</div>
-            <div id="modal-level-nb" style="font-size: 1.05rem; font-weight: 800; color: #15803d; margin: 0.15rem 0;">-- / --</div>
+            <div id="modal-level-nb" style="font-size: 1.05rem; font-weight: 800; color: #15803d; margin: 0.15rem 0;">--
+              / --</div>
             <div id="modal-pct-nb" style="font-size: 0.72rem; color: var(--text-muted);">--%</div>
           </div>
-          <div class="level-box vd" style="padding: 0.45rem 0.25rem; border-radius: var(--radius-sm); background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3);">
+          <div class="level-box vd"
+            style="padding: 0.45rem 0.25rem; border-radius: var(--radius-sm); background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3);">
             <div style="font-size: 0.75rem; font-weight: 600; color: #d97706;">🟡 Vận dụng</div>
-            <div id="modal-level-vd" style="font-size: 1.05rem; font-weight: 800; color: #b45309; margin: 0.15rem 0;">-- / --</div>
+            <div id="modal-level-vd" style="font-size: 1.05rem; font-weight: 800; color: #b45309; margin: 0.15rem 0;">--
+              / --</div>
             <div id="modal-pct-vd" style="font-size: 0.72rem; color: var(--text-muted);">--%</div>
           </div>
-          <div class="level-box vdc" style="padding: 0.45rem 0.25rem; border-radius: var(--radius-sm); background: rgba(225, 29, 72, 0.1); border: 1px solid rgba(225, 29, 72, 0.3);">
+          <div class="level-box vdc"
+            style="padding: 0.45rem 0.25rem; border-radius: var(--radius-sm); background: rgba(225, 29, 72, 0.1); border: 1px solid rgba(225, 29, 72, 0.3);">
             <div style="font-size: 0.75rem; font-weight: 600; color: #e11d48;">🔴 Vận dụng cao</div>
-            <div id="modal-level-vdc" style="font-size: 1.05rem; font-weight: 800; color: #be123c; margin: 0.15rem 0;">-- / --</div>
+            <div id="modal-level-vdc" style="font-size: 1.05rem; font-weight: 800; color: #be123c; margin: 0.15rem 0;">
+              -- / --</div>
             <div id="modal-pct-vdc" style="font-size: 0.72rem; color: var(--text-muted);">--%</div>
           </div>
         </div>
       </div>
 
-      <div style="margin: 0.75rem 0; padding: 0.5rem 0.75rem; background: var(--primary-light); color: var(--primary); border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 0.4rem;">
+      <div
+        style="margin: 0.75rem 0; padding: 0.5rem 0.75rem; background: var(--primary-light); color: var(--primary); border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 0.4rem;">
         <span>💾</span> Bài thi này đã được tự động lưu vào <strong>Lịch Sử Bài Thi</strong> để bạn xem lại!
       </div>
 
       <!-- Quick Note in Results Modal -->
       <div class="results-quick-note-box">
-        <label for="modal-quick-note-input" style="font-size: 0.84rem; font-weight: 600; color: var(--text-main); display: flex; align-items: center; gap: 0.35rem; margin-bottom: 0.35rem;">
+        <label for="modal-quick-note-input"
+          style="font-size: 0.84rem; font-weight: 600; color: var(--text-main); display: flex; align-items: center; gap: 0.35rem; margin-bottom: 0.35rem;">
           <span>📝</span> Ghi chú nhanh cho đề này (tùy chọn):
         </label>
         <div style="display: flex; gap: 0.4rem;">
-          <input type="text" id="modal-quick-note-input" placeholder="Ví dụ: Đề khó phần TDM, cần ôn kỹ tương tác CYP3A4..." maxlength="300" style="flex: 1; padding: 0.45rem 0.65rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.85rem; background: var(--surface); color: var(--text-main); outline: none;" onkeydown="if(event.key==='Enter') saveQuickNoteFromResultsModal()">
-          <button class="btn btn-secondary" id="btn-save-quick-note" onclick="saveQuickNoteFromResultsModal()" style="padding: 0.45rem 0.85rem; font-size: 0.82rem; white-space: nowrap;">
+          <input type="text" id="modal-quick-note-input"
+            placeholder="Ví dụ: Đề khó phần TDM, cần ôn kỹ tương tác CYP3A4..." maxlength="300"
+            style="flex: 1; padding: 0.45rem 0.65rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.85rem; background: var(--surface); color: var(--text-main); outline: none;"
+            onkeydown="if(event.key==='Enter') saveQuickNoteFromResultsModal()">
+          <button class="btn btn-secondary" id="btn-save-quick-note" onclick="saveQuickNoteFromResultsModal()"
+            style="padding: 0.45rem 0.85rem; font-size: 0.82rem; white-space: nowrap;">
             💾 Lưu
           </button>
         </div>
-        <div id="modal-quick-note-msg" style="display: none; font-size: 0.8rem; color: var(--primary); font-weight: 600; margin-top: 0.35rem;">
+        <div id="modal-quick-note-msg"
+          style="display: none; font-size: 0.8rem; color: var(--primary); font-weight: 600; margin-top: 0.35rem;">
           ✓ Đã lưu ghi chú vào bài thi thành công!
         </div>
       </div>
 
       <div class="modal-actions" style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
-        <button class="btn btn-secondary" onclick="generateGradedExam(); closeResultsModal();" style="background: #ecfdf5; color: #047857; border-color: #10b981; font-weight: 600;">
+        <button class="btn btn-secondary btn-unseen-exam" onclick="generateUnseenExam(); closeResultsModal();"
+          style="padding: 0.45rem 0.85rem; font-size: 0.82rem;">
+          ✨ Đề 80 Câu Chưa Làm
+        </button>
+        <button class="btn btn-secondary" onclick="generateGradedExam(); closeResultsModal();"
+          style="background: #ecfdf5; color: #047857; border-color: #10b981; font-weight: 600;">
           🎯 Đề Phân Hóa (2:4:4) Mới
         </button>
         <button class="btn btn-secondary" onclick="generateRandomExam(); closeResultsModal();">
           🎲 Tạo đề ngẫu nhiên
         </button>
-        <button class="btn btn-secondary" onclick="viewCurrentExamInHistory(); closeResultsModal();" style="background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary); font-weight: 600;">
+        <button class="btn btn-secondary" onclick="viewCurrentExamInHistory(); closeResultsModal();"
+          style="background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary); font-weight: 600;">
           📜 Xem trong Lịch sử bài thi
         </button>
         <button class="btn btn-primary" onclick="closeResultsModal()">
@@ -379,7 +463,8 @@
             <p class="sync-modal-subtitle">Chuyển lịch sử thi &amp; câu hỏi tủ giữa Điện thoại &amp; Máy tính</p>
           </div>
         </div>
-        <button class="btn-icon sync-close-btn" onclick="closeSyncModal()" title="Đóng hộp thoại" aria-label="Đóng hộp thoại">✕</button>
+        <button class="btn-icon sync-close-btn" onclick="closeSyncModal()" title="Đóng hộp thoại"
+          aria-label="Đóng hộp thoại">✕</button>
       </div>
 
       <!-- Sync Tabs -->
@@ -398,12 +483,15 @@
       <!-- TAB 1: SEND (CREATE SYNC CODE & QR) -->
       <div class="sync-tab-pane active" id="sync-pane-send">
         <div class="sync-info-box">
-          Bấm nút <strong>"Tạo mã đồng bộ"</strong> bên dưới. Màn hình sẽ hiện <strong>Mã QR</strong> và <strong>Mã PIN</strong>. Bạn chỉ cần lấy điện thoại (bật Camera hoặc Zalo) quét mã QR là toàn bộ bài thi sẽ được chuyển sang!
+          Bấm nút <strong>"Tạo mã đồng bộ"</strong> bên dưới. Màn hình sẽ hiện <strong>Mã QR</strong> và <strong>Mã
+            PIN</strong>. Bạn chỉ cần lấy điện thoại (bật Camera hoặc Zalo) quét mã QR là toàn bộ bài thi sẽ được chuyển
+          sang!
         </div>
 
         <div id="sync-send-loading" style="display: none; padding: 1.5rem; text-align: center;">
           <div class="sync-spinner"></div>
-          <p style="margin-top: 0.75rem; font-weight: 500; color: var(--text-main);">Đang đóng gói và gửi dữ liệu lên máy chủ an toàn...</p>
+          <p style="margin-top: 0.75rem; font-weight: 500; color: var(--text-main);">Đang đóng gói và gửi dữ liệu lên
+            máy chủ an toàn...</p>
         </div>
 
         <div id="sync-send-result" style="display: none;">
@@ -414,7 +502,8 @@
             </div>
             <div class="sync-qr-help">
               <span class="sync-qr-badge">📱 Quét 1 Chạm</span>
-              <p>Mở camera điện thoại hoặc Zalo quét mã QR này để tự động mở trang web và hợp nhất bài thi sang điện thoại!</p>
+              <p>Mở camera điện thoại hoặc Zalo quét mã QR này để tự động mở trang web và hợp nhất bài thi sang điện
+                thoại!</p>
             </div>
           </div>
 
@@ -423,7 +512,8 @@
             <span class="sync-code-lbl">Mã Đồng Bộ / Link Chia Sẻ:</span>
             <div class="sync-code-input-group">
               <input type="text" id="sync-generated-code" readonly value="" />
-              <button class="btn btn-secondary" onclick="copySyncCode()" title="Sao chép mã / liên kết">📋 Sao chép</button>
+              <button class="btn btn-secondary" onclick="copySyncCode()" title="Sao chép mã / liên kết">📋 Sao
+                chép</button>
             </div>
           </div>
 
@@ -490,10 +580,12 @@
             <h4>💾 Xuất Dữ Liệu</h4>
             <p>Tải file sao lưu (.json) hoặc copy mã để lưu trữ cá nhân.</p>
             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem;">
-              <button class="btn btn-primary" onclick="exportBackupFile()" style="font-size: 0.85rem; padding: 0.45rem 0.8rem;">
+              <button class="btn btn-primary" onclick="exportBackupFile()"
+                style="font-size: 0.85rem; padding: 0.45rem 0.8rem;">
                 📥 Tải file .json
               </button>
-              <button class="btn btn-secondary" onclick="copyRawBackupData()" style="font-size: 0.85rem; padding: 0.45rem 0.8rem;">
+              <button class="btn btn-secondary" onclick="copyRawBackupData()"
+                style="font-size: 0.85rem; padding: 0.45rem 0.8rem;">
                 📋 Copy mã Zalo
               </button>
             </div>
@@ -502,12 +594,15 @@
           <div class="sync-file-card">
             <h4>📂 Nhập Dữ Liệu</h4>
             <p>Chọn file .json đã lưu hoặc dán mã dữ liệu để nạp vào máy.</p>
-            <input type="file" id="sync-file-input" accept=".json" style="display: none;" onchange="importBackupFile(event)" />
+            <input type="file" id="sync-file-input" accept=".json" style="display: none;"
+              onchange="importBackupFile(event)" />
             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem;">
-              <button class="btn btn-secondary" onclick="document.getElementById('sync-file-input').click()" style="font-size: 0.85rem; padding: 0.45rem 0.8rem;">
+              <button class="btn btn-secondary" onclick="document.getElementById('sync-file-input').click()"
+                style="font-size: 0.85rem; padding: 0.45rem 0.8rem;">
                 📂 Chọn file .json
               </button>
-              <button class="btn btn-secondary" onclick="promptPasteRawData()" style="font-size: 0.85rem; padding: 0.45rem 0.8rem;">
+              <button class="btn btn-secondary" onclick="promptPasteRawData()"
+                style="font-size: 0.85rem; padding: 0.45rem 0.8rem;">
                 📋 Dán mã Zalo
               </button>
             </div>
@@ -546,24 +641,132 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>Bài 1</td><td>Đại cương DLS; Nội dung và cách tiếp cận DLS</td><td>4h</td><td rowspan="2" class="merged-cell"><strong>10 câu</strong><br><small style="color: var(--primary);">(Gộp Bài 1 &amp; 5)</small></td><td rowspan="2" class="merged-cell">12.5%</td></tr>
-            <tr><td>Bài 5</td><td>Thông tin thuốc</td><td>2h</td></tr>
-            <tr><td>Bài 2</td><td>Biến đổi DĐH và SD thuốc ở BN suy gan, suy thận</td><td>2h</td><td><strong>4 câu</strong></td><td>5.0%</td></tr>
-            <tr><td>Bài 3</td><td>Tương tác thuốc &amp; Tương kỵ lâm sàng</td><td>4h</td><td><strong>7 câu</strong></td><td>8.75%</td></tr>
-            <tr><td>Bài 4</td><td>ADR và dị ứng thuốc</td><td>4h</td><td><strong>7 câu</strong></td><td>8.75%</td></tr>
-            <tr><td>Bài 6</td><td>XN LS và nhận định kết quả</td><td>4h</td><td><strong>7 câu</strong></td><td>8.75%</td></tr>
-            <tr><td>Bài 7</td><td>Sử dụng thuốc ở trẻ em</td><td>2h</td><td><strong>4 câu</strong></td><td>5.0%</td></tr>
-            <tr><td>Bài 8</td><td>Sử dụng thuốc ở người cao tuổi</td><td>1h</td><td><strong>2 câu</strong></td><td>2.5%</td></tr>
-            <tr><td>Bài 9</td><td>Sử dụng thuốc ở PNCT và CCB</td><td>3h</td><td><strong>5 câu</strong></td><td>6.25%</td></tr>
-            <tr class="row-muted"><td>Bài 10</td><td>Kiểm tra GHP (1)</td><td>0h</td><td>0 câu <small>(Giờ kiểm tra)</small></td><td>-</td></tr>
-            <tr class="row-highlight"><td>Bài 11</td><td>N/tắc SD kháng sinh trong nhiễm khuẩn</td><td>4h</td><td><strong>8 câu</strong> <small style="color: var(--primary); font-weight: 600;">(Trọng tâm)</small></td><td>10.0%</td></tr>
-            <tr><td>Bài 12</td><td>N/tắc SD glucocorticoid</td><td>4h</td><td><strong>7 câu</strong></td><td>8.75%</td></tr>
-            <tr><td>Bài 13</td><td>N/tắc SD thuốc giảm đau (NSAIDs, Opioid)</td><td>2h</td><td><strong>4 câu</strong></td><td>5.0%</td></tr>
-            <tr><td>Bài 14</td><td>N/tắc SD vit và k/chất (1)</td><td>2h</td><td><strong>4 câu</strong></td><td>5.0%</td></tr>
-            <tr><td>Bài 15</td><td>SD thuốc trong điều trị THA</td><td>2h</td><td><strong>4 câu</strong></td><td>5.0%</td></tr>
-            <tr><td>Bài 16</td><td>SD thuốc trong ĐT Tiêu chảy cấp / TE</td><td>4h</td><td><strong>7 câu</strong></td><td>8.75%</td></tr>
-            <tr class="row-muted"><td>Bài 17</td><td>SD thuốc trong COPD</td><td>0h</td><td>0 câu <small>(Tự học / Đọc thêm)</small></td><td>0%</td></tr>
-            <tr class="row-excluded"><td>Mở rộng</td><td>Loãng xương, Tránh thai &amp; Chuyển hóa</td><td>-</td><td><strong>0 câu (Đã loại trừ)</strong></td><td>0%</td></tr>
+            <tr>
+              <td>Bài 1</td>
+              <td>Đại cương DLS; Nội dung và cách tiếp cận DLS</td>
+              <td>4h</td>
+              <td rowspan="2" class="merged-cell"><strong>10 câu</strong><br><small style="color: var(--primary);">(Gộp
+                  Bài 1 &amp; 5)</small></td>
+              <td rowspan="2" class="merged-cell">12.5%</td>
+            </tr>
+            <tr>
+              <td>Bài 5</td>
+              <td>Thông tin thuốc</td>
+              <td>2h</td>
+            </tr>
+            <tr>
+              <td>Bài 2</td>
+              <td>Biến đổi DĐH và SD thuốc ở BN suy gan, suy thận</td>
+              <td>2h</td>
+              <td><strong>4 câu</strong></td>
+              <td>5.0%</td>
+            </tr>
+            <tr>
+              <td>Bài 3</td>
+              <td>Tương tác thuốc &amp; Tương kỵ lâm sàng</td>
+              <td>4h</td>
+              <td><strong>7 câu</strong></td>
+              <td>8.75%</td>
+            </tr>
+            <tr>
+              <td>Bài 4</td>
+              <td>ADR và dị ứng thuốc</td>
+              <td>4h</td>
+              <td><strong>7 câu</strong></td>
+              <td>8.75%</td>
+            </tr>
+            <tr>
+              <td>Bài 6</td>
+              <td>XN LS và nhận định kết quả</td>
+              <td>4h</td>
+              <td><strong>7 câu</strong></td>
+              <td>8.75%</td>
+            </tr>
+            <tr>
+              <td>Bài 7</td>
+              <td>Sử dụng thuốc ở trẻ em</td>
+              <td>2h</td>
+              <td><strong>4 câu</strong></td>
+              <td>5.0%</td>
+            </tr>
+            <tr>
+              <td>Bài 8</td>
+              <td>Sử dụng thuốc ở người cao tuổi</td>
+              <td>1h</td>
+              <td><strong>2 câu</strong></td>
+              <td>2.5%</td>
+            </tr>
+            <tr>
+              <td>Bài 9</td>
+              <td>Sử dụng thuốc ở PNCT và CCB</td>
+              <td>3h</td>
+              <td><strong>5 câu</strong></td>
+              <td>6.25%</td>
+            </tr>
+            <tr class="row-muted">
+              <td>Bài 10</td>
+              <td>Kiểm tra GHP (1)</td>
+              <td>0h</td>
+              <td>0 câu <small>(Giờ kiểm tra)</small></td>
+              <td>-</td>
+            </tr>
+            <tr class="row-highlight">
+              <td>Bài 11</td>
+              <td>N/tắc SD kháng sinh trong nhiễm khuẩn</td>
+              <td>4h</td>
+              <td><strong>8 câu</strong> <small style="color: var(--primary); font-weight: 600;">(Trọng tâm)</small>
+              </td>
+              <td>10.0%</td>
+            </tr>
+            <tr>
+              <td>Bài 12</td>
+              <td>N/tắc SD glucocorticoid</td>
+              <td>4h</td>
+              <td><strong>7 câu</strong></td>
+              <td>8.75%</td>
+            </tr>
+            <tr>
+              <td>Bài 13</td>
+              <td>N/tắc SD thuốc giảm đau (NSAIDs, Opioid)</td>
+              <td>2h</td>
+              <td><strong>4 câu</strong></td>
+              <td>5.0%</td>
+            </tr>
+            <tr>
+              <td>Bài 14</td>
+              <td>N/tắc SD vit và k/chất (1)</td>
+              <td>2h</td>
+              <td><strong>4 câu</strong></td>
+              <td>5.0%</td>
+            </tr>
+            <tr>
+              <td>Bài 15</td>
+              <td>SD thuốc trong điều trị THA</td>
+              <td>2h</td>
+              <td><strong>4 câu</strong></td>
+              <td>5.0%</td>
+            </tr>
+            <tr>
+              <td>Bài 16</td>
+              <td>SD thuốc trong ĐT Tiêu chảy cấp / TE</td>
+              <td>4h</td>
+              <td><strong>7 câu</strong></td>
+              <td>8.75%</td>
+            </tr>
+            <tr class="row-muted">
+              <td>Bài 17</td>
+              <td>SD thuốc trong COPD</td>
+              <td>0h</td>
+              <td>0 câu <small>(Tự học / Đọc thêm)</small></td>
+              <td>0%</td>
+            </tr>
+            <tr class="row-excluded">
+              <td>Mở rộng</td>
+              <td>Loãng xương, Tránh thai &amp; Chuyển hóa</td>
+              <td>-</td>
+              <td><strong>0 câu (Đã loại trừ)</strong></td>
+              <td>0%</td>
+            </tr>
           </tbody>
           <tfoot>
             <tr>
@@ -577,7 +780,9 @@
       </div>
 
       <div class="matrix-note-box">
-        💡 <strong>Cam kết chuẩn hóa:</strong> Khi làm bài thi 80 câu, hệ thống hoàn toàn không lấy câu hỏi từ chương ngoài chương trình (như Loãng xương) và không lấy bài 0h (COPD). Bạn hoàn toàn yên tâm ôn tập đúng trọng tâm thi kết thúc học phần!
+        💡 <strong>Cam kết chuẩn hóa:</strong> Khi làm bài thi 80 câu, hệ thống hoàn toàn không lấy câu hỏi từ chương
+        ngoài chương trình (như Loãng xương) và không lấy bài 0h (COPD). Bạn hoàn toàn yên tâm ôn tập đúng trọng tâm thi
+        kết thúc học phần!
       </div>
     </div>
   </div>
@@ -591,66 +796,93 @@
       </div>
       <div style="padding: 0.5rem 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-main);">
         <p style="margin-bottom: 0.85rem; color: var(--text-muted);">
-          Hệ thống đã tích hợp <strong>1.486 câu hỏi</strong> chuẩn hóa gồm kho đề Bộ Y tế, đề thi thực tế (Dls.pdf) và đề thi chính thức từ các trường Đại học Y Dược danh tiếng hàng đầu Việt Nam:
+          Hệ thống đã tích hợp <strong>1.486 câu hỏi</strong> chuẩn hóa gồm kho đề Bộ Y tế, đề thi thực tế (Dls.pdf) và
+          đề thi chính thức từ các trường Đại học Y Dược danh tiếng hàng đầu Việt Nam:
         </p>
 
-        <div class="uni-exam-card" onclick="generateGradedExam()" style="border-left: 4px solid #10b981; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
+        <div class="uni-exam-card" onclick="generateUnseenExam()"
+          style="border-left: 4px solid #2563eb; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
-            <strong style="color: #059669; font-size: 1rem;">🎯 Đề Phân Hóa Năng Lực Chuẩn (Tỉ lệ 2:4:4)</strong>
-            <span class="badge" style="background: #d1fae5; color: #047857; font-weight: 700;">80 câu • 16 NB : 32 VD : 32 VDC</span>
+            <strong style="color: #2563eb; font-size: 1rem;">✨ Đề 80 Câu Hoàn Toàn Chưa Làm (100% Mới)</strong>
+            <span class="badge badge-unseen" id="modal-unseen-badge" style="font-weight: 700;">80 câu • 100% Chưa làm</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
-            Cấu trúc phân loại 3 cấp độ chuẩn hóa: <strong>16 câu Nhận biết (20%)</strong> • <strong>32 câu Vận dụng (40%)</strong> • <strong>32 câu Vận dụng cao (40%)</strong> theo đúng ma trận 14 chuyên đề 44h.
+            Tự động lọc và bốc chính xác 80 câu bạn <strong>chưa từng gặp lần nào</strong> (cả ở chế độ thi thử lẫn luyện chuyên đề), phân bổ chuẩn theo ma trận 14 chuyên đề 44h để quét sạch kho đề.
           </div>
         </div>
 
-        <div class="uni-exam-card" onclick="generateUniversityExam('all')" style="border-left: 4px solid var(--primary); margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
+        <div class="uni-exam-card" onclick="generateGradedExam()"
+          style="border-left: 4px solid #10b981; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+            <strong style="color: #059669; font-size: 1rem;">🎯 Đề Phân Hóa Năng Lực Chuẩn (Tỉ lệ 2:4:4)</strong>
+            <span class="badge" style="background: #d1fae5; color: #047857; font-weight: 700;">80 câu • 16 NB : 32 VD :
+              32 VDC</span>
+          </div>
+          <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
+            Cấu trúc phân loại 3 cấp độ chuẩn hóa: <strong>16 câu Nhận biết (20%)</strong> • <strong>32 câu Vận dụng
+              (40%)</strong> • <strong>32 câu Vận dụng cao (40%)</strong> theo đúng ma trận 14 chuyên đề 44h.
+          </div>
+        </div>
+
+        <div class="uni-exam-card" onclick="generateUniversityExam('all')"
+          style="border-left: 4px solid var(--primary); margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
             <strong style="color: var(--primary); font-size: 1rem;">🎯 Đề Ma Trận 44h Toàn Diện (Khuyên dùng)</strong>
             <span class="badge badge-category">80 câu • 80 phút</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
-            Trộn thông minh câu hỏi Đề thi thực tế (Dls.pdf), ĐH Dược Hà Nội, ĐH Y Dược TP.HCM, ĐH Y Hà Nội &amp; Chuẩn Bộ Y tế theo đúng ma trận 14 chuyên đề 44h.
+            Trộn thông minh câu hỏi Đề thi thực tế (Dls.pdf), ĐH Dược Hà Nội, ĐH Y Dược TP.HCM, ĐH Y Hà Nội &amp; Chuẩn
+            Bộ Y tế theo đúng ma trận 14 chuyên đề 44h.
           </div>
         </div>
 
-        <div class="uni-exam-card" onclick="generateUniversityExam('DLS_PDF')" style="border-left: 4px solid #10b981; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
+        <div class="uni-exam-card" onclick="generateUniversityExam('DLS_PDF')"
+          style="border-left: 4px solid #10b981; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
             <strong style="color: #10b981; font-size: 1rem;">📝 Đề thi Dược Lâm Sàng Thực Tế (Dls.pdf)</strong>
             <span class="badge badge-source-dls">84 câu • 84 phút</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
-            Trọn bộ 84 câu hỏi thi thực tế từ đề thi Dược Lâm Sàng (Dls.pdf): THA, Tiêu chảy cấp ORS/Racecadotril, Tránh thai Implanon, Nghị định 131/2020, Cockcroft-Gault, Xét nghiệm, Tương tác thuốc, ADR, Corticoid &amp; Giảm đau ung thư.
+            Trọn bộ 84 câu hỏi thi thực tế từ đề thi Dược Lâm Sàng (Dls.pdf): THA, Tiêu chảy cấp ORS/Racecadotril, Tránh
+            thai Implanon, Nghị định 131/2020, Cockcroft-Gault, Xét nghiệm, Tương tác thuốc, ADR, Corticoid &amp; Giảm
+            đau ung thư.
           </div>
         </div>
 
-        <div class="uni-exam-card" onclick="generateUniversityExam('HUP')" style="border-left: 4px solid #7c3aed; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
+        <div class="uni-exam-card" onclick="generateUniversityExam('HUP')"
+          style="border-left: 4px solid #7c3aed; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
             <strong style="color: #7c3aed; font-size: 1rem;">🏛️ Đại học Dược Hà Nội (HUP)</strong>
             <span class="badge badge-source-hup">60 câu • 60 phút</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
-            Chuyên sâu: TDM Vancomycin (AUC24/MIC), Aminoglycosid liều 1 lần/ngày, Dược động học phi tuyến tính, Thang Naranjo, Tương tác CYP450/P-gp, Quy trình 7 bước thông tin thuốc, Nhi khoa, Lão khoa, Corticoid &amp; Cấp cứu.
+            Chuyên sâu: TDM Vancomycin (AUC24/MIC), Aminoglycosid liều 1 lần/ngày, Dược động học phi tuyến tính, Thang
+            Naranjo, Tương tác CYP450/P-gp, Quy trình 7 bước thông tin thuốc, Nhi khoa, Lão khoa, Corticoid &amp; Cấp
+            cứu.
           </div>
         </div>
 
-        <div class="uni-exam-card" onclick="generateUniversityExam('UMP')" style="border-left: 4px solid #0284c7; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
+        <div class="uni-exam-card" onclick="generateUniversityExam('UMP')"
+          style="border-left: 4px solid #0284c7; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
             <strong style="color: #0284c7; font-size: 1rem;">🏛️ Đại học Y Dược TP.HCM (UMP)</strong>
             <span class="badge badge-source-ump">60 câu • 60 phút</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
-            Chuyên sâu: Tình huống lâm sàng ca bệnh, Xơ gan cổ trướng &amp; SBP, Cẩm nang Trissel's tiêm truyền, Cấp cứu tăng huyết áp Nicardipine, Bù nước IMCI trẻ em, Tiêu chuẩn Beers &amp; STOPP/START.
+            Chuyên sâu: Tình huống lâm sàng ca bệnh, Xơ gan cổ trướng &amp; SBP, Cẩm nang Trissel's tiêm truyền, Cấp cứu
+            tăng huyết áp Nicardipine, Bù nước IMCI trẻ em, Tiêu chuẩn Beers &amp; STOPP/START.
           </div>
         </div>
 
-        <div class="uni-exam-card" onclick="generateUniversityExam('HMU')" style="border-left: 4px solid #dc2626; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
+        <div class="uni-exam-card" onclick="generateUniversityExam('HMU')"
+          style="border-left: 4px solid #dc2626; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
             <strong style="color: #dc2626; font-size: 1rem;">🏛️ Đại học Y Hà Nội (HMU)</strong>
             <span class="badge badge-source-hmu">60 câu • 60 phút</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
-            Chuyên sâu: Phác đồ Thông tư 51/2017/TT-BYT Phản vệ Adrenaline &amp; Glucagon, Thử nghiệm lâm sàng Pha I-IV, Y học thực chứng EBM, Paracetamol nhi khoa, Codeine CYP2D6, Corticoid liều xung &amp; Cấp cứu Wernicke.
+            Chuyên sâu: Phác đồ Thông tư 51/2017/TT-BYT Phản vệ Adrenaline &amp; Glucagon, Thử nghiệm lâm sàng Pha I-IV,
+            Y học thực chứng EBM, Paracetamol nhi khoa, Codeine CYP2D6, Corticoid liều xung &amp; Cấp cứu Wernicke.
           </div>
         </div>
       </div>
@@ -691,10 +923,12 @@
           <label style="font-weight: 600; display: block; margin-bottom: 0.35rem;">
             🎙️ Giọng đọc tiếng Việt:
           </label>
-          <select id="tts-voice-select" onchange="onUserChangeTtsVoice()" style="width: 100%; padding: 0.55rem 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); color: var(--text-main); font-size: 0.9rem; outline: none;">
+          <select id="tts-voice-select" onchange="onUserChangeTtsVoice()"
+            style="width: 100%; padding: 0.55rem 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); color: var(--text-main); font-size: 0.9rem; outline: none;">
             <!-- Populated dynamically via JS -->
           </select>
-          <div id="tts-voice-note" style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.35rem; line-height: 1.4;"></div>
+          <div id="tts-voice-note"
+            style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.35rem; line-height: 1.4;"></div>
         </div>
 
         <!-- Speed / Rate Selector -->
@@ -703,9 +937,12 @@
             ⚡ Tốc độ phát âm:
           </label>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-            <button type="button" class="btn btn-secondary tts-speed-btn" data-speed="0.85" onclick="setTtsSpeed(0.85)" style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">0.85x (Chậm, rõ từng chữ)</button>
-            <button type="button" class="btn btn-secondary tts-speed-btn" data-speed="0.92" onclick="setTtsSpeed(0.92)" style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">0.92x (Tiêu chuẩn)</button>
-            <button type="button" class="btn btn-secondary tts-speed-btn" data-speed="1.05" onclick="setTtsSpeed(1.05)" style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">1.05x (Nhanh vừa)</button>
+            <button type="button" class="btn btn-secondary tts-speed-btn" data-speed="0.85" onclick="setTtsSpeed(0.85)"
+              style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">0.85x (Chậm, rõ từng chữ)</button>
+            <button type="button" class="btn btn-secondary tts-speed-btn" data-speed="0.92" onclick="setTtsSpeed(0.92)"
+              style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">0.92x (Tiêu chuẩn)</button>
+            <button type="button" class="btn btn-secondary tts-speed-btn" data-speed="1.05" onclick="setTtsSpeed(1.05)"
+              style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">1.05x (Nhanh vừa)</button>
           </div>
         </div>
 
@@ -715,33 +952,43 @@
             🎵 Cao độ giọng (Âm sắc):
           </label>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-            <button type="button" class="btn btn-secondary tts-pitch-btn" data-pitch="0.9" onclick="setTtsPitch(0.9)" style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">0.9x (Trầm ấm, đỡ the thé)</button>
-            <button type="button" class="btn btn-secondary tts-pitch-btn" data-pitch="1.0" onclick="setTtsPitch(1.0)" style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">1.0x (Tiêu chuẩn)</button>
-            <button type="button" class="btn btn-secondary tts-pitch-btn" data-pitch="1.1" onclick="setTtsPitch(1.1)" style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">1.1x (Thanh sáng)</button>
+            <button type="button" class="btn btn-secondary tts-pitch-btn" data-pitch="0.9" onclick="setTtsPitch(0.9)"
+              style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">0.9x (Trầm ấm, đỡ the thé)</button>
+            <button type="button" class="btn btn-secondary tts-pitch-btn" data-pitch="1.0" onclick="setTtsPitch(1.0)"
+              style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">1.0x (Tiêu chuẩn)</button>
+            <button type="button" class="btn btn-secondary tts-pitch-btn" data-pitch="1.1" onclick="setTtsPitch(1.1)"
+              style="padding: 0.4rem 0.8rem; font-size: 0.84rem;">1.1x (Thanh sáng)</button>
           </div>
         </div>
 
         <!-- Test Voice Button -->
-        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 0.85rem 1rem; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+        <div
+          style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 0.85rem 1rem; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
           <div>
             <div style="font-weight: 600; font-size: 0.9rem;">Thử nghiệm âm thanh</div>
             <div style="font-size: 0.8rem; color: var(--text-muted);">Nghe thử giọng đọc với câu mẫu Dược lâm sàng</div>
           </div>
-          <button class="btn btn-primary" id="btn-test-tts-voice" onclick="testTtsSampleSpeech()" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+          <button class="btn btn-primary" id="btn-test-tts-voice" onclick="testTtsSampleSpeech()"
+            style="padding: 0.45rem 1rem; font-size: 0.85rem;">
             <span>▶️</span> Nghe thử ngay
           </button>
         </div>
 
         <!-- Tip for Microsoft Edge Natural Voice -->
-        <div style="background: rgba(37, 99, 235, 0.08); border: 1px solid rgba(37, 99, 235, 0.25); border-radius: var(--radius-md); padding: 0.85rem 1rem; font-size: 0.85rem; color: var(--text-main); line-height: 1.5;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+        <div
+          style="background: rgba(37, 99, 235, 0.08); border: 1px solid rgba(37, 99, 235, 0.25); border-radius: var(--radius-md); padding: 0.85rem 1rem; font-size: 0.85rem; color: var(--text-main); line-height: 1.5;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
             <div>
-              <strong style="color: var(--primary); font-size: 0.92rem;">✨ Muốn giọng đọc tự nhiên 100% như người thật?</strong>
+              <strong style="color: var(--primary); font-size: 0.92rem;">✨ Muốn giọng đọc tự nhiên 100% như người
+                thật?</strong>
               <div style="margin-top: 0.25rem; font-size: 0.84rem; color: var(--text-main);">
-                Trình duyệt <strong>Microsoft Edge</strong> (đã cài sẵn trên Windows) tích hợp miễn phí giọng AI <em>Hoài My &amp; Nam Minh (Natural)</em>, đọc truyền cảm và ngắt nghỉ tự nhiên như phát thanh viên VTV!
+                Trình duyệt <strong>Microsoft Edge</strong> (đã cài sẵn trên Windows) tích hợp miễn phí giọng AI
+                <em>Hoài My &amp; Nam Minh (Natural)</em>, đọc truyền cảm và ngắt nghỉ tự nhiên như phát thanh viên VTV!
               </div>
             </div>
-            <button type="button" class="btn btn-secondary" onclick="copyExamLinkForEdge()" style="padding: 0.35rem 0.75rem; font-size: 0.82rem; white-space: nowrap; border-color: var(--primary); color: var(--primary);">
+            <button type="button" class="btn btn-secondary" onclick="copyExamLinkForEdge()"
+              style="padding: 0.35rem 0.75rem; font-size: 0.82rem; white-space: nowrap; border-color: var(--primary); color: var(--primary);">
               📋 Copy link mở trên Edge
             </button>
           </div>
@@ -760,7 +1007,8 @@
   <div class="modal-overlay" id="modal-exam-note" onclick="if(event.target === this) closeExamNoteModal()">
     <div class="modal-card note-modal-card">
       <div class="modal-header">
-        <div class="modal-title" id="note-modal-title" style="color: var(--secondary); display: flex; align-items: center; gap: 0.5rem;">
+        <div class="modal-title" id="note-modal-title"
+          style="color: var(--secondary); display: flex; align-items: center; gap: 0.5rem;">
           <span>📝</span> <span>GHI CHÚ BÀI THI</span>
         </div>
         <button class="modal-close" onclick="closeExamNoteModal()">&times;</button>
@@ -771,31 +1019,45 @@
         </div>
 
         <div style="margin-bottom: 0.65rem;">
-          <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">
+          <span
+            style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">
             🏷️ Thêm nhanh thẻ nhắc nhở:
           </span>
           <div class="note-quick-tags" style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
-            <button type="button" class="btn-note-tag" onclick="insertNoteTag('⚠️ Cần ôn kỹ Dược động học & TDM')">⚠️ DĐH &amp; TDM</button>
-            <button type="button" class="btn-note-tag" onclick="insertNoteTag('💊 Chú ý liều Kháng sinh & Aminoglycosid')">💊 Liều Kháng sinh</button>
-            <button type="button" class="btn-note-tag" onclick="insertNoteTag('🩺 Xem lại tương tác thuốc & enzym gan')">🩺 Tương tác thuốc</button>
-            <button type="button" class="btn-note-tag" onclick="insertNoteTag('⏱️ Cần tăng tốc độ làm bài & phân tích')">⏱️ Rèn tốc độ</button>
-            <button type="button" class="btn-note-tag" onclick="insertNoteTag('🏆 Đề làm tốt, giữ vững phong độ')">🏆 Đạt mục tiêu</button>
+            <button type="button" class="btn-note-tag" onclick="insertNoteTag('⚠️ Cần ôn kỹ Dược động học & TDM')">⚠️
+              DĐH &amp; TDM</button>
+            <button type="button" class="btn-note-tag"
+              onclick="insertNoteTag('💊 Chú ý liều Kháng sinh & Aminoglycosid')">💊 Liều Kháng sinh</button>
+            <button type="button" class="btn-note-tag"
+              onclick="insertNoteTag('🩺 Xem lại tương tác thuốc & enzym gan')">🩺 Tương tác thuốc</button>
+            <button type="button" class="btn-note-tag"
+              onclick="insertNoteTag('⏱️ Cần tăng tốc độ làm bài & phân tích')">⏱️ Rèn tốc độ</button>
+            <button type="button" class="btn-note-tag" onclick="insertNoteTag('🏆 Đề làm tốt, giữ vững phong độ')">🏆
+              Đạt mục tiêu</button>
           </div>
         </div>
 
-        <label for="exam-note-textarea" style="font-size: 0.88rem; font-weight: 600; color: var(--text-main); display: block; margin-bottom: 0.35rem;">
+        <label for="exam-note-textarea"
+          style="font-size: 0.88rem; font-weight: 600; color: var(--text-main); display: block; margin-bottom: 0.35rem;">
           Nội dung ghi chú cá nhân:
         </label>
-        <textarea id="exam-note-textarea" rows="5" placeholder="Ghi chú kinh nghiệm làm đề này, những câu hay nhầm lẫn, công thức cần ôn lại..." style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-md); font-family: inherit; font-size: 0.9rem; background: var(--surface); color: var(--text-main); resize: vertical; line-height: 1.5; outline: none;" oninput="const c = document.getElementById('note-char-count'); if(c) c.textContent = this.value.length + ' / 1000 ký tự';" maxlength="1000"></textarea>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.35rem; font-size: 0.8rem; color: var(--text-muted);">
+        <textarea id="exam-note-textarea" rows="5"
+          placeholder="Ghi chú kinh nghiệm làm đề này, những câu hay nhầm lẫn, công thức cần ôn lại..."
+          style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-md); font-family: inherit; font-size: 0.9rem; background: var(--surface); color: var(--text-main); resize: vertical; line-height: 1.5; outline: none;"
+          oninput="const c = document.getElementById('note-char-count'); if(c) c.textContent = this.value.length + ' / 1000 ký tự';"
+          maxlength="1000"></textarea>
+        <div
+          style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.35rem; font-size: 0.8rem; color: var(--text-muted);">
           <span id="note-char-count">0 / 1000 ký tự</span>
           <span id="note-auto-save-hint">💡 Ghi chú tự động đồng bộ khi chuyển thiết bị</span>
         </div>
       </div>
 
-      <div class="modal-actions" style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+      <div class="modal-actions"
+        style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
         <div>
-          <button class="btn btn-secondary" id="btn-delete-note" onclick="deleteCurrentExamNote()" style="color: var(--danger); border-color: var(--danger-light); padding: 0.45rem 0.85rem; font-size: 0.85rem; display: none;">
+          <button class="btn btn-secondary" id="btn-delete-note" onclick="deleteCurrentExamNote()"
+            style="color: var(--danger); border-color: var(--danger-light); padding: 0.45rem 0.85rem; font-size: 0.85rem; display: none;">
             🗑️ Xóa ghi chú
           </button>
         </div>
@@ -815,4 +1077,5 @@
   <script src="flashcards.js?v=30"></script>
   <script src="app.js?v=37"></script>
 </body>
+
 </html>

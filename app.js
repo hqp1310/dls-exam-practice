@@ -32,7 +32,7 @@ function togglePrioritizeUnseen(val) {
   prioritizeUnseenQuestions = !!val;
   try {
     localStorage.setItem('dls_prioritize_unseen', prioritizeUnseenQuestions ? '1' : '0');
-  } catch (e) {}
+  } catch (e) { }
 }
 
 // Draft persistence functions
@@ -60,7 +60,7 @@ function saveExamDraft() {
 function clearExamDraft() {
   try {
     localStorage.removeItem(STORAGE_ACTIVE_DRAFT_KEY);
-  } catch (e) {}
+  } catch (e) { }
 }
 
 function restoreExamDraft() {
@@ -68,7 +68,7 @@ function restoreExamDraft() {
     const raw = localStorage.getItem(STORAGE_ACTIVE_DRAFT_KEY);
     if (!raw) return false;
     const draft = JSON.parse(raw);
-    if (!draft || !draft.questions || draft.questions.length !== 80) return false;
+    if (!draft || !draft.questions || !draft.questions.length) return false;
 
     EXAM_QUESTIONS = draft.questions;
     userAnswers = draft.userAnswers || {};
@@ -280,7 +280,7 @@ function generateRandomExam(force = false) {
   isExamStarted = false;
   isExamPaused = false;
   timeRemaining = EXAM_DURATION_MINUTES * 60;
-  
+
   if (examTimer) {
     clearInterval(examTimer);
     examTimer = null;
@@ -512,10 +512,136 @@ function generateGradedExam(force = false) {
   playChime('click');
 }
 
+// ============================================================================
+// ĐỀ THI 80 CÂU 100% LÀ CÂU CHƯA TỪNG LÀM (QUÉT SẠCH KHO ĐỀ 1.486 CÂU)
+// ============================================================================
+function generateUnseenExam(force = false) {
+  if (typeof ALL_EXAM_BANK === 'undefined' || !ALL_EXAM_BANK.length) {
+    console.error('ALL_EXAM_BANK not loaded!');
+    return;
+  }
+
+  if (!force && !isExamSubmitted && Object.keys(userAnswers).length > 0) {
+    if (!confirm('Bạn đang làm bài thi dở dang. Bạn có chắc chắn muốn bỏ bài thi hiện tại và tạo đề thi 100% câu chưa làm không?')) {
+      return;
+    }
+  }
+
+  const covStats = getBankCoverageStats();
+  const seenIds = covStats.seenIds || new Set();
+  const unseenPool = ALL_EXAM_BANK.filter(q => !seenIds.has(q.id));
+
+  if (unseenPool.length === 0) {
+    alert('🎉 Tuyệt vời! Bạn đã hoàn thành 100% toàn bộ ' + ALL_EXAM_BANK.length + ' câu hỏi trong ngân hàng đề Dược Lâm Sàng!\n\nHiện tại không còn câu nào chưa làm. Bạn có thể làm lại đề ngẫu nhiên hoặc luyện tập theo chuyên đề.');
+    return;
+  }
+
+  const targetTotal = Math.min(80, unseenPool.length);
+
+  if (unseenPool.length < 80 && !force) {
+    if (!confirm('Hiện tại trong ngân hàng chỉ còn ' + unseenPool.length + ' câu bạn chưa từng làm.\n\nBạn có muốn tạo đề thi với toàn bộ ' + unseenPool.length + ' câu chưa làm này không? (Thời gian làm bài: ' + unseenPool.length + ' phút)')) {
+      return;
+    }
+  }
+
+  closeUniversityExamModal();
+  clearExamDraft();
+
+  let chosenQuestions = [];
+  const chosenStems = new Set();
+
+  // Phase 1: Phân bổ theo ma trận 14 chuyên đề 44h bằng các câu chưa làm
+  EXAM_MATRIX_44H.forEach(rule => {
+    const chUnseen = shuffle(unseenPool.filter(q => q.chapter === rule.chapter && !chosenStems.has(q.question)));
+    const pickCount = Math.min(rule.count, chUnseen.length);
+    for (let i = 0; i < pickCount; i++) {
+      if (chosenQuestions.length < targetTotal) {
+        chosenQuestions.push(chUnseen[i]);
+        chosenStems.add(chUnseen[i].question);
+      }
+    }
+  });
+
+  // Phase 2: Bù từ các chuyên đề 44h khác nếu có chuyên đề đã hết câu chưa làm
+  if (chosenQuestions.length < targetTotal) {
+    const allowedChapters = new Set(EXAM_MATRIX_44H.map(r => r.chapter));
+    const rem44h = shuffle(unseenPool.filter(q => allowedChapters.has(q.chapter) && !chosenStems.has(q.question)));
+    for (const q of rem44h) {
+      chosenQuestions.push(q);
+      chosenStems.add(q.question);
+      if (chosenQuestions.length >= targetTotal) break;
+    }
+  }
+
+  // Phase 3: Bù từ bất kỳ câu chưa làm nào còn lại trong toàn ngân hàng (nếu có)
+  if (chosenQuestions.length < targetTotal) {
+    const remAny = shuffle(unseenPool.filter(q => !chosenStems.has(q.question)));
+    for (const q of remAny) {
+      chosenQuestions.push(q);
+      chosenStems.add(q.question);
+      if (chosenQuestions.length >= targetTotal) break;
+    }
+  }
+
+  // Xáo trộn thứ tự câu hỏi để các trường và độ khó đan xen tự nhiên
+  chosenQuestions = shuffle(chosenQuestions);
+
+  // Xáo trộn 4 đáp án A, B, C, D để tránh thiên vị vị trí
+  EXAM_QUESTIONS = chosenQuestions.map((q, idx) => {
+    const originalCorrectText = q.options[q.correct];
+    const shuffledOptions = shuffle(q.options);
+    const newCorrectIdx = shuffledOptions.indexOf(originalCorrectText);
+
+    return {
+      id: q.id,
+      examNum: idx + 1,
+      chapter: q.chapter,
+      level: q.level || 'Vận dụng',
+      source: q.source || "BYT",
+      sourceName: q.sourceName || "Bộ Y tế (Chuẩn Quốc gia)",
+      question: q.question,
+      options: shuffledOptions,
+      correct: newCorrectIdx,
+      explanation: q.explanation,
+      reference: q.reference
+    };
+  });
+
+  // Reset exam session state
+  userAnswers = {};
+  flaggedQuestions.clear();
+  isExamSubmitted = false;
+  isExamStarted = false;
+  isExamPaused = false;
+  timeRemaining = targetTotal * 60; // 1 phút / câu
+
+  if (examTimer) {
+    clearInterval(examTimer);
+    examTimer = null;
+  }
+  stopSpeaking();
+
+  if (timerWidget) timerWidget.classList.remove('warning', 'paused');
+  updateTimerDisplay();
+  updateTimerButton();
+  renderExamQuestion(0);
+  updatePalette();
+  saveExamDraft();
+  playChime('click');
+}
+
 // University Exam Modal & Generation
 function openUniversityExamModal() {
   const modal = document.getElementById('modal-university-exam');
-  if (modal) modal.classList.add('active');
+  if (modal) {
+    const stats = getBankCoverageStats();
+    const unseenBadge = document.getElementById('modal-unseen-badge');
+    if (unseenBadge) {
+      const count = Math.min(80, stats.unseenCount);
+      unseenBadge.textContent = `${count} câu • Còn ${stats.unseenCount} câu chưa làm`;
+    }
+    modal.classList.add('active');
+  }
   playChime('click');
 }
 
@@ -724,14 +850,14 @@ function switchTab(tab) {
   });
   try {
     localStorage.setItem('dls_active_tab', tab);
-  } catch (e) {}
+  } catch (e) { }
 
   document.getElementById('view-exam').style.display = tab === 'exam' ? 'block' : 'none';
   document.getElementById('view-history').style.display = tab === 'history' ? 'block' : 'none';
   document.getElementById('view-topic').style.display = tab === 'topic' ? 'block' : 'none';
   document.getElementById('view-flashcards').style.display = tab === 'flashcards' ? 'block' : 'none';
   document.getElementById('view-cheatsheet').style.display = tab === 'cheatsheet' ? 'block' : 'none';
-  
+
   const isExamTab = (tab === 'exam');
 
   // ONLY display timer widget and start/pause button during "Thi Thử 80 Câu"!
@@ -824,7 +950,7 @@ function updateMobileDock(index) {
   if (dockNext) dockNext.disabled = index === EXAM_QUESTIONS.length - 1;
   if (dockStatusText) {
     const answeredCount = Object.keys(userAnswers).length;
-    dockStatusText.textContent = `${answeredCount}/80 đã làm ▲`;
+    dockStatusText.textContent = `${answeredCount}/${EXAM_QUESTIONS.length} đã làm ▲`;
   }
 }
 
@@ -975,7 +1101,7 @@ function getTtsRate() {
     if (!isNaN(saved) && saved >= 0.7 && saved <= 1.4) {
       return saved;
     }
-  } catch (e) {}
+  } catch (e) { }
   return 0.92; // 0.92x is optimal for clear, steady pharmacology pronunciation
 }
 
@@ -1053,7 +1179,7 @@ function stopSpeaking() {
     try {
       currentTtsAudio.pause();
       currentTtsAudio.currentTime = 0;
-    } catch (e) {}
+    } catch (e) { }
     currentTtsAudio = null;
   }
   if (ttsKeepAliveTimer) {
@@ -1065,7 +1191,7 @@ function stopSpeaking() {
   if ('speechSynthesis' in window) {
     try {
       window.speechSynthesis.cancel();
-    } catch (e) {}
+    } catch (e) { }
   }
   isSpeaking = false;
   document.querySelectorAll('.btn-speak-exp').forEach(btn => {
@@ -1375,7 +1501,7 @@ function getTtsPitch() {
     if (!isNaN(saved) && saved >= 0.7 && saved <= 1.4) {
       return saved;
     }
-  } catch (e) {}
+  } catch (e) { }
   return 1.0;
 }
 
@@ -1518,13 +1644,13 @@ function playWebSpeechTts(btn, text) {
     if (window.speechSynthesis && window.speechSynthesis.paused && isSpeaking) {
       try {
         window.speechSynthesis.resume();
-      } catch (e) {}
+      } catch (e) { }
     }
   }, 3000);
 
   try {
     window.speechSynthesis.cancel();
-  } catch (e) {}
+  } catch (e) { }
 
   playNextSpeechChunk();
 }
@@ -1753,7 +1879,7 @@ function updatePalette() {
     if (isExamSubmitted) {
       if (!isAnswered) {
         btn.classList.add('result-skipped');
-        btn.title = `Câu ${idx + 1}: Chưa làm (Đáp án đúng: ${['A','B','C','D'][q.correct]})`;
+        btn.title = `Câu ${idx + 1}: Chưa làm (Đáp án đúng: ${['A', 'B', 'C', 'D'][q.correct]})`;
         unansweredCount++;
       } else if (userAnswers[q.id] === q.correct) {
         btn.classList.add('result-correct');
@@ -1761,8 +1887,8 @@ function updatePalette() {
         correctCount++;
       } else {
         btn.classList.add('result-wrong');
-        const userChoice = ['A','B','C','D'][userAnswers[q.id]] || '?';
-        const correctChoice = ['A','B','C','D'][q.correct];
+        const userChoice = ['A', 'B', 'C', 'D'][userAnswers[q.id]] || '?';
+        const correctChoice = ['A', 'B', 'C', 'D'][q.correct];
         btn.title = `Câu ${idx + 1}: Sai (Bạn chọn: [${userChoice}] • Đúng: [${correctChoice}])`;
         wrongCount++;
       }
@@ -1860,7 +1986,7 @@ function submitExam() {
 
   const score10 = ((correctCount / EXAM_QUESTIONS.length) * 10).toFixed(2);
   const pct = Math.round((correctCount / EXAM_QUESTIONS.length) * 100);
-  const totalExamSeconds = EXAM_DURATION_MINUTES * 60;
+  const totalExamSeconds = EXAM_QUESTIONS.length * 60;
   const timeUsed = Math.max(0, totalExamSeconds - timeRemaining);
   const minUsed = Math.floor(timeUsed / 60);
   const secUsed = timeUsed % 60;
@@ -1997,26 +2123,26 @@ function loadStudyAnswers() {
     }
     const raw = localStorage.getItem(STORAGE_STUDY_ANSWERS_KEY);
     if (raw) studyAnswers = JSON.parse(raw);
-  } catch (e) {}
+  } catch (e) { }
 }
 
 function saveStudyAnswers() {
   try {
     localStorage.setItem(STORAGE_STUDY_ANSWERS_KEY, JSON.stringify(studyAnswers));
-  } catch (e) {}
+  } catch (e) { }
 }
 
 function loadTopicCustomOrder() {
   try {
     const raw = localStorage.getItem(STORAGE_TOPIC_ORDER_KEY);
     if (raw) topicCustomOrder = JSON.parse(raw);
-  } catch (e) {}
+  } catch (e) { }
 }
 
 function saveTopicCustomOrder() {
   try {
     localStorage.setItem(STORAGE_TOPIC_ORDER_KEY, JSON.stringify(topicCustomOrder));
-  } catch (e) {}
+  } catch (e) { }
 }
 
 function getTopicChapterStats() {
@@ -2072,7 +2198,7 @@ function getFilteredTopicQuestions() {
 
   if (topicSearchQuery) {
     const q = topicSearchQuery.toLowerCase().trim();
-    list = list.filter(item => 
+    list = list.filter(item =>
       item.question.toLowerCase().includes(q) ||
       item.options.some(opt => opt.toLowerCase().includes(q)) ||
       (item.explanation && item.explanation.toLowerCase().includes(q))
@@ -2351,7 +2477,7 @@ function renderTopicQuestionCardsHtml(questionsList) {
 
     let badgeStatusHtml = '';
     if (isAnswered) {
-      badgeStatusHtml = isCorrect 
+      badgeStatusHtml = isCorrect
         ? `<span class="study-badge-tag correct">✓ Đúng</span>`
         : `<span class="study-badge-tag wrong">✗ Sai</span>`;
     } else {
@@ -2454,7 +2580,7 @@ function updateStudyCardDOM(qId, oIdx, q) {
   // 2. Update status badge
   const badgeWrap = card.querySelector('.topic-status-badge-wrap');
   if (badgeWrap) {
-    badgeWrap.innerHTML = isCorrect 
+    badgeWrap.innerHTML = isCorrect
       ? `<span class="study-badge-tag correct">✓ Đúng</span>`
       : `<span class="study-badge-tag wrong">✗ Sai</span>`;
   }
@@ -2517,7 +2643,7 @@ function filterTopic(topic) {
   topicSearchQuery = '';
   try {
     localStorage.setItem('dls_active_topic', topic);
-  } catch (e) {}
+  } catch (e) { }
   playChime('click');
 
   const container = document.getElementById('view-topic');
@@ -2794,19 +2920,19 @@ function loadFlashcardState() {
     if (m) flashcardMastered = new Set(JSON.parse(m));
     const s = localStorage.getItem(STORAGE_FC_STARRED_KEY);
     if (s) flashcardStarred = new Set(JSON.parse(s));
-  } catch (e) {}
+  } catch (e) { }
 }
 
 function saveFlashcardMastered() {
   try {
     localStorage.setItem(STORAGE_FC_MASTERED_KEY, JSON.stringify(Array.from(flashcardMastered)));
-  } catch (e) {}
+  } catch (e) { }
 }
 
 function saveFlashcardStarred() {
   try {
     localStorage.setItem(STORAGE_FC_STARRED_KEY, JSON.stringify(Array.from(flashcardStarred)));
-  } catch (e) {}
+  } catch (e) { }
 }
 
 function getFilteredFlashcards() {
@@ -2822,9 +2948,9 @@ function getFilteredFlashcards() {
   }
   if (flashcardSearchQuery) {
     const q = flashcardSearchQuery.toLowerCase().trim();
-    list = list.filter(item => 
-      item.q.toLowerCase().includes(q) || 
-      item.a.toLowerCase().includes(q) || 
+    list = list.filter(item =>
+      item.q.toLowerCase().includes(q) ||
+      item.a.toLowerCase().includes(q) ||
       item.topic.toLowerCase().includes(q)
     );
   }
@@ -3265,13 +3391,13 @@ let openChaptersState = {}; // Keeps track of open accordions
 try {
   const savedSubtab = localStorage.getItem('dls_active_cheatsheet_subtab');
   if (savedSubtab) currentCheatsheetSubtab = savedSubtab;
-} catch (e) {}
+} catch (e) { }
 
 function switchCheatsheetSubtab(subtab) {
   currentCheatsheetSubtab = subtab;
   try {
     localStorage.setItem('dls_active_cheatsheet_subtab', subtab);
-  } catch (e) {}
+  } catch (e) { }
 
   const container = document.getElementById('view-cheatsheet');
   // If not rendered in DOM yet, render it
@@ -5967,7 +6093,7 @@ function renderDetailedReviewQuestions() {
   if (!container || !currentReviewExam) return;
 
   const questions = currentReviewExam.questions || [];
-  
+
   // 1. Filter by category
   let filtered = questions.filter(q => {
     if (reviewFilter === 'wrong') return q.userAnswer !== null && !q.isCorrect;
@@ -6270,7 +6396,7 @@ function saveDesktopSnapshot() {
     const snap = dScratchCtx.getImageData(0, 0, dScratchCanvas.width, dScratchCanvas.height);
     dScratchHistory.push(snap);
     if (dScratchHistory.length > 20) dScratchHistory.shift();
-  } catch (e) {}
+  } catch (e) { }
 }
 
 function undoDesktopScratch() {
@@ -7010,11 +7136,16 @@ function openCoverageModal() {
 
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem;">
         <div style="font-size: 0.8rem; color: var(--text-muted);">
-          💡 Bật <em>"🎯 Ưu tiên câu chưa làm"</em> để hệ thống luôn bốc các câu mới vào đề thi 80 câu!
+          💡 Bạn có thể chọn thi ngay đề 100% câu chưa làm để quét sạch ngân hàng đề!
         </div>
-        <button class="btn btn-primary" onclick="closeCoverageModal(); generateRandomExam();" style="padding: 0.45rem 1rem; font-size: 0.82rem;">
-          🎲 Thi Đề Ưu Tiên Câu Chưa Làm
-        </button>
+        <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">
+          <button class="btn btn-secondary btn-unseen-exam" onclick="closeCoverageModal(); generateUnseenExam();" style="padding: 0.45rem 1rem; font-size: 0.82rem;">
+            ✨ Thi Đề 80 Câu Chưa Làm (100%)
+          </button>
+          <button class="btn btn-primary" onclick="closeCoverageModal(); generateRandomExam();" style="padding: 0.45rem 1rem; font-size: 0.82rem;">
+            🎲 Đề Ưu Tiên Câu Chưa Làm
+          </button>
+        </div>
       </div>
     </div>
   `;
@@ -7059,7 +7190,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (savedTab) currentTab = savedTab;
     const savedTopic = localStorage.getItem('dls_active_topic');
     if (savedTopic) activeTopicFilter = savedTopic;
-  } catch (e) {}
+  } catch (e) { }
 
   initTTS();
   initDesktopScratchpad();
