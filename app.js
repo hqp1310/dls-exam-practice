@@ -288,11 +288,13 @@ function generateRandomExam(force = false) {
   stopSpeaking();
 
   if (timerWidget) timerWidget.classList.remove('warning', 'paused');
+  if (currentTab !== 'exam') switchTab('exam');
   updateTimerDisplay();
   updateTimerButton();
   renderExamQuestion(0);
   saveExamDraft();
   playChime('click');
+  showToast('🎲 Đã tạo Đề thi 80 câu mới chuẩn ma trận 44h!');
 }
 
 // Render University Source Badge
@@ -504,12 +506,14 @@ function generateGradedExam(force = false) {
   stopSpeaking();
 
   if (timerWidget) timerWidget.classList.remove('warning', 'paused');
+  if (currentTab !== 'exam') switchTab('exam');
   updateTimerDisplay();
   updateTimerButton();
   renderExamQuestion(0);
   updatePalette();
   saveExamDraft();
   playChime('click');
+  showToast('🎯 Đã tạo Đề phân hóa 3 cấp độ (Tỉ lệ 2:4:4)!');
 }
 
 // ============================================================================
@@ -622,12 +626,14 @@ function generateUnseenExam(force = false) {
   stopSpeaking();
 
   if (timerWidget) timerWidget.classList.remove('warning', 'paused');
+  if (currentTab !== 'exam') switchTab('exam');
   updateTimerDisplay();
   updateTimerButton();
   renderExamQuestion(0);
   updatePalette();
   saveExamDraft();
   playChime('click');
+  showToast('✨ Đã tạo Đề 80 câu hoàn toàn chưa làm (100% Mới)!');
 }
 
 // University Exam Modal & Generation
@@ -719,12 +725,14 @@ function generateUniversityExam(source = 'all', force = false) {
   stopSpeaking();
 
   if (timerWidget) timerWidget.classList.remove('warning', 'paused');
+  if (currentTab !== 'exam') switchTab('exam');
   updateTimerDisplay();
   updateTimerButton();
   renderExamQuestion(0);
   updatePalette();
   saveExamDraft();
   playChime('click');
+  showToast('🏛️ Đã tạo đề thi thành công!');
 }
 
 // Synthesized Audio using Web Audio API (Offline, reliable)
