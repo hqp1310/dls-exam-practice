@@ -2153,6 +2153,22 @@ function saveTopicCustomOrder() {
   } catch (e) { }
 }
 
+function resolveStudyAnswer(q) {
+  if (!q) return { isAnswered: false, ansIdx: -1, isCorrect: false };
+  const raw = studyAnswers[q.id];
+  if (raw === undefined || raw === null) return { isAnswered: false, ansIdx: -1, isCorrect: false };
+  let ansIdx = -1;
+  if (typeof raw === 'object' && raw.text) {
+    ansIdx = q.options.indexOf(raw.text);
+    if (ansIdx === -1 && typeof raw.idx === 'number') ansIdx = raw.idx;
+  } else if (typeof raw === 'number') {
+    ansIdx = raw;
+  }
+  const isAnswered = ansIdx >= 0 && ansIdx < q.options.length;
+  const isCorrect = isAnswered && ansIdx === q.correct;
+  return { isAnswered, ansIdx, isCorrect };
+}
+
 function getTopicChapterStats() {
   let baseList = activeTopicFilter === 'Tất cả'
     ? ALL_EXAM_BANK
@@ -2169,9 +2185,9 @@ function getTopicChapterStats() {
   let correct = 0;
   let wrong = 0;
   baseList.forEach(q => {
-    const ans = studyAnswers[q.id];
-    if (ans !== undefined) {
-      if (ans === q.correct) correct++;
+    const { isAnswered, isCorrect } = resolveStudyAnswer(q);
+    if (isAnswered) {
+      if (isCorrect) correct++;
       else wrong++;
     }
   });
@@ -2214,11 +2230,14 @@ function getFilteredTopicQuestions() {
   }
 
   if (topicStatusFilter === 'unanswered') {
-    list = list.filter(item => studyAnswers[item.id] === undefined);
+    list = list.filter(item => !resolveStudyAnswer(item).isAnswered);
   } else if (topicStatusFilter === 'wrong') {
-    list = list.filter(item => studyAnswers[item.id] !== undefined && studyAnswers[item.id] !== item.correct);
+    list = list.filter(item => {
+      const { isAnswered, isCorrect } = resolveStudyAnswer(item);
+      return isAnswered && !isCorrect;
+    });
   } else if (topicStatusFilter === 'correct') {
-    list = list.filter(item => studyAnswers[item.id] === item.correct);
+    list = list.filter(item => resolveStudyAnswer(item).isCorrect);
   }
 
   return list;
@@ -2479,9 +2498,7 @@ function renderTopicQuestionCardsHtml(questionsList) {
 
   const letters = ['A', 'B', 'C', 'D'];
   return questionsList.map((q, idx) => {
-    const ans = studyAnswers[q.id];
-    const isAnswered = ans !== undefined;
-    const isCorrect = ans === q.correct;
+    const { isAnswered, ansIdx, isCorrect } = resolveStudyAnswer(q);
 
     let badgeStatusHtml = '';
     if (isAnswered) {
@@ -2497,7 +2514,7 @@ function renderTopicQuestionCardsHtml(questionsList) {
       let state = '';
       if (isAnswered) {
         if (oIdx === q.correct) state = 'correct';
-        else if (ans === oIdx) state = 'incorrect';
+        else if (ansIdx === oIdx) state = 'incorrect';
       }
 
       optionsHtml += `
@@ -2554,11 +2571,12 @@ function renderTopicQuestionCardsHtml(questionsList) {
 
 // IN-PLACE DOM OPTION SELECTION (ZERO SCROLL JUMPING ON MOBILE)
 function selectStudyOption(qId, oIdx) {
-  studyAnswers[qId] = oIdx;
-  saveStudyAnswers();
-
   const q = ALL_EXAM_BANK.find(item => item.id === qId);
   if (!q) return;
+
+  const optText = q.options[oIdx];
+  studyAnswers[qId] = { idx: oIdx, text: optText };
+  saveStudyAnswers();
 
   const isCorrect = oIdx === q.correct;
   playChime(isCorrect ? 'success' : 'click');
@@ -2843,8 +2861,8 @@ function shuffleTopicOptions() {
 
   targetQuestions.forEach(q => {
     const correctText = q.options[q.correct];
-    const prevAnsweredIdx = studyAnswers[q.id];
-    const prevAnsweredText = prevAnsweredIdx !== undefined ? q.options[prevAnsweredIdx] : null;
+    const prevAnswered = resolveStudyAnswer(q);
+    const prevAnsweredText = prevAnswered.isAnswered ? q.options[prevAnswered.ansIdx] : null;
 
     // Shuffle options using Fisher-Yates
     const shuffledOpts = shuffle(q.options);
@@ -2856,7 +2874,7 @@ function shuffleTopicOptions() {
     if (prevAnsweredText !== null) {
       const newAnsweredIdx = shuffledOpts.indexOf(prevAnsweredText);
       if (newAnsweredIdx !== -1) {
-        studyAnswers[q.id] = newAnsweredIdx;
+        studyAnswers[q.id] = { idx: newAnsweredIdx, text: prevAnsweredText };
       }
     }
   });
@@ -7013,8 +7031,11 @@ function getBankCoverageStats() {
       const q = (typeof ALL_EXAM_BANK !== 'undefined') ? ALL_EXAM_BANK.find(x => x.id === qId) : null;
       if (q) {
         seenIds.add(qId);
-        if (studyAnswers[qId] === q.correct) correctIds.add(qId);
-        else wrongIds.add(qId);
+        const { isAnswered, isCorrect } = resolveStudyAnswer(q);
+        if (isAnswered) {
+          if (isCorrect) correctIds.add(qId);
+          else wrongIds.add(qId);
+        }
       }
     });
   }
