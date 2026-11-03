@@ -1,7 +1,3 @@
-// Ngân hàng câu hỏi trắc nghiệm Dược Lâm Sàng toàn diện
-// Tổng hợp chuẩn Bộ Y tế & Đề thi Dược Lâm Sàng các trường ĐH Y Dược hàng đầu (HUP, UMP, HMU)
-// Đã chuẩn hóa toàn diện 100% câu hỏi, khôi phục và tinh chỉnh chính xác các câu hỏi tính liều và tương tác thuốc
-
 const ALL_EXAM_BANK = [
   {
     "id": 1,
@@ -300,10 +296,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Nhiệm vụ trọng tâm của Dược sĩ lâm sàng trong Hội đồng Thuốc và Điều trị bệnh viện là gì?",
     "options": [
-      "Trực tiếp chỉ định can thiệp phẫu thuật và ký duyệt bệnh án xuất viện",
-      "Xây dựng danh mục thuốc và giám sát sử dụng thuốc an toàn hợp lý",
-      "Chịu trách nhiệm bảo dưỡng hệ thống máy xạ trị và trang thiết bị y tế",
-      "Độc lập kê đơn thay thế bác sĩ điều trị tại các khoa lâm sàng nội trú"
+      "Độc lập ra y lệnh điều trị và ký duyệt bệnh án xuất viện của bệnh nhân nội trú",
+      "Xây dựng danh mục thuốc bệnh viện và giám sát sử dụng thuốc an toàn hợp lý",
+      "Kiểm nghiệm chất lượng và định lượng hoạt chất các lô thuốc nhập vào kho dược",
+      "Quản trị cơ sở vật chất và phân bổ ngân sách mua sắm trang thiết bị y tế bệnh viện"
     ],
     "correct": 1,
     "explanation": "Dược sĩ lâm sàng tư vấn danh mục và phác đồ chuẩn cho hội đồng thuốc.",
@@ -334,9 +330,9 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Chỉ tiêu thời gian phát thuốc cho một người bệnh nhằm đảm bảo mục đích nào?",
     "options": [
-      "Tối đa hóa doanh thu bán lẻ thuốc và giảm số lượng nhân sự tại quầy",
-      "Rút ngắn tối đa thời gian lưu bệnh án nhằm tăng lượt khám bệnh trong ngày",
-      "Hạn chế tối đa thời gian trao đổi chuyên môn trực tiếp với người bệnh",
+      "Giảm thiểu chi phí lưu kho và đẩy nhanh tốc độ luân chuyển thuốc tại khoa dược",
+      "Đảm bảo thời gian kiểm nhập số lượng thuốc xuất nhập tồn giữa các ca trực",
+      "Kiểm tra hóa đơn chứng từ và đối soát viện phí trước khi bàn giao thuốc",
       "Đảm bảo người bệnh hiểu rõ liều dùng, đường dùng và các lưu ý an toàn"
     ],
     "correct": 3,
@@ -385,10 +381,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Tại sao đơn thuốc cho người cao tuổi cần ghi rõ ràng cả đường dùng và thời điểm dùng?",
     "options": [
-      "Giúp nhân viên y tế thuận tiện trong việc thống kê chi phí viện phí",
-      "Tăng số lượng thuốc phối hợp để nâng cao doanh số bán thuốc bệnh viện",
+      "Giảm thời gian kiểm tra và đối chiếu của dược sĩ khi cấp phát thuốc tại quầy",
+      "Thuận tiện cho việc phân loại danh mục thuốc thanh toán bảo hiểm y tế",
       "Giúp người bệnh tránh nhầm lẫn và tuân thủ đúng phác đồ điều trị",
-      "Rút ngắn thời gian hội chẩn lâm sàng giữa các bác sĩ điều trị chuyên khoa"
+      "Đáp ứng yêu cầu chuẩn hóa hồ sơ bệnh án theo tiêu chuẩn hành chính bệnh viện"
     ],
     "correct": 2,
     "explanation": "Người cao tuổi hay nhầm lẫn nên cần hướng dẫn thật rõ ràng.",
@@ -760,9 +756,9 @@ const ALL_EXAM_BANK = [
     "question": "Khái niệm 'kinh tế dược' (Pharmacoeconomics) trong lựa chọn thuốc đánh giá yếu tố nào?",
     "options": [
       "So sánh chi phí điều trị và kết quả đầu ra về sức khỏe đạt được",
-      "Đánh giá tỷ lệ hoa hồng chiết khấu cho các nhà phân phối dược phẩm",
+      "Đánh giá tổng ngân sách chi mua sắm dược phẩm hàng năm của cơ sở y tế",
       "Lựa chọn chế phẩm có giá mua rẻ nhất mà không cần xét tới hiệu quả lâm sàng",
-      "Thống kê tổng doanh thu hàng năm từ việc bán thuốc cho các cơ sở y tế"
+      "Thống kê tỷ lệ hoàn vốn đầu tư trong các chương trình nghiên cứu thuốc mới"
     ],
     "correct": 0,
     "explanation": "Kinh tế dược phân tích chi phí - hiệu quả (Cost-Effectiveness) để chọn phác đồ tối ưu.",
@@ -778,8 +774,8 @@ const ALL_EXAM_BANK = [
     "options": [
       "Thay thế toàn bộ thông tin trên tờ hướng dẫn sử dụng gốc của nhà sản xuất",
       "Nhắc nhở người bệnh về liều dùng, đường dùng, thời điểm và cảnh báo an toàn",
-      "Cung cấp đầy đủ các chỉ số kiểm nghiệm hóa lý và tiêu chuẩn kỹ thuật của lô",
-      "Mô tả chi tiết các thử nghiệm tiền lâm sàng trên động vật gặm nhấm thực nghiệm"
+      "Cung cấp thông tin chi tiết về quy trình tổng hợp hóa học và độ ổn định dược chất",
+      "Thống kê các số liệu dịch tễ học và kết quả thử nghiệm lâm sàng giai đoạn 3"
     ],
     "correct": 1,
     "explanation": "Nhãn phụ ghi rõ cách dùng giúp người bệnh không bị nhầm lẫn khi về nhà.",
@@ -14224,9 +14220,9 @@ const ALL_EXAM_BANK = [
     "question": "Nhiệm vụ then chốt của Hội đồng Thuốc và Điều trị bệnh viện là:",
     "options": [
       "Xây dựng danh mục thuốc bệnh viện hợp lý và giám sát sử dụng thuốc an toàn",
-      "Phân công lịch trực cấp cứu và điều động nhân sự bác sĩ giữa các khoa phòng lâm sàng",
-      "Ký duyệt hợp đồng kinh tế mua sắm trang thiết bị văn phòng và máy tính bệnh viện",
-      "Trực tiếp quản lý và thu viện phí điều trị của bệnh nhân tại quầy thanh toán viện phí"
+      "Trực tiếp ra y lệnh chỉ định thuốc thay thế hoàn toàn bác sĩ điều trị tại khoa phòng",
+      "Thẩm định hồ sơ năng lực tài chính của các công ty đấu thầu cung cấp thiết bị y tế",
+      "Quản lý hồ sơ nhân sự và xét duyệt phụ cấp độc hại của nhân viên y tế toàn viện"
     ],
     "correct": 0,
     "explanation": "Hội đồng Thuốc và Điều trị có vai trò cố vấn cho giám đốc về danh mục thuốc và hướng dẫn sử dụng thuốc an toàn.",
@@ -24022,10 +24018,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Yếu tố khách quan mang tính bước ngoặt thúc đẩy sự ra đời và phát triển mạnh mẽ của ngành Dược lâm sàng trên thế giới vào những năm 1960 là:",
     "options": [
-      "Sự thiếu hụt bác sĩ phẫu thuật ngoại khoa trầm trọng tại các bệnh viện đa khoa tuyến tỉnh",
+      "Sự thiếu hụt nhân lực điều dưỡng và bác sĩ lâm sàng tại các bệnh viện đa khoa",
       "Sự bùng nổ số lượng thuốc mới phức tạp, các thảm họa quái thai do thuốc (như thalidomide) và sự gia tăng tai biến do thuốc (ADR)",
-      "Việc các quốc gia phương Tây đồng loạt bãi bỏ việc sử dụng các dạng thuốc đông dược cổ truyền",
-      "Do các tổ hợp hóa chất quốc tế ngừng cung cấp tá dược dung môi để dập viên nén tổng hợp"
+      "Nhu cầu giảm bớt các xét nghiệm cận lâm sàng và chẩn đoán hình ảnh chuyên sâu",
+      "Sự chuyển dịch hoàn toàn từ thuốc tổng hợp hóa dược sang các chế phẩm sinh học"
     ],
     "correct": 1,
     "explanation": "Trong thập niên 1960, sự bùng nổ các loại dược phẩm tổng hợp mới phức tạp đi kèm với thảm họa quái thai do Thalidomide (1961), tỷ lệ biến cố có hại của thuốc (ADR), tương tác thuốc và sai sót kê đơn tăng vọt, đòi hỏi phải có dược sĩ trực tiếp tham gia vào nhóm chăm sóc lâm sàng để đảm bảo dùng thuốc an toàn và hợp lý.",
@@ -24039,10 +24035,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Điểm khác biệt căn bản về vai trò chuyên môn giữa Dược sĩ lâm sàng và Bác sĩ điều trị trong nhóm chăm sóc y tế tại bệnh viện là:",
     "options": [
-      "Bác sĩ không được quyền kê đơn thuốc mà việc ra y lệnh chỉ định thuốc hoàn toàn do Dược sĩ lâm sàng độc quyền quyết định",
-      "Dược sĩ lâm sàng trực tiếp thực hiện các ca đại phẫu thuật ngoại khoa và can thiệp thủ thuật xâm lấn phức tạp thay cho bác sĩ",
+      "Bác sĩ tư vấn phác đồ dùng thuốc; Dược sĩ lâm sàng trực tiếp ra y lệnh chỉ định thuốc",
+      "Dược sĩ lâm sàng chỉ phụ trách quản lý kho thuốc; Bác sĩ phụ trách toàn bộ việc dùng thuốc",
       "Bác sĩ chuyên trách chẩn đoán bệnh và chỉ định chiến lược điều trị; Dược sĩ lâm sàng chuyên trách tối ưu hóa sử dụng thuốc, giám sát hiệu quả, an toàn và cá thể hóa liều dùng",
-      "Bác sĩ chịu trách nhiệm pha chế thuốc tại phòng kiểm nghiệm còn Dược sĩ lâm sàng đảm nhận công tác thanh toán viện phí BHYT"
+      "Hai chức danh có thẩm quyền chuyên môn hoàn toàn giống nhau và có thể thay thế lẫn nhau"
     ],
     "correct": 2,
     "explanation": "Bác sĩ là người thăm khám, chẩn đoán xác định bệnh và đưa ra mục tiêu điều trị; Dược sĩ lâm sàng là chuyên gia về dược lý học lâm sàng, phối hợp cùng bác sĩ để lựa chọn thuốc tối ưu, chỉnh liều theo chức năng cơ quan, rà soát tương tác thuốc, theo dõi nồng độ thuốc trong máu (TDM), phát hiện ADR và hướng dẫn người bệnh dùng thuốc đúng cách.",
@@ -25084,9 +25080,77 @@ const ALL_EXAM_BANK = [
     "correct": 3,
     "explanation": "Diosmectite là nhôm-magnesi silicat tự nhiên có cấu trúc từng lớp lá phiến mỏng và độ nhớt cao, có khả năng bao phủ niêm mạc tiêu hóa và gắn kết hấp phụ độc tố, virus, vi khuẩn. Tuy nhiên, do đặc tính hấp phụ vật lý mạnh, nó cũng hấp phụ luôn các phân tử thuốc khác trong lòng ruột nếu uống đồng thời, làm cản trở hấp thu các thuốc này. Vì vậy, bắt buộc phải uống cách xa các thuốc khác ít nhất 2 giờ.",
     "reference": "Dược thư Quốc gia Việt Nam - Chuyên luận Diosmectite"
+  },
+  {
+    "id": 1487,
+    "chapter": "Nguyên tắc sử dụng Glucocorticoid",
+    "level": "Vận dụng",
+    "source": "DLS_PDF",
+    "sourceName": "Giáo trình DLS Bộ Y tế (Trang 208)",
+    "question": "Tác dụng chống viêm của Glucocorticoid được đánh giá là mạnh và toàn diện hơn nhóm NSAID chủ yếu do cơ chế nào?",
+    "options": [
+      "Chặn ngay từ đầu trên của chuỗi phản ứng viêm qua kích thích tổng hợp lipocortin ức chế Phospholipase A2",
+      "Chỉ ức chế chọn lọc enzym Cyclooxygenase-2 (COX-2) tại ổ viêm tương tự như thuốc nhóm Coxib",
+      "Ức chế cạnh tranh với histamin tại thụ thể H1 ở tế bào cơ trơn mạch máu và phế quản",
+      "Ức chế trực tiếp enzym Lipoxygenase (LOX) ngăn chặn tạo thành leukotrien B4"
+    ],
+    "correct": 0,
+    "explanation": "Theo SGK Dược lâm sàng Bộ Y tế (trang 208): Glucocorticoid tác dụng vào giai đoạn rất sớm (đầu trên) của quá trình viêm, kích thích tổng hợp lipocortin (annexin A1) ức chế enzym phospholipase A2, ngăn cản giải phóng acid arachidonic từ phospholipid màng tế bào. Do đó cắt đứt cả 2 con đường tạo Prostaglandin (qua COX) và Leukotrien (qua LOX). NSAID chỉ ức chế ở khâu sau (enzym COX).",
+    "reference": "Giáo trình Dược Lâm Sàng Bộ Y tế - Trang 208"
+  },
+  {
+    "id": 1488,
+    "chapter": "Nguyên tắc sử dụng Glucocorticoid",
+    "level": "Nhận biết",
+    "source": "DLS_PDF",
+    "sourceName": "Giáo trình DLS Bộ Y tế (Bảng 14.3)",
+    "question": "Theo phân loại Glucocorticoid dùng ngoài da theo độ mạnh (Bảng 14.3 SGK Dược Lâm Sàng), Betametason valerat nồng độ 0,10% (Betneval) thuộc nhóm có độ mạnh nào?",
+    "options": [
+      "Độ mạnh: Yếu",
+      "Độ mạnh: Vừa",
+      "Độ mạnh: Mạnh",
+      "Độ mạnh: Rất mạnh"
+    ],
+    "correct": 2,
+    "explanation": "Theo Bảng 14.3 SGK Dược lâm sàng Bộ Y tế (trang 218): Betametason valerat 0,10% (biệt dược Betneval) thuộc nhóm MẠNH. Trong khi Betametason valerat 0,05% (Celestoder) thuộc nhóm VỪA, và Betametason dipropionat/propylen glycol 0,05% (Diprolen) thuộc nhóm RẤT MẠNH.",
+    "reference": "Giáo trình Dược Lâm Sàng Bộ Y tế - Bảng 14.3 trang 218"
+  },
+  {
+    "id": 1489,
+    "chapter": "Nguyên tắc sử dụng Glucocorticoid",
+    "level": "Nhận biết",
+    "source": "DLS_PDF",
+    "sourceName": "Giáo trình DLS Bộ Y tế (Bảng 14.3)",
+    "question": "Theo Bảng 14.3 SGK Dược Lâm Sàng Bộ Y tế, chế phẩm Glucocorticoid dùng ngoài da nào sau đây được xếp vào nhóm có độ mạnh VỪA?",
+    "options": [
+      "Betametason valerat 0,05% (Celestoder)",
+      "Betametason dipropionat / propylen glycol 0,05% (Diprolen)",
+      "Hydrocortison acetat 0,50% (Hydracort)",
+      "Betametason dipropionat 0,05% (Diproson)"
+    ],
+    "correct": 0,
+    "explanation": "Theo Bảng 14.3 SGK Dược lâm sàng (trang 218): Nhóm VỪA gồm Betametason valerat 0,05% (Celestoder), Fluocinolon acetonid 0,01% (Synarlar), Clobetason butyrat 0,05% (Flucort).",
+    "reference": "Giáo trình Dược Lâm Sàng Bộ Y tế - Bảng 14.3 trang 218"
+  },
+  {
+    "id": 1490,
+    "chapter": "Nguyên tắc sử dụng Glucocorticoid",
+    "level": "Nhận biết",
+    "source": "DLS_PDF",
+    "sourceName": "Giáo trình DLS Bộ Y tế (Bảng 14.3)",
+    "question": "Theo Bảng 14.3 SGK Dược Lâm Sàng Bộ Y tế, chế phẩm corticoid dùng ngoài có độ mạnh RẤT MẠNH gồm:",
+    "options": [
+      "Betametason dipropionat / propylen glycol 0,05% và Clobetason propionat 0,05%",
+      "Hydrocortison acetat 0,50% và Dexamethason 0,10%",
+      "Fluocinolon acetonid 0,01% và Betametason valerat 0,05%",
+      "Hydrocortison aceponat 0,127% và Desoximetason 0,25%"
+    ],
+    "correct": 0,
+    "explanation": "Theo Bảng 14.3 SGK Dược lâm sàng (trang 218): Nhóm RẤT MẠNH gồm Betametason dipropionat kết hợp propylen glycol 0,05% (Diprolen) và Clobetason propionat 0,05% (Eumovate).",
+    "reference": "Giáo trình Dược Lâm Sàng Bộ Y tế - Bảng 14.3 trang 218"
   }
 ];
 
-if (typeof module !== 'undefined' && module.exports) {
+if (typeof module !== "undefined" && module.exports) {
   module.exports = ALL_EXAM_BANK;
 }

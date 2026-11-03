@@ -175,8 +175,9 @@ function generateRandomExam(force = false) {
     const uniCandidates = chQuestions.filter(q => q.source && q.source !== 'BYT');
     const bytCandidates = chQuestions.filter(q => !q.source || q.source === 'BYT');
 
-    // Mục tiêu ~45% câu từ các trường ĐH Y Dược, phần còn lại từ Chuẩn BYT
-    const targetUni = Math.min(uniCandidates.length, Math.max(1, Math.round(rule.count * 0.45)));
+    // Ưu tiên hàng đầu các câu hỏi Chuẩn Dls.pdf và Sách Giáo trình Bộ Y tế
+    const dlsAndByt = chQuestions.filter(q => q.source === 'DLS_PDF' || !q.source || q.source === 'BYT');
+    const targetUni = Math.min(uniCandidates.length, Math.max(0, Math.round(rule.count * 0.25)));
     const targetByt = rule.count - targetUni;
 
     let balancedUni = [];
@@ -517,6 +518,115 @@ function generateGradedExam(force = false) {
 }
 
 // ============================================================================
+
+// ============================================================================
+// ĐỀ THI 80 CÂU CHUẨN ĐỀ THI THỰC CHIẾN DLS.PDF & GIÁO TRÌNH BỘ Y TẾ (80 PHÚT)
+// ============================================================================
+function generateDlsPdfExam(force = false) {
+  if (typeof ALL_EXAM_BANK === 'undefined' || !ALL_EXAM_BANK.length) {
+    console.error('ALL_EXAM_BANK not loaded!');
+    return;
+  }
+
+  if (!force && !isExamSubmitted && Object.keys(userAnswers).length > 0) {
+    if (!confirm('Bạn đang làm bài thi dở dang. Bạn có chắc chắn muốn bỏ bài thi hiện tại và tạo Đề thi 80 câu chuẩn thực chiến Dls.pdf & Sách Giáo trình Bộ Y tế không?')) {
+      return;
+    }
+  }
+
+  closeUniversityExamModal();
+  clearExamDraft();
+
+  let chosenQuestions = [];
+  const chosenStems = new Set();
+  const covStats = getBankCoverageStats();
+  const seenIds = covStats.seenIds || new Set();
+
+  // Bốc câu hỏi chuẩn theo ma trận 14 chuyên đề 44h:
+  // Ưu tiên số 1: Các câu hỏi từ Đề thi thực chiến Dls.pdf (q.source === 'DLS_PDF')
+  // Ưu tiên số 2: Các câu hỏi Chuẩn Giáo trình Dược Lâm Sàng Bộ Y tế (q.source === 'BYT')
+  EXAM_MATRIX_44H.forEach(rule => {
+    const chQuestions = ALL_EXAM_BANK.filter(q => q.chapter === rule.chapter);
+    const dlsCandidates = chQuestions.filter(q => q.source === 'DLS_PDF');
+    const bytCandidates = chQuestions.filter(q => !q.source || q.source === 'BYT');
+    const otherCandidates = chQuestions.filter(q => q.source && q.source !== 'DLS_PDF' && q.source !== 'BYT');
+
+    let pool = [];
+    if (prioritizeUnseenQuestions) {
+      const unseenDls = shuffle(dlsCandidates.filter(q => !seenIds.has(q.id)));
+      const seenDls = shuffle(dlsCandidates.filter(q => seenIds.has(q.id)));
+      const unseenByt = shuffle(bytCandidates.filter(q => !seenIds.has(q.id)));
+      const seenByt = shuffle(bytCandidates.filter(q => seenIds.has(q.id)));
+      const otherPool = shuffle(otherCandidates);
+      pool = [...unseenDls, ...unseenByt, ...seenDls, ...seenByt, ...otherPool];
+    } else {
+      pool = [...shuffle(dlsCandidates), ...shuffle(bytCandidates), ...shuffle(otherCandidates)];
+    }
+
+    let picked = 0;
+    for (const q of pool) {
+      if (!chosenStems.has(q.question)) {
+        chosenQuestions.push(q);
+        chosenStems.add(q.question);
+        picked++;
+        if (picked >= rule.count) break;
+      }
+    }
+  });
+
+  // Nếu chưa đủ 80 câu, bù từ kho DLS_PDF và BYT còn lại
+  if (chosenQuestions.length < 80) {
+    const backupPool = shuffle(ALL_EXAM_BANK.filter(q => 
+      !chosenStems.has(q.question) && (q.source === 'DLS_PDF' || q.source === 'BYT')
+    ));
+    for (const q of backupPool) {
+      chosenQuestions.push(q);
+      chosenStems.add(q.question);
+      if (chosenQuestions.length >= 80) break;
+    }
+  }
+
+  // Shuffle thứ tự câu hỏi và shuffle vị trí các đáp án (A, B, C, D)
+  EXAM_QUESTIONS = shuffle(chosenQuestions).slice(0, 80).map((q, idx) => {
+    const originalCorrectText = q.options[q.correct];
+    const shuffledOptions = shuffle(q.options);
+    const newCorrectIdx = shuffledOptions.indexOf(originalCorrectText);
+
+    return {
+      id: q.id,
+      examNum: idx + 1,
+      chapter: q.chapter,
+      level: q.level || 'Vận dụng',
+      source: q.source || "DLS_PDF",
+      sourceName: q.sourceName || (q.source === 'DLS_PDF' ? "Đề thi Dược Lâm Sàng (Recall Dls.pdf)" : "Bộ Y tế (Giáo trình Dược Lâm Sàng)"),
+      question: q.question,
+      options: shuffledOptions,
+      correct: newCorrectIdx,
+      explanation: q.explanation,
+      reference: q.reference
+    };
+  });
+
+  userAnswers = {};
+  flaggedQuestions.clear();
+  isExamSubmitted = false;
+  isExamStarted = false;
+  isExamPaused = false;
+  timeRemaining = 80 * 60; // 80 phút
+
+  if (examTimer) {
+    clearInterval(examTimer);
+    examTimer = null;
+  }
+
+  showView('exam');
+  renderExamQuestion(0);
+  updatePalette();
+  saveExamDraft();
+  playChime('click');
+  showToast('📝 Đã tạo Đề chuẩn Dls.pdf & Giáo trình Bộ Y tế (80 câu • 80 phút)!');
+}
+
 // ĐỀ THI 80 CÂU 100% LÀ CÂU CHƯA TỪNG LÀM (QUÉT SẠCH KHO ĐỀ 1.486 CÂU)
 // ============================================================================
 function generateUnseenExam(force = false) {
@@ -7262,3 +7372,5 @@ window.addEventListener('DOMContentLoaded', () => {
     console.warn('URL sync param check error:', e);
   }
 });
+
+window.generateDlsPdfExam = generateDlsPdfExam;

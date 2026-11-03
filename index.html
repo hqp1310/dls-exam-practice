@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=41">
+  <link rel="stylesheet" href="styles.css?v=42">
 </head>
 
 <body>
@@ -103,8 +103,7 @@
         <div class="exam-matrix-banner" id="exam-matrix-banner">
           <div class="matrix-banner-content">
             <span class="matrix-banner-icon" aria-hidden="true">🎯</span>
-            <div><strong>Ma trận 44h chuẩn hóa:</strong> Đề 80 câu tự động mix thông minh ~45% câu từ ĐH Dược Hà Nội, ĐH
-              Y Dược TP.HCM, ĐH Y Hà Nội &amp; ~55% Chuẩn BYT theo đúng 14 bài giảng.</div>
+            <div><strong>Ma trận 44h chuẩn hóa:</strong> Đề 80 câu bám sát 100% cấu trúc đề thi thực chiến Dls.pdf &amp; Sách Giáo trình Dược Lâm Sàng Bộ Y tế (14 bài giảng chính khóa).</div>
           </div>
           <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">
             <button class="matrix-info-btn coverage-info-btn" onclick="openCoverageModal()"
@@ -129,6 +128,12 @@
               <input type="checkbox" id="chk-prioritize-unseen" checked onchange="togglePrioritizeUnseen(this.checked)">
               <span>🎯 Ưu tiên câu chưa làm</span>
             </label>
+            <button class="btn btn-secondary btn-dls-pdf-exam"
+              style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); color: #1d4ed8; border-color: #3b82f6; font-weight: 700; box-shadow: 0 1px 3px rgba(37,99,235,0.15);"
+              onclick="generateDlsPdfExam()"
+              title="Tạo đề thi 80 câu bám sát 100% đề thi thực chiến Dls.pdf và Sách Giáo trình Bộ Y tế (80 phút)">
+              📝 Đề Chuẩn Dls.pdf & Sách (80 Câu)
+            </button>
             <button class="btn btn-secondary btn-unseen-exam"
               style="padding: 0.4rem 0.85rem; font-size: 0.82rem;"
               onclick="generateUnseenExam()"
@@ -1073,9 +1078,9 @@
     </div>
   </div>
 
-  <script src="questions_800.js?v=41"></script>
-  <script src="flashcards.js?v=41"></script>
-  <script src="app.js?v=41"></script>
+  <script src="questions_800.js?v=42"></script>
+  <script src="flashcards.js?v=42"></script>
+  <script src="app.js?v=42"></script>
 </body>
 
 </html>
