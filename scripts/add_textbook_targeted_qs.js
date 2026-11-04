@@ -81,3 +81,4 @@ const footer = ';\n\nif (typeof module !== "undefined" && module.exports) {\n  m
 
 fs.writeFileSync(questionsFile, header + JSON.stringify(updatedBank, null, 2) + footer, 'utf8');
 console.log('Successfully appended 4 new questions. Total questions now:', updatedBank.length);
+

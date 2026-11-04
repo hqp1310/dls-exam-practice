@@ -215,3 +215,4 @@ htmlContent = htmlContent.replace(/app\.js\?v=\d+/g, 'app.js?v=42');
 
 fs.writeFileSync(indexHtmlPath, htmlContent, 'utf8');
 console.log('Successfully updated index.html with v=42!');
+
