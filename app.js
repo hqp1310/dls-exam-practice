@@ -147,6 +147,40 @@ function setActiveExamMode(mode) {
   });
 }
 
+function showView(view) {
+  if (typeof switchTab === 'function') {
+    switchTab(view);
+  }
+}
+
+// Regenerates the exam matching the user's currently selected mode
+function regenerateCurrentExam(force = false) {
+  switch (currentExamMode) {
+    case 'dls-pdf':
+      generateDlsPdfExam(force);
+      break;
+    case 'unseen':
+      generateUnseenExam(force);
+      break;
+    case 'graded':
+      generateGradedExam(force);
+      break;
+    case 'random':
+      generateRandomExam(force);
+      break;
+    case 'HUP':
+    case 'UMP':
+    case 'HMU':
+    case 'BYT':
+    case 'all':
+      generateUniversityExam(currentExamMode, force);
+      break;
+    default:
+      generateDlsPdfExam(force);
+      break;
+  }
+}
+
 // Draft persistence functions
 function saveExamDraft() {
   try {
@@ -735,7 +769,10 @@ function generateDlsPdfExam(force = false) {
     examTimer = null;
   }
 
-  showView('exam');
+  if (timerWidget) timerWidget.classList.remove('warning', 'paused');
+  if (currentTab !== 'exam') switchTab('exam');
+  updateTimerDisplay();
+  updateTimerButton();
   renderExamQuestion(0);
   updatePalette();
   saveExamDraft();
@@ -7558,3 +7595,5 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 window.generateDlsPdfExam = generateDlsPdfExam;
+window.regenerateCurrentExam = regenerateCurrentExam;
+window.showView = showView;

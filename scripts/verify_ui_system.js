@@ -33,3 +33,4 @@ requiredIds.forEach(id => {
 if (allOk) {
   console.log('🎉 All required HTML IDs verified successfully!');
 }
+

@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=44">
+  <link rel="stylesheet" href="styles.css?v=45">
 </head>
 
 <body>
@@ -213,8 +213,8 @@
         <div style="display: flex; gap: 0.35rem; align-items: center;">
           <button class="btn btn-secondary"
             style="padding: 0.25rem 0.5rem; font-size: 0.72rem; background: var(--secondary-light); color: var(--secondary);"
-            onclick="generateRandomExam()" title="Tạo đề thi mới ngẫu nhiên" aria-label="Tạo đề thi ngẫu nhiên mới">
-            <span aria-hidden="true">🎲</span> Đề mới
+            onclick="regenerateCurrentExam()" title="Tạo lại đề mới cùng loại bạn đang chọn" aria-label="Tạo lại đề mới cùng loại">
+            <span aria-hidden="true">🔄</span> Đề mới
           </button>
           <button class="btn btn-secondary btn-to-scratchpad"
             style="padding: 0.25rem 0.5rem; font-size: 0.72rem; color: var(--primary); border-color: var(--primary);"
@@ -454,8 +454,8 @@
           style="background: #ecfdf5; color: #047857; border-color: #10b981; font-weight: 600;">
           🎯 Đề Phân Hóa (2:4:4) Mới
         </button>
-        <button class="btn btn-secondary" onclick="generateRandomExam(); closeResultsModal();">
-          🎲 Tạo đề ngẫu nhiên
+        <button class="btn btn-secondary" onclick="regenerateCurrentExam(); closeResultsModal();">
+          🔄 Tạo đề mới cùng loại
         </button>
         <button class="btn btn-secondary" onclick="viewCurrentExamInHistory(); closeResultsModal();"
           style="background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary); font-weight: 600;">
@@ -1116,9 +1116,9 @@
     </div>
   </div>
 
-  <script src="questions_800.js?v=44"></script>
-  <script src="flashcards.js?v=44"></script>
-  <script src="app.js?v=44"></script>
+  <script src="questions_800.js?v=45"></script>
+  <script src="flashcards.js?v=45"></script>
+  <script src="app.js?v=45"></script>
 </body>
 
 </html>
