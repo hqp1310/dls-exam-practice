@@ -35,6 +35,118 @@ function togglePrioritizeUnseen(val) {
   } catch (e) { }
 }
 
+// ==========================================
+// ACTIVE EXAM MODE TRACKING & VISUAL SYSTEM
+// ==========================================
+let currentExamMode = localStorage.getItem('dls_current_exam_mode') || 'dls-pdf';
+
+const EXAM_MODE_DEFINITIONS = {
+  'dls-pdf': {
+    btnId: 'btn-exam-dls-pdf',
+    icon: '📝',
+    name: 'Đề Chuẩn Dls.pdf & Sách (80 Câu)',
+    pill: '✓ Chuẩn Thực Chiến Dls.pdf',
+    desc: 'Bám sát 100% cấu trúc đề thi thực chiến Dls.pdf & Sách Giáo trình Bộ Y tế (14 bài giảng 44h).'
+  },
+  'unseen': {
+    btnId: 'btn-exam-unseen',
+    icon: '✨',
+    name: 'Đề 80 Câu Chưa Từng Làm',
+    pill: '✓ 100% Câu Mới Toanh',
+    desc: 'Lọc và bốc chính xác 80 câu bạn chưa từng gặp lần nào để quét sạch 1.589 câu trong kho đề.'
+  },
+  'graded': {
+    btnId: 'btn-exam-graded',
+    icon: '🎯',
+    name: 'Đề Phân Hóa Năng Lực (2:4:4)',
+    pill: '✓ 16 NB : 32 VD : 32 VDC',
+    desc: 'Cấu trúc phân loại 3 cấp độ chuẩn hóa: 16 Nhận biết (20%) • 32 Vận dụng (40%) • 32 Vận dụng cao (40%).'
+  },
+  'random': {
+    btnId: 'btn-exam-random',
+    icon: '🎲',
+    name: 'Đề Tự Động Mix Ma Trận 44h',
+    pill: '✓ Trộn Ngẫu Nhiên',
+    desc: 'Trộn đều các câu hỏi theo 14 bài giảng chính khóa chuẩn khung chương trình 44h.'
+  },
+  'HUP': {
+    btnId: 'btn-exam-schools',
+    icon: '🏛️',
+    name: 'Đề Đại Học Dược Hà Nội (HUP)',
+    pill: '✓ Đề Trường HUP',
+    desc: 'Ưu tiên các câu hỏi thực chiến, TDM Vancomycin, Aminoglycosid, DĐH phi tuyến tính từ ĐH Dược Hà Nội.'
+  },
+  'UMP': {
+    btnId: 'btn-exam-schools',
+    icon: '🏛️',
+    name: 'Đề ĐH Y Dược TP.HCM (UMP)',
+    pill: '✓ Đề Trường UMP',
+    desc: 'Ưu tiên các câu hỏi ca lâm sàng dược lý, tương tác thuốc và xét nghiệm từ ĐH Y Dược TP.HCM.'
+  },
+  'HMU': {
+    btnId: 'btn-exam-schools',
+    icon: '🏛️',
+    name: 'Đề Đại Học Y Hà Nội (HMU)',
+    pill: '✓ Đề Trường HMU',
+    desc: 'Ưu tiên các câu hỏi lâm sàng bệnh học, phác đồ điều trị và sử dụng thuốc từ ĐH Y Hà Nội.'
+  },
+  'BYT': {
+    btnId: 'btn-exam-schools',
+    icon: '📋',
+    name: 'Đề Chuẩn Giáo Trình Bộ Y Tế',
+    pill: '✓ Chuẩn SGK Bộ Y Tế',
+    desc: 'Bốc 100% câu hỏi chuẩn theo cuốn Giáo trình Dược Lâm Sàng Bộ Y tế (PGS.TS. Hoàng Thị Kim Huyền).'
+  },
+  'all': {
+    btnId: 'btn-exam-schools',
+    icon: '🎯',
+    name: 'Đề Ma Trận 44h Toàn Diện (Tổng Hợp)',
+    pill: '✓ Trộn ĐH Dược HN & TP.HCM',
+    desc: 'Trộn thông minh các câu hỏi hay nhất từ ĐH Dược Hà Nội, ĐH Y Dược TP.HCM và ĐH Y Hà Nội.'
+  }
+};
+
+function setActiveExamMode(mode) {
+  if (!mode) mode = 'dls-pdf';
+  currentExamMode = mode;
+  try {
+    localStorage.setItem('dls_current_exam_mode', mode);
+  } catch (e) { }
+
+  const def = EXAM_MODE_DEFINITIONS[mode] || EXAM_MODE_DEFINITIONS['dls-pdf'];
+
+  // 1. Update Buttons on Exam Controls Bar
+  const allBtns = document.querySelectorAll('.btn-exam-mode');
+  allBtns.forEach(btn => btn.classList.remove('active-mode'));
+
+  const activeBtn = document.getElementById(def.btnId);
+  if (activeBtn) {
+    activeBtn.classList.add('active-mode');
+  }
+
+  // 2. Update Header Status Badge
+  const iconEl = document.getElementById('current-exam-icon');
+  const nameEl = document.getElementById('current-exam-name');
+  const tagEl = document.getElementById('current-exam-tag');
+  const descEl = document.getElementById('current-exam-desc');
+
+  if (iconEl) iconEl.textContent = def.icon;
+  if (nameEl) nameEl.textContent = def.name;
+  if (tagEl) tagEl.textContent = def.pill;
+  if (descEl) descEl.textContent = def.desc;
+
+  // 3. Update University Modal active cards
+  const modalCards = document.querySelectorAll('#modal-university-exam .uni-exam-card');
+  modalCards.forEach(card => {
+    const cardMode = card.getAttribute('data-uni-mode');
+    if (cardMode === mode) {
+      card.classList.add('active-uni-card');
+    } else {
+      card.classList.remove('active-uni-card');
+    }
+  });
+}
+
 // Draft persistence functions
 function saveExamDraft() {
   try {
@@ -49,6 +161,7 @@ function saveExamDraft() {
       isExamPaused: isExamPaused,
       isExamSubmitted: isExamSubmitted,
       lastSubmittedExamId: lastSubmittedExamId,
+      currentExamMode: currentExamMode,
       updatedAt: Date.now()
     };
     localStorage.setItem(STORAGE_ACTIVE_DRAFT_KEY, JSON.stringify(draft));
@@ -90,6 +203,7 @@ function restoreExamDraft() {
     renderExamQuestion(currentQuestionIndex);
     updatePalette();
     updateProgress();
+    setActiveExamMode(draft.currentExamMode || currentExamMode || 'dls-pdf');
     return true;
   } catch (e) {
     console.error('Failed to restore draft:', e);
@@ -294,6 +408,7 @@ function generateRandomExam(force = false) {
   updateTimerButton();
   renderExamQuestion(0);
   saveExamDraft();
+  setActiveExamMode('random');
   playChime('click');
   showToast('🎲 Đã tạo Đề thi 80 câu mới chuẩn ma trận 44h!');
 }
@@ -513,6 +628,7 @@ function generateGradedExam(force = false) {
   renderExamQuestion(0);
   updatePalette();
   saveExamDraft();
+  setActiveExamMode('graded');
   playChime('click');
   showToast('🎯 Đã tạo Đề phân hóa 3 cấp độ (Tỉ lệ 2:4:4)!');
 }
@@ -623,6 +739,7 @@ function generateDlsPdfExam(force = false) {
   renderExamQuestion(0);
   updatePalette();
   saveExamDraft();
+  setActiveExamMode('dls-pdf');
   playChime('click');
   showToast('📝 Đã tạo Đề chuẩn Dls.pdf & Giáo trình Bộ Y tế (80 câu • 80 phút)!');
 }
@@ -742,6 +859,7 @@ function generateUnseenExam(force = false) {
   renderExamQuestion(0);
   updatePalette();
   saveExamDraft();
+  setActiveExamMode('unseen');
   playChime('click');
   showToast('✨ Đã tạo Đề 80 câu hoàn toàn chưa làm (100% Mới)!');
 }
@@ -756,6 +874,15 @@ function openUniversityExamModal() {
       const count = Math.min(80, stats.unseenCount);
       unseenBadge.textContent = `${count} câu • Còn ${stats.unseenCount} câu chưa làm`;
     }
+    const modalCards = modal.querySelectorAll('.uni-exam-card');
+    modalCards.forEach(card => {
+      const cardMode = card.getAttribute('data-uni-mode');
+      if (cardMode === currentExamMode) {
+        card.classList.add('active-uni-card');
+      } else {
+        card.classList.remove('active-uni-card');
+      }
+    });
     modal.classList.add('active');
   }
   playChime('click');
@@ -841,6 +968,7 @@ function generateUniversityExam(source = 'all', force = false) {
   renderExamQuestion(0);
   updatePalette();
   saveExamDraft();
+  setActiveExamMode(source);
   playChime('click');
   showToast('🏛️ Đã tạo đề thi thành công!');
 }
@@ -6707,8 +6835,7 @@ function hexToRgba(hex, alpha = 1) {
 // CROSS-DEVICE DATA SYNC & SMART MERGE SYSTEM
 // ==========================================
 let currentSyncTab = 'send';
-const BYTEBIN_POST_URL = 'https://bytebin.lucko.me/post';
-const BYTEBIN_GET_URL = 'https://bytebin.lucko.me/';
+const NTFY_BASE_URL = 'https://ntfy.sh/';
 
 function openSyncModal() {
   const modal = document.getElementById('sync-modal');
@@ -6792,38 +6919,44 @@ function rehydrateExam(exam) {
   return exam;
 }
 
-// 2. Upload to Cloud & Generate QR
+// 2. Upload to Cloud & Generate QR + 6-digit PIN
 async function createCloudSync() {
   const loading = document.getElementById('sync-send-loading');
   const result = document.getElementById('sync-send-result');
   const btn = document.getElementById('btn-create-sync');
   const qrImg = document.getElementById('sync-qr-image');
   const codeInput = document.getElementById('sync-generated-code');
+  const pinEl = document.getElementById('sync-generated-pin');
 
   try {
     if (loading) loading.style.display = 'block';
     if (result) result.style.display = 'none';
     if (btn) btn.disabled = true;
 
+    // Generate a memorable 6-digit PIN
+    const pin = Math.floor(100000 + Math.random() * 900000).toString();
+    const topic = `dls_sync_${pin}`;
     const payload = getDeviceSyncPayload();
-    const response = await fetch(BYTEBIN_POST_URL, {
+
+    const response = await fetch(`${NTFY_BASE_URL}${topic}`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Title': `DLS-Sync-${pin}`,
+        'Filename': 'sync_data.json',
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(payload)
     });
 
-    if (!response.ok) throw new Error('Máy chủ phản hồi trạng thái: ' + response.status);
-    const resData = await response.json();
-    const syncId = resData.key;
-
-    if (!syncId) throw new Error('Không nhận được mã định danh từ máy chủ');
+    if (!response.ok) throw new Error('Máy chủ phản hồi mã lỗi: ' + response.status);
 
     // Create sync URL that automatically opens and triggers merge when scanned/opened
-    const syncUrl = `${window.location.origin}${window.location.pathname}?sync_id=${syncId}`;
+    const syncUrl = `${window.location.origin}${window.location.pathname}?sync_id=${pin}`;
     const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=4&data=${encodeURIComponent(syncUrl)}`;
 
     if (qrImg) qrImg.src = qrUrl;
     if (codeInput) codeInput.value = syncUrl;
+    if (pinEl) pinEl.textContent = pin;
 
     if (loading) loading.style.display = 'none';
     if (result) result.style.display = 'block';
@@ -6833,29 +6966,33 @@ async function createCloudSync() {
     console.error('Sync creation failed:', err);
     if (loading) loading.style.display = 'none';
     if (btn) btn.disabled = false;
-    alert('Không thể tạo mã đồng bộ qua mạng (' + err.message + '). Bạn có thể chuyển sang tab "File .json & Zalo" để sao chép mã trực tiếp!');
+    alert('Không thể tạo mã đồng bộ qua mạng (' + err.message + '). Bạn hãy chuyển sang tab "File .json & Zalo" để xuất file hoặc sao chép mã trực tiếp không cần mạng!');
   }
 }
 
 // 3. Copy link/code
 function copySyncCode() {
   const codeInput = document.getElementById('sync-generated-code');
-  if (!codeInput || !codeInput.value) return;
-  navigator.clipboard.writeText(codeInput.value).then(() => {
+  const pinEl = document.getElementById('sync-generated-pin');
+  const copyText = (codeInput && codeInput.value) || (pinEl && pinEl.textContent) || '';
+  if (!copyText) return;
+  navigator.clipboard.writeText(copyText).then(() => {
     alert('✓ Đã sao chép liên kết đồng bộ! Bạn hãy gửi vào Zalo hoặc Messenger để mở trên thiết bị khác.');
   }).catch(() => {
-    codeInput.select();
-    document.execCommand('copy');
+    if (codeInput) {
+      codeInput.select();
+      document.execCommand('copy');
+    }
     alert('✓ Đã sao chép liên kết đồng bộ!');
   });
 }
 
-// 4. Fetch from Cloud & Apply Smart Merge
+// 4. Fetch from Cloud & Apply Smart Merge (Supports 6-digit PIN, full topic, or ?sync_id= URL)
 async function fetchAndApplySync(explicitId = null) {
   const inputEl = document.getElementById('sync-input-code');
   let rawVal = explicitId || (inputEl ? inputEl.value.trim() : '');
   if (!rawVal) {
-    alert('Vui lòng nhập mã đồng bộ hoặc dán link đồng bộ!');
+    alert('Vui lòng nhập mã PIN (6 số) hoặc dán link đồng bộ!');
     return;
   }
 
@@ -6865,10 +7002,13 @@ async function fetchAndApplySync(explicitId = null) {
       const u = new URL(rawVal);
       rawVal = u.searchParams.get('sync_id') || rawVal;
     } catch (e) {
-      const match = rawVal.match(/sync_id=([a-zA-Z0-9]+)/);
+      const match = rawVal.match(/sync_id=([a-zA-Z0-9_-]+)/);
       if (match) rawVal = match[1];
     }
   }
+
+  // Clean rawVal
+  rawVal = rawVal.trim().replace(/^dls_sync_/i, '');
 
   const statusEl = document.getElementById('sync-receive-status');
   const btn = document.getElementById('btn-fetch-sync');
@@ -6880,16 +7020,56 @@ async function fetchAndApplySync(explicitId = null) {
       statusEl.innerHTML = `
         <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--primary); font-weight: 500; font-size: 0.88rem;">
           <div class="sync-spinner" style="width: 20px; height: 20px; border-width: 2px;"></div>
-          Đang tải và giải nén dữ liệu từ máy chủ...
+          Đang tải và giải nén dữ liệu từ máy chủ an toàn...
         </div>
       `;
     }
 
-    const response = await fetch(`${BYTEBIN_GET_URL}${rawVal}`);
-    if (!response.ok) throw new Error('Mã đồng bộ không tồn tại hoặc đã hết hạn!');
-    const remoteData = await response.json();
+    let remoteData = null;
 
-    if (!remoteData) throw new Error('Dữ liệu đồng bộ bị trống hoặc không hợp lệ');
+    // 1. Try ntfy first (topic: dls_sync_PIN)
+    try {
+      const topic = `dls_sync_${rawVal}`;
+      const pollUrl = `${NTFY_BASE_URL}${topic}/json?poll=1`;
+      const response = await fetch(pollUrl);
+      if (response.ok) {
+        const rawText = await response.text();
+        const lines = rawText.trim().split('\n').filter(Boolean);
+        for (let i = lines.length - 1; i >= 0; i--) {
+          try {
+            const msg = JSON.parse(lines[i]);
+            if (msg.event === 'message') {
+              if (msg.attachment && msg.attachment.url) {
+                const fileRes = await fetch(msg.attachment.url);
+                if (fileRes.ok) {
+                  remoteData = await fileRes.json();
+                  break;
+                }
+              } else if (msg.message) {
+                remoteData = JSON.parse(msg.message);
+                break;
+              }
+            }
+          } catch (e) { }
+        }
+      }
+    } catch (e) {
+      console.warn('Ntfy poll failed, trying legacy fallback:', e);
+    }
+
+    // 2. Fallback: try bytebin if rawVal looks like bytebin key
+    if (!remoteData) {
+      try {
+        const bytebinRes = await fetch(`https://bytebin.lucko.me/${rawVal}`);
+        if (bytebinRes.ok) {
+          remoteData = await bytebinRes.json();
+        }
+      } catch (e) { }
+    }
+
+    if (!remoteData) {
+      throw new Error('Mã PIN/Đồng bộ không tồn tại, đã hết hạn hoặc kết nối bị gián đoạn. Bạn có thể dùng tab "File .json & Zalo" để dán mã trực tiếp!');
+    }
 
     // Get selected merge mode
     const modeEl = document.querySelector('input[name="sync-merge-mode"]:checked');
@@ -6919,8 +7099,11 @@ async function fetchAndApplySync(explicitId = null) {
     if (statusEl) {
       statusEl.style.display = 'block';
       statusEl.innerHTML = `
-        <div style="padding: 0.75rem; background: var(--danger-light); color: var(--danger); border-radius: var(--radius-sm); font-size: 0.85rem;">
-          ⚠️ <strong>Lỗi:</strong> ${err.message}
+        <div style="padding: 0.75rem; background: var(--danger-light); color: var(--danger); border-radius: var(--radius-sm); font-size: 0.85rem; line-height: 1.45;">
+          ⚠️ <strong>Lỗi:</strong> ${err.message}<br>
+          <span style="font-size: 0.8rem; margin-top: 0.35rem; display: block; color: var(--text-muted);">
+            💡 Gợi ý: Bạn có thể mở tab <strong>"File .json & Zalo"</strong> để copy/paste mã đồng bộ ngoại tuyến mà không phụ thuộc vào mạng.
+          </span>
         </div>
       `;
     }
@@ -7338,8 +7521,9 @@ window.addEventListener('DOMContentLoaded', () => {
   loadFlashcardState();
   const restored = restoreExamDraft();
   if (!restored) {
-    generateRandomExam(true);
+    generateDlsPdfExam(true);
   }
+  setActiveExamMode(currentExamMode || 'dls-pdf');
   updateCoverageDisplays();
   const chkUnseen = document.getElementById('chk-prioritize-unseen');
   if (chkUnseen) chkUnseen.checked = prioritizeUnseenQuestions;

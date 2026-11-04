@@ -1079,3 +1079,4 @@ console.log('Successfully appended real exam questions. Total questions now:', u
 
 const dlsTotal = updatedBank.filter(q => q.source === 'DLS_PDF').length;
 console.log('Total DLS_PDF questions now:', dlsTotal);
+

@@ -31,3 +31,4 @@ const header = 'const ALL_EXAM_BANK = ';
 const footer = ';\n\nif (typeof module !== "undefined" && module.exports) {\n  module.exports = ALL_EXAM_BANK;\n}\n';
 fs.writeFileSync(questionsFile, header + JSON.stringify(bank, null, 2) + footer, 'utf8');
 console.log('Saved questions_800.js successfully!');
+

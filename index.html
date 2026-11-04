@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=43">
+  <link rel="stylesheet" href="styles.css?v=44">
 </head>
 
 <body>
@@ -102,13 +102,24 @@
         <!-- 44h Curriculum Matrix & Coverage Banner -->
         <div class="exam-matrix-banner" id="exam-matrix-banner">
           <div class="matrix-banner-content">
-            <span class="matrix-banner-icon" aria-hidden="true">🎯</span>
-            <div><strong>Ma trận 44h chuẩn hóa:</strong> Đề 80 câu bám sát 100% cấu trúc đề thi thực chiến Dls.pdf &amp; Sách Giáo trình Dược Lâm Sàng Bộ Y tế (14 bài giảng chính khóa).</div>
+            <div class="current-exam-status-badge" id="current-exam-status-badge">
+              <div class="current-exam-icon" id="current-exam-icon">📝</div>
+              <div class="current-exam-info">
+                <div class="current-exam-title-row">
+                  <span class="current-exam-label">ĐANG LÀM:</span>
+                  <span class="current-exam-name" id="current-exam-name">Đề Chuẩn Dls.pdf &amp; Sách (80 Câu)</span>
+                  <span class="current-exam-tag" id="current-exam-tag">✓ Chuẩn Thực Chiến Dls.pdf</span>
+                </div>
+                <div class="current-exam-desc" id="current-exam-desc">
+                  Bám sát 100% cấu trúc đề thi thực chiến Dls.pdf &amp; Sách Giáo trình Bộ Y tế (14 bài giảng chính khóa).
+                </div>
+              </div>
+            </div>
           </div>
           <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">
             <button class="matrix-info-btn coverage-info-btn" onclick="openCoverageModal()"
-              title="Xem độ phủ ngân hàng 1.486 câu hỏi bạn đã từng làm">
-              📈 Độ phủ kho: <span id="header-coverage-badge">-- / 1.486 (0%)</span>
+              title="Xem độ phủ ngân hàng 1.589 câu hỏi bạn đã từng làm">
+              📈 Độ phủ kho: <span id="header-coverage-badge">-- / 1.589 (0%)</span>
             </button>
             <button class="matrix-info-btn" onclick="openMatrixModal()"
               title="Xem chi tiết phân bổ 80 câu theo số tiết">📊 Ma trận 44h</button>
@@ -122,43 +133,43 @@
               <div class="progress-fill" id="progress-fill"></div>
             </div>
           </div>
-          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;" id="exam-mode-buttons-container">
             <label class="toggle-unseen-label"
-              title="Khi bật, hệ thống sẽ ưu tiên chọn các câu bạn CHƯA TỪNG LÀM để quét sạch toàn bộ 1.486 câu nhanh nhất">
+              title="Khi bật, hệ thống sẽ ưu tiên chọn các câu bạn CHƯA TỪNG LÀM để quét sạch toàn bộ 1.589 câu nhanh nhất">
               <input type="checkbox" id="chk-prioritize-unseen" checked onchange="togglePrioritizeUnseen(this.checked)">
               <span>🎯 Ưu tiên câu chưa làm</span>
             </label>
-            <button class="btn btn-secondary btn-dls-pdf-exam"
-              style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); color: #1d4ed8; border-color: #3b82f6; font-weight: 700; box-shadow: 0 1px 3px rgba(37,99,235,0.15);"
+            <button class="btn btn-secondary btn-exam-mode btn-dls-pdf-exam" id="btn-exam-dls-pdf"
               onclick="generateDlsPdfExam()"
               title="Tạo đề thi 80 câu bám sát 100% đề thi thực chiến Dls.pdf và Sách Giáo trình Bộ Y tế (80 phút)">
-              📝 Đề Chuẩn Dls.pdf & Sách (80 Câu)
+              <span class="btn-text">📝 Đề Chuẩn Dls.pdf &amp; Sách (80 Câu)</span>
+              <span class="active-badge-indicator"><span class="badge-dot"></span> ĐANG CHỌN</span>
             </button>
-            <button class="btn btn-secondary btn-unseen-exam"
-              style="padding: 0.4rem 0.85rem; font-size: 0.82rem;"
+            <button class="btn btn-secondary btn-exam-mode btn-unseen-exam" id="btn-exam-unseen"
               onclick="generateUnseenExam()"
-              title="Tạo đề thi 80 câu với 100% là các câu bạn CHƯA TỪNG LÀM để quét sạch toàn bộ 1.486 câu trong ngân hàng đề">
-              ✨ Đề 80 Câu Chưa Làm
+              title="Tạo đề thi 80 câu với 100% là các câu bạn CHƯA TỪNG LÀM để quét sạch toàn bộ 1.589 câu trong ngân hàng đề">
+              <span class="btn-text">✨ Đề 80 Câu Chưa Làm</span>
+              <span class="active-badge-indicator"><span class="badge-dot"></span> ĐANG CHỌN</span>
             </button>
-            <button class="btn btn-secondary"
-              style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--surface-alt); border-color: var(--secondary); color: var(--secondary);"
+            <button class="btn btn-secondary btn-exam-mode" id="btn-exam-schools"
               onclick="openUniversityExamModal()"
               title="Lựa chọn làm đề thi chuyên sâu của ĐH Dược Hà Nội, ĐH Y Dược TP.HCM, ĐH Y Hà Nội">
-              🏛️ Đề Các Trường Y Dược
+              <span class="btn-text">🏛️ Đề Các Trường Y Dược</span>
+              <span class="active-badge-indicator"><span class="badge-dot"></span> ĐANG CHỌN</span>
             </button>
-            <button class="btn btn-secondary"
-              style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: #ecfdf5; color: #047857; border-color: #10b981; font-weight: 600;"
+            <button class="btn btn-secondary btn-exam-mode btn-graded-exam" id="btn-exam-graded"
               onclick="generateGradedExam()"
               title="Tạo đề thi 80 câu phân hóa chuẩn 3 cấp độ: 16 Nhận biết (20%), 32 Vận dụng (40%), 32 Vận dụng cao (40%) theo ma trận 44h">
-              🎯 Đề Phân Hóa (2:4:4)
+              <span class="btn-text">🎯 Đề Phân Hóa (2:4:4)</span>
+              <span class="active-badge-indicator"><span class="badge-dot"></span> ĐANG CHỌN</span>
             </button>
-            <button class="btn btn-secondary"
-              style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary);"
+            <button class="btn btn-secondary btn-exam-mode btn-random-exam" id="btn-exam-random"
               onclick="generateRandomExam()"
               title="Tạo đề 80 câu chuẩn ma trận 44h tự động mix câu hỏi ĐH Dược HN, ĐH Y Dược TPHCM, ĐH Y HN và Chuẩn BYT">
-              🎲 Tạo Đề Random Mới
+              <span class="btn-text">🎲 Tạo Đề Random Mới</span>
+              <span class="active-badge-indicator"><span class="badge-dot"></span> ĐANG CHỌN</span>
             </button>
-            <button class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem;"
+            <button class="btn btn-secondary" style="padding: 0.42rem 0.85rem; font-size: 0.82rem;"
               onclick="confirmSubmitExam()">
               Nộp bài sớm
             </button>
@@ -500,6 +511,13 @@
         </div>
 
         <div id="sync-send-result" style="display: none;">
+          <!-- 6-Digit PIN Display -->
+          <div class="sync-pin-display-card">
+            <div style="font-size: 0.8rem; font-weight: 700; color: #1e40af; text-transform: uppercase;">🔑 MÃ PIN ĐỒNG BỘ (6 SỐ)</div>
+            <div class="sync-pin-value" id="sync-generated-pin">------</div>
+            <div style="font-size: 0.78rem; color: #2563eb;">Nhập 6 số này vào tab "Kéo Về Máy" trên thiết bị kia hoặc quét mã QR bên dưới!</div>
+          </div>
+
           <!-- QR Code Container -->
           <div class="sync-qr-card">
             <div class="sync-qr-img-wrap">
@@ -514,10 +532,10 @@
 
           <!-- Pin & Link -->
           <div class="sync-code-display-box">
-            <span class="sync-code-lbl">Mã Đồng Bộ / Link Chia Sẻ:</span>
+            <span class="sync-code-lbl">Link Chia Sẻ Trực Tiếp:</span>
             <div class="sync-code-input-group">
               <input type="text" id="sync-generated-code" readonly value="" />
-              <button class="btn btn-secondary" onclick="copySyncCode()" title="Sao chép mã / liên kết">📋 Sao
+              <button class="btn btn-secondary" onclick="copySyncCode()" title="Sao chép liên kết">📋 Sao
                 chép</button>
             </div>
           </div>
@@ -542,9 +560,9 @@
 
         <div class="sync-input-field-wrap">
           <label for="sync-input-code" style="font-size: 0.88rem; font-weight: 600; color: var(--text-main);">
-            Mã đồng bộ hoặc Link chứa mã:
+            Mã PIN (6 số) hoặc Link đồng bộ:
           </label>
-          <input type="text" id="sync-input-code" placeholder="Dán mã hoặc link chứa ?sync_id=..." />
+          <input type="text" id="sync-input-code" placeholder="Nhập 6 số PIN (ví dụ: 868038) hoặc dán link chứa ?sync_id=..." />
         </div>
 
         <!-- Merge Mode Option Selection -->
@@ -801,14 +819,25 @@
       </div>
       <div style="padding: 0.5rem 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-main);">
         <p style="margin-bottom: 0.85rem; color: var(--text-muted);">
-          Hệ thống đã tích hợp <strong>1.486 câu hỏi</strong> chuẩn hóa gồm kho đề Bộ Y tế, đề thi thực tế (Dls.pdf) và
+          Hệ thống đã tích hợp <strong>1.589 câu hỏi</strong> chuẩn hóa gồm kho đề Bộ Y tế, đề thi thực tế (Dls.pdf) và
           đề thi chính thức từ các trường Đại học Y Dược danh tiếng hàng đầu Việt Nam:
         </p>
 
-        <div class="uni-exam-card" onclick="generateUnseenExam()"
+        <div class="uni-exam-card" data-uni-mode="dls-pdf" onclick="generateDlsPdfExam()"
           style="border-left: 4px solid #2563eb; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
-            <strong style="color: #2563eb; font-size: 1rem;">✨ Đề 80 Câu Hoàn Toàn Chưa Làm (100% Mới)</strong>
+            <strong style="color: #2563eb; font-size: 1rem;">📝 Đề Chuẩn Dls.pdf &amp; Sách Bộ Y Tế (Khuyên dùng số 1)</strong>
+            <span class="badge badge-source-dls" style="font-weight: 700;">80 câu • 80 phút</span>
+          </div>
+          <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
+            Trọn bộ 80 câu hỏi ca lâm sàng dài bám sát 100% đề thi thực tế (Dls.pdf) kết hợp chuẩn Giáo trình Bộ Y tế: THA, Tiêu chảy cấp, Cockcroft-Gault, Tương tác CYP, ADR, Corticoid &amp; Giảm đau ung thư.
+          </div>
+        </div>
+
+        <div class="uni-exam-card" data-uni-mode="unseen" onclick="generateUnseenExam()"
+          style="border-left: 4px solid #d97706; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+            <strong style="color: #b45309; font-size: 1rem;">✨ Đề 80 Câu Hoàn Toàn Chưa Làm (100% Mới)</strong>
             <span class="badge badge-unseen" id="modal-unseen-badge" style="font-weight: 700;">80 câu • 100% Chưa làm</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
@@ -816,23 +845,21 @@
           </div>
         </div>
 
-        <div class="uni-exam-card" onclick="generateGradedExam()"
+        <div class="uni-exam-card" data-uni-mode="graded" onclick="generateGradedExam()"
           style="border-left: 4px solid #10b981; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
             <strong style="color: #059669; font-size: 1rem;">🎯 Đề Phân Hóa Năng Lực Chuẩn (Tỉ lệ 2:4:4)</strong>
-            <span class="badge" style="background: #d1fae5; color: #047857; font-weight: 700;">80 câu • 16 NB : 32 VD :
-              32 VDC</span>
+            <span class="badge" style="background: #d1fae5; color: #047857; font-weight: 700;">80 câu • 16 NB : 32 VD : 32 VDC</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
-            Cấu trúc phân loại 3 cấp độ chuẩn hóa: <strong>16 câu Nhận biết (20%)</strong> • <strong>32 câu Vận dụng
-              (40%)</strong> • <strong>32 câu Vận dụng cao (40%)</strong> theo đúng ma trận 14 chuyên đề 44h.
+            Cấu trúc phân loại 3 cấp độ chuẩn hóa: <strong>16 câu Nhận biết (20%)</strong> • <strong>32 câu Vận dụng (40%)</strong> • <strong>32 câu Vận dụng cao (40%)</strong> theo đúng ma trận 14 chuyên đề 44h.
           </div>
         </div>
 
-        <div class="uni-exam-card" onclick="generateUniversityExam('all')"
+        <div class="uni-exam-card" data-uni-mode="all" onclick="generateUniversityExam('all')"
           style="border-left: 4px solid var(--primary); margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
-            <strong style="color: var(--primary); font-size: 1rem;">🎯 Đề Ma Trận 44h Toàn Diện (Khuyên dùng)</strong>
+            <strong style="color: var(--primary); font-size: 1rem;">🎯 Đề Ma Trận 44h Toàn Diện (Tổng Hợp)</strong>
             <span class="badge badge-category">80 câu • 80 phút</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
@@ -841,20 +868,7 @@
           </div>
         </div>
 
-        <div class="uni-exam-card" onclick="generateUniversityExam('DLS_PDF')"
-          style="border-left: 4px solid #10b981; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
-            <strong style="color: #10b981; font-size: 1rem;">📝 Đề thi Dược Lâm Sàng Thực Tế (Dls.pdf)</strong>
-            <span class="badge badge-source-dls">84 câu • 84 phút</span>
-          </div>
-          <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
-            Trọn bộ 84 câu hỏi thi thực tế từ đề thi Dược Lâm Sàng (Dls.pdf): THA, Tiêu chảy cấp ORS/Racecadotril, Tránh
-            thai Implanon, Nghị định 131/2020, Cockcroft-Gault, Xét nghiệm, Tương tác thuốc, ADR, Corticoid &amp; Giảm
-            đau ung thư.
-          </div>
-        </div>
-
-        <div class="uni-exam-card" onclick="generateUniversityExam('HUP')"
+        <div class="uni-exam-card" data-uni-mode="HUP" onclick="generateUniversityExam('HUP')"
           style="border-left: 4px solid #7c3aed; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
             <strong style="color: #7c3aed; font-size: 1rem;">🏛️ Đại học Dược Hà Nội (HUP)</strong>
@@ -864,6 +878,30 @@
             Chuyên sâu: TDM Vancomycin (AUC24/MIC), Aminoglycosid liều 1 lần/ngày, Dược động học phi tuyến tính, Thang
             Naranjo, Tương tác CYP450/P-gp, Quy trình 7 bước thông tin thuốc, Nhi khoa, Lão khoa, Corticoid &amp; Cấp
             cứu.
+          </div>
+        </div>
+
+        <div class="uni-exam-card" data-uni-mode="UMP" onclick="generateUniversityExam('UMP')"
+          style="border-left: 4px solid #0284c7; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+            <strong style="color: #0284c7; font-size: 1rem;">🏛️ Đại học Y Dược TP.HCM (UMP)</strong>
+            <span class="badge badge-source-ump">60 câu • 60 phút</span>
+          </div>
+          <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
+            Chuyên sâu: Tình huống lâm sàng ca bệnh, Xơ gan cổ trướng &amp; SBP, Cẩm nang Trissel's tiêm truyền, Cấp cứu
+            tăng huyết áp Nicardipine, Bù nước IMCI trẻ em, Tiêu chuẩn Beers &amp; STOPP/START.
+          </div>
+        </div>
+
+        <div class="uni-exam-card" data-uni-mode="HMU" onclick="generateUniversityExam('HMU')"
+          style="border-left: 4px solid #dc2626; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+            <strong style="color: #dc2626; font-size: 1rem;">🏛️ Đại học Y Hà Nội (HMU)</strong>
+            <span class="badge badge-source-hmu">60 câu • 60 phút</span>
+          </div>
+          <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
+            Chuyên sâu: Phác đồ Thông tư 51/2017/TT-BYT Phản vệ Adrenaline &amp; Glucagon, Thử nghiệm lâm sàng Pha I-IV,
+            Y học thực chứng EBM, Paracetamol nhi khoa, Codeine CYP2D6, Corticoid liều xung &amp; Cấp cứu Wernicke.
           </div>
         </div>
 
@@ -1078,9 +1116,9 @@
     </div>
   </div>
 
-  <script src="questions_800.js?v=43"></script>
-  <script src="flashcards.js?v=43"></script>
-  <script src="app.js?v=43"></script>
+  <script src="questions_800.js?v=44"></script>
+  <script src="flashcards.js?v=44"></script>
+  <script src="app.js?v=44"></script>
 </body>
 
 </html>

@@ -5043,3 +5043,221 @@ main.app-main.full-width-view .palette-container {
   text-align: left;
 }
 
+/* ========================================================
+   ACTIVE EXAM MODE SYSTEM & HIGHLIGHTING (PHÂN BIỆT ĐỀ ĐANG CHỌN)
+   ======================================================== */
+.btn-exam-mode {
+  position: relative;
+  padding: 0.42rem 0.85rem !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  border-radius: var(--radius-sm) !important;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  cursor: pointer !important;
+  border: 1.5px solid var(--border) !important;
+  background: var(--surface-alt) !important;
+  color: var(--text-main) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+}
+
+.btn-exam-mode:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08) !important;
+  border-color: var(--border-dark) !important;
+}
+
+/* Inactive state indicator */
+.btn-exam-mode .active-badge-indicator {
+  display: none;
+}
+
+/* ACTIVE STATE STYLING FOR EXAM BUTTONS */
+.btn-exam-mode.active-mode {
+  font-weight: 700 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* DLS PDF Button Active */
+#btn-exam-dls-pdf.active-mode {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
+  color: #ffffff !important;
+  border-color: #1e40af !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35), 0 4px 12px rgba(37, 99, 235, 0.3) !important;
+}
+
+/* Unseen Button Active */
+#btn-exam-unseen.active-mode {
+  background: linear-gradient(135deg, #b45309 0%, #d97706 100%) !important;
+  color: #ffffff !important;
+  border-color: #92400e !important;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.35), 0 4px 12px rgba(217, 119, 6, 0.3) !important;
+}
+
+/* Graded Button Active */
+#btn-exam-graded.active-mode {
+  background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
+  color: #ffffff !important;
+  border-color: #065f46 !important;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.35), 0 4px 12px rgba(5, 150, 105, 0.3) !important;
+}
+
+/* Schools Button Active */
+#btn-exam-schools.active-mode {
+  background: linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%) !important;
+  color: #ffffff !important;
+  border-color: #5b21b6 !important;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.35), 0 4px 12px rgba(124, 58, 237, 0.3) !important;
+}
+
+/* Random Button Active */
+#btn-exam-random.active-mode {
+  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%) !important;
+  color: #ffffff !important;
+  border-color: #0369a1 !important;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.35), 0 4px 12px rgba(14, 165, 233, 0.3) !important;
+}
+
+/* Active Badge Indicator inside the active button */
+.btn-exam-mode.active-mode .active-badge-indicator {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-left: 0.3rem;
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a7f3d0;
+  display: inline-block;
+  box-shadow: 0 0 6px #6ee7b7;
+  animation: pulse-dot 1.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+/* Current Exam Status Banner */
+.current-exam-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.current-exam-icon {
+  font-size: 1.45rem;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.current-exam-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.current-exam-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.current-exam-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.current-exam-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.current-exam-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.current-exam-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+/* Active card in University modal */
+.uni-exam-card.active-uni-card {
+  border: 2px solid #2563eb !important;
+  background: #eff6ff !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2), 0 4px 12px rgba(37, 99, 235, 0.12) !important;
+  position: relative;
+}
+
+.uni-exam-card.active-uni-card::after {
+  content: '✓ ĐANG CHỌN';
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+}
+
+/* Sync PIN Box */
+.sync-pin-display-card {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 2px dashed #3b82f6;
+  border-radius: var(--radius-md);
+  padding: 0.9rem;
+  text-align: center;
+  margin: 0.75rem 0;
+}
+
+.sync-pin-value {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #1d4ed8;
+  letter-spacing: 0.35rem;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  margin: 0.35rem 0;
+}
+

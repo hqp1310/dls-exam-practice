@@ -81,3 +81,4 @@ chosenQuestions.slice(0, 3).forEach((q, idx) => {
   });
   console.log(`  => Đ/án đúng: ${['A', 'B', 'C', 'D'][q.correct]}`);
 });
+

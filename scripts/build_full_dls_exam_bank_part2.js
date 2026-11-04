@@ -670,3 +670,4 @@ const footer = ';\n\nif (typeof module !== "undefined" && module.exports) {\n  m
 
 fs.writeFileSync(questionsFile, header + JSON.stringify(currentBank, null, 2) + footer, 'utf8');
 console.log('Successfully written updated bank to questions_800.js');
+
