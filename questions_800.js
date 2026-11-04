@@ -1,3 +1,6 @@
+// NGÂN HÀNG CÂU HỎI TRẮC NGHIỆM DƯỢC LÂM SÀNG TỔNG HỢP (1.589 CÂU)
+// Đã chuẩn hóa toàn diện: Cấu trúc 14 bài giảng 44h Bộ Y tế, Format Dls.pdf thực chiến & các trường ĐHYD.
+// Loại bỏ 100% gợi ý lộ đáp án dạng mở ngoặc đơn (...) trong các phương án chọn.
 const ALL_EXAM_BANK = [
   {
     "id": 1,
@@ -1877,10 +1880,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Phối hợp giữa kháng sinh Aminosid với Furosemid gây nguy cơ tổn thương nặng trên hai cơ quan nào?",
     "options": [
-      "Thận (suy thận cấp) và thính giác (tổn thương tiền đình - ốc tai, điếc không hồi phục)",
-      "Gan (hoại tử tế bào gan cấp tính) và hệ thống đường dẫn mật trong và ngoài gan",
-      "Tủy xương (ức chế sinh ba dòng tế bào máu) và các cơ quan tạo máu ngoại vi",
-      "Niêm mạc ống tiêu hóa (viêm loét trợt dạ dày) và tá tràng xuất huyết nghiêm trọng"
+      "Thận và thính giác",
+      "Gan và hệ thống đường dẫn mật trong và ngoài gan",
+      "Tủy xương và các cơ quan tạo máu ngoại vi",
+      "Niêm mạc ống tiêu hóa và tá tràng xuất huyết nghiêm trọng"
     ],
     "correct": 0,
     "explanation": "Cả kháng sinh Aminosid và thuốc lợi tiểu quai Furosemid đều có độc tính cao trên thận và thính giác. Khi phối hợp, độc tính tăng theo cơ chế hiệp đồng, gây nguy cơ suy thận cấp và tổn thương ốc tai - tiền đình dẫn đến điếc vĩnh viễn.",
@@ -1979,7 +1982,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Phối hợp thuốc ức chế men chuyển với Amlodipin mang lại lợi ích gì về mặt giảm tác dụng phụ?",
     "options": [
-      "Giảm rõ rệt hiện tượng phù mắt cá chân (phù ngoại vi) do Amlodipin gây ra",
+      "Giảm rõ rệt hiện tượng phù mắt cá chân do Amlodipin gây ra",
       "Ngăn ngừa hoàn toàn nguy cơ xuất hiện nhịp chậm xoang kịch phát ở người già",
       "Loại bỏ hoàn toàn tác dụng phụ ho khan kinh điển của nhóm ức chế men chuyển",
       "Ngăn ngừa tình trạng tăng đường huyết và rối loạn lipid máu thứ phát sau ăn"
@@ -1996,10 +1999,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Tương tác đối kháng cạnh tranh trực tiếp trên cùng thụ thể xảy ra giữa cặp thuốc nào sau đây?",
     "options": [
-      "Warfarin và Cimetidin (tương tác qua ức chế men chuyển hóa CYP2C9 tại gan)",
-      "Furosemid và Gentamicin (tương tác hiệp đồng tăng độc tính trên thính giác)",
-      "Atropin và Pilocarpin (đối kháng cạnh tranh trực tiếp trên thụ thể Muscarinic)",
-      "Tetracyclin và Sữa tươi (tương tác hóa học tạo phức chelat cản trở hấp thu)"
+      "Warfarin và Cimetidin",
+      "Furosemid và Gentamicin",
+      "Atropin và Pilocarpin",
+      "Tetracyclin và Sữa tươi"
     ],
     "correct": 2,
     "explanation": "Atropin là chất đối kháng cạnh tranh trên thụ thể Muscarinic của hệ đối giao cảm, trong khi Pilocarpin là chất chủ vận Muscarinic. Hai thuốc cạnh tranh trực tiếp tại cùng vị trí gắn của thụ thể.",
@@ -2033,7 +2036,7 @@ const ALL_EXAM_BANK = [
       "Hội chứng ngoại tháp cấp tính với biểu hiện co cứng cơ và run ngọn chi",
       "Xuất huyết võng mạc không hồi phục dẫn đến giảm thị lực đột ngột",
       "Cơn tăng huyết áp kịch phát ác tính kèm theo rối loạn nhịp tim nhanh",
-      "Phản ứng sợ rượu kiểu Antabuse (Disulfiram-like) với đỏ bừng mặt, nôn nao, tụt áp"
+      "Phản ứng sợ rượu kiểu Antabuse với đỏ bừng mặt, nôn nao, tụt áp"
     ],
     "correct": 3,
     "explanation": "Sulfonylure (đặc biệt Tolbutamid, Chlorpropamid) ức chế enzym Aldehyd dehydrogenase ở gan, làm tích tụ acetaldehyd khi uống rượu, gây phản ứng kiểu Disulfiram (Antabuse-like): bốc hỏa đỏ bừng mặt, buồn nôn, đau đầu dữ dội, hạ huyết áp.",
@@ -3325,7 +3328,7 @@ const ALL_EXAM_BANK = [
       "Định lượng nồng độ Canxi toàn phần và Canxi ion hóa trong máu tĩnh mạch",
       "Xét nghiệm nồng độ Bilirubin toàn phần và Bilirubin trực tiếp huyết thanh",
       "Xét nghiệm soi cặn lắng nước tiểu tìm hồng cầu và trụ niệu vi thể",
-      "Định lượng nồng độ Creatin Kinase (CK) huyết thanh để tầm soát tiêu cơ vân"
+      "Định lượng nồng độ Creatin Kinase huyết thanh để tầm soát tiêu cơ vân"
     ],
     "correct": 3,
     "explanation": "CK tăng > 10 lần giới hạn trên bình thường khẳng định biến chứng tiêu cơ vân do Statin.",
@@ -4699,7 +4702,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Biểu đồ Mosteller được sử dụng trên lâm sàng nhi khoa nhằm mục đích gì?",
     "options": [
-      "Ước tính diện tích bề mặt cơ thể (BSA) từ chiều cao và cân nặng của trẻ",
+      "Ước tính diện tích bề mặt cơ thể từ chiều cao và cân nặng của trẻ",
       "Đánh giá chính xác phân loại mức độ mất nước trong tiêu chảy nhiễm khuẩn",
       "Đánh giá thang điểm phát triển tâm thần vận động theo lứa tuổi nhi khoa",
       "Tính toán tốc độ tiêm truyền tĩnh mạch dung dịch điện giải hồi sức cấp cứu"
@@ -5651,7 +5654,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Nhóm thuốc chống trầm cảm nào sau đây được ưu tiên lựa chọn an toàn hơn cho người cao tuổi?",
     "options": [
-      "Thuốc ức chế tái hấp thu chọn lọc Serotonin (SSRI) như Sertralin hoặc Escitalopram",
+      "Thuốc ức chế tái hấp thu chọn lọc Serotonin như Sertralin hoặc Escitalopram",
       "Thuốc ức chế không hồi phục enzym MAO phối hợp với chế độ ăn giàu acid amin",
       "Thuốc chống trầm cảm ba vòng thế hệ cổ điển Amitriptylin dùng liều cao kéo dài",
       "Các dẫn xuất Barbiturat tác dụng kéo dài như Phenobarbital dùng đường uống"
@@ -5687,7 +5690,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Thời gian ngủ trung bình mỗi đêm và mức độ hoạt động thể lực ban ngày",
       "Chỉ số nồng độ bilirubin toàn phần và men gan phosphatase kiềm trong máu",
-      "Tuổi tác (≥ 80 tuổi), cân nặng (≤ 60 kg) và chỉ số Creatinin huyết thanh",
+      "Tuổi tác ≥ 80 tuổi, cân nặng ≤ 60 kg và chỉ số Creatinin huyết thanh",
       "Chiều cao đứng và nồng độ sắc tố melanin dưới lớp biểu bì da người già"
     ],
     "correct": 2,
@@ -6009,7 +6012,7 @@ const ALL_EXAM_BANK = [
     "question": "Nhóm thuốc hạ huyết áp nào sau đây chống chỉ định tuyệt đối trong quý 2 và quý 3 của thai kỳ?",
     "options": [
       "Thuốc hạ huyết áp tác động lên hệ thần kinh trung ương như Methyldopa",
-      "Thuốc ức chế men chuyển (ACEI) và thuốc chẹn thụ thể Angiotensin II (ARB)",
+      "Thuốc Ức chế men chuyển và thuốc chẹn thụ thể Angiotensin II",
       "Thuốc chẹn chọn lọc thụ thể beta và alpha giao cảm như Labetalol",
       "Thuốc giãn mạch trực tiếp trên tiểu động mạch ngoại vi như Hydralazin"
     ],
@@ -6997,7 +7000,7 @@ const ALL_EXAM_BANK = [
       "Có hoạt tính diệt trừ các chủng nấm men sợi Candida và virus hợp bào hô hấp",
       "Hấp thu hoàn hảo qua đường uống và an toàn tuyệt đối cho trẻ sinh non nhẹ cân",
       "Thải trừ hoàn toàn qua gan mật nên không cần hiệu chỉnh liều khi suy thận nặng",
-      "Gắn kết ái lực cao với PBP2a, diệt tụ cầu vàng kháng methicillin (MRSA)"
+      "Gắn kết ái lực cao với PBP2a, diệt tụ cầu vàng kháng methicillin"
     ],
     "correct": 3,
     "explanation": "Ceftarolin gắn ái lực cao vào PBP-2a nên có hoạt tính diệt chủng MRSA.",
@@ -7065,7 +7068,7 @@ const ALL_EXAM_BANK = [
       "Nhiễm khuẩn các chủng vi khuẩn lao kháng đa thuốc phối hợp phác đồ chuyên khoa",
       "Nhiễm nấm Candida xâm lấn hoặc nấm Aspergillus phổi kháng thuốc kháng nấm azol",
       "Nhiễm virus cúm mùa biến chứng suy hô hấp cấp tính tiến triển thành ARDS nặng",
-      "Nhiễm trực khuẩn Gram âm đa kháng và toàn kháng sinh men carbapenemase (CRE, CRAB)"
+      "Nhiễm trực khuẩn Gram âm đa kháng và toàn kháng sinh men carbapenemase"
     ],
     "correct": 3,
     "explanation": "Colistin diệt trực khuẩn Gram âm đa kháng (Acinetobacter baumannii, Pseudomonas, K. pneumoniae).",
@@ -7319,7 +7322,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Viêm họng đỏ cấp tính do liên cầu khuẩn tan huyết beta nhóm A ở trẻ em lứa tuổi học đường",
       "Viêm mô tế bào nông cẳng chân chưa có biến chứng hoại tử ở người bệnh không suy giảm miễn dịch",
-      "Viêm nội tâm mạc nhiễm khuẩn do Enterococcus faecalis (Beta-lactam phối hợp Aminosid)",
+      "Viêm nội tâm mạc nhiễm khuẩn do Enterococcus faecalis",
       "Nhiễm khuẩn đường tiết niệu dưới thể viêm bàng quang cấp không biến chứng ở phụ nữ trẻ tuổi"
     ],
     "correct": 2,
@@ -7623,7 +7626,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Kháng sinh nhóm Fluoroquinolon đường hô hấp có hoạt tính diệt phế cầu Streptococcus pneumoniae mạnh là:",
     "options": [
-      "Levofloxacin và Moxifloxacin (thuộc nhóm Quinolon hô hấp) có hoạt tính phế cầu vượt trội",
+      "Levofloxacin và Moxifloxacin có hoạt tính phế cầu vượt trội",
       "Ofloxacin dạng viên nén quy ước dùng trong điều trị nhiễm khuẩn đường tiết niệu",
       "Norfloxacin đường uống có sinh khả dụng thấp chủ yếu tập trung tại đường ruột",
       "Ciprofloxacin có hoạt tính mạnh nhất trên trực khuẩn mủ xanh nhưng yếu trên phế cầu"
@@ -7691,7 +7694,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Để phòng ngừa viêm dây thần kinh ngoại biên do thuốc chống lao Isoniazid, người ta dùng kèm:",
     "options": [
-      "Vitamin B6 (Pyridoxin) liều 10 - 25 mg/ngày để bù trừ lượng pyridoxin bị tăng đào thải",
+      "Vitamin B6 liều 10 - 25 mg/ngày để bù trừ lượng pyridoxin bị tăng đào thải",
       "Vitamin A dạng dung dịch dầu uống liều cao để tăng cường miễn dịch niêm mạc đường hô hấp",
       "Vitamin B12 đường tiêm bắp sâu định kỳ hàng tháng để phòng ngừa biến chứng thiếu máu ác tính",
       "Vitamin C dạng viên sủi liều cao 1000 mg mỗi ngày để kiềm hóa môi trường nội bào cơ thể"
@@ -7727,7 +7730,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Gây ra phản ứng dị ứng chéo tỷ lệ 100% với Ceftazidim do có cấu trúc chuỗi bên giống nhau",
       "Chỉ có phổ tác dụng diệt khuẩn chọn lọc trên các chủng cầu khuẩn Gram dương hiếu khí",
-      "Phổ chọn lọc trên vi khuẩn Gram âm hiếu khí và không gây dị ứng chéo với Penicillin (trừ Ceftazidim)",
+      "Phổ chọn lọc trên vi khuẩn Gram âm hiếu khí và không gây dị ứng chéo với Penicillin",
       "Có phổ tác dụng cực rộng bao phủ toàn bộ vi khuẩn Gram dương, Gram âm và vi khuẩn kỵ khí sâu"
     ],
     "correct": 2,
@@ -7795,7 +7798,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Xác định thời điểm tối ưu mà bệnh nhân hồi phục hoàn toàn để làm thủ tục xuất viện",
       "Kiểm tra mức độ dị ứng trên da và phản ứng giải phóng histamin ngoài da của bệnh nhân",
-      "Đảm bảo nồng độ đủ để đạt hiệu lực diệt khuẩn (AUC/MIC) và tránh tích lũy gây độc thận",
+      "Đảm bảo nồng độ đủ để đạt hiệu lực diệt khuẩn và tránh tích lũy gây độc thận",
       "Đánh giá tốc độ hòa tan và độ tương hợp hóa lý của dung dịch thuốc tiêm truyền tĩnh mạch"
     ],
     "correct": 2,
@@ -7813,7 +7816,7 @@ const ALL_EXAM_BANK = [
       "Gây viêm loét và xuất huyết tiêu hóa ồ ạt do tác dụng kích ứng niêm mạc dạ dày tá tràng",
       "Khởi phát các cơn hạ đường huyết kịch phát dẫn đến co giật cục bộ ngay sau khi tiêm truyền",
       "Làm mất hoàn toàn hoạt tính kháng khuẩn in vivo của Vancomycin trên các chủng tụ cầu vàng",
-      "Gia tăng đáng kể nguy cơ xuất hiện tổn thương thận cấp (AKI) do tương tác cộng dồn độc tính thận"
+      "Gia tăng đáng kể nguy cơ xuất hiện tổn thương thận cấp do tương tác cộng dồn độc tính thận"
     ],
     "correct": 3,
     "explanation": "Nhiều nghiên cứu lâm sàng chứng minh phối hợp Vanco + Zosyn làm tăng đáng kể tỷ lệ suy thận cấp.",
@@ -7913,8 +7916,8 @@ const ALL_EXAM_BANK = [
     "question": "Kháng sinh nào sau đây thuộc nhóm Beta-lactamase phổ rộng ESBL có thể phân hủy?",
     "options": [
       "Kháng sinh nhóm Glycopeptid như Vancomycin hoặc Teicoplanin dùng điều trị nhiễm khuẩn Gram dương",
-      "Cephalosporin thế hệ 3 như Ceftriaxon, Cefotaxim và Ceftazidim (men ESBL thủy phân được)",
-      "Kháng sinh nhóm Carbapenem như Meropenem hoặc Imipenem (vẫn bền vững trước enzym ESBL)",
+      "Cephalosporin thế hệ 3 như Ceftriaxon, Cefotaxim và Ceftazidim",
+      "Kháng sinh nhóm Carbapenem như Meropenem hoặc Imipenem",
       "Kháng sinh nhóm Cephamycin như Cefoxitin hoặc Cefotetan có tính bền vững trước enzym ESBL"
     ],
     "correct": 1,
@@ -7981,7 +7984,7 @@ const ALL_EXAM_BANK = [
     "question": "Kháng sinh Telavancin và Oritavancin thuộc nhóm Lipoglycopeptid có đặc tính khác biệt nổi bật là:",
     "options": [
       "Chỉ dùng theo đường uống dạng viên nén bao phim điều trị nhiễm khuẩn đường tiêu hóa nhẹ",
-      "Thời gian bán thải rất dài (trên 200 giờ) cho phép dùng phác đồ 1 liều duy nhất cho cả đợt",
+      "Thời gian bán thải rất dài cho phép dùng phác đồ 1 liều duy nhất cho cả đợt",
       "Hoàn toàn không có tác dụng kháng khuẩn trên các chủng cầu khuẩn Gram dương kháng methicillin",
       "Đào thải nguyên vẹn 100% qua đường hô hấp và không tạo nồng độ trong các khoang dịch mô cơ thể"
     ],
@@ -8099,7 +8102,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Cơ chế tác dụng chống viêm ở mức độ phân tử của Glucocorticoid thông qua ức chế enzym nào?",
     "options": [
-      "Phospholipase A2 thông qua kích thích tế bào tổng hợp protein Lipocortin-1 (Annexin-1)",
+      "Phospholipase A2 thông qua kích thích tế bào tổng hợp protein Lipocortin-1",
       "Enzym Adenylate cyclase ở màng nhân tế bào làm suy giảm nồng độ cAMP bên trong tế bào",
       "Enzym 5-Lipoxygenase trực tiếp tại bào tương ngăn cản chuyển hóa tạo các Leukotrien viêm",
       "Enzym Cyclooxygenase-1 cấu tạo màng tế bào làm giảm bài tiết prostaglandin bảo vệ niêm mạc"
@@ -8167,7 +8170,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Hội chứng Cushing do thuốc biểu hiện bằng các dấu hiệu phân bố mỡ đặc trưng nào?",
     "options": [
-      "Mặt tròn như mặt trăng, bướu mỡ vùng gáy (bướu trâu) và béo phì vùng thân mình",
+      "Mặt tròn như mặt trăng, bướu mỡ vùng gáy và béo phì vùng thân mình",
       "Tích tụ mô mỡ bất thường khu trú chủ yếu ở hai cẳng chân và vùng mu bàn chân của người bệnh",
       "Teo toàn bộ mô mỡ dưới da ở vùng lồng ngực và vùng bụng làm lộ rõ các xương sườn hai bên",
       "Mất hoàn toàn lớp mỡ đệm dưới da trên toàn bộ cơ thể dẫn đến tình trạng gầy còm suy kiệt nặng"
@@ -8203,7 +8206,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Bổ sung Vitamin A liều cao 50.000 đơn vị quốc tế mỗi tháng để kích thích phát triển sụn tiếp hợp",
       "Uống nhiều nước giải khát có ga giàu phosphat để hỗ trợ quá trình khoáng hóa chất nền xương",
-      "Bổ sung Canxi (1000-1200 mg/ngày), Vitamin D3 (800-1000 UI/ngày) và cân nhắc dùng Bisphosphonat",
+      "Bổ sung Canxi 1000-1200 mg/ngày, Vitamin D3 800-1000 UI/ngày và cân nhắc dùng Bisphosphonat",
       "Tiêm truyền tĩnh mạch dung dịch albumin người 20% định kỳ hàng tuần để tăng cường giữ calci"
     ],
     "correct": 2,
@@ -8235,7 +8238,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Biến chứng trên mắt khi sử dụng Glucocorticoid nhỏ mắt hoặc toàn thân kéo dài bao gồm:",
     "options": [
-      "Tăng nhãn áp (Glaucoma) và Đục thủy tinh thể dưới bao sau của mắt",
+      "Tăng nhãn áp và Đục thủy tinh thể dưới bao sau của mắt",
       "Bong giác mạc tự phát ở cả hai mắt dẫn đến suy giảm thị lực đột ngột không hồi phục",
       "Khởi phát các đợt viêm kết mạc dị ứng mùa xuân mạn tính có nhú gai trên kết mạc mi",
       "Teo chọn lọc dây thần kinh thị giác một bên mắt kèm theo hiện tượng khuyết góc thị trường"
@@ -8289,7 +8292,7 @@ const ALL_EXAM_BANK = [
       "Bệnh lý viêm đại tràng xuất tiết do ngộ độc độc tố tụ cầu sau khi ăn thực phẩm ôi thiu",
       "Khởi phát các cơn sốt phát ban dạng sởi hoặc bệnh tay chân miệng ở trẻ em lứa tuổi mầm non",
       "Nhiễm khuẩn cấp tính bề mặt ngoài da do các chủng tụ cầu vàng nhạy cảm với methicillin",
-      "Tái hoạt động bệnh Lao tiềm ẩn, nhiễm nấm cơ hội (Candida, Aspergillus) và virus Zona"
+      "Tái hoạt động bệnh Lao tiềm ẩn, nhiễm nấm cơ hội và virus Zona"
     ],
     "correct": 3,
     "explanation": "Corticoid làm giảm lympho T, ức chế đại thực bào làm dễ bùng phát lao tiềm ẩn và nhiễm nấm cơ hội.",
@@ -8457,7 +8460,7 @@ const ALL_EXAM_BANK = [
     "question": "Glucocorticoid có tác dụng hạ sốt và chống dị ứng cực mạnh là nhờ khả năng ức chế giải phóng chất nào?",
     "options": [
       "Ức chế quá trình tăng tiết chất nhầy đặc quánh của các tuyến phế quản đường hô hấp",
-      "Ức chế các Cytokine gây viêm (IL-1, IL-6, TNF-alpha) và giảm tính thấm thành mạch",
+      "Ức chế các Cytokine gây viêm và giảm tính thấm thành mạch",
       "Bất hoạt enzym tiêu protein Pepsin trong môi trường acid dịch vị của niêm mạc dạ dày",
       "Ức chế bài tiết hormon calcitonin của tuyến giáp trạng làm thay đổi nồng độ canxi máu"
     ],
@@ -8543,7 +8546,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Vắc xin tái tổ hợp bất hoạt phòng ngừa viêm gan virus B dùng theo phác đồ 3 mũi cơ bản",
       "Vắc xin giải độc tố uốn ván hấp phụ tiêm bắp sâu phòng ngừa nhiễm trùng uốn ván ngoại khoa cấp tính",
-      "Vắc xin sống giảm độc lực (sởi, quai bị, rubella, thủy đậu, BCG) do nguy cơ bùng phát bệnh",
+      "Vắc xin sống giảm độc lực do nguy cơ bùng phát bệnh",
       "Vắc xin phế cầu khuẩn cộng hợp đa giá tiêm bắp phòng viêm phổi cho người có nguy cơ cao"
     ],
     "correct": 2,
@@ -8661,7 +8664,7 @@ const ALL_EXAM_BANK = [
     "question": "Tác dụng của Glucocorticoid trong cấp cứu sốc phản vệ có vai trò chủ yếu trong việc:",
     "options": [
       "Gây giãn nhanh chóng cơ trơn khí phế quản tức thì như hoạt chất Adrenalin tiêm bắp",
-      "Phòng ngừa và xử trí phản ứng phản vệ pha 2 (pha muộn xuất hiện sau 4 - 8 giờ)",
+      "Phòng ngừa và xử trí phản ứng phản vệ pha 2",
       "Làm tăng vọt ngay lập tức chỉ số huyết áp tâm thu của người bệnh trong vòng 30 giây",
       "Làm dịu hệ thần kinh trung ương và giải tỏa hoàn toàn cảm giác lo âu hoảng sợ của bệnh nhân"
     ],
@@ -8747,7 +8750,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Chuyển sang sử dụng dạng thuốc bột sủi bọt hòa tan hoàn toàn trong nước trước khi uống",
       "Uống viên thuốc vào sáng sớm lúc bụng hoàn toàn trống rỗng để tối ưu hóa sinh khả dụng",
-      "Uống cùng hoặc ngay sau bữa ăn và phối hợp bắt buộc với thuốc ức chế bơm proton (PPI)",
+      "Uống cùng hoặc ngay sau bữa ăn và phối hợp bắt buộc với thuốc ức chế bơm proton",
       "Bẻ đôi viên nén uống một nửa vào buổi sáng và một nửa còn lại uống ngay trước khi đi ngủ"
     ],
     "correct": 2,
@@ -8765,7 +8768,7 @@ const ALL_EXAM_BANK = [
       "Ức chế hoạt tính xúc tác của enzym Carbonic anhydrase tại ống lượn gần của tiểu cầu thận",
       "Ức chế enzym Cholin acetyltransferase tại các synap thần kinh giao cảm và phó giao cảm",
       "Ức chế enzym Tyrosin hydroxylase ở thân não ngăn chặn quá trình sinh tổng hợp dopamin",
-      "Ức chế biểu hiện gen tổng hợp enzym Cyclooxygenase-2 (COX-2) cảm ứng tại ổ viêm"
+      "Ức chế biểu hiện gen tổng hợp enzym Cyclooxygenase-2 cảm ứng tại ổ viêm"
     ],
     "correct": 3,
     "explanation": "Corticoid ức chế phiên mã gen mã hóa enzym COX-2 cảm ứng tạo prostaglandin gây viêm.",
@@ -8865,7 +8868,7 @@ const ALL_EXAM_BANK = [
     "question": "Một đợt điều trị ngắn ngày Corticoid được định nghĩa trên thực hành lâm sàng là kéo dài dưới:",
     "options": [
       "Thời gian điều trị bằng thuốc corticoid đường toàn thân kéo dài dưới 180 ngày",
-      "Thời gian điều trị liên tục dưới 14 ngày (thường ít gây ức chế trục HPA kéo dài)",
+      "Thời gian điều trị liên tục dưới 14 ngày",
       "Thời gian dùng thuốc ngắt quãng từng đợt kéo dài dưới 60 ngày theo dõi điều trị tích cực",
       "Thời gian điều trị duy trì liều giảm dần kéo dài dưới 90 ngày theo dõi ngoại trú"
     ],
@@ -8915,7 +8918,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Sự gắn kết của Cortisol tự nhiên trong máu chủ yếu thông qua loại protein chuyên biệt nào?",
     "options": [
-      "Transcortin hay Globulin gắn Corticosteroid (CBG) có ái lực rất cao với Cortisol",
+      "Transcortin hay Globulin gắn Corticosteroid có ái lực rất cao với Cortisol",
       "Alpha-1 acid glycoprotein trong huyết tương chủ yếu gắn các thuốc mang tính kiềm yếu",
       "Fibrinogen hòa tan trong tuần hoàn tham gia vào quá trình hình thành cục máu đông",
       "Albumin huyết thanh đơn thuần chỉ gắn kết với Cortisol khi nồng độ thuốc vượt ngưỡng CBG"
@@ -9001,7 +9004,7 @@ const ALL_EXAM_BANK = [
     "question": "Chất chuyển hóa trung gian có độc tính cao gây hoại tử tế bào gan của Paracetamol là:",
     "options": [
       "Acid para-aminobenzoic sinh ra từ quá trình thoái hóa phân tử thuốc trong ruột non",
-      "N-acetyl-p-benzoquinone imine (NAPQI) gây cạn kiệt Glutathion dẫn đến hoại tử tế bào gan",
+      "N-acetyl-p-benzoquinone imine gây cạn kiệt Glutathion dẫn đến hoại tử tế bào gan",
       "Acid salicylic tự do khuếch tán vào dịch nội bào phá vỡ màng ty thể của tế bào gan",
       "Chất liên hợp glucuronic không tan tích tụ tại các vi quản mật gây viêm ứ mật cấp"
     ],
@@ -9019,7 +9022,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Sau 7 ngày kể từ khi uống thuốc khi các chỉ số men gan đã tăng vọt lên hàng nghìn đơn vị",
       "Sau 48 giờ kể từ khi xuất hiện triệu chứng vàng da vàng mắt và rối loạn đông máu bùng phát rầm rộ",
-      "Trong vòng 8 đến 10 giờ đầu sau khi uống quá liều Paracetamol (trước khi NAPQI phá hủy gan)",
+      "Trong vòng 8 đến 10 giờ đầu sau khi uống quá liều Paracetamol",
       "Chỉ bắt đầu sử dụng khi người bệnh đã rơi vào trạng thái tiền hôn mê hoặc hôn mê gan sâu nguy kịch"
     ],
     "correct": 2,
@@ -9069,7 +9072,7 @@ const ALL_EXAM_BANK = [
     "question": "Enzym COX-1 có vai trò sinh lý quan trọng nào trong cơ thể người?",
     "options": [
       "Tham gia tiêu diệt trực tiếp các vi khuẩn gây bệnh xâm nhập vào dòng máu tuần hoàn",
-      "Bảo vệ niêm mạc dạ dày (PGE2, PGI2), duy trì tưới máu thận và điều hòa chức năng tiểu cầu",
+      "Bảo vệ niêm mạc dạ dày, duy trì tưới máu thận và điều hòa chức năng tiểu cầu",
       "Kích thích trung tâm điều nhiệt gây sốt cao và khởi phát cảm giác đau cấp tính tại mô",
       "Xúc tác phản ứng tiêu hủy các cục máu đông hình thành bất thường trong lòng mạch máu"
     ],
@@ -9173,7 +9176,7 @@ const ALL_EXAM_BANK = [
       "Dùng đồng thời hai loại thuốc NSAID khác nhau cùng lúc để giảm bớt liều dùng từng loại",
       "Dùng Indomethacin liều tối đa kết hợp uống kèm nước chanh đậm đặc để tăng hấp thu",
       "Dùng Aspirin liều cao chống viêm và chuyển thời điểm uống thuốc vào ban đêm trước ngủ",
-      "Chọn NSAID ức chế chọn lọc COX-2 phối hợp bắt buộc với thuốc ức chế bơm proton (PPI)"
+      "Chọn NSAID ức chế chọn lọc COX-2 phối hợp bắt buộc với thuốc ức chế bơm proton"
     ],
     "correct": 3,
     "explanation": "Khuyến cáo hội tiêu hóa: bệnh nhân nguy cơ tiêu hóa cao dùng COX-2 selective + PPI.",
@@ -9241,7 +9244,7 @@ const ALL_EXAM_BANK = [
       "Mất trí nhớ toàn bộ thoáng qua, liệt nửa người và xuất huyết đường tiêu hóa trên ồ ạt",
       "Tăng huyết áp kịch phát ác tính, tiêu chảy phân nước xối xả và run giật cơ toàn thân",
       "Sốt cao co giật toàn thể, thở nhanh nông và giãn to đồng tử hai bên mất phản xạ ánh sáng",
-      "Hôn mê ức chế thần kinh trung ương, ức chế hô hấp (thở chậm) và co đồng tử như đầu đinh ghim"
+      "Hôn mê ức chế thần kinh trung ương, ức chế hô hấp và co đồng tử như đầu đinh ghim"
     ],
     "correct": 3,
     "explanation": "Tam chứng ngộ độc opioid: Hôn mê + Thở chậm (< 8-10 l/p hoặc ngưng thở) + Đồng tử co nhỏ châm kim.",
@@ -9309,7 +9312,7 @@ const ALL_EXAM_BANK = [
       "Chỉ định giảm đau tức thì sau các thủ thuật ngoại khoa nhổ răng thông thường tại phòng khám",
       "Dùng cấp cứu cắt các cơn đau quặn thận hoặc đau quặn gan cấp tính dữ dội tại khoa cấp cứu",
       "Dùng hạ sốt và giảm đau trong các bệnh lý nhiễm virus cấp tính như sốt xuất huyết Dengue",
-      "Chỉ dùng cho đau mạn tính liên tục (như đau ung thư) ở bệnh nhân đã dung nạp với Opioid"
+      "Chỉ dùng cho đau mạn tính liên tục ở bệnh nhân đã dung nạp với Opioid"
     ],
     "correct": 3,
     "explanation": "Miếng dán Fentanyl giải phóng chậm ổn định trong 72 giờ, chỉ dùng cho đau mạn tính dung nạp opioid (như ung thư).",
@@ -9527,7 +9530,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Thuốc chống trầm cảm ba vòng Amitriptylin ở liều thấp thường được chỉ định để điều trị tình trạng nào?",
     "options": [
-      "Đau thần kinh mạn tính (đau sau zona, đau do đái tháo đường) và dự phòng đau Migraine",
+      "Đau thần kinh mạn tính và dự phòng đau Migraine",
       "Chống phù nề mô mềm sau các phẫu thuật can thiệp chấn thương chỉnh hình chi dưới",
       "Cấp cứu cắt cơn đau quặn thận hoặc đau quặn mật do sỏi kẹt tại khoa hồi sức cấp cứu ngoại khoa",
       "Hạ nhiệt nhanh và cắt cơn co giật do sốt cao ở trẻ nhỏ lứa tuổi nhà trẻ mẫu giáo"
@@ -9581,7 +9584,7 @@ const ALL_EXAM_BANK = [
       "Chủ động tăng liều miếng dán giảm đau thẩm thấu qua da Fentanyl lên gấp 3 lần so với liều đang sử dụng",
       "Chuyển sang tiêm bắp dung dịch nước cất vô trùng để tạo phản ứng tâm lý trấn an người bệnh ung thư",
       "Bắt buộc người bệnh phải nhịn ăn uống tuyệt đối trong suốt toàn bộ thời gian diễn ra cơn đau cấp",
-      "Dùng thêm liều Opioid tác dụng nhanh, giải phóng tức thì (thường bằng 10-1/6 tổng liều 24h)"
+      "Dùng thêm liều Opioid tác dụng nhanh, giải phóng tức thì"
     ],
     "correct": 3,
     "explanation": "Đau bùng phát (breakthrough pain) xử trí bằng opioid giải phóng tức thì (IR) liều tương đương 1/6 đến 1/10 tổng liều 24h.",
@@ -9613,7 +9616,7 @@ const ALL_EXAM_BANK = [
     "question": "Thuốc nhuận tràng nào được khuyến cáo phối hợp thường quy ngay từ đầu khi kê đơn Morphin điều trị đau?",
     "options": [
       "Cho bệnh nhân uống dung dịch dầu khoáng đậm đặc trước các bữa ăn chính trong ngày",
-      "Thuốc nhuận tràng kích thích (như Senna, Bisacodyl) phối hợp thuốc làm mềm phân",
+      "Thuốc nhuận tràng kích thích phối hợp thuốc làm mềm phân",
       "Chỉ định thụt tháo đại tràng định kỳ hàng ngày bằng dung dịch nước muối sinh lý ấm",
       "Chỉ cần bổ sung các chế phẩm men vi sinh sống hỗ trợ cân bằng hệ vi khuẩn đường ruột"
     ],
@@ -9749,7 +9752,7 @@ const ALL_EXAM_BANK = [
     "question": "Thuốc chống viêm NSAID Indomethacin có chỉ định đặc biệt trong sản nhi khoa để điều trị bệnh lý nào?",
     "options": [
       "Kích thích trung tâm hô hấp ở trẻ sơ sinh bị các cơn ngừng thở sinh lý kéo dài",
-      "Đóng ống động mạch còn mở (PDA) ở trẻ sinh non thiếu tháng có rối loạn huyết động",
+      "Đóng ống động mạch còn mở ở trẻ sinh non thiếu tháng có rối loạn huyết động",
       "Điều trị hội chứng vàng da sơ sinh bẩm sinh do tăng bilirubin gián tiếp tự do trong máu",
       "Kích thích co hồi cơ tử cung gây chuyển dạ đẻ ở các trường hợp thai quá ngày sinh"
     ],
@@ -9853,7 +9856,7 @@ const ALL_EXAM_BANK = [
       "Cholecalciferol (Vitamin D3) được tổng hợp dưới da dưới tác động của tia cực tím",
       "25-hydroxycholecalciferol (Calcidiol) được tổng hợp chủ yếu qua enzym tại tế bào gan",
       "Ergocalciferol (Vitamin D2) có nguồn gốc tự nhiên từ các loài nấm và thực vật",
-      "1,25-dihydroxycholecalciferol (Calcitriol) là dạng hoạt tính sinh học trực tiếp tại thận"
+      "1,25-dihydroxycholecalciferol là dạng hoạt tính sinh học trực tiếp tại thận"
     ],
     "correct": 3,
     "explanation": "Calcitriol là hormon có hoạt tính sinh học cao nhất, được hydroxyl hóa ở thận bởi enzym 1-alpha-hydroxylase.",
@@ -9953,7 +9956,7 @@ const ALL_EXAM_BANK = [
     "question": "Thuốc giải độc đặc hiệu khi bệnh nhân bị quá liều thuốc chống đông máu Warfarin gây chảy máu là:",
     "options": [
       "Dung dịch tiêm truyền Natri clorid 0,9% đẳng trương truyền tĩnh mạch tốc độ nhanh",
-      "Vitamin K1 (Phytomenadion) đường tiêm tĩnh mạch chậm hoặc đường uống tùy mức độ INR",
+      "Vitamin K1 đường tiêm tĩnh mạch chậm hoặc đường uống tùy mức độ INR",
       "Vitamin C dạng dung dịch tiêm truyền tĩnh mạch liều cao để tăng cường sức bền thành mạch",
       "Dung dịch Glucose ưu trương 20% tiêm truyền tĩnh mạch để phục hồi năng lượng tế bào gan"
     ],
@@ -9971,7 +9974,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Hội chứng Guillain-Barré liệt vận động đối xứng hai bên tiến triển từ ngọn chi lên",
       "Bệnh lý thoái hóa myelin đa xơ cứng rải rác trong hệ thống thần kinh trung ương",
-      "Hội chứng não Wernicke (lú lẫn, thất điều, liệt vận nhãn) và loạn thần Korsakoff",
+      "Hội chứng não Wernicke và loạn thần Korsakoff",
       "Bệnh lý thoái hóa thoái triển Parkinson thể run vô căn ở người cao tuổi nghiện rượu"
     ],
     "correct": 2,
@@ -10057,7 +10060,7 @@ const ALL_EXAM_BANK = [
       "Bệnh lý thiếu máu bất sản tủy xương toàn bộ làm suy giảm đồng thời cả ba dòng tế bào máu",
       "Thiếu máu tan máu tự miễn do kháng thể kháng hồng cầu phá hủy màng hồng cầu trong lách",
       "Thiếu máu hồng cầu nhỏ nhược sắc do cạn kiệt nguồn sắt dự trữ ferritin trong cơ thể",
-      "Thiếu máu hồng cầu to khổng lồ (Megaloblastic anemia) kèm thoái hóa kết hợp tủy sống"
+      "Thiếu máu hồng cầu to khổng lồ kèm thoái hóa kết hợp tủy sống"
     ],
     "correct": 3,
     "explanation": "Thiếu B12 làm rối loạn tổng hợp ADN gây hồng cầu to (MCV > 100 fL) và thoái hóa kết hợp tủy sống (tê bì, mất cảm giác sâu).",
@@ -10089,7 +10092,7 @@ const ALL_EXAM_BANK = [
     "question": "Thiếu hụt Acid Folic (Vitamin B9) trong thai kỳ làm gia tăng rõ rệt dị tật bẩm sinh nào ở thai nhi?",
     "options": [
       "Dị tật teo hẹp thực quản bẩm sinh kèm theo rò khí thực quản phát hiện ngay sau khi sinh",
-      "Dị tật khuyết tật ống thần kinh thai nhi như tật nứt đốt sống (Spina bifida) và vô sọ",
+      "Dị tật khuyết tật ống thần kinh thai nhi như tật nứt đốt sống và vô sọ",
       "Dị tật thông liên thất tim bẩm sinh đơn thuần có luồng thông trái - phải qua vách liên thất",
       "Dị tật bàn chân khoèo bẩm sinh do tư thế chèn ép của thai trong buồng ối người mẹ"
     ],
@@ -10190,7 +10193,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Lạm dụng Vitamin C liều cao trên 2 gam mỗi ngày kéo dài có nguy cơ gây ra biến chứng sỏi thận loại nào?",
     "options": [
-      "Sỏi thận Struvit (Magnesi amoni phosphat) hình thành do nhiễm khuẩn tiết niệu sinh urease",
+      "Sỏi thận Struvit hình thành do nhiễm khuẩn tiết niệu sinh urease",
       "Sỏi thận Acid Uric hình thành do tình trạng tăng thoái giáng acid nucleic và purin kéo dài",
       "Sỏi thận Cystin hình thành do rối loạn di truyền trong quá trình tái hấp thu acid amin tại thận",
       "Sỏi thận Calci Oxalat do Vitamin C chuyển hóa thành acid oxalic kết hợp với canxi niệu"
@@ -10207,7 +10210,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Muối sắt đường uống hấp thu tối ưu nhất khi được uống vào thời điểm nào?",
     "options": [
-      "Uống lúc đói (trước ăn 1 giờ hoặc sau ăn 2 giờ) kèm nước cam giàu vitamin C hoặc nước lọc",
+      "Uống lúc đói kèm nước cam giàu vitamin C hoặc nước lọc",
       "Uống cùng lúc với một ấm trà xanh đặc đậm đặc để giảm cảm giác kích ứng buồn nôn dạ dày",
       "Uống chung với một ly sữa tươi đầy giàu canxi để bổ sung đồng thời cả sắt và canxi cho cơ thể",
       "Uống ngay sau khi vừa ăn no một bữa ăn thịnh soạn chứa nhiều dầu mỡ và chất béo động vật"
@@ -10243,7 +10246,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Hấp thu tối ưu nhất vào lúc sáng sớm khi dạ dày hoàn toàn trống rỗng không có thức ăn",
       "Nên nhai nát viên thuốc cùng lúc với các loại kháng sinh nhóm tetracyclin hoặc quinolon",
-      "Cần acid dạ dày để hòa tan nên uống cùng hoặc ngay sau ăn (người dùng PPI nên chọn Canxi citrat)",
+      "Cần acid dạ dày để hòa tan nên uống cùng hoặc ngay sau ăn",
       "Tuyệt đối không bao giờ có nguy cơ gây lắng đọng sỏi thận dù sử dụng với hàm lượng liều cao"
     ],
     "correct": 2,
@@ -10361,7 +10364,7 @@ const ALL_EXAM_BANK = [
     "question": "Thiếu hụt nguyên tố Đồng trong cơ thể có thể gây ra bệnh lý nào tương tự như thiếu sắt?",
     "options": [
       "Bệnh lý đa hồng cầu nguyên phát do tủy xương tăng sinh tế bào dòng hồng cầu mất kiểm soát",
-      "Thiếu máu hồng cầu nhỏ nhược sắc kháng trị với bổ sung sắt (do thiếu Ceruloplasmin vận chuyển)",
+      "Thiếu máu hồng cầu nhỏ nhược sắc kháng trị với bổ sung sắt",
       "Bệnh bạch cầu mạn tính dòng lympho kèm theo hạch to lan tỏa rải rác ở nhiều vị trí cơ thể",
       "Hội chứng tăng bạch cầu đơn nhân nhiễm trùng với sốt cao nổi hạch cổ và viêm họng giả mạc"
     ],
@@ -10411,7 +10414,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Bệnh ứ sắt mô di truyền (Hemochromatosis) đặc trưng bởi sự tích lũy quá mức của sắt tại các cơ quan:",
     "options": [
-      "Gan (xơ gan), tim (suy tim, loạn nhịp) và tuyến tụy (đái tháo đường da màu đồng thiếc)",
+      "Gan, tim và tuyến tụy",
       "Toàn bộ hệ thống sụn khớp và các móng tay móng chân gây biến dạng móng hình mặt kính đồng hồ",
       "Cấu trúc biểu mô phế nang và màng phổi hai bên gây hội chứng tràn dịch màng phổi dịch tiết",
       "Cơ quan thính giác và thị giác làm teo gai thị giác và điếc thần kinh giác quan không hồi phục"
@@ -10429,7 +10432,7 @@ const ALL_EXAM_BANK = [
     "question": "Biện pháp điều trị đầu tay cơ bản nhất cho bệnh nhân bị bệnh ứ sắt mô di truyền là gì?",
     "options": [
       "Uống nhiều sữa tươi nguyên kem mỗi ngày để bổ sung canxi cạnh tranh hấp thu với kim loại",
-      "Trích máu tĩnh mạch định kỳ (Phlebotomy) để loại bỏ lượng sắt dư thừa tích tụ trong cơ thể",
+      "Trích máu tĩnh mạch định kỳ để loại bỏ lượng sắt dư thừa tích tụ trong cơ thể",
       "Phẫu thuật cắt bỏ toàn bộ lách để giảm bớt sự phá hủy tế bào hồng cầu chứa sắt trong mô lách",
       "Uống thuốc lợi tiểu quai Furosemid liều cao kéo dài để thúc đẩy đào thải kim loại qua nước tiểu"
     ],
@@ -10465,7 +10468,7 @@ const ALL_EXAM_BANK = [
       "Bệnh cảnh xơ gan cổ trướng giai đoạn mất bù kèm theo hội chứng tăng áp lực tĩnh mạch cửa",
       "Hiện tượng lung lay và rụng hàng loạt các răng cửa hàm trên và hàm dưới tự phát ở người trẻ",
       "Khởi phát các cơn đau thắt ngực điển hình khi gắng sức do co thắt hệ thống động mạch vành tim",
-      "Viêm nứt mép miệng (lở mép), viêm lưỡi đỏ bóng đau rát, viêm môi và viêm da tiết bã nhờn"
+      "Viêm nứt mép miệng, viêm lưỡi đỏ bóng đau rát, viêm môi và viêm da tiết bã nhờn"
     ],
     "correct": 3,
     "explanation": "Thiếu riboflavin gây tổn thương niêm mạc da: nứt mép (cheilosis), viêm góc miệng và viêm lưỡi đỏ tươi.",
@@ -10651,7 +10654,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Thuốc chẹn beta, chẹn alpha-1 adrenergic, thuốc giãn mạch trực tiếp và thuốc an thần gây ngủ",
       "Thuốc hạ áp tác động trung ương, thuốc ức chế renin trực tiếp và muối magnesi sulfat",
-      "Ức chế men chuyển (ACEI), chẹn thụ thể (ARB), chẹn kênh calci (CCB) và lợi tiểu thiazid",
+      "Ức chế men chuyển, chẹn thụ thể Angiotensin II, chẹn kênh calci và lợi tiểu thiazid",
       "Thuốc lợi tiểu quai Furosemid, thuốc lợi tiểu giữ kali và dẫn xuất alcaloid reserpin"
     ],
     "correct": 2,
@@ -10683,7 +10686,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Phối hợp thuốc hạ huyết áp nào sau đây bị chống chỉ định do làm tăng biến cố tim mạch và suy thận?",
     "options": [
-      "Thuốc ức chế men chuyển phối hợp với thuốc chẹn thụ thể Angiotensin II (ACEI + ARB)",
+      "Thuốc ức chế men chuyển phối hợp với thuốc chẹn thụ thể Angiotensin II",
       "Thuốc chẹn kênh calci nhóm Dihydropyridin phối hợp với thuốc lợi tiểu nhóm Thiazid",
       "Thuốc chẹn thụ thể Angiotensin II phối hợp với thuốc lợi tiểu nhóm Thiazid liều thấp",
       "Thuốc ức chế men chuyển phối hợp với thuốc chẹn kênh calci Dihydropyridin kéo dài"
@@ -10701,7 +10704,7 @@ const ALL_EXAM_BANK = [
     "question": "Bệnh nhân tăng huyết áp có kèm bệnh đái tháo đường và đạm niệu nên ưu tiên chọn nhóm thuốc nào?",
     "options": [
       "Thuốc lợi tiểu quai Furosemid đơn thuần dùng ngắt quãng theo dõi lượng nước tiểu và điện giải đồ",
-      "Thuốc ức chế men chuyển (ACEI) hoặc thuốc chẹn thụ thể Angiotensin II (ARB) bảo vệ thận",
+      "Thuốc Ức chế men chuyển hoặc thuốc chẹn thụ thể Angiotensin II bảo vệ thận",
       "Thuốc chẹn beta giao cảm không chọn lọc như Propranolol dùng liều tăng dần từng bước",
       "Thuốc giãn mạch trực tiếp Hydralazin phối hợp với thuốc an thần giải lo âu kéo dài"
     ],
@@ -10737,7 +10740,7 @@ const ALL_EXAM_BANK = [
       "Bệnh nhân cao tuổi mắc bệnh lý thoái hóa khớp gối có chỉ định dùng thuốc giảm đau kháng viêm NSAID",
       "Bệnh nhân đái tháo đường typ 2 có tiền sử cơn gút cấp tính đang điều trị duy trì bằng allopurinol",
       "Bệnh nhân sau nhồi máu cơ tim có phân suất tống máu thất trái suy giảm nặng nề",
-      "Phụ nữ mang thai (quý 2, quý 3) và bệnh nhân hẹp động mạch thận hai bên (hoặc thận độc nhất)"
+      "Phụ nữ mang thai và bệnh nhân hẹp động mạch thận hai bên"
     ],
     "correct": 3,
     "explanation": "Chống chỉ định tuyệt đối: có thai, hẹp ĐM thận 2 bên (hoặc hẹp ĐM thận độc nhất), tiền sử phù mạch do ACEI.",
@@ -10819,7 +10822,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Thuốc hạ áp chẹn beta giao cảm nào sau đây có tính chọn lọc cao trên thụ thể Beta-1 ở tim?",
     "options": [
-      "Bisoprolol, Metoprolol và Nebivolol (thuộc nhóm chẹn chọn lọc Beta-1 ở tim)",
+      "Bisoprolol, Metoprolol và Nebivolol",
       "Propranolol và Nadolol (chẹn beta không chọn lọc trên cả thụ thể Beta-1 và Beta-2)",
       "Carvedilol và Labetalol (chẹn hỗn hợp cả thụ thể Beta và thụ thể Alpha-1 ngoại vi)",
       "Sotalol và Timolol (chẹn beta không chọn lọc có kèm tác dụng chống loạn nhịp tim)"
@@ -10837,7 +10840,7 @@ const ALL_EXAM_BANK = [
     "question": "Thuốc chẹn beta giao cảm Carvedilol có cơ chế tác dụng hạ huyết áp độc đáo là phối hợp giữa:",
     "options": [
       "Ức chế men chuyển tại phổi kết hợp tăng tái hấp thu ion kali tại ống thận người bệnh",
-      "Chẹn không chọn lọc thụ thể Beta (Beta-1, Beta-2) kết hợp chẹn thụ thể Alpha-1 gây giãn mạch",
+      "Chẹn không chọn lọc thụ thể Beta kết hợp chẹn thụ thể Alpha-1 gây giãn mạch",
       "Chẹn chọn lọc thụ thể Beta-1 ở cơ tim kết hợp kích thích tế bào cạnh cầu thận tăng bài tiết Renin",
       "Chẹn kênh Calci typ L trên màng cơ trơn kết hợp kích thích thụ thể Muscarinic phó giao cảm"
     ],
@@ -10905,7 +10908,7 @@ const ALL_EXAM_BANK = [
     "question": "Thuốc lợi tiểu Thiazid giảm dần hiệu quả hạ huyết áp rõ rệt khi mức lọc cầu thận eGFR giảm xuống:",
     "options": [
       "Mức lọc cầu thận eGFR giảm xuống dưới 120 mL/phút/1,73m2 diện tích da cơ thể người bệnh",
-      "Mức lọc cầu thận eGFR giảm xuống dưới 30 mL/phút/1,73m2 (khi đó nên đổi sang lợi tiểu quai)",
+      "Mức lọc cầu thận eGFR giảm xuống dưới 30 mL/phút/1,73m2",
       "Mức lọc cầu thận eGFR giảm xuống dưới 60 mL/phút/1,73m2 ở người cao tuổi có xơ vữa mạch máu",
       "Mức lọc cầu thận eGFR giảm xuống dưới 90 mL/phút/1,73m2 kèm theo đạm niệu vi thể trên xét nghiệm"
     ],
@@ -11006,10 +11009,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Thuốc giãn mạch trực tiếp Hydralazin dùng hạ áp kéo dài có thể gây ra hội chứng giống bệnh tự miễn nào?",
     "options": [
-      "Hội chứng xơ cứng bì toàn thể tiến triển (Systemic sclerosis) gây xơ hóa các cơ quan nội tạng",
+      "Hội chứng xơ cứng bì toàn thể tiến triển gây xơ hóa các cơ quan nội tạng",
       "Hội chứng thận hư nguyên phát kèm theo tình trạng phù toàn thân và tràn dịch đa màng dịch cơ thể",
       "Hội chứng viêm đa cơ tự miễn dẫn đến yếu cơ gốc chi và tăng men creatin kinase máu ngoại vi",
-      "Hội chứng Lupus ban đỏ do thuốc (Drug-induced lupus) kèm xuất hiện kháng thể kháng nhân ANA"
+      "Hội chứng Lupus ban đỏ do thuốc kèm xuất hiện kháng thể kháng nhân ANA"
     ],
     "correct": 3,
     "explanation": "Hydralazin (đặc biệt ở người acetyl hóa chậm) có thể gây hội chứng Lupus do thuốc với kháng thể kháng histon.",
@@ -11091,7 +11094,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Bệnh nhân tăng huyết áp có phì đại lành tính tuyến tiền liệt, nhóm thuốc nào mang lại lợi ích kép?",
     "options": [
-      "Thuốc chẹn thụ thể Alpha-1 (Doxazosin, Terazosin) vừa hạ áp vừa giảm triệu chứng đường tiểu",
+      "Thuốc chẹn thụ thể Alpha-1 vừa hạ áp vừa giảm triệu chứng đường tiểu",
       "Thuốc lợi tiểu Thiazid giúp tăng bài xuất nước tiểu làm sạch lòng đường tiết niệu người bệnh",
       "Thuốc chẹn kênh calci DHP tác dụng kéo dài giúp giãn cơ vòng bàng quang và niệu đạo",
       "Thuốc ức chế men chuyển ngăn ngừa biến chứng xơ hóa tiến triển của mô tuyến tiền liệt"
@@ -11213,7 +11216,7 @@ const ALL_EXAM_BANK = [
       "Kích thích thụ thể Alpha-2 trung ương làm giảm dòng xung động giao cảm ly tâm truyền xuống ngoại vi",
       "Tăng cường hoạt tính giáng hóa và phân hủy phân tử peptid giãn mạch Bradykinin trong tuần hoàn máu",
       "Phong bế hoàn toàn các kênh Calci phụ thuộc điện thế trên màng tế bào cơ trơn tiểu động mạch",
-      "Kích thích thụ thể Beta-3 giải phóng Nitric Oxide (NO) từ tế bào nội mô gây giãn mạch máu"
+      "Kích thích thụ thể Beta-3 giải phóng Nitric Oxide từ tế bào nội mô gây giãn mạch máu"
     ],
     "correct": 3,
     "explanation": "Nebivolol kích thích thụ thể beta-3 nội mô tăng tổng hợp NO gây giãn mạch và giảm sức cản ngoại vi.",
@@ -11263,7 +11266,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Hạ ngay lập tức số đo huyết áp tâm thu xuống dưới 90 mmHg để ngăn chặn chảy máu tái phát",
       "Sử dụng các thuốc co mạch nâng số đo huyết áp tâm thu lên trên 220 mmHg để duy trì dòng máu não",
-      "Hạ huyết áp tâm thu xuống khoảng 140 mmHg một cách thận trọng (trong khoảng 130 - 140 mmHg)",
+      "Hạ huyết áp tâm thu xuống khoảng 140 mmHg một cách thận trọng",
       "Chống chỉ định hạ huyết áp nhằm duy trì tối đa áp lực tưới máu não xung quanh ổ xuất huyết"
     ],
     "correct": 2,
@@ -11313,9 +11316,9 @@ const ALL_EXAM_BANK = [
     "question": "Tác dụng phụ nhịp tim nhanh phản xạ thường gặp nhất ở nhóm thuốc hạ áp nào sau đây?",
     "options": [
       "Thuốc chẹn chọn lọc trên thụ thể beta-1 adrenergic ở tim như Bisoprolol",
-      "Thuốc chẹn kênh calci DHP tác dụng ngắn (như Nifedipin phóng thích nhanh)",
+      "Thuốc chẹn kênh calci DHP tác dụng ngắn",
       "Thuốc ức chế men chuyển ức chế chuyển hóa Angiotensin I thành Angiotensin II",
-      "Thuốc chẹn kênh calci nhóm Non-DHP (như Verapamil hoặc Diltiazem ức chế nút xoang)"
+      "Thuốc chẹn kênh calci nhóm Non-DHP"
     ],
     "correct": 1,
     "explanation": "DHP tác dụng ngắn gây giãn tiểu động mạch nhanh làm giảm áp lực kích thích baroreceptor gây phản xạ tim đập nhanh.",
@@ -11431,7 +11434,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Bệnh nhân tăng huyết áp có hội chứng mạch vành mạn tính ổn định, nhóm thuốc bắt buộc chỉ định là:",
     "options": [
-      "Thuốc chẹn beta giao cảm (giảm nhu cầu oxy cơ tim) và ức chế men chuyển (bảo vệ cấu trúc tim)",
+      "Thuốc chẹn beta giao cảm và ức chế men chuyển",
       "Thuốc lợi tiểu quai Furosemid liều cao đơn độc dùng liên tục kéo dài suốt đời người bệnh",
       "Thuốc hạ áp tác động lên hệ thần kinh trung ương Clonidin dùng liều khởi đầu cao ngắt quãng",
       "Thuốc giãn mạch trực tiếp tiểu động mạch Hydralazin phối hợp với chế độ ăn kiêng muối nghiêm ngặt"
@@ -11499,7 +11502,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Biện pháp không dùng thuốc nào sau đây giúp giảm huyết áp hiệu quả nhất ở người béo phì?",
     "options": [
-      "Giảm cân nặng đưa chỉ số khối cơ thể (BMI) về mức lý tưởng (giảm 1 kg giảm ~1 mmHg huyết áp)",
+      "Giảm cân nặng đưa chỉ số khối cơ thể về mức lý tưởng",
       "Áp dụng chế độ ngủ nghỉ liên tục trên 14 tiếng mỗi ngày để giảm thiểu tiêu hao năng lượng cơ thể",
       "Tắm nước đá lạnh vào mùa đông để kích hoạt các thụ thể nhiệt ngoại vi làm tăng trương lực mao mạch",
       "Thay thế hoàn toàn các bữa ăn chính trong ngày bằng các loại nước giải khát đóng chai có đường"
@@ -11517,7 +11520,7 @@ const ALL_EXAM_BANK = [
     "question": "Chế độ ăn kiêng DASH được khuyến cáo cho người tăng huyết áp có đặc điểm dinh dưỡng là:",
     "options": [
       "Chế độ ăn ưu tiên sử dụng các loại mỡ động vật chiên đi chiên lại nhiều lần ở nhiệt độ cao",
-      "Giàu rau xanh, quả chín, ngũ cốc nguyên hạt, sữa ít béo, giảm mỡ bão hòa và hạn chế muối (< 5g muối/ngày)",
+      "Giàu rau xanh, quả chín, ngũ cốc nguyên hạt, sữa ít béo, giảm mỡ bão hòa và hạn chế muối",
       "Tập trung dung nạp nhiều loại thịt đỏ, xúc xích và các món ăn chế biến từ nội tạng động vật",
       "Chế độ ăn nhiều thực phẩm đóng hộp, đồ muối chua lên men chứa hàm lượng muối natri đậm đặc"
     ],
@@ -11552,7 +11555,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Thuốc ức chế men chuyển Enalapril kết hợp với thuốc lợi tiểu quai Furosemid liều thấp",
       "Thuốc chẹn thụ thể Angiotensin II Losartan kết hợp với thuốc lợi tiểu kháng Aldosteron",
-      "Thuốc chẹn kênh calci non-DHP (Verapamil, Diltiazem) do tác dụng ức chế co bóp cơ tim mạnh",
+      "Thuốc chẹn kênh calci non-DHP do tác dụng ức chế co bóp cơ tim mạnh",
       "Thuốc chẹn beta giao cảm thế hệ mới có hoạt tính chọn lọc cao như Bisoprolol hoặc Carvedilol"
     ],
     "correct": 2,
@@ -11603,7 +11606,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Thời gian đợt bệnh diễn biến kéo dài đúng 24 giờ đồng hồ rồi tự động khỏi dứt điểm",
       "Bệnh cảnh chỉ diễn ra cấp tính trong vòng 2 đến 3 giờ đầu tiên rồi thuyên giảm hoàn toàn",
-      "Thường kéo dài từ 5 đến 7 ngày (hiếm khi quá 14 ngày) và có tính chất tự giới hạn",
+      "Thường kéo dài từ 5 đến 7 ngày và có tính chất tự giới hạn",
       "Diễn biến mạn tính kéo dài liên tục trên 3 tháng đòi hỏi phải can thiệp nuôi dưỡng tĩnh mạch"
     ],
     "correct": 2,
@@ -11703,7 +11706,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Phác đồ B của WHO được áp dụng cho trường hợp trẻ bị tiêu chảy cấp có mức độ mất nước nào?",
     "options": [
-      "Trẻ có dấu hiệu Có mất nước (mất nước nhẹ đến trung bình), bù Oresol 75 mL/kg trong 4 giờ tại y tế",
+      "Trẻ có dấu hiệu Có mất nước, bù Oresol 75 mL/kg trong 4 giờ tại y tế",
       "Trẻ bị sốc mất nước nặng li bì hôn mê cần đặt ngay đường truyền tĩnh mạch hồi sức cấp cứu tích cực khẩn cấp",
       "Trẻ có biểu hiện xuất huyết đường tiêu hóa trên nôn ra máu tươi hoặc đi ngoài phân đen sẫm màu",
       "Trẻ hoàn toàn không có bất kỳ dấu hiệu mất nước nào và có thể cho về tự chăm sóc theo dõi tại nhà"
@@ -11721,7 +11724,7 @@ const ALL_EXAM_BANK = [
     "question": "Lượng dung dịch Oresol cần bù cho trẻ trong 4 giờ đầu theo Phác đồ B được tính theo công thức:",
     "options": [
       "Lấy cân nặng của trẻ tính bằng kg nhân với 20 mL dung dịch Oresol uống rải rác đều trong 4 giờ",
-      "Lượng Oresol (mL) trong 4 giờ đầu = Cân nặng (kg) x 75 mL (hoặc tính theo bảng lứa tuổi của WHO)",
+      "Lượng Oresol trong 4 giờ đầu = Cân nặng x 75 mL",
       "Lấy cân nặng của trẻ tính bằng kg nhân với 150 mL dung dịch Oresol uống chia đều trong suốt cả ngày",
       "Cố định một lượng dung dịch 500 mL cho tất cả mọi trẻ em ở mọi lứa tuổi và cân nặng thể trạng khác nhau"
     ],
@@ -11754,7 +11757,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Dung dịch truyền tĩnh mạch cấp cứu được lựa chọn ưu tiên hàng đầu trong Phác đồ C của WHO là:",
     "options": [
-      "Dung dịch Ringer lactat (hoặc dung dịch muối đẳng trương NaCl 0,9% nếu không có sẵn Ringer lactat)",
+      "Dung dịch Ringer lactat",
       "Dung dịch Glucose ưu trương 10% kết hợp truyền chậm dung dịch Albumin người đậm đặc theo dõi áp lực tĩnh mạch trung tâm",
       "Dung dịch Natri hydrocarbonat 8,4% truyền tĩnh mạch thật nhanh để kiềm hóa máu toàn thân",
       "Dung dịch cao phân tử Dextran 40 kết hợp tiêm tĩnh mạch thuốc lợi tiểu quai Furosemid"
@@ -11873,7 +11876,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Kháng sinh có được chỉ định thường quy cho trẻ em bị tiêu chảy cấp không?",
     "options": [
-      "Không, chỉ dùng khi có phân nhầy máu (lỵ), nghi ngờ tả nặng có mất nước, hoặc nhiễm trùng phối hợp",
+      "Không, chỉ dùng khi có phân nhầy máu, nghi ngờ tả nặng có mất nước, hoặc nhiễm trùng phối hợp",
       "Bắt buộc dùng kháng sinh phổ rộng cho tất cả mọi trường hợp tiêu chảy cấp bất kể căn nguyên gây bệnh",
       "Chỉ dùng kháng sinh khi kết quả xét nghiệm bạch cầu máu ngoại vi của trẻ tăng nhẹ trên 10 G/L",
       "Chỉ định kháng sinh thường quy liên tục trong 14 ngày để phòng ngừa nhiễm trùng huyết thứ phát"
@@ -11893,7 +11896,7 @@ const ALL_EXAM_BANK = [
       "Tiêu chảy kéo dài do bất dung nạp đường lactose thứ phát sau tổn thương các vi nhung mao ruột non",
       "Tiêu chảy thẩm thấu do lạm dụng quá nhiều các loại thuốc nhuận tràng muối vô cơ đường uống",
       "Tiêu chảy do nhiễm virus Rotavirus thông thường không có biến chứng xâm lấn niêm mạc lòng ruột",
-      "Hội chứng lỵ (do Shigella hoặc Campylobacter) cần được chỉ định kháng sinh thích hợp"
+      "Hội chứng lỵ cần được chỉ định kháng sinh thích hợp"
     ],
     "correct": 3,
     "explanation": "Phân máu kèm sốt là dấu hiệu viêm loét đại tràng do vi khuẩn xâm lấn (Shigella), bắt buộc dùng kháng sinh.",
@@ -12043,7 +12046,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Dấu hiệu nếp véo da bụng mất rất chậm (trên 2 giây) phản ánh tình trạng gì của cơ thể trẻ?",
     "options": [
-      "Tình trạng mất nước nặng (mất > 10% thể trọng) đe dọa thể tích tuần hoàn",
+      "Tình trạng mất nước nặng đe dọa thể tích tuần hoàn",
       "Trẻ có lớp mỡ dưới da phát triển quá dày làm giảm tính đàn hồi của thành bụng",
       "Đây là một hiện tượng sinh lý hoàn toàn bình thường ở tất cả trẻ em khỏe mạnh",
       "Dấu hiệu đặc trưng của bệnh lý suy dinh dưỡng thể phù do thiếu hụt chất đạm"
@@ -12061,7 +12064,7 @@ const ALL_EXAM_BANK = [
     "question": "Biến chứng toan chuyển hóa trong tiêu chảy cấp nặng ở trẻ em chủ yếu là do mất chất gì qua phân?",
     "options": [
       "Mất ion Canxi và ion Magnesi qua niêm mạc ruột non dẫn đến cơn co cứng cơ tetany cấp tính nguy hiểm",
-      "Mất lượng lớn ion Bicarbonat (HCO3-) qua phân lỏng kết hợp giảm tưới máu mô gây toan lactic",
+      "Mất lượng lớn ion Bicarbonat qua phân lỏng kết hợp giảm tưới máu mô gây toan lactic",
       "Mất quá nhiều acid hydrocloric dạ dày qua phân làm giảm dự trữ kiềm của hệ thống đệm máu",
       "Tích lũy các thể ceton trong máu do tình trạng đói ăn năng lượng kéo dài ở trẻ tiêu chảy"
     ],
@@ -12079,7 +12082,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Phù toàn thân có vết lõm sâu khi ấn ngón tay vào mặt trước xương chày hai bên",
       "Tăng phản xạ gân xương sâu quá mức kèm theo các cơn co giật cục bộ toàn thân",
-      "Trướng bụng, giảm nhu động ruột (nguy cơ liệt ruột), yếu cơ toàn thân và loạn nhịp tim",
+      "Trướng bụng, giảm nhu động ruột, yếu cơ toàn thân và loạn nhịp tim",
       "Khởi phát cơn co cứng cơ toàn thân tetani và cứng hàm kiểu uốn ván ngoại khoa"
     ],
     "correct": 2,
@@ -12129,7 +12132,7 @@ const ALL_EXAM_BANK = [
     "question": "Tại sao không được pha dung dịch Oresol vào nước khoáng hoặc nước ngọt có ga?",
     "options": [
       "Vì các khoáng chất trong nước khoáng làm dung dịch Oresol bốc mùi hôi khó chịu và biến màu thuốc",
-      "Làm sai lệch áp lực thẩm thấu (thành ưu trương gây kéo nước vào ruột) và sai tỷ lệ ion",
+      "Làm sai lệch áp lực thẩm thấu và sai tỷ lệ ion",
       "Vì nước khoáng có chứa các chất oxy hóa làm Oresol biến tính thành chất độc hại gây ngộ độc gan",
       "Vì chất tạo màu trong nước ngọt làm biến đổi màu sắc nhận diện của dung dịch Oresol khi pha"
     ],
@@ -12147,7 +12150,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Đường phun sương nhỏ mũi định liều qua niêm mạc mũi họng của trẻ nhỏ",
       "Đường tiêm trong da ở vùng mặt trước cẳng tay tương tự kỹ thuật tiêm BCG",
-      "Đường uống với 2 hoặc 3 liều tùy loại vắc xin (bắt đầu từ 6 tuần tuổi)",
+      "Đường uống với 2 hoặc 3 liều tùy loại vắc xin",
       "Đường tiêm bắp sâu ở vùng mặt trước ngoài đùi trẻ sơ sinh và trẻ nhỏ"
     ],
     "correct": 2,
@@ -12197,7 +12200,7 @@ const ALL_EXAM_BANK = [
     "question": "Tiêu chảy thẩm thấu xảy ra do sự hiện diện của chất nào trong lòng ruột cản trở hấp thu nước?",
     "options": [
       "Độc tố vi khuẩn tả kích thích trực tiếp enzym Adenylate cyclase làm tăng tiết ồ ạt ion Clo và nước vào trong lòng ruột",
-      "Sự tích tụ các phân tử hòa tan không hấp thu được (như đường Lactose, Sorbitol) giữ nước trong lòng ruột",
+      "Sự tích tụ các phân tử hòa tan không hấp thu được giữ nước trong lòng ruột",
       "Tổn thương viêm trợt loét sâu phá hủy các mao mạch niêm mạc ruột gây xuất huyết rỉ rả kéo dài",
       "Sự tăng co bóp nhu động cơ trơn thành ruột quá mức do kích thích phó giao cảm đám rối Meissner"
     ],
@@ -12247,7 +12250,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Thuốc chống nôn Ondansetron có thể được cân nhắc dùng một liều duy nhất trong tiêu chảy cấp khi:",
     "options": [
-      "Trẻ nôn nhiều cản trở việc bù dịch bằng Oresol (cân nhắc 1 liều duy nhất theo cân nặng)",
+      "Trẻ nôn nhiều cản trở việc bù dịch bằng Oresol",
       "Sử dụng với mục đích cầm tiêu chảy cấp tính ngay lập tức trong vòng 10 đến 15 phút sau uống thuốc",
       "Chỉ được phép sử dụng khi trẻ xuất hiện các cơn co giật toàn thân do sốt cao co giật tại phòng khám",
       "Tất cả mọi đối tượng trẻ em bị tiêu chảy cấp đều bắt buộc phải dùng thuốc thường quy để chống nôn"
@@ -12315,7 +12318,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Nước cháo muối là dung dịch thay thế dân gian an toàn trong Phác đồ A được nấu theo tỷ lệ nào?",
     "options": [
-      "Một nắm gạo tẻ, một nhúm muối nhỏ (khoảng 3,5g) và một lít nước đun sôi kỹ",
+      "Một nắm gạo tẻ, một nhúm muối nhỏ và một lít nước đun sôi kỹ",
       "Hòa tan muối ăn vào các loại nước ngọt hoa quả đóng lon có sẵn trên thị trường",
       "Nửa bát muối ăn nguyên chất hòa tan với một lít nước sôi để nguội cho trẻ uống",
       "Nấu cháo thật đặc sánh không cho thêm nước để giữ nguyên hàm lượng tinh bột ruột"
@@ -12351,7 +12354,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Chỉ số dung tích sống gắng sức FVC luôn luôn suy giảm nặng nề dưới 50% mức dự đoán của người bệnh",
       "Kết quả xét nghiệm khí máu động mạch luôn ghi nhận tình trạng toan chuyển hóa nặng nề khó bù trừ",
-      "Tắc nghẽn luồng khí có tính hồi phục đáng kể sau test giãn phế quản (FEV1 tăng > 12% và 200mL)",
+      "Tắc nghẽn luồng khí có tính hồi phục đáng kể sau test giãn phế quản",
       "Tắc nghẽn đường thở cố định không có bất kỳ sự hồi phục nào sau khi hít thuốc giãn phế quản thử nghiệm"
     ],
     "correct": 2,
@@ -12419,7 +12422,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Thời gian bán thải kéo dài trên 48 giờ nên chỉ cần hít thuốc một lần mỗi tuần một lần",
       "Có tác dụng kháng viêm trực tiếp ức chế giải phóng các hóa ứng động tương đương corticoid",
-      "Khởi phát tác dụng giãn cơ trơn phế quản rất nhanh (1 - 3 phút) tương tự như Salbutamol",
+      "Khởi phát tác dụng giãn cơ trơn phế quản rất nhanh tương tự như Salbutamol",
       "Hoàn toàn không có thụ thể beta-2 trên cơ tim nên không gây ra tác dụng phụ hồi hộp trống ngực"
     ],
     "correct": 2,
@@ -12451,7 +12454,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Tác dụng phụ thường gặp nhất của thuốc chủ vận Beta-2 như Salbutamol thể hiện qua triệu chứng:",
     "options": [
-      "Run đầu chi (đặc biệt ngón tay), tim đập nhanh hồi hộp đánh trống ngực và hạ Kali máu",
+      "Run đầu chi, tim đập nhanh hồi hộp đánh trống ngực và hạ Kali máu",
       "Liệt dây thần kinh số VII ngoại biên gây méo miệng và mất nếp nhăn trán một bên",
       "Xuất huyết dưới da dạng chấm nốt rải rác ở hai cẳng chân do suy giảm số lượng tiểu cầu",
       "Mất hoàn toàn cảm giác vị giác trên bề mặt lưỡi kéo dài nhiều tháng sau khi dùng thuốc"
@@ -12555,7 +12558,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Ức chế enzym Cyclooxygenase-2 cảm ứng tại các ổ viêm đường thở của phế quản",
       "Phong bế thụ thể Histamin H1 trên màng tế bào cơ trơn khí phế quản người bệnh",
-      "Kháng trực tiếp Interleukin-5 (IL-5) hoặc thụ thể IL-5R giúp giảm bạch cầu ái toan trong máu",
+      "Kháng trực tiếp Interleukin-5 hoặc thụ thể IL-5R giúp giảm bạch cầu ái toan trong máu",
       "Kháng trực tiếp Interleukin-2 ngăn cản sự biệt hóa của các dòng tế bào lympho T"
     ],
     "correct": 2,
@@ -12589,7 +12592,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Chống chỉ định tuyệt đối corticoid toàn thân vì nguy cơ gây suy giảm miễn dịch và nhiễm trùng cơ hội",
       "Chỉ dùng corticoid dạng khí dung qua bình xịt định liều MDI kết hợp buồng đệm ở liều khởi đầu thấp cho trẻ em",
-      "Corticoid toàn thân đường uống hoặc tiêm sớm (như Prednisolon, Methylprednisolon) giúp giảm tái phát",
+      "Corticoid toàn thân đường uống hoặc tiêm sớm giúp giảm tái phát",
       "Chỉ định dùng kéo dài liên tục trong ít nhất 6 tháng sau khi cơn hen cấp tính đã được kiểm soát ổn"
     ],
     "correct": 2,
@@ -12673,7 +12676,7 @@ const ALL_EXAM_BANK = [
     "question": "Chỉ định bổ sung thêm Corticoid dạng hít vào phác đồ LABA/LAMA (liệu pháp bộ ba) cho bệnh nhân COPD khi nào?",
     "options": [
       "Bệnh nhân hoàn toàn không có bất kỳ đợt kịch phát nào trong suốt năm điều trị vừa qua",
-      "Bệnh nhân có tiền sử đợt cấp (≥ 2 đợt/năm hoặc ≥ 1 đợt nhập viện) và bạch cầu ái toan máu ≥ 300/mcL",
+      "Bệnh nhân có tiền sử đợt cấp và bạch cầu ái toan máu ≥ 300/mcL",
       "Số lượng tế bào bạch cầu ái toan đo được trong công thức máu ngoại vi hoàn toàn bằng 0",
       "Bệnh nhân có tiền sử viêm phổi tái phát nhiều lần trong các tháng mùa đông vừa qua"
     ],
@@ -12709,7 +12712,7 @@ const ALL_EXAM_BANK = [
       "Làm tan các cục đờm đặc quánh tức thì trong vòng 5 phút sau khi uống thuốc vào dạ dày",
       "Cắt các cơn khó thở cấp tính ngay lập tức thay thế hoàn toàn cho các loại thuốc xịt hít",
       "Tiêu diệt trực tiếp các chủng trực khuẩn mủ xanh thường trú sâu bên trong các tiểu phế quản",
-      "Giảm tần suất đợt kịch phát ở bệnh nhân COPD nặng (FEV1 < 50%), viêm phế quản mạn và hay có đợt cấp"
+      "Giảm tần suất đợt kịch phát ở bệnh nhân COPD nặng, viêm phế quản mạn và hay có đợt cấp"
     ],
     "correct": 3,
     "explanation": "Roflumilast đường uống chống viêm nội bào, giảm đợt cấp ở COPD thể viêm phế quản mạn có FEV1 < 50% dự đoán.",
@@ -12741,7 +12744,7 @@ const ALL_EXAM_BANK = [
     "question": "Thuốc tiêu nhầy N-Acetylcystein dạng uống hoặc khí dung làm loãng đờm nhờ cơ chế nào?",
     "options": [
       "Làm đông vón các sợi tơ huyết fibrin có trong chất nhầy dịch tiết của đường hô hấp",
-      "Cắt đứt các cầu nối disulfid (-S-S-) của mucoprotein, làm giảm độ nhớt và loãng đờm",
+      "Cắt đứt các cầu nối disulfid của mucoprotein, làm giảm độ nhớt và loãng đờm",
       "Phá hủy cấu trúc màng lipid của các tế bào biểu mô phế quản để tống xuất chất nhầy",
       "Kích thích các phế nang bài tiết thật nhiều nước dịch để pha loãng cơ học các cục đờm"
     ],
@@ -12759,7 +12762,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "PaO2 dao động trong khoảng từ 60 đến 70 mmHg khi nghỉ ngơi không có biến chứng kèm theo",
       "PaO2 dao động trong khoảng từ 70 đến 80 mmHg khi nghỉ ngơi và không có dấu hiệu suy hô hấp",
-      "PaO2 ≤ 55 mmHg (hoặc SaO2 ≤ 88%) khi nghỉ, hoặc PaO2 56 - 59 mmHg kèm tâm phế mạn/đa hồng cầu",
+      "PaO2 ≤ 55 mmHg khi nghỉ, hoặc PaO2 56 - 59 mmHg kèm tâm phế mạn/đa hồng cầu",
       "Chỉ định rộng rãi cho tất cả mọi mức oxy máu bất kể có suy hô hấp hay không có triệu chứng"
     ],
     "correct": 2,
@@ -12791,7 +12794,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Hai loại vắc xin bắt buộc phải tiêm phòng định kỳ hàng năm hoặc nhắc lại cho bệnh nhân COPD là:",
     "options": [
-      "Vắc xin cúm mùa hàng năm và Vắc xin phòng phế cầu khuẩn (PCV13, PPSV23)",
+      "Vắc xin cúm mùa hàng năm và Vắc xin phòng phế cầu khuẩn",
       "Vắc xin phòng bệnh dại tiêm bắp và vắc xin giải độc tố uốn ván hấp phụ định kỳ",
       "Vắc xin phòng bệnh sốt xuất huyết Dengue và vắc xin sống phòng bệnh sởi quai bị",
       "Vắc xin phòng bệnh tả đường uống và vắc xin phòng bệnh thương hàn dạng tiêm"
@@ -12809,7 +12812,7 @@ const ALL_EXAM_BANK = [
     "question": "Thuốc chẹn beta giao cảm nào sau đây an toàn hơn khi bắt buộc phải dùng cho bệnh nhân COPD có bệnh tim mạch?",
     "options": [
       "Chẹn beta không chọn lọc như Propranolol vì có thêm tác dụng an thần kinh trung ương chống lo âu hồi hộp",
-      "Chẹn chọn lọc Beta-1 ở liều thấp (như Bisoprolol, Metoprolol succinat) ít ảnh hưởng cơ trơn phế quản",
+      "Chẹn chọn lọc Beta-1 ở liều thấp ít ảnh hưởng cơ trơn phế quản",
       "Chẹn beta có hoạt tính giao cảm nội sinh ISA cao như Pindolol để duy trì nhịp tim luôn nhanh ổn định",
       "Chẹn đồng thời cả thụ thể Alpha-1 và Beta giao cảm như Labetalol ở mức liều lượng tối đa của thuốc"
     ],
@@ -12826,7 +12829,7 @@ const ALL_EXAM_BANK = [
     "question": "Trong đợt cấp COPD có dấu hiệu bội nhiễm vi khuẩn (Tam chứng Anthonisen), chỉ định dùng kháng sinh khi có:",
     "options": [
       "Chỉ cần xuất hiện một triệu chứng ho khan đơn thuần không kèm theo bất kỳ biến đổi nào khác về đờm",
-      "Khi có ít nhất 2 trong 3 triệu chứng (tăng khó thở, tăng thể tích đờm, đờm mủ), bắt buộc có đờm mủ",
+      "Khi có ít nhất 2 trong 3 triệu chứng, bắt buộc có đờm mủ",
       "Bắt buộc phải chờ kết quả cấy đờm tìm vi khuẩn sau 72 giờ mới được phép bắt đầu chỉ định kháng sinh",
       "Chỉ dùng kháng sinh khi bệnh nhân xuất hiện sốt cao co giật và có hình ảnh tổn thương áp xe phổi"
     ],
@@ -12963,7 +12966,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Khởi phát tức thì sau 1 phút và thời gian duy trì hiệu lực kéo dài liên tục suốt 24 giờ sau một lần hít",
       "Khởi phát rất chậm sau 2 đến 3 giờ và hiệu lực giãn phế quản duy trì kéo dài trong suốt 48 giờ liên tục",
-      "Khởi phát sau 15 đến 30 phút (chậm hơn SABA) và thời gian tác dụng kéo dài khoảng 4 đến 6 giờ",
+      "Khởi phát sau 15 đến 30 phút và thời gian tác dụng kéo dài khoảng 4 đến 6 giờ",
       "Duy trì nồng độ thuốc ổn định và hiệu lực giãn phế quản liên tục trong suốt 1 tuần lễ sau hít thở"
     ],
     "correct": 2,
@@ -12981,7 +12984,7 @@ const ALL_EXAM_BANK = [
       "Triệt tiêu hoàn toàn 100% các tác dụng không mong muốn hồi hộp đánh trống ngực của Salbutamol",
       "Thay thế hoàn toàn nhu cầu sử dụng liệu pháp oxy thở qua gọng kính của người bệnh cấp cứu",
       "Kích hoạt hệ thống đông máu làm tăng đông máu vi mạch để bảo vệ niêm mạc đường thở tổn thương",
-      "Hiệp đồng giãn phế quản: kích thích Beta-2 (SABA) kết hợp phong bế Muscarinic M3 (SAMA)"
+      "Hiệp đồng giãn phế quản: kích thích Beta-2 kết hợp phong bế Muscarinic M3"
     ],
     "correct": 3,
     "explanation": "Kích thích beta-2 (giãn cơ trực tiếp) + ức chế muscarinic (chống co thắt cholinergic) đem lại hiệu quả giãn phế quản tối ưu.",
@@ -13131,7 +13134,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Cơ chế tác dụng phân tử của nhóm thuốc Bisphosphonat chứa nitơ trên tế bào hủy xương là:",
     "options": [
-      "Ức chế enzym Farnesyl pyrophosphate (FPP) synthase, gây chết theo chương trình của hủy cốt bào",
+      "Ức chế enzym Farnesyl pyrophosphate synthase, gây chết theo chương trình của hủy cốt bào",
       "Kích thích quá trình hấp thu calci thụ động qua các khe gian bào của niêm mạc ruột non",
       "Kích thích trực tiếp các tế bào tạo cốt bào tăng sinh và tổng hợp chất nền xương mới nhanh chóng",
       "Tăng cường hoạt tính bài tiết của các tế bào ống thận giúp đào thải nhanh acid uric qua nước tiểu"
@@ -13149,7 +13152,7 @@ const ALL_EXAM_BANK = [
     "question": "Hướng dẫn sử dụng bắt buộc đối với thuốc viên uống Alendronat 70 mg mỗi tuần là:",
     "options": [
       "Uống cùng lúc với bữa ăn trưa nhiều dầu mỡ động vật để hòa tan và hấp thu hoạt chất thuốc",
-      "Uống lúc đói vào sáng sớm với một cốc nước lọc đầy (200mL), giữ tư thế ngồi/đứng thẳng ít nhất 30 phút",
+      "Uống lúc đói vào sáng sớm với một cốc nước lọc đầy, giữ tư thế ngồi/đứng thẳng ít nhất 30 phút",
       "Nhai nát viên nén rồi nuốt cùng với một ly sữa tươi nguyên kem ấm để giảm kích ứng dạ dày",
       "Uống ngay trước khi chuẩn bị đi ngủ vào ban đêm để thuốc phát huy tác dụng suốt cả đêm"
     ],
@@ -13185,7 +13188,7 @@ const ALL_EXAM_BANK = [
       "Bệnh cảnh xơ gan cổ trướng giai đoạn mất bù kèm theo biến chứng xuất huyết tiêu hóa do giãn vỡ",
       "Mù lòa vĩnh viễn ở cả hai mắt do biến chứng teo gai thị giác và thoái hóa võng mạc nhiễm sắc tố",
       "Ức chế tủy xương toàn bộ dẫn đến thiếu máu bất sản và suy giảm nghiêm trọng các dòng bạch cầu",
-      "Hoại tử xương hàm (ONJ) và Gãy xương đùi không điển hình (AFF) khi dùng thuốc kéo dài"
+      "Hoại tử xương hàm và Gãy xương đùi không điển hình khi dùng thuốc kéo dài"
     ],
     "correct": 3,
     "explanation": "Ức chế chu chuyển xương quá mức dài hạn gây ONJ (hoại tử xương hàm sau thủ thuật răng) và gãy xương đùi dưới mấu chuyển dạng ngang.",
@@ -13199,7 +13202,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Thuốc điều hòa thụ thể Estrogen chọn lọc Raloxifen có ưu điểm gì trong điều trị loãng xương?",
     "options": [
-      "Chủ vận estrogen trên xương (tăng mật độ xương) nhưng đối kháng trên tuyến vú và tử cung",
+      "Chủ vận estrogen trên xương nhưng đối kháng trên tuyến vú và tử cung",
       "Làm giảm đáng kể nguy cơ hình thành cục máu đông trong lòng tĩnh mạch sâu ở phụ nữ mãn kinh",
       "Giải quyết triệt để và dập tắt hoàn toàn các triệu chứng bốc hỏa vã mồ hôi thời kỳ tiền mãn kinh",
       "Kích thích thùy trước tuyến yên tăng tiết gonadotropin làm hồi phục lại chu kỳ kinh nguyệt tự nhiên"
@@ -13217,7 +13220,7 @@ const ALL_EXAM_BANK = [
     "question": "Tác dụng phụ nguy hiểm nhất cần lưu ý khi chỉ định Raloxifen cho phụ nữ mãn kinh là:",
     "options": [
       "Làm tăng mạnh nguy cơ ung thư nội mạc tử cung và kích thích tăng sinh các khối u tuyến vú ác tính",
-      "Tăng nguy cơ thuyên tắc huyết khối tĩnh mạch (huyết khối tĩnh mạch sâu và thuyên tắc phổi)",
+      "Tăng nguy cơ thuyên tắc huyết khối tĩnh mạch",
       "Kích thích mọc rậm lông cơ thể và làm biến đổi âm sắc khiến giọng nói của phụ nữ trở nên trầm đục",
       "Gây thoái hóa hoại tử vô mạch chỏm xương đùi cấp tính ở phụ nữ sau giai đoạn mãn kinh"
     ],
@@ -13253,7 +13256,7 @@ const ALL_EXAM_BANK = [
       "Bôi ngoài da tại các vùng khớp thoái hóa chịu lực như khớp gối và khớp háng hai bên",
       "Tiêm truyền tĩnh mạch nhỏ giọt liên tục với tốc độ ổn định kéo dài suốt 24 giờ mỗi ngày",
       "Uống thuốc dạng viên nén với mức liều lượng cao ngay sau các bữa ăn chính giàu chất béo",
-      "Tiêm dưới da ngắt quãng liều thấp mỗi ngày một lần (kích thích tạo cốt bào ưu thế hơn hủy cốt bào)"
+      "Tiêm dưới da ngắt quãng liều thấp mỗi ngày một lần"
     ],
     "correct": 3,
     "explanation": "PTH ngắt quãng kích thích tạo cốt bào nhiều hơn hủy cốt bào, thúc đẩy tổng hợp xương mới (tác dụng đồng hóa).",
@@ -13268,7 +13271,7 @@ const ALL_EXAM_BANK = [
     "question": "Viên thuốc tránh thai kết hợp đường uống hàng ngày có cơ chế tác dụng ngừa thai chính là gì?",
     "options": [
       "Tiêu diệt trực tiếp toàn bộ các tinh trùng ngay khi vừa tiếp xúc với niêm mạc âm đạo người phụ nữ",
-      "Ức chế phóng noãn (chẹn đỉnh LH/FSH), làm đặc chất nhầy cổ tử cung và làm mỏng nội mạc tử cung",
+      "Ức chế phóng noãn, làm đặc chất nhầy cổ tử cung và làm mỏng nội mạc tử cung",
       "Làm tắc nghẽn cơ học hai vòi trứng ngăn cản vĩnh viễn sự di chuyển của trứng vào buồng tử cung",
       "Tạo ra môi trường acid cực mạnh trong lòng tử cung làm bất hoạt toàn bộ các hoạt động của tinh trùng"
     ],
@@ -13285,7 +13288,7 @@ const ALL_EXAM_BANK = [
     "question": "Phụ nữ trên 35 tuổi có hút thuốc lá chống chỉ định tuyệt đối dùng viên tránh thai kết hợp vì nguy cơ:",
     "options": [
       "Gia tăng nguy cơ loãng xương gãy xương sớm do thuốc làm mất chất khoáng calci của toàn bộ khung xương",
-      "Nguy cơ biến cố thuyên tắc huyết khối tim mạch nặng nề (nhồi máu cơ tim, đột quỵ, huyết khối TM)",
+      "Nguy cơ biến cố thuyên tắc huyết khối tim mạch nặng nề",
       "Làm tăng nguy cơ mắc bệnh suy thận mạn giai đoạn cuối phải phụ thuộc vào lọc máu chu kỳ",
       "Gây mù lòa vĩnh viễn do tổn thương thoái hóa hoàng điểm và teo dây thần kinh thị giác hai bên"
     ],
@@ -13336,7 +13339,7 @@ const ALL_EXAM_BANK = [
     "question": "Nếu phụ nữ quên uống 1 viên thuốc tránh thai hàng ngày kết hợp thì xử trí đúng là:",
     "options": [
       "Bỏ toàn bộ vỉ thuốc đang uống và bắt đầu lại một vỉ thuốc mới toanh kể từ ngày hôm sau đó để đảm bảo an toàn",
-      "Uống ngay viên thuốc đã quên khi nhớ ra (kể cả uống 2 viên cùng lúc) và tiếp tục uống viên tiếp theo",
+      "Uống ngay viên thuốc đã quên khi nhớ ra và tiếp tục uống viên tiếp theo",
       "Bắt buộc phải đến ngay cơ sở y tế để được rửa dạ dày và tiêm thuốc giải độc hormon khẩn cấp",
       "Uống bù gấp 4 lần liều lượng thuốc thông thường vào ngày tiếp theo để đảm bảo nồng độ hormon máu"
     ],
@@ -13370,7 +13373,7 @@ const ALL_EXAM_BANK = [
     "question": "Cơ chế tác dụng hạ đường huyết chính của Metformin là gì?",
     "options": [
       "Kích thích tế bào beta đảo tụy tăng cường tổng hợp và bài tiết lượng lớn phân tử hormon Insulin vào máu",
-      "Giảm sản xuất Glucose tại gan (ức chế tân tạo đường), tăng nhạy cảm Insulin ở mô ngoại vi cơ mỡ",
+      "Giảm sản xuất Glucose tại gan, tăng nhạy cảm Insulin ở mô ngoại vi cơ mỡ",
       "Ức chế hoạt tính enzym Alpha-glucosidase tại bờ bàn chải ruột non làm chậm hấp thu đường đôi",
       "Tăng đào thải đường qua nước tiểu thông qua cơ chế ức chế chọn lọc kênh đồng vận chuyển SGLT-2"
     ],
@@ -13403,7 +13406,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Chống chỉ định dùng Metformin khi mức lọc cầu thận ước tính eGFR của bệnh nhân giảm xuống dưới:",
     "options": [
-      "Mức lọc cầu thận eGFR < 30 mL/phút/1,73m2 (nguy cơ toan acid lactic đe dọa tính mạng)",
+      "Mức lọc cầu thận eGFR < 30 mL/phút/1,73m2",
       "Mức lọc cầu thận ước tính eGFR giảm xuống dưới ngưỡng 60 mL/phút/1,73m2 diện tích da",
       "Mức lọc cầu thận ước tính eGFR giảm xuống dưới ngưỡng 90 mL/phút/1,73m2 ở người cao tuổi",
       "Mức lọc cầu thận ước tính eGFR giảm xuống dưới ngưỡng 120 mL/phút/1,73m2 có đạm niệu"
@@ -13507,7 +13510,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Làm giảm rõ rệt nồng độ các men tụy amylase và lipase lưu hành trong dòng máu tuần hoàn",
       "Kích thích cảm giác thèm ăn gây tăng cân nhanh chóng và an toàn cho người bệnh suy dinh dưỡng",
-      "Giảm cân nặng rõ rệt (chậm tháo rỗng dạ dày, tăng no) và giảm biến cố tim mạch xơ vữa (MACE)",
+      "Giảm cân nặng rõ rệt và giảm biến cố tim mạch xơ vữa",
       "Chữa khỏi hoàn toàn bệnh lý đục thủy tinh thể hai mắt ở bệnh nhân đái tháo đường lâu năm"
     ],
     "correct": 2,
@@ -13525,7 +13528,7 @@ const ALL_EXAM_BANK = [
       "Đặt dưới lưỡi trước khi đi ngủ để thuốc khuếch tán vào tĩnh mạch dưới lưỡi tránh chuyển hóa qua gan",
       "Uống viên nén bao tan trong ruột sau các bữa ăn chính giàu chất béo động vật để tăng hấp thu qua ruột",
       "Xịt khí dung phân tán hạt mịn qua đường hô hấp bằng dụng cụ xịt định liều có buồng đệm hỗ trợ",
-      "Tiêm dưới da (1 lần/tuần như Semaglutid, Dulaglutid hoặc 1 lần/ngày như Liraglutid)"
+      "Tiêm dưới da"
     ],
     "correct": 3,
     "explanation": "Đa số GLP-1 RA (Semaglutide, Dulaglutide) dùng tiêm dưới da 1 lần/tuần (hiện có thêm Semaglutide uống dạng viên nén đặc biệt).",
@@ -13557,7 +13560,7 @@ const ALL_EXAM_BANK = [
     "question": "Ưu điểm vượt trội về độ an toàn của nhóm thuốc ức chế DPP-4 trên lâm sàng là gì?",
     "options": [
       "Làm giảm cân nặng của bệnh nhân rất nhanh chóng và vượt trội hơn rõ rệt so với nhóm đồng vận thụ thể GLP-1",
-      "Nguy cơ hạ đường huyết rất thấp (do tác dụng phụ thuộc nồng độ glucose) và trung tính trên cân nặng",
+      "Nguy cơ hạ đường huyết rất thấp và trung tính trên cân nặng",
       "Có khả năng hồi phục hoàn toàn các tế bào beta đảo tụy đã bị xơ hóa hoại tử ở người đái tháo đường",
       "Làm giảm đáng kể nồng độ acid uric máu và điều trị dứt điểm hoàn toàn các cơn đau gút cấp tính"
     ],
@@ -13574,7 +13577,7 @@ const ALL_EXAM_BANK = [
     "question": "Nhóm thuốc hạ đường huyết Sulfonylure kích thích tiết Insulin thông qua tác động lên kênh nào?",
     "options": [
       "Kích hoạt mở các kênh Kali phụ thuộc Calci gây khử cực kéo dài màng tế bào beta đảo tụy bài tiết insulin",
-      "Đóng kênh Kali nhạy cảm ATP (K-ATP) trên tế bào beta, gây khử cực màng, mở kênh Calci giải phóng Insulin",
+      "Đóng kênh Kali nhạy cảm ATP trên tế bào beta, gây khử cực màng, mở kênh Calci giải phóng Insulin",
       "Ức chế chọn lọc các kênh vận chuyển đồng thời Natri và Glucose SGLT-2 tại ống lượn gần thận",
       "Chẹn dòng ion Natri đi vào trong tế bào thần kinh làm giảm tính kích thích dẫn truyền tín hiệu đau"
     ],
@@ -13643,7 +13646,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Bắt buộc người bệnh phải nhịn ăn uống tuyệt đối và nằm yên bất động tại chỗ chờ hỗ trợ y tế",
       "Tiêm bắp ngay một liều Insulin tác dụng nhanh để ổn định nồng độ hormon trong tuần hoàn máu",
-      "Quy tắc 15: Uống ngay 15g carbonhydrat tác dụng nhanh (nửa cốc nước ngọt/3-4 viên đường), đo lại sau 15p",
+      "Quy tắc 15: Uống ngay 15g carbonhydrat tác dụng nhanh, đo lại sau 15p",
       "Cho người bệnh ăn ngay một bữa ăn thịnh soạn gồm một bát cơm đầy chứa nhiều dầu mỡ động vật"
     ],
     "correct": 2,
@@ -13729,7 +13732,7 @@ const ALL_EXAM_BANK = [
       "Chỉ được phép tiêm vào lúc nửa đêm ngay trước khi người bệnh chuẩn bị đi ngủ",
       "Tiêm vào thời điểm bụng đói cách xa các bữa ăn chính tối thiểu 4 giờ đồng hồ",
       "Bắt buộc phải tiêm trước các bữa ăn chính đúng 2 giờ đồng hồ để chờ thuốc ngấm",
-      "Ngay trước bữa ăn (trong vòng 5 - 15 phút) hoặc ngay sau khi vừa ăn xong"
+      "Ngay trước bữa ăn hoặc ngay sau khi vừa ăn xong"
     ],
     "correct": 3,
     "explanation": "Insulin analog tác dụng siêu nhanh tan monomer ngấm ngay, tiêm 5-15 phút trước ăn kiểm soát đường huyết sau ăn.",
@@ -13761,7 +13764,7 @@ const ALL_EXAM_BANK = [
     "question": "Vị trí tiêm Insulin dưới da có tốc độ hấp thu thuốc nhanh và ổn định nhất trên cơ thể là:",
     "options": [
       "Vùng cơ mông trên ngoài hai bên của người bệnh",
-      "Vùng da bụng quanh rốn (cách rốn tối thiểu 2 cm)",
+      "Vùng da bụng quanh rốn",
       "Vùng mặt sau ngoài của cánh tay hai bên",
       "Vùng mặt trước ngoài của phần đùi hai bên"
     ],
@@ -13897,7 +13900,7 @@ const ALL_EXAM_BANK = [
     "question": "Thuốc hạ mỡ máu nhóm Fibrat như Fenofibrat có tác dụng vượt trội nhất trên chỉ số lipid nào?",
     "options": [
       "Làm gia tăng nồng độ các hạt vi thể Chylomicron mang chất béo ngoại sinh trong máu",
-      "Hoạt hóa PPAR-alpha, giảm mạnh Triglycerid (30 - 50%) và tăng nồng độ HDL-C có lợi",
+      "Hoạt hóa PPAR-alpha, giảm mạnh Triglycerid và tăng nồng độ HDL-C có lợi",
       "Làm giảm nồng độ phân tử LDL-C xấu với cường độ mạnh mẽ vượt trội hơn các thuốc statin",
       "Làm suy giảm hoàn toàn nồng độ glucose tự do hòa tan trong huyết tương sau các bữa ăn"
     ],
@@ -13915,7 +13918,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Cả hai loại thuốc trên đều có độc tính tiêu cơ vân và hoại tử cơ hoàn toàn tương đương nhau",
       "Chống chỉ định tuyệt đối không bao giờ được phép sử dụng Fenofibrat cho bệnh nhân tim mạch",
-      "Ưu tiên chọn Fenofibrat (ít ức chế chuyển hóa qua glucuronid hóa statin hơn nhiều so với Gemfibrozil)",
+      "Ưu tiên chọn Fenofibrat",
       "Bắt buộc phải ưu tiên lựa chọn Gemfibrozil vì thuốc có hiệu lực hạ lipid máu mạnh mẽ hơn"
     ],
     "correct": 2,
@@ -13947,7 +13950,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Chỉ định dùng thuốc hạ Triglycerid khẩn cấp như Fenofibrat được đặt ra khi nồng độ Triglycerid máu vượt quá:",
     "options": [
-      "Triglycerid > 5,6 mmol/L (500 mg/dL) nhằm mục tiêu hàng đầu là phòng ngừa Viêm tụy cấp",
+      "Triglycerid > 5,6 mmol/L nhằm mục tiêu hàng đầu là phòng ngừa Viêm tụy cấp",
       "Khi nồng độ Triglycerid huyết tương vừa vượt quá ngưỡng sinh lý bình thường 2,2 mmol/L",
       "Khi nồng độ Triglycerid huyết tương bắt đầu vượt quá ngưỡng giới hạn trên 1,7 mmol/L",
       "Chỉ được phép chỉ định điều trị khi nồng độ Triglycerid máu tăng vọt vượt quá 20 mmol/L"
@@ -13965,7 +13968,7 @@ const ALL_EXAM_BANK = [
     "question": "Axit béo Omega-3 liều cao từ 2 đến 4 gam mỗi ngày có tác dụng chủ yếu trong điều trị lipid máu là:",
     "options": [
       "Làm tăng nồng độ cholesterol toàn phần và gia tăng đáng kể nguy cơ xơ vữa động mạch vành sớm",
-      "Giảm Triglycerid máu (giảm tổng hợp VLDL tại gan) và bổ sung acid béo EPA/DHA thiết yếu",
+      "Giảm Triglycerid máu và bổ sung acid béo EPA/DHA thiết yếu",
       "Chỉ định ưu tiên hàng đầu để điều trị đặc hiệu các trường hợp tăng cholesterol máu gia đình đồng hợp tử",
       "Khởi phát các cơn tụt huyết áp kịch phát dẫn đến tình trạng trụy mạch tuần hoàn ngoại vi cấp tính"
     ],
@@ -16313,7 +16316,7 @@ const ALL_EXAM_BANK = [
       "Aspirin liều thấp dùng trong phòng ngừa biến cố tim mạch thứ phát ở bệnh nhân vành",
       "Dung dịch tiêm truyền Natri clorid 0,9% pha kháng sinh điều trị nhiễm khuẩn nặng",
       "Thuốc chống đông đường uống Warfarin ở bệnh nhân rung nhĩ có chỉ định kháng vitamin K",
-      "Heparin trọng lượng phân tử thấp (LMWH) ở bệnh nhân suy thận nặng hoặc béo phì"
+      "Heparin trọng lượng phân tử thấp ở bệnh nhân suy thận nặng hoặc béo phì"
     ],
     "correct": 3,
     "explanation": "Anti-Xa dùng theo dõi LMWH trên các đối tượng đặc biệt (suy thận, béo phì, thai phụ) vì LMWH ít kéo dài aPTT.",
@@ -16820,10 +16823,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Công thức Mosteller chuẩn để tính Diện tích bề mặt cơ thể (BSA tính theo m2) từ chiều cao (cm) và cân nặng (kg) là:",
     "options": [
-      "BSA = [Chiều cao (cm) x Cân nặng (kg)] / 1000",
+      "BSA = [Chiều cao (cm) x Cân nặng] / 1000",
       "BSA = Căn bậc hai của [(Chiều cao x Cân nặng) / 3600]",
-      "BSA = Căn bậc hai của [Chiều cao (cm) x 72 / Cân nặng (kg)]",
-      "BSA = [Chiều cao (cm) + Cân nặng (kg)] / 100"
+      "BSA = Căn bậc hai của [Chiều cao (cm) x 72 / Cân nặng]",
+      "BSA = [Chiều cao (cm) + Cân nặng] / 100"
     ],
     "correct": 1,
     "explanation": "Công thức Mosteller: BSA (m2) = căn bậc hai của [Chiều cao (cm) x Cân nặng (kg) / 3600].",
@@ -16889,7 +16892,7 @@ const ALL_EXAM_BANK = [
     "question": "Độ pH dịch vị dạ dày ở trẻ sơ sinh trong những ngày đầu sau sinh có đặc điểm gì?",
     "options": [
       "Độ toan dịch vị dạ dày tương đương hoàn toàn với người trưởng thành khỏe mạnh",
-      "Gần như trung tính (pH từ 6 đến 8) do tế bào thành dạ dày giảm tiết acid",
+      "Gần như trung tính do tế bào thành dạ dày giảm tiết acid",
       "Mang tính kiềm cực mạnh với nồng độ pH đạt xấp xỉ 12 đến 14 trong những ngày đầu",
       "Rất toan với nồng độ pH dưới 1,0 làm phân hủy hầu hết các hoạt chất thuốc uống"
     ],
@@ -17161,7 +17164,7 @@ const ALL_EXAM_BANK = [
     "question": "Tụt huyết áp tư thế đứng (Orthostatic hypotension) ở người già thường tăng vọt khi điều trị bằng nhóm thuốc nào?",
     "options": [
       "Dung dịch bù nước và điện giải đường uống Oresol pha theo đúng tỷ lệ thể tích",
-      "Thuốc chẹn thụ thể alpha-1 hoặc thuốc chống trầm cảm ba vòng (TCA)",
+      "Thuốc chẹn thụ thể alpha-1 hoặc thuốc chống trầm cảm ba vòng",
       "Chế phẩm bổ sung vitamin C hoặc multivitamin tổng hợp đường uống hàng ngày",
       "Các chế phẩm men vi sinh hỗ trợ cân bằng hệ vi khuẩn đường ruột người già"
     ],
@@ -17280,7 +17283,7 @@ const ALL_EXAM_BANK = [
     "question": "Thuốc điều trị phì đại lành tính tuyến tiền liệt nhóm chẹn alpha-1 nào ít gây tụt huyết áp tư thế đứng nhất?",
     "options": [
       "Doxazosin viên nén thông thường",
-      "Tamsulosin (chẹn chọn lọc alpha-1A)",
+      "Tamsulosin",
       "Terazosin liều chuẩn đường uống",
       "Prazosin tác dụng ngắn nhiều lần"
     ],
@@ -18013,7 +18016,7 @@ const ALL_EXAM_BANK = [
       "Chống chỉ định tuyệt đối tiêm thêm bất kỳ liều kháng sinh nào trong suốt quá trình phẫu thuật",
       "Bắt buộc tiêm nhắc lại ngay khi thời gian phẫu thuật vừa vượt quá mốc 30 phút đầu tiên",
       "Chỉ được phép bổ sung liều thứ hai khi cuộc phẫu thuật kéo dài tròn 24 giờ đồng hồ liên tục",
-      "Khi ca mổ kéo dài trên 3 - 4 giờ (quá 2 lần T1/2 của Cefazolin) hoặc lượng máu mất > 1500 mL"
+      "Khi ca mổ kéo dài trên 3 - 4 giờ hoặc lượng máu mất > 1500 mL"
     ],
     "correct": 3,
     "explanation": "Nếu phẫu thuật kéo dài quá 2 lần T1/2 của kháng sinh (T1/2 của cefazolin ~ 1,8h) hoặc mất máu nhiều, cần tiêm lặp lại để duy trì nồng độ mô.",
@@ -18113,7 +18116,7 @@ const ALL_EXAM_BANK = [
     "question": "Kháng sinh nhóm Polypeptid (Colistin - Polymyxin E) thường được giữ lại làm vũ khí cuối cùng để điều trị:",
     "options": [
       "Viêm họng do liên cầu khuẩn tan máu beta nhóm A ở trẻ em lứa tuổi học đường",
-      "Trực khuẩn Gram âm đa kháng và toàn kháng sinh men carbapenemase (như P. aeruginosa, A. baumannii)",
+      "Trực khuẩn Gram âm đa kháng và toàn kháng sinh men carbapenemase",
       "Nhiễm nấm sợi xâm lấn sâu toàn thân kháng các thuốc nhóm azol thông thường",
       "Bệnh cúm mùa cấp tính do virus cúm Influenza typ A hoặc B gây ra"
     ],
@@ -18217,7 +18220,7 @@ const ALL_EXAM_BANK = [
       "Viêm xương tủy xương mạn tính tái phát nhiều lần có ổ mủ hoại tử xương",
       "Áp xe phổi kích thước lớn do vi khuẩn kỵ khí phối hợp vi khuẩn Gram âm",
       "Viêm màng não mủ do phế cầu khuẩn kháng penicillin ở người trưởng thành",
-      "Nhiễm khuẩn đường tiết niệu dưới (viêm bàng quang cấp không biến chứng ở phụ nữ)"
+      "Nhiễm khuẩn đường tiết niệu dưới"
     ],
     "correct": 3,
     "explanation": "Fosfomycin trometamol 3g liều duy nhất đạt nồng độ cực cao trong nước tiểu kéo dài 48h, là thuốc đầu tay viêm bàng quang cấp.",
@@ -18299,7 +18302,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Cơ chế tác dụng diệt khuẩn của kháng sinh nhóm Quinolon (như Levofloxacin, Moxifloxacin) là:",
     "options": [
-      "Ức chế enzym DNA-gyrase (Topoisomerase II) và Topoisomerase IV của vi khuẩn",
+      "Ức chế enzym DNA-gyrase và Topoisomerase IV của vi khuẩn",
       "Ức chế enzym transpeptidase ngăn cản quá trình tổng hợp vách tế bào peptidoglycan",
       "Gắn chọn lọc vào tiểu đơn vị 50S của ribosom ngăn cản quá trình tạo liên kết peptid",
       "Tác động như chất diện hoạt cation làm phá vỡ màng lipid kép của tế bào vi khuẩn"
@@ -18335,7 +18338,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Thuốc hoàn toàn không có khả năng hòa tan trong dung môi nước tiểu của người bệnh",
       "Thuốc bị tế bào biểu mô ống thận bài xuất đào thải sạch sẽ khỏi cơ thể chỉ trong vài giây",
-      "Nồng độ trong máu và nước tiểu thấp do thể tích phân bố Vd rất lớn (thâm nhập mô sâu)",
+      "Nồng độ trong máu và nước tiểu thấp do thể tích phân bố Vd rất lớn",
       "Thuốc bị gắn kết chặt chẽ và bất hoạt hoàn toàn bởi các tế bào hồng cầu trong tuần hoàn"
     ],
     "correct": 2,
@@ -18421,7 +18424,7 @@ const ALL_EXAM_BANK = [
       "Các chủng virus Herpes simplex gây tổn thương viêm loét niêm mạc da",
       "Trực khuẩn Gram âm hiếu khí không lên men như Pseudomonas aeruginosa",
       "Các chủng nấm sợi xâm lấn sâu nguy hiểm như Aspergillus fumigatus",
-      "Vi khuẩn kỵ khí tuyệt đối (B. fragilis, C. difficile) và động vật nguyên sinh (Trichomonas, Amip)"
+      "Vi khuẩn kỵ khí tuyệt đối và động vật nguyên sinh"
     ],
     "correct": 3,
     "explanation": "Metronidazol chỉ bị khử thành gốc tự do độc hại trong môi trường khử của vi khuẩn kỵ khí và đơn bào ký sinh.",
@@ -18503,7 +18506,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Glucocorticoid nào sau đây có hoạt tính giữ muối nước (Mineralocorticoid) yếu nhất hoặc gần như bằng 0?",
     "options": [
-      "Dexamethason và Betamethason (hoạt tính mineralocorticoid gần như bằng 0)",
+      "Dexamethason và Betamethason",
       "Cortison acetat chuyển hóa tại gan thành hydrocortison giữ muối nước mạnh",
       "Fludrocortison tổng hợp có hoạt tính giữ muối nước cực mạnh dùng trong suy thượng thận",
       "Hydrocortison tự nhiên có hoạt tính giữ muối nước tương đương cortisol sinh lý"
@@ -18521,7 +18524,7 @@ const ALL_EXAM_BANK = [
     "question": "Thời điểm uống Glucocorticoid (liều duy nhất mỗi ngày) tốt nhất để giảm thiểu ức chế trục dưới đồi - tuyến yên - thượng thận (HPA) là:",
     "options": [
       "Uống vào lúc 11 giờ đêm trước khi đi ngủ để thuốc phát huy tác dụng suốt đêm",
-      "Khoảng 7 đến 8 giờ sáng cùng hoặc ngay sau ăn sáng (trùng đỉnh bài tiết cortisol tự nhiên)",
+      "Khoảng 7 đến 8 giờ sáng cùng hoặc ngay sau ăn sáng",
       "Chia nhỏ liều uống rải rác mỗi 3 giờ một lần đều đặn suốt cả ngày lẫn ban đêm",
       "Uống vào lúc 2 giờ chiều khi dạ dày trống rỗng để tăng tốc độ hấp thu vào máu"
     ],
@@ -18557,7 +18560,7 @@ const ALL_EXAM_BANK = [
       "Dexamethason có thời gian bán thải sinh học rất dài trên 36 - 54 giờ ức chế liên tục",
       "Hydrocortison có thời gian bán thải quá ngắn dưới 12 giờ không đủ kiểm soát viêm",
       "Fludrocortison có tác dụng giữ muối nước quá mạnh dẫn đến phù và tăng huyết áp",
-      "Prednisolon hoặc Methylprednisolon (tác dụng trung bình 12 - 36 giờ, trục HPA kịp phục hồi)"
+      "Prednisolon hoặc Methylprednisolon"
     ],
     "correct": 3,
     "explanation": "Corticoid tác dụng trung bình (Prednison, Prednisolon, Methylprednisolon) là ứng viên duy nhất thích hợp cho liệu pháp cách ngày.",
@@ -18657,7 +18660,7 @@ const ALL_EXAM_BANK = [
     "question": "Biến chứng loét dạ dày - tá tràng do Glucocorticoid tăng lên gấp nhiều lần khi phối hợp với nhóm thuốc nào?",
     "options": [
       "Thuốc kháng thụ thể histamin H2 thế hệ 2 như Famotidin dùng theo đường uống buổi tối",
-      "Thuốc chống viêm không steroid (NSAID) như Aspirin, Ibuprofen, Diclofenac hoặc Naproxen",
+      "Thuốc chống viêm không steroid như Aspirin, Ibuprofen, Diclofenac hoặc Naproxen",
       "Thuốc ức chế bơm proton PPI như Omeprazol hoặc Esomeprazol uống trước bữa ăn sáng",
       "Dung dịch sữa uống bảo vệ niêm mạc và các chế phẩm bổ sung men vi sinh đường ruột"
     ],
@@ -18707,7 +18710,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Trước khi bắt đầu điều trị Glucocorticoid toàn thân liều cao kéo dài, xét nghiệm sàng lọc bắt buộc cần làm là:",
     "options": [
-      "Sàng lọc bệnh Lao tiềm ẩn (X-quang phổi, Mantoux/IGRA) và xét nghiệm Viêm gan virus B, C",
+      "Sàng lọc bệnh Lao tiềm ẩn và xét nghiệm Viêm gan virus B, C",
       "Xác định nhóm máu hệ Rh và định nhóm máu hệ ABO trong quy trình an toàn truyền máu",
       "Đo mật độ nang tóc trên da đầu và kiểm tra chức năng bài tiết của các tuyến mồ hôi da",
       "Ghi điện não đồ giấc ngủ đêm và làm các bài kiểm tra đánh giá trạng thái tâm lý thần kinh"
@@ -18725,7 +18728,7 @@ const ALL_EXAM_BANK = [
     "question": "Tác dụng phụ trên mắt của Glucocorticoid dùng kéo dài (kể cả dạng thuốc nhỏ mắt) là:",
     "options": [
       "Làm gia tăng độ cận thị học đường tiến triển nhanh ở đối tượng thanh thiếu niên trẻ tuổi",
-      "Tăng nhãn áp (nguy cơ Glaucoma góc mở) và Đục thủy tinh thể dưới bao sau của mắt",
+      "Tăng nhãn áp và Đục thủy tinh thể dưới bao sau của mắt",
       "Làm biến dạng nhãn cầu khiến hai mắt bị lồi hẳn ra ngoài vĩnh viễn không thể hồi phục",
       "Gây rách giác mạc tự phát dẫn đến biến chứng bong võng mạc gây mất thị lực tức thì"
     ],
@@ -18761,7 +18764,7 @@ const ALL_EXAM_BANK = [
       "Giảm đau và chống viêm sưng sau các thủ thuật nhổ răng khôn hoặc can thiệp nha khoa thông thường ở trẻ em",
       "Hạ nhiệt nhanh và kiểm soát triệu chứng trong các đợt sốt cảm lạnh thông thường do nhiễm virus",
       "Viêm họng đỏ cấp tính do thời tiết lạnh ở người trưởng thành khỏe mạnh không có bệnh nền",
-      "Cơn bùng phát đe dọa tính mạng của bệnh tự miễn (Lupus ban đỏ đợt cấp, viêm cầu thận tiến triển)"
+      "Cơn bùng phát đe dọa tính mạng của bệnh tự miễn"
     ],
     "correct": 3,
     "explanation": "Liệu pháp xung dùng Methylprednisolon 500-1000mg truyền tĩnh mạch chậm trong 3 ngày liên tiếp để dập tắt cơn bão miễn dịch cấp cứu.",
@@ -18829,7 +18832,7 @@ const ALL_EXAM_BANK = [
       "Vùng da dày sừng ở lòng bàn chân bị chai sần nứt nẻ do đi lại và lao động nhiều",
       "Vùng da cùi chỏ và đầu gối có các mảng vảy nến dày mạn tính dai dẳng khó bong tróc",
       "Vùng móng tay móng chân bị tổn thương nấm móng mạn tính có biến dạng phiến móng",
-      "Vùng da mặt, mí mắt, vùng da mỏng có nếp gấp (bẹn, nách) và vùng sinh dục"
+      "Vùng da mặt, mí mắt, vùng da mỏng có nếp gấp và vùng sinh dục"
     ],
     "correct": 3,
     "explanation": "Da mặt và nếp kẽ hấp thu thuốc rất mạnh, dễ gây teo da, giãn mạch, mụn trứng cá và hấp thu toàn thân gây ức chế trục HPA.",
@@ -18861,7 +18864,7 @@ const ALL_EXAM_BANK = [
     "question": "Triệu chứng của 'Cơn suy vỏ thượng thận cấp' (Adrenal Crisis) bao gồm những dấu hiệu nào sau đây?",
     "options": [
       "Mặt tròn béo phì, lắng đọng mỡ vùng gáy và xuất hiện các vết rạn da màu đỏ tím ở bụng",
-      "Tụt huyết áp trụy mạch, sốt cao, đau bụng nôn mửa, rối loạn điện giải (hạ Natri, tăng Kali)",
+      "Tụt huyết áp trụy mạch, sốt cao, đau bụng nôn mửa, rối loạn điện giải",
       "Cơn tăng huyết áp kịch phát ác tính với số đo huyết áp tâm thu vượt quá ngưỡng 220 mmHg",
       "Nồng độ natri máu tăng vọt kết hợp với tình trạng hạ kali máu nghiêm trọng gây rung thất"
     ],
@@ -18947,7 +18950,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Tương đương với khoảng 80 mg Prednisolon đường uống mỗi ngày trong điều kiện bình thường",
       "Khoảng 100 đến 200 mg Hydrocortison tiêm truyền tĩnh mạch mỗi ngày cho người trưởng thành",
-      "Khoảng 15 đến 20 mg Hydrocortison (tương đương 5 mg Prednisolon) mỗi ngày ở trạng thái sinh lý",
+      "Khoảng 15 đến 20 mg Hydrocortison mỗi ngày ở trạng thái sinh lý",
       "Chỉ khoảng 0,1 mg Hydrocortison mỗi ngày do nhu cầu hormon nội sinh của cơ thể rất thấp"
     ],
     "correct": 2,
@@ -18979,7 +18982,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Thuốc Glucocorticoid nào qua được hàng rào nhau thai tốt nhất và được dùng để kích thích trưởng thành phổi thai nhi dọa sinh non?",
     "options": [
-      "Betamethason hoặc Dexamethason (ít bị enzym 11-beta-HSD2 tại bánh nhau chuyển hóa)",
+      "Betamethason hoặc Dexamethason",
       "Prednisolon đường uống chuyển hóa nhanh qua enzym nhau thai nên ít đến được thai nhi",
       "Hydrocortison tự nhiên bị bất hoạt gần như hoàn toàn bởi các enzym bảo vệ tại bánh nhau",
       "Methylprednisolon dạng tiêm tĩnh mạch chuyển hóa mạnh tại gan mẹ và nhau thai người mẹ"
@@ -18997,7 +19000,7 @@ const ALL_EXAM_BANK = [
     "question": "Bậc 1 trong Thang bậc thang giảm đau 3 bước kinh điển của WHO bao gồm nhóm thuốc nào?",
     "options": [
       "Phương pháp phẫu thuật can thiệp cắt bỏ các nhánh dây thần kinh cảm giác dẫn truyền đau",
-      "Thuốc giảm đau không Opioid (Paracetamol, NSAID) có thể kết hợp với thuốc bổ trợ giảm đau",
+      "Thuốc giảm đau không Opioid có thể kết hợp với thuốc bổ trợ giảm đau",
       "Các hoạt chất Opioid mạnh đường tiêm truyền ngắt quãng như Morphin sulfat hoặc Fentanyl tĩnh mạch",
       "Các thuốc Opioid yếu dùng theo đường uống như Codein phosphat hoặc Tramadol hydroclorid"
     ],
@@ -19033,7 +19036,7 @@ const ALL_EXAM_BANK = [
       "Khả năng chống viêm cực mạnh trên các ổ viêm khớp ngoại vi vượt trội hơn tất cả các dẫn xuất NSAID",
       "Ức chế không hồi phục enzym COX-1 trên màng tế bào tiểu cầu làm kéo dài thời gian chảy máu toàn phần",
       "Ức chế không hồi phục enzym Lipoxygenase làm giảm nồng độ sinh tổng hợp các chất trung gian Leukotrien",
-      "Tác dụng chủ yếu tại hệ TKTW (hạ sốt, giảm đau) và hầu như không có tác dụng chống viêm ngoại vi"
+      "Tác dụng chủ yếu tại hệ TKTW và hầu như không có tác dụng chống viêm ngoại vi"
     ],
     "correct": 3,
     "explanation": "Paracetamol ức chế tổng hợp PG tại não bộ nhưng bị nồng độ cao peroxyd tại ổ viêm ngoại vi bất hoạt nên không chống viêm.",
@@ -19083,7 +19086,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Cơn tăng huyết áp kịch phát ác tính, tim đập nhanh hồi hộp và tiêu chảy phân lỏng xối xả",
       "Sốt cao ác tính trên 41°C, co giật toàn thể liên tục và giãn to tối đa đồng tử hai bên mắt",
-      "Hôn mê ức chế thần kinh trung ương, ức chế hô hấp (thở chậm) và co nhỏ đồng tử như đầu đinh ghim",
+      "Hôn mê ức chế thần kinh trung ương, ức chế hô hấp và co nhỏ đồng tử như đầu đinh ghim",
       "Mặt đỏ bừng bừng sung huyết, vã mồ hôi đầm đìa và run rẩy co cứng toàn bộ các cơ bắp chi"
     ],
     "correct": 2,
@@ -19101,7 +19104,7 @@ const ALL_EXAM_BANK = [
       "Ức chế cạnh tranh chọn lọc trên các thụ thể Beta-1 adrenergic tại màng tế bào cơ tim",
       "Kiềm hóa dòng máu tuần hoàn đưa nồng độ pH huyết tương lên mức kiềm tính sinh lý",
       "Kích hoạt enzym plasminogen tiêu hủy trực tiếp mạng lưới sợi tơ huyết Fibrin trong lòng mạch",
-      "Acetyl hóa không hồi phục COX-1 tiểu cầu, ức chế tổng hợp TXA2 suốt đời sống tiểu cầu (7 - 10 ngày)"
+      "Acetyl hóa không hồi phục COX-1 tiểu cầu, ức chế tổng hợp TXA2 suốt đời sống tiểu cầu"
     ],
     "correct": 3,
     "explanation": "Tiểu cầu không có nhân để tổng hợp COX-1 mới, acetyl hóa không hồi phục của aspirin ức chế TXA2 suốt 7-10 ngày đời sống tiểu cầu.",
@@ -19151,7 +19154,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Tăng gấp mười lần mức liều thuốc của miếng dán giảm đau thẩm thấu qua da đang sử dụng",
       "Chỉ định cho bệnh nhân áp dụng phương pháp chườm lạnh hoặc chườm nóng tại vị trí đau",
-      "Bổ sung một liều Opioid tác dụng nhanh, giải phóng tức thì (bằng 1/10 đến 1/6 liều 24 giờ)",
+      "Bổ sung một liều Opioid tác dụng nhanh, giải phóng tức thì",
       "Ngừng sử dụng hoàn toàn toàn bộ các nhóm thuốc giảm đau để đánh giá lại ngưỡng chịu đau"
     ],
     "correct": 2,
@@ -19252,7 +19255,7 @@ const ALL_EXAM_BANK = [
     "question": "Thuốc giảm đau chống viêm Diclofenac có đặc điểm nào về độc tính tim mạch so với các NSAID khác?",
     "options": [
       "Hoàn toàn không có bất kỳ độc tính nào trên tim mạch kể cả khi dùng liều cao kéo dài",
-      "Nguy cơ biến cố tim mạch (nhồi máu cơ tim) cao nhất trong các NSAID truyền thống, gần tương đương COX-2",
+      "Nguy cơ biến cố tim mạch cao nhất trong các NSAID truyền thống, gần tương đương COX-2",
       "Làm giảm mạnh nguy cơ hình thành cục máu đông nhờ tác dụng ức chế kết tập tiểu cầu mạnh",
       "Làm hạ huyết áp rõ rệt thông qua cơ chế kích thích tổng hợp prostaglandin giãn mạch máu"
     ],
@@ -19269,7 +19272,7 @@ const ALL_EXAM_BANK = [
     "question": "Thuốc ức chế chọn lọc COX-2 Rofecoxib (Vioxx) bị rút khỏi thị trường dược phẩm toàn cầu vào năm 2004 vì lý do gì?",
     "options": [
       "Gây suy tủy xương mất bạch cầu hạt cấp tính kèm theo sốt cao nhiễm trùng đe dọa tính mạng",
-      "Gia tăng đáng kể nguy cơ huyết khối tim mạch (Nhồi máu cơ tim, Đột quỵ) trong thử nghiệm APPROVe",
+      "Gia tăng đáng kể nguy cơ huyết khối tim mạch trong thử nghiệm APPROVe",
       "Làm tổn thương thần kinh thị giác dẫn đến mù lòa vĩnh viễn ở cả hai mắt người bệnh sử dụng",
       "Gây ung thư biểu mô tế bào gan nguyên phát tiến triển nhanh trên các bệnh nhân viêm gan mạn"
     ],
@@ -19305,7 +19308,7 @@ const ALL_EXAM_BANK = [
       "Chẹn kênh natri phụ thuộc điện thế tại sợi trục thần kinh ngăn cản dẫn truyền xung động đau",
       "Ức chế cạnh tranh quá trình sinh tổng hợp các Prostaglandin viêm ở các mô cơ quan ngoại vi",
       "Kích thích trực tiếp các thụ thể cholinergic tại màng tế bào cơ trơn làm tăng nhu động ruột",
-      "Ức chế chọn lọc enzym Phosphodiesterase-4 (PDE-4) làm tăng cAMP nội bào, gây giãn cơ trơn"
+      "Ức chế chọn lọc enzym Phosphodiesterase-4 làm tăng cAMP nội bào, gây giãn cơ trơn"
     ],
     "correct": 3,
     "explanation": "Drotaverin ức chế chọn lọc PDE-4 ở cơ trơn, làm tăng cAMP nội bào gây giãn cơ trơn tiêu hóa, niệu quản mà không có tác dụng kháng muscarinic.",
@@ -19319,7 +19322,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Khuyến cáo liều dùng Paracetamol cho bệnh nhân suy dinh dưỡng nặng hoặc nghiện rượu mạn tính là:",
     "options": [
-      "Giảm liều tối đa xuống không quá 2000 mg/24 giờ (hoặc 2 - 3g/ngày) do cạn kiệt Glutathion",
+      "Giảm liều tối đa xuống không quá 2000 mg/24 giờ do cạn kiệt Glutathion",
       "Vẫn duy trì mức liều tối đa 4000 mg mỗi ngày như người bình thường khỏe mạnh không suy kiệt",
       "Tăng liều dùng lên 6000 mg mỗi ngày để bù trừ cho tốc độ chuyển hóa thuốc bị chậm lại ở gan",
       "Tuyệt đối không bao giờ được phép sử dụng Paracetamol trong bất kỳ tình huống lâm sàng nào"
@@ -19337,7 +19340,7 @@ const ALL_EXAM_BANK = [
     "question": "Thuốc giảm đau Methadon được sử dụng trong chương trình điều trị thay thế nghiện chất dạng thuốc phiện nhờ đặc tính:",
     "options": [
       "Hoàn toàn không có khả năng liên kết hay gắn kết với các thụ thể opioid trong não bộ",
-      "Hấp thu tốt qua đường uống, thời gian bán thải dài (24 - 36h) giúp tránh hội chứng cai rầm rộ",
+      "Hấp thu tốt qua đường uống, thời gian bán thải dài giúp tránh hội chứng cai rầm rộ",
       "Tác động làm cho người bệnh nảy sinh tâm lý chán ghét hoàn toàn mọi loại chất gây nghiện",
       "Thời gian duy trì tác dụng giảm đau cực kỳ ngắn ngủi chỉ kéo dài trong vòng 10 đến 15 phút"
     ],
@@ -19355,7 +19358,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Khi người bệnh uống một lượng nước lọc tinh khiết quá nhiều trong một khoảng thời gian ngắn",
       "Khi người bệnh vô tình uống quá liều thuốc giảm đau Paracetamol vượt ngưỡng điều trị cho phép",
-      "Khi ngừng đột ngột hoặc dùng chất đối kháng (Naloxon) trên người bệnh đã lệ thuộc Opioid",
+      "Khi ngừng đột ngột hoặc dùng chất đối kháng trên người bệnh đã lệ thuộc Opioid",
       "Khi sử dụng phối hợp đồng thời với các thuốc giảm đau chống viêm không steroid nhóm NSAID"
     ],
     "correct": 2,
@@ -19455,7 +19458,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Để hạn chế độc tính viêm dây thần kinh ngoại biên khi điều trị bệnh lao bằng Isoniazid (INH), cần bổ sung hàng ngày:",
     "options": [
-      "Vitamin B6 (Pyridoxin) liều 25 - 50 mg/ngày để bù trừ lượng pyridoxin bị tăng bài xuất",
+      "Vitamin B6 liều 25 - 50 mg/ngày để bù trừ lượng pyridoxin bị tăng bài xuất",
       "Vitamin C dạng viên sủi liều cao 1000 mg mỗi ngày để tăng cường sức đề kháng cơ thể",
       "Canxi carbonat dạng viên sủi uống hàng ngày để kích thích quá trình khoáng hóa xương",
       "Vitamin B12 dạng dung dịch tiêm bắp sâu định kỳ hàng tuần để bảo vệ bao myelin thần kinh"
@@ -19609,7 +19612,7 @@ const ALL_EXAM_BANK = [
     "question": "Dạng hoạt tính sinh học cuối cùng của Vitamin D được tổng hợp tại thận có tên khoa học là:",
     "options": [
       "Cholecalciferol (Vitamin D3) được tổng hợp tự nhiên ở lớp biểu bì da nhờ ánh nắng mặt trời",
-      "1,25-dihydroxycholecalciferol (Calcitriol) được hydroxyl hóa lần hai tại mô thận",
+      "1,25-dihydroxycholecalciferol được hydroxyl hóa lần hai tại mô thận",
       "25-hydroxycholecalciferol (Calcidiol) được tổng hợp qua bước hydroxyl hóa thứ nhất tại gan",
       "Ergocalciferol (Vitamin D2) có nguồn gốc từ nguồn thực phẩm nấm men và thực vật ăn vào"
     ],
@@ -19795,7 +19798,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Thừa Vitamin D do lạm dụng thuốc liều cao kéo dài có thể dẫn đến hậu quả bệnh lý nguy hiểm nào?",
     "options": [
-      "Tăng Canxi máu kéo dài gây vôi hóa các mô mềm (thận, mạch máu) và suy giảm chức năng thận",
+      "Tăng Canxi máu kéo dài gây vôi hóa các mô mềm và suy giảm chức năng thận",
       "Làm teo thoái hóa các bó cơ bắp chân vĩnh viễn dẫn đến trẻ bị giảm sút khả năng vận động",
       "Gây nhuyễn xương và còi xương nặng nề do ức chế hoàn toàn quá trình khoáng hóa chất nền",
       "Làm cho xương vòm sọ bị mềm nhũn và biến dạng vĩnh viễn không thể hồi phục lại bình thường"
@@ -19813,7 +19816,7 @@ const ALL_EXAM_BANK = [
     "question": "Bổ sung quá nhiều Vitamin E liều cao (trên 400 - 800 UI/ngày) kéo dài bị cảnh báo làm tăng nguy cơ:",
     "options": [
       "Làm cho tổ chức liên kết dưới da bị đông cứng lại làm mất hoàn toàn tính đàn hồi sinh lý",
-      "Tăng nguy cơ xuất huyết (đặc biệt xuất huyết não) và tăng tỷ lệ tử vong do mọi nguyên nhân",
+      "Tăng nguy cơ xuất huyết và tăng tỷ lệ tử vong do mọi nguyên nhân",
       "Gây hoại tử tế bào nhu mô gan cấp tính dẫn đến hội chứng suy gan bùng phát đe dọa tính mạng",
       "Khởi phát các cơn co thắt phế quản ác tính gây suy hô hấp cấp không đáp ứng với thuốc giãn phế quản"
     ],
@@ -19881,7 +19884,7 @@ const ALL_EXAM_BANK = [
     "question": "Nhóm thuốc hạ huyết áp nào được xem là lựa chọn ưu tiên bắt buộc cho bệnh nhân tăng huyết áp có kèm Đái tháo đường và đạm niệu (Microalbumin niệu)?",
     "options": [
       "Thuốc chẹn chọn lọc trên các thụ thể beta-1 adrenergic ở tim dùng theo đường uống hàng ngày",
-      "Thuốc ức chế men chuyển (ACEI) hoặc Thuốc chẹn thụ thể Angiotensin II (ARB) để bảo vệ thận",
+      "Thuốc Ức chế men chuyển hoặc thuốc chẹn thụ thể Angiotensin II để bảo vệ thận",
       "Thuốc chẹn kênh canxi nhóm Dihydropyridin tác dụng ngắn chia làm nhiều cữ uống trong ngày",
       "Thuốc lợi tiểu quai Furosemid liều cao dùng theo đường tiêm bắp ngắt quãng theo dõi định kỳ"
     ],
@@ -19899,7 +19902,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Khởi phát cơn hạ đường huyết sâu sắc dẫn đến tình trạng bủn rủn tay chân và vã mồ hôi",
       "Gây co thắt các bó cơ trơn phế quản cấp tính dẫn đến cơn khó thở kiểu hen cấp tính",
-      "Phù ngoại vi hai chi dưới (vùng mắt cá chân) do giãn tiểu động mạch tiền mao mạch",
+      "Phù ngoại vi hai chi dưới do giãn tiểu động mạch tiền mao mạch",
       "Gây ức chế chọn lọc tủy xương làm mất hoàn toàn dòng bạch cầu hạt trong máu ngoại vi"
     ],
     "correct": 2,
@@ -19917,7 +19920,7 @@ const ALL_EXAM_BANK = [
       "Chủ động tăng gấp đôi liều dùng của Amlodipin lên mức tối đa để thúc đẩy tuần hoàn máu",
       "Kê đơn phối hợp thêm thuốc lợi tiểu quai liều cao Furosemid dùng đều đặn hàng ngày",
       "Yêu cầu người bệnh duy trì tư thế đứng thẳng bất động trong suốt cả ngày làm việc",
-      "Phối hợp với thuốc ức chế men chuyển (ACEi) hoặc chẹn thụ thể (ARB) gây giãn tĩnh mạch sau mao mạch"
+      "Phối hợp với thuốc Ức chế men chuyển hoặc chẹn thụ thể Angiotensin II gây giãn tĩnh mạch sau mao mạch"
     ],
     "correct": 3,
     "explanation": "ƯCMC/ARB làm giãn tiểu động mạch đi giúp tái lập cân bằng áp lực mao mạch, giảm tỷ lệ phù chân do DHP xuống rõ rệt.",
@@ -19967,7 +19970,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Người cao tuổi bị tình trạng tăng huyết áp tâm thu đơn độc có kèm theo xơ vữa mạch máu tiến triển",
       "Bệnh nhân sau giai đoạn nhồi máu cơ tim cấp có kèm theo biến chứng suy tim ứ huyết sung huyết nặng",
-      "Phụ nữ có thai (đặc biệt quý 2, 3 gây suy thận thai, thiểu ối) và hẹp động mạch thận hai bên",
+      "Phụ nữ có thai và hẹp động mạch thận hai bên",
       "Bệnh nhân đái tháo đường typ 2 có kèm theo tổn thương đạm niệu vi thể trên xét nghiệm nước tiểu"
     ],
     "correct": 2,
@@ -20017,7 +20020,7 @@ const ALL_EXAM_BANK = [
     "question": "Chống chỉ định tuyệt đối sử dụng thuốc chẹn Beta giao cảm không chọn lọc (như Propranolol) ở bệnh nhân có tiền sử:",
     "options": [
       "Bệnh nhân có tiền sử đau thắt ngực ổn định mạn tính khi thực hiện các nghiệm pháp gắng sức",
-      "Bệnh nhân có tiền sử Hen phế quản hoặc COPD có co thắt đường thở (do chẹn thụ thể Beta-2)",
+      "Bệnh nhân có tiền sử Hen phế quản hoặc COPD có co thắt đường thở",
       "Bệnh nhân tăng huyết áp vô căn có kèm theo biểu hiện nhịp tim nhanh xoang trên 100 lần/phút",
       "Bệnh nhân sau biến cố nhồi máu cơ tim có phân suất tống máu thất trái còn bảo tồn tốt"
     ],
@@ -20035,7 +20038,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Cảm giác run rẩy tay chân do kích thích các thụ thể giao cảm ngoại vi toàn thân",
       "Nhịp tim đập nhanh hồi hộp và cảm giác đánh trống ngực dồn dập",
-      "Vã mồ hôi toàn thân (do dẫn truyền qua các sợi thần kinh cholinergic)",
+      "Vã mồ hôi toàn thân",
       "Cảm giác bồn chồn lo âu và căng thẳng thần kinh quá mức"
     ],
     "correct": 2,
@@ -20053,7 +20056,7 @@ const ALL_EXAM_BANK = [
       "Tuổi tác sinh học và giới tính nam hay nữ của người bệnh đang được thăm khám tại khoa cấp cứu",
       "Khoảng thời gian bệnh nhân được chẩn đoán mắc bệnh lý tăng huyết áp từ trước tới nay",
       "Con số huyết áp tuyệt đối đo được bằng các máy đo huyết áp tự động tại phòng khám",
-      "Sự hiện diện của tổn thương cơ quan đích cấp tính đang tiến triển (tim, não, thận, đáy mắt)"
+      "Sự hiện diện của tổn thương cơ quan đích cấp tính đang tiến triển"
     ],
     "correct": 3,
     "explanation": "Tăng huyết áp cấp cứu: HA rất cao (> 180/120) KÈM tổn thương cơ quan đích cấp tính đe dọa mạng sống (cần hạ áp bằng đường tiêm tĩnh mạch).",
@@ -20067,7 +20070,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Nguyên tắc hạ huyết áp trong đa số các trường hợp Cơn tăng huyết áp cấp cứu (trừ bóc tách động mạch chủ) là:",
     "options": [
-      "Hạ từ từ: giảm không quá 25% huyết áp động mạch trung bình (MAP) trong giờ đầu, sau đó thận trọng",
+      "Hạ từ từ: giảm không quá 25% huyết áp động mạch trung bình trong giờ đầu, sau đó thận trọng",
       "Không can thiệp bất kỳ biện pháp dùng thuốc nào mà chờ đợi huyết áp tự hạ xuống mức sinh lý bình thường",
       "Hạ huyết áp xuống càng thấp càng tốt đưa số đo huyết áp về dưới ngưỡng an toàn 90/60 mmHg nhanh chóng",
       "Hạ huyết áp thật nhanh về ngay mức bình thường lý tưởng 120/80 mmHg trong vòng 10 phút đầu nhập viện"
@@ -20136,7 +20139,7 @@ const ALL_EXAM_BANK = [
     "question": "Thuốc hạ huyết áp tác động trung ương Clonidin khi ngừng thuốc đột ngột có thể gây ra hiện tượng nguy hiểm nào?",
     "options": [
       "Tụt huyết áp tư thế đứng kéo dài kèm theo cảm giác hoa mắt chóng mặt và ngất xỉu khi thay đổi tư thế",
-      "Cơn tăng huyết áp bùng phát dội ngược (Rebound hypertension) nguy hiểm đe dọa tổn thương tạng cấp",
+      "Cơn tăng huyết áp bùng phát dội ngược nguy hiểm đe dọa tổn thương tạng cấp",
       "Hội chứng suy tuyến thượng thận cấp tính do ức chế trục hạ đồi - tuyến yên - thượng thận kéo dài",
       "Cơn co giật toàn thân liên tục kiểu động kinh cơn lớn không đáp ứng với các thuốc an thần thông thường"
     ],
@@ -20153,7 +20156,7 @@ const ALL_EXAM_BANK = [
     "question": "Tăng huyết áp kháng trị (Resistant hypertension) được định nghĩa khi huyết áp không đạt mục tiêu mặc dù đã:",
     "options": [
       "Dùng đơn trị liệu một thuốc hạ áp thế hệ mới bất kỳ ở mức liều lượng tối đa",
-      "Dùng phối hợp tối ưu 3 thuốc hạ áp thuộc 3 nhóm khác nhau (gồm 1 lợi tiểu) ở liều tối đa dung nạp",
+      "Dùng phối hợp tối ưu 3 thuốc hạ áp thuộc 3 nhóm khác nhau ở liều tối đa dung nạp",
       "Áp dụng biện pháp thay đổi lối sống không dùng thuốc liên tục trong suốt 12 tháng",
       "Dùng phối hợp 2 thuốc hạ áp liều thấp trong vòng 1 tuần lễ theo dõi tại nhà"
     ],
@@ -20171,7 +20174,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Bổ sung thêm kháng sinh nhóm Penicillin phổ rộng đường uống kéo dài liên tục hàng tháng để chống viêm",
       "Chủ động tăng gấp bốn lần mức liều lượng của Amlodipin lên ngưỡng kịch trần 40 mg mỗi ngày cho người bệnh",
-      "Thuốc kháng thụ thể Mineralocorticoid Spironolactone liều thấp (25 - 50 mg/ngày) hoặc Eplerenone",
+      "Thuốc kháng thụ thể Mineralocorticoid Spironolactone liều thấp 25 - 50 mg/ngày hoặc Eplerenone",
       "Tiêm thuốc hạ đường huyết Insulin dưới da liều cao để tăng cường chuyển hóa năng lượng mô cơ thể"
     ],
     "correct": 2,
@@ -20221,7 +20224,7 @@ const ALL_EXAM_BANK = [
     "question": "Thời điểm đo huyết áp bằng máy đo huyết áp tự động tại nhà (HBPM) chuẩn nhất để theo dõi điều trị là:",
     "options": [
       "Đo một lần duy nhất vào lúc nửa đêm khi đang ngủ say để đánh giá huyết áp đáy sinh lý của cơ thể người bệnh",
-      "Đo 2 lần/ngày: buổi sáng sau khi thức dậy (trước uống thuốc, ăn sáng) và buổi tối trước khi đi ngủ",
+      "Đo 2 lần/ngày: buổi sáng sau khi thức dậy và buổi tối trước khi đi ngủ",
       "Đo liên tục mỗi 15 phút một lần trong suốt cả ngày bất kể lúc đang làm việc hay vận động thể lực",
       "Chỉ tiến hành đo khi người bệnh xuất hiện các triệu chứng đau đầu chóng mặt hoặc cảm thấy mệt mỏi"
     ],
@@ -20374,7 +20377,7 @@ const ALL_EXAM_BANK = [
     "question": "Bốn nguyên tắc điều trị tại nhà theo Phác đồ A cho trẻ tiêu chảy cấp không mất nước bao gồm:",
     "options": [
       "Nhịn ăn tuyệt đối, truyền dịch tĩnh mạch và uống kháng sinh phổ rộng",
-      "Cho uống thêm nhiều dịch (Oresol), bổ sung kẽm, tiếp tục cho ăn và theo dõi dấu hiệu nguy hiểm",
+      "Cho uống thêm nhiều dịch, bổ sung kẽm, tiếp tục cho ăn và theo dõi dấu hiệu nguy hiểm",
       "Uống dung dịch nước đường glucose ưu trương kết hợp dùng thuốc cầm tiêu chảy loperamid",
       "Kiêng khem hoàn toàn dầu mỡ chất đạm, uống nước khoáng có ga và theo dõi tại nhà"
     ],
@@ -20561,7 +20564,7 @@ const ALL_EXAM_BANK = [
     "question": "Chỉ định dùng kháng sinh trong điều trị tiêu chảy cấp ở trẻ em chỉ bắt buộc trong tình huống nào sau đây?",
     "options": [
       "Tiêu chảy cấp tính do nhiễm các chủng virus đường ruột phổ biến như Rotavirus hoặc Norovirus",
-      "Tiêu chảy phân có máu đại thể (Lỵ trực khuẩn) hoặc nghi ngờ dịch tả nặng có mất nước",
+      "Tiêu chảy phân có máu đại thể hoặc nghi ngờ dịch tả nặng có mất nước",
       "Trẻ xuất hiện triệu chứng tiêu chảy phân lỏng ngay sau khi vừa uống sữa công thức bò",
       "Tất cả mọi trường hợp trẻ bị tiêu chảy cấp có phân lỏng tóe nước bất kể nguyên nhân bệnh sinh"
     ],
@@ -20579,7 +20582,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Ampicillin đường uống dạng viên nén quy ước hoặc dạng hỗn dịch uống cho trẻ nhỏ",
       "Cloramphenicol dạng viên nang uống điều trị ngắt quãng theo dõi công thức máu",
-      "Ciprofloxacin đường uống (hoặc Azithromycin, Ceftriaxone) theo phác đồ hướng dẫn của WHO",
+      "Ciprofloxacin đường uống theo phác đồ hướng dẫn của WHO",
       "Cotrimoxazol dạng viên nén phối hợp sulfamethoxazol và trimethoprim đường uống"
     ],
     "correct": 2,
@@ -20747,7 +20750,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Bộ Y tế (Chuẩn Quốc gia)",
     "question": "Dung dịch Oresol sau khi pha với nước đun sôi để nguội chỉ được sử dụng tối đa trong vòng bao lâu?",
     "options": [
-      "Trong vòng 24 giờ sau khi pha (bảo quản đậy nắp kín, quá 24h phải đổ bỏ và pha gói mới)",
+      "Trong vòng 24 giờ sau khi pha",
       "Có thể lưu trữ và sử dụng an toàn trong suốt 1 tháng nếu được bảo quản trong ngăn mát tủ lạnh",
       "Chỉ được phép sử dụng trong vòng 15 phút đầu tiên sau khi pha rồi phải đổ bỏ phần còn lại",
       "Có thể lưu trữ sử dụng kéo dài trong vòng 7 ngày ở điều kiện nhiệt độ phòng thoáng mát"
@@ -23661,10 +23664,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Theo khuyến cáo của Bộ Y tế và Hội Tim mạch học Việt Nam (VNHA), nhóm thuốc hạ huyết áp ưu tiên hàng đầu được chỉ định khởi đầu trong điều trị tăng huyết áp ở bệnh nhân có kèm đái tháo đường (đặc biệt khi có đạm niệu vi thể microalbumin niệu) là:",
     "options": [
-      "Thuốc ức chế men chuyển (ACEi) hoặc thuốc chẹn thụ thể AT1 của angiotensin II (ARB)",
-      "Thuốc chẹn thụ thể beta-adrenergic không chọn lọc trên tim và mạch (như Propranolol)",
-      "Thuốc lợi tiểu quai liều cao ngắt quãng có tác dụng bài xuất natri mạnh (như Furosemid)",
-      "Thuốc chẹn chọn lọc thụ thể alpha-1 giao cảm ngoại biên gây giãn mạch (như Prazosin)"
+      "Thuốc Ức chế men chuyển hoặc thuốc chẹn thụ thể AT1 của Angiotensin II",
+      "Thuốc chẹn thụ thể beta-adrenergic không chọn lọc trên tim và mạch",
+      "Thuốc lợi tiểu quai liều cao ngắt quãng có tác dụng bài xuất natri mạnh",
+      "Thuốc chẹn chọn lọc thụ thể alpha-1 giao cảm ngoại biên gây giãn mạch"
     ],
     "correct": 0,
     "explanation": "ACEi (như Enalapril, Perindopril) hoặc ARB (như Losartan, Telmisartan) là nhóm thuốc ưu tiên số 1 cho bệnh nhân THA kèm ĐTĐ nhờ tác dụng giãn chọn lọc tiểu động mạch đi cầu thận, làm giảm áp lực lọc cầu thận, giảm bài xuất albumin niệu và làm chậm tiến triển bệnh thận đái tháo đường.",
@@ -23678,10 +23681,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Bệnh nhân nam 52 tuổi mắc đái tháo đường typ 2 kèm tăng huyết áp nguyên phát (huyết áp 155/95 mmHg). Sau khi đã dùng Enalapril 10 mg/ngày nhưng huyết áp chưa đạt mục tiêu (< 130/80 mmHg), thuốc hạ áp được khuyến cáo ưu tiên phối hợp thêm là:",
     "options": [
-      "Atenolol (nhóm chẹn chọn lọc thụ thể beta-1 giao cảm tim)",
-      "Amlodipin (nhóm chẹn kênh calci Dihydropyridin - DHP)",
-      "Hydrochlorothiazid (nhóm lợi tiểu thiazid liều cao 50 mg)",
-      "Methyldopa (nhóm kích thích thụ thể alpha-2 tại trung ương)"
+      "Atenolol",
+      "Amlodipin",
+      "Hydrochlorothiazid",
+      "Methyldopa"
     ],
     "correct": 1,
     "explanation": "Theo phác đồ của VNHA/ESC và ADA, phối hợp chuẩn bậc 2 cho THA kèm ĐTĐ là ACEi (hoặc ARB) phối hợp với DHP-CCB (như Amlodipin). Amlodipin hạ áp mạnh mẽ qua cơ chế giãn tiểu động mạch ngoại biên, trung tính với chuyển hóa lipid và glucose máu, không làm nặng thêm tình trạng đề kháng insulin.",
@@ -23712,10 +23715,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Theo phân loại tăng huyết áp của Hội Tim mạch học Việt Nam (VNHA) và Hội Tim mạch Châu Âu (ESC), một bệnh nhân đo huyết áp phòng khám có huyết áp tâm thu 165 mmHg và huyết áp tâm trương 102 mmHg được phân độ là:",
     "options": [
-      "Tăng huyết áp độ 1 (Mức độ nhẹ vừa)",
-      "Tăng huyết áp độ 3 (Mức độ nặng cao)",
+      "Tăng huyết áp độ 1",
+      "Tăng huyết áp độ 3",
       "Tăng huyết áp tâm thu đơn độc cao tuổi",
-      "Tăng huyết áp độ 2 (Mức độ trung bình)"
+      "Tăng huyết áp độ 2"
     ],
     "correct": 3,
     "explanation": "Tiêu chuẩn phân loại THA tại phòng khám: Độ 1 (HATT 140-159 và/hoặc HATC 90-99 mmHg); Độ 2 (HATT 160-179 và/hoặc HATC 100-109 mmHg); Độ 3 (HATT >= 180 và/hoặc HATC >= 110 mmHg). Bệnh nhân có HATT 165 mmHg và HATC 102 mmHg đều nằm trong ngưỡng của Tăng huyết áp độ 2.",
@@ -23729,7 +23732,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Bệnh nhân tăng huyết áp đã được điều trị phối hợp tối ưu 3 thuốc gồm: Ức chế men chuyển (hoặc ARB) + Chẹn kênh calci DHP + Lợi tiểu Thiazide ở liều dung nạp tối đa nhưng huyết áp vẫn >= 140/90 mmHg (THA kháng trị). Thuốc được khuyến cáo ưu tiên bổ sung tiếp theo (bước 4) là:",
     "options": [
-      "Spironolacton liều thấp (25 - 50 mg/ngày)",
+      "Spironolacton 25 - 50 mg/ngày",
       "Nifedipin tác dụng nhanh ngậm dưới lưỡi",
       "Reserpin đường uống liều duy trì kéo dài",
       "Furosemid tiêm tĩnh mạch ngắt quãng hàng ngày"
@@ -23763,10 +23766,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Theo Tổ chức Y tế Thế giới (WHO) và Bộ Y tế, tiêu chảy kéo dài (Persistent Diarrhea) ở trẻ em được định nghĩa là đợt tiêu chảy khởi phát cấp tính nhưng kéo dài liên tục từ:",
     "options": [
-      "Từ 07 ngày trở lên (>= 07 ngày)",
-      "Từ 21 ngày trở lên (>= 21 ngày)",
-      "Từ 14 ngày trở lên (>= 14 ngày)",
-      "Từ 30 ngày trở lên (>= 30 ngày)"
+      "Từ 07 ngày trở lên",
+      "Từ 21 ngày trở lên",
+      "Từ 14 ngày trở lên",
+      "Từ 30 ngày trở lên"
     ],
     "correct": 2,
     "explanation": "Tiêu chảy kéo dài là đợt tiêu chảy khởi phát cấp tính (phân lỏng hoặc tóe nước) kéo dài từ 14 ngày trở lên. Tình trạng này làm tổn thương nặng nề niêm mạc ruột, kém hấp thu chất dinh dưỡng và dẫn đến suy dinh dưỡng nặng, tỷ lệ tử vong cao ở trẻ nhỏ.",
@@ -23780,10 +23783,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Theo định nghĩa lâm sàng của Bộ Y tế, tiêu chảy cấp (Acute Diarrhea) là đợt đi ngoài phân lỏng hoặc tóe nước bất thường từ 3 lần/ngày trở lên và có thời gian diễn tiến:",
     "options": [
-      "Dưới 03 ngày (thường tự khỏi sau 24 đến 48 giờ đầu)",
-      "Từ 14 đến 28 ngày (kéo dài trong vòng dưới một tháng)",
-      "Trên 30 ngày (diễn tiến mạn tính kéo dài nhiều tháng)",
-      "Dưới 14 ngày (diễn tiến cấp tính không quá 14 ngày)"
+      "Dưới 03 ngày",
+      "Từ 14 đến 28 ngày",
+      "Trên 30 ngày",
+      "Dưới 14 ngày"
     ],
     "correct": 3,
     "explanation": "Tiêu chảy cấp được định nghĩa là đi ngoài phân lỏng hoặc tóe nước từ 3 lần/24 giờ trở lên, khởi phát đột ngột và kéo dài dưới 14 ngày (thường tự giới hạn trong vòng 5-7 ngày). Nếu đợt tiêu chảy kéo dài >= 14 ngày thì được phân loại là tiêu chảy kéo dài.",
@@ -23797,10 +23800,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Trẻ bị tiêu chảy cấp có dấu hiệu: li bì khó đánh thức, mắt rất trũng, uống nước rất kém hoặc không thể uống được, nếp véo da bụng mất rất chậm (> 2 giây). Mức độ mất nước này tương đương với lượng dịch cơ thể bị mất ước tính là:",
     "options": [
-      "Mất từ 10% trọng lượng cơ thể trở lên (Mất nước nặng - Phác đồ C)",
-      "Mất khoảng 5% đến 9% trọng lượng cơ thể (Có mất nước - Phác đồ B)",
-      "Mất dưới 5% trọng lượng cơ thể (Không mất nước - Phác đồ A)",
-      "Mất khoảng 1% đến 2% trọng lượng cơ thể (Mất nước thoáng qua)"
+      "Mất từ 10% trọng lượng cơ thể trở lên",
+      "Mất khoảng 5% đến 9% trọng lượng cơ thể",
+      "Mất dưới 5% trọng lượng cơ thể",
+      "Mất khoảng 1% đến 2% trọng lượng cơ thể"
     ],
     "correct": 0,
     "explanation": "Theo bảng phân loại mất nước của WHO/Bộ Y tế: Mất nước nặng (Phác đồ C) được xác định khi có từ 2 dấu hiệu: li bì/hôn mê, mắt rất trũng, không uống được, nếp véo da mất rất chậm (> 2 giây), tương đương mất dịch >= 10% trọng lượng cơ thể (>= 100 ml/kg). Cần cấp cứu truyền dịch Ringer Lactate đường tĩnh mạch ngay lập tức.",
@@ -23851,7 +23854,7 @@ const ALL_EXAM_BANK = [
       "10 mg/kg mỗi lần, uống 1 lần duy nhất trong ngày",
       "0,15 mg/kg mỗi lần, uống 2 lần/ngày cách 12 giờ",
       "5,0 mg/kg mỗi lần, uống 4 lần/ngày cách 6 giờ",
-      "1,5 mg/kg mỗi lần, uống 3 lần/ngày (cách nhau 8 giờ)"
+      "1,5 mg/kg mỗi lần, uống 3 lần/ngày"
     ],
     "correct": 3,
     "explanation": "Racecadotril là tiền chất chuyển hóa thành thiorphan ức chế enzym enkephalinase ngoại biên, bảo vệ enkephalin nội sinh làm giảm tiết dịch ruột mà không làm giảm nhu động ruột. Liều chuẩn cho trẻ em từ 3 tháng tuổi là 1,5 mg/kg mỗi lần x 3 lần/ngày, uống tối đa không quá 7 ngày kết hợp với bù dịch ORS.",
@@ -23865,7 +23868,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Theo khuyến cáo của Hiệp hội Tiêu hóa, Gan mật và Dinh dưỡng Nhi khoa Châu Âu (ESPGHAN), chủng men vi sinh (Probiotics) nào có bằng chứng lâm sàng mức độ cao nhất giúp rút ngắn thời gian tiêu chảy cấp ở trẻ em?",
     "options": [
-      "Lactobacillus rhamnosus GG (LGG) và nấm men Saccharomyces boulardii",
+      "Lactobacillus rhamnosus GG và nấm men Saccharomyces boulardii",
       "Bacillus subtilis phối hợp với vi khuẩn kỵ khí Clostridium butyricum",
       "Escherichia coli chủng tự nhiên phối hợp nấm men Candida albicans",
       "Streptococcus faecalis phối hợp với vi khuẩn Enterococcus faecium"
@@ -23916,10 +23919,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Một trẻ 18 tháng tuổi bị tiêu chảy cấp có kết quả điện giải đồ với nồng độ Natri huyết thanh là 140 mmol/L. Tình trạng này được phân loại là dạng mất nước nào?",
     "options": [
-      "Mất nước ưu trương (Hypertonic dehydration)",
-      "Mất nước nhược trương (Hypotonic dehydration)",
+      "Mất nước ưu trương",
+      "Mất nước nhược trương",
       "Mất nước kèm toan chuyển hóa mất bù nặng",
-      "Mất nước đẳng trương (Isotonic dehydration)"
+      "Mất nước đẳng trương"
     ],
     "correct": 3,
     "explanation": "Phân loại mất nước dựa trên nồng độ Natri huyết thanh: Mất nước đẳng trương khi Natri từ 130 đến 150 mmol/L (tỷ lệ mất nước và mất muối tương đương nhau, chiếm 70-80% tiêu chảy cấp); Mất nước nhược trương khi Natri < 130 mmol/L; Mất nước ưu trương khi Natri > 150 mmol/L.",
@@ -23933,7 +23936,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Bệnh nhi 15 tháng tuổi bị tiêu chảy cấp ngày thứ 2, khám thấy: trẻ vật vã kích thích, mắt trũng, uống nước háo hức, nếp véo da bụng mất chậm; tiền sử 2 tuần trước được chẩn đoán suy dinh dưỡng. Dược sĩ lâm sàng xác định các vấn đề chính cần can thiệp ở bệnh nhi là:",
     "options": [
-      "Tiêu chảy cấp có mất nước (Phác đồ B) trên nền bệnh nhân suy dinh dưỡng",
+      "Tiêu chảy cấp có mất nước trên nền bệnh nhân suy dinh dưỡng",
       "Tiêu chảy kéo dài mất nước nặng có sốc giảm thể tích trên bệnh nhân béo phì",
       "Tiêu chảy cấp không mất nước kèm ngộ độc thức ăn cấp tính trên cơ địa khỏe mạnh",
       "Nhiễm khuẩn huyết đường ruột không có mất nước trên bệnh nhân suy tủy xương"
@@ -23951,7 +23954,7 @@ const ALL_EXAM_BANK = [
     "question": "Bệnh nhân xuất hiện sốt cao, đau quặn bụng, đi ngoài phân lỏng nhiều lần lẫn chất nhầy và máu, soi phân thấy nhiều bạch cầu và cấy phân xác định dương tính với Salmonella không gây thương hàn (Non-typhoidal Salmonella) có xâm lấn toàn thân. Kháng sinh ưu tiên được chỉ định là:",
     "options": [
       "Metronidazol đường uống đơn độc kết hợp men tiêu hóa protease vi nấm",
-      "Ciprofloxacin (hoặc Ceftriaxon / Azithromycin nếu trẻ em hoặc vi khuẩn kháng thuốc)",
+      "Ciprofloxacin",
       "Vancomycin đường uống liều cao kết hợp thuốc cầm tiêu chảy loperamid",
       "Erythromycin estolat đường uống phối hợp vitamin nhóm B dạng tiêm bắp"
     ],
@@ -23969,7 +23972,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Medroxyprogesterone acetate hỗn dịch tiêm bắp tác dụng kéo dài trong 3 tháng",
       "Ethinylestradiol đơn độc liều thấp 0,02 mg uống hàng ngày liên tục trong 21 ngày",
-      "Levonorgestrel đơn thuần liều đơn 1,5 mg (hoặc 0,75 mg uống 2 lần cách nhau 12 giờ)",
+      "Levonorgestrel đơn thuần liều đơn 1,5 mg",
       "Dydrogesterone dạng viên đặt âm đạo giải phóng chậm dùng duy trì hoàng thể"
     ],
     "correct": 2,
@@ -23987,7 +23990,7 @@ const ALL_EXAM_BANK = [
       "Thuốc diệt tinh trùng đặt âm đạo tại chỗ chứa hoạt chất nonoxynol-9 tạo bọt",
       "Màng ngăn âm đạo cơ học phối hợp bao cao su nam làm từ cao su tự nhiên",
       "Gel bôi trơn tạo hàng rào cản trở vật lý tại cổ tử cung khi giao hợp",
-      "Thuốc viên tránh thai kết hợp đường uống (COC) và que cấy tránh thai dưới da (Implanon)"
+      "Thuốc viên tránh thai kết hợp đường uống và que cấy tránh thai dưới da"
     ],
     "correct": 3,
     "explanation": "Thuốc viên tránh thai kết hợp (COC), viên chỉ có progestin (POP), thuốc tiêm tránh thai (DMPA) và que cấy dưới da đều giải phóng hormone vào tuần hoàn toàn thân để ức chế tiết GnRH, LH, FSH ngăn chặn sự phóng noãn. Trong khi đó, bao cao su, màng ngăn, chất diệt tinh trùng chỉ có tác dụng cơ học/hóa học tại chỗ.",
@@ -24001,10 +24004,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Chế phẩm que cấy tránh thai dưới da (chứa 1 que đơn giải phóng liên tục 68 mg Etonogestrel) được cấy vào mặt trong cánh tay không thuận có thời gian duy trì hiệu quả tránh thai tối đa là:",
     "options": [
-      "03 năm (36 tháng)",
-      "01 năm (12 tháng)",
+      "03 năm",
+      "01 năm",
       "06 tháng (nửa năm)",
-      "10 năm (120 tháng)"
+      "10 năm"
     ],
     "correct": 0,
     "explanation": "Que cấy tránh thai Implanon NXT (chứa Etonogestrel 68 mg) là một que đơn dẻo được cấy dưới da ở mặt trong cánh tay, giải phóng chậm progestin duy trì nồng độ ức chế rụng trứng liên tục, có hiệu quả tránh thai lên đến 99,9% trong thời gian 3 năm.",
@@ -24019,7 +24022,7 @@ const ALL_EXAM_BANK = [
     "question": "Yếu tố khách quan mang tính bước ngoặt thúc đẩy sự ra đời và phát triển mạnh mẽ của ngành Dược lâm sàng trên thế giới vào những năm 1960 là:",
     "options": [
       "Sự thiếu hụt nhân lực điều dưỡng và bác sĩ lâm sàng tại các bệnh viện đa khoa",
-      "Sự bùng nổ số lượng thuốc mới phức tạp, các thảm họa quái thai do thuốc (như thalidomide) và sự gia tăng tai biến do thuốc (ADR)",
+      "Sự bùng nổ số lượng thuốc mới phức tạp, các thảm họa quái thai do thuốc và sự gia tăng tai biến do thuốc",
       "Nhu cầu giảm bớt các xét nghiệm cận lâm sàng và chẩn đoán hình ảnh chuyên sâu",
       "Sự chuyển dịch hoàn toàn từ thuốc tổng hợp hóa dược sang các chế phẩm sinh học"
     ],
@@ -24087,7 +24090,7 @@ const ALL_EXAM_BANK = [
     "question": "Căn cứ theo Nghị định 131/2020/NĐ-CP, người phụ trách hoạt động dược lâm sàng tại bệnh viện y học cổ truyền bắt buộc phải đáp ứng yêu cầu tối thiểu về trình độ chuyên môn nào?",
     "options": [
       "Chỉ cần có bằng Dược sĩ trình độ trung cấp chuyên ngành thuốc đông dược và có thâm niên công tác trên 3 năm",
-      "Phải có bằng tốt nghiệp đại học ngành Dược (Dược sĩ đại học) trở lên và có chứng chỉ hành nghề dược phù hợp",
+      "Phải có bằng tốt nghiệp đại học ngành Dược trở lên và có chứng chỉ hành nghề dược phù hợp",
       "Chỉ cần có bằng Y sĩ y học cổ truyền có chứng chỉ bốc thuốc theo phương pháp gia truyền của cơ sở",
       "Bất kỳ điều dưỡng viên cao đẳng nào đã hoàn thành khóa bồi dưỡng ngắn hạn 1 tháng về cấp phát thuốc"
     ],
@@ -24154,10 +24157,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Thông số dược động học cơ bản và quyết định nhất dùng để xác định mức độ hấp thu và tính toán sinh khả dụng tuyệt đối (Bioavailability - F) của một chế phẩm thuốc là:",
     "options": [
-      "Thể tích phân bố biểu kiến của thuốc trong cơ thể (Vd - Volume of Distribution)",
-      "Diện tích dưới đường cong nồng độ - thời gian (AUC - Area Under the Curve)",
-      "Thời gian bán thải sinh học của thuốc trong huyết tương (T1/2 - Elimination Half-life)",
-      "Nồng độ đỉnh tối đa của thuốc đạt được trong tuần hoàn (Cmax - Peak Concentration)"
+      "Thể tích phân bố biểu kiến của thuốc trong cơ thể",
+      "Diện tích dưới đường cong nồng độ - thời gian",
+      "Thời gian bán thải sinh học của thuốc trong huyết tương",
+      "Nồng độ đỉnh tối đa của thuốc đạt được trong tuần hoàn"
     ],
     "correct": 1,
     "explanation": "AUC phản ánh tổng lượng thuốc nguyên vẹn vào được vòng tuần hoàn chung sau khi dùng thuốc. Sinh khả dụng tuyệt đối được tính bằng tỷ lệ: F = (AUC_PO / AUC_IV) * (Liều_IV / Liều_PO). Trong khi đó, Cmax và Tmax phản ánh tốc độ hấp thu.",
@@ -24205,7 +24208,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Ở bệnh nhân suy dinh dưỡng, suy kiệt nặng, sự thay đổi dược động học nào sau đây làm tăng nguy cơ ngộ độc đối với các thuốc có tỷ lệ liên kết protein huyết tương cao (như Phenytoin, Warfarin)?",
     "options": [
-      "Nồng độ Albumin huyết tương giảm mạnh làm tăng tỷ lệ thuốc ở dạng tự do (dạng có hoạt tính sinh học) trong máu",
+      "Nồng độ Albumin huyết tương giảm mạnh làm tăng tỷ lệ thuốc ở dạng tự do trong máu",
       "Thể tích tuần hoàn tăng vọt làm pha loãng toàn bộ nồng độ thuốc dẫn đến mất hoàn toàn hiệu quả điều trị",
       "Hoạt tính men gan CYP450 tăng vọt làm tăng đào thải thuốc qua phân dẫn đến giảm nồng độ đáy của thuốc",
       "Nồng độ protein huyết tương tăng cao làm bất hoạt hoàn toàn lượng thuốc trong máu ngăn cản thuốc vào mô đích"
@@ -24256,10 +24259,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Các đơn vị đo lường như mol/L, mmol/L, kg, K (Kelvin) được áp dụng rộng rãi trong y sinh học và cận lâm sàng thuộc hệ thống đơn vị nào?",
     "options": [
-      "Hệ đo lường thông thường của Mỹ (US Customary Units)",
-      "Hệ đo lường quy ước cổ truyền Anh (Imperial Units)",
+      "Hệ đo lường thông thường của Mỹ",
+      "Hệ đo lường quy ước cổ truyền Anh",
       "Hệ thống đơn vị dược điển La Mã cổ đại chuẩn hóa",
-      "Hệ đo lường quốc tế SI (Système International d'Unités)"
+      "Hệ đo lường quốc tế SI"
     ],
     "correct": 3,
     "explanation": "Hệ SI (Système International d'Unités) là hệ thống đo lường quốc tế chuẩn hóa. Trong hóa sinh lâm sàng, các chất có khối lượng phân tử xác định (như glucose, điện giải, urê, creatinine) được khuyến cáo biểu thị bằng đơn vị mol hoặc phân đoạn của mol (mmol/L, µmol/L).",
@@ -24273,10 +24276,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Theo tiêu chuẩn của Hiệp hội Đái tháo đường Hoa Kỳ (ADA) và Bộ Y tế, nồng độ glucose huyết tương lúc đói (FPG - nhịn ăn ít nhất 8 giờ) ở mức nào sau đây (xét nghiệm 2 lần độc lập) được chẩn đoán xác định là đái tháo đường?",
     "options": [
-      ">= 7,0 mmol/L (tương đương >= 126 mg/dL)",
-      ">= 5,6 mmol/L (tương đương >= 100 mg/dL)",
-      ">= 11,1 mmol/L (tương đương >= 200 mg/dL)",
-      ">= 6,1 mmol/L (tương đương >= 110 mg/dL)"
+      ">= 7,0 mmol/L",
+      ">= 5,6 mmol/L",
+      ">= 11,1 mmol/L",
+      ">= 6,1 mmol/L"
     ],
     "correct": 0,
     "explanation": "Tiêu chuẩn chẩn đoán đái tháo đường theo ADA/BYT: (1) Glucose huyết tương lúc đói >= 7,0 mmol/L (126 mg/dL); hoặc (2) Glucose 2 giờ sau nghiệm pháp dung nạp 75g glucose >= 11,1 mmol/L (200 mg/dL); hoặc (3) HbA1c >= 6,5%; hoặc (4) Bệnh nhân có triệu chứng kinh điển của tăng đường huyết kèm glucose ngẫu nhiên >= 11,1 mmol/L. Mức 5,6 - 6,9 mmol/L được xếp vào tiền đái tháo đường.",
@@ -24290,9 +24293,9 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Tình trạng giảm nồng độ protein toàn phần huyết thanh thường gặp trong suy tế bào gan nặng, hội chứng thận hư hoặc suy dinh dưỡng, và thành phần protein bị suy giảm chủ yếu chiếm tỷ trọng lớn nhất là:",
     "options": [
-      "Fibrinogen (chiếm tỷ trọng nhỏ tham gia con đường đông máu)",
-      "Albumin (chiếm hơn 50-60% tổng lượng protein huyết thanh)",
-      "Gamma globulin (chiếm tỷ trọng trung bình do tương bào tiết)",
+      "Fibrinogen",
+      "Albumin",
+      "Gamma globulin",
       "Alpha-1 antitrypsin (protein ức chế protease tại phổi)"
     ],
     "correct": 1,
@@ -24309,7 +24312,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Amylase và Lipase huyết thanh trong bệnh lý viêm tụy cấp",
       "CK-MB và Troponin T trong bệnh lý nhồi máu hoại tử cơ tim",
-      "GGT (Gamma-Glutamyl Transferase) và ALP (Alkaline Phosphatase)",
+      "GGT và ALP",
       "Acid Phosphatase tiền liệt tuyến trong ung thư biểu mô tuyến"
     ],
     "correct": 2,
@@ -24327,7 +24330,7 @@ const ALL_EXAM_BANK = [
       "Vàng da trước gan do tan máu huyết tán cấp tính tan rã hồng cầu ồ ạt",
       "Vàng da bẩm sinh lành tính do thiếu hụt protein vận chuyển Gilbert",
       "Vàng da sinh lý do chưa hoàn thiện enzym glucuronyl transferase ở gan",
-      "Vàng da sau gan do tắc nghẽn đường mật (như sỏi ống mật chủ, u đầu tụy)"
+      "Vàng da sau gan do tắc nghẽn đường mật"
     ],
     "correct": 3,
     "explanation": "Vàng da sau gan (tắc mật): Bilirubin đã được liên hợp tại gan không xuống được ruột nên ứ lại tràn vào máu làm Bilirubin trực tiếp tăng vọt, bài xuất qua nước tiểu làm nước tiểu sẫm màu; thiếu sắc tố mật stercobilin xuống ruột làm phân bạc màu; kèm theo ALP và GGT tăng rất cao. Ngược lại, vàng da tan máu (trước gan) thì Bilirubin gián tiếp tăng ưu thế và phân sẫm màu.",
@@ -24341,7 +24344,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Để đánh giá mức độ tổn thương và hoại tử tế bào gan trong viêm gan virus cấp hoặc viêm gan do thuốc (DILI), hai enzym aminotransferase huyết thanh cơ bản cần làm xét nghiệm là:",
     "options": [
-      "AST (SGOT) và ALT (SGPT)",
+      "AST và ALT",
       "Ure máu và Creatinine huyết thanh",
       "Troponin I và Peptide lợi niệu BNP",
       "Lipase và Amylase dịch tiêu hóa"
@@ -24358,10 +24361,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Bệnh nhân nữ, 40 tuổi, cân nặng 58 kg, chiều cao 160 cm, nồng độ Creatinine huyết thanh đo được là 170 µmol/L. Độ thanh thải Creatinine (CrCl) ước tính theo công thức Cockcroft-Gault của bệnh nhân này xấp xỉ là:",
     "options": [
-      "62,5 ml/phút (tương ứng suy giảm chức năng thận độ 2 mức độ nhẹ vừa)",
-      "35,6 ml/phút (tương ứng suy giảm chức năng thận độ 3 mức độ trung bình)",
-      "85,2 ml/phút (tương ứng chức năng lọc cầu thận ở giới hạn bình thường)",
-      "18,3 ml/phút (tương ứng suy giảm chức năng thận độ 4 mức độ rất nặng)"
+      "62,5 ml/phút",
+      "35,6 ml/phút",
+      "85,2 ml/phút",
+      "18,3 ml/phút"
     ],
     "correct": 1,
     "explanation": "Áp dụng công thức Cockcroft-Gault khi Creatinine tính bằng µmol/L: CrCl (ml/phút) = [(140 - Tuổi) x Cân nặng x Hệ số nữ 0,85] / [0,814 x Creatinine (µmol/L)]. Thay số: CrCl = [(140 - 40) x 58 x 0,85] / [0,814 x 170] = [100 x 58 x 0,85] / 138,38 = 4930 / 138,38 ≈ 35,6 ml/phút. Mức này tương ứng suy thận mức độ trung bình (độ 3).",
@@ -24375,10 +24378,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Bệnh nhân nam, 54 tuổi, cân nặng 60 kg, chiều cao 170 cm, nồng độ Creatinine huyết thanh là 160 µmol/L. Độ thanh thải Creatinine (CrCl) ước tính theo công thức Cockcroft-Gault của bệnh nhân này xấp xỉ là:",
     "options": [
-      "55,8 ml/phút (tương ứng suy giảm chức năng thận độ 2 mức độ nhẹ vừa)",
-      "78,4 ml/phút (tương ứng chức năng lọc cầu thận ở giới hạn bình thường)",
-      "39,6 ml/phút (tương ứng suy giảm chức năng thận độ 3 mức độ trung bình)",
-      "22,1 ml/phút (tương ứng suy giảm chức năng thận độ 4 mức độ rất nặng)"
+      "55,8 ml/phút",
+      "78,4 ml/phút",
+      "39,6 ml/phút",
+      "22,1 ml/phút"
     ],
     "correct": 2,
     "explanation": "Với bệnh nhân nam (không nhân hệ số 0,85): CrCl (ml/phút) = [(140 - Tuổi) x Cân nặng] / [0,814 x Creatinine (µmol/L)]. Thay số: CrCl = [(140 - 54) x 60] / [0,814 x 160] = [86 x 60] / 130,24 = 5160 / 130,24 ≈ 39,6 ml/phút.",
@@ -24395,7 +24398,7 @@ const ALL_EXAM_BANK = [
       "Mất nước cấp tính nặng do tiêu chảy nhiễm khuẩn hoặc sốc tụt huyết áp gây giảm tưới máu thận",
       "Hoại tử ống thận cấp do lắng đọng độc chất hoặc độc tính tích lũy của kháng sinh aminoglycosid",
       "Viêm cầu thận tiến triển nhanh kèm theo tăng sinh màng tế bào nội mô mạch máu thận lan tỏa",
-      "Tắc nghẽn cơ học đường dẫn nước tiểu (như sỏi niệu quản hai bên, sỏi kẹt cổ bàng quang, u xơ tuyến tiền liệt)"
+      "Tắc nghẽn cơ học đường dẫn nước tiểu"
     ],
     "correct": 3,
     "explanation": "Tăng nito phi protein máu (ure, creatinine) được chia làm 3 nhóm: (1) Trước thận: do giảm tưới máu thận (mất nước, sốc, suy tim); (2) Tại thận: do tổn thương chủ mô thận (viêm cầu thận, hoại tử ống thận); (3) Sau thận: do cản trở cơ học đường đào thải nước tiểu (sỏi đường tiết niệu, phì đại hoặc ung thư tiền liệt tuyến, chít hẹp niệu đạo).",
@@ -24409,7 +24412,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Bệnh nhân xuất hiện nhiều chấm và mảng xuất huyết bầm tím dưới da tự nhiên rải rác toàn thân, không sốt, không có dấu hiệu nhiễm trùng. Xét nghiệm huyết học cho thấy số lượng tiểu cầu giảm sâu xuống còn 12 G/L (khoảng tham chiếu bình thường 150 - 400 G/L), các dòng hồng cầu và bạch cầu bình thường. Định hướng chẩn đoán hàng đầu là:",
     "options": [
-      "Xuất huyết giảm tiểu cầu miễn dịch nguyên phát (ITP)",
+      "Xuất huyết giảm tiểu cầu miễn dịch nguyên phát",
       "Sốt xuất huyết Dengue thể nặng có biến chứng sốc",
       "Thiếu máu bất sản tủy toàn bộ ba dòng tế bào máu",
       "Rối loạn đông máu nội mạch rải rác do nhiễm khuẩn huyết"
@@ -24427,7 +24430,7 @@ const ALL_EXAM_BANK = [
     "question": "Chỉ số sinh học (Biomarker) có độ nhạy và độ đặc hiệu cao nhất hiện nay, được xem là 'tiêu chuẩn vàng' để chẩn đoán hoại tử tế bào cơ tim trong nhồi máu cơ tim cấp hoặc viêm cơ tim cấp là:",
     "options": [
       "Nồng độ Glucose huyết tương và chỉ số glycated hemoglobin HbA1c",
-      "Troponin T độ nhạy cao (hs-cTnT) hoặc Troponin I độ nhạy cao (hs-cTnI)",
+      "Troponin T độ nhạy cao hoặc Troponin I độ nhạy cao",
       "Hoạt độ men Bilirubin toàn phần và phosphatase kiềm ALP huyết thanh",
       "Nồng độ Acid uric máu kết hợp định lượng nồng độ ure niệu 24 giờ"
     ],
@@ -24463,7 +24466,7 @@ const ALL_EXAM_BANK = [
       "Thuốc kháng acid chứa nhôm hydroxyd và magnesi hydroxyd dạng hỗn dịch uống",
       "Thuốc kháng histamin H2 Famotidin hoặc Cimetidin liều tiêu chuẩn ban đêm",
       "Thuốc nhuận tràng thẩm thấu Lactulose hoặc Macrogol dạng gói bột hòa tan",
-      "Thuốc ức chế men Monoamine Oxidase (như IMAO Moclobemid, Selegiline) hoặc kháng sinh Linezolid"
+      "Thuốc ức chế men Monoamine Oxidase hoặc kháng sinh Linezolid"
     ],
     "correct": 3,
     "explanation": "SSRI ức chế tái thu hồi serotonin, còn IMAO (và cả kháng sinh Linezolid vốn có hoạt tính ức chế MAO) ức chế enzym thoái giáng serotonin. Dùng đồng thời làm nồng độ serotonin trong khe synap tăng vọt, gây Hội chứng Serotonin đặc trưng bởi: kích động mê sảng, co giật cơ, tăng phản xạ, sốt cao ác tính, rối loạn thần kinh thực vật và tử vong.",
@@ -24477,7 +24480,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Khi điều trị suy tim bằng Glycosid tim (Digoxin), cần hết sức thận trọng và theo dõi sát điện giải đồ khi phối hợp với thuốc nào sau đây do nguy cơ làm hạ kali máu, dẫn đến bùng phát ngộ độc Digoxin gây loạn nhịp tim nguy hiểm?",
     "options": [
-      "Thuốc lợi tiểu quai (Furosemid) hoặc Corticoid liều cao",
+      "Thuốc lợi tiểu quai hoặc Corticoid liều cao",
       "Thuốc lợi tiểu giữ kali Spironolacton hoặc Amilorid",
       "Thuốc ức chế men chuyển Enalapril hoặc Perindopril",
       "Thuốc bổ sung muối Kali clorid dạng viên giải phóng chậm"
@@ -24495,7 +24498,7 @@ const ALL_EXAM_BANK = [
     "question": "Kháng sinh Fluoroquinolon (như Ciprofloxacin, Levofloxacin) bị giảm hấp thu nghiêm trọng qua đường uống khi dùng chung với thuốc kháng acid Antacid là do cơ chế tương tác nào?",
     "options": [
       "Antacid phá hủy hoàn toàn cấu trúc vòng beta-lactam của kháng sinh do làm thay đổi pH môi trường dạ dày",
-      "Các ion kim loại đa hóa trị (Al3+, Mg2+, Ca2+) trong antacid tạo phức chelat không tan và không hấp thu với phân tử quinolon",
+      "Các ion kim loại đa hóa trị trong antacid tạo phức chelat không tan và không hấp thu với phân tử quinolon",
       "Antacid gây cảm ứng mạnh mẽ enzym chuyển hóa CYP1A2 tại gan làm tăng tốc độ bài xuất kháng sinh qua mật",
       "Antacid làm tăng áp lực lọc cầu thận và kiềm hóa nước tiểu dẫn đến tăng đào thải quinolon qua đường niệu"
     ],
@@ -24513,7 +24516,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Phải giảm liều các thuốc dùng kèm xuống 1/2 liều thông thường để ngăn ngừa nguy cơ ngộ độc cấp tính do tích lũy thuốc trong máu",
       "Không cần điều chỉnh liều lượng vì phenobarbital hoàn toàn không làm thay đổi sinh khả dụng hay chuyển hóa của các thuốc khác",
-      "Phải tăng liều các thuốc dùng kèm (như Thuốc tránh thai đường uống, Warfarin, Theophyllin, Corticoid) vì tốc độ chuyển hóa thuốc tăng làm giảm nồng độ điều trị",
+      "Phải tăng liều các thuốc dùng kèm vì tốc độ chuyển hóa thuốc tăng làm giảm nồng độ điều trị",
       "Bắt buộc ngừng ngay lập tức phenobarbital trong vòng 24 giờ đầu tiên và thay thế bằng thuốc an thần thảo dược không qua gan"
     ],
     "correct": 2,
@@ -24545,10 +24548,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Thiếu hụt di truyền men Glucose-6-Phosphate Dehydrogenase (G6PD) dẫn đến cơn tan máu huyết tán cấp tính khi bệnh nhân sử dụng thuốc có tính oxy hóa (như Dapsone, Primaquine, Sulfamethoxazole) được xếp vào phân loại ADR typ nào?",
     "options": [
-      "ADR Typ B (Bizarre - Phản ứng dị ứng hoặc đặc ứng di truyền Idiosyncrasy)",
-      "ADR Typ A (Augmented - Tác dụng dược lý quá mức phụ thuộc liều dùng)",
-      "ADR Typ C (Chronic - Tác dụng liên quan đến liều tích lũy dài hạn)",
-      "ADR Typ D (Delayed - Tác dụng xuất hiện muộn gây quái thai đột biến)"
+      "ADR Typ B (Bizarre)",
+      "ADR Typ A (Augmented)",
+      "ADR Typ C (Chronic)",
+      "ADR Typ D (Delayed)"
     ],
     "correct": 0,
     "explanation": "Phân loại Rawlins & Thompson: ADR Typ B (Bizarre) là những phản ứng kỳ dị, không dự đoán được từ tác dụng dược lý thông thường của thuốc, không phụ thuộc vào liều dùng, tỷ lệ mắc thấp nhưng tỷ lệ tử vong cao; bao gồm phản ứng dị ứng miễn dịch và phản ứng đặc ứng do biến dị di truyền (như thiếu men G6PD gây tan máu).",
@@ -24562,8 +24565,8 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Đặc điểm nào sau đây thuộc về bản chất của thuốc làm gia tăng đáng kể nguy cơ xuất hiện các biến cố bất lợi (ADR) nghiêm trọng trên lâm sàng?",
     "options": [
-      "Thuốc có khoảng điều trị rất rộng (như Penicillin hoặc Paracetamol ở khoảng liều tiêu chuẩn thông thường)",
-      "Thuốc có khoảng điều trị hẹp (Narrow Therapeutic Index - khoảng cách giữa liều điều trị và liều độc rất nhỏ)",
+      "Thuốc có khoảng điều trị rất rộng",
+      "Thuốc có khoảng điều trị hẹp",
       "Thuốc hoàn toàn không hấp thu vào hệ tuần hoàn chung mà chỉ phát huy tác dụng bao phủ bề mặt tại chỗ",
       "Thuốc có thời gian bán thải sinh học cực ngắn dưới 5 phút và không có ái lực gắn kết protein huyết tương"
     ],
@@ -24581,7 +24584,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Kháng thể IgE gắn trên bề mặt tế bào mast và bạch cầu ái kiềm gây giải phóng histamin ồ ạt",
       "Phức hợp miễn dịch kháng nguyên - kháng thể IgG lưu hành lắng đọng tại nội mạc thành mạch",
-      "Lympho bào T mẫn cảm (T-cells) giải phóng các cytokin gây viêm và kích hoạt đại thực bào",
+      "Lympho bào T mẫn cảm giải phóng các cytokin gây viêm và kích hoạt đại thực bào",
       "Kháng thể IgG và IgM hoạt hóa hệ thống bổ thể làm ly giải màng tế bào hồng cầu trực tiếp"
     ],
     "correct": 2,
@@ -24649,7 +24652,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Cơ chế ức chế enzym ở mức độ sinh học phân tử và cấu trúc không gian ba chiều của các phân tử hoạt chất trong công thức",
       "Quy trình tổng hợp hóa dược và phương pháp kiểm nghiệm độ hòa tan đạt chuẩn Dược điển tại dây chuyền nhà máy sản xuất",
-      "Liều dùng, thời điểm uống thuốc (trước/sau ăn), đường dùng, các tác dụng phụ thường gặp và cách xử trí cơ bản, cách bảo quản thuốc",
+      "Liều dùng, thời điểm uống thuốc, đường dùng, các tác dụng phụ thường gặp và cách xử trí cơ bản, cách bảo quản thuốc",
       "Kết quả thử nghiệm lâm sàng pha 1 đánh giá thông số dược động học và độ an toàn trên người tình nguyện hoàn toàn khỏe mạnh"
     ],
     "correct": 2,
@@ -24699,7 +24702,7 @@ const ALL_EXAM_BANK = [
     "question": "Cơ quan và hệ thống nào sau đây ở thai nhi phát triển và hoàn thiện cấu trúc chức năng muộn nhất, kéo dài liên tục cho đến sau khi sinh?",
     "options": [
       "Hệ thống tim mạch và các mạch máu lớn nuôi dưỡng tuần hoàn phôi thai",
-      "Hệ thần kinh trung ương (não bộ) và hệ hô hấp (trưởng thành phế nang phổi)",
+      "Hệ thần kinh trung ương và hệ hô hấp",
       "Hệ thống các mầm chi trên và mầm chi dưới trong giai đoạn tạo hình chi",
       "Hệ thống cấu trúc tai ngoài và các thành phần hốc mắt giải phẫu cơ bản"
     ],
@@ -24732,10 +24735,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Phụ nữ mang thai tuần thứ 16 được chẩn đoán nhiễm khuẩn đường tiết niệu không biến chứng. Kháng sinh nào sau đây được khuyến cáo ưu tiên lựa chọn vì hiệu quả và độ an toàn cao cho thai kỳ?",
     "options": [
-      "Ciprofloxacin (nhóm kháng sinh Fluoroquinolon)",
-      "Doxycyclin (nhóm kháng sinh Tetracyclin)",
+      "Ciprofloxacin",
+      "Doxycyclin",
       "Cotrimoxazol (phối hợp Sulfamethoxazol - Trimethoprim)",
-      "Cefuroxim (hoặc Amoxicillin-clavulanat, Fosfomycin)"
+      "Cefuroxim"
     ],
     "correct": 3,
     "explanation": "Kháng sinh an toàn hàng đầu điều trị viêm tiết niệu ở PNCT là nhóm Beta-lactam (Penicillin, Cephalosporin như Cefuroxime, Cefixime) và Fosfomycin trometamol (đơn liều). Quinolon chống chỉ định vì tổn thương sụn khớp; Tetracyclin chống chỉ định vì ảnh hưởng men răng và xương; Cotrimoxazol ức chế acid folic gây dị tật ống thần kinh ở quý 1 và nguy cơ vàng da nhân ở quý 3.",
@@ -24767,7 +24770,7 @@ const ALL_EXAM_BANK = [
     "question": "Biến chứng nghiêm trọng và phổ biến nhất trên hệ cơ xương khớp khi bệnh nhân điều trị Glucocorticoid toàn thân liều cao kéo dài là gì?",
     "options": [
       "Xơ hóa bao khớp và kích thích tăng sinh quá mức màng hoạt dịch khớp gây dính khớp ngón tay",
-      "Loãng xương thứ phát dẫn đến gãy xương bệnh lý (gãy xẹp đốt sống, gãy cổ xương đùi) và hoại tử vô mạch chỏm xương đùi",
+      "Loãng xương thứ phát dẫn đến gãy xương bệnh lý và hoại tử vô mạch chỏm xương đùi",
       "Gai đôi cột sống thắt lưng bẩm sinh tái phát kèm theo lắng đọng canxi ngoài màng cứng",
       "Cường chức năng tuyến cận giáp nguyên phát làm tăng nồng độ canxi máu lên ngưỡng ngộ độc"
     ],
@@ -24803,7 +24806,7 @@ const ALL_EXAM_BANK = [
       "Tiếp tục kiên quyết ngừng hẳn Glucocorticoid và chỉ cho bệnh nhân uống nước đường giải nhiệt kết hợp vitamin C liều cao",
       "Cho bệnh nhân uống ngay thuốc lợi tiểu quai Furosemid liều cao để nhanh chóng đào thải toàn bộ nồng độ thuốc còn dư trong máu",
       "Tiêm bắp sâu Adrenaline liều cao ngắt quãng mỗi 5 phút liên tục cho đến khi bệnh nhân tỉnh táo hoàn toàn",
-      "Lập tức cho dùng lại Glucocorticoid (Hydrocortisone tiêm tĩnh mạch hoặc tái lập lại liều Methylprednisolone trước đó), truyền dịch bù thể tích tuần hoàn rồi lên kế hoạch giảm liều từ từ"
+      "Lập tức cho dùng lại Glucocorticoid, truyền dịch bù thể tích tuần hoàn rồi lên kế hoạch giảm liều từ từ"
     ],
     "correct": 3,
     "explanation": "Đây là tình trạng suy thượng thận cấp do ngừng Glucocorticoid đột ngột sau thời gian dài dùng thuốc. Bắt buộc phải bù ngay Glucocorticoid (Hydrocortisone tiêm tĩnh mạch hoặc tái lập lại liều uống trước đó) kết hợp truyền dịch bù thể tích tuần hoàn để cứu vãn huyết áp. Sau khi bệnh nhân ổn định, mới thực hiện quy trình giảm liều chậm dần từng bước (tapering).",
@@ -24871,7 +24874,7 @@ const ALL_EXAM_BANK = [
       "Ăn tăng cường nhiều muối mặn và chất béo bão hòa để bù đắp năng lượng tiêu hao cho quá trình viêm",
       "Kiêng hoàn toàn các thực phẩm chứa canxi và kali nhằm giảm gánh nặng lọc của cầu thận đang suy giảm",
       "Ăn nhiều tinh bột ngọt tinh chế và nhịn uống nước để hạn chế tối đa tình trạng đi tiểu đêm nhiều lần",
-      "Ăn giảm muối (hạn chế natri), giảm đường tinh chế, tăng cường protein nạc, bổ sung canxi và vitamin D, giàu kali"
+      "Ăn giảm muối, giảm đường tinh chế, tăng cường protein nạc, bổ sung canxi và vitamin D, giàu kali"
     ],
     "correct": 3,
     "explanation": "Corticoid gây giữ muối nước (tăng huyết áp, phù), mất kali qua thận (hạ K+ máu), tăng đường huyết và kháng insulin, tăng dị hóa protein gây teo cơ, và ức chế hấp thu canxi gây loãng xương. Do đó, chế độ ăn bắt buộc: giảm muối (< 2g natri/ngày), giảm đường, ăn đủ đạm, giàu kali (chuối, cam) và bổ sung đủ Canxi + Vitamin D.",
@@ -24885,7 +24888,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Theo Bậc thang giảm đau của Tổ chức Y tế Thế giới (WHO), đối với bệnh nhân ung thư giai đoạn cuối xuất hiện các cơn đau nặng dữ dội, nguyên tắc dùng thuốc giảm đau chuẩn là:",
     "options": [
-      "Sử dụng Opioid mạnh (như Morphin) uống định kỳ theo giờ cố định ('by the clock') kèm liều cứu nghẹt, và BẮT BUỘC phối hợp sẵn thuốc nhuận tràng",
+      "Sử dụng Opioid mạnh uống định kỳ theo giờ cố định kèm liều cứu nghẹt, và BẮT BUỘC phối hợp sẵn thuốc nhuận tràng",
       "Chỉ dùng Paracetamol đơn độc liều tối đa và đợi khi bệnh nhân đau dữ dội không chịu nổi mới cho uống để tránh nguy cơ quen thuốc",
       "Tiêm Pethidin ngắt quãng nhiều ngày liên tiếp kết hợp với thuốc an thần nhóm phenothiazin để gây ngủ sâu liên tục",
       "Phối hợp đồng thời 3 loại thuốc NSAIDs khác nhau đường uống để hiệp đồng ức chế hoàn toàn con đường tổng hợp prostaglandin"
@@ -24921,7 +24924,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Paracetamol liều cao đơn thuần phối hợp vitamin nhóm B liều sinh lý",
       "Aspirin liều chống ngưng tập tiểu cầu 81 mg uống sau bữa ăn sáng",
-      "Pregabalin (hoặc Gabapentin / Thuốc chống trầm cảm ba vòng Amitriptylin)",
+      "Pregabalin",
       "Thuốc chống co thắt cơ trơn Papaverin hoặc Drotaverin đường uống"
     ],
     "correct": 2,
@@ -24939,7 +24942,7 @@ const ALL_EXAM_BANK = [
       "Gentamicin phối hợp với Kanamycin (hai kháng sinh Aminoglycosid)",
       "Ciprofloxacin phối hợp với Ofloxacin (hai kháng sinh Quinolon)",
       "Trimethoprim đơn độc phối hợp men tiêu hóa protease vi nấm",
-      "Spiramycin phối hợp với Metronidazol (biệt dược như Rodogyl)"
+      "Spiramycin phối hợp với Metronidazol"
     ],
     "correct": 3,
     "explanation": "Nhiễm khuẩn khoang miệng và răng hàm mặt chủ yếu là vi khuẩn kỵ khí (Bacteroides, Peptostreptococcus) và liên cầu Gram dương. Phối hợp Spiramycin (Macrolid tập trung nồng độ rất cao trong nước bọt, mô nướu và xương ổ răng) với Metronidazol (kháng sinh diệt khuẩn kỵ khí tuyệt đối) tạo nên tác dụng hiệp đồng kinh điển trong nha khoa.",
@@ -24953,7 +24956,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Bệnh nhân người lớn được chẩn đoán Viêm phổi thùy mắc phải tại cộng đồng (CAP) mức độ nhẹ đến trung bình điều trị ngoại trú, chưa có kết quả kháng sinh đồ. Theo phác đồ Bộ Y tế, kháng sinh ban đầu được khuyến cáo chỉ định là:",
     "options": [
-      "Amoxicillin liều cao (hoặc Amoxicillin - Acid clavulanic) ± Macrolid (như Clarithromycin, Azithromycin)",
+      "Amoxicillin liều cao ± Macrolid",
       "Vancomycin truyền tĩnh mạch phối hợp Colistin tiêm bắp sâu duy trì liên tục trong 14 ngày",
       "Metronidazol đường uống đơn độc phối hợp khí dung dung dịch muối ưu trương 3% tại chỗ",
       "Nystatin viên ngậm phối hợp dung dịch súc họng sát khuẩn chlorhexidine nồng độ 0,12%"
@@ -24971,7 +24974,7 @@ const ALL_EXAM_BANK = [
     "question": "Theo Hướng dẫn sử dụng kháng sinh của Bộ Y tế, thời điểm tối ưu để tiêm tĩnh mạch kháng sinh dự phòng trong phẫu thuật ngoại khoa sạch hoặc sạch - nhiễm là:",
     "options": [
       "Sau khi ca phẫu thuật đã kết thúc và bệnh nhân được chuyển về phòng hậu phẫu theo dõi",
-      "Trong vòng 30 đến 60 phút TRƯỚC KHI rạch da (thường thực hiện cùng lúc khởi mê)",
+      "Trong vòng 30 đến 60 phút TRƯỚC KHI rạch da",
       "Uống liên tục thuốc kháng sinh trước mổ 7 ngày tại nhà trước khi nhập viện phẫu thuật",
       "Tiêm ngay vào thời điểm phẫu thuật viên bắt đầu đóng vết mổ ở những mũi chỉ khâu cuối cùng"
     ],
@@ -24989,7 +24992,7 @@ const ALL_EXAM_BANK = [
     "options": [
       "Đường tiêm bắp sâu (IM)",
       "Đường uống siro lỏng",
-      "Đường tiêm tĩnh mạch (IV)",
+      "Đường tiêm tĩnh mạch",
       "Đường đặt hậu môn đạn"
     ],
     "correct": 2,
@@ -25007,7 +25010,7 @@ const ALL_EXAM_BANK = [
       "Thuốc hạ huyết áp nhóm chẹn kênh calci Amlodipin hoặc Nifedipin viên tác dụng kéo dài",
       "Thuốc giảm đau hạ sốt Paracetamol hoặc Ibuprofen ở các mức liều điều trị thông thường",
       "Men vi sinh đường ruột Probiotic chứa bào tử vi khuẩn Bacillus clausii dạng hỗn dịch uống",
-      "Thuốc kháng thụ thể histamin H1 (như Loratadin, Cetirizin) hoặc Corticoid liều cao"
+      "Thuốc kháng thụ thể histamin H1 hoặc Corticoid liều cao"
     ],
     "correct": 3,
     "explanation": "Thuốc kháng histamin H1 ức chế thụ thể H1 ở da, ngăn chặn phản ứng nổi mày đay và ban đỏ do histamin giải phóng từ tế bào mast khi tiếp xúc dị nguyên, dẫn đến kết quả test da âm tính giả (bệnh nhân thực sự dị ứng nhưng test không lên nốt sẩn). Khuyến cáo phải ngừng thuốc kháng histamin H1 ít nhất 3 - 5 ngày (với thuốc thế hệ 2 có thể cần 5-7 ngày) trước khi làm test da.",
@@ -25021,7 +25024,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Theo Tổ chức Y tế Thế giới (WHO) và Bộ Y tế, Vitamin A liều cao được chỉ định bắt buộc trong phác đồ điều trị bệnh truyền nhiễm nào ở trẻ em nhằm phòng ngừa mù lòa do loét giác mạc và giảm tỷ lệ tử vong?",
     "options": [
-      "Bệnh Sởi (Measles)",
+      "Bệnh Sởi",
       "Bệnh Quai bị",
       "Bệnh Thủy đậu",
       "Sốt xuất huyết"
@@ -25038,10 +25041,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Xét nghiệm định lượng nồng độ Acid Uric huyết thanh được sử dụng định kỳ để theo dõi hiệu quả điều trị và chỉnh liều của nhóm thuốc nào sau đây?",
     "options": [
-      "Thuốc hạ mỡ máu nhóm ức chế men HMG-CoA reductase (như Atorvastatin, Rosuvastatin)",
-      "Thuốc ức chế men Xanthine Oxidase hạ acid uric máu (như Allopurinol, Febuxostat)",
-      "Thuốc kích thích tế bào beta đảo tụy bài tiết insulin nhóm Sulfonylurea (như Gliclazid)",
-      "Thuốc kháng sinh nhóm Macrolid điều trị nhiễm khuẩn đường hô hấp (như Clarithromycin)"
+      "Thuốc hạ mỡ máu nhóm ức chế men HMG-CoA reductase",
+      "Thuốc ức chế men Xanthine Oxidase hạ acid uric máu",
+      "Thuốc kích thích tế bào beta đảo tụy bài tiết insulin nhóm Sulfonylurea",
+      "Thuốc kháng sinh nhóm Macrolid điều trị nhiễm khuẩn đường hô hấp"
     ],
     "correct": 1,
     "explanation": "Trong điều trị Gút mạn tính, mục tiêu điều trị bằng thuốc ức chế tổng hợp acid uric (Allopurinol, Febuxostat) là hạ và duy trì nồng độ Acid uric máu < 360 µmol/L (6 mg/dL), hoặc < 300 µmol/L (5 mg/dL) ở bệnh nhân có hạt tophi, nhằm hòa tan các tinh thể urat tại khớp và ngăn ngừa cơn gút cấp tái phát.",
@@ -25055,9 +25058,9 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Recall Dls.pdf)",
     "question": "Trong hồi sức cấp cứu giải độc thuốc, việc sử dụng Amoni clorid (NH4Cl) nhằm mục đích acid hóa nước tiểu để làm tăng ion hóa và tăng đào thải qua thận đối với các thuốc có bản chất hóa học là:",
     "options": [
-      "Các chất có tính acid yếu (như Phenobarbital, Aspirin, Methotrexate)",
+      "Các chất có tính acid yếu",
       "Các chất trung tính hoàn toàn không ion hóa ở bất kỳ dải pH nào",
-      "Các chất có tính base yếu (như Amphetamin, Quinidin, Morphin)",
+      "Các chất có tính base yếu",
       "Các kim loại nặng độc hại như Chì, Thủy ngân và Asen vô cơ"
     ],
     "correct": 2,
@@ -25090,7 +25093,7 @@ const ALL_EXAM_BANK = [
     "question": "Tác dụng chống viêm của Glucocorticoid được đánh giá là mạnh và toàn diện hơn nhóm NSAID chủ yếu do cơ chế nào?",
     "options": [
       "Chặn ngay từ đầu trên của chuỗi phản ứng viêm qua kích thích tổng hợp lipocortin ức chế Phospholipase A2",
-      "Chỉ ức chế chọn lọc enzym Cyclooxygenase-2 (COX-2) tại ổ viêm tương tự như thuốc nhóm Coxib",
+      "Chỉ ức chế chọn lọc enzym Cyclooxygenase-2 tại ổ viêm tương tự như thuốc nhóm Coxib",
       "Ức chế cạnh tranh với histamin tại thụ thể H1 ở tế bào cơ trơn mạch máu và phế quản",
       "Ức chế trực tiếp enzym Lipoxygenase (LOX) ngăn chặn tạo thành leukotrien B4"
     ],
@@ -25156,10 +25159,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Bệnh nhân nam 58 tuổi, tiền sử đái tháo đường typ 2 điều trị 5 năm, đến khám định kỳ. Kết quả đo huyết áp 2 lần cách nhau 15 phút là 155/95 mmHg, xét nghiệm nước tiểu có vi đạm niệu (microalbumin niệu 180 mg/24h). Theo phác đồ điều trị THA của Bộ Y tế và VNHA, nhóm thuốc hạ huyết áp được ưu tiên lựa chọn khởi đầu hàng đầu cho bệnh nhân này là:",
     "options": [
-      "Thuốc ức chế men chuyển (như Enalapril 5-10 mg/ngày) hoặc thuốc chẹn thụ thể angiotensin II (như Losartan 50 mg/ngày)",
-      "Thuốc chẹn thụ thể beta giao cảm không chọn lọc (như Propranolol 40 mg x 2 lần/ngày)",
-      "Thuốc lợi tiểu quai bài xuất natri nhanh và mạnh (như Furosemid 40 mg/ngày)",
-      "Thuốc chẹn thụ thể alpha-1 adrenergic ngoại biên gây giãn mạch (như Prazosin 1 mg x 2 lần/ngày)"
+      "Thuốc ức chế men chuyển hoặc thuốc chẹn thụ thể angiotensin II",
+      "Thuốc chẹn thụ thể beta giao cảm không chọn lọc",
+      "Thuốc lợi tiểu quai bài xuất natri nhanh và mạnh",
+      "Thuốc chẹn thụ thể alpha-1 adrenergic ngoại biên gây giãn mạch"
     ],
     "correct": 0,
     "explanation": "Theo Giáo trình Dược lâm sàng và hướng dẫn của Bộ Y tế/VNHA: Thuốc ACEi hoặc ARB là lựa chọn số 1 cho bệnh nhân THA có đái tháo đường nhờ tác dụng giãn tiểu động mạch đi của cầu thận, làm giảm áp lực nội cầu thận, giảm bài xuất albumin niệu và làm chậm tiến triển suy thận đái tháo đường.",
@@ -25173,8 +25176,8 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Bệnh nhân nam 60 tuổi mắc THA kèm ĐTĐ typ 2 đang được điều trị bằng Enalapril 10 mg/ngày phối hợp Metformin 1000 mg/ngày. Sau 1 tháng tái khám, huyết áp đo được vẫn ở mức 148/92 mmHg (chưa đạt huyết áp mục tiêu < 130/80 mmHg). Dược sĩ lâm sàng cần tư vấn cho bác sĩ phối hợp thêm thuốc hạ áp nào phù hợp nhất:",
     "options": [
-      "Phối hợp thêm Amlodipin 5 mg/ngày (nhóm chẹn kênh calci DHP)",
-      "Phối hợp thêm Atenolol 50 mg/ngày (nhóm chẹn thụ thể beta-1)",
+      "Phối hợp thêm Amlodipin 5 mg/ngày",
+      "Phối hợp thêm Atenolol 50 mg/ngày",
       "Phối hợp thêm Hydrochlorothiazid liều cao 50 mg/ngày",
       "Thay thế Enalapril bằng Methyldopa 250 mg x 2 lần/ngày"
     ],
@@ -25190,7 +25193,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Một bệnh nhân tăng huyết áp vô căn 62 tuổi đã được điều trị phối hợp tối ưu 3 nhóm thuốc hạ áp gồm: Perindopril 10 mg + Amlodipin 10 mg + Indapamid 1,5 mg ở liều dung nạp tối đa nhưng huyết áp tại phòng khám vẫn duy trì 150/95 mmHg (THA kháng trị). Thuốc được khuyến cáo ưu tiên bổ sung tiếp theo (bước 4) là:",
     "options": [
-      "Spironolacton liều thấp 25 - 50 mg/ngày (thuốc lợi tiểu kháng Aldosteron)",
+      "Spironolacton liều thấp 25 - 50 mg/ngày",
       "Diltiazem 180 mg/ngày dạng giải phóng kéo dài",
       "Nifedipin dạng viên nang tác dụng nhanh ngậm dưới lưỡi",
       "Clonidin 0,15 mg x 2 lần/ngày đường uống kéo dài"
@@ -25275,7 +25278,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Chế độ liều dùng Racecadotril chuẩn trong điều trị hỗ trợ tiêu chảy cấp ở trẻ em nhằm ức chế enzym Enkephalinase ruột mà không làm ảnh hưởng nhu động ruột là:",
     "options": [
-      "1,5 mg/kg/lần x 3 lần/ngày, uống đều đặn cùng với bù dịch Oresol (tối đa không quá 7 ngày)",
+      "1,5 mg/kg/lần x 3 lần/ngày, uống đều đặn cùng với bù dịch Oresol",
       "10 mg/kg/lần x 1 lần duy nhất trong ngày trước khi đi ngủ",
       "0,2 mg/kg/lần x 4 lần/ngày kết hợp kháng sinh đường ruột",
       "5 mg/kg/lần x 2 lần/ngày uống liên tục trong 14 ngày"
@@ -25360,7 +25363,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Điều kiện tiêu chuẩn về văn bằng và thời gian thực hành chuyên môn đối với người phụ trách hoạt động Dược lâm sàng tại cơ sở khám bệnh, chữa bệnh theo Nghị định 131/2020/NĐ-CP là:",
     "options": [
-      "Có bằng tốt nghiệp Dược sĩ đại học và có ít nhất 2 năm thực hành chuyên môn về Dược lâm sàng tại cơ sở KCB (Thạc sĩ, CK1: từ 12 tháng; Tiến sĩ, CK2: từ 6 tháng)",
+      "Có bằng tốt nghiệp Dược sĩ đại học và có ít nhất 2 năm thực hành chuyên môn về Dược lâm sàng tại cơ sở KCB",
       "Có bằng Dược sĩ cao đẳng và có thời gian công tác từ 5 năm trở lên tại khoa Dược",
       "Chỉ cần có chứng chỉ hành nghề dược bán lẻ thuốc tại các nhà thuốc tư nhân",
       "Bắt buộc phải có bằng Bác sĩ đa khoa định hướng chuyên khoa Dược lý học"
@@ -25394,7 +25397,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Mốc lịch sử đánh dấu sự thâm nhập chính thức của chuyên ngành Dược lâm sàng vào hệ thống y tế và đào tạo đại học tại Việt Nam là sự kiện nào?",
     "options": [
-      "Hội thảo 'Sử dụng thuốc hợp lý và thông tin thuốc' ngày 20 - 23/11/1990 do ĐH Dược Hà Nội phối hợp với ĐH Curtin (Australia) tổ chức",
+      "Hội thảo 'Sử dụng thuốc hợp lý và thông tin thuốc' ngày 20 - 23/11/1990 do ĐH Dược Hà Nội phối hợp với ĐH Curtin tổ chức",
       "Nghị định 43/2000/NĐ-CP ban hành khung chương trình đào tạo Dược sĩ đại học năm 2000",
       "Đại hội đồng Hội Dược học Việt Nam lần thứ nhất tổ chức tại thủ đô Hà Nội năm 1955",
       "Quyết định thành lập Vụ Dược thuộc Bộ Y tế Việt Nam vào năm 1980"
@@ -25462,7 +25465,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Tại sao ở bệnh nhân cao tuổi và bệnh nhân có suy giảm chức năng gan, khi cần chỉ định nhóm an thần Benzodiazepin, Dược sĩ lâm sàng thường khuyến cáo ưu tiên lựa chọn Oxazepam hoặc Lorazepam thay vì Diazepam?",
     "options": [
-      "Vì Oxazepam và Lorazepam chuyển hóa trực tiếp qua phản ứng liên hợp Glucuronic (pha II) không phụ thuộc enzym oxy hóa CYP450 của gan, ít bị tích lũy thuốc",
+      "Vì Oxazepam và Lorazepam chuyển hóa trực tiếp qua phản ứng liên hợp Glucuronic không phụ thuộc enzym oxy hóa CYP450 của gan, ít bị tích lũy thuốc",
       "Vì Diazepam đào thải hoàn toàn qua thận dạng còn hoạt tính gây hoại tử ống thận cấp tính",
       "Vì Oxazepam có thời gian bán thải dài hơn Diazepam gấp 5 lần giúp duy trì giấc ngủ sâu suốt đêm",
       "Vì Diazepam làm tăng men gan AST và ALT nhanh chóng dẫn đến xơ gan ứ mật"
@@ -25479,8 +25482,8 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Bệnh nhân nữ 40 tuổi, cân nặng 58 kg, chiều cao 160 cm, xét nghiệm creatinin huyết thanh là 170 µmol/L. Dược sĩ lâm sàng ước tính độ thanh thải creatinin (ClCr) theo công thức Cockcroft - Gault cho bệnh nhân này là:",
     "options": [
-      "Khoảng 35,6 ml/phút (đã nhân hệ số hiệu chỉnh 0,85 cho nữ)",
-      "Khoảng 41,9 ml/phút (chưa tính hệ số hiệu chỉnh cho nữ)",
+      "Khoảng 35,6 ml/phút",
+      "Khoảng 41,9 ml/phút",
       "Khoảng 65,2 ml/phút (chức năng thận nằm trong giới hạn bình thường)",
       "Khoảng 18,4 ml/phút (suy thận nặng giai đoạn 4)"
     ],
@@ -25513,7 +25516,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Ở bệnh nhân xơ gan nặng hoặc suy kiệt có biến đổi dược động học nào sau đây làm tăng đáng kể nguy cơ quá liều và ngộ độc thuốc?",
     "options": [
-      "Giảm chuyển hóa qua gan lần đầu (first-pass) và giảm tổng hợp Albumin huyết tương dẫn đến tăng nồng độ thuốc tự do có hoạt tính",
+      "Giảm chuyển hóa qua gan lần đầu và giảm tổng hợp Albumin huyết tương dẫn đến tăng nồng độ thuốc tự do có hoạt tính",
       "Tăng sinh tổng hợp enzym cytochrom P450 làm tăng tốc độ khử hoạt thuốc tại gan",
       "Tăng nồng độ protein Albumin huyết tương làm thuốc bị giữ chặt không giải phóng ra mô",
       "Tăng lưu lượng máu qua tĩnh mạch cửa gan làm tăng thanh thải lọc sạch thuốc"
@@ -25530,7 +25533,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Thuốc chống co giật Phenytoin có tỷ lệ liên kết với protein huyết tương rất cao (~90%). Về mặt Dược lâm sàng, đặc điểm này có ý nghĩa quan trọng nào khi kê đơn?",
     "options": [
-      "Khi phối hợp với thuốc khác có ái lực protein cao hơn (như NSAID, Salicylat), Phenytoin bị đẩy ra làm nồng độ thuốc tự do tăng gấp đôi gây nguy cơ ngộ độc thần kinh nghiêm trọng",
+      "Khi phối hợp với thuốc khác có ái lực protein cao hơn, Phenytoin bị đẩy ra làm nồng độ thuốc tự do tăng gấp đôi gây nguy cơ ngộ độc thần kinh nghiêm trọng",
       "Phenytoin hầu như không phân bố vào các tổ chức thần kinh và não bộ",
       "Phenytoin đào thải nhanh chóng qua nước tiểu chỉ sau 30 phút dùng thuốc",
       "Không bao giờ xảy ra tương tác thuốc tại vị trí gắn kết trên Albumin huyết tương"
@@ -25547,7 +25550,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Các đơn vị đo lường gồm mét (m), kilôgam (kg), giây (s), ampe (A), kelvin (K), mol (mol) và candela (cd) thuộc hệ đơn vị đo lường nào sau đây?",
     "options": [
-      "Hệ đo lường quốc tế SI (Système International d'Unités)",
+      "Hệ đo lường quốc tế SI",
       "Hệ đơn vị quy ước lâm sàng truyền thống cổ điển",
       "Hệ đơn vị đo lường dược dụng Anh - Mỹ (Imperial System)",
       "Hệ đo lường tiêu chuẩn phòng thí nghiệm vi sinh học"
@@ -25564,7 +25567,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Theo Giáo trình Dược Lâm Sàng Bộ Y tế (Chương 3), nồng độ Glucose huyết thanh lúc đói ở người bình thường nằm trong khoảng nào và giá trị bệnh lý được xác định là:",
     "options": [
-      "Bình thường: 70 - 110 mg/dL (3,9 - 6,1 mmol/L); mức đường huyết lúc đói > 140 mg/dL (7,7 mmol/L) hoặc theo tiêu chuẩn mới >= 126 mg/dL (7,0 mmol/L) được coi là bệnh lý đái tháo đường",
+      "Bình thường: 70 - 110 mg/dL; mức đường huyết lúc đói > 140 mg/dL hoặc theo tiêu chuẩn mới >= 126 mg/dL được coi là bệnh lý đái tháo đường",
       "Bình thường: 120 - 180 mg/dL; bệnh lý khi glucose > 250 mg/dL",
       "Bình thường: 40 - 70 mg/dL; bệnh lý khi glucose > 90 mg/dL",
       "Bình thường: 10 - 20 mmol/L; bệnh lý khi glucose > 30 mmol/L"
@@ -25598,7 +25601,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Dựa vào Bảng 3.6 Giáo trình Dược Lâm Sàng Bộ Y tế, bệnh nhân xuất hiện vàng da kèm phân trắng bệch màu đất sét, nước tiểu sẫm màu, xét nghiệm Bilirubin trực tiếp > 50% toàn phần và Phosphatase kiềm (ALP) tăng vọt gấp nhiều lần bình thường. Chẩn đoán nguyên nhân vàng da là:",
     "options": [
-      "Vàng da do ứ mật / tắc mật (sỏi đường mật, u chèn ép đầu tụy)",
+      "Vàng da do ứ mật / tắc mật",
       "Vàng da do tiêu huyết / tan máu cấp tính",
       "Vàng da do viêm gan virus cấp hoại tử tế bào gan",
       "Vàng da do xơ gan do rượu mạn tính giai đoạn còn bù"
@@ -25615,7 +25618,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Một bệnh nhân nữ 28 tuổi vào viện vì xuất huyết dưới da dạng chấm nốt rải rác toàn thân và chảy máu chân răng, không sốt, không có dấu hiệu nhiễm khuẩn. Kết quả công thức máu: Số lượng Tiểu cầu giảm sâu còn 12 x 10^9/L (giá trị bình thường: 150 - 300 x 10^9/L). Vấn đề bệnh lý nghĩ đến hàng đầu là:",
     "options": [
-      "Xuất huyết giảm tiểu cầu tự miễn (ITP) hoặc tổn thương tủy xương",
+      "Xuất huyết giảm tiểu cầu tự miễn hoặc tổn thương tủy xương",
       "Sốt xuất huyết Dengue thể xuất huyết có sốt cao liên tục",
       "Nhiễm khuẩn huyết do vi khuẩn Gram âm gây đông máu nội mạch rải rác",
       "Ngộ độc cấp tính thuốc chống đông máu Warfarin"
@@ -25666,7 +25669,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Nồng độ Urê huyết thanh tăng cao do nguyên nhân SAU THẬN thường xuất phát từ cơ chế bệnh lý nào sau đây?",
     "options": [
-      "Tắc nghẽn cơ học đường dẫn nước tiểu (như sỏi niệu quản, sỏi bàng quang, u xơ phì đại tuyến tiền liệt)",
+      "Tắc nghẽn cơ học đường dẫn nước tiểu",
       "Mất nước nặng do nôn mửa, tiêu chảy cấp hoặc sốc giảm thể tích tuần hoàn",
       "Viêm cầu thận cấp tính và hoại tử ống thận cấp do nhiễm độc thuốc",
       "Chế độ ăn giàu chất đạm protein hoặc xuất huyết tiêu hóa trên ồ ạt"
@@ -25684,7 +25687,7 @@ const ALL_EXAM_BANK = [
     "question": "Tương tác thuốc nào sau đây dẫn đến nguy cơ xuất hiện 'Hội chứng Serotonin' nguy hiểm đến tính mạng (biểu hiện: sốt cao, co cứng cơ, run rẩy, kích động, lú lẫn, tiêu chảy)?",
     "options": [
       "Phối hợp thuốc ức chế tái hấp thu chọn lọc serotonin (SSRI như Fluoxetin) với thuốc IMAO hoặc Tramadol",
-      "Phối hợp kháng sinh Macrolid (như Clarithromycin) với thuốc hạ lipid máu nhóm Statin",
+      "Phối hợp kháng sinh Macrolid với thuốc hạ lipid máu nhóm Statin",
       "Phối hợp thuốc kháng histamin H1 thế hệ 2 (Cetirizin) với Paracetamol",
       "Phối hợp thuốc chẹn kênh calci (Amlodipin) với thuốc ức chế men chuyển (Enalapril)"
     ],
@@ -25717,7 +25720,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Khi chỉ định kháng sinh nhóm Fluoroquinolon (như Ciprofloxacin) hoặc nhóm Tetracyclin, Dược sĩ lâm sàng cần lưu ý bệnh nhân không được uống thuốc cùng thời điểm với thuốc kháng acid dạ dày (Antacid chứa Al3+, Mg2+) hoặc sữa vì lý do nào?",
     "options": [
-      "Các ion kim loại đa hóa trị (Al3+, Mg2+, Ca2+, Fe2+) tạo phức chelat không tan và không hấp thu được với kháng sinh, làm giảm mạnh sinh khả dụng của thuốc",
+      "Các ion kim loại đa hóa trị tạo phức chelat không tan và không hấp thu được với kháng sinh, làm giảm mạnh sinh khả dụng của thuốc",
       "Antacid phá hủy vòng beta-lactam của kháng sinh ngay trong môi trường acid dịch vị",
       "Sữa làm tăng tốc độ tháo rỗng dạ dày khiến kháng sinh bị bài xuất ra ngoài trước khi hấp thu",
       "Kháng sinh bị kiềm hóa dẫn đến chuyển hóa hoàn toàn qua gan thành chất độc cho thận"
@@ -25802,7 +25805,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Phản ứng dị ứng thuốc kiểu quá mẫn muộn qua trung gian tế bào (Dị ứng Týp IV theo phân loại của Gell và Coombs) được khởi phát trực tiếp bởi thành phần miễn dịch nào?",
     "options": [
-      "Tế bào lympho T mẫn cảm (giải phóng lymphokin và cytokin sau 24 - 48 giờ tiếp xúc lại dị nguyên)",
+      "Tế bào lympho T mẫn cảm",
       "Kháng thể miễn dịch IgE gắn trên bề mặt tế bào mastocyte và bạch cầu ưa base",
       "Phức hợp miễn dịch lưu hành kháng nguyên - kháng thể IgG lắng đọng tại màng mao mạch",
       "Kháng thể IgM và IgG hoạt hóa hệ thống bổ thể làm tan tế bào đích"
@@ -25836,7 +25839,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Bệnh nhân trước khi tiêm kháng sinh Amoxicillin được tiến hành làm test lẩy da (Prick test) nhưng kết quả thu được là Âm tính giả (thực chất bệnh nhân có dị ứng nhưng test không phản ứng). Nguyên nhân thường gặp nhất gây ra sai lệch này là:",
     "options": [
-      "Bệnh nhân trước đó đang sử dụng thuốc kháng Histamin H1 (như Loratadin, Cetirizin) hoặc thuốc Corticoid",
+      "Bệnh nhân trước đó đang sử dụng thuốc kháng Histamin H1 hoặc thuốc Corticoid",
       "Dung dịch thử nghiệm có nồng độ kháng sinh quá cao gây kích ứng tại chỗ",
       "Bệnh nhân có tiền sử suy giảm chức năng gan do uống rượu",
       "Kỹ thuật viên đâm kim lẩy da quá sâu vào lớp mao mạch gây chảy máu"
@@ -25887,10 +25890,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Kháng sinh nào sau đây CHỐNG CHỈ ĐỊNH TUYỆT ĐỐI cho phụ nữ có thai do nguy cơ gây tổn thương dây thần kinh số VIII dẫn đến điếc vĩnh viễn ở thai nhi?",
     "options": [
-      "Kháng sinh nhóm Aminoglycosid (như Streptomycin, Gentamicin, Kanamycin)",
-      "Kháng sinh nhóm Penicillin tự nhiên và bán tổng hợp (như Amoxicillin, Ampicillin)",
-      "Kháng sinh nhóm Cephalosporin thế hệ 2 và 3 (như Cefuroxim, Ceftriaxon)",
-      "Kháng sinh nhóm Macrolid thông thường (như Spiramycin, Erythromycin base)"
+      "Kháng sinh nhóm Aminoglycosid",
+      "Kháng sinh nhóm Penicillin tự nhiên và bán tổng hợp",
+      "Kháng sinh nhóm Cephalosporin thế hệ 2 và 3",
+      "Kháng sinh nhóm Macrolid thông thường"
     ],
     "correct": 0,
     "explanation": "Theo Giáo trình Dược lâm sàng (trang 180, Bảng 12.5): Aminoglycosid qua được rau thai và tích lũy ở tai trong thai nhi, gây hủy hoại tế bào ốc tai và tiền đình, gây điếc bẩm sinh vĩnh viễn. Chống chỉ định trong suốt thai kỳ.",
@@ -25921,7 +25924,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Tại sao các thuốc có bản chất là KIỀM YẾU / BASE YẾU (như Erythromycin, Cafein, Morphin) lại có xu hướng tích tụ với nồng độ trong sữa mẹ cao hơn đáng kể so với nồng độ trong huyết tương của người mẹ?",
     "options": [
-      "Vì sữa mẹ có pH hơi acid hơn huyết tương (pH sữa ~ 7,0 vs pH máu 7,4), các thuốc base yếu vào sữa sẽ bị ion hóa và bị giữ lại ('bẫy ion')",
+      "Vì sữa mẹ có pH hơi acid hơn huyết tương, các thuốc base yếu vào sữa sẽ bị ion hóa và bị giữ lại",
       "Vì các tuyến sữa mẹ bài tiết chủ động các chất kiềm yếu ra ngoài theo cơ chế vận chuyển tích cực",
       "Vì sữa mẹ chứa nhiều albumin gắn kết chặt chẽ với các thuốc có bản chất kiềm yếu",
       "Vì các thuốc base yếu có phân tử lượng rất lớn không thể khuếch tán ngược trở lại"
@@ -25955,7 +25958,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Tác dụng không mong muốn nghiêm trọng và phổ biến nhất trên hệ cơ quan vận động khi điều trị Glucocorticoid đường toàn thân liều cao kéo dài là gì?",
     "options": [
-      "Loãng xương, xốp xương và nguy cơ gãy xương bệnh lý (đặc biệt lún xẹp đốt sống, gãy cổ xương đùi)",
+      "Loãng xương, xốp xương và nguy cơ gãy xương bệnh lý",
       "Phì đại quá mức các bó cơ vân và tăng khoáng hóa bao khớp ngoại vi",
       "Cường hóa quá trình lắng đọng calci làm vôi hóa dây chằng quanh cột sống",
       "Kích thích tăng sinh sụn tiếp hợp làm trẻ em phát triển chiều cao vượt trội"
@@ -25972,7 +25975,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Tại sao việc ngừng đột ngột thuốc Glucocorticoid sau một đợt điều trị toàn thân kéo dài (trên 3 tuần với liều Prednisolon >= 20 mg/ngày) có thể gây ra cơn suy vỏ thượng thận cấp nguy kịch?",
     "options": [
-      "Vì Glucocorticoid ngoại sinh liều cao ức chế hồi ứng ngược âm tính (negative feedback) lên trục dưới đồi - tuyến yên (HPA), làm teo vỏ thượng thận và ngừng tiết Cortisol nội sinh",
+      "Vì Glucocorticoid ngoại sinh liều cao ức chế hồi ứng ngược âm tính lên trục dưới đồi - tuyến yên, làm teo vỏ thượng thận và ngừng tiết Cortisol nội sinh",
       "Vì Glucocorticoid tích lũy trong mô mỡ giải phóng ồ ạt vào máu phá hủy thụ thể mineralocorticoid",
       "Vì ngừng thuốc làm tăng bài xuất Aldosteron đột ngột gây tăng natri máu và phù phổi cấp",
       "Vì tuyến thượng thận bị kích thích tăng sinh quá mức gây hội chứng bão hormon thượng thận"
@@ -25989,7 +25992,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Trường hợp điều trị bằng Glucocorticoid nào sau đây KHÔNG BẮT BUỘC phải thực hiện quy trình giảm liều từ từ trước khi ngừng thuốc?",
     "options": [
-      "Đợt điều trị ngắn ngày dưới 2 tuần (như Prednisolon 20 - 40 mg/ngày dùng trong 5 - 7 ngày điều trị đợt cấp hen hoặc dị ứng)",
+      "Đợt điều trị ngắn ngày dưới 2 tuần",
       "Bệnh nhân dùng Dexamethason 4 mg/ngày liên tục suốt 3 tháng điều trị u não",
       "Bệnh nhân viêm khớp dạng thấp uống Methylprednisolon 16 mg/ngày kéo dài 6 tháng",
       "Bệnh nhân hội chứng thận hư dùng Prednisolon liều cao 1 mg/kg/ngày kéo dài trên 4 tuần"
@@ -26023,7 +26026,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Chế độ dinh dưỡng được Dược sĩ lâm sàng khuyến cáo cho bệnh nhân bắt đầu điều trị Glucocorticoid đường toàn thân dài ngày bao gồm các nguyên tắc nào?",
     "options": [
-      "Hạn chế muối ăn (giảm natri), giảm đường tinh bột và chất béo; tăng cường thức ăn giàu protein (chất đạm), calci, vitamin D và kali",
+      "Hạn chế muối ăn, giảm đường tinh bột và chất béo; tăng cường thức ăn giàu protein, calci, vitamin D và kali",
       "Ăn nhiều muối natri để kích thích giữ nước nâng huyết áp; kiêng hoàn toàn chất đạm",
       "Ăn nhiều đường ngọt và mỡ động vật để bù đắp năng lượng tiêu hao",
       "Hạn chế tuyệt đối calci và vitamin D vì nguy cơ gây sỏi mật và vôi hóa mạch máu"
@@ -26040,7 +26043,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Bệnh nhân ung thư dạ dày giai đoạn cuối xuất hiện đau đớn dữ dội liên tục không đáp ứng với Paracetamol và Codein. Nguyên tắc sử dụng thuốc giảm đau Morphin và thuốc hỗ trợ phối hợp cho bệnh nhân này theo hướng dẫn của WHO và Giáo trình Bộ Y tế là:",
     "options": [
-      "Chỉ định Morphin uống (hoặc tiêm) dùng ĐỀU ĐẶN THEO GIỜ CỐ ĐỊNH (mỗi 4 giờ), không chờ đau mới uống; luôn phối hợp cùng thuốc nhuận tràng kích thích",
+      "Chỉ định Morphin uống dùng ĐỀU ĐẶN THEO GIỜ CỐ ĐỊNH, không chờ đau mới uống; luôn phối hợp cùng thuốc nhuận tràng kích thích",
       "Chỉ cho bệnh nhân dùng Morphin khi cơn đau đã xuất hiện dữ dội không chịu đựng nổi",
       "Tuyệt đối không dùng thuốc nhuận tràng vì Morphin gây tăng tiết dịch ruột làm tiêu chảy",
       "Phối hợp Morphin cùng 2 thuốc NSAID liều tối đa để tăng hiệp đồng giảm đau"
@@ -26091,7 +26094,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Bệnh nhân đến phòng khám răng hàm mặt với chẩn đoán Viêm quanh cuống răng áp xe cấp tính nghi ngờ có nhiễm khuẩn hỗn hợp vi khuẩn ái khí Gram dương và vi khuẩn kỵ khí khoang miệng. Kháng sinh phối hợp ưu tiên lựa chọn theo khuyến cáo là:",
     "options": [
-      "Amoxicillin + Acid clavulanic (hoặc Spiramycin phối hợp Metronidazol)",
+      "Amoxicillin + Acid clavulanic",
       "Gentamicin tiêm bắp đơn độc liều duy nhất",
       "Vancomycin truyền tĩnh mạch kết hợp Colistin",
       "Ciprofloxacin phối hợp Cotrimoxazol đường uống"
@@ -26125,7 +26128,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Theo nguyên tắc sử dụng Kháng sinh dự phòng trong phẫu thuật của Bộ Y tế, thời điểm tối ưu nhất để đưa kháng sinh dự phòng đường tiêm tĩnh mạch là:",
     "options": [
-      "Trong vòng 30 đến 60 phút trước khi rạch da (thường đưa vào lúc bắt đầu khởi mê)",
+      "Trong vòng 30 đến 60 phút trước khi rạch da",
       "Tiêm trước khi phẫu thuật 12 đến 24 giờ tại buồng bệnh nội trú",
       "Tiêm ngay sau khi cuộc mổ kết thúc và bệnh nhân đã được chuyển về phòng hồi tỉnh",
       "Uống liên tục 3 ngày trước khi phẫu thuật và kéo dài 10 ngày sau mổ"
@@ -26142,7 +26145,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Ở trẻ em sơ sinh và nhũ nhi dưới 1 tuổi, đường đưa thuốc nào sau đây được đánh giá là đường dùng mang lại nồng độ hấp thu ổn định và tin cậy nhất trong điều trị bệnh nặng?",
     "options": [
-      "Đường tiêm tĩnh mạch (IV)",
+      "Đường tiêm tĩnh mạch",
       "Đường tiêm bắp sâu (IM)",
       "Đường tiêm dưới da (SC)",
       "Đường uống dạng siro ngọt"
@@ -26159,7 +26162,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Ở người cao tuổi, mặc dù xét nghiệm nồng độ Creatinin huyết thanh vẫn nằm trong giới hạn bình thường (khoảng 0,8 - 1,0 mg/dL), tại sao Dược sĩ lâm sàng vẫn bắt buộc phải tính độ thanh thải ClCr theo Cockcroft-Gault để hiệu chỉnh liều thuốc?",
     "options": [
-      "Vì khối lượng cơ bắp ở người già bị teo giảm sinh lý làm giảm sản sinh Creatinin nội sinh, che lấp tình trạng suy giảm mức lọc cầu thận (đã giảm 30 - 50%)",
+      "Vì khối lượng cơ bắp ở người già bị teo giảm sinh lý làm giảm sản sinh Creatinin nội sinh, che lấp tình trạng suy giảm mức lọc cầu thận",
       "Vì thận người già tăng bài tiết tích cực Creatinin qua ống lượn gần gấp 5 lần",
       "Vì người cao tuổi thường xuyên uống nhiều nước làm pha loãng nước tiểu",
       "Vì Creatinin ở người già chuyển hóa qua gan thành các hợp chất acid uric"
@@ -26176,7 +26179,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Vitamin A liều cao được Tổ chức Y tế Thế giới (WHO) và Bộ Y tế chỉ định bắt buộc trong trường hợp bệnh lý cấp tính nào ở trẻ em nhằm giảm biến chứng loét giác mạc và giảm tỷ lệ tử vong?",
     "options": [
-      "Trẻ em mắc bệnh Sởi (Measles) hoặc suy dinh dưỡng nặng có nguy cơ khô mắt",
+      "Trẻ em mắc bệnh Sởi hoặc suy dinh dưỡng nặng có nguy cơ khô mắt",
       "Trẻ em mắc bệnh sốt xuất huyết Dengue thể xuất huyết nhẹ",
       "Trẻ em mắc bệnh thủy đậu (trái rạ) chưa có biến chứng",
       "Trẻ em bị viêm họng cấp do liên cầu khuẩn tan máu beta"
@@ -26193,10 +26196,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Xét nghiệm định lượng Acid uric huyết thanh tăng cao thường được Dược sĩ lâm sàng sử dụng để theo dõi phát hiện tác dụng không mong muốn của nhóm thuốc điều trị nào?",
     "options": [
-      "Thuốc điều trị lao (đặc biệt Pyrazinamid và Ethambutol) hoặc thuốc lợi tiểu Thiazid kéo dài",
-      "Kháng sinh nhóm Beta-lactam (như Amoxicillin và Ceftriaxon)",
-      "Thuốc an thần gây ngủ nhóm Benzodiazepin (như Diazepam)",
-      "Thuốc ức chế men chuyển điều trị tăng huyết áp (như Enalapril)"
+      "Thuốc điều trị lao hoặc thuốc lợi tiểu Thiazid kéo dài",
+      "Kháng sinh nhóm Beta-lactam",
+      "Thuốc an thần gây ngủ nhóm Benzodiazepin",
+      "Thuốc ức chế men chuyển điều trị tăng huyết áp"
     ],
     "correct": 0,
     "explanation": "Theo Giáo trình Dược lâm sàng (trang 53): Acid uric tăng do thuốc làm giảm bài tiết acid uric ở ống thận (Pyrazinamid, Lợi tiểu Thiazid, Furosemid, Ethambutol) hoặc do tăng phân hủy tế bào trong điều trị hóa chất ung thư. Cần theo dõi acid uric để phát hiện và dự phòng cơn Gout cấp.",
@@ -26244,7 +26247,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Bệnh nhân nam 65 tuổi, cân nặng 60 kg, nhiễm khuẩn nặng trực khuẩn mủ xanh Pseudomonas aeruginosa được chỉ định kháng sinh Ceftazidim. Bệnh nhân có suy giảm chức năng thận với ClCr đo được là 25 mL/phút. Căn cứ theo bảng hiệu chỉnh liều Ceftazidim theo chức năng thận trong Giáo trình Dược lâm sàng (Bảng 2.6 tr. 44), chế độ liều Ceftazidim tiêm tĩnh mạch phù hợp nhất cho bệnh nhân là:",
     "options": [
-      "1 g mỗi 24 giờ (hoặc 500 mg mỗi 12 giờ)",
+      "1 g mỗi 24 giờ",
       "2 g mỗi 8 giờ tiêm tĩnh mạch",
       "1 g mỗi 8 giờ tiêm tĩnh mạch",
       "500 mg mỗi 48 giờ tiêm tĩnh mạch"
@@ -26261,10 +26264,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Một thuốc kháng sinh có thời gian bán thải t1/2 = 6 giờ được truyền tĩnh mạch liên tục với tốc độ không đổi R. Dược sĩ lâm sàng tư vấn cho bác sĩ biết: Sau khoảng thời gian truyền là bao lâu thì nồng độ thuốc trong huyết tương bệnh nhân đạt tới trạng thái cân bằng (Css > 95% nồng độ ổn định)?",
     "options": [
-      "Sau khoảng 24 đến 30 giờ (tương đương 4 đến 5 lần t1/2)",
-      "Sau khoảng 6 giờ (tương đương 1 lần t1/2)",
-      "Sau khoảng 12 giờ (tương đương 2 lần t1/2)",
-      "Sau khoảng 48 đến 60 giờ (tương đương 8 đến 10 lần t1/2)"
+      "Sau khoảng 24 đến 30 giờ",
+      "Sau khoảng 6 giờ",
+      "Sau khoảng 12 giờ",
+      "Sau khoảng 48 đến 60 giờ"
     ],
     "correct": 0,
     "explanation": "Theo nguyên lý dược động học cơ bản (Giáo trình Dược lâm sàng tr. 25-27): Khi dùng thuốc liên tục hoặc dùng liều lặp lại theo khoảng cách cố định, nồng độ thuốc trong máu đạt trạng thái ổn định (cân bằng) sau 4 - 5 lần thời gian bán thải (t1/2). Với t1/2 = 6 giờ, thời gian cần thiết là 6 x 4 = 24 giờ đến 6 x 5 = 30 giờ.",
@@ -26278,7 +26281,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Thông số dược động học Thể tích phân bố (Vd) của một thuốc có ý nghĩa lâm sàng quan trọng nhất trong việc:",
     "options": [
-      "Tính toán liều nạp ban đầu (Loading Dose - D_L) để nhanh chóng đạt nồng độ điều trị mong muốn trong huyết tương",
+      "Tính toán liều nạp ban đầu để nhanh chóng đạt nồng độ điều trị mong muốn trong huyết tương",
       "Xác định thời gian đào thải hoàn toàn thuốc ra khỏi cơ thể bệnh nhân",
       "Xác định sinh khả dụng tuyệt đối đường uống của dạng bào chế",
       "Đánh giá mức độ độc tính trực tiếp của thuốc lên tế bào gan"
@@ -26295,7 +26298,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Bệnh nhân nam 45 tuổi đến viện khám định kỳ, xét nghiệm máu cho thấy: Hoạt độ men gan ALT (SGPT) tăng gấp 10 lần giới hạn bình thường, trong khi AST (SGOT) chỉ tăng nhẹ gấp 2 lần. Tỷ số De Ritis (AST/ALT) < 0,5. Kết quả xét nghiệm này gợi ý định hướng tổn thương nào nhiều nhất?",
     "options": [
-      "Tổn thương viêm tế bào gan cấp tính (như viêm gan virus cấp hoặc viêm gan do ngộ độc thuốc Paracetamol)",
+      "Tổn thương viêm tế bào gan cấp tính",
       "Bệnh gan mạn tính do nghiện rượu tiến triển hoặc xơ gan do rượu",
       "Nhồi máu cơ tim cấp tiến triển trong vòng 24 - 48 giờ",
       "Tiêu cơ vân cấp tính kèm chấn thương đụng dập phần mềm diện rộng"
@@ -26315,7 +26318,7 @@ const ALL_EXAM_BANK = [
       "Tình trạng nhiễm khuẩn cấp tính do vi khuẩn gây ra",
       "Tình trạng nhiễm trùng mạn tính do nhiễm ký sinh trùng đường ruột",
       "Dị ứng thuốc dạng phát ban mẩn ngứa toàn thân",
-      "Nhiễm virus cấp tính thể điển hình (như Sốt xuất huyết Dengue)"
+      "Nhiễm virus cấp tính thể điển hình"
     ],
     "correct": 0,
     "explanation": "Theo Giáo trình Dược lâm sàng (trang 55-57): Bạch cầu trung tính (Neutrophil) là hàng rào phòng thủ đầu tiên chống lại vi khuẩn. Tăng bạch cầu toàn phần kết hợp với tăng tỷ lệ Neutrophil và chuyển trái (tăng bạch cầu đũa dạng chưa trưởng thành) là dấu hiệu kinh điển của nhiễm trùng cấp do vi khuẩn.",
@@ -26380,7 +26383,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Một phụ nữ 24 tuổi đang dùng thuốc tránh thai đường uống kết hợp (Ethinylestradiol + Levonorgestrel). Sau đó bệnh nhân được chẩn đoán mắc bệnh lao phổi và bắt đầu điều trị bằng phác đồ có Rifampicin 600 mg/ngày. Dược sĩ lâm sàng cần cảnh báo nguy cơ nào và đưa ra khuyến cáo gì?",
     "options": [
-      "Rifampicin là chất cảm ứng enzym gan CYP3A4 mạnh, làm tăng tốc độ chuyển hóa thuốc tránh thai gây mất hiệu lực ngừa thai; cần tư vấn dùng biện pháp tránh thai cơ học bổ sung (như bao cao su)",
+      "Rifampicin là chất cảm ứng enzym gan CYP3A4 mạnh, làm tăng tốc độ chuyển hóa thuốc tránh thai gây mất hiệu lực ngừa thai; cần tư vấn dùng biện pháp tránh thai cơ học bổ sung",
       "Rifampicin ức chế enzym gan làm tăng nồng độ estrogen gây nguy cơ huyết khối tĩnh mạch sâu; cần giảm nửa liều thuốc tránh thai",
       "Thuốc tránh thai làm mất tác dụng diệt khuẩn của Rifampicin dẫn đến thất bại phác đồ lao phổi; phải ngừng thuốc lao",
       "Hai thuốc gây tương tác tạo phức kết tủa tại ruột; chỉ cần uống cách nhau 2 giờ là an toàn"
@@ -26431,7 +26434,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Ngay sau khi tiêm bắp mũi đầu tiên kháng sinh Cefotaxim tại trạm y tế, bệnh nhân xuất hiện hồi hộp, thở rít thanh quản, nổi mày đay ngứa toàn thân, mạch nhanh nhỏ 120 lần/phút, huyết áp tụt xuống 70/40 mmHg (Sốc phản vệ độ III). Thuốc cấp cứu thiết yếu số 1 cần được dùng ngay lập tức theo phác đồ của Bộ Y tế là:",
     "options": [
-      "Adrenalin 1 mg/1 mL tiêm bắp ngay lập tức 1/2 ống (0,5 mg) vào mặt trước ngoài đùi",
+      "Adrenalin 1 mg/1 mL tiêm bắp ngay lập tức 1/2 ống vào mặt trước ngoài đùi",
       "Methylprednisolon 40 mg tiêm tĩnh mạch chậm",
       "Diphenhydramin 10 mg tiêm bắp sâu",
       "Truyền tĩnh mạch thật nhanh dung dịch Natri clorid 0,9% 500 mL"
@@ -26448,10 +26451,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Theo phân loại tác dụng không mong muốn của thuốc theo Rawlins và Thompson, phản ứng dị ứng thuốc (như sốc phản vệ với penicillin hoặc hội chứng Stevens-Johnson với allopurinol) thuộc nhóm nào?",
     "options": [
-      "ADR nhóm B (Bizarre - phản ứng kỳ lạ, dị ứng, không phụ thuộc liều dùng, tỷ lệ mắc thấp nhưng tỷ lệ tử vong cao)",
-      "ADR nhóm A (Augmented - tăng tác dụng dược lý, phụ thuộc liều dùng, tiên lượng được, thường gặp)",
-      "ADR nhóm C (Chronic - tác dụng xuất hiện khi dùng thuốc kéo dài liên tục)",
-      "ADR nhóm D (Delayed - tác dụng xuất hiện muộn như gây quái thai hoặc sinh ung thư)"
+      "ADR nhóm B (Bizarre)",
+      "ADR nhóm A (Augmented)",
+      "ADR nhóm C (Chronic)",
+      "ADR nhóm D (Delayed)"
     ],
     "correct": 0,
     "explanation": "Theo Giáo trình Dược lâm sàng (Chương 5 tr. 80-82): Phân loại Rawlins - Thompson chia ADR làm 2 nhóm chính: Type A (thường gặp, dự đoán trước được, liên quan đến liều và tác dụng dược lý) và Type B (không liên quan đến liều, không dự đoán trước được, liên quan đến cơ địa dị ứng di truyền hoặc miễn dịch học như sốc phản vệ, Stevens-Johnson).",
@@ -26465,10 +26468,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Một phụ nữ mang thai ở tuần thứ 28 được phát hiện tăng huyết áp thai kỳ với huyết áp dao động 150/95 mmHg. Nhóm thuốc hạ áp nào sau đây TUYỆT ĐỐI CHỐNG CHỈ ĐỊNH trong thai kỳ do nguy cơ gây suy thận vô niệu thai nhi, thiểu ối, dị tật sọ mặt và tử vong chu sinh?",
     "options": [
-      "Thuốc ức chế men chuyển (ACEi) và Thuốc chẹn thụ thể Angiotensin II (ARB)",
-      "Thuốc chẹn kênh calci DHP phóng thích chậm (như Nifedipin retard)",
-      "Thuốc tác động lên hệ thần kinh trung ương (như Methyldopa)",
-      "Thuốc chẹn thụ thể beta và alpha kết hợp (như Labetalol)"
+      "Thuốc Ức chế men chuyển và thuốc chẹn thụ thể Angiotensin II",
+      "Thuốc chẹn kênh calci DHP phóng thích chậm",
+      "Thuốc tác động lên hệ thần kinh trung ương",
+      "Thuốc chẹn thụ thể beta và alpha kết hợp"
     ],
     "correct": 0,
     "explanation": "Theo Giáo trình Dược lâm sàng (Chương 6 tr. 94-96): Thuốc ức chế men chuyển (Enalapril, Captopril, Lisinopril...) và chẹn thụ thể ARB (Losartan, Valsartan...) thuộc phân loại D (hoặc X trong 3 tháng giữa và cuối thai kỳ). Chúng làm giảm tưới máu thận thai nhi, gây suy thận vô niệu, thiểu ối dẫn đến co cứng chi, dị tật phát triển xương sọ và phổi của thai nhi.",
@@ -26483,7 +26486,7 @@ const ALL_EXAM_BANK = [
     "question": "Theo phân loại mức độ an toàn của thuốc trên phụ nữ mang thai của Cục Quản lý Thực phẩm và Dược phẩm Hoa Kỳ (US-FDA), thuốc thuộc 'Nhóm X' có đặc điểm nào sau đây?",
     "options": [
       "Các nghiên cứu trên động vật hoặc trên người đã chứng minh rõ ràng thuốc gây bất thường cho thai nhi; nguy cơ dùng thuốc vượt trội hoàn toàn mọi lợi ích điều trị, chống chỉ định tuyệt đối",
-      "Các nghiên cứu có đối chứng trên phụ nữ mang thai không cho thấy nguy cơ đối với thai nhi trong suốt thai kỳ (như Acid folic liều khuyến nghị)",
+      "Các nghiên cứu có đối chứng trên phụ nữ mang thai không cho thấy nguy cơ đối với thai nhi trong suốt thai kỳ",
       "Các nghiên cứu trên động vật cho thấy có độc tính trên thai nhưng chưa có nghiên cứu đầy đủ trên người, chỉ dùng khi lợi ích lớn hơn nguy cơ",
       "Có bằng chứng rõ ràng về nguy cơ trên thai nhi người nhưng trong trường hợp đe dọa tính mạng người mẹ vẫn có thể chấp nhận sử dụng"
     ],
@@ -26499,7 +26502,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Phụ nữ mang thai mắc hội chứng tiền sản giật nặng có nguy cơ xuất hiện cơn co giật sản giật đe dọa tính mạng cả mẹ và thai nhi. Thuốc được ưu tiên lựa chọn hàng đầu theo hướng dẫn của Bộ Y tế để dự phòng và điều trị cơn co giật sản giật là:",
     "options": [
-      "Magnesi sulfat (MgSO4) truyền tĩnh mạch theo dõi sát phản xạ gân xương bánh chè",
+      "Magnesi sulfat truyền tĩnh mạch theo dõi sát phản xạ gân xương bánh chè",
       "Diazepam tiêm tĩnh mạch nhanh liều cao 10 - 20 mg",
       "Phenobarbital tiêm bắp sâu",
       "Phenytoin truyền tĩnh mạch"
@@ -26533,7 +26536,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Một trẻ em 5 tuổi bị sốt cao do nhiễm virus cúm mùa hoặc thủy đậu. Cán bộ y tế TUYỆT ĐỐI KHÔNG ĐƯỢC sử dụng Aspirin (Acid acetylsalicylic) để hạ sốt cho trẻ vì nguy cơ xuất hiện biến chứng nguy hiểm nào?",
     "options": [
-      "Hội chứng Reye (suy gan cấp tiến triển kết hợp phù não cấp tính dẫn đến hôn mê và tỷ lệ tử vong rất cao)",
+      "Hội chứng Reye",
       "Hội chứng xám (Gray baby syndrome) kèm trụy mạch tím tái",
       "Hội chứng da bong vảy do nhiễm độc tụ cầu (SSSS)",
       "Suy tủy dòng hồng cầu gây thiếu máu nặng cấp tính"
@@ -26601,7 +26604,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Nguyên tắc sử dụng Glucocorticoid theo 'Liệu pháp dùng cách ngày' (Alternate-day therapy) trong điều trị các bệnh tự miễn mạn tính nhằm mục đích chính là gì?",
     "options": [
-      "Uống liều gấp đôi vào lúc 8 giờ sáng mỗi 48 giờ để giảm thiểu tối đa hiện tượng ức chế trục Dưới đồi - Tuyến yên - Vỏ thượng thận (HPA) và phòng ngừa suy thượng thận cấp khi ngừng thuốc",
+      "Uống liều gấp đôi vào lúc 8 giờ sáng mỗi 48 giờ để giảm thiểu tối đa hiện tượng ức chế trục Dưới đồi - Tuyến yên - Vỏ thượng thận và phòng ngừa suy thượng thận cấp khi ngừng thuốc",
       "Uống thuốc vào buổi tối trước khi đi ngủ để hạn chế tối đa nguy cơ viêm loét dạ dày tá tràng",
       "Chia nhỏ liều làm 4 lần trong ngày để duy trì nồng độ thuốc ổn định liên tục trong huyết tương",
       "Dùng thuốc 5 ngày liên tục rồi nghỉ 2 ngày cuối tuần để cơ thể tái tạo mô xương"
@@ -26618,7 +26621,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "So sánh hoạt lực chống viêm và hoạt lực giữ muối nước của Methylprednisolon với Hydrocortison (chất chuẩn có hoạt lực = 1) theo Giáo trình Dược lâm sàng (Bảng 14.1 tr. 209):",
     "options": [
-      "Methylprednisolon có hoạt lực chống viêm mạnh gấp 5 lần Hydrocortison và hoạt lực giữ muối nước thấp hơn (khoảng 0,5)",
+      "Methylprednisolon có hoạt lực chống viêm mạnh gấp 5 lần Hydrocortison và hoạt lực giữ muối nước thấp hơn",
       "Methylprednisolon có hoạt lực chống viêm bằng Hydrocortison nhưng giữ muối nước gấp 5 lần",
       "Methylprednisolon có hoạt lực chống viêm mạnh gấp 25-30 lần Hydrocortison và không giữ muối nước",
       "Methylprednisolon chỉ có tác dụng tại chỗ ngoài da, không có tác dụng toàn thân"
@@ -26635,7 +26638,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Một bệnh nhân nữ 50 tuổi viêm khớp dạng thấp đang dùng Prednisolon 15 mg/ngày liên tục suốt 6 tháng qua. Do thấy hết đau khớp, bệnh nhân tự ý ngừng thuốc đột ngột. Sau 2 ngày bệnh nhân nhập viện trong tình trạng mệt lả, nôn nhiều, tụt huyết áp nặng (70/50 mmHg), hạ natri máu, tăng kali máu. Nguyên nhân của biến chứng cấp tính này là do:",
     "options": [
-      "Suy vỏ thượng thận cấp do ngừng Glucocorticoid đột ngột sau thời gian dài bị ức chế trục Dưới đồi - Tuyến yên - Thượng thận (HPA)",
+      "Suy vỏ thượng thận cấp do ngừng Glucocorticoid đột ngột sau thời gian dài bị ức chế trục Dưới đồi - Tuyến yên - Thượng thận",
       "Cơn bão giáp trạng cấp tính do phản ứng dội ngược hormon tuyến giáp",
       "Ngộ độc Prednisolon tích tụ trong mô liên kết",
       "Thủng ổ loét dạ dày tá tràng gây mất máu cấp tính"
@@ -26652,7 +26655,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Theo phác đồ bậc thang giảm đau 3 bước của Tổ chức Y tế Thế giới (WHO), nguyên tắc lựa chọn thuốc giảm đau cho bệnh nhân ung thư giai đoạn muộn có mức độ đau dữ dội (thang điểm đau VAS từ 7 đến 10 điểm) là:",
     "options": [
-      "Bắt đầu ngay bằng Opioid mạnh (như Morphin hoặc Fentanyl) phối hợp hoặc không phối hợp với thuốc giảm đau non-opioid và thuốc bổ trợ",
+      "Bắt đầu ngay bằng Opioid mạnh phối hợp hoặc không phối hợp với thuốc giảm đau non-opioid và thuốc bổ trợ",
       "Bắt đầu bằng Paracetamol liều tối đa 4 g/ngày, sau 1 tuần không đỡ mới chuyển sang Opioid yếu",
       "Dùng Codein hoặc Tramadol liều cao tối đa trước khi cân nhắc dùng Opioid mạnh",
       "Chỉ dùng NSAIDs đường tiêm để tránh gây nghiện thuốc cho bệnh nhân"
@@ -26669,10 +26672,10 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Một bệnh nhân ung thư di căn xương đang được kiểm soát đau ổn định bằng Morphin uống tác dụng kéo dài với tổng liều 120 mg/ngày (chia 2 lần). Đôi khi bệnh nhân có các cơn đau đột xuất (breakthrough pain). Liều Morphin tác dụng nhanh dạng dung dịch uống khuyến cáo cho mỗi cơn đau đột xuất là bao nhiêu?",
     "options": [
-      "10 mg đến 20 mg (khoảng 10% đến 15% tổng liều morphin hàng ngày)",
-      "60 mg (tương đương 50% tổng liều morphin hàng ngày)",
-      "40 mg (tương đương 1/3 tổng liều morphin hàng ngày)",
-      "2 mg đến 5 mg (khoảng 2% tổng liều morphin hàng ngày)"
+      "10 mg đến 20 mg",
+      "60 mg",
+      "40 mg",
+      "2 mg đến 5 mg"
     ],
     "correct": 0,
     "explanation": "Theo khuyến cáo của Bộ Y tế và Giáo trình Dược lâm sàng (trang 224-225): Để xử trí cơn đau đột xuất (đau bùng phát), cho bệnh nhân uống 1 liều Morphin tác dụng nhanh (giải phóng nhanh) bằng 1/10 đến 1/6 (khoảng 10% - 15%) tổng liều morphin trong 24 giờ. Với tổng liều 120 mg/ngày, liều cấp cứu là 12 mg đến 20 mg mỗi lần cần thiết (cách nhau tối thiểu 2-4 giờ).",
@@ -26686,7 +26689,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Miếng dán thẩm thấu qua da Fentanyl (Durogesic) là dạng thuốc giảm đau opioid mạnh tiện dụng cho bệnh nhân ung thư. Tuy nhiên, miếng dán này CHỐNG CHỈ ĐỊNH trong trường hợp nào sau đây?",
     "options": [
-      "Bệnh nhân chưa từng sử dụng opioid bao giờ (chưa dung nạp opioid) hoặc dùng để điều trị các cơn đau cấp tính sau mổ",
+      "Bệnh nhân chưa từng sử dụng opioid bao giờ hoặc dùng để điều trị các cơn đau cấp tính sau mổ",
       "Bệnh nhân ung thư có tổn thương di căn xương gây đau mạn tính liên tục",
       "Bệnh nhân bị ung thư vòm họng gặp khó khăn nặng khi nuốt viên thuốc",
       "Bệnh nhân đã dung nạp morphin đường uống liều tương đương ít nhất 60 mg/ngày"
@@ -26720,7 +26723,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Trong một ca phẫu thuật tim hở kéo dài hơn 5 giờ, kháng sinh dự phòng ban đầu là Cefazolin 2g tiêm tĩnh mạch trước mổ 45 phút. Khi nào phẫu thuật viên cần chỉ định tiêm bổ sung liều Cefazolin thứ hai trong lúc mổ?",
     "options": [
-      "Sau 4 giờ phẫu thuật (tương đương 2 lần thời gian bán thải t1/2 của Cefazolin) hoặc khi bệnh nhân mất máu trên 1500 mL",
+      "Sau 4 giờ phẫu thuật hoặc khi bệnh nhân mất máu trên 1500 mL",
       "Sau 1 giờ phẫu thuật bất kể lượng máu mất",
       "Sau 8 giờ phẫu thuật theo chu kỳ dùng thuốc thông thường",
       "Không bao giờ được tiêm thêm liều thứ hai trong lúc mổ vì nguy cơ sốc phản vệ"
@@ -26737,8 +26740,8 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Theo dược động học/dược lực học (PK/PD), nhóm kháng sinh Aminoglycosid (Gentamicin, Amikacin) có đặc tính diệt khuẩn nào sau đây?",
     "options": [
-      "Diệt khuẩn phụ thuộc nồng độ đỉnh (thông số tối ưu là Cmax/MIC >= 8 - 10) và có tác dụng hậu kháng sinh (PAE) kéo dài, do đó tối ưu hóa bằng chế độ liều 1 lần duy nhất trong ngày (ODD)",
-      "Diệt khuẩn phụ thuộc thời gian (thông số tối ưu là %T > MIC), cần chia nhỏ liều tiêm truyền nhiều lần trong ngày",
+      "Diệt khuẩn phụ thuộc nồng độ đỉnh và có tác dụng hậu kháng sinh kéo dài, do đó tối ưu hóa bằng chế độ liều 1 lần duy nhất trong ngày",
+      "Diệt khuẩn phụ thuộc thời gian, cần chia nhỏ liều tiêm truyền nhiều lần trong ngày",
       "Kìm khuẩn phụ thuộc thời gian tiếp xúc của kháng sinh với vi khuẩn",
       "Chỉ có tác dụng diệt khuẩn khi nồng độ đáy Cmin duy trì trên mức độc tính"
     ],
@@ -26754,7 +26757,7 @@ const ALL_EXAM_BANK = [
     "sourceName": "Đề thi Dược Lâm Sàng (Chuẩn Format Dls.pdf)",
     "question": "Một trẻ 10 tháng tuổi bị tiêu chảy cấp phân tóe nước 8 lần/ngày kèm sốt nhẹ. Khám thấy trẻ khát nước, mắt trũng nhẹ, véo da mất sau 1 giây (được chẩn đoán Tiêu chảy cấp Có mất nước - Phác đồ B). Biện pháp điều trị bù dịch nào sau đây là ĐÚNG theo hướng dẫn của WHO và Bộ Y tế?",
     "options": [
-      "Cho uống dung dịch Oresol (ORS) áp lực thẩm thấu thấp với lượng 75 mL/kg trong 4 giờ đầu, sau đó đánh giá lại tình trạng mất nước",
+      "Cho uống dung dịch Oresol áp lực thẩm thấu thấp với lượng 75 mL/kg trong 4 giờ đầu, sau đó đánh giá lại tình trạng mất nước",
       "Truyền tĩnh mạch ngay lập tức dung dịch Glucose 5% với tốc độ 100 mL/kg trong 3 giờ",
       "Nhịn ăn nhịn uống hoàn toàn trong 24 giờ đầu để ruột được nghỉ ngơi",
       "Pha Oresol đặc gấp đôi so với hướng dẫn trên gói để bù natri nhanh hơn"
@@ -26834,6 +26837,6 @@ const ALL_EXAM_BANK = [
   }
 ];
 
-if (typeof module !== "undefined" && module.exports) {
+if (typeof module !== 'undefined' && module.exports) {
   module.exports = ALL_EXAM_BANK;
 }
