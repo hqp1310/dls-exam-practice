@@ -1828,6 +1828,34 @@ function testTtsSampleSpeech() {
   speakExplanation(btn, sampleText);
 }
 
+// Toggle Collapsible Explanation Box (Không tự động mở làm lộ đáp án)
+function toggleExplanationBox(btn) {
+  if (!btn) return;
+  const wrap = btn.closest('.explanation-toggle-wrap');
+  if (!wrap) return;
+  const content = wrap.querySelector('.collapsible-explanation-content');
+  if (!content) return;
+
+  const isExpanded = content.classList.contains('is-expanded');
+  if (isExpanded) {
+    content.classList.remove('is-expanded');
+    content.style.display = 'none';
+    btn.classList.remove('is-open');
+    const textSpan = btn.querySelector('.toggle-exp-text');
+    const arrowSpan = btn.querySelector('.toggle-exp-arrow');
+    if (textSpan) textSpan.textContent = 'Xem đáp án đúng & giải thích chi tiết';
+    if (arrowSpan) arrowSpan.textContent = '▼';
+  } else {
+    content.classList.add('is-expanded');
+    content.style.display = 'flex';
+    btn.classList.add('is-open');
+    const textSpan = btn.querySelector('.toggle-exp-text');
+    const arrowSpan = btn.querySelector('.toggle-exp-arrow');
+    if (textSpan) textSpan.textContent = 'Thu gọn đáp án & giải thích';
+    if (arrowSpan) arrowSpan.textContent = '▲';
+  }
+}
+
 function speakExplanationFromCard(btn) {
   if (!btn) return;
   const container = btn.closest('.explanation-box') || btn.closest('.review-explanation-box');
@@ -2042,20 +2070,27 @@ function renderExamQuestion(index) {
     }
 
     html += `
-      <div class="explanation-box" style="border-left-color: ${badgeColor};">
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.25rem;">
-          <div class="explanation-header" style="color: ${badgeColor};">
-            ${badgeTitle} • ĐÁP ÁN ĐÚNG: [${letters[q.correct]}]
+      <div class="explanation-toggle-wrap">
+        <button class="btn-toggle-explanation" onclick="toggleExplanationBox(this)" type="button">
+          <span>💡</span>
+          <span class="toggle-exp-text">Xem đáp án đúng &amp; giải thích chi tiết</span>
+          <span class="toggle-exp-arrow" style="font-size: 0.72rem; margin-left: 0.2rem;">▼</span>
+        </button>
+        <div class="explanation-box collapsible-explanation-content" style="border-left-color: ${badgeColor}; display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.25rem;">
+            <div class="explanation-header" style="color: ${badgeColor};">
+              ${badgeTitle} • ĐÁP ÁN ĐÚNG: [${letters[q.correct]}]
+            </div>
+            <div style="display: flex; gap: 0.35rem; align-items: center;">
+              <button class="btn-speak-exp" onclick="speakExplanationFromCard(this)" title="Nghe đọc giải thích lâm sàng bằng giọng tiếng Việt">
+                <span>🔊</span> Đọc giải thích
+              </button>
+              <button class="btn-speak-settings" onclick="openTtsSettingsModal()" title="Cài đặt giọng đọc &amp; tốc độ" aria-label="Cài đặt giọng đọc">⚙️</button>
+            </div>
           </div>
-          <div style="display: flex; gap: 0.35rem; align-items: center;">
-            <button class="btn-speak-exp" onclick="speakExplanationFromCard(this)" title="Nghe đọc giải thích lâm sàng bằng giọng tiếng Việt">
-              <span>🔊</span> Đọc giải thích
-            </button>
-            <button class="btn-speak-settings" onclick="openTtsSettingsModal()" title="Cài đặt giọng đọc &amp; tốc độ" aria-label="Cài đặt giọng đọc">⚙️</button>
-          </div>
+          <div class="explanation-content">${q.explanation}</div>
+          <div class="explanation-ref">📖 Nguồn tài liệu: ${q.reference}</div>
         </div>
-        <div class="explanation-content">${q.explanation}</div>
-        <div class="explanation-ref">📖 Nguồn tài liệu: ${q.reference}</div>
       </div>
     `;
   }
@@ -2803,20 +2838,27 @@ function renderTopicQuestionCardsHtml(questionsList) {
     let expHtml = '';
     if (isAnswered) {
       expHtml = `
-        <div class="explanation-box">
-          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.25rem;">
-            <div class="explanation-header" style="color: ${isCorrect ? 'var(--primary)' : 'var(--danger)'}">
-              ${isCorrect ? '✓ CHÍNH XÁC' : '✗ CHƯA ĐÚNG'} • ĐÁP ÁN: ${letters[q.correct]}
+        <div class="explanation-toggle-wrap">
+          <button class="btn-toggle-explanation" onclick="toggleExplanationBox(this)" type="button">
+            <span>💡</span>
+            <span class="toggle-exp-text">Xem đáp án đúng &amp; giải thích chi tiết</span>
+            <span class="toggle-exp-arrow" style="font-size: 0.72rem; margin-left: 0.2rem;">▼</span>
+          </button>
+          <div class="explanation-box collapsible-explanation-content" style="border-left-color: ${isCorrect ? 'var(--primary)' : 'var(--danger)'}; display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.25rem;">
+              <div class="explanation-header" style="color: ${isCorrect ? 'var(--primary)' : 'var(--danger)'}">
+                ${isCorrect ? '✓ CHÍNH XÁC' : '✕ CHƯA ĐÚNG'} • ĐÁP ÁN: ${letters[q.correct]}
+              </div>
+              <div style="display: flex; gap: 0.35rem; align-items: center;">
+                <button class="btn-speak-exp" onclick="speakExplanationFromCard(this)" title="Nghe đọc giải thích lâm sàng bằng giọng tiếng Việt">
+                  <span>🔊</span> Đọc giải thích
+                </button>
+                <button class="btn-speak-settings" onclick="openTtsSettingsModal()" title="Cài đặt giọng đọc &amp; tốc độ" aria-label="Cài đặt giọng đọc">⚙️</button>
+              </div>
             </div>
-            <div style="display: flex; gap: 0.35rem; align-items: center;">
-              <button class="btn-speak-exp" onclick="speakExplanationFromCard(this)" title="Nghe đọc giải thích lâm sàng bằng giọng tiếng Việt">
-                <span>🔊</span> Đọc giải thích
-              </button>
-              <button class="btn-speak-settings" onclick="openTtsSettingsModal()" title="Cài đặt giọng đọc &amp; tốc độ" aria-label="Cài đặt giọng đọc">⚙️</button>
-            </div>
+            <div class="explanation-content">${q.explanation}</div>
+            <div class="explanation-ref">📖 Nguồn: ${q.reference || 'Giáo trình Dược lâm sàng - Bộ Y tế'}</div>
           </div>
-          <div class="explanation-content">${q.explanation}</div>
-          <div class="explanation-ref">📖 Nguồn: ${q.reference || 'Giáo trình Dược lâm sàng - Bộ Y tế'}</div>
         </div>
       `;
     }
@@ -2886,28 +2928,41 @@ function updateStudyCardDOM(qId, oIdx, q) {
       : `<span class="study-badge-tag wrong">✗ Sai</span>`;
   }
 
-  // 3. Update or create explanation box
-  let expBox = card.querySelector('.explanation-box');
-  if (!expBox) {
-    expBox = document.createElement('div');
-    expBox.className = 'explanation-box';
-    card.appendChild(expBox);
+  // 3. Update or create explanation toggle wrap (Mặc định THU GỌN, không tự ý bung mở)
+  // Remove legacy direct box if present
+  const oldBox = card.querySelector('.explanation-box');
+  if (oldBox && !oldBox.closest('.explanation-toggle-wrap')) {
+    oldBox.remove();
   }
 
-  expBox.innerHTML = `
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.25rem;">
-      <div class="explanation-header" style="color: ${isCorrect ? 'var(--primary)' : 'var(--danger)'}">
-        ${isCorrect ? '✓ CHÍNH XÁC' : '✗ CHƯA ĐÚNG'} • ĐÁP ÁN: ${letters[q.correct]}
+  let toggleWrap = card.querySelector('.explanation-toggle-wrap');
+  if (!toggleWrap) {
+    toggleWrap = document.createElement('div');
+    toggleWrap.className = 'explanation-toggle-wrap';
+    card.appendChild(toggleWrap);
+  }
+
+  toggleWrap.innerHTML = `
+    <button class="btn-toggle-explanation" onclick="toggleExplanationBox(this)" type="button">
+      <span>💡</span>
+      <span class="toggle-exp-text">Xem đáp án đúng &amp; giải thích chi tiết</span>
+      <span class="toggle-exp-arrow" style="font-size: 0.72rem; margin-left: 0.2rem;">▼</span>
+    </button>
+    <div class="explanation-box collapsible-explanation-content" style="border-left-color: ${isCorrect ? 'var(--primary)' : 'var(--danger)'}; display: none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.25rem;">
+        <div class="explanation-header" style="color: ${isCorrect ? 'var(--primary)' : 'var(--danger)'}">
+          ${isCorrect ? '✓ CHÍNH XÁC' : '✕ CHƯA ĐÚNG'} • ĐÁP ÁN: ${letters[q.correct]}
+        </div>
+        <div style="display: flex; gap: 0.35rem; align-items: center;">
+          <button class="btn-speak-exp" onclick="speakExplanationFromCard(this)" title="Nghe đọc giải thích lâm sàng bằng giọng tiếng Việt">
+            <span>🔊</span> Đọc giải thích
+          </button>
+          <button class="btn-speak-settings" onclick="openTtsSettingsModal()" title="Cài đặt giọng đọc &amp; tốc độ" aria-label="Cài đặt giọng đọc">⚙️</button>
+        </div>
       </div>
-      <div style="display: flex; gap: 0.35rem; align-items: center;">
-        <button class="btn-speak-exp" onclick="speakExplanationFromCard(this)" title="Nghe đọc giải thích lâm sàng bằng giọng tiếng Việt">
-          <span>🔊</span> Đọc giải thích
-        </button>
-        <button class="btn-speak-settings" onclick="openTtsSettingsModal()" title="Cài đặt giọng đọc &amp; tốc độ" aria-label="Cài đặt giọng đọc">⚙️</button>
-      </div>
+      <div class="explanation-content">${q.explanation}</div>
+      <div class="explanation-ref">📖 Nguồn: ${q.reference || 'Giáo trình Dược lâm sàng - Bộ Y tế'}</div>
     </div>
-    <div class="explanation-content">${q.explanation}</div>
-    <div class="explanation-ref">📖 Nguồn: ${q.reference || 'Giáo trình Dược lâm sàng - Bộ Y tế'}</div>
   `;
 }
 
@@ -6493,24 +6548,31 @@ function renderDetailedReviewQuestions() {
     html += `
         </div>
 
-        <!-- DETAILED EXPLANATION BOX -->
-        <div class="review-explanation-box">
-          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.25rem;">
-            <div class="exp-title">
-              <span>💡</span> Phân Tích &amp; Giải Thích Lâm Sàng
+        <!-- DETAILED EXPLANATION BOX (THU GỌN MẶC ĐỊNH) -->
+        <div class="explanation-toggle-wrap">
+          <button class="btn-toggle-explanation" onclick="toggleExplanationBox(this)" type="button">
+            <span>💡</span>
+            <span class="toggle-exp-text">Xem đáp án đúng &amp; giải thích chi tiết</span>
+            <span class="toggle-exp-arrow" style="font-size: 0.72rem; margin-left: 0.2rem;">▼</span>
+          </button>
+          <div class="review-explanation-box collapsible-explanation-content" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.25rem;">
+              <div class="exp-title">
+                <span>💡</span> Phân Tích &amp; Giải Thích Lâm Sàng
+              </div>
+              <div style="display: flex; gap: 0.35rem; align-items: center;">
+                <button class="btn-speak-exp" onclick="speakExplanationFromCard(this)" title="Nghe đọc giải thích lâm sàng bằng giọng tiếng Việt">
+                  <span>🔊</span> Đọc giải thích
+                </button>
+                <button class="btn-speak-settings" onclick="openTtsSettingsModal()" title="Cài đặt giọng đọc &amp; tốc độ" aria-label="Cài đặt giọng đọc">⚙️</button>
+              </div>
             </div>
-            <div style="display: flex; gap: 0.35rem; align-items: center;">
-              <button class="btn-speak-exp" onclick="speakExplanationFromCard(this)" title="Nghe đọc giải thích lâm sàng bằng giọng tiếng Việt">
-                <span>🔊</span> Đọc giải thích
-              </button>
-              <button class="btn-speak-settings" onclick="openTtsSettingsModal()" title="Cài đặt giọng đọc &amp; tốc độ" aria-label="Cài đặt giọng đọc">⚙️</button>
+            <div class="exp-text">
+              ${q.explanation}
             </div>
-          </div>
-          <div class="exp-text">
-            ${q.explanation}
-          </div>
-          <div class="exp-ref">
-            <span>📖</span> Nguồn: ${q.reference || 'Giáo trình Dược lâm sàng - Bộ Y tế'}
+            <div class="exp-ref">
+              <span>📖</span> Nguồn: ${q.reference || 'Giáo trình Dược lâm sàng - Bộ Y tế'}
+            </div>
           </div>
         </div>
       </div>
@@ -7597,3 +7659,4 @@ window.addEventListener('DOMContentLoaded', () => {
 window.generateDlsPdfExam = generateDlsPdfExam;
 window.regenerateCurrentExam = regenerateCurrentExam;
 window.showView = showView;
+window.toggleExplanationBox = toggleExplanationBox;

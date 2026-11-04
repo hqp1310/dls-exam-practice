@@ -5261,3 +5261,52 @@ main.app-main.full-width-view .palette-container {
   margin: 0.35rem 0;
 }
 
+/* ========================================================
+   COLLAPSIBLE EXPLANATION & ANSWER HINT (KHÔNG TỰ ĐỘNG MỞ)
+   ======================================================== */
+.explanation-toggle-wrap {
+  margin-top: 0.65rem;
+  margin-bottom: 0.35rem;
+}
+
+.btn-toggle-explanation {
+  background: var(--surface-alt);
+  border: 1.5px solid var(--border);
+  color: var(--text-main);
+  border-radius: var(--radius-sm);
+  padding: 0.42rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.btn-toggle-explanation:hover {
+  background: var(--surface);
+  border-color: var(--secondary);
+  color: var(--secondary);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.btn-toggle-explanation.is-open {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  border-color: #94a3b8;
+  color: var(--text-muted);
+}
+
+.collapsible-explanation-content {
+  display: none;
+  margin-top: 0.5rem;
+  animation: fadeIn 0.25s ease;
+}
+
+.collapsible-explanation-content.is-expanded {
+  display: flex !important;
+}
+
