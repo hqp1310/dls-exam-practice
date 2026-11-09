@@ -8,8 +8,8 @@ let isExamSubmitted = false;
 let isExamStarted = false; // Must click "Bắt đầu" or choose an option to start countdown
 let isExamPaused = false;  // Allows pausing countdown
 let examTimer = null;
-let currentSubject = localStorage.getItem('dls_current_subject') || 'duocly2'; // 'duocly2' | 'dls'
-const EXAM_DURATION_MINUTES = currentSubject === 'duocly2' ? 60 : 80;
+let currentSubject = 'duocly2'; // Chuyên biệt ôn thi Dược Lý 2 (60 câu • 60 phút)
+const EXAM_DURATION_MINUTES = 60;
 let timeRemaining = EXAM_DURATION_MINUTES * 60;
 let activeTopicFilter = 'Tất cả';
 let topicSourceFilter = 'all'; // 'all' | 'HUP' | 'UMP' | 'HMU' | 'BYT' | 'DLS_PDF'
@@ -1896,7 +1896,7 @@ function updateTimerButton() {
   if (!isExamStarted) {
     btnTimerToggle.className = 'btn-timer-action state-start';
     btnTimerToggle.innerHTML = '<span>▶️</span> Bắt đầu làm bài';
-    btnTimerToggle.title = 'Bắt đầu tính giờ 80 phút làm bài';
+    btnTimerToggle.title = `Bắt đầu tính giờ ${EXAM_DURATION_MINUTES} phút làm bài`;
     if (timerIcon) timerIcon.textContent = '⏳';
   } else if (isExamPaused) {
     btnTimerToggle.className = 'btn-timer-action state-paused';
@@ -1966,7 +1966,7 @@ function startTimer() {
     } else {
       clearInterval(examTimer);
       examTimer = null;
-      alert('Hết 80 phút làm bài! Hệ thống đang tự động nộp bài.');
+      alert(`Hết ${EXAM_DURATION_MINUTES} phút làm bài! Hệ thống đang tự động nộp bài.`);
       submitExam();
     }
   }, 1000);
@@ -2465,7 +2465,7 @@ function testTtsSampleSpeech() {
     stopSpeaking();
     return;
   }
-  const sampleText = 'Xin chào! Đây là hệ thống ôn thi Dược Lâm Sàng 80 câu chuẩn Bộ Y tế. Thuốc ức chế men chuyển phối hợp với thuốc chẹn kênh canxi liều thấp giúp hạ huyết áp an toàn và kiểm soát tốt nguy cơ tim mạch.';
+  const sampleText = 'Xin chào! Đây là hệ thống ôn thi Dược Lý 2 60 câu chuẩn Bộ Y tế. Thuốc chẹn beta giao cảm phối hợp với thuốc lợi tiểu thiazid giúp hạ huyết áp an toàn và kiểm soát tốt nhịp tim.';
   speakExplanation(btn, sampleText);
 }
 
@@ -2621,10 +2621,10 @@ function renderExamQuestion(index) {
         <div class="pause-icon-big">⏸️</div>
         <div class="pause-title">BÀI THI ĐANG TẠM DỪNG</div>
         <p class="pause-desc">
-          Đồng hồ tính giờ 80 phút đã được tạm dừng. Bạn có thể giải lao hoặc uống nước. Bấm nút bên dưới khi bạn đã sẵn sàng tiếp tục làm bài!
+          Đồng hồ tính giờ ${EXAM_DURATION_MINUTES} phút đã được tạm dừng. Bạn có thể giải lao hoặc uống nước. Bấm nút bên dưới khi bạn đã sẵn sàng tiếp tục làm bài!
         </p>
         <div class="pause-time-badge">
-          <span>⏳ Thời gian còn lại:</span> <span>${timerDisplay ? timerDisplay.textContent : '80:00'}</span>
+          <span>⏳ Thời gian còn lại:</span> <span>${timerDisplay ? timerDisplay.textContent : `${EXAM_DURATION_MINUTES}:00`}</span>
         </div>
         <button class="btn btn-primary" onclick="togglePauseExam()" style="padding: 0.75rem 2rem; font-size: 1rem; margin-top: 0.5rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
           ▶️ Tiếp Tục Làm Bài
@@ -2642,7 +2642,7 @@ function renderExamQuestion(index) {
   if (!isExamStarted && !isExamSubmitted) {
     notStartedBanner = `
       <div class="exam-not-started-banner">
-        <span>⏱️ <strong>Chưa tính giờ:</strong> Thời gian 80 phút sẽ bắt đầu khi bạn chọn đáp án hoặc ấn nút Bắt đầu.</span>
+        <span>⏱️ <strong>Chưa tính giờ:</strong> Thời gian ${EXAM_DURATION_MINUTES} phút sẽ bắt đầu khi bạn chọn đáp án hoặc ấn nút Bắt đầu.</span>
         <button class="btn btn-primary" onclick="startExam()" style="padding: 0.25rem 0.65rem; font-size: 0.76rem; white-space: nowrap; background: linear-gradient(135deg, #059669 0%, #047857 100%);">
           ▶️ Bắt đầu
         </button>
@@ -6947,7 +6947,7 @@ function renderHistoryListView() {
             <span>🔄</span> Đồng bộ thiết bị
           </button>
           <button class="btn btn-secondary" onclick="startNewExamFromHistory()" style="background: var(--secondary-light); color: var(--secondary); border-color: var(--secondary);">
-            🎲 Thi đề 80 câu mới
+            🎲 Thi đề ${isDL2 ? '60' : '80'} câu mới
           </button>
           <button class="btn btn-secondary" onclick="clearAllHistory()" style="color: var(--danger); border-color: var(--danger-light);">
             🗑️ Xóa toàn bộ lịch sử
@@ -7205,7 +7205,7 @@ function renderDetailedReviewQuestions() {
       <div style="text-align: center; padding: 2.5rem; background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius-md); color: var(--text-muted);">
         <p style="font-size: 1.05rem;">${emptyMsg}</p>
         <button class="btn btn-secondary" onclick="setReviewFilter('all')" style="margin-top: 0.75rem; font-size: 0.85rem;">
-          Xem lại tất cả 80 câu
+          Xem lại tất cả ${isDL2 ? '60 câu' : '80 câu'}
         </button>
       </div>
     `;
@@ -8419,7 +8419,7 @@ function openCoverageModal() {
         </div>
         <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">
           <button class="btn btn-secondary btn-unseen-exam" onclick="closeCoverageModal(); generateUnseenExam();" style="padding: 0.45rem 1rem; font-size: 0.82rem;">
-            ✨ Thi Đề 80 Câu Chưa Làm (100%)
+            ${currentSubject === 'duocly2' ? '✨ Thi Đề 60 Câu Chưa Làm (100%)' : '✨ Thi Đề 80 Câu Chưa Làm (100%)'}
           </button>
           <button class="btn btn-primary" onclick="closeCoverageModal(); generateRandomExam();" style="padding: 0.45rem 1rem; font-size: 0.82rem;">
             🎲 Đề Ưu Tiên Câu Chưa Làm
@@ -8464,13 +8464,8 @@ window.addEventListener('DOMContentLoaded', () => {
   document.documentElement.setAttribute('data-theme', savedTheme);
   themeToggleBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
 
-  const savedSubject = localStorage.getItem('dls_current_subject');
-  if (savedSubject) {
-    currentSubject = savedSubject;
-  } else {
-    currentSubject = 'duocly2'; // Default to Dược Lý 2
-    try { localStorage.setItem('dls_current_subject', 'duocly2'); } catch(e){}
-  }
+  currentSubject = 'duocly2'; // Chuyên biệt 100% môn Dược Lý 2
+  try { localStorage.setItem('dls_current_subject', 'duocly2'); } catch(e){}
   applySubjectUI();
 
   try {
