@@ -332,7 +332,87 @@ function generateAll20LessonsHtml() {
         <span class="chapter-acc-arrow">▼</span>
       </div>
       <div class="chapter-accordion-body" id="dl2-body-dl2_ch2" style="display: ${dl2OpenAccordions['dl2_ch2'] ? 'block' : 'none'};">
-        <div class="chapter-sec-heading">🎯 1. 4 Nhóm Thuốc Lựa Chọn Đầu Tay (First-Line):</div>
+        <!-- PHÂN TÍCH SƠ ĐỒ KINH ĐIỂN BỘ Y TẾ -->
+        <div class="chapter-sec-heading" style="color: #059669;">📊 1. Phân Tích Chi Tiết Sơ Đồ Cơ Chế Bệnh Sinh &amp; 5 Nhóm Thuốc Điều Trị THA (Chuẩn Sách Bộ Y Tế):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; font-size: 0.95rem;">
+            ⚡ Phương trình huyết áp gốc: <code>HA = Cung lượng tim (CO) × Sức cản ngoại vi (TPR)</code>
+          </div>
+          <p style="margin-bottom: 0.75rem; color: var(--text-muted);">
+            Sơ đồ tự điều hòa huyết áp trong giáo trình chia toàn bộ cơ chế bệnh sinh và vị trí tác động của 5 nhóm thuốc kinh điển thành 2 nhánh lớn:
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="background: var(--surface); padding: 0.85rem; border-radius: var(--radius-sm); border-left: 4px solid #2563eb;">
+              <strong style="color: #2563eb; font-size: 0.9rem;">🫀 Nhánh Trái: Cung Lượng Tim (CO)</strong>
+              <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.35rem;">
+                Quyết định bởi 2 yếu tố:
+                <br>&bull; <strong>Thể tích tâm thu (V tâm thu):</strong> Lượng máu bơm mỗi nhát bóp, phụ thuộc vào <em>tiền gánh</em> (thể tích máu tuần hoàn trở về tâm thất).
+                <br>&bull; <strong>Tần số tim (Nhịp tim):</strong> Số lần co bóp mỗi phút do hệ thần kinh thực vật (giao cảm) điều khiển.
+              </div>
+            </div>
+            <div style="background: var(--surface); padding: 0.85rem; border-radius: var(--radius-sm); border-left: 4px solid #dc2626;">
+              <strong style="color: #dc2626; font-size: 0.9rem;">🩸 Nhánh Phải: Sức Cản Ngoại Vi (TPR)</strong>
+              <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.35rem;">
+                Quyết định bởi <strong>Đường kính lòng mạch (d lòng mạch)</strong> của các tiểu động mạch. Theo định luật Poiseuille, lòng mạch chỉ cần co thắt hoặc phì đại dày cản trở dòng chảy thì sức cản ngoại vi tăng vọt lũy thừa bậc 4, đẩy huyết áp lên rất cao.
+              </div>
+            </div>
+          </div>
+
+          <div style="font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem; font-size: 0.9rem;">🎯 5 Vị trí đích của 5 nhóm thuốc theo số đánh dấu trong sơ đồ:</div>
+          <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+            <div style="background: var(--surface); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+              <span style="background: #dbeafe; color: #1e40af; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">(1) Thuốc Lợi Tiểu</span>
+              <div style="margin-top: 0.35rem;">
+                <strong>Đích tác động:</strong> Nhánh <em>Tăng nhập Na⁺</em> &amp; <em>Thận giữ Na⁺</em>.
+                <br><strong>Cơ chế hạ áp:</strong> Tăng bài xuất Na⁺ và nước qua đường tiểu → làm giảm thể tích huyết tương (V máu) → <strong>giảm lượng máu đổ về tim (giảm tiền gánh)</strong> → giảm thể tích tâm thu (V tâm thu) → giảm cung lượng tim → hạ huyết áp. Về lâu dài (sau 4-8 tuần), thuốc còn rút bớt Na⁺ ở thành mạch, làm giảm phù nề thành mạch và giảm nhạy cảm với các chất co mạch → gián tiếp làm tăng <em>d lòng mạch</em>.
+              </div>
+            </div>
+
+            <div style="background: var(--surface); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+              <span style="background: #fef3c7; color: #92400e; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">(2) Thuốc Hủy Giao Cảm</span>
+              <div style="margin-top: 0.35rem;">
+                <strong>Đích tác động:</strong> Khóa tình trạng <em>Cường giao cảm</em> (Noradrenaline).
+                <br><strong>Cơ chế hạ áp:</strong> Khi ức chế giao cảm, thuốc giải quyết đồng thời 3 cơ chế:
+                <br>&bull; (a) Giảm <strong>Tần số tim</strong> và giảm lực co bóp cơ tim (qua thụ thể β₁ ở tim) → giảm cung lượng tim.
+                <br>&bull; (b) Giảm <strong>Co thắt mạch</strong> (qua thụ thể α₁ hoặc hủy giao cảm trung ương) → làm giãn và tăng đường kính <em>d lòng mạch</em>.
+                <br>&bull; (c) <strong>Giảm tiết Renin tại tế bào cận cầu thận</strong> (qua thụ thể β₁ ở thận) → chặt đứt nguồn gốc hoạt hóa hệ RAA ngay từ đầu nguồn!
+              </div>
+            </div>
+
+            <div style="background: var(--surface); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+              <span style="background: #e0e7ff; color: #3730a3; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">(3) Thuốc Giãn Mạch Trực Tiếp</span>
+              <div style="margin-top: 0.35rem;">
+                <strong>Đích tác động:</strong> Tác động trực tiếp vào trương lực cơ trơn mạch máu (Hydralazin, Minoxidil, Natri Nitroprussid).
+                <br><strong>Cơ chế hạ áp:</strong> Ức chế hiện tượng <em>Co thắt</em> cơ trơn thành tiểu động mạch (thông qua mở kênh K⁺ hoặc giải phóng NO) → <strong>làm tăng trực tiếp đường kính lòng mạch (d lòng mạch)</strong> → làm giảm nhanh chóng sức cản ngoại vi.
+              </div>
+            </div>
+
+            <div style="background: var(--surface); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+              <span style="background: #dcfce7; color: #166534; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">(4) Thuốc Chẹn Kênh Calci (CCB - Chẹn Ca⁺⁺)</span>
+              <div style="margin-top: 0.35rem;">
+                <strong>Đích tác động:</strong> Kênh Calci type L ở cả màng tế bào cơ tim và cơ trơn thành mạch (mũi tên 2 chiều toàn diện):
+                <br>&bull; <em>Mũi tên sang phải (Tác động trên mạch):</em> Ức chế dòng Ca²⁺ vào cơ trơn tiểu động mạch → giãn mạch, làm tăng <strong>d lòng mạch</strong> → giảm sức cản ngoại vi (ưu thế vượt trội ở phân nhóm DHP: Amlodipin, Nifedipin, Nicardipin).
+                <br>&bull; <em>Mũi tên sang trái (Tác động trên tim):</em> Ức chế dòng Ca²⁺ vào nút xoang, nút AV và cơ tim → làm giảm <strong>Tần số tim</strong> và giảm <strong>V tâm thu</strong> → giảm cung lượng tim (ưu thế ở phân nhóm Non-DHP: Verapamil, Diltiazem).
+              </div>
+            </div>
+
+            <div style="background: var(--surface); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+              <span style="background: #fce7f3; color: #9d174d; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">(5) Thuốc Tác Động Lên Hệ RAA (ACEI &amp; ARB)</span>
+              <div style="margin-top: 0.35rem;">
+                <strong>Đích tác động:</strong> Khóa trục nội tiết <em>Tăng renin → Angiotensin → Aldosteron</em>:
+                <br>&bull; <strong>Ức chế ACE (ACEI):</strong> Chặn enzym biến đổi Angiotensin I thành Angiotensin II.
+                <br>&bull; <strong>Ức chế R_AT (ARB):</strong> Chặn chọn lọc thụ thể AT₁ nơi Angiotensin II gắn vào phát huy tác dụng sinh học.
+                <br>&bull; <strong>3 Tác động bảo vệ then chốt:</strong>
+                <br>1. <em>Chống co thắt:</em> Giãn tiểu động mạch → mở rộng <em>d lòng mạch</em>.
+                <br>2. <em>Chống phì đại tim mạch:</em> Ngăn Angiotensin II kích thích tăng sinh mô sợi và phì đại tế bào cơ tim/thành mạch → đảo ngược quá trình tái cấu trúc mạch, giữ lòng mạch thông thoáng lâu dài.
+                <br>3. <em>Chặn Aldosteron:</em> Giảm tiết aldosteron từ vỏ thượng thận → thận không giữ Na⁺ và nước → hỗ trợ làm giảm V máu.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chapter-sec-heading">🎯 2. Chi Tiết 4 Nhóm Thuốc Lựa Chọn Đầu Tay (First-Line):</div>
         <ul class="chapter-point-list">
           <li><strong>1. Thuốc ức chế men chuyển (ACEI - đuôi "-pril"):</strong> Captopril, Enalapril, Lisinopril, Perindopril.
             <br>&bull; <em>Cơ chế:</em> Ức chế Angiotensin Converting Enzyme → ngăn chuyển Angiotensin I thành Angiotensin II (chất co mạch mạnh và kích thích tiết Aldosteron); đồng thời ngăn giáng hóa Bradykinin (chất giãn mạch).
