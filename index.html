@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Luyện Thi Trắc Nghiệm Dược Lâm Sàng - 80 Câu Thực Chiến</title>
+  <title>Luyện Thi Trắc Nghiệm Dược Lý 2 &amp; Dược Lâm Sàng - Chuẩn Bộ Y Tế</title>
   <meta name="description"
-    content="Hệ thống thi thử và luyện đề trắc nghiệm Dược lâm sàng 80 câu chuẩn đại học Dược, bám sát sách Bộ Y tế và ngân hàng đề thi thực tế.">
+    content="Hệ thống thi thử và luyện đề trắc nghiệm Dược Lý 2 (60 câu / 60 phút) &amp; Dược Lâm Sàng (80 câu / 80 phút) chuẩn Bộ Y tế.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=47">
+  <link rel="stylesheet" href="styles.css?v=48">
 </head>
 
 <body>
@@ -24,18 +24,30 @@
     <div class="header-container">
       <div class="header-top-row">
         <div class="brand-section">
-          <div class="brand-logo" aria-hidden="true">💊</div>
+          <div class="brand-logo" id="brand-logo" aria-hidden="true">💊</div>
           <div class="brand-titles">
-            <h1>DƯỢC LÂM SÀNG • 80 CÂU</h1>
-            <span class="subtitle">Giáo trình Bộ Y tế &amp; Đề thi Thực chiến</span>
-            <span class="mobile-active-tag" id="mobile-active-tab-tag">⏱️ Thi Thử 80 Câu</span>
+            <h1 id="header-main-title">DƯỢC LÝ 2 • 60 CÂU</h1>
+            <span class="subtitle" id="header-main-subtitle">Giáo trình Bộ Y tế (PGS.TS. Mai Tất Tố) &amp; Khung 20 Bài Giảng</span>
+            <span class="mobile-active-tag" id="mobile-active-tab-tag">⏱️ Thi Thử 60 Câu</span>
+          </div>
+
+          <!-- SUBJECT SWITCHER -->
+          <div class="subject-switcher" id="subject-switcher" role="tablist" aria-label="Chọn môn ôn luyện">
+            <button class="subject-pill-btn active" id="btn-subject-duocly2" onclick="switchSubject('duocly2')" role="tab" aria-selected="true" title="Chuyển sang môn Dược Lý 2 (60 câu / 60 phút)">
+              <span class="sub-dot"></span>
+              <span class="sub-text">💊 Dược Lý 2 (60 Câu)</span>
+            </button>
+            <button class="subject-pill-btn" id="btn-subject-dls" onclick="switchSubject('dls')" role="tab" aria-selected="false" title="Chuyển sang môn Dược Lâm Sàng (80 câu / 80 phút)">
+              <span class="sub-dot"></span>
+              <span class="sub-text">🩺 Dược Lâm Sàng (80 Câu)</span>
+            </button>
           </div>
         </div>
 
         <div class="header-actions">
           <div class="timer-badge" id="timer-widget" title="Thời gian làm bài còn lại" aria-live="polite">
             <span id="timer-icon" aria-hidden="true">⏳</span>
-            <span id="timer-display">80:00</span>
+            <span id="timer-display">60:00</span>
           </div>
           <button class="btn-timer-action" id="btn-timer-toggle" onclick="toggleExamTimerAction()"
             title="Bắt đầu hoặc Tạm dừng / Tiếp tục tính giờ" aria-label="Bắt đầu hoặc Tạm dừng đếm thời gian thi">
@@ -70,7 +82,7 @@
 
       <nav class="nav-tabs" id="main-nav-tabs" aria-label="Chế độ học tập">
         <button class="tab-btn active" data-tab="exam" id="tab-exam-btn">
-          <span aria-hidden="true">⏱️</span> <span class="tab-label">Thi Thử 80 Câu</span>
+          <span aria-hidden="true">⏱️</span> <span class="tab-label" id="tab-exam-label">Thi Thử 60 Câu</span>
         </button>
         <button class="tab-btn" data-tab="history" id="tab-history-btn">
           <span aria-hidden="true">📜</span> <span class="tab-label">Lịch Sử</span>
@@ -97,9 +109,9 @@
     <!-- LEFT: MAIN CONTENT AREA -->
     <div class="exam-container">
 
-      <!-- VIEW 1: EXAM MODE (80 Questions) -->
+      <!-- VIEW 1: EXAM MODE -->
       <section id="view-exam">
-        <!-- 44h Curriculum Matrix & Coverage Banner -->
+        <!-- Curriculum Matrix & Coverage Banner -->
         <div class="exam-matrix-banner" id="exam-matrix-banner">
           <div class="matrix-banner-content">
             <div class="current-exam-status-badge" id="current-exam-status-badge">
@@ -107,66 +119,67 @@
               <div class="current-exam-info">
                 <div class="current-exam-title-row">
                   <span class="current-exam-label">ĐANG LÀM:</span>
-                  <span class="current-exam-name" id="current-exam-name">Đề Chuẩn Dls.pdf &amp; Sách (80 Câu)</span>
-                  <span class="current-exam-tag" id="current-exam-tag">✓ Chuẩn Thực Chiến Dls.pdf</span>
+                  <span class="current-exam-name" id="current-exam-name">Đề Chuẩn Sách Bộ Y Tế (60 Câu)</span>
+                  <span class="current-exam-tag" id="current-exam-tag">✓ Chuẩn 20 Bài (32 Tiết)</span>
                 </div>
                 <div class="current-exam-desc" id="current-exam-desc">
-                  Bám sát 100% cấu trúc đề thi thực chiến Dls.pdf &amp; Sách Giáo trình Bộ Y tế (14 bài giảng chính khóa).
+                  Bám sát 100% cấu trúc 20 bài giảng Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố).
                 </div>
               </div>
             </div>
           </div>
           <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">
             <button class="matrix-info-btn coverage-info-btn" onclick="openCoverageModal()"
-              title="Xem độ phủ ngân hàng 1.589 câu hỏi bạn đã từng làm">
-              📈 Độ phủ kho: <span id="header-coverage-badge">-- / 1.589 (0%)</span>
+              title="Xem độ phủ ngân hàng câu hỏi bạn đã từng làm">
+              📈 Độ phủ kho: <span id="header-coverage-badge">0 / 507 (0%)</span>
             </button>
-            <button class="matrix-info-btn" onclick="openMatrixModal()"
-              title="Xem chi tiết phân bổ 80 câu theo số tiết">📊 Ma trận 44h</button>
+            <button class="matrix-info-btn" id="btn-matrix-open" onclick="openMatrixModal()"
+              title="Xem chi tiết phân bổ câu hỏi theo số tiết">📊 <span id="btn-matrix-text">Ma trận 32h</span></button>
           </div>
         </div>
 
         <div class="exam-controls-bar">
           <div class="progress-info">
-            <span class="progress-text" id="progress-text">Tiến độ: 0/80 câu (0%)</span>
+            <span class="progress-text" id="progress-text">Tiến độ: 0/60 câu (0%)</span>
             <div class="progress-track">
               <div class="progress-fill" id="progress-fill"></div>
             </div>
           </div>
           <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;" id="exam-mode-buttons-container">
             <label class="toggle-unseen-label"
-              title="Khi bật, hệ thống sẽ ưu tiên chọn các câu bạn CHƯA TỪNG LÀM để quét sạch toàn bộ 1.589 câu nhanh nhất">
+              title="Khi bật, hệ thống sẽ ưu tiên chọn các câu bạn CHƯA TỪNG LÀM để quét sạch toàn bộ ngân hàng câu hỏi">
               <input type="checkbox" id="chk-prioritize-unseen" checked onchange="togglePrioritizeUnseen(this.checked)">
               <span>🎯 Ưu tiên câu chưa làm</span>
             </label>
             <button class="btn btn-secondary btn-exam-mode btn-dls-pdf-exam" id="btn-exam-dls-pdf"
-              onclick="generateDlsPdfExam()"
-              title="Tạo đề thi 80 câu bám sát 100% đề thi thực chiến Dls.pdf và Sách Giáo trình Bộ Y tế (80 phút)">
-              <span class="btn-text">📝 Đề Chuẩn Dls.pdf &amp; Sách (80 Câu)</span>
+              onclick="generateSubjectStandardExam()"
+              title="Tạo đề thi 60 câu bám sát 100% Giáo trình Dược lý 2 Bộ Y tế (60 phút)">
+              <span class="btn-text" id="btn-text-standard">📝 Đề Chuẩn Sách Bộ Y Tế (60 Câu)</span>
               <span class="active-badge-indicator"><span class="badge-dot"></span> ĐANG CHỌN</span>
             </button>
             <button class="btn btn-secondary btn-exam-mode btn-unseen-exam" id="btn-exam-unseen"
               onclick="generateUnseenExam()"
-              title="Tạo đề thi 80 câu với 100% là các câu bạn CHƯA TỪNG LÀM để quét sạch toàn bộ 1.589 câu trong ngân hàng đề">
-              <span class="btn-text">✨ Đề 80 Câu Chưa Làm</span>
+              title="Tạo đề thi với 100% là các câu bạn CHƯA TỪNG LÀM để quét sạch toàn bộ ngân hàng đề">
+              <span class="btn-text" id="btn-text-unseen">✨ Đề 60 Câu Chưa Làm</span>
               <span class="active-badge-indicator"><span class="badge-dot"></span> ĐANG CHỌN</span>
             </button>
             <button class="btn btn-secondary btn-exam-mode" id="btn-exam-schools"
               onclick="openUniversityExamModal()"
-              title="Lựa chọn làm đề thi chuyên sâu của ĐH Dược Hà Nội, ĐH Y Dược TP.HCM, ĐH Y Hà Nội">
+              title="Lựa chọn làm đề thi chuyên sâu của ĐH Dược Hà Nội, ĐH Y Dược TP.HCM, ĐH Y Hà Nội"
+              style="display: none;">
               <span class="btn-text">🏛️ Đề Các Trường Y Dược</span>
               <span class="active-badge-indicator"><span class="badge-dot"></span> ĐANG CHỌN</span>
             </button>
             <button class="btn btn-secondary btn-exam-mode btn-graded-exam" id="btn-exam-graded"
               onclick="generateGradedExam()"
-              title="Tạo đề thi 80 câu phân hóa chuẩn 3 cấp độ: 16 Nhận biết (20%), 32 Vận dụng (40%), 32 Vận dụng cao (40%) theo ma trận 44h">
-              <span class="btn-text">🎯 Đề Phân Hóa (2:4:4)</span>
+              title="Tạo đề thi phân hóa chuẩn 3 cấp độ: Nhận biết (20%), Vận dụng (40%), Vận dụng cao (40%)">
+              <span class="btn-text" id="btn-text-graded">🎯 Đề Phân Hóa (2:4:4)</span>
               <span class="active-badge-indicator"><span class="badge-dot"></span> ĐANG CHỌN</span>
             </button>
             <button class="btn btn-secondary btn-exam-mode btn-random-exam" id="btn-exam-random"
               onclick="generateRandomExam()"
-              title="Tạo đề 80 câu chuẩn ma trận 44h tự động mix câu hỏi ĐH Dược HN, ĐH Y Dược TPHCM, ĐH Y HN và Chuẩn BYT">
-              <span class="btn-text">🎲 Tạo Đề Random Mới</span>
+              title="Tạo đề trộn ngẫu nhiên theo chuẩn ma trận">
+              <span class="btn-text" id="btn-text-random">🎲 Tạo Đề Random Mới (60 Câu)</span>
               <span class="active-badge-indicator"><span class="badge-dot"></span> ĐANG CHỌN</span>
             </button>
             <button class="btn btn-secondary" style="padding: 0.42rem 0.85rem; font-size: 0.82rem;"
@@ -209,7 +222,7 @@
     <div class="mobile-palette-backdrop" id="mobile-palette-backdrop" onclick="closeMobilePalette()"></div>
     <aside class="palette-container" id="sidebar-palette">
       <div class="palette-header">
-        <span class="palette-title">Bảng Câu Hỏi (80 Câu)</span>
+        <span class="palette-title" id="palette-title">Bảng Câu Hỏi (60 Câu)</span>
         <div style="display: flex; gap: 0.35rem; align-items: center;">
           <button class="btn btn-secondary"
             style="padding: 0.25rem 0.5rem; font-size: 0.72rem; background: var(--secondary-light); color: var(--secondary);"
@@ -1116,9 +1129,10 @@
     </div>
   </div>
 
-  <script src="questions_800.js?v=47"></script>
-  <script src="flashcards.js?v=47"></script>
-  <script src="app.js?v=47"></script>
+  <script src="questions_800.js?v=48"></script>
+  <script src="questions_duocly2.js?v=48"></script>
+  <script src="flashcards.js?v=48"></script>
+  <script src="app.js?v=48"></script>
 </body>
 
 </html>

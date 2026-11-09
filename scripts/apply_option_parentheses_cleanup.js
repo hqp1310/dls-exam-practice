@@ -63,3 +63,4 @@ const fileContent = `${header}const ALL_EXAM_BANK = ${JSON.stringify(bank, null,
 
 fs.writeFileSync(bankPath, fileContent, 'utf8');
 console.log(`Successfully updated ${bankPath}!`);
+
