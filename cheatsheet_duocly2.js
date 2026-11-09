@@ -434,12 +434,73 @@ function generateAll20LessonsHtml() {
           </li>
         </ul>
 
-        <div class="chapter-sec-heading">💊 2. Các Nhóm Thuốc Khác &amp; Tình Huống Đặc Biệt:</div>
+        <div class="chapter-sec-heading">💊 3. Các Nhóm Thuốc Khác &amp; Tình Huống Đặc Biệt:</div>
         <ul class="chapter-point-list">
           <li><strong>Chẹn beta adrenergic:</strong> Bisoprolol, Metoprolol, Atenolol (chọn lọc β₁); Propranolol (không chọn lọc); Carvedilol, Labetalol (chẹn cả α₁, β₁, β₂). Ưu tiên khi bệnh nhân THA có kèm: đau thắt ngực, sau nhồi máu cơ tim, suy tim mạn ổn định. CCĐ: Hen phế quản, COPD nặng, block AV độ 2-3.</li>
           <li><strong>Tăng huyết áp thai kỳ:</strong> <strong>Methyldopa</strong> (chủ vận α₂ trung ương) là thuốc lựa chọn hàng đầu được chứng minh an toàn nhất qua nhiều thập kỷ; có thể dùng thêm Labetalol, Hydralazin hoặc Nifedipin tác dụng kéo dài. CẤM TUYỆT ĐỐI dùng ACEI và ARB!</li>
           <li><strong>Cơn tăng huyết áp cấp cứu (HA ≥ 180/120 mmHg kèm tổn thương cơ quan đích):</strong> Dùng thuốc tiêm truyền tĩnh mạch: Nicardipine IV, Labetalol IV, Natri Nitroprussid IV. Không được hạ huyết áp quá nhanh (giảm không quá 25% trong giờ đầu tiên).</li>
         </ul>
+
+        <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 4. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc THA - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #2563eb;">1. Ho khan dai dẳng &amp; Phù mạch do tích tụ Bradykinin (Chỉ có ở ACEI):</strong>
+              <br>&bull; <em>Cơ chế:</em> ACE chính là enzym Kininase II thoái biến Bradykinin. Thuốc ức chế men chuyển (ACEI) ngăn cản quá trình này làm Bradykinin và chất P ứ đọng tại phế quản → gây <strong>ho khan dai dẳng (5-20%)</strong> và <strong>phù mạch thần kinh (Angioedema)</strong> có thể gây ngạt thở tử vong.
+              <br>&bull; <em>Đặc điểm độc nhất:</em> Nhóm ARB (Losartan, Valsartan) dù cùng ức chế hệ RAA nhưng chẹn thẳng thụ thể AT₁, không tác động lên men ACE → <strong>hoàn toàn không làm tăng Bradykinin và không gây ho khan</strong> → được dùng thay thế cho ACEI khi bệnh nhân bị ho khan!
+            </li>
+
+            <li>
+              <strong style="color: #dc2626;">2. Suy thận cấp vô niệu khi Hẹp động mạch thận hai bên (ACEI &amp; ARB):</strong>
+              <br>&bull; <em>Cơ chế:</em> Khi hẹp động mạch thận, cơ thể tự cứu bằng cách tiết Angiotensin II làm <em>co tiểu động mạch đi</em> để giữ áp lực lọc cầu thận (GFR). 
+              <br>&bull; <em>Hậu quả:</em> Uống ACEI hoặc ARB sẽ làm giãn tiểu động mạch đi → áp lực lọc cầu thận sập về 0 → <strong>gây suy thận cấp vô niệu lập tức</strong>. Chống chỉ định tuyệt đối!
+            </li>
+
+            <li>
+              <strong style="color: #7c3aed;">3. Độc tính gây quái thai và chết thai kỳ (Cảnh báo đen ACEI &amp; ARB):</strong>
+              <br>&bull; Thuốc ức chế hệ RAA gây hạ huyết áp thai nhi, vô niệu thai nhi, thiểu ối, biến dạng sọ mặt và tử vong thai nhi (đặc biệt trong quý 2 và 3). Chống chỉ định tuyệt đối cho phụ nữ mang thai!
+            </li>
+
+            <li>
+              <strong style="color: #d97706;">4. Phù mắt cá chân do CCB (Amlodipin, Nifedipin) — "Phù giả" không dùng thuốc lợi tiểu:</strong>
+              <br>&bull; <em>Cơ chế:</em> Đây <strong>không phải phù do giữ muối nước hay suy tim</strong>, mà do thuốc làm <em>giãn mạnh tiểu động mạch trước mao mạch</em> trong khi tiểu tĩnh mạch sau mao mạch không giãn → tăng vọt áp lực thủy tĩnh đẩy dịch thoát ra mô kẽ mắt cá chân.
+              <br>&bull; <em>Xử trí độc nhất:</em> <strong>Không dùng thuốc lợi tiểu</strong> (vô tác dụng), mà phải giảm liều hoặc <strong>phối hợp thêm với ACEI hoặc ARB</strong> (vì ACEI/ARB làm giãn tiểu tĩnh mạch sau mao mạch, cân bằng lại áp lực mao mạch).
+            </li>
+
+            <li>
+              <strong style="color: #059669;">5. Quy luật Calci đối nghịch độc nhất: Thiazid làm TĂNG Ca²⁺ vs Quai làm HẠ Ca²⁺:</strong>
+              <br>&bull; <em>Lợi tiểu Thiazid (HCTZ, Indapamid):</em> Tăng tái hấp thu Ca²⁺ ở ống lượn xa → <strong>làm tăng calci máu</strong> → Thuốc hạ áp duy nhất <strong>được ưu tiên cho người cao tuổi bị tăng huyết áp kèm loãng xương</strong>!
+              <br>&bull; <em>Lợi tiểu quai (Furosemid):</em> Ức chế đồng vận chuyển Na⁺/K⁺/2Cl⁻ → kéo Ca²⁺ ra nước tiểu → <strong>làm hạ calci máu</strong> (chuyên dùng cấp cứu tăng calci máu ác tính).
+            </li>
+
+            <li>
+              <strong style="color: #b45309;">6. Ngưỡng lọc cầu thận GFR &lt; 30 mL/phút làm Thiazid mất hoàn toàn tác dụng:</strong>
+              <br>&bull; Khi bệnh nhân suy thận nặng với GFR &lt; 30 mL/phút, nhóm Thiazid <strong>hoàn toàn mất hiệu lực hạ áp</strong> → bắt buộc phải chuyển sang <strong>Lợi tiểu quai (Furosemid)</strong> thì mới tống được muối nước và hạ huyết áp.
+            </li>
+
+            <li>
+              <strong style="color: #e11d48;">7. Che giấu triệu chứng hạ đường huyết (Chỉ có ở thuốc chẹn Beta):</strong>
+              <br>&bull; Bệnh nhân đái tháo đường dùng Insulin khi bị hạ đường huyết sẽ có phản xạ giao cảm cảnh báo: tim đập nhanh, đánh trống ngực, run tay.
+              <br>&bull; Dùng thuốc chẹn Beta làm <strong>xóa sạch các dấu hiệu tim nhanh và run tay</strong> (chỉ còn triệu chứng vã mồ hôi do giao cảm chi phối tuyến mồ hôi qua acetylcholin) → bệnh nhân rơi thẳng vào <strong>hôn mê hạ đường huyết tử vong mà không hề hay biết</strong>!
+            </li>
+
+            <li>
+              <strong style="color: #be123c;">8. Cơn bão giao cảm &amp; Tăng huyết áp dội ngược (Rebound Hypertension) khi dừng đột ngột Chẹn Beta:</strong>
+              <br>&bull; Dùng lâu ngày làm thụ thể tăng sinh (Up-regulation). Dừng thuốc đột ngột làm lượng thụ thể trống bị gắn ồ ạt bởi Catecholamin nội sinh → huyết áp tăng vọt dữ dội, nhồi máu cơ tim cấp. <strong>Bắt buộc phải giảm liều từ từ (tapering) trong 1-2 tuần</strong>.
+            </li>
+
+            <li>
+              <strong style="color: #0284c7;">9. Thuốc hạ áp thai kỳ Methyldopa &amp; Tác dụng phụ Thiếu máu tan máu tự miễn (Coombs (+)):</strong>
+              <br>&bull; Methyldopa (chủ vận α₂ trung ương) là thuốc số 1 an toàn cho thai kỳ, nhưng có tác dụng phụ độc nhất là gây <strong>thiếu máu tan máu tự miễn với Test Coombs trực tiếp dương tính</strong>, gây trầm cảm và khô miệng.
+            </li>
+
+            <li>
+              <strong style="color: #475569;">10. Quy tắc vàng 25% trong Cơn Tăng Huyết Áp Cấp Cứu (Hypertensive Emergency):</strong>
+              <br>&bull; CẤM TUYỆT ĐỐI hạ huyết áp về mức bình thường ngay trong những giờ đầu! Chỉ được hạ tối đa <strong>20 - 25% chỉ số huyết áp trong giờ đầu tiên</strong> (dùng Nicardipine IV, Labetalol IV, Nitroprussid IV) để tránh sụt giảm tưới máu não và thận gây nhồi máu não và suy thận cấp.
+            </li>
+          </ul>
+        </div>
 
         <div class="exam-trap-box">
           <div class="exam-trap-title">🛑 Bẫy thi trắc nghiệm Bài 2:</div>
