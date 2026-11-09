@@ -94,7 +94,7 @@
           <span aria-hidden="true">💡</span> <span class="tab-label">Câu Hỏi Tủ</span>
         </button>
         <button class="tab-btn" data-tab="cheatsheet" id="tab-cheatsheet-btn">
-          <span aria-hidden="true">📐</span> <span class="tab-label">Cẩm Nang &amp; Công Thức</span>
+          <span aria-hidden="true" id="tab-cheatsheet-icon">📖</span> <span class="tab-label" id="tab-cheatsheet-label">Ôn Kiến Thức 20 Bài</span>
         </button>
         <button class="tab-btn mobile-only-tab" data-tab="sync" id="tab-sync-menu-btn" onclick="openSyncModal()">
           <span aria-hidden="true">🔄</span> <span class="tab-label">Đồng Bộ &amp; Sao Lưu Dữ Liệu</span>
@@ -135,6 +135,11 @@
             </button>
             <button class="matrix-info-btn" id="btn-matrix-open" onclick="openMatrixModal()"
               title="Xem chi tiết phân bổ câu hỏi theo số tiết">📊 <span id="btn-matrix-text">Ma trận 32h</span></button>
+            <button class="matrix-info-btn" id="btn-quick-study-guide" onclick="showView('cheatsheet')"
+              style="background: var(--primary-light); color: var(--primary); font-weight: 600; border: 1px solid var(--primary);"
+              title="Mở Sổ tay ôn kiến thức trọng tâm 20 bài Dược lý 2">
+              <span id="btn-quick-study-text">📖 Ôn Kiến Thức 20 Bài</span>
+            </button>
           </div>
         </div>
 
@@ -1131,6 +1136,7 @@
 
   <script src="questions_800.js?v=48"></script>
   <script src="questions_duocly2.js?v=48"></script>
+  <script src="cheatsheet_duocly2.js?v=48"></script>
   <script src="flashcards.js?v=48"></script>
   <script src="app.js?v=48"></script>
 </body>

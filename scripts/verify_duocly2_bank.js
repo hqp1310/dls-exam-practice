@@ -35,3 +35,4 @@ console.log(`Found ${parenIssues.length} options with parentheses.`);
 parenIssues.slice(0, 15).forEach(issue => {
   console.log(`- Q#${issue.idx} (${issue.q}...): "${issue.opt}"`);
 });
+

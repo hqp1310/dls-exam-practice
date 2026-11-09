@@ -88,6 +88,22 @@ function applySubjectUI() {
   const tabExamLabel = document.getElementById('tab-exam-label');
   if (tabExamLabel) tabExamLabel.textContent = isDL2 ? 'Thi Thử 60 Câu' : 'Thi Thử 80 Câu';
 
+  const tabCheatsheetLabel = document.getElementById('tab-cheatsheet-label');
+  if (tabCheatsheetLabel) {
+    tabCheatsheetLabel.textContent = isDL2 ? 'Ôn Kiến Thức 20 Bài' : 'Cẩm Nang & Công Thức';
+  }
+  const tabCheatsheetIcon = document.getElementById('tab-cheatsheet-icon');
+  if (tabCheatsheetIcon) {
+    tabCheatsheetIcon.textContent = isDL2 ? '📖' : '📐';
+  }
+  const btnQuickStudyText = document.getElementById('btn-quick-study-text');
+  if (btnQuickStudyText) {
+    btnQuickStudyText.textContent = isDL2 ? '📖 Ôn Kiến Thức 20 Bài' : '📐 Cẩm Nang & Công Thức';
+  }
+  if (mobileTag && currentTab === 'cheatsheet') {
+    mobileTag.textContent = isDL2 ? '📖 Ôn Kiến Thức 20 Bài' : '📐 Cẩm Nang & CT';
+  }
+
   const matrixBtnText = document.getElementById('btn-matrix-text');
   if (matrixBtnText) matrixBtnText.textContent = isDL2 ? 'Ma trận 32h' : 'Ma trận 44h';
 
@@ -168,6 +184,10 @@ function switchSubject(subjectKey, force = false) {
     renderFlashcardView();
   } else if (currentTab === 'history') {
     renderHistoryView();
+  } else if (currentTab === 'cheatsheet') {
+    const csContainer = document.getElementById('view-cheatsheet');
+    if (csContainer) csContainer.innerHTML = '';
+    renderCheatsheetView();
   }
 
   playChime('click');
@@ -1731,12 +1751,13 @@ function switchTab(tab) {
   currentTab = tab;
   closeMobilePalette();
 
+  const isDL2 = currentSubject === 'duocly2';
   const tabLabels = {
-    exam: '⏱️ Thi Thử 80 Câu',
+    exam: isDL2 ? '⏱️ Thi Thử 60 Câu' : '⏱️ Thi Thử 80 Câu',
     history: '📜 Lịch Sử',
     topic: '📚 Chuyên Đề',
     flashcards: '💡 Câu Hỏi Tủ',
-    cheatsheet: '📐 Cẩm Nang & CT'
+    cheatsheet: isDL2 ? '📖 Ôn Kiến Thức 20 Bài' : '📐 Cẩm Nang & CT'
   };
   const activeTag = document.getElementById('mobile-active-tab-tag');
   if (activeTag && tabLabels[tab]) {
@@ -4568,6 +4589,13 @@ function onCheatsheetSearchInput(e) {
 function renderCheatsheetView() {
   const container = document.getElementById('view-cheatsheet');
   if (!container) return;
+
+  if (currentSubject === 'duocly2') {
+    if (typeof renderDuocLy2CheatsheetView === 'function') {
+      renderDuocLy2CheatsheetView();
+      return;
+    }
+  }
 
   // If already rendered in DOM, do NOT wipe container.innerHTML or reset scroll!
   if (document.getElementById('cs-sec-formulas')) {

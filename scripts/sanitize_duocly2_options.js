@@ -48,3 +48,4 @@ tests.forEach(t => {
   console.log(`Original: "${t}"`);
   console.log(`Cleaned:  "${cleanOptionText(t)}"\n`);
 });
+
