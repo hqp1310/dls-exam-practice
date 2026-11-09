@@ -167,7 +167,9 @@ function switchSubject(subjectKey, force = false) {
     localStorage.setItem('dls_current_subject', currentSubject);
   } catch (e) { }
 
+  loadStudyAnswers(); // Switch study answers memory to the active subject
   applySubjectUI();
+  updateCoverageDisplays(); // Recompute coverage for the active subject
   clearExamDraft();
 
   // Reset filters
@@ -2983,6 +2985,7 @@ function submitExam() {
   // Auto-save this completed exam to history
   const examRecord = {
     id: 'exam_' + Date.now(),
+    subject: currentSubject,
     timestamp: Date.now(),
     dateStr: formatHistoryDate(new Date()),
     score10: parseFloat(score10),
@@ -3056,7 +3059,13 @@ function closeResultsModal() {
 let topicStatusFilter = 'all'; // 'all' | 'unanswered' | 'wrong' | 'correct'
 let topicSearchQuery = '';
 let topicVisibleLimit = 25; // Pagination limit for mobile speed
-const STORAGE_STUDY_ANSWERS_KEY = 'dls_study_answers_v2';
+const STORAGE_STUDY_ANSWERS_DLS_KEY = 'dls_study_answers_v2';
+const STORAGE_STUDY_ANSWERS_DL2_KEY = 'duocly2_study_answers_v1';
+
+function getStudyAnswersKey() {
+  return currentSubject === 'duocly2' ? STORAGE_STUDY_ANSWERS_DL2_KEY : STORAGE_STUDY_ANSWERS_DLS_KEY;
+}
+
 const STORAGE_TOPIC_ORDER_KEY = 'dls_topic_order_v1';
 let topicCustomOrder = {};
 
@@ -3082,14 +3091,18 @@ function loadStudyAnswers() {
     if (localStorage.getItem('dls_study_answers_v1')) {
       localStorage.removeItem('dls_study_answers_v1');
     }
-    const raw = localStorage.getItem(STORAGE_STUDY_ANSWERS_KEY);
-    if (raw) studyAnswers = JSON.parse(raw);
-  } catch (e) { }
+    const key = getStudyAnswersKey();
+    const raw = localStorage.getItem(key);
+    studyAnswers = raw ? JSON.parse(raw) : {};
+  } catch (e) {
+    studyAnswers = {};
+  }
 }
 
 function saveStudyAnswers() {
   try {
-    localStorage.setItem(STORAGE_STUDY_ANSWERS_KEY, JSON.stringify(studyAnswers));
+    const key = getStudyAnswersKey();
+    localStorage.setItem(key, JSON.stringify(studyAnswers));
   } catch (e) { }
 }
 
@@ -6837,7 +6850,21 @@ function renderHistoryView() {
 
 function renderHistoryListView() {
   const container = document.getElementById('view-history');
-  const history = getExamHistory();
+  const allHistory = getExamHistory();
+  const isDL2 = (currentSubject === 'duocly2');
+  const history = allHistory.filter(exam => {
+    let examSubject = exam.subject;
+    if (!examSubject) {
+      const hasDL2Chapter = (exam.questions || []).some(q => q && TOPIC_ORDER_DUOCLY2.slice(1).includes(q.chapter));
+      examSubject = (hasDL2Chapter || exam.totalQuestions === 60) ? 'duocly2' : 'dls';
+    }
+    return examSubject === currentSubject;
+  });
+
+  const subjectName = isDL2 ? 'Dược Lý 2' : 'Dược Lâm Sàng';
+  const durationText = isDL2 ? '60 câu / 60 phút' : '80 câu / 80 phút';
+  const timeLimitNotice = isDL2 ? 'Quy định: 60 phút' : 'Quy định: 80 phút';
+  const startBtnText = isDL2 ? '⏱️ Bắt đầu làm bài thi 60 câu ngay' : '⏱️ Bắt đầu làm bài thi 80 câu ngay';
 
   if (!history.length) {
     container.innerHTML = `
@@ -6845,13 +6872,13 @@ function renderHistoryListView() {
         <div class="history-empty-state">
           <div class="history-empty-icon">📜</div>
           <h2 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--text-main);">
-            Chưa có bài thi nào trong lịch sử
+            Chưa có bài thi nào trong lịch sử môn ${subjectName}
           </h2>
           <p style="color: var(--text-muted); max-width: 480px; font-size: 0.95rem; line-height: 1.6;">
-            Khi bạn nộp bài thi 80 câu / 80 phút (hoặc nộp bài sớm), toàn bộ kết quả, phương án bạn đã chọn và lời giải chi tiết sẽ tự động được lưu lại tại đây để bạn ôn lại bất cứ lúc nào!
+            Khi bạn nộp bài thi ${durationText} (hoặc nộp bài sớm), toàn bộ kết quả, phương án bạn đã chọn và lời giải chi tiết sẽ tự động được lưu lại tại đây để bạn ôn lại bất cứ lúc nào!
           </p>
           <button class="btn btn-primary" onclick="startNewExamFromHistory()" style="margin-top: 0.5rem; padding: 0.65rem 1.35rem;">
-            ⏱️ Bắt đầu làm bài thi 80 câu ngay
+            ${startBtnText}
           </button>
         </div>
       </div>
@@ -6873,7 +6900,7 @@ function renderHistoryListView() {
       
       <!-- STATS OVERVIEW -->
       <div class="history-stats-banner">
-        <div class="stat-item" style="cursor: pointer;" onclick="openCoverageModal()" title="Bấm để xem chi tiết độ phủ ${covStats.totalBank} câu hỏi theo 14 bài">
+        <div class="stat-item" style="cursor: pointer;" onclick="openCoverageModal()" title="Bấm để xem chi tiết độ phủ ${covStats.totalBank} câu hỏi theo ${isDL2 ? '20 bài' : '14 bài'}">
           <span class="stat-label">Độ phủ kho ${covStats.totalBank} câu</span>
           <span class="stat-val" style="color: var(--secondary);">${covStats.seenCount} <small style="font-size: 0.85rem; font-weight: normal;">/ ${covStats.totalBank}</small></span>
           <span class="stat-sub">${covStats.coveragePct}% kho • ${covStats.unseenCount} câu chưa gặp</span>
@@ -6896,7 +6923,7 @@ function renderHistoryListView() {
         <div class="stat-item">
           <span class="stat-label">Thời gian làm TB</span>
           <span class="stat-val" style="color: var(--accent);">${avgTimeMin} <small style="font-size: 0.9rem; font-weight: normal;">phút</small></span>
-          <span class="stat-sub">Quy định: 80 phút</span>
+          <span class="stat-sub">${timeLimitNotice}</span>
         </div>
         <div class="stat-item">
           <span class="stat-label">Tỷ lệ đỗ</span>
@@ -6909,10 +6936,10 @@ function renderHistoryListView() {
       <div class="history-toolbar">
         <div>
           <h2 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--text-main);">
-            Danh Sách Các Bài Thi Đã Hoàn Thành
+            Danh Sách Các Bài Thi Đã Hoàn Thành (${subjectName})
           </h2>
           <span style="font-size: 0.85rem; color: var(--text-muted);">
-            Bấm vào bất kỳ bài thi nào để xem lại chi tiết 80 câu, các câu bạn làm sai và đáp án giải thích.
+            Bấm vào bất kỳ bài thi nào để xem lại chi tiết ${isDL2 ? '60 câu' : '80 câu'}, các câu bạn làm sai và đáp án giải thích.
           </span>
         </div>
         <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
@@ -8217,8 +8244,15 @@ function getBankCoverageStats() {
   const correctIds = new Set();
   const wrongIds = new Set();
 
-  // 1. From exam history
+  // 1. From exam history (strictly filtered by currentSubject)
   history.forEach(exam => {
+    let examSubject = exam.subject;
+    if (!examSubject) {
+      const hasDL2Chapter = (exam.questions || []).some(q => q && TOPIC_ORDER_DUOCLY2.slice(1).includes(q.chapter));
+      examSubject = (hasDL2Chapter || exam.totalQuestions === 60) ? 'duocly2' : 'dls';
+    }
+    if (examSubject !== currentSubject) return;
+
     (exam.questions || []).forEach(q => {
       if (q && q.id && activeBankIds.has(q.id)) {
         seenIds.add(q.id);
@@ -8231,18 +8265,27 @@ function getBankCoverageStats() {
     });
   });
 
-  // 2. From topic study mode
-  if (typeof studyAnswers === 'object') {
+  // 2. From topic study mode (verified against active bank questions)
+  if (typeof studyAnswers === 'object' && studyAnswers !== null) {
     Object.keys(studyAnswers).forEach(idStr => {
       const qId = parseInt(idStr, 10);
       if (activeBankIds.has(qId)) {
         const q = activeBank.find(x => x.id === qId);
         if (q) {
-          seenIds.add(qId);
-          const { isAnswered, isCorrect } = resolveStudyAnswer(q);
-          if (isAnswered) {
-            if (isCorrect) correctIds.add(qId);
-            else wrongIds.add(qId);
+          const raw = studyAnswers[qId];
+          let matches = false;
+          if (raw && typeof raw === 'object' && raw.text) {
+            matches = q.options.includes(raw.text);
+          } else if (typeof raw === 'number' && raw >= 0 && raw < q.options.length) {
+            matches = true;
+          }
+          if (matches) {
+            seenIds.add(qId);
+            const { isAnswered, isCorrect } = resolveStudyAnswer(q);
+            if (isAnswered) {
+              if (isCorrect) correctIds.add(qId);
+              else wrongIds.add(qId);
+            }
           }
         }
       }
@@ -8333,7 +8376,7 @@ function openCoverageModal() {
         <table class="matrix-table">
           <thead>
             <tr>
-              <th>Chuyên đề bài giảng (44h)</th>
+              <th>Chuyên đề bài giảng (${currentSubject === 'duocly2' ? '32 tiết' : '44h'})</th>
               <th style="text-align: center;">Kho câu</th>
               <th style="text-align: center;">Đã gặp</th>
               <th style="text-align: center;">Đã đúng</th>

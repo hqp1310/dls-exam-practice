@@ -272,3 +272,4 @@ function renderDuocLy2CheatsheetView() {
 
 fs.writeFileSync(path.join(__dirname, 'cheatsheet_template.js'), fileContent);
 console.log('Template written.');
+

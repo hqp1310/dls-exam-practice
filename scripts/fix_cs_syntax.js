@@ -11,3 +11,4 @@ code = code.replace(/\\(\$\{[\s\S]*?\})/g, '$1');
 
 fs.writeFileSync(filePath, code, 'utf8');
 console.log('Fixed syntax in cheatsheet_duocly2.js');
+
