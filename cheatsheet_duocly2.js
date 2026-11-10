@@ -941,40 +941,60 @@ function generateAll20LessonsHtml() {
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch7'] ? 'active' : ''}" id="dl2-head-dl2_ch7" onclick="toggleDl2Accordion('dl2_ch7')">
         <div class="chapter-acc-title-group">
           <span class="cs-pill cs-pill-primary">🔥 2 Tiết • 4 Câu</span>
-          <span class="chapter-acc-title">Bài 7: Thuốc Chống Giun Sán &amp; Amip (Albendazol, Praziquantel, Metronidazol)</span>
+          <span class="chapter-acc-title">Bài 7: Thuốc Chống Giun Sán &amp; Amip (Toàn bộ thuốc Trị Giun, Sán &amp; Amip Chuẩn BYT)</span>
         </div>
         <span class="chapter-acc-arrow">▼</span>
       </div>
       <div class="chapter-accordion-body" id="dl2-body-dl2_ch7" style="display: ${dl2OpenAccordions['dl2_ch7'] ? 'block' : 'none'};">
         <div class="chapter-sec-heading">🎯 1. Thuốc Trị Giun (Nematodes):</div>
         <ul class="chapter-point-list">
-          <li><strong>Nhóm Benzimidazol (Mebendazol, Albendazol):</strong>
-            <br>&bull; <em>Cơ chế:</em> Gắn chọn lọc vào <strong>β-tubulin</strong> của ký sinh trùng → ức chế quá trình trùng hợp vi ống (microtubules) → ngăn cản bắt giữ và sử dụng glucose → giun cạn kiệt năng lượng glycogen, bất động và chết.
-            <br>&bull; <em>Phổ tác dụng:</em> Rất rộng (giun đũa, giun kim, giun móc, giun tóc). Albendazol hấp thu tốt hơn khi dùng cùng bữa ăn giàu chất béo → thấm vào mô trị được ấu trùng sán lợn ở não (<em>Cysticercosis</em>) và nang sán chó (<em>Echinococcus</em>).
-            <br>&bull; <em>Chống chỉ định:</em> Phụ nữ mang thai (nhất là 3 tháng đầu &minus; gây quái thai), trẻ em dưới 1 &minus; 2 tuổi.
+          <li><strong>Nhóm Benzimidazol (Albendazol, Mebendazol, Thiabendazol):</strong>
+            <br>&bull; <em>Cơ chế chung:</em> Gắn chọn lọc vào <strong>β-tubulin</strong> của ký sinh trùng → ức chế quá trình trùng hợp vi ống (microtubules) → ngăn cản thu nhận và sử dụng glucose → giun cạn kiệt glycogen, bất động và chết.
+            <br>&bull; <em>Albendazol:</em> Phổ rộng nhất (giun đũa, giun kim, giun móc, giun tóc). Uống lúc đói để trị giun đường ruột; bắt buộc <strong>uống cùng bữa ăn giàu chất béo</strong> để tăng hấp thu gấp 4 &minus; 5 lần khi điều trị ấu trùng sán mô bào (ấu trùng sán lợn ở não <em>Cysticercosis</em>, nang sán chó <em>Echinococcus</em>).
+            <br>&bull; <em>Mebendazol:</em> Ít hấp thu qua ruột (&lt; 10%), dùng liều duy nhất 500 mg tẩy giun định kỳ đường ruột cho cộng đồng.
+            <br>&bull; <em>Thiabendazol:</em> Độc tính cao hơn, dùng điều trị hội chứng ấu trùng giun di chuyển dưới da/nội tạng (<em>Cutaneous larva migrans</em>) và giun lươn.
+            <br>&bull; <em>Chống chỉ định chung:</em> Phụ nữ có thai (nhất là 3 tháng đầu &minus; nguy cơ gây quái thai), trẻ em dưới 1 &minus; 2 tuổi, người suy gan nặng.
           </li>
-          <li><strong>Pyrantel pamoat:</strong> Phong bế thần kinh - cơ của giun bằng cách kích thích thụ thể nicotinic → gây <strong>liệt cứng cơ giun</strong> → tống giun ra ngoài theo nhu động ruột mà không kích thích giun di chuyển chui ống mật.</li>
+          <li><strong>Pyrantel pamoat:</strong> Khử cực khớp nối thần kinh &minus; cơ của giun qua kích thích mạnh thụ thể nicotinic và ức chế enzym cholinesterase → gây <strong>liệt cứng cơ giun</strong> → tống giun ra ngoài theo nhu động ruột mà không kích thích giun di chuyển chui ống mật. Dùng trị giun đũa, giun kim, giun móc.</li>
+          <li><strong>Levamisol:</strong> Tác động như chất chủ vận hạch thần kinh gây <strong>liệt cứng cơ giun</strong>. Ngoài ra, thuốc còn có tác dụng <strong>điều hòa và kích thích miễn dịch</strong> (phục hồi chức năng lympho T). <em>Độc tính:</em> Nguy cơ mất bạch cầu hạt đặc ứng.</li>
+          <li><strong>Piperazin:</strong> Gắn vào thụ thể GABA tại cơ giun → mở kênh clo, ưu phân cực màng, phong bế dẫn truyền acetylcholin tại synap thần kinh &minus; cơ → gây <strong>liệt mềm giun</strong>. Giun bị tống ra ngoài <strong>khi vẫn còn sống</strong> (không bị phân rã, không phóng thích độc tố).</li>
+          <li><strong>Ivermectin:</strong> Gắn chọn lọc vào <strong>kênh Clo phụ thuộc Glutamat (GluCl)</strong> ở tế bào thần kinh và cơ của ký sinh trùng → tăng tính thấm ion Cl⁻ → ưu phân cực màng và gây <strong>liệt mềm giun</strong>. Thuốc số 1 điều trị <strong>Bệnh giun chỉ Onchocerca volvulus</strong> (gây mù sông), <strong>Bệnh ấu trùng giun lươn (Strongyloides stercoralis)</strong> đường ruột lan tỏa, và <strong>Bệnh cái ghẻ (Sarcoptes scabiei)</strong> kháng thuốc bôi.</li>
+          <li><strong>Diethylcarbamazin (DEC / Hetrazan):</strong> Dẫn xuất piperazin làm biến đổi bề mặt màng ấu trùng giun chỉ để hệ miễn dịch thực bào. Thuốc lựa chọn số 1 trị <strong>Bệnh giun chỉ bạch huyết</strong> (<em>Wuchereria bancrofti</em>, <em>Brugia malayi</em> &minus; gây phù chân voi). <em>Lưu ý Phản ứng Mazzotti:</em> Do xác ấu trùng giun chỉ chết hàng loạt phóng thích kháng nguyên ồ ạt → sốt cao, tụt huyết áp, nổi mày đay, sưng đau hạch bạch huyết.</li>
         </ul>
 
         <div class="chapter-sec-heading">🐛 2. Thuốc Trị Sán (Cestodes &amp; Trematodes):</div>
         <ul class="chapter-point-list">
-          <li><strong>Praziquantel:</strong> Lựa chọn hàng đầu cho hầu hết các loại sán: <strong>sán lá gan, sán lá phổi, sán máng, sán dây</strong>.
-            <br>&bull; <em>Cơ chế:</em> Làm tăng tính thấm của màng tế bào sán với ion <strong>Ca²⁺</strong> → gây co cứng cơ sán và làm phồng rộp, vỡ biểu mô bảo vệ của sán → hệ thống miễn dịch của vật chủ tấn công tiêu diệt sán.
+          <li><strong>Praziquantel:</strong> Thuốc lựa chọn hàng đầu cho hầu hết các loại sán lá và sán dây.
+            <br>&bull; <em>Cơ chế:</em> Làm tăng đột ngột tính thấm màng tế bào sán với ion <strong>Ca²⁺</strong> → Ca²⁺ tràn vào bào tương gây <strong>co cứng cơ toàn thân sán tức thì</strong>; đồng thời làm phồng rộp và phân rã lớp vỏ biểu bì bọc ngoài sán → bộc lộ kháng nguyên cho hệ thống miễn dịch vật chủ tiêu diệt.
+            <br>&bull; <em>Chỉ định:</em> Sán lá gan nhỏ (<em>Clonorchis sinensis</em>), sán lá phổi (<em>Paragonimus</em>), tất cả các loài <strong>sán máng (Schistosoma)</strong>, sán dây bò, sán dây lợn, và ấu trùng sán lợn ở não (phối hợp Dexamethason chống phù não).
           </li>
-          <li><strong>Niclosamid:</strong> Diệt sán dây tại chỗ trong lòng ruột. Ức chế quá trình phosphoryl oxy hóa ty thể của sán. Lưu ý: Không dùng trong nhiễm sán dây lợn nếu có nguy cơ vỡ trứng gây ấu trùng sán lợn di căn.</li>
+          <li><strong>Triclabendazol:</strong> Dẫn xuất benzimidazol đặc biệt, là <strong>thuốc đặc hiệu số 1 duy nhất điều trị Sán lá gan lớn (Fasciola hepatica, Fasciola gigantica)</strong> tại Việt Nam (Praziquantel kém nhạy cảm với sán lá gan lớn). Cơ chế ức chế trùng hợp vi ống của sán. Uống sau bữa ăn nhiều dầu mỡ.</li>
+          <li><strong>Niclosamid:</strong> Diệt sán dây tại chỗ trong lòng ống tiêu hóa (ức chế phosphoryl oxy hóa ở ty thể của sán). Thuốc diệt đầu và đốt sán dải lợn (<em>Taenia solium</em>) nhưng <strong>không diệt được trứng sán</strong>. Đốt rã phóng thích trứng; nếu nở thành ấu trùng xuyên thành ruột lên não sẽ gây bệnh ấu trùng sán lợn ở não (<em>Cysticercosis</em>) tử vong → <strong>BẮT BUỘC uống thuốc nhuận tràng muối (Magnesi sulfat) sau 2 giờ</strong> để tống nhanh đốt và trứng sán ra ngoài!</li>
+          <li><strong>Oxamniquin:</strong> Thuốc đặc hiệu thay thế điều trị sán máng <em>Schistosoma mansoni</em> bằng cách gắn vào DNA làm ngừng tổng hợp acid nucleic của sán.</li>
         </ul>
 
         <div class="chapter-sec-heading">🦠 3. Thuốc Trị Amip (Entamoeba histolytica):</div>
         <ul class="chapter-point-list">
-          <li><strong>Thuốc diệt amip ở mô (Metronidazol, Tinidazol):</strong>
-            <br>&bull; <em>Cơ chế:</em> Nhóm nitro bị khử bởi protein vận chuyển điện tử ferredoxin của ký sinh trùng thành các gốc tự do độc → phá hủy chuỗi xoắn ADN.
-            <br>&bull; <em>Tác dụng:</em> Diệt thể hoạt động (trophozoite) của amip ở thành ruột và các cơ quan (áp xe gan do amip), diệt trùng roi âm đạo <em>Trichomonas vaginalis</em> và vi khuẩn kỵ khí.
-            <br>&bull; <em>Tác dụng phụ:</em> Vị kim loại khó chịu ở miệng, buồn nôn, <strong>phản ứng giống Disulfiram khi uống chung với rượu</strong> (đỏ mặt bừng bừng, nhức đầu, tụt huyết áp).
+          <li><strong>Thuốc diệt amip ở mô (Metronidazol, Tinidazol, Secnidazol, Ornidazol):</strong>
+            <br>&bull; <em>Cơ chế:</em> Nhóm nitro (-NO₂) bị enzym ferredoxin của ký sinh trùng khử thành các gốc tự do nitro ngắn hạn phá hủy chuỗi xoắn kép DNA.
+            <br>&bull; <em>Phổ tác dụng:</em> Diệt thể hoạt động ăn hồng cầu (trophozoite) ở thành ruột, gan (áp xe gan amip), phổi, não; diệt trùng roi âm đạo <em>Trichomonas vaginalis</em> và vi khuẩn kỵ khí.
+            <br>&bull; <em>Đặc tính từng thuốc:</em>
+            <br>&minus; <strong>Metronidazol:</strong> Tác dụng nhanh, T1/2 = 8h. ADR: vị kim loại khó chịu, làm nước tiểu sẫm màu nâu đỏ, <strong>phản ứng giống Disulfiram khi dùng chung với rượu</strong> (ức chế aldehyde dehydrogenase → đỏ bừng mặt, nhức đầu, tụt huyết áp).
+            <br>&minus; <strong>Tinidazol, Secnidazol, Ornidazol:</strong> Dẫn xuất thế hệ mới, T1/2 kéo dài hơn (Secnidazol T1/2 = 12 &minus; 14h), dung nạp tốt hơn, có thể dùng liều duy nhất.
           </li>
-          <li><strong>Thuốc diệt amip trong lòng ruột (Diloxanid furoat, Paromomycin):</strong> Tác dụng chọn lọc trên thể kén (cyst) amip trong lòng đại tràng. Dùng tiếp nối sau Metronidazol để quét sạch kén phòng ngừa tái phát và người lành mang trùng.</li>
+          <li><strong>Alkaloid Ipeca (Emetin &amp; Dehydroemetin):</strong>
+            <br>&bull; <em>Cơ chế:</em> Ức chế tổng hợp protein amip bằng cách phong bế sự dịch mã chuỗi peptid trên ribosome. Tác dụng diệt amip thể mô cực mạnh.
+            <br>&bull; <em>Độc tính tim mạch đặc thù:</em> Rất độc trên cơ tim (gây viêm cơ tim hoại tử, tụt huyết áp, loạn nhịp tim nguy hiểm, biến đổi sóng T và đoạn ST trên ECG). Chỉ tiêm khi không dung nạp hoặc thất bại với Metronidazol; <strong>chống chỉ định tuyệt đối cho người có bệnh tim mạch, phụ nữ có thai và trẻ nhỏ</strong>.
+          </li>
+          <li><strong>Chloroquin phosphat:</strong> Thuốc chống sốt rét nhưng có đặc tính <strong>tích lũy tập trung nồng độ tại nhu mô gan cao gấp 200 &minus; 500 lần nồng độ trong huyết tương</strong> → Thuốc lựa chọn tuyệt hảo để phối hợp điều trị <strong>Áp xe gan do amip</strong> (phối hợp với Metronidazol hoặc Emetin), không có tác dụng trên amip ở ruột.</li>
+          <li><strong>Thuốc diệt amip trong lòng ruột (Diloxanid furoat, Paromomycin, Iodoquinol):</strong>
+            <br>&bull; <em>Diloxanid furoat:</em> Thuốc số 1 diệt thể bào nang (cyst) amip trong lòng đại tràng. Hầu như không hấp thu vào máu, rất ít tác dụng phụ toàn thân. Bắt buộc dùng tiếp nối sau đợt Metronidazol để tiệt trừ mầm bệnh, ngừa tái phát và quét sạch người lành mang kén.
+            <br>&bull; <em>Paromomycin:</em> Kháng sinh Aminoglycosid uống không hấp thu qua ruột, diệt kén amip tại chỗ, là thuốc an toàn hàng đầu điều trị amip ruột cho <strong>phụ nữ mang thai</strong>.
+            <br>&bull; <em>Iodoquinol (Diiodohydroxyquin):</em> Dẫn xuất halogen của hydroxyquinolin diệt kén amip; lưu ý không dùng kéo dài vì nguy cơ tổn thương dây thần kinh thị giác.
+          </li>
         </ul>
 
-                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
         <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Trị Giun Sán &amp; Amip - Trọng Tâm Đề Thi):</div>
         <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
           <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
