@@ -1429,7 +1429,7 @@ function generateAll20LessonsHtml() {
         </div>
 
         <div style="margin-top: 0.75rem;">
-          <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Hormon (4)')">
+          <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Hormon')">
             🎯 Luyện đề trắc nghiệm Bài 13: Thuốc Hormon
           </button>
         </div>

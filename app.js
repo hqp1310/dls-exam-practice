@@ -3094,6 +3094,23 @@ function loadStudyAnswers() {
     const key = getStudyAnswersKey();
     const raw = localStorage.getItem(key);
     studyAnswers = raw ? JSON.parse(raw) : {};
+
+    // Auto-sanitize: if in duocly2, ensure saved answers match actual duocly2 options
+    if (currentSubject === 'duocly2' && typeof DUOCLY2_EXAM_BANK !== 'undefined' && DUOCLY2_EXAM_BANK.length) {
+      let cleaned = false;
+      Object.keys(studyAnswers).forEach(idStr => {
+        const id = parseInt(idStr, 10);
+        const q = DUOCLY2_EXAM_BANK.find(item => item.id === id);
+        const entry = studyAnswers[idStr];
+        if (!q || (entry && typeof entry === 'object' && entry.text && !q.options.includes(entry.text))) {
+          delete studyAnswers[idStr];
+          cleaned = true;
+        }
+      });
+      if (cleaned) {
+        saveStudyAnswers();
+      }
+    }
   } catch (e) {
     studyAnswers = {};
   }
@@ -3597,7 +3614,8 @@ function renderTopicQuestionCardsHtml(questionsList) {
 
 // IN-PLACE DOM OPTION SELECTION (ZERO SCROLL JUMPING ON MOBILE)
 function selectStudyOption(qId, oIdx) {
-  const q = ALL_EXAM_BANK.find(item => item.id === qId);
+  const activeBank = getActiveBank();
+  const q = activeBank.find(item => item.id === qId);
   if (!q) return;
 
   const optText = q.options[oIdx];
@@ -3617,6 +3635,9 @@ function updateStudyCardDOM(qId, oIdx, q) {
 
   const letters = ['A', 'B', 'C', 'D'];
   const isCorrect = oIdx === q.correct;
+  const defaultRef = currentSubject === 'duocly2'
+    ? 'Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)'
+    : 'Giáo trình Dược lâm sàng - Bộ Y tế';
 
   // 1. Update options
   const optionEls = card.querySelectorAll('.option-item');
@@ -3670,7 +3691,7 @@ function updateStudyCardDOM(qId, oIdx, q) {
         </div>
       </div>
       <div class="explanation-content">${q.explanation}</div>
-      <div class="explanation-ref">📖 Nguồn: ${q.reference || 'Giáo trình Dược lâm sàng - Bộ Y tế'}</div>
+      <div class="explanation-ref">📖 Nguồn: ${q.reference || defaultRef}</div>
     </div>
   `;
 }
@@ -3866,9 +3887,10 @@ function loadMoreTopicQuestions() {
 }
 
 function shuffleTopicQuestions() {
+  const activeBank = getActiveBank();
   const baseQuestions = activeTopicFilter === 'Tất cả'
-    ? ALL_EXAM_BANK
-    : ALL_EXAM_BANK.filter(q => q.chapter === activeTopicFilter);
+    ? activeBank
+    : activeBank.filter(q => q.chapter === activeTopicFilter);
 
   if (!baseQuestions || !baseQuestions.length) return;
 
@@ -3892,9 +3914,10 @@ function resetTopicQuestionOrder() {
 }
 
 function shuffleTopicOptions() {
+  const activeBank = getActiveBank();
   const targetQuestions = activeTopicFilter === 'Tất cả'
-    ? ALL_EXAM_BANK
-    : ALL_EXAM_BANK.filter(q => q.chapter === activeTopicFilter);
+    ? activeBank
+    : activeBank.filter(q => q.chapter === activeTopicFilter);
 
   if (!targetQuestions || !targetQuestions.length) return;
 
@@ -3929,9 +3952,10 @@ function resetTopicAnswers(chapter) {
   if (!confirm(`Bạn có chắc chắn muốn xóa tiến độ đã làm của ${targetName} để làm lại từ đầu không?`)) {
     return;
   }
+  const activeBank = getActiveBank();
   const targetQuestions = chapter === 'Tất cả'
-    ? ALL_EXAM_BANK
-    : ALL_EXAM_BANK.filter(q => q.chapter === chapter);
+    ? activeBank
+    : activeBank.filter(q => q.chapter === chapter);
 
   if (chapter === 'Tất cả') {
     studyAnswers = {};
@@ -7720,15 +7744,16 @@ function getDeviceSyncPayload() {
   };
 }
 
-// Rehydrate exam questions from ALL_EXAM_BANK (fallback only for legacy v1 payloads)
+// Rehydrate exam questions from bank (fallback only for legacy v1 payloads)
 function rehydrateExam(exam) {
   if (exam.questions && exam.questions.length && exam.questions[0].question && Array.isArray(exam.questions[0].options)) {
     return exam; // already has full question text and options preserved
   }
   const bankMap = new Map();
-  if (typeof ALL_EXAM_BANK !== 'undefined') {
-    ALL_EXAM_BANK.forEach(q => bankMap.set(q.id, q));
-  }
+  const bank = (exam.subject === 'duocly2' && typeof DUOCLY2_EXAM_BANK !== 'undefined')
+    ? DUOCLY2_EXAM_BANK
+    : (typeof ALL_EXAM_BANK !== 'undefined' ? ALL_EXAM_BANK : []);
+  bank.forEach(q => bankMap.set(q.id, q));
   const answers = exam.answers || [];
   exam.questions = answers.map((ans, idx) => {
     const original = bankMap.get(ans.i) || {};
