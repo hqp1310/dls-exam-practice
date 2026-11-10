@@ -67,12 +67,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng huyết động học và điện sinh lý cơ tim của Glycosid tim khi dùng ở liều điều trị tối ưu thường được đúc kết qua quy luật biến đổi nào sau đây?",
     "options": [
-      "Tăng nhịp xoang, tăng tốc độ dẫn truyền nhĩ thất và tăng nhu cầu oxy cơ tim",
-      "Tăng tính kích thích thất, rút ngắn thời gian tâm trương và giãn mạch vành",
-      "Giảm tính tự động nút xoang, tăng dẫn truyền nhĩ thất và giảm lực co tâm thu",
-      "Tăng lực co bóp tâm thu, làm chậm nhịp tim, kéo dài thời kỳ tâm trương và làm chậm dẫn truyền nhĩ thất"
+      "Tăng sức co bóp, giảm nhịp xoang và giảm dẫn truyền nhĩ thất",
+      "Giảm sức co bóp, tăng nhịp xoang và tăng dẫn truyền nhĩ thất",
+      "Tăng sức co bóp, tăng nhịp xoang và tăng tốc độ dẫn truyền tim",
+      "Giảm sức co bóp, giảm nhịp tim và tăng kích thích nút nhĩ thất"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Quy luật 4 tác dụng kinh điển của Digitalis: Tăng co bóp (inotropic dương), chậm nhịp (chronotropic âm), giảm dẫn truyền nhĩ thất (dromotropic âm), tăng tính kích thích sợi cơ tâm thất ở liều cao (bathmotropic dương).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -157,10 +157,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Bệnh nhân nam 65 tuổi đang điều trị suy tim bằng Digoxin 0.25 mg/ngày. Khi bác sĩ phối hợp thêm một thuốc chống loạn nhịp để kiểm soát cơn rung nhĩ kịch phát, nồng độ Digoxin trong huyết tương tăng vọt gấp đôi. Thuốc chống loạn nhịp nào có khả năng gây tương tác này mạnh nhất?",
     "options": [
-      "Lidocain do ức chế cạnh tranh men chuyển hóa CYP1A2 tại gan",
-      "Quinidin do đẩy Digoxin khỏi vị trí gắn ở mô và ức chế P-glycoprotein ở thận",
-      "Propranolol do làm tăng tính thấm mao mạch cầu thận đối với phân tử phân cực",
-      "Adenosin do làm giảm lưu lượng máu tưới qua nhu mô vỏ thận"
+      "Lidocain",
+      "Quinidin",
+      "Mexiletin",
+      "Amiodaron"
     ],
     "correct": 1,
     "explanation": "Quinidin đẩy Digoxin ra khỏi các điểm gắn ở mô cơ vân và ức chế protein vận chuyển P-glycoprotein tại ống thận, làm giảm thể tích phân bố và giảm thanh thải Digoxin qua thận, khiến nồng độ Digoxin trong huyết tương tăng gấp đôi.",
@@ -265,12 +265,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thuốc trợ tim Milrinon thuộc nhóm thuốc nào và cơ chế phân tử của thuốc mang lại tác dụng huyết động học kép ra sao?",
     "options": [
-      "Kích thích chọn lọc enzym guanylyl cyclase, làm tăng nồng độ cGMP gây giãn mạnh tiểu động mạch",
-      "Chủ vận chọn lọc thụ thể beta-1 adrenergic, kích hoạt adenylate cyclase làm tăng noradrenalin",
-      "Phong bế kênh calci phụ thuộc điện thế typ L, làm chậm nhịp tim và kéo dài thời gian đổ đầy thất",
-      "Ức chế enzym phosphodiesterase-3, làm tăng cAMP nội bào giúp tăng co bóp cơ tim và giãn mạch"
+      "Kích thích chọn lọc guanylyl cyclase làm tăng cGMP nội bào",
+      "Kích thích adenylate cyclase làm tăng lượng noradrenalin",
+      "Ức chế phosphodiesterase-3 làm tăng nồng độ cAMP nội bào",
+      "Phong bế thụ thể beta-1 giao cảm làm giảm lượng cAMP tế bào"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "Milrinon và Inamrinon là thuốc ức chế chọn lọc enzym phosphodiesterase typ 3 (PDE-3), ngăn thoái giáng cAMP. Tăng cAMP trong cơ tim làm tăng Ca2+ nội bào tăng co bóp tim; trong khi tăng cAMP ở cơ trơn mạch máu gây giãn mạch (tác dụng 'Inodilator').",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -283,10 +283,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tại sao nhóm thuốc ức chế Phosphodiesterase-3 (Milrinon, Inamrinon) dù cải thiện triệu chứng huyết động rất tốt trong suy tim cấp nhưng lại bị chống chỉ định dùng kéo dài đường uống trong suy tim mạn tính?",
     "options": [
-      "Làm teo biểu mô ống thận và gây suy thận cấp tiến triển sau 1 tuần dùng thuốc",
-      "Gây lắng đọng sắc tố da không hồi phục và viêm xơ hóa mô kẽ phổi lan tỏa",
-      "Gây tiêu cơ vân cấp và suy gan nặng do ức chế chuyển hóa tổng hợp mevalonate",
-      "Làm tăng đáng kể tỷ lệ tử vong do khởi phát các cơn loạn nhịp thất ác tính đe dọa tính mạng"
+      "Gây viêm xơ hóa mô kẽ phổi tiến triển không hồi phục",
+      "Gây hoại tử biểu mô ống thận cấp và suy thận tiến triển",
+      "Gây hội chứng tiêu cơ vân cấp và suy gan tối cấp tính",
+      "Tăng tỷ lệ tử vong liên quan loạn nhịp thất ác tính"
     ],
     "correct": 3,
     "explanation": "Thử nghiệm lâm sàng PROMISE đã chứng minh dùng thuốc ức chế PDE-3 đường uống kéo dài làm tăng tỷ lệ tử vong đáng kể so với giả dược, chủ yếu do biến chứng loạn nhịp thất ác tính và đột tử. Vì vậy, nhóm này chỉ được dùng đường tĩnh mạch ngắn hạn trong suy tim cấp mất bù.",
@@ -301,12 +301,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Dobutamin là một catecholamin tổng hợp được chỉ định phổ biến trong sốc tim và suy tim cấp mất bù. Tác dụng dược lý ưu thế của hoạt chất này được trung hòa thông qua tương tác thụ thể nào?",
     "options": [
-      "Kích thích mạnh mẽ thụ thể alpha-1 adrenergic ngoại vi gây co mạch nâng nhanh huyết áp",
-      "Chủ vận ưu thế trên thụ thể beta-1 adrenergic ở tim, tăng sức co bóp cơ tim rõ rệt và ít làm tăng nhịp tim hơn isoprenalin",
-      "Đối kháng thụ thể dopaminergic D1 tại giường mạch mạc treo và làm tăng sức cản ngoại biên",
-      "Kích thích chọn lọc thụ thể beta-2 adrenergic tại đường dẫn khí làm giãn phế quản"
+      "Chủ vận ưu thế trên thụ thể beta-1 adrenergic",
+      "Kích thích chọn lọc thụ thể alpha-1 adrenergic",
+      "Đối kháng thụ thể dopaminergic D1 ở ngoại biên",
+      "Kích thích chọn lọc thụ thể beta-2 adrenergic"
     ],
-    "correct": 1,
+    "correct": 0,
     "explanation": "Dobutamin là đồng phân racemic tác động chủ vận ưu thế trên thụ thể beta-1 adrenergic ở màng tế bào cơ tim, làm tăng mạnh sức co bóp cơ tim (inotropic (+)) với mức tăng nhịp tim và tiêu thụ oxy tương đối ít hơn so với dopamin hoặc isoproterenol.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -337,12 +337,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Trong chiến lược can thiệp tim mạch toàn diện nhằm bảo vệ các cơ quan đích (tim, não, thận) và kéo dài thời gian sống cho bệnh nhân tăng huyết áp vô căn, 4 nhóm hoạt chất hạ áp nền tảng bậc một (First-line) được các hiệp hội tim mạch quốc tế đồng thuận khuyến cáo sử dụng thường quy nhờ sở hữu bằng chứng lâm sàng vượt trội về giảm tỷ lệ tử vong và biến cố tim mạch lớn bao gồm:",
     "options": [
-      "Thuốc ức chế men chuyển, thuốc chẹn thụ thể angiotensin II, thuốc chẹn kênh calci và thuốc lợi tiểu thiazid",
-      "Thuốc ức chế men chuyển, thuốc chẹn thụ thể angiotensin II, thuốc mở kênh kali và thuốc chẹn alpha-1 ngoại vi",
-      "Thuốc chẹn kênh calci dihydropyridin, thuốc lợi tiểu quai, thuốc đồng vận alpha-2 trung ương và thuốc chẹn beta",
-      "Thuốc chẹn chọn lọc beta-1 tim, thuốc ức chế trực tiếp enzym renin, thuốc kháng aldosteron và thuốc giãn mạch"
+      "Ức chế men chuyển, chẹn beta giao cảm, lợi tiểu quai và chẹn alpha giao cảm",
+      "Ức chế men chuyển, chẹn thụ thể angiotensin, chẹn calci và lợi tiểu thiazid",
+      "Chẹn kênh calci, chẹn beta giao cảm, lợi tiểu quai và đồng vận alpha trung ương",
+      "Chẹn chọn lọc beta, kháng aldosteron, giãn trực tiếp mạch và nitrat hữu cơ"
     ],
-    "correct": 0,
+    "correct": 1,
     "explanation": "4 nhóm thuốc hạ áp nền tảng bậc một (first-line) gồm: ACEI, ARB, CCB và Lợi tiểu thiazid / thiazid-like. Thuốc chẹn beta chỉ ưu tiên khi có chỉ định bắt buộc (sau nhồi máu cơ tim, suy tim, đau thắt ngực). Thuốc chẹn alpha-1, kích thích alpha-2 trung ương, giãn mạch trực tiếp hay lợi tiểu quai chỉ xếp vào nhóm bậc hai/bậc ba khi có chỉ định đặc biệt.",
     "reference": "Sách Dược lý 2 tr. 54-55"
   },
@@ -373,12 +373,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Một bệnh nhân tăng huyết áp kiểm soát số đo huyết áp rất tốt sau một tháng dùng thuốc tim mạch đường uống. Tuy nhiên, bệnh nhân đi khám vì xuất hiện hội chứng kích ứng đường thở: ho từng cơn không có đờm, ngứa rát họng, tăng nhiều về đêm khi nằm ngủ, hoàn toàn không đáp ứng với thuốc giảm ho trung ương hay kháng histamin. Khám tim phổi và X-quang lồng ngực không ghi nhận bất thường. Cơ chế sinh hóa giải thích triệu chứng ho khan dai dẳng đặc trưng này là:",
     "options": [
-      "Sự tích tụ bất thường của Bradykinin và chất P ở đường dẫn khí do enzym thoái giáng chúng bị phong bế cạnh tranh",
-      "Sự tăng giải phóng Histamin và Leukotriene C4/D4 từ dưỡng bào phế quản do phản ứng quá mẫn typ I qua trung gian IgE",
-      "Sự kích thích trực tiếp của phân tử thuốc lên thụ thể TRPV1 (Transient Receptor Potential Vanilloid 1) của sợi thần kinh cảm giác C",
-      "Sự tích tụ Angiotensin I chuyển hướng kích thích thụ thể AT2 gây co thắt phế quản và tăng tiết dịch nhầy đường thở"
+      "Kích thích trung tâm phản xạ ho tại hành não",
+      "Tăng phóng thích histamin từ dưỡng bào phế quản",
+      "Tích tụ bradykinin và chất P ở đường hô hấp",
+      "Tích tụ trực tiếp angiotensin I tại phế quản"
     ],
-    "correct": 0,
+    "correct": 2,
     "explanation": "Ho khan dai dẳng (tỷ lệ 5-20%) là phản ứng bất lợi đặc trưng chỉ gặp ở nhóm ACEI, do ức chế enzym Kininase II làm ứ đọng Bradykinin và chất P ở đường hô hấp trên. Khi gặp tác dụng phụ này, giải pháp tối ưu là chuyển sang nhóm chẹn thụ thể ARB.",
     "reference": "Sách Dược lý 2 tr. 68"
   },
@@ -391,10 +391,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Một hoạt chất can thiệp vào trục thể dịch điều hòa huyết áp có thể gây sụt giảm cấp tính mức lọc cầu thận (GFR) dẫn đến vô niệu hoàn toàn và đe dọa tính mạng nếu chỉ định trên bệnh nhân có tổn thương giải phẫu mạch máu thận nào dưới đây?",
     "options": [
-      "Xơ vữa vi mạch thận ở bệnh nhân đái tháo đường có tổn thương cầu thận xuất hiện microalbumin niệu",
-      "Hẹp động mạch thận một bên trên bệnh nhân có quả thận đối bên chức năng hoàn toàn bình thường",
-      "Tăng áp lực tĩnh mạch thận thứ phát do suy tim sung huyết phân suất tống máu giảm",
-      "Hẹp động mạch thận hai bên hoặc hẹp động mạch thận trên bệnh nhân chỉ còn một quả thận chức năng duy nhất"
+      "Hẹp động mạch thận một bên còn thận đối bên khỏe",
+      "Xơ vữa vi mạch vỏ thận ở bệnh nhân cao tuổi tăng áp",
+      "Tăng áp tĩnh mạch thận hai bên trong hội chứng thận",
+      "Hẹp động mạch thận hai bên hoặc trên thận độc nhất"
     ],
     "correct": 3,
     "explanation": "Khi hẹp động mạch thận hai bên (hoặc thận độc nhất), áp lực tưới máu cầu thận phụ thuộc hoàn toàn vào tác dụng co tiểu động mạch đi của Angiotensin II để duy trì GFR. Uống ACEI/ARB làm giãn tiểu động mạch đi, áp lực lọc cầu thận sập về 0 gây suy thận cấp vô niệu ngay lập tức.",
@@ -427,12 +427,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Trong cùng nhóm can thiệp lên trục Renin - Angiotensin, ưu thế dược lý vượt trội nhất phân biệt nhóm thuốc chẹn thụ thể ARB với nhóm thuốc ức chế men chuyển ACEI là:",
     "options": [
-      "Sử dụng an toàn tuyệt đối cho phụ nữ mang thai trong suốt thai kỳ mà không gây độc thận thai nhi",
-      "Thúc đẩy đào thải triệt để ion kali qua nước tiểu nên không bao giờ gây biến chứng tăng kali máu",
-      "Không gây hiện tượng tụt huyết áp liều đầu tiên trên bệnh nhân đang dùng thuốc lợi tiểu phối hợp",
-      "Chẹn chọn lọc tại thụ thể AT1 nên không can thiệp vào thoái giáng bradykinin, triệt tiêu gần như hoàn toàn nguy cơ ho khan dai dẳng"
+      "Hầu như không gây ho khan và phù mạch",
+      "An toàn cho phụ nữ trong suốt thai kỳ",
+      "Không gây hiện tượng hạ áp liều đầu",
+      "Tăng đào thải ion kali qua nước tiểu"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Do ARB đối kháng chọn lọc trên thụ thể AT1 mà không ức chế men chuyển ACE (Kininase II), thuốc không làm tăng nồng độ Bradykinin và chất P trong đường thở, nhờ đó hầu như không gây ho khan (tỷ lệ tương đương giả dược), là lựa chọn thay thế hoàn hảo cho bệnh nhân không dung nạp ACEI.",
     "reference": "Sách Dược lý 2 tr. 71"
   },
@@ -463,12 +463,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Một bệnh nhân tăng huyết áp được điều trị đơn trị liệu bằng một hoạt chất chẹn kênh calci phân nhóm dihydropyridin. Sau một tháng, bệnh nhân nhận thấy hai bàn chân và mắt cá chân sưng mọng, tăng rõ rệt vào buổi chiều, không kèm khó thở, tĩnh mạch cổ không nổi, BNP máu bình thường. Cơ chế vi tuần hoàn chính xác gây ra hiện tượng tích tụ dịch này là gì?",
     "options": [
-      "Giãn chọn lọc hệ tiểu tĩnh mạch sau mao mạch làm giảm lưu lượng máu về tim, gây ứ trệ tuần hoàn ngoại vi",
-      "Ứ muối nước thứ phát tại ống thận do thuốc kích thích phản xạ tiết Aldosteron từ tuyến vỏ thượng thận",
-      "Giãn chọn lọc tiểu động mạch trước mao mạch làm tăng áp lực thủy tĩnh trong lòng mao mạch, đẩy dịch thấm vào mô kẽ",
-      "Tăng tính thấm thành mao mạch toàn thân do giải phóng ồ ạt Histamin và Bradykinin từ tế bào nội mô"
+      "Giãn chọn lọc tiểu tĩnh mạch gây ứ trệ máu ngoại biên",
+      "Giãn chọn lọc tiểu động mạch gây tăng áp lực mao mạch",
+      "Tăng giữ natri nước thứ phát tại hệ thống ống thận",
+      "Tăng tính thấm mao mạch ngoại vi thoát dịch gian bào"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "Phù mắt cá chân do CCB DHP là 'phù giả' do cơ chế huyết động: thuốc làm giãn mạnh tiểu động mạch trước mao mạch trong khi tiểu tĩnh mạch sau mao mạch không giãn tương xứng, dẫn tới tăng áp lực thủy tĩnh mao mạch đẩy dịch ra khoang kẽ vùng thấp. Thuốc lợi tiểu không có hiệu quả trong tình huống này; phối hợp thêm ACEI/ARB (làm giãn tiểu tĩnh mạch) sẽ cân bằng áp lực mao mạch và giải quyết triệt để phù.",
     "reference": "Sách Dược lý 2 tr. 61"
   },
@@ -481,12 +481,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Khác biệt cơ bản nhất về đặc tính huyết động của các thuốc chẹn kênh calci phân nhóm Non-DHP (Verapamil, Diltiazem) so với phân nhóm DHP (Amlodipin) là:",
     "options": [
-      "Chỉ làm giãn tĩnh mạch lớn mà hoàn toàn không tác động lên hệ thống tiểu động mạch ngoại vi",
-      "Gây kích thích phản xạ giao cảm làm tăng nhịp tim mạnh mẽ hơn rất nhiều so với phân nhóm DHP",
-      "Chỉ tác động chọn lọc trên cơ trơn khí phế quản và bàng quang mà không ảnh hưởng huyết áp",
-      "Có ái lực cao trên kênh calci ở tim, làm giảm nhịp tim, giảm sức co bóp và làm chậm dẫn truyền qua nút nhĩ thất"
+      "Kích thích phản xạ giao cảm gây tăng nhịp tim và co bóp",
+      "Giãn chọn lọc tĩnh mạch lớn mà không hạ huyết áp động mạch",
+      "Ức chế lực co bóp tim và làm chậm dẫn truyền nút nhĩ thất",
+      "Tăng cường tính tự động nút xoang và tăng tốc dẫn truyền"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "Verapamil và Diltiazem (Non-DHP) gắn vào vị trí đặc hiệu trên kênh Calci type L ở tim mạnh hơn ở mạch, có tác dụng inotropic âm tính (giảm co bóp), chronotropic âm tính (giảm nhịp tim) và dromotropic âm tính (chậm dẫn truyền AV), do đó thường dùng hạ áp ở bệnh nhân có kèm nhịp nhanh, rung nhĩ hoặc đau thắt ngực.",
     "reference": "Sách Dược lý 2 tr. 62"
   },
@@ -517,12 +517,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Một thuốc hạ áp đường uống bản chất là tiền dược, sau khi vào hệ thần kinh trung ương được chuyển hóa thành chất đồng vận kích thích chọn lọc thụ thể alpha-2 adrenergic tiền synap ở nhân bó đơn độc thuộc hành não. Tác dụng sinh học cốt lõi hạ huyết áp của cơ chế này là:",
     "options": [
-      "Làm giảm trương lực và tần số phát xung thần kinh giao cảm ly tâm từ trung ương tới tim và mạch máu ngoại vi",
-      "Kích thích trực tiếp các tế bào nội mô mạch máu não giải phóng Nitric Oxide gây giãn mạch toàn thân",
-      "Chẹn thụ thể alpha-1 adrenergic hậu synap ngăn cản tác động co mạch của noradrenaline tại các tiểu động mạch",
-      "Kích thích trung tâm phế vị ở hành tủy gây cường phó giao cảm làm liệt cơ trơn mạch máu"
+      "Chẹn thụ thể alpha-1 hậu synap tại các tiểu động mạch",
+      "Kích thích tế bào nội mô giải phóng oxyd nitric giãn mạch",
+      "Kích thích trung tâm phó giao cảm làm giãn cơ trơn mạch",
+      "Giảm trương lực giao cảm ly tâm đến tim và mạch máu"
     ],
-    "correct": 0,
+    "correct": 3,
     "explanation": "Methyldopa được vận chuyển qua hàng rào máu não, chuyển hóa thành alpha-methylnoradrenalin. Chất này kích thích mạnh thụ thể alpha-2 tiền synap tại hành não, ức chế giải phóng noradrenalin, làm giảm trương lực giao cảm ly tâm, hạ huyết áp êm dịu và không làm giảm dòng máu đến thận/tử cung bánh rau.",
     "reference": "Sách Dược lý 2 tr. 74-75"
   },
@@ -571,12 +571,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Khi truyền tĩnh mạch liên tục Natri nitroprussid liều cao hoặc kéo dài quá 48 giờ để kiểm soát cơn tăng huyết áp ác tính, bệnh nhân có nguy cơ xuất hiện toan chuyển hóa tăng khoảng trống anion, lú lẫn và thở nhanh sâu do sự tích lũy chất độc nào trong cơ thể?",
     "options": [
-      "Khí nitric oxide tự do phóng thích ồ ạt ức chế enzym chuỗi hô hấp tế bào",
-      "Gốc xyanua và thiocyanat sinh ra do thuốc bị chuyển hóa bởi hemoglobin",
-      "Các ion natri và phức hợp sắt tự do gây quá tải thể tích kèm nhiễm độc mô",
-      "Tinh thể acid uric kết tủa ồ ạt trong lòng ống thận gây hoại tử biểu mô"
+      "Gốc cyanide và thiocyanate",
+      "Khí nitric oxide dạng tự do",
+      "Phức hợp ion sắt tự do huyết",
+      "Tinh thể acid uric lắng đọng"
     ],
-    "correct": 1,
+    "correct": 0,
     "explanation": "Natri nitroprussid trong hồng cầu giải phóng NO đồng thời phóng thích 5 gốc Cyanide (CN⁻). Cyanide được enzym Rhodanase ở gan chuyển thành Thiocyanat thải qua thận. Khi dùng liều cao hoặc suy thận, CN⁻ tự do tích lũy ức chế chuỗi hô hấp tế bào gây toan lactic nặng và tử vong. Thuốc giải độc là Natri thiosulfat hoặc Hydroxocobalamin.",
     "reference": "Sách Dược lý 2 tr. 78"
   },
@@ -625,10 +625,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Một bệnh nhân 52 tuổi mắc đái tháo đường typ 2 kèm tăng huyết áp, xét nghiệm nước tiểu ghi nhận có microalbumin niệu (tỷ lệ Albumin/Creatinin niệu tăng). Nhóm thuốc hạ áp nào bắt buộc được ưu tiên lựa chọn hàng đầu để bảo vệ thận và làm chậm tiến triển suy thận?",
     "options": [
-      "Thuốc chẹn kênh calci nhóm phenylalkylamin hoặc benzothiazepin",
-      "Thuốc ức chế men chuyển hoặc thuốc chẹn thụ thể angiotensin II",
-      "Thuốc phong bế thụ thể beta giao cảm không chọn lọc qua đường uống",
-      "Thuốc giãn trực tiếp cơ trơn tiểu động mạch ngoại vi hydralazin"
+      "Thuốc chẹn kênh calci non-dihydropyridin đường uống",
+      "Thuốc ức chế men chuyển hoặc chẹn thụ thể angiotensin",
+      "Thuốc chẹn thụ thể beta giao cảm không chọn lọc tim",
+      "Thuốc giãn trực tiếp cơ trơn tiểu động mạch ngoại biên"
     ],
     "correct": 1,
     "explanation": "ACEI và ARB là thuốc bảo vệ thận số 1 cho bệnh nhân đái tháo đường vì thuốc làm giãn chọn lọc tiểu động mạch đi nhiều hơn tiểu động mạch đến của cầu thận, làm giảm áp lực thủy tĩnh nội cầu thận, giảm rò rỉ protein qua màng lọc và ngăn ngừa xơ hóa cầu thận.",
@@ -697,12 +697,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Hiện tượng dung nạp thuốc (tolerance) khi dùng liên tục nitrat hữu cơ 24/24 giờ trong ngày mà không có khoảng nghỉ chủ yếu xuất phát từ cơ chế phân tử nào?",
     "options": [
-      "Kích thích tăng đào thải nhanh qua thận do cảm ứng hệ enzym bài tiết chuyên biệt tại ống thận",
-      "Hình thành kháng thể IgG đặc hiệu lưu hành trong tuần hoàn gắn kết cạnh tranh trực tiếp với gốc nitrat",
-      "Tăng sinh bù trừ thụ thể beta-1 adrenergic trên màng tế bào cơ tim làm gia tăng co bóp và tiêu thụ oxy",
-      "Cạn kiệt nhóm sulfhydryl tự do nội bào và bất hoạt enzym ALDH-2 cần thiết cho chuyển hóa tạo NO"
+      "Hình thành kháng thể IgG cạnh tranh vị trí gắn gốc nitrat",
+      "Cảm ứng enzym chuyển hóa tại gan làm tăng đào thải thuốc",
+      "Cạn kiệt nhóm sulfhydryl nội bào và bất hoạt enzym ALDH-2",
+      "Tăng sinh thụ thể beta adrenergic trên màng tế bào cơ tim"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "Dùng nitrat liên tục làm cạn kiệt các nhóm sulfhydryl (-SH) nội bào và bất hoạt enzym aldehyde dehydrogenase-2 (ALDH-2) tại ty thể, ngăn cản quá trình chuyển hóa nitrat thành NO, dẫn đến mất tác dụng giãn mạch (hiệu ứng tolerance).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -733,12 +733,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Sự phối hợp giữa Nitrat hữu cơ và thuốc ức chế Phosphodiesterase-5 (như Sildenafil, Tadalafil) bị chống chỉ định tuyệt đối vì lý do nguy hiểm nào sau đây?",
     "options": [
-      "Làm tích lũy cGMP nội bào dẫn đến giãn mạch dữ dội, tụt huyết áp kịch phát và trụy tuần hoàn",
-      "Tương tác tạo phức kết tủa vi thể trong lòng mạch gây thuyên tắc phổi cấp tính đe dọa tử vong",
-      "Ức chế dẫn truyền thần kinh cơ qua trung gian noradrenalin gây liệt cơ trơn và liệt cơ hô hấp",
-      "Tăng tính thấm hàng rào máu não gây ngộ độc thần kinh trung ương và co giật vỏ não kháng trị"
+      "Tạo phức kết tủa vi thể gây tắc mạch phổi cấp tính đe dọa tử vong",
+      "Ức chế dẫn truyền thần kinh cơ gây suy hô hấp và liệt toàn thân",
+      "Tăng tính thấm hàng rào máu não gây phù não cấp tính kháng trị",
+      "Tích lũy cGMP gây giãn mạch quá mức và tụt huyết áp trầm trọng"
     ],
-    "correct": 0,
+    "correct": 3,
     "explanation": "Nitrat làm tăng tổng hợp cGMP, còn thuốc ức chế PDE-5 ngăn thoái giáng cGMP. Nồng độ cGMP tăng vọt mất kiểm soát gây giãn cơ trơn mạch máu toàn thân dữ dội, tụt huyết áp nghiêm trọng không đáp ứng hồi sức, gây nhồi máu cơ tim và tử vong.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -913,12 +913,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng không mong muốn nghiêm trọng nhất có thể dẫn tới tử vong nếu không phát hiện kịp thời trên bệnh nhân điều trị loạn nhịp bằng Amiodaron dài ngày là gì?",
     "options": [
-      "Viêm cầu thận hoại tử cấp kèm theo thiểu niệu và suy thận",
-      "Suy giảm chức năng tủy xương toàn bộ dẫn tới suy ba dòng tế bào máu",
-      "Hội chứng tiêu cơ vân cấp giải phóng ồ ạt myoglobin vào tuần hoàn",
-      "Xơ phổi mô kẽ tiến triển dẫn tới suy hô hấp không hồi phục"
+      "Viêm phổi và xơ phổi mô kẽ",
+      "Suy thận cấp thể thiểu niệu",
+      "Tiêu cơ vân cấp hủy hoại cơ",
+      "Suy tủy xương giảm ba dòng"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Độc tính trên phổi (viêm phổi mô kẽ, xơ phổi) xảy ra ở khoảng 1-10% bệnh nhân dùng Amiodaron, là tác dụng phụ nguy hiểm nhất và có thể gây tử vong. Cần theo dõi định kỳ X-quang phổi và chức năng hô hấp (DLCO).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -967,12 +967,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Vị trí tác động và hệ thống đồng vận chuyển ion nào tại nephron là đích sinh học bị ức chế trực tiếp bởi nhóm thuốc lợi tiểu quai (như Furosemid, Bumetanid)?",
     "options": [
-      "Hệ thống đồng vận chuyển Na+/K+/2Cl- tại đoạn dày nhánh lên quai Henle",
-      "Kênh đồng vận chuyển Na+/Cl- tại đoạn đầu ống lượn xa",
-      "Kênh biểu mô Natri (ENaC) nhạy cảm amilorid tại ống góp vỏ",
-      "Hệ thống trao đổi Na+/H+ và enzym Carbonic Anhydrase tại ống lượn gần"
+      "Đồng vận chuyển Na+-Cl- tại đoạn đầu của hệ thống ống lượn xa",
+      "Đồng vận chuyển Na+-K+-2Cl- ở đoạn dày nhánh lên quai Henle",
+      "Kênh natri biểu mô ENaC nhạy cảm amilorid tại vùng ống góp vỏ",
+      "Hệ thống trao đổi Na+-H+ và men carbonic anhydrase ống gần"
     ],
-    "correct": 0,
+    "correct": 1,
     "explanation": "Thuốc lợi tiểu quai (Furosemid, Bumetanid, Torsemid) ức chế đặc hiệu hệ đồng vận chuyển Na+/K+/2Cl- (NKCC2) ở màng đỉnh tế bào biểu mô đoạn dày nhánh lên của quai Henle.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -1165,12 +1165,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tại sao các thuốc ức chế bơm proton (PPI như Omeprazol, Esomeprazol) bắt buộc phải được bào chế dưới dạng viên bao tan trong ruột hoặc pellet bao kháng acid?",
     "options": [
-      "Do thuốc bị enzym pepsin và acid dịch vị phân hủy nhanh chóng tạo dẫn chất gây độc tế bào gan",
-      "Để làm chậm quá trình hòa tan dược chất, kéo dài thời gian bán thải sinh học và tránh kích ứng niêm mạc",
-      "Để giảm thiểu kích ứng trực tiếp lên cơ vòng thực quản dưới và hạn chế tối đa cảm giác ợ nóng sau uống",
-      "Do tiền chất PPI là base yếu rất dễ bị phá hủy và bất hoạt trong môi trường acid dịch vị dạ dày"
+      "Thuốc bị men pepsin dạ dày phân hủy tạo các chất độc tế bào gan",
+      "Hoạt chất gây kích ứng trực tiếp và làm viêm loét niêm mạc dạ dày",
+      "Tiền chất PPI là base yếu dễ bị phá hủy bởi acid dịch vị dạ dày",
+      "Dược chất bị phân hủy nhanh chóng bởi các enzym tại tuyến nước bọt"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "PPI là base yếu, rất kém bền trong môi trường acid (bị chuyển hóa thành dạng sulfenamid ngay trong lòng dạ dày và không hấp thu được). Viên bao kháng acid giúp thuốc qua dạ dày an toàn xuống ruột non hấp thu vào máu.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -1183,12 +1183,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thời điểm dùng thuốc tối ưu trong ngày của nhóm thuốc ức chế bơm proton (PPI) để đạt hiệu quả ức chế acid dạ dày cao nhất là thời điểm nào?",
     "options": [
-      "Uống trước bữa ăn sáng khoảng 30 đến 60 phút khi bụng đói",
-      "Uống ngay sau khi ăn no bữa tối để ức chế tiết acid ban đêm",
-      "Uống vào lúc nửa đêm (24h) khi lượng acid dịch vị tự do đạt đỉnh",
-      "Uống ngắt quãng cùng lúc trong các bữa ăn chính"
+      "Uống ngay sau khi vừa ăn no vào bữa tối",
+      "Uống vào lúc nửa đêm khi dịch vị đạt đỉnh",
+      "Uống cùng lúc ngay trong các bữa ăn chính",
+      "Uống trước bữa ăn sáng từ 30 đến 60 phút"
     ],
-    "correct": 0,
+    "correct": 3,
     "explanation": "PPI chỉ gắn và ức chế các bơm proton đang ở trạng thái hoạt động (bơm acid ra ngoài). Bữa ăn sau đó 30-60 phút sẽ kích thích tối đa số lượng bơm proton hoạt động, đúng vào thời điểm nồng độ PPI trong máu đạt đỉnh.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -1237,12 +1237,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng không mong muốn đối lập trên nhu động ruột giữa muối nhôm hydroxyd Al(OH)3 và muối magnesi hydroxyd Mg(OH)2 khi dùng đơn độc là gì?",
     "options": [
-      "Cả hai muối đều làm tăng nhu động ruột gây tiêu chảy phân nước cấp tính",
-      "Nhôm hydroxyd gây tiêu chảy thẩm thấu; Magnesi hydroxyd gây táo bón co thắt",
-      "Cả hai muối đều gây liệt ruột cơ năng và viêm ruột thừa hoại tử",
-      "Nhôm hydroxyd gây táo bón và phân cứng; trong khi Magnesi hydroxyd gây tiêu chảy thẩm thấu"
+      "Phụ nữ đang trong thời kỳ mang thai",
+      "Bệnh nhân có tiền sử mắc hen phế quản",
+      "Bệnh nhân mắc xơ vữa động mạch vành",
+      "Người bệnh đái tháo đường typ hai nặng"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Al3+ làm giãn cơ trơn ruột và kết tủa protein niêm mạc gây săn se dẫn đến táo bón. Ngược lại, Mg2+ không hấp thu giữ nước trong lòng ruột gây tiêu chảy thẩm thấu. Vì vậy, các chế phẩm Antacid (như Maalox) thường phối hợp cả hai để cân bằng nhu động.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -1273,12 +1273,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng phụ làm phân có màu đen sẫm và làm đen bề mặt lưỡi là đặc điểm nhận biết vô hại nhưng dễ gây lo lắng của hoạt chất điều trị loét dạ dày nào?",
     "options": [
-      "Sucralfat dạng hỗn dịch bao phủ bảo vệ niêm mạc",
-      "Omeprazol dạng viên phóng thích kéo dài qua ruột",
-      "Bismuth subsalicylat tạo kết tủa bismuth sulfid đen đặc trưng trên gai lưỡi và trong lòng ruột",
-      "Misoprostol dẫn chất prostaglandin bảo vệ tế bào"
+      "Tiêu chảy cấp khi đi du lịch nước ngoài",
+      "Tiêu chảy kèm sốt cao và phân có máu",
+      "Tiêu chảy cơ năng trong ruột kích thích",
+      "Tiêu chảy thẩm thấu kém dung nạp lactose"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "Bismuth phản ứng với khí hydro sulfid (H2S) do vi khuẩn đường ruột sinh ra tạo thành muối Bismuth sulfid (Bi2S3) kết tủa màu đen, làm phân và lưỡi có màu đen nhánh (dễ nhầm với xuất huyết tiêu hóa do loét).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -1327,12 +1327,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Cảnh báo an toàn hộp đen (Black Box Warning) của các cơ quan quản lý dược phẩm quốc tế đối với thuốc chủ vận beta-2 tác dụng kéo dài (LABA như Salmeterol, Formoterol) trong điều trị hen phế quản là gì?",
     "options": [
-      "Không sử dụng cho người cao tuổi do nguy cơ gây suy tủy xương và suy giảm miễn dịch nặng nề",
-      "Không được dùng đơn trị liệu mà bắt buộc phối hợp corticosteroid hít do tăng nguy cơ tử vong",
-      "Bắt buộc ngừng thuốc hoàn toàn trước khi tiêm vaccin phòng ngừa cúm mùa ít nhất bốn tuần lễ",
-      "Chỉ được dùng đường tiêm dưới da trong các đợt kịch phát nặng mà không dùng đường hít thông thường"
+      "Chống chỉ định tuyệt đối ở người cao tuổi có suy giảm miễn dịch",
+      "Bắt buộc ngừng thuốc trước khi tiêm phòng vacxin ít nhất bốn tuần",
+      "Không dùng đơn trị liệu mà phải phối hợp corticosteroid hít",
+      "Chỉ sử dụng đường tiêm dưới da trong các cơn hen kịch phát nặng"
     ],
-    "correct": 1,
+    "correct": 2,
     "explanation": "Dùng LABA đơn độc làm giảm nhạy cảm thụ thể beta-2 và che giấu tình trạng viêm mạn tính của đường thở, làm tăng đáng kể các đợt kịch phát nặng đe dọa tính mạng và tử vong do hen. Do đó, trong hen phế quản, LABA bắt buộc phải luôn kết hợp với ICS.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -1345,10 +1345,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng không mong muốn tại chỗ điển hình nhất khi sử dụng Corticosteroid dạng hít (ICS như Fluticason, Budesonid) điều trị hen phế quản kéo dài là gì?",
     "options": [
-      "Co thắt cơ thắt thực quản dưới gây cảm giác nghẹn thức ăn đặc và khó nuốt kéo dài",
-      "Mất hoàn toàn khứu giác do thoái hóa niêm mạc mũi xoang và teo các tế bào khứu giác",
-      "Tăng tiết nước bọt ồ ạt kèm theo viêm phì đại tuyến nước bọt mang tai hai bên má",
-      "Nhiễm nấm Candida ở khoang miệng, hầu họng và gây khàn tiếng do lắng đọng thuốc tại thanh quản"
+      "Chảy máu vách ngăn mũi, dự phòng bằng xịt hướng ra ngoài",
+      "Teo niêm mạc đường thở, dự phòng hít thở sâu sau dùng thuốc",
+      "Viêm loét nướu cấp tính, dự phòng bằng ngậm kẹo diệt khuẩn",
+      "Nấm Candida hầu họng, dự phòng bằng súc miệng sau hít"
     ],
     "correct": 3,
     "explanation": "Do một phần thuốc dạng xịt hít lắng đọng tại khoang miệng và hầu họng gây ức chế miễn dịch tại chỗ và teo cơ thanh âm, dẫn tới nhiễm nấm Candida miệng (tưa miệng) và khàn tiếng. Phòng ngừa bằng cách súc miệng nhổ nước ngay sau khi hít thuốc.",
@@ -1381,10 +1381,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Cơ chế tác dụng giãn phế quản của Ipratropium bromid và Tiotropium bromid là gì?",
     "options": [
-      "Đối kháng cạnh tranh tại các thụ thể muscarinic của hệ đối giao cảm ở đường thở",
-      "Kích thích chọn lọc thụ thể beta-2 adrenergic làm tăng tổng hợp AMP vòng tại cơ trơn",
-      "Ức chế chọn lọc enzym 5-lipoxygenase làm giảm tổng hợp các chất trung gian leukotriene",
-      "Đối kháng chọn lọc thụ thể histamin H1 ngăn chặn phản ứng co thắt khí phế quản dị ứng"
+      "Đối kháng thụ thể muscarinic tại cơ trơn phế quản",
+      "Kích thích thụ thể beta-2 adrenergic tại phế quản",
+      "Ức chế chọn lọc enzym 5-lipoxygenase đường hô hấp",
+      "Đối kháng chọn lọc thụ thể histamin H1 đường hô hấp"
     ],
     "correct": 0,
     "explanation": "Ipratropium (SAMA) và Tiotropium (LAMA) là các dẫn chất amoni bậc 4 đối kháng thụ thể Muscarinic (chủ yếu là M3) trên cơ trơn phế quản, ngăn chặn tác dụng co thắt phế quản và tăng tiết nhầy của acetylcholin.",
@@ -1453,12 +1453,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng phụ kháng Cholinergic (Anticholinergic) kinh điển của kháng H1 thế hệ 1 biểu hiện qua các triệu chứng nào sau đây?",
     "options": [
-      "Khô miệng, nhìn mờ do giãn đồng tử, bí tiểu, táo bón và tăng nhãn áp",
-      "Tăng tiết nước bọt ồ ạt, tiêu chảy phân lỏng và co đồng tử nhỏ",
-      "Nhịp tim chậm dưới 40 chu kỳ/phút và tụt huyết áp tư thế",
-      "Co thắt phế quản cấp tính kèm tăng tiết đờm dãi đường thở"
+      "Tăng tiết nước bọt, co đồng tử và tiêu chảy lỏng",
+      "Khô miệng, nhìn mờ, giảm tiết mồ hôi và táo bón",
+      "Chậm nhịp tim, tụt huyết áp và hạ thân nhiệt sâu",
+      "Co thắt phế quản, tăng tiết đờm dãi đường hô hấp"
     ],
-    "correct": 0,
+    "correct": 1,
     "explanation": "Do cấu trúc tương đồng với thuốc kháng muscarinic, kháng H1 thế hệ 1 chẹn thụ thể Muscarinic ngoại vi gây hội chứng anticholinergic: khô miệng, giảm tiết mồ hôi, giãn đồng tử (nhìn mờ), bí tiểu (do co cơ thắt cổ bàng quang) và táo bón.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -1525,12 +1525,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Vì sao các thuốc kháng Histamin H1 thế hệ 1 (như Dimenhydrinat, Diphenhydramin, Promethazin) có hiệu quả chống say tàu xe và chống nôn tiền đình, trong khi thế hệ 2 hoàn toàn không có tác dụng này?",
     "options": [
-      "Do qua hàng rào máu não ức chế đồng thời thụ thể H1 và Muscarinic tại nhân tiền đình",
-      "Do có tác dụng gây tê niêm mạc dạ dày và ức chế chọn lọc thụ thể Serotonin 5-HT3 đường tiêu hóa",
-      "Do làm tăng mạnh trương lực cơ thắt thực quản dưới và kích thích làm rỗng dạ dày ruột nhanh chóng",
-      "Do kích thích trực tiếp các thụ thể Dopamin D2 và thụ thể Opioid tại vùng kích hoạt hóa cảm thụ"
+      "Gây tê niêm mạc dạ dày và ức chế chọn lọc thụ thể serotonin ngoại vi",
+      "Kích thích thụ thể dopamin D2 tại vùng kích hoạt hóa cảm giác nôn",
+      "Ức chế thụ thể H1 và Muscarinic trung ương tại nhân tiền đình",
+      "Tăng trương lực cơ thắt thực quản và tăng tốc độ làm rỗng dạ dày"
     ],
-    "correct": 0,
+    "correct": 2,
     "explanation": "Cung phản xạ say tàu xe từ mê đạo tai trong truyền tín hiệu qua các synap cholinergic và histaminergic tại nhân tiền đình. Thuốc thế hệ 1 vào não chẹn cả thụ thể H1 và M trung ương, cắt đứt dẫn truyền này; trong khi thế hệ 2 không vào não nên không có tác dụng chống say tàu xe.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -1543,12 +1543,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Các thuốc tẩy giun dẫn chất Benzimidazol (như Albendazol, Mebendazol) tiêu diệt ký sinh trùng thông qua cơ chế phân tử nào sau đây?",
     "options": [
-      "Ức chế enzym acetylcholinesterase tại synap thần kinh cơ làm giun co cứng và cạn năng lượng",
-      "Kích thích mở kênh clo phụ thuộc glutamat gây ưu phân cực màng và liệt mềm thần kinh cơ giun",
-      "Gắn chọn lọc vào tiểu phần beta-tubulin ức chế trùng hợp vi ống, làm ngừng thu nhận glucose và tiêu diệt giun",
-      "Tạo gốc tự do peroxy hóa màng lipid sinh chất làm ly giải vỏ bọc ngoài của ký sinh trùng"
+      "Ức chế acetylcholinesterase làm tăng tích tụ acetylcholin",
+      "Mở kênh clo phụ thuộc glutamat gây liệt mềm cơ thể giun",
+      "Tạo các gốc tự do peroxy hóa lipid làm rách màng tế bào",
+      "Gắn chọn lọc vào beta-tubulin và ức chế trùng hợp vi ống"
     ],
-    "correct": 2,
+    "correct": 3,
     "explanation": "Albendazol và Mebendazol gắn đặc hiệu vào beta-tubulin của giun (ái lực cao hơn tubulin người hàng trăm lần), ức chế quá trình trùng hợp thành vi ống (microtubules). Mất vi ống làm tế bào giun mất khả năng vận chuyển bài tiết, ức chế bắt giữ glucose, làm cạn kiệt glycogen khiến giun bất động và chết chậm.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -1597,12 +1597,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Praziquantel là thuốc lựa chọn hàng đầu điều trị các bệnh sán lá (sán lá gan, sán lá phổi, sán máng) và sán dây nhờ cơ chế làm biến đổi tính thấm màng tế bào ký sinh trùng đối với ion nào?",
     "options": [
-      "Ion natri làm tăng tính khử cực màng tế bào",
-      "Ion magnesi làm bất hoạt enzym chuyển hóa năng lượng",
-      "Ion kali làm ức chế tái phân cực màng thần kinh",
-      "Ion calci làm tăng tính thấm màng tế bào dẫn đến co cứng cơ tức thì và phân rã vỏ bọc của sán"
+      "Tăng tính thấm màng tế bào với ion calci",
+      "Tăng tính thấm màng tế bào với ion natri",
+      "Tăng tính thấm màng tế bào với ion magnesi",
+      "Tăng tính thấm màng tế bào với ion kali"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Praziquantel làm tăng đột ngột tính thấm của màng tế bào sán đối với ion Ca2+, làm dòng Ca2+ ồ ạt tràn vào trong bào tương. Điều này gây co thắt và liệt cứng cơ sán lập tức, đồng thời tạo các bọng nước làm vỡ lớp vỏ bao (tegument), bộc lộ kháng nguyên cho hệ miễn dịch vật chủ tiêu diệt.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -1651,10 +1651,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Metronidazol và các dẫn chất 5-nitroimidazol phát huy tác dụng diệt vi khuẩn kỵ khí và ký sinh trùng đơn bào (amip, trichomonas, giardia) thông qua phản ứng chuyển hóa nội bào nào?",
     "options": [
-      "Ức chế tổng hợp vách tế bào peptidoglycan làm ly giải vỏ bọc vi khuẩn kỵ khí và ký sinh trùng đơn bào",
-      "Nhóm nitro bị khử bởi enzym ferredoxin tạo các gốc tự do có hoạt tính làm đứt gãy chuỗi xoắn kép DNA",
-      "Ức chế chuyển hóa acid folic thông qua cạnh tranh chọn lọc enzym dihydrofolat reductase nội bào",
-      "Kích hoạt trực tiếp enzym superoxide dismutase làm cạn kiệt nguồn năng lượng dự trữ dưới dạng ATP"
+      "Ức chế tổng hợp lớp peptidoglycan ở thành tế bào vi khuẩn",
+      "Khử nhóm nitro tạo gốc tự do phá hủy chuỗi xoắn kép DNA",
+      "Cạnh tranh chọn lọc enzym tổng hợp dẫn chất acid folic",
+      "Kích hoạt superoxide dismutase tiêu hao năng lượng ATP"
     ],
     "correct": 1,
     "explanation": "Metronidazol là tiền chất. Trong môi trường yếm khí của amip hoặc vi khuẩn kỵ khí, protein vận chuyển electron ferredoxin khử nhóm nitro (-NO2) của thuốc thành các gốc tự do dạng khử có độc tính cao. Các gốc tự do này tấn công bẻ gãy chuỗi xoắn kép DNA, làm đứt gãy DNA và giết chết ký sinh trùng.",
@@ -1705,12 +1705,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng không mong muốn thường gặp và vô hại của Metronidazol khiến bệnh nhân lo lắng nhưng là bình thường là hiện tượng nào?",
     "options": [
-      "Làm nước tiểu đổi thành màu nâu sẫm hoặc đỏ nâu do sự đào thải các chất chuyển hóa hòa tan của thuốc qua đường niệu",
-      "Rụng tóc từng mảng và rụng lông mi do thuốc ức chế quá trình phát triển của nang lông",
-      "Phân bạc màu như phân cò do ức chế bài tiết sắc tố mật và ứ đọng muối mật trong gan",
-      "Da xuất hiện các dát tăng sắc tố màu xám xanh do lắng đọng phức hợp thuốc dưới lớp hạ bì"
+      "Rụng tóc từng mảng và rụng lông mi kéo dài",
+      "Phân bạc màu kèm theo triệu chứng vàng da",
+      "Nước tiểu đổi màu đỏ nâu hoặc sẫm tối",
+      "Da xuất hiện dát tăng sắc tố xám xanh ở mặt"
     ],
-    "correct": 0,
+    "correct": 2,
     "explanation": "Các chất chuyển hóa có màu của Metronidazol bài tiết qua thận làm nước tiểu có màu sẫm tối hoặc đỏ nâu. Hiện tượng này hoàn toàn lành tính và sẽ tự biến mất sau khi ngừng thuốc, cần dặn trước để bệnh nhân yên tâm tuân thủ điều trị.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -1723,12 +1723,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Chống chỉ định quan trọng nào sau đây áp dụng cho Albendazol và Mebendazol do độc tính trên sự phát triển của thai nhi?",
     "options": [
-      "Bệnh nhân tăng huyết áp vô căn đang điều trị duy trì ổn định bằng nhóm chẹn kênh calci",
-      "Phụ nữ mang thai và trẻ em dưới một tuổi do nguy cơ quái thai cùng ức chế tủy xương",
-      "Bệnh nhân cao tuổi có tiền sử mắc bệnh phổi tắc nghẽn mạn tính giai đoạn hồi phục",
-      "Bệnh nhân đái tháo đường typ hai đang kiểm soát nồng độ glucose máu trong mức mục tiêu"
+      "Bệnh nhân tăng huyết áp vô căn giai đoạn một",
+      "Người cao tuổi mắc bệnh phổi tắc nghẽn mạn",
+      "Bệnh nhân đái tháo đường typ hai kiểm soát",
+      "Phụ nữ mang thai và trẻ em dưới một tuổi"
     ],
-    "correct": 1,
+    "correct": 3,
     "explanation": "Albendazol và Mebendazol ức chế trùng hợp tubulin của phôi thai, có bằng chứng gây dị tật thai nhi và tiêu thai trên động vật thực nghiệm. Thuốc chống chỉ định trong thai kỳ (đặc biệt 3 tháng đầu) và thận trọng cho phụ nữ có ý định mang thai (cần tránh thai 1 tháng sau khi uống thuốc).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -1777,12 +1777,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tại sao các thuốc Statin có thời gian bán thải ngắn (như Simvastatin, Lovastatin, Pravastatin) được khuyến cáo bắt buộc phải uống vào buổi tối trước khi đi ngủ?",
     "options": [
-      "Nhằm giảm kích ứng dạ dày và hạn chế tối đa nguy cơ viêm loét đường tiêu hóa do thuốc trong ban ngày",
-      "Do sinh tổng hợp cholesterol nội sinh tại tế bào gan diễn ra mạnh nhất vào ban đêm từ nửa đêm đến rạng sáng",
-      "Nhằm tận dụng trạng thái ngủ để tăng cường tỷ lệ gắn kết của thuốc với các protein huyết tương tự do",
-      "Nhằm hạn chế hiện tượng hoạt chất bị quang hóa phân hủy dưới tác động của tia cực tím ánh sáng ngày"
+      "Sinh tổng hợp cholesterol ở gan đạt đỉnh vào ban đêm",
+      "Hấp thu qua đường tiêu hóa đạt hiệu suất cao lúc ngủ",
+      "Gắn kết với protein huyết tương tăng mạnh về ban đêm",
+      "Tránh nguy cơ hoạt chất bị phân hủy quang hóa ban ngày"
     ],
-    "correct": 1,
+    "correct": 0,
     "explanation": "Sinh tổng hợp cholesterol tại tế bào gan tuân theo nhịp sinh học ngày đêm, đạt cường độ cao nhất vào ban đêm khi cơ thể nhịn ăn (từ nửa đêm đến rạng sáng). Do đó, statin bán thải ngắn cần uống buổi tối trước khi ngủ để nồng độ thuốc đạt đỉnh đúng lúc enzym hoạt động mạnh nhất.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -1867,12 +1867,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Chỉ định lâm sàng hàng đầu và ưu tiên tuyệt đối của nhóm thuốc Fibrat (Fenofibrat) trong thực hành y khoa là tình huống nào?",
     "options": [
-      "Tăng cholesterol máu gia đình đồng hợp tử có nồng độ LDL-C tăng rất cao vượt ngưỡng 500 mg/dL",
-      "Xơ vữa động mạch cảnh hoặc mạch vành tiến triển nhưng nồng độ triglycerid trong máu bình thường",
-      "Dự phòng biến cố nhồi máu não cấp và thiếu máu não cục bộ thoáng qua trong vòng 24 giờ đầu",
-      "Tăng triglycerid máu rất nặng vượt ngưỡng 500 mg/dL nhằm mục đích dự phòng viêm tụy cấp"
+      "Tăng cholesterol máu gia đình đồng hợp tử nặng",
+      "Tăng triglycerid máu rất nặng trên 500 mg/dL",
+      "Xơ vữa mạch vành có mức mỡ máu bình thường",
+      "Dự phòng biến cố thiếu máu cục bộ thoáng qua"
     ],
-    "correct": 3,
+    "correct": 1,
     "explanation": "Khi Triglycerid máu tăng rất cao (>= 500 mg/dL, đặc biệt > 1000 mg/dL), các hạt chylomicron ứ đọng làm tắc vi tuần hoàn tụy, enzym lipase giải phóng acid béo tự do gây hoại tử tụy cấp. Mục tiêu hàng đầu lúc này là dùng Fibrat để hạ nhanh triglycerid ngừa viêm tụy cấp.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -1921,10 +1921,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Trước khi chỉ định Primaquin để điều trị tiệt căn chống tái phát sốt rét do Plasmodium vivax, xét nghiệm sàng lọc bắt buộc phải thực hiện cho bệnh nhân là gì?",
     "options": [
-      "Định lượng nồng độ men gan AST và ALT huyết thanh nhằm đánh giá mức độ hoại tử tế bào gan do ký sinh trùng",
-      "Xét nghiệm chức năng đông máu cơ bản gồm thời gian Prothrombin và Fibrinogen để dự phòng biến chứng xuất huyết",
-      "Định lượng hoạt độ enzym G6PD trong hồng cầu nhằm phòng ngừa nguy cơ tan máu cấp tính",
-      "Điện giải đồ máu toàn phần và định lượng creatinin huyết thanh để đánh giá tổn thương suy thận cấp"
+      "Định lượng hoạt độ enzym men gan AST và ALT",
+      "Xét nghiệm chức năng đông máu toàn bộ và INR",
+      "Định lượng hoạt độ enzym G6PD trong hồng cầu",
+      "Điện giải đồ định lượng nồng độ natri và kali"
     ],
     "correct": 2,
     "explanation": "Primaquin và các chất chuyển hóa có tính oxy hóa mạnh. Ở bệnh nhân thiếu hụt men G6PD, hồng cầu không sản xuất đủ NADPH để tái tạo glutathione khử, màng hồng cầu bị oxy hóa dẫn đến vỡ hồng cầu ồ ạt, gây cơn tan máu cấp tính, tiểu huyết sắc tố và suy thận cấp đe dọa tính mạng. Bắt buộc phải thử G6PD trước khi dùng.",
@@ -1957,12 +1957,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Cơ chế phân tử của Chloroquin tiêu diệt ký sinh trùng sốt rét trong không bào tiêu hóa của hồng cầu dựa trên phản ứng nào?",
     "options": [
-      "Ức chế chọn lọc enzym dihydropteroat synthase ngăn cản quá trình tổng hợp acid folic cần thiết cho ký sinh trùng",
-      "Ức chế trùng hợp heme độc thành hemozoin, làm tích tụ heme tự do gây tổn thương và ly giải màng ký sinh trùng",
-      "Gắn kết trực tiếp và alkyl hóa chuỗi xoắn kép DNA khiến ký sinh trùng mất khả năng tự sao chép vật chất di truyền",
-      "Chẹn kênh calci trên màng sinh chất làm rối loạn cân bằng thẩm thấu và bất hoạt chuỗi enzyme chuyển hóa năng lượng"
+      "Ức chế chọn lọc enzym men dihydrofolat reductase",
+      "Alkyl hóa chuỗi xoắn kép DNA ngăn cản sao chép",
+      "Chẹn kênh calci màng gây rối loạn điện giải bào",
+      "Ức chế trùng hợp heme độc thành sắc tố hemozoin"
     ],
-    "correct": 1,
+    "correct": 3,
     "explanation": "Ký sinh trùng ăn hemoglobin giải phóng phân tử Heme (ferriprotoporphyrin IX) rất độc. Để tự vệ, ký sinh trùng trùng hợp heme thành tinh thể hemozoin trơ không độc. Chloroquin tích tụ ở không bào tiêu hóa (pH acid), gắn vào heme ngăn tạo hemozoin. Heme tự do tích tụ làm vỡ màng không bào và giết chết ký sinh trùng.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -2029,12 +2029,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Các dẫn chất của Artemisinin (như Artesunat, Artemether, Dihydroartemisinin) phát huy tác dụng diệt thể phân liệt ký sinh trùng sốt rét cực nhanh nhờ cấu trúc hóa học độc đáo nào?",
     "options": [
-      "Cấu trúc vòng lacton năm cạnh chưa bão hòa có khả năng ức chế không hồi phục enzym tổng hợp acid béo",
-      "Cầu nối nội peroxyd bị sắt của heme bẻ gãy sinh các gốc tự do oxy hóa mạnh phá hủy protein ký sinh trùng",
-      "Nhân dị vòng quinolin gắn nguyên tử clo tại vị trí số 7 tạo phức chelat bền vững với ion kim loại nội bào",
-      "Chuỗi oligopeptid mạch nhánh giàu gốc thiol có khả năng ức chế cạnh tranh protease tiêu hóa huyết sắc tố"
+      "Cầu nối nội peroxyd sinh các gốc tự do có độc tính",
+      "Cấu trúc vòng lacton năm cạnh ức chế tổng hợp protein",
+      "Nhân dị vòng quinolin chèn vào giữa các cặp base nitơ",
+      "Chuỗi oligopeptid phân nhánh ức chế chọn lọc protease"
     ],
-    "correct": 1,
+    "correct": 0,
     "explanation": "Artemisinin là sesquiterpene lactone có cầu nối nội peroxyd (endoperoxide bridge). Khi vào không bào tiêu hóa của ký sinh trùng, ion sắt Fe2+ của heme sẽ cắt cầu nối peroxyd này sinh ra các gốc tự do carbon (carbon-centered free radicals) có hoạt tính cao, alkyl hóa và phá hủy enzym PfATP6 và màng tế bào ký sinh trùng.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -2065,12 +2065,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tương tác dược lực học đối kháng (Antagonism) xảy ra giữa thuốc giãn phế quản chủ vận beta-2 adrenergic (Salbutamol) và thuốc hạ áp nào sau đây có thể đẩy bệnh nhân hen vào cơn suy hô hấp cấp tính?",
     "options": [
-      "Thuốc chẹn kênh calci dihydropyridin tác dụng kéo dài như amlodipin",
-      "Thuốc ức chế men chuyển angiotensin qua đường uống như enalapril",
-      "Thuốc chẹn thụ thể beta adrenergic không chọn lọc như propranolol",
-      "Thuốc lợi tiểu thiazid ức chế tái hấp thu natri như hydrochlorothiazid"
+      "Thuốc chẹn kênh calci nhóm dihydropyridin chọn lọc",
+      "Thuốc chẹn thụ thể beta adrenergic không chọn lọc",
+      "Thuốc ức chế men chuyển thụ thể angiotensin huyết",
+      "Thuốc lợi tiểu quai ức chế tái hấp thu natri thận"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "Propranolol chẹn không chọn lọc cả thụ thể beta-1 và beta-2. Thuốc đối kháng cạnh tranh trực tiếp tại thụ thể beta-2 trên cơ trơn phế quản, triệt tiêu hoàn toàn tác dụng giãn phế quản của Salbutamol, đồng thời gây co thắt phế quản cấp tính nặng đe dọa tính mạng người bệnh hen.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -2155,12 +2155,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tại sao khi điều trị bằng Glucocorticoid liều cao kéo dài trên 2 - 3 tuần, nguyên tắc bắt buộc khi muốn ngừng thuốc là phải giảm liều từ từ (Tapering) mà không được dừng đột ngột?",
     "options": [
-      "Thuốc tích lũy kéo dài trong mô mỡ và protein huyết tương, dừng đột ngột sẽ kích hoạt phản ứng giải phóng ồ ạt",
-      "Vỏ thượng thận bị teo do ức chế trục HPA, dừng đột ngột sẽ gây cơn suy thượng thận cấp dẫn đến trụy tim mạch",
-      "Ngăn ngừa tình trạng tế bào beta đảo tụy tăng tiết insulin phản ứng gây ra các cơn hạ đường huyết kịch phát",
-      "Phòng tránh nguy cơ tăng huyết áp dội ngược do hệ renin angiotensin aldosteron bị kích hoạt quá mức thứ phát"
+      "Phòng ngừa hiện tượng tái phát đợt cấp tính loét dạ dày",
+      "Tránh nguy cơ tích tụ lipid mô mỡ gây hội chứng Cushing",
+      "Phòng ngừa nguy cơ suy vỏ thượng thận cấp tính nặng",
+      "Ngăn ngừa tình trạng tăng hủy xương gây gãy xương tự phát"
     ],
-    "correct": 1,
+    "correct": 2,
     "explanation": "Dùng corticoid kéo dài ức chế bài tiết CRH và ACTH làm vỏ thượng thận teo dần. Khi dừng thuốc đột ngột, tuyến thượng thận chưa kịp phục hồi khả năng bài tiết cortisol sinh lý, đẩy bệnh nhân vào cơn suy thượng thận cấp tính (tụt huyết áp nặng, sốc, trụy mạch, rối loạn điện giải và tử vong).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -2227,12 +2227,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Lựa chọn thuốc kháng giáp trạng tổng hợp cho phụ nữ mang thai bị cường giáp Basedow trong 3 tháng đầu thai kỳ (quý 1) tuân theo nguyên tắc bắt buộc nào?",
     "options": [
-      "Sử dụng Thiamazol liều cao đơn trị liệu nhằm nhanh chóng kiểm soát dứt điểm tình trạng nhiễm độc giáp cấp",
-      "Ưu tiên dùng Propylthiouracil do gắn mạnh protein huyết tương ít qua nhau thai, tránh dị tật khuyết da đầu",
-      "Chỉ sử dụng dung dịch Lugol đường uống ngắt quãng từng tuần kết hợp bổ sung vitamin để ức chế giải phóng hormon",
-      "Chống chỉ định tuyệt đối nhóm thionamid và chỉ định duy nhất thuốc chẹn beta giao cảm suốt thai kỳ"
+      "Ưu tiên sử dụng hóa dược Thiamazol",
+      "Sử dụng đơn độc dung dịch iod Lugol",
+      "Chống chỉ định dùng nhóm thionamid",
+      "Ưu tiên sử dụng Propylthiouracil"
     ],
-    "correct": 1,
+    "correct": 3,
     "explanation": "Thiamazol trong 3 tháng đầu có nguy cơ gây dị tật phôi thai (bất sản da đầu bẩm sinh Aplasia cutis congenita, teo thực quản). PTU liên kết protein huyết tương cao hơn (80%) nên ít qua nhau thai hơn, được ưu tiên trong quý 1 thai kỳ. Từ quý 2 chuyển sang Thiamazol vì PTU có độc tính hoại tử gan cấp.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -2245,12 +2245,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng không mong muốn đặc ứng nguy hiểm nhất đe dọa tính mạng người bệnh của các thuốc kháng giáp trạng tổng hợp (PTU, Thiamazol) là biến chứng nào?",
     "options": [
-      "Suy thận cấp do lắng đọng tinh thể urat",
-      "Xơ cứng rải rác thần kinh trung ương",
-      "Mất bạch cầu hạt (Agranulocytosis, số lượng bạch cầu trung tính < 500 tế bào/microL) kèm nhiễm trùng nặng",
-      "Xuất huyết tiêu hóa do giãn vỡ tĩnh mạch thực quản"
+      "Mất bạch cầu hạt kèm nhiễm trùng nặng",
+      "Suy thận cấp tính lắng đọng tinh thể urat",
+      "Xơ gan cổ trướng hoại tử tế bào gan cấp",
+      "Xuất huyết tiêu hóa vỡ tĩnh mạch thực quản"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Mất bạch cầu hạt (Agranulocytosis) xảy ra ở 0.1-0.5% bệnh nhân dùng thuốc kháng giáp, thường xuất hiện trong 3 tháng đầu. Bệnh nhân có biểu hiện sốt cao đột ngột, đau rát họng, viêm loét miệng hoại tử. Bắt buộc phải ngừng thuốc ngay và cách ly điều trị.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -2281,10 +2281,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Cơ chế tác dụng phân tử hàng đầu của Metformin giúp hạ đường huyết ở bệnh nhân đái tháo đường typ 2 mà hầu như không gây tác dụng phụ hạ đường huyết quá mức là gì?",
     "options": [
-      "Kích thích đặc hiệu thụ thể sulfonylurea SUR1 trên màng tế bào beta đảo tụy nhằm thúc đẩy giải phóng insulin nội sinh",
-      "Kích hoạt enzym protein kinase AMPK giúp ức chế tân tạo glucose tại gan và tăng nhạy cảm insulin ở mô ngoại vi",
-      "Ức chế cạnh tranh enzym alpha-glucosidase tại diềm bàn chải ruột non làm chậm phân giải disaccharid thành đường đơn",
-      "Ức chế protein đồng vận chuyển natri glucose typ 2 tại ống lượn gần làm tăng đào thải glucose tự do qua nước tiểu"
+      "Kích thích thụ thể SUR1 đảo tụy tiết insulin",
+      "Kích hoạt AMPK ức chế tân tạo glucose tại gan",
+      "Ức chế men alpha-glucosidase ở niêm mạc ruột",
+      "Ức chế đồng vận chuyển natri-glucose tại thận"
     ],
     "correct": 1,
     "explanation": "Metformin đi vào tế bào gan kích hoạt enzym AMP-activated protein kinase (AMPK), dẫn tới ức chế các enzym chủ chốt của quá trình tân tạo glucose (PEPCK và G6Pase), làm giảm sản xuất glucose từ gan tới 75%; đồng thời tăng thu nhận glucose ở cơ vân và không kích thích tiết insulin nên không gây hạ đường huyết.",
@@ -2299,12 +2299,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng không mong muốn nghiêm trọng nhất có tỷ lệ tử vong cao tới 50% nhưng hiếm gặp của Metformin là biến chứng nào?",
     "options": [
-      "Hoại tử tế bào gan cấp tính kèm theo ứ mật và suy giảm chức năng gan tối cấp",
-      "Tiêu cơ vân cấp tính gây hủy hoại sợi cơ kèm giải phóng lượng lớn myoglobin vào tuần hoàn",
-      "Suy tủy xương bất sản ba dòng tế bào máu dẫn đến thiếu máu và xuất huyết giảm tiểu cầu",
-      "Nhiễm toan acid lactic do ức chế chuyển đổi lactat thành glucose tại tế bào gan"
+      "Hoại tử tế bào gan cấp tính",
+      "Hội chứng tiêu cơ vân cấp",
+      "Nhiễm toan acid lactic máu",
+      "Suy tủy xương giảm ba dòng"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "Metformin ức chế phức hợp 1 của chuỗi hô hấp tế bào và ức chế enzym pyruvate carboxylase, làm cản trở chuyển hóa acid lactic thành glucose. Khi thuốc bị tích lũy (như ở người suy thận), acid lactic ứ đọng trong máu dẫn tới nhiễm toan acid lactic máu nặng với tỷ lệ tử vong cao.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -2335,12 +2335,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Nhóm thuốc hạ đường huyết Sulfonylurea (như Glibenclamid, Gliclazid, Glimepirid) kích thích bài tiết insulin từ tế bào beta đảo tụy thông qua tác động lên kênh ion nào trên màng tế bào?",
     "options": [
-      "Mở kênh kali phụ thuộc calci gây ưu phân cực màng tế bào và ức chế các bọc dự trữ giải phóng insulin",
-      "Chẹn kênh natri phụ thuộc điện thế dẫn đến giảm tính thấm màng và ngăn chặn xuất bào hormon chuyển hóa",
-      "Đóng kênh kali nhạy cảm ATP gây khử cực màng tế bào dẫn đến mở kênh calci và giải phóng insulin",
-      "Ức chế protein đồng vận chuyển glucose GLUT2 làm giảm nồng độ đường nội bào và kích thích tế bào beta"
+      "Mở kênh kali phụ thuộc vào calci",
+      "Chẹn kênh natri phụ thuộc điện thế",
+      "Mở kênh clo qua trung gian protein",
+      "Đóng kênh kali nhạy cảm với ATP"
     ],
-    "correct": 2,
+    "correct": 3,
     "explanation": "Sulfonylurea gắn vào tiểu đơn vị SUR1 của kênh K_ATP, làm đóng kênh này. Dòng K+ không thoát ra ngoài được làm màng tế bào beta khử cực. Khử cực làm mở kênh Calci typ L, Ca2+ ngoại bào tràn vào bào tương kích hoạt hòa màng các bọc dự trữ insulin tống insulin vào máu.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -2551,10 +2551,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Để theo dõi hiệu quả điều trị và chỉnh liều của thuốc chống đông kháng vitamin K (Warfarin), xét nghiệm sinh hóa nào là tiêu chuẩn vàng bắt buộc?",
     "options": [
-      "Thời gian đông máu toàn phần phương pháp Lee-White",
-      "Định lượng nồng độ fibrinogen và số lượng tiểu cầu",
-      "Thời gian thromboplastin từng phần hoạt hóa aPTT",
-      "Chỉ số chuẩn hóa quốc tế INR từ xét nghiệm thời gian prothrombin"
+      "Thời gian đông máu toàn phần Lee White",
+      "Số lượng tiểu cầu và nồng độ fibrinogen",
+      "Thời gian thromboplastin từng phần aPTT",
+      "Chỉ số bình thường hóa quốc tế INR"
     ],
     "correct": 3,
     "explanation": "INR được tính từ tỷ số thời gian prothrombin (PT) của bệnh nhân so với mẫu chứng chuẩn hóa qua chỉ số nhạy quốc tế (ISI). Mục tiêu INR trong rung nhĩ, huyết khối tĩnh mạch sâu là 2.0 - 3.0 (riêng van tim cơ học 2 lá là 2.5 - 3.5).",
@@ -2695,12 +2695,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Dấu hiệu lâm sàng kinh điển của bệnh Beriberi thể ướt (Wet Beriberi) do thiếu hụt Vitamin B1 (Thiamin) trầm trọng là gì?",
     "options": [
-      "Teo cơ đối xứng ở hai chi dưới kèm mất phản xạ gân xương",
-      "Suy tim cung lượng cao (High-output heart failure) với tim to, nhịp nhanh, phù toàn thân ứ trệ tuần hoàn",
-      "Viêm da đối xứng ở các vùng hở tiếp xúc với ánh sáng",
-      "Chảy máu chân răng và xuất huyết dưới màng xương"
+      "Teo cơ đối xứng hai chi dưới kèm mất phản xạ",
+      "Suy tim cung lượng cao kèm phù to toàn thân",
+      "Viêm da đối xứng ở các vùng hở với ánh sáng",
+      "Chảy máu chân răng và xuất huyết màng xương"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "Thiếu Thiamin gây giãn tiểu động mạch toàn thân làm giảm sức cản ngoại vi, cơ thể bù trừ bằng cách tăng vọt cung lượng tim dẫn đến suy tim cung lượng cao (Beriberi thể ướt) với tim to, nhịp nhanh, khó thở và phù to toàn thân. Khác với Beriberi thể khô chủ yếu là viêm đa dây thần kinh ngoại biên.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -2731,10 +2731,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Khi điều trị bệnh lao bằng kháng sinh Isoniazid (INH), việc bắt buộc phải dùng kèm Vitamin B6 (Pyridoxin) nhằm mục đích phòng ngừa tác dụng phụ nào?",
     "options": [
-      "Viêm gan cấp hoại tử tế bào gan do tích lũy các chất chuyển hóa trung gian acetyl hóa",
-      "Viêm dây thần kinh ngoại biên do INH làm tăng thải trừ và cản trở hoạt hóa pyridoxin",
-      "Thiếu máu tan máu cấp tính do giảm sút nồng độ glutathion ở hồng cầu thiếu G6PD",
-      "Viêm đa khớp dạng thấp thứ phát do lắng đọng phức hợp miễn dịch tại màng hoạt dịch"
+      "Viêm hoại tử tế bào gan cấp tiến triển",
+      "Viêm thoái hóa dây thần kinh ngoại biên",
+      "Thiếu máu huyết tán giảm hoạt tính men G6PD",
+      "Lắng đọng phức hợp miễn dịch tại các ổ khớp"
     ],
     "correct": 1,
     "explanation": "Isoniazid (INH) tạo phức hydrazon với pyridoxal phosphat làm tăng đào thải vitamin B6 qua nước tiểu, đồng thời ức chế enzym pyridoxal kinase. Thiếu B6 làm giảm tổng hợp chất dẫn truyền GABA và myelin, gây viêm dây thần kinh ngoại biên. Bổ sung Pyridoxin 25-50 mg/ngày giúp phòng ngừa triệt để.",
@@ -2767,12 +2767,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Độc tính gây dị tật thai nhi nghiêm trọng (Teratogenicity) gồm biến dạng sọ mặt, dị tật tai và tim mạch là nguy cơ cảnh báo đen đối với dạng thuốc liều cao của vitamin nào?",
     "options": [
-      "Vitamin C đường tiêm tĩnh mạch",
-      "Dẫn xuất của Vitamin A (Retinoid như Isotretinoin, Acitretin)",
-      "Vitamin E tổng hợp dạng dầu",
-      "Vitamin B9 liều cao trên 5 mg"
+      "Dẫn chất của vitamin A nhóm retinoid",
+      "Dung dịch vitamin E dạng dầu tổng hợp",
+      "Vitamin C tinh khiết tiêm truyền tĩnh mạch",
+      "Acid folic liều cao trên năm miligam"
     ],
-    "correct": 2,
+    "correct": 0,
     "explanation": "Vitamin A liều cao và các retinoid (như Isotretinoin trị mụn, Acitretin trị vảy nến) có độc tính quái thai cực mạnh, gây dị tật sọ mặt, teo vành tai, dị tật cung động mạch chủ và hệ thần kinh trung ương. Phụ nữ dùng thuốc bắt buộc phải tránh thai tuyệt đối trong và sau khi ngừng thuốc.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -2785,12 +2785,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Đặc tính chọn lọc sinh học vượt trội của Acyclovir đối với các tế bào bị nhiễm virus Herpes Simplex (HSV) và Varicella Zoster (VZV) so với các tế bào lành của người xuất phát từ bước hoạt hóa nào?",
     "options": [
-      "Quá trình gắn kết chọn lọc vào thụ thể glycoprotein D trên vỏ bọc ngoài của virus để được nhập bào qua trung gian thụ thể",
-      "Bước monophosphoryl hóa đầu tiên bắt buộc phải được xúc tác bởi enzym Thymidine kinase đặc hiệu do virus tổng hợp",
-      "Phản ứng phosphoryl hóa lần thứ hai và thứ ba bởi enzym guanylate kinase nội bào nhằm tạo ra dẫn xuất triphosphat có hoạt tính",
-      "Khả năng khuếch tán thụ động có chọn lọc qua màng sinh chất của các tế bào biểu mô đã chịu tổn thương cấu trúc do virus gây ra"
+      "Monophosphoryl hóa nhờ enzym Thymidine kinase đặc hiệu virus",
+      "Gắn kết đặc hiệu vào phức hợp thụ thể glycoprotein ngoài vỏ virus",
+      "Di và triphosphoryl hóa nhờ các enzym kinase của tế bào chủ",
+      "Khuếch tán thụ động qua màng bào tương tế bào biểu mô ký chủ"
     ],
-    "correct": 1,
+    "correct": 0,
     "explanation": "Acyclovir là tiền chất trơ. Bước chuyển Acyclovir thành acyclovir-monophosphat đòi hỏi enzym Thymidine Kinase của virus (HSV-TK có ái lực cao gấp 200 lần so với enzym người). Các bước gắn phosphat tiếp theo mới do enzym tế bào người thực hiện tạo triphosphate ức chế DNA polymerase, do đó thuốc chỉ hoạt hóa trong tế bào nhiễm virus.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -2803,10 +2803,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng phụ suy thận cấp do kết tinh tinh thể (Crystal nephropathy) là biến chứng nguy hiểm có thể xảy ra khi sử dụng Acyclovir đường tĩnh mạch trong điều trị viêm não Herpes nếu không áp dụng biện pháp phòng ngừa nào?",
     "options": [
-      "Tiêm bolus tĩnh mạch nhanh dưới hai phút kết hợp bổ sung kali clorid nhằm thúc đẩy thuốc qua màng lọc cầu thận tức thì",
-      "Phối hợp thường quy thuốc lợi tiểu giữ kali spironolacton nhằm duy trì thể tích tuần hoàn và nồng độ điện giải huyết tương",
-      "Truyền tĩnh mạch chậm kéo dài ít nhất một giờ kết hợp bù đủ dịch nhằm duy trì lưu lượng nước tiểu đầy đủ",
-      "Kiềm hóa nước tiểu bằng dung dịch natri bicarbonat kết hợp thuốc lợi tiểu quai furosemid liều cao ngay từ đầu"
+      "Tiêm nhanh tĩnh mạch phối hợp bổ sung kali clorid",
+      "Phối hợp lợi tiểu spironolacton duy trì điện giải",
+      "Truyền tĩnh mạch chậm trên một giờ kết hợp bù đủ dịch",
+      "Kiềm hóa nước tiểu phối hợp furosemid liều cao kéo dài"
     ],
     "correct": 2,
     "explanation": "Acyclovir ít tan trong nước tiểu. Khi tiêm tĩnh mạch nhanh liều cao, nồng độ thuốc vượt ngưỡng bão hòa trong lòng ống lượn và ống góp, kết tủa thành các tinh thể hình kim gây tắc nghẽn ống thận và suy thận cấp. Bắt buộc phải truyền chậm trên 60 phút và truyền dịch muối đảm bảo bài niệu tốt.",
@@ -2929,10 +2929,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thuốc giải độc bảo vệ bàng quang bắt buộc phải tiêm truyền cùng với hóa chất Cyclophosphamid liều cao hoặc Ifosfamid để trung hòa Acrolein là gì?",
     "options": [
-      "Dexrazoxan có tác dụng chelate hóa sắt nội bào",
-      "Leucovorin cung cấp trực tiếp acid folinic dạng khử",
-      "N-acetylcystein đường uống cung cấp nhóm sulfhydryl tự do",
-      "MESNA cung cấp nhóm thiol tự do gắn trung hòa acrolein"
+      "Dexrazoxan",
+      "Leucovorin",
+      "Amifostin",
+      "Mesna"
     ],
     "correct": 3,
     "explanation": "MESNA (2-mercaptoethane sulfonate sodium) tập trung nồng độ cao trong nước tiểu bàng quang. Nhóm thiol (-SH) tự do của MESNA phản ứng cộng ái nhân vào liên kết đôi của Acrolein tạo thành một phức hợp thioether bền vững, tan trong nước và hoàn toàn không độc, đào thải ra ngoài.",
@@ -3055,12 +3055,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Ngộ độc cấp tính thuốc trừ sâu nhóm Phospho hữu cơ (hoặc khí độc thần kinh Sarin, VX) gây hội chứng cường Cholinergic cấp tính do ức chế enzym nào?",
     "options": [
-      "Enzym butyrylcholinesterase dẫn tới rối loạn chuyển hóa lipid màng tế bào",
-      "Enzym acetylcholinesterase dẫn tới ứ đọng acetylcholin tại synap thần kinh",
-      "Enzym monoamine oxidase dẫn tới tăng nồng độ catecholamin tại khe synap",
-      "Enzym dopa-decarboxylase dẫn tới tích tụ tiền chất dopamin tại thần kinh trung ương"
+      "Enzym butyrylcholinesterase",
+      "Enzym monoamin oxydase",
+      "Enzym acetylcholinesterase",
+      "Enzym dopa decarboxylase"
     ],
-    "correct": 1,
+    "correct": 2,
     "explanation": "Phospho hữu cơ phosphoryl hóa vị trí serin tại trung tâm hoạt động của enzym Acetylcholinesterase (AChE), gây bất hoạt enzym này. Acetylcholin không bị giáng hóa, tích tụ ồ ạt kích thích liên tục các thụ thể Muscarinic (co đồng tử, tăng tiết đờm dãi, nhịp chậm), thụ thể Nicotinic (co giật cơ, liệt cơ hô hấp) và thần kinh trung ương.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -3091,9 +3091,9 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tam chứng kinh điển phản ánh tình trạng ngộ độc cấp tính các thuốc Opioid (Morphin, Heroin, Fentanyl) đe dọa ngừng thở tử vong gồm những dấu hiệu nào?",
     "options": [
-      "Kích động tâm thần vận động dữ dội, co giật toàn thân và sốt cao kịch phát",
-      "Tăng huyết áp kịch phát, nhịp tim nhanh xoang và đồng tử hai bên giãn tối đa",
-      "Suy hô hấp do co thắt phế quản, đồng tử giãn một bên và rối loạn trương lực cơ",
+      "Kích động tâm thần vận động dữ dội, co giật toàn thân và sốt cao ác tính",
+      "Cơn tăng huyết áp kịch phát, nhịp tim nhanh xoang và đồng tử giãn tối đa",
+      "Suy hô hấp cấp tính, giãn đồng tử một bên và rối loạn trương lực toàn thân",
       "Ức chế trung khu hô hấp, đồng tử co nhỏ như đầu đinh ghim và hôn mê sâu"
     ],
     "correct": 3,
@@ -3109,10 +3109,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thuốc giải độc đặc hiệu Naloxone trong ngộ độc cấp Opioid cần lưu ý đặc điểm dược động học nào sau đây để tránh bệnh nhân tái rơi vào hôn mê ngừng thở?",
     "options": [
-      "Thuốc tích lũy kéo dài trong mô mỡ làm chậm giải phóng hoạt chất và tăng độc tính trên tế bào gan",
-      "Thuốc chỉ phát huy tác dụng trung hòa qua đường tiêu hóa nên bắt buộc phải dùng đường uống liên tục",
-      "Thời gian bán thải của thuốc rất ngắn nên cần theo dõi sát để tiêm nhắc lại hoặc truyền tĩnh mạch",
-      "Thuốc có thể tích phân bố rất nhỏ khiến nồng độ trong huyết tương tụt giảm nhanh do lọc qua cầu thận"
+      "Tích lũy kéo dài trong mô mỡ gây phóng thích chậm",
+      "Hấp thu qua đường tiêu hóa cần uống lặp lại liên tục",
+      "Bán thải rất ngắn đòi hỏi theo dõi và tiêm nhắc lại",
+      "Thể tích phân bố rất nhỏ bị thải trừ nhanh qua thận"
     ],
     "correct": 2,
     "explanation": "Naloxone là chất đối kháng cạnh tranh thuần túy tại thụ thể opioid mu. Bán thải của Naloxone chỉ 30-90 phút trong khi morphin kéo dài 3-5 giờ (Methadon kéo dài 24-36 giờ). Khi Naloxone hết tác dụng, opioid trong cơ thể sẽ gắn lại vào thụ thể làm bệnh nhân ngừng thở tái phát; do đó phải theo dõi liên tục ít nhất 4-24 giờ.",
@@ -3145,12 +3145,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Cảnh báo nguy hiểm khi chỉ định Flumazenil cho bệnh nhân ngộ độc chưa rõ tiền sử là nguy cơ kích hoạt cơn co giật kháng trị tử vong trong trường hợp nào?",
     "options": [
-      "Bệnh nhân có ngộ độc phối hợp với thuốc hạ sốt Paracetamol",
-      "Bệnh nhân đang có tình trạng tăng huyết áp",
-      "Bệnh nhân có tiền sử động kinh hoặc ngộ độc phối hợp với thuốc chống trầm cảm 3 vòng (TCA như Amitriptylin)",
-      "Bệnh nhân có tiền sử viêm loét dạ dày tá tràng"
+      "Ngộ độc phối hợp thuốc hạ sốt giảm đau paracetamol",
+      "Đang xuất hiện cơn tăng huyết áp kịch phát ác tính",
+      "Ngộ độc phối hợp thuốc chống trầm cảm ba vòng TCA",
+      "Tiền sử viêm loét dạ dày tá tràng tiến triển mạn"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "Flumazenil làm mất tác dụng chống co giật của Benzodiazepin. Ở bệnh nhân ngộ độc phối hợp TCA (thuốc hạ thấp ngưỡng co giật và loạn nhịp tim), Flumazenil sẽ bộc lộ độc tính gây co giật dữ dội và loạn nhịp thất của TCA, rất khó điều trị và có thể gây tử vong. Cần cân nhắc kỹ trước khi dùng.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -3163,10 +3163,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Phần aglycon của glycosid tim có nhân steroid gắn vòng lacton ở vị trí C17. Sự bão hòa (hydro hóa làm mất liên kết đôi) của vòng lacton này sẽ dẫn đến hệ quả sinh học nào?",
     "options": [
-      "Làm mất hầu như hoàn toàn tác dụng trợ tim của phân tử thuốc",
-      "Làm tăng hoạt tính trợ tim và kéo dài thời gian bán thải lên gấp 10 lần",
-      "Làm thuốc chuyển sang tác dụng chẹn thụ thể beta-adrenergic giao cảm",
-      "Làm tăng độ tan trong lipid giúp thuốc vượt qua hàng rào máu não nhanh hơn"
+      "Phân tử thuốc mất hầu như hoàn toàn tác dụng trợ tim",
+      "Tăng mạnh lực co bóp và kéo dài thời gian bán thải thuốc",
+      "Chuyển thành chất đối kháng thụ thể adrenergic giao cảm",
+      "Tăng mạnh độ tan trong mỡ và vượt qua hàng rào máu não"
     ],
     "correct": 0,
     "explanation": "Vòng lacton 5 cạnh hoặc 6 cạnh chưa bão hòa (mang liên kết đôi) ở vị trí C17 là cấu trúc thiết yếu quyết định hoạt tính sinh học. Nếu hydro hóa làm bão hòa liên kết đôi này hoặc mở vòng lacton, phân tử sẽ mất hầu như hoàn toàn tác dụng trợ tim.",
@@ -3181,12 +3181,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Bệnh nhân có nồng độ Magnesi huyết tương sụt giảm nghiêm trọng (Mg2+ < 0.7 mmol/L) khi dùng thuốc trợ tim glycosid sẽ đối mặt với nguy cơ bệnh lý nào sau đây?",
     "options": [
-      "Thuốc mất hoàn toàn ái lực với thụ thể do thiếu cation kích hoạt bề mặt",
-      "Tăng nhạy cảm của cơ tim với độc tính Digitalis và khó điều trị loạn nhịp thất nếu không bù Magnesi",
-      "Tăng phân hủy enzym Na+/K+-ATPase thành các tiểu đơn vị peptid bất hoạt",
-      "Làm giảm hấp thu glycosid tim từ lòng ruột do bất hoạt hệ vận chuyển tích cực"
+      "Giảm sút nghiêm trọng khả năng hấp thu glycosid tại niêm mạc ruột",
+      "Tăng nhạy cảm của cơ tim với độc tính loạn nhịp digitalis",
+      "Thúc đẩy thoái giáng enzym vận chuyển ion qua màng sợi cơ tim",
+      "Mất hoàn toàn ái lực gắn kết với thụ thể bề mặt sợi cơ tim"
     ],
-    "correct": 3,
+    "correct": 1,
     "explanation": "Magnesi là cofactor thiết yếu cho hoạt động của enzym Na+/K+-ATPase. Thiếu hụt Mg2+ làm giảm chức năng bơm và hiệp đồng với hạ K+ máu làm tăng nguy cơ ngộ độc Digitalis. Các rối loạn nhịp do ngộ độc Digitalis kèm hạ Mg2+ thường kháng trị với các thuốc chống loạn nhịp nếu chưa bù Mg2+.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -3253,10 +3253,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Chống chỉ định quan trọng nào sau đây áp dụng cho Glycosid tim do nguy cơ làm tăng chênh áp đường tống máu thất trái và làm bệnh nhân đột tử?",
     "options": [
-      "Bệnh cơ tim phì đại tắc nghẽn hoặc có hẹp van động mạch chủ nặng",
-      "Bệnh cơ tim giãn vô căn đi kèm suy giảm trầm trọng phân suất tống máu",
-      "Suy tim sau nhồi máu cơ tim có rối loạn chức năng co bóp tâm thu thất trái",
-      "Bệnh tim thiếu máu cục bộ mạn tính kết hợp tăng huyết áp nguyên phát lâu năm"
+      "Bệnh cơ tim phì đại tắc nghẽn hoặc hẹp van động mạch chủ nặng",
+      "Bệnh cơ tim giãn vô căn đi kèm suy giảm nặng phân suất tống máu",
+      "Suy tim mạn tính sau nhồi máu cơ tim có giảm chức năng tâm thu",
+      "Bệnh tim thiếu máu cục bộ kết hợp tăng huyết áp nguyên phát mạn"
     ],
     "correct": 0,
     "explanation": "Trong bệnh cơ tim phì đại tắc nghẽn (HOCM), tăng co bóp cơ tim sẽ làm dày thêm vách liên thất và tăng mức độ hẹp đường tống máu thất trái, làm giảm cung lượng tim nghiêm trọng và có thể dẫn đến đột tử.",
@@ -3271,10 +3271,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tại sao thuốc lợi tiểu Spironolacton lại có lợi thế đặc biệt khi dùng phối hợp trong phác đồ điều trị suy tim có dùng Digoxin?",
     "options": [
-      "Spironolacton kích hoạt enzym gan giúp đào thải digoxin ra khỏi tuần hoàn nhanh hơn",
-      "Spironolacton làm tăng dẫn truyền nhĩ thất giúp triệt tiêu tác dụng phụ làm chậm nhịp tim",
-      "Spironolacton cạnh tranh trực tiếp với digoxin tại vị trí gắn kết trên màng tế bào cơ vân",
-      "Spironolacton là thuốc lợi tiểu giữ kali giúp phòng ngừa hạ kali máu và làm giảm thiểu nguy cơ ngộ độc digoxin"
+      "Kích hoạt enzym gan thúc đẩy đào thải nhanh digoxin qua mật",
+      "Tăng dẫn truyền nhĩ thất triệt tiêu tác dụng làm chậm tim",
+      "Cạnh tranh trực tiếp với digoxin trên thụ thể màng cơ vân",
+      "Giữ kali máu làm giảm thiểu nguy cơ loạn nhịp do digoxin"
     ],
     "correct": 3,
     "explanation": "Spironolacton là thuốc kháng aldosteron giữ kali máu. Việc duy trì nồng độ K+ máu ổn định trong khoảng 4.0 - 5.0 mmol/L giúp bảo vệ enzym Na+/K+-ATPase, ngăn ngừa tình trạng ngộ độc loạn nhịp do Digoxin.",
@@ -3325,10 +3325,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Trước đây thực hành chọc thủng viên Nifedipin nang mềm nhỏ dưới lưỡi để xử trí huyết áp tăng vọt khá phổ biến, nhưng hiện nay bị CẤM TUYỆT ĐỐI do cơ chế bệnh sinh nào?",
     "options": [
-      "Thuốc ức chế tức thời nút xoang dẫn đến ngừng tim đột ngột do phong bế kênh calci tại tim",
-      "Thuốc gây co thắt phế quản cấp tính dẫn đến suy hô hấp do kích thích giải phóng histamin",
-      "Thuốc kích hoạt giải phóng renin ồ ạt làm tái bùng phát cơn tăng huyết áp ác tính nguy hiểm",
-      "Thuốc hấp thu quá nhanh gây tụt huyết áp ồ ạt, kích hoạt phản xạ giao cảm dữ dội gây nhịp nhanh, thiếu máu não và nhồi máu cơ tim"
+      "Gây ức chế tức thời nút xoang dẫn đến ngừng tim đột ngột",
+      "Gây co thắt phế quản cấp tính dẫn đến suy hô hấp nặng nề",
+      "Gây kích hoạt bài tiết renin tái bùng phát cơn tăng huyết áp",
+      "Gây tụt áp nhanh kích hoạt phản xạ giao cảm loạn nhịp tim"
     ],
     "correct": 3,
     "explanation": "Nifedipin nang mềm nhỏ dưới lưỡi làm tụt huyết áp quá nhanh và không kiểm soát được, kích hoạt phản xạ giao cảm cường độ cực mạnh gây nhịp tim nhanh, co thắt mạch vành và hiện tượng 'cướp máu', dẫn tới nhồi máu cơ tim và thiếu máu não cục bộ. Phương pháp này đã bị cấm hoàn toàn.",
@@ -3379,10 +3379,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng không mong muốn gây tăng mọc lông tóc (Hypertrichosis) của hoạt chất Minoxidil bắt nguồn từ cơ chế giãn vi mạch tại nang lông, hiện nay được ứng dụng phổ biến trên lâm sàng để:",
     "options": [
-      "Điều trị hội chứng rậm lông vô căn ở phụ nữ sau mãn kinh",
-      "Bào chế dung dịch dùng ngoài bôi tại chỗ điều trị rụng tóc, hói đầu androgen",
-      "Kích thích mọc lông mày cho bệnh nhân suy giáp trạng mạn tính",
-      "Bào chế kem triệt lông vĩnh viễn nhờ làm teo nang lông khi dùng nồng độ cao"
+      "Điều trị hội chứng rậm lông vô căn ở phụ nữ mãn kinh",
+      "Bào chế dung dịch bôi ngoài điều trị rụng tóc hói đầu",
+      "Kích thích mọc lông mày cho người suy giáp trạng mạn",
+      "Bào chế kem triệt lông vĩnh viễn nồng độ đậm đặc kéo dài"
     ],
     "correct": 1,
     "explanation": "Khi dùng đường uống trị THA kháng trị, Minoxidil gây rậm lông mặt, tay chân (hypertrichosis) sau vài tuần. Tác dụng phụ này đã được ứng dụng để bào chế dung dịch/bọt bôi ngoài da (Minoxidil 2%, 5%) kích thích mọc tóc trong điều trị chứng rụng tóc từng mảng và hói đầu di truyền.",
@@ -3505,10 +3505,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Đặc điểm dược động học độc nhất vô nhị của Adenosin đòi hỏi kỹ thuật tiêm tĩnh mạch phải cực kỳ đặc biệt là gì?",
     "options": [
-      "Gắn kết protein huyết tương với tỷ lệ trên 99% nên bắt buộc phải tiêm truyền tĩnh mạch liên tục qua bơm tiêm điện",
-      "Chuyển hóa bước đầu qua gan rất chậm với thời gian bán thải kéo dài trên 72 giờ nên cần định lượng nồng độ đáy",
-      "Độ tan trong nước rất kém nên bắt buộc phải hòa tan trong nhũ dịch lipid và truyền chậm qua đường tĩnh mạch lớn",
-      "Thời gian bán thải trong máu dưới 10 giây do bị giáng hóa rất nhanh, bắt buộc phải tiêm bolus tĩnh mạch cực nhanh"
+      "Gắn kết protein huyết tương trên chín mươi chín phần trăm",
+      "Chuyển hóa qua gan chậm với thời gian bán thải trên ba ngày",
+      "Độ tan trong nước kém bắt buộc phải hòa tan trong nhũ dịch",
+      "Thời gian bán thải dưới mười giây đòi hỏi tiêm bolus nhanh"
     ],
     "correct": 3,
     "explanation": "Thời gian bán thải của Adenosin trong tuần hoàn chỉ dưới 10 giây do bị hồng cầu và tế bào nội mô bắt giữ và thoái biến nhanh bởi enzym adenosin deaminase. Do đó, bắt buộc phải tiêm bolus tĩnh mạch cực nhanh (1-2 giây) qua đường truyền gần tim kèm xả ngay 20mL NaCl 0.9%.",
@@ -3523,10 +3523,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Nguy cơ loạn nhịp thất 'Xoắn đỉnh' (Torsades de Pointes) và đột tử có khả năng xảy ra cao nhất khi sử dụng các thuốc chống loạn nhịp có đặc tính điện sinh lý nào sau đây?",
     "options": [
-      "Các thuốc làm kéo dài pha tái cực và kéo dài khoảng QT trên điện tâm đồ",
-      "Các thuốc làm rút ngắn thời gian điện thế hoạt động tại mô cơ tâm thất",
-      "Các thuốc làm chậm dẫn truyền qua nút nhĩ thất và kéo dài thời kỳ trơ",
-      "Các thuốc chẹn thụ thể beta giao cảm làm giảm tần số phát nhịp nút xoang"
+      "Kéo dài thời gian tái cực và kéo dài khoảng QT trên điện tim",
+      "Rút ngắn thời gian điện thế hoạt động tại mô cơ tâm thất",
+      "Làm chậm dẫn truyền qua nút nhĩ thất và tăng thời kỳ trơ",
+      "Chẹn thụ thể beta giao cảm làm chậm tần số phát nhịp nút xoang"
     ],
     "correct": 0,
     "explanation": "Các thuốc Nhóm IA và Nhóm III làm kéo dài thời gian điện thế hoạt động và khoảng QT. Khi khoảng QT kéo dài (đặc biệt kèm hạ K+, hạ Mg2+ hoặc nhịp chậm), điện thế hậu khử cực sớm (EADs) dễ xuất hiện kích hoạt cơn nhịp nhanh thất xoắn đỉnh (Torsades de Pointes).",
@@ -3541,10 +3541,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thuốc chống loạn nhịp Nhóm IC (Flecainid, Propafenon) có đặc điểm dược lý điện sinh lý phân biệt với các phân nhóm khác ở điểm nào?",
     "options": [
-      "Rút ngắn rất mạnh thời gian dẫn truyền nhĩ thất và thời kỳ trơ hữu hiệu, đồng thời làm giảm nhẹ thời gian điện thế hoạt động",
-      "Chẹn kênh calci typ T chọn lọc trên mô tạo nhịp mà hoàn toàn không ảnh hưởng đến bề rộng phức bộ QRS trên điện tâm đồ",
-      "Ức chế cực mạnh kênh Natri pha 0 làm giãn rộng phức bộ QRS rõ rệt, nhưng hầu như không thay đổi thời gian điện thế hoạt động",
-      "Chỉ làm chậm pha khử cực chậm tâm trương ở nút xoang và kéo dài rõ rệt thời gian tái cực của các sợi dẫn truyền Purkinje"
+      "Rút ngắn thời gian dẫn truyền và giảm thời gian điện thế hoạt động",
+      "Chẹn chọn lọc kênh calci mà không gây biến đổi độ rộng phức bộ QRS",
+      "Ức chế mạnh pha không giãn rộng QRS mà ít đổi điện thế hoạt động",
+      "Kéo dài thời gian tái cực mà không thay đổi tốc độ dẫn truyền nhĩ"
     ],
     "correct": 2,
     "explanation": "Nhóm IC (Flecainid, Propafenon) có động học gắn - tách khỏi kênh Na+ rất chậm (chẹn mạnh nhất pha 0), làm chậm dẫn truyền nội thất và giãn rộng phức bộ QRS rõ rệt, nhưng hầu như không làm thay đổi thời gian điện thế hoạt động (APD).",
@@ -3577,12 +3577,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng phụ rối loạn chuyển hóa nào sau đây là đặc trưng và thường gặp nhất khi điều trị lâu dài bằng thuốc lợi tiểu Thiazid (HCTZ) hoặc Lợi tiểu quai (Furosemid)?",
     "options": [
-      "Hạ đường huyết nghiêm trọng và giảm nồng độ acid uric máu",
-      "Tăng nồng độ kali máu và tăng thải trừ calci qua đường mật",
-      "Tăng acid uric máu (nguy cơ bùng phát cơn Gút cấp) và tăng đường huyết",
-      "Nhiễm toan lactic máu và hạ triglycerid máu toàn phần"
+      "Tăng thải trừ acid uric máu và gây hạ đường huyết",
+      "Tăng nồng độ kali máu và tăng thải calci qua gan",
+      "Tăng acid uric máu và tăng nồng độ đường huyết",
+      "Nhiễm toan lactic máu và giảm triglycerid huyết thanh"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "Cả Thiazid và Lợi tiểu quai đều cạnh tranh thải trừ với acid uric tại ống lượn gần, dẫn tới tăng acid uric máu có thể khởi phát cơn gút cấp. Đồng thời, thuốc gây hạ K+ máu làm giảm bài tiết insulin từ tế bào beta đảo tụy, gây tăng đường huyết.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -3649,10 +3649,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Misoprostol là một dẫn chất tổng hợp của Prostaglandin E1 (PGE1) được chỉ định chủ yếu để dự phòng và điều trị loét dạ dày tá tràng do nguyên nhân nào?",
     "options": [
-      "Loét dạ dày tá tràng do nhiễm khuẩn vi khuẩn Helicobacter pylori kháng thuốc",
-      "Loét dạ dày tá tràng do sử dụng kéo dài thuốc chống viêm không steroid",
-      "Loét dạ dày nặng trong hội chứng Zollinger-Ellison do u tụy tăng tiết gastrin",
-      "Bệnh viêm xước thực quản độ nặng do trào ngược dịch dạ dày có biến chứng Barrett"
+      "Nhiễm khuẩn chủng vi khuẩn Helicobacter pylori đa kháng",
+      "Sử dụng dài ngày các thuốc chống viêm không steroid NSAID",
+      "Tăng tiết dịch acid trong hội chứng u tụy Zollinger Ellison",
+      "Trào ngược dịch vị dạ dày thực quản có biến chứng Barrett"
     ],
     "correct": 1,
     "explanation": "NSAID ức chế COX-1 làm cạn kiệt prostaglandin bảo vệ niêm mạc dạ dày. Misoprostol thay thế PGE1 nội sinh, kích thích tế bào biểu mô nhầy tiết chất nhầy và HCO3-, đồng thời giảm tiết acid, chuyên dùng dự phòng loét do NSAID.",
@@ -3667,10 +3667,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Chống chỉ định quan trọng và tuyệt đối nhất của Misoprostol trong thực hành sản phụ khoa là trường hợp nào?",
     "options": [
-      "Bệnh nhân có tiền sử đái tháo đường thai kỳ đang được kiểm soát ổn định bằng liệu pháp insulin",
-      "Phụ nữ trong giai đoạn cho con bú do thuốc bài tiết nhiều qua sữa mẹ gây độc trẻ sơ sinh",
-      "Bệnh nhân có vết sẹo mổ lấy thai cũ trên hai năm do nguy cơ nứt vỡ tử cung trong chuyển dạ",
-      "Phụ nữ mang thai do kích thích mạnh cơn co tử cung dẫn tới nguy cơ sảy thai hoặc dị tật thai"
+      "Tiền sử đái tháo đường thai kỳ đang kiểm soát ổn định bằng insulin",
+      "Phụ nữ trong giai đoạn cho con bú sau sinh đủ chín tháng",
+      "Bệnh nhân có sẹo phẫu thuật lấy thai cũ trên hai năm trước",
+      "Phụ nữ đang mang thai với nguy cơ sảy thai và dị dạng thai"
     ],
     "correct": 3,
     "explanation": "Misoprostol kích thích mạnh thụ thể prostanoid trên cơ trơn tử cung gây co bóp tử cung dữ dội, gây sảy thai, chuyển dạ sớm hoặc dị tật thai nhi (hội chứng Moebius). Thuốc chống chỉ định tuyệt đối cho phụ nữ mang thai (trừ khi dùng phá thai nội khoa).",
@@ -3775,10 +3775,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Promethazin là một dẫn xuất phenothiazin thuộc nhóm kháng H1 thế hệ 1 có tác dụng an thần và chống nôn rất mạnh. Cảnh báo an toàn của FDA chống chỉ định dùng Promethazin cho đối tượng nào?",
     "options": [
-      "Phụ nữ mãn kinh xuất hiện các cơn bốc hỏa và rối loạn vận mạch",
-      "Nam giới trưởng thành đang mắc bệnh viêm gan B mạn tính tiến triển",
-      "Trẻ em dưới 2 tuổi do nguy cơ ức chế hô hấp sâu dẫn đến tử vong",
-      "Người cao tuổi có tiền sử gãy xương cẳng chân do loãng xương nặng"
+      "Phụ nữ tiền mãn kinh có rối loạn vận mạch bốc hỏa",
+      "Nam giới trưởng thành có bệnh viêm gan tiến triển",
+      "Trẻ em dưới hai tuổi có nguy cơ suy hô hấp tử vong",
+      "Người cao tuổi có tiền sử chấn thương gãy xương đùi"
     ],
     "correct": 2,
     "explanation": "FDA đã ban hành cảnh báo hộp đen chống chỉ định Promethazin cho trẻ em dưới 2 tuổi vì thuốc có thể gây ức chế hô hấp kịch phát dẫn đến ngạt thở và tử vong đột ngột (hội chứng đột tử ở trẻ nhỏ - SIDS).",
@@ -3811,10 +3811,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Cyproheptadin là một thuốc kháng H1 thế hệ 1 có đặc tính đối kháng thêm thụ thể nào sau đây, dẫn đến tác dụng phụ kích thích ăn ngon miệng và làm tăng cân?",
     "options": [
-      "Đối kháng thụ thể Serotonin 5-HT2A tại trung tâm kiểm soát cảm giác no ở vùng dưới đồi",
-      "Kích thích thụ thể Dopamin D2 ở tuyến yên",
-      "Ức chế thụ thể Leptin tại mô mỡ trắng",
-      "Kích thích thụ thể Insulin ở tế bào cơ vân"
+      "Kích thích chọn lọc thụ thể Dopamin D2 ở tuyến yên",
+      "Đối kháng thụ thể Serotonin năm HT hai vùng dưới đồi",
+      "Ức chế dẫn truyền thụ thể Leptin tại mô mỡ toàn thân",
+      "Kích thích nhạy cảm thụ thể Insulin tại tế bào cơ vân"
     ],
     "correct": 1,
     "explanation": "Cyproheptadin vừa kháng H1 vừa là chất đối kháng mạnh thụ thể Serotonin 5-HT2. Serotonin kích thích cảm giác no tại vùng dưới đồi; chẹn thụ thể này sẽ kích thích trung tâm thèm ăn, làm bệnh nhân ăn nhiều và tăng cân nhanh chóng.",
@@ -3919,12 +3919,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Hạn chế lớn nhất về mặt dược động học khi sử dụng nhóm thuốc nhựa gắn acid mật (Cholestyramin) là tương tác thuốc nào?",
     "options": [
-      "Ức chế mạnh mẽ hệ enzym cytochrom P450 ở gan",
-      "Làm phá hủy cấu trúc của các thuốc có tính base trong dạ dày",
-      "Tạo phức chelate không hấp thu, cản trở sự hấp thu của nhiều thuốc dùng chung (như Warfarin, Digoxin, Levothyroxin, Thiazid) và các vitamin tan trong dầu (A, D, E, K)",
-      "Làm tăng đào thải qua thận của các thuốc có tính acid"
+      "Ức chế mạnh enzym cytochrom P450 chuyển hóa thuốc tại gan",
+      "Phá hủy cấu trúc phân tử của các thuốc mang tính kiềm dạ dày",
+      "Cản trở hấp thu thuốc dùng chung và vitamin tan trong dầu",
+      "Tăng đào thải qua ống thận các hoạt chất mang tính acid yếu"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "Bản chất là polymer trao đổi ion phân tử lớn không hấp thu, Cholestyramin hấp phụ và tạo phức trơ với các thuốc mang tính acid nhẹ dùng cùng lúc (Warfarin, Digoxin, Thiazid, Levothyroxin...) và vitamin tan trong dầu (A, D, E, K). Bắt buộc phải uống các thuốc khác trước 1 giờ hoặc sau 4-6 giờ.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -3955,12 +3955,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Chống chỉ định quan trọng nhất và tuyệt đối của nhóm thuốc Statin cần ghi nhớ trong dược lâm sàng là đối tượng nào?",
     "options": [
-      "Bệnh nhân tăng huyết áp giai đoạn 2 có kèm bệnh thận đái tháo đường",
-      "Phụ nữ có thai, phụ nữ đang trong thời kỳ cho con bú và bệnh nhân có bệnh gan tiến triển đang tăng men gan",
-      "Bệnh nhân cao tuổi trên 75 tuổi có tiền sử xơ vữa động mạch vành",
-      "Người bệnh đái tháo đường typ 2 có chỉ số HbA1c trên 8.0%"
+      "Tăng huyết áp độ hai đi kèm bệnh lý thận đái tháo đường tiến triển",
+      "Phụ nữ có thai, đang cho con bú và bệnh gan đang tiến triển nặng",
+      "Người cao tuổi trên bảy mươi lăm tuổi có xơ vữa động mạch vành",
+      "Bệnh nhân đái tháo đường typ hai kiểm soát đường huyết kém ổn"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "Cholesterol và các hợp chất chuyển hóa trung gian (mevalonate, dolichol, squalene) là thành phần cấu tạo thiết yếu của màng tế bào phôi thai và sự phát triển của hệ thần kinh thai nhi. Statin có nguy cơ gây dị tật thai nhi, chống chỉ định tuyệt đối trong thai kỳ và cho con bú.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -3991,10 +3991,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Chỉ định cấp cứu sống còn hàng đầu của thuốc tiêm tĩnh mạch Artesunat (Artesunate IV) là trong trường hợp nào?",
     "options": [
-      "Dự phòng sốt rét cho khách du lịch chuẩn bị đi vào các vùng dịch tễ lưu hành nặng",
-      "Cắt cơn sốt rét thông thường chưa có biến chứng do Plasmodium malariae gây ra",
-      "Cấp cứu sốt rét ác tính và sốt rét thể não biến chứng do Plasmodium falciparum",
-      "Điều trị tiệt căn chống tái phát xa do thể ngủ của Plasmodium vivax trong gan"
+      "Dự phòng sốt rét cho khách du lịch vào vùng dịch tễ nặng",
+      "Cắt cơn sốt rét thông thường do thể ký sinh Plasmodium",
+      "Cấp cứu sốt rét ác tính và biến chứng sốt rét thể não",
+      "Điều trị tiệt căn thể ngủ trong gan của ký sinh trùng sốt rét"
     ],
     "correct": 2,
     "explanation": "Artesunat tiêm tĩnh mạch là tiêu chuẩn vàng cấp cứu sốt rét ác tính và sốt rét thể não do P. falciparum (vượt trội hơn Quinin IV cả về hiệu quả giảm tử vong và tính an toàn, ít gây hạ đường huyết và loạn nhịp). Liều tiêm ở các thời điểm 0h, 12h, 24h và sau đó mỗi ngày một lần.",
@@ -4027,10 +4027,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tương tác đẩy protein huyết tương (Displacement from plasma protein binding) xảy ra khi phối hợp thuốc chống viêm NSAID (Aspirin, Phenylbutazon) với thuốc chống đông Warfarin dẫn tới hậu quả lâm sàng nguy hiểm nào?",
     "options": [
-      "Aspirin đẩy warfarin khỏi albumin làm tăng nồng độ tự do của thuốc, kết hợp ức chế tiểu cầu gây xuất huyết nặng",
-      "Aspirin cảm ứng mạnh men gan làm tăng thoái giáng warfarin, dẫn tới mất hoàn toàn hiệu lực chống đông của thuốc",
-      "Warfarin phong tỏa cạnh tranh thụ thể của aspirin ở ngoại vi, làm mất hoàn toàn tác dụng hạ sốt và giảm đau",
-      "Hai thuốc tạo phức hợp protein kết tủa lắng đọng tại cầu thận dẫn tới tắc nghẽn ống thận và gây vô niệu cấp"
+      "Tăng mạnh nồng độ warfarin tự do gây xuất huyết nặng",
+      "Cảm ứng men gan làm mất hoàn toàn tác dụng chống đông",
+      "Phong tỏa thụ thể làm mất hoàn toàn hiệu lực hạ sốt",
+      "Kết tủa protein tại cầu thận dẫn đến suy thận cấp tính"
     ],
     "correct": 0,
     "explanation": "Warfarin gắn protein huyết tương tới 99% (chỉ 1% tự do có hoạt tính). NSAID đẩy một lượng nhỏ Warfarin từ dạng gắn thành tự do (ví dụ tăng từ 1% lên 2% tự do, tương đương tăng gấp đôi nồng độ có hoạt tính). Kết hợp với tác dụng kháng tiểu cầu và loét dạ dày của NSAID, xuất huyết tiêu hóa ồ ạt là điều khó tránh khỏi.",
@@ -4045,10 +4045,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tương tác thuốc tạo phức Chelate không tan tại đường tiêu hóa làm giảm hấp thu tới 80% của kháng sinh Ciprofloxacin hoặc Doxycyclin xảy ra khi uống cùng với các chất nào sau đây?",
     "options": [
-      "Thực phẩm chứa nhiều tinh bột carbohydrate kết hợp với các loại nước ép trái cây có vị chua nhẹ",
-      "Các loại thuốc giảm đau hạ sốt kháng viêm không steroid thông dụng dùng đồng thời đường uống",
-      "Chế phẩm chứa ion kim loại đa hóa trị như viên sắt, sữa tươi hoặc thuốc kháng toan",
-      "Dung dịch bù nước điện giải đường uống hoặc các loại dịch truyền dinh dưỡng chứa acid amin tự do"
+      "Thức ăn tinh bột kết hợp nước ép hoa quả chứa acid hữu cơ",
+      "Thuốc chống viêm không steroid dùng đường uống đồng thời",
+      "Chế phẩm chứa ion kim loại đa hóa trị hoặc sữa tươi",
+      "Dịch truyền dinh dưỡng cung cấp hỗn hợp acid amin tự do"
     ],
     "correct": 2,
     "explanation": "Các kháng sinh nhóm Fluoroquinolon (Ciprofloxacin) và Tetracyclin (Doxycyclin) có cấu trúc hóa học dễ tạo phức chelate bền vững không tan với các ion kim loại hóa trị 2 và 3 (Ca2+, Mg2+, Al3+, Fe2+, Zn2+). Phức hợp này không thể hấp thu qua niêm mạc ruột non, dẫn tới thất bại điều trị nhiễm khuẩn.",
@@ -4117,12 +4117,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Oxytocin là một nonapeptid được thùy sau tuyến yên bài tiết, được chỉ định qua đường tiêm truyền tĩnh mạch trong sản khoa để đạt mục đích chính nào?",
     "options": [
-      "Làm giãn cơ trơn cổ tử cung và phong bế hoàn toàn các cơn co tử cung để dự phòng chuyển dạ sinh non",
-      "Kích thích thùy trước tuyến yên tăng tiết hormon prolactin nhằm thúc đẩy quá trình tạo sữa sau sinh",
-      "Gây co bóp nhịp nhàng cơ trơn tử cung để khởi phát chuyển dạ và phòng ngừa băng huyết sau sinh do đờ tử cung",
-      "Nâng huyết áp tâm thu và phục hồi thể tích tuần hoàn hiệu dụng trong cấp cứu sốc nhiễm trùng sản khoa"
+      "Làm giãn cơ trơn tử cung dự phòng nguy cơ chuyển dạ đẻ non",
+      "Kích thích thùy trước tuyến yên tăng cường tiết sữa sau đẻ",
+      "Nâng chỉ số huyết áp và thể tích tuần hoàn trong cấp cứu sốc",
+      "Kích thích co tử cung gây chuyển dạ và cầm máu sau sinh"
     ],
-    "correct": 2,
+    "correct": 3,
     "explanation": "Oxytocin kích thích thụ thể oxytocin liên kết protein Gq trên cơ trơn tử cung làm tăng Ca2+ nội bào, gây co bóp tử cung có nhịp điệu tương tự chuyển dạ tự nhiên, dùng khởi phát chuyển dạ và kiểm soát băng huyết sau sinh do đờ tử cung.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -4171,10 +4171,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Các thuốc ức chế enzym Dipeptidyl Peptidase-4 (DPP-4 inhibitors như Sitagliptin, Vildagliptin, Linagliptin) làm tăng nồng độ của hormon nào trong tuần hoàn sau bữa ăn?",
     "options": [
-      "Các hormon incretin nội sinh như GLP-1 và GIP nhờ ngăn chặn sự thoái giáng nhanh của chúng",
-      "Hormon adrenalin từ tủy thượng thận giúp kích thích chuyển hóa glucose ở các mô ngoại vi",
-      "Hormon glucagon từ tế bào alpha đảo tụy nhằm thúc đẩy tân tạo đường trong thời gian nhịn đói",
-      "Hormon somatostatin từ vùng dưới đồi và đảo tụy giúp điều hòa bài tiết dịch tiêu hóa đường ruột"
+      "Hormon incretin nội sinh gồm GLP-1 và GIP",
+      "Hormon adrenalin tiết từ tủy tuyến thượng thận",
+      "Hormon glucagon tiết từ tế bào alpha đảo tụy",
+      "Hormon somatostatin điều hòa dịch tiêu hóa ruột"
     ],
     "correct": 0,
     "explanation": "GLP-1 và GIP nội sinh bình thường bị enzym DPP-4 phân cắt bất hoạt rất nhanh chỉ sau 1-2 phút trong máu. Thuốc ức chế DPP-4 ngăn cản sự thoái giáng này, kéo dài thời gian bán hủy và tăng nồng độ incretin có hoạt tính gấp 2-3 lần sau bữa ăn.",
@@ -4189,10 +4189,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Dabigatran etexilate là một thuốc chống đông đường uống thế hệ mới (DOAC) thuộc nhóm nào?",
     "options": [
-      "Thuốc ức chế trực tiếp thrombin tự do và gắn kết",
-      "Thuốc ức chế chọn lọc yếu tố mười hoạt hóa dạng hòa tan",
-      "Thuốc đối kháng cạnh tranh chọn lọc thụ thể vitamin K tại gan",
-      "Thuốc kích thích tế bào nội mô tăng giải phóng antithrombin III"
+      "Ức chế trực tiếp thrombin tự do và thrombin gắn kết",
+      "Ức chế chọn lọc yếu tố mười hoạt hóa dạng hòa tan",
+      "Đối kháng cạnh tranh men chuyển hóa vitamin K ở gan",
+      "Kích thích giải phóng antithrombin ba từ nội mô mạch"
     ],
     "correct": 0,
     "explanation": "Dabigatran là thuốc ức chế trực tiếp Thrombin (yếu tố IIa) đường uống: gắn cạnh tranh thuận nghịch vào vị trí xúc tác của cả Thrombin tự do và Thrombin đã gắn vào cục sợi huyết fibrin, ngăn chặn quá trình chuyển đổi fibrinogen thành fibrin.",
@@ -4226,7 +4226,7 @@ const DUOCLY2_EXAM_BANK = [
     "question": "Kháng thể đơn dòng Idarucizumab (Praxbind) là thuốc giải độc đặc hiệu (Specific reversal agent) được thiết kế riêng biệt để hóa giải tức thì tác dụng chống đông của thuốc nào?",
     "options": [
       "Warfarin",
-      "Heparin trọng lượng phân tử thấp (Enoxaparin)",
+      "Enoxaparin",
       "Rivaroxaban",
       "Dabigatran"
     ],
@@ -4315,10 +4315,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tại sao ở bệnh nhân suy thận mạn tính giai đoạn cuối có tổn thương nhu mô thận nặng, việc bổ sung Vitamin D bắt buộc phải sử dụng dạng Calcitriol hoặc Alfacalcidol mà không dùng Cholecalciferol thông thường?",
     "options": [
-      "Do nhu mô thận suy giảm enzym 1-alpha-hydroxylase không thể tạo ra dạng hoạt tính",
-      "Do phân tử cholecalciferol có kích thước nhỏ bị đào thải ồ ạt qua màng lọc trong quá trình chạy thận",
-      "Do cholecalciferol cạnh tranh đào thải với ure làm tăng nhanh hội chứng urê huyết cấp tính",
-      "Do thuốc thông thường gây độc trực tiếp phá hủy mao mạch cầu thận"
+      "Thiếu hụt enzym 1-alpha-hydroxylase ở mô thận",
+      "Bị đào thải ồ ạt qua màng lọc khi chạy thận nhân tạo",
+      "Cạnh tranh đào thải với ure làm tăng urê huyết tương",
+      "Gây độc trực tiếp phá hủy màng mao mạch tại cầu thận"
     ],
     "correct": 0,
     "explanation": "Ở bệnh nhân suy thận nặng, tế bào ống thận bị phá hủy làm mất enzym 1-alpha-hydroxylase, không thể chuyển đổi 25-(OH)-D3 thành dạng hoạt tính 1,25-(OH)2-D3. Bắt buộc phải bổ sung trực tiếp dạng đã được 1-alpha-hydroxyl hóa là Calcitriol hoặc Alfacalcidol để chống loãng xương và hạ calci máu.",
@@ -4351,12 +4351,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng không mong muốn nghiêm trọng thường gặp của Zidovudin (AZT) đòi hỏi phải theo dõi công thức máu định kỳ là gì?",
     "options": [
-      "Tăng tiểu cầu tiên phát gây huyết khối mạch",
-      "Suy tủy xương gây thiếu máu hồng cầu to nặng và giảm bạch cầu trung tính",
-      "Xơ hóa phổi mô kẽ tiến triển",
-      "Viêm khớp gút cấp tính do tăng acid uric"
+      "Tăng sinh tiểu cầu tiên phát gây tắc nghẽn mạch máu",
+      "Thiếu máu hồng cầu to nặng kèm giảm bạch cầu hạt",
+      "Xơ hóa mô kẽ phổi gây suy giảm chức năng hô hấp",
+      "Viêm khớp cấp tính do lắng đọng muối urat tại các khớp"
     ],
-    "correct": 3,
+    "correct": 1,
     "explanation": "AZT có độc tính chọn lọc kém hơn các NRTI thế hệ mới, ức chế một phần enzym DNA polymerase gamma ở ty thể và tủy xương của người, dẫn tới thiếu máu hồng cầu to nặng và giảm bạch cầu hạt. Bệnh nhân có thể phải truyền máu hoặc đổi thuốc.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -4369,12 +4369,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Nhóm thuốc ức chế men sao chép ngược không nucleosid (NNRTI như Efavirenz, Nevirapin) ức chế enzym Reverse Transcriptase của HIV-1 theo cơ chế nào?",
     "options": [
-      "Cạnh tranh trực tiếp tại vị trí gắn cơ chất dNTP",
-      "Gắn trực tiếp vào vị trí dị lập thể (allosteric site) gần trung tâm xúc tác của enzym Reverse Transcriptase, làm biến đổi cấu hình không gian bất hoạt enzym",
-      "Ức chế sự tích hợp DNA provirus vào nhiễm sắc thể người",
-      "Thủy phân vỏ capsid của virus trước khi xâm nhập"
+      "Gắn cạnh tranh trực tiếp tại vị trí gắn cơ chất nucleotid",
+      "Gắn vào vị trí dị lập thể làm biến đổi cấu hình men sao chép",
+      "Ức chế tích hợp DNA tiền virus vào bộ gen tế bào người bệnh",
+      "Thủy phân vỏ protein capsid của virus trước khi xâm nhập tế bào"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "NNRTI gắn trực tiếp vào một túi kỵ nước (allosteric hydrophobic pocket) nằm gần trung tâm hoạt động của enzym RT của HIV-1. Sự gắn này làm biến đổi cấu trúc ba chiều của enzym, ức chế hoạt tính xúc tác mà không cần trải qua bước phosphoryl hóa nội bào như các NRTI.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -4406,11 +4406,11 @@ const DUOCLY2_EXAM_BANK = [
     "question": "Biến chứng Xơ phổi mô kẽ tiến triển (Pulmonary fibrosis) và viêm phổi hoại tử phụ thuộc liều tích lũy là độc tính cơ quan đặc thù của thuốc chống ung thư nào do mô phổi thiếu hụt enzym bất hoạt thuốc?",
     "options": [
       "Cisplatin",
-      "Bleomycin (do mô phổi và da có nồng độ enzym Bleomycin hydrolase rất thấp)",
       "Vincristin",
-      "Fluorouracil"
+      "Fluorouracil",
+      "Bleomycin"
     ],
-    "correct": 2,
+    "correct": 3,
     "explanation": "Bleomycin bị bất hoạt bởi enzym Bleomycin hydrolase. Tuy nhiên mô phổi và da hầu như không có enzym này, khiến Bleomycin tích lũy nồng độ cao trong phế nang. Gốc tự do sinh ra phá hủy mao mạch phế nang gây viêm phổi kẽ và xơ phổi lan tỏa không hồi phục (liều tích lũy > 400 đơn vị).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -4441,12 +4441,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Alkaloid thực vật chiết xuất từ cây Dừa cạn (Vinca alkaloids như Vincristin, Vinblastin) tiêu diệt tế bào ung thư ở pha M của chu kỳ tế bào thông qua cơ chế nào?",
     "options": [
-      "Ức chế enzym Topoisomerase I tháo xoắn DNA",
-      "Kích thích làm bền vững bất thường vi ống ngăn cản sự phân rã thoi vô sắc",
-      "Gắn vào tubulin và ức chế sự trùng hợp (polymerization) của các heterodimer alpha/beta-tubulin thành vi ống, làm tê liệt thoi phân bào (thoi vô sắc)",
-      "Phá hủy màng nhân tế bào ung thư thông qua hoạt hóa caspase"
+      "Ức chế men topoisomerase một trong quá trình tháo xoắn sợi đôi DNA",
+      "Ức chế trùng hợp tubulin thành vi ống làm tê liệt thoi phân bào",
+      "Kích thích trùng hợp vi ống ngăn cản sự phân rã của thoi vô sắc",
+      "Hoạt hóa trực tiếp enzym caspase gây ly giải màng nhân tế bào"
     ],
-    "correct": 3,
+    "correct": 1,
     "explanation": "Vincristin và Vinblastin gắn chọn lọc vào vị trí Vinca trên phân tử tubulin, ức chế sự trùng hợp tạo vi ống (microtubules). Không hình thành được thoi vô sắc (mitotic spindle), tế bào ung thư bị kẹt lại ở kỳ giữa (metaphase) của pha phân bào M và kích hoạt quá trình tự chết tế bào.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -4459,10 +4459,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Cảnh báo tử vong tuyệt đối (Fatal warning) liên quan đến đường dùng thuốc của Vincristin trong quy chế sử dụng thuốc ung thư là gì?",
     "options": [
-      "Tuyệt đối cấm tiêm bắp sâu do nguy cơ gây lắng đọng tinh thể hoại tử tiêu cơ vân cấp tính",
-      "Tuyệt đối cấm tiêm tĩnh mạch trung tâm do nguy cơ gây huyết khối buồng tim tức thì",
-      "Tuyệt đối cấm tiêm vào khoang dưới nhện tủy sống do gây viêm hoại tử thần kinh tử vong",
-      "Tuyệt đối cấm tiêm dưới da do khả năng gây loét mục hoại tử mô dưới da lan tỏa"
+      "Cấm tiêm bắp sâu do nguy cơ gây hoại tử tiêu cơ vân cấp tính",
+      "Cấm tiêm tĩnh mạch trung tâm do nguy cơ tạo huyết khối tim lớn",
+      "Cấm tiêm tủy sống do gây hoại tử thần kinh dẫn tới tử vong",
+      "Cấm tiêm dưới da do nguy cơ gây viêm loét mục mô dưới da rộng"
     ],
     "correct": 2,
     "explanation": "Nhầm lẫn tiêm Vincristin vào tủy sống (Intrathecal injection) thay vì tiêm tĩnh mạch là thảm họa y khoa: thuốc gây viêm hoại tử thần kinh trung ương tiến triển, phù não và tử vong 100%. Quy chế bắt buộc: nhãn thuốc Vincristin phải ghi dòng chữ cảnh báo đỏ 'CHỈ TIÊM TĨNH MẠCH - TỬ VONG NẾU TIÊM VÀO TỦY SỐNG'.",
@@ -4513,10 +4513,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Bộ kít giải độc Cyanua kinh điển gồm Amyl Nitrit, Natri Nitrit và Natri Thiosulfat giải độc theo cơ chế đa tầng nào?",
     "options": [
-      "Nitrit oxy hóa trực tiếp các gốc tự do cyanua thành acid hữu cơ trong khi thiosulfat kiềm hóa nước tiểu tăng đào thải qua thận",
-      "Nitrit tạo methemoglobin để hút gốc cyanua ra khỏi ty thể và thiosulfat giúp enzym chuyển hóa thành thiocyanat không độc",
-      "Nitrit kết tủa phức hợp cyanua trong lòng ruột và thiosulfat trung hòa ion độc tự do trong tuần hoàn",
-      "Nitrit ức chế phân bố cyanua qua hàng rào máu não và thiosulfat phân giải độc chất thành dạng khí qua phổi"
+      "Oxy hóa trực tiếp cyanua và kiềm hóa nước tiểu tăng đào thải qua thận",
+      "Tạo methemoglobin giải phóng ty thể và chuyển thành thiocyanat vô hại",
+      "Kết tủa ion cyanua trong ruột và trung hòa độc chất trong tuần hoàn máu",
+      "Ức chế qua hàng rào máu não và phân giải thành thể khí đào thải qua phổi"
     ],
     "correct": 1,
     "explanation": "Cyanua gắn chặt vào ion Fe3+ của cytochrom oxidase làm ngạt tế bào. Hít Amyl nitrit / tiêm Natri nitrit sẽ oxy hóa một phần Hb thành MetHb (chứa Fe3+ ái lực cao) để hút CN- ra khỏi ty thể giải phóng enzym hô hấp. Sau đó tiêm Natri thiosulfat cung cấp gốc lưu huỳnh cho enzym Rhodanese ở gan biến CN- thành Thiocyanat vô hại thải qua nước tiểu.",
@@ -4549,10 +4549,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Khi đo nồng độ Digoxin trong huyết thanh để theo dõi điều trị (TDM), mẫu máu phải được lấy ở thời điểm nào để kết quả phản ánh chính xác trạng thái cân bằng giữa máu và mô cơ tim?",
     "options": [
-      "Ngay sau khi uống thuốc 30 phút để bắt được nồng độ đỉnh hấp thu",
-      "Sau khi uống thuốc ít nhất 6 đến 8 giờ (hoặc ngay trước liều kế tiếp)",
-      "Tại thời điểm 2 giờ sau ăn no để tránh nhiễu do lipid máu",
-      "Vào lúc 12 giờ đêm khi nồng độ cortisol sinh lý giảm xuống mức thấp nhất"
+      "Ngay sau khi uống ba mươi phút để xác định nồng độ đỉnh hấp thu",
+      "Tại thời điểm hai giờ sau bữa ăn no để hạn chế ảnh hưởng của mỡ máu",
+      "Sau khi uống ít nhất sáu đến tám giờ hoặc ngay trước liều kế tiếp",
+      "Vào thời điểm nửa đêm khi nồng độ cortisol sinh lý đạt mức thấp nhất"
     ],
     "correct": 2,
     "explanation": "Digoxin có pha phân bố mô rất chậm (kéo dài 6-8 giờ sau khi uống). Lấy máu sớm hơn 6 giờ sẽ cho nồng độ giả tạo rất cao trong máu trong khi thuốc chưa đạt trạng thái cân bằng phân bố ở mô cơ tim.",
@@ -4585,10 +4585,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Hoạt chất nào sau đây là thuốc trợ tim nhóm Glycosid tim có nguồn gốc chiết xuất từ hạt cây Strophanthus gratus, có đặc tính tan rất mạnh trong nước và chỉ dùng đường tiêm tĩnh mạch?",
     "options": [
-      "Digitoxin dạng viên nén giải phóng kéo dài",
-      "Acetyldigoxin dạng dung dịch nhỏ giọt đường uống",
-      "Ouabain (g-Strophanthin) có tác dụng cực nhanh và bài tiết nguyên vẹn qua thận",
-      "Lanatosid C dạng viên bao tan trong ruột"
+      "Digitoxin",
+      "Acetyldigoxin",
+      "Lanatosid C",
+      "Ouabain"
     ],
     "correct": 3,
     "explanation": "Ouabain (g-Strophanthin) chiết xuất từ hạt cây Strophanthus gratus, có cấu trúc rất nhiều nhóm -OH phân cực nên tan mạnh trong nước, không hấp thu qua ruột nên chỉ dùng đường tiêm tĩnh mạch cấp cứu, tác dụng xuất hiện sau 5-10 phút.",
@@ -4603,12 +4603,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Cơ chế tác dụng phân tử của Levosimendan - một thuốc tăng nhạy cảm calci (calcium sensitizer) thế hệ mới dùng trong suy tim cấp là gì?",
     "options": [
-      "Tăng giải phóng calci từ lưới nội bào thông qua thụ thể IP3",
-      "Gắn chọn lọc vào Troponin C phụ thuộc nồng độ calci, làm tăng lực co bóp mà không làm tăng calci nội bào",
-      "Ức chế không thuận nghịch bơm Na+/Ca2+ tại màng bào tương sợi cơ tim",
-      "Hoạt hóa trực tiếp kênh calci typ L ở màng tế bào làm dòng calci đi vào ồ ạt"
+      "Tăng cường giải phóng ion calci từ mạng nội chất qua thụ thể IP3",
+      "Gắn vào Troponin C tăng lực co cơ mà không tăng calci tự do",
+      "Ức chế hoạt động của bơm trao đổi natri calci ở màng sợi cơ tim",
+      "Hoạt hóa trực tiếp kênh calci typ L gây tăng dòng calci đi vào"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "Levosimendan gắn vào tiểu phần Troponin C của sợi cơ tim khi có mặt Ca2+, làm tăng độ nhạy cảm của sợi co cơ với Ca2+ sẵn có mà không làm tăng nồng độ Ca2+ nội bào tự do, do đó không làm tăng tiêu thụ oxy và ít nguy cơ gây loạn nhịp hơn các thuốc tăng co cơ truyền thống.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -4621,12 +4621,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tương tác giữa Digoxin và kháng sinh Macrolid (như Clarithromycin, Erythromycin) dẫn đến tăng nồng độ Digoxin trong huyết tương qua cơ chế nào?",
     "options": [
-      "Diệt vi khuẩn Eubacterium lentum ở ruột làm giảm thoái biến Digoxin và ức chế P-glycoprotein",
-      "Tăng liên kết của Digoxin với albumin huyết tương làm tăng nồng độ thuốc tự do",
-      "Kích thích enzym hấp thu thuốc tại diềm bàn chải biểu mô ruột non",
-      "Cạnh tranh đào thải tại ống lượn xa làm giảm bài tiết Digoxin vào nước tiểu"
+      "Diệt khuẩn ruột giảm thoái biến và ức chế P-glycoprotein",
+      "Tăng gắn protein huyết tương làm gia tăng nồng độ thuốc tự do",
+      "Kích thích enzym vận chuyển thuốc tại niêm mạc bờ bàn chải ruột",
+      "Cạnh tranh bài tiết ở ống thận làm giảm thải trừ qua nước tiểu"
     ],
-    "correct": 1,
+    "correct": 0,
     "explanation": "Khoảng 10% dân số có vi khuẩn đường ruột Eubacterium lentum chuyển hóa bất hoạt Digoxin thành dihydrodigoxin. Kháng sinh Macrolid diệt vi khuẩn này làm tăng sinh khả dụng của Digoxin, đồng thời ức chế bơm P-glycoprotein ở thận làm giảm thanh thải Digoxin.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -4639,10 +4639,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tại sao suy tuyến giáp (nhược giáp) lại là yếu tố làm tăng độc tính của Digoxin trên bệnh nhân tim mạch?",
     "options": [
-      "Làm giảm tốc độ lọc cầu thận và giảm thể tích phân bố của thuốc dẫn đến nồng độ digoxin tự do trong máu tăng cao",
-      "Làm tăng sinh đột biến số lượng thụ thể natri kali ATPase trên màng tế bào cơ tim",
-      "Làm tăng tỷ lệ hấp thu digoxin qua niêm mạc ống tiêu hóa lên mức gần tuyệt đối",
-      "Kích thích tuyến vỏ thượng thận tăng bài tiết aldosteron làm hạ kali máu nghiêm trọng"
+      "Làm giảm mức lọc cầu thận và giảm thể tích phân bố của thuốc",
+      "Làm tăng sinh số lượng thụ thể natri kali ATPase tại màng tim",
+      "Làm tăng tỷ lệ hấp thu thuốc qua niêm mạc ống tiêu hóa toàn phần",
+      "Kích thích vỏ thượng thận tăng tiết aldosteron gây hạ kali máu"
     ],
     "correct": 0,
     "explanation": "Suy giáp làm giảm chuyển hóa cơ bản, giảm lưu lượng máu thận, giảm tốc độ lọc cầu thận và giảm thể tích phân bố, khiến nồng độ Digoxin trong máu tăng cao dễ gây ngộ độc. Ngược lại, cường giáp làm tăng thanh thải và giảm nhạy cảm với Digoxin.",
@@ -4693,12 +4693,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Trong phác đồ chuẩn bị tiền phẫu cho bệnh nhân u tủy thượng thận (Pheochromocytoma) tiết nhiều catecholamin, nguyên tắc dùng thuốc bắt buộc để tránh xảy ra cơn tăng huyết áp ác tính kịch phát và phù phổi cấp là:",
     "options": [
-      "Bắt buộc phải dùng thuốc chẹn beta liều cao trước để khống chế nhịp tim, sau đó mới dùng thuốc chẹn alpha",
-      "Dùng đồng thời thuốc ức chế men chuyển và thuốc chẹn beta ngay từ ngày đầu tiên",
-      "Tuyệt đối không dùng bất kỳ thuốc chẹn thụ thể giao cảm nào trước khi phẫu thuật cắt khối u",
-      "Bắt buộc phải dùng thuốc chẹn alpha-adrenergic trước vài tuần, sau khi mạch đã giãn mới được dùng thêm thuốc chẹn beta"
+      "Dùng chẹn alpha trước rồi mới dùng thêm chẹn beta",
+      "Dùng chẹn beta trước rồi mới dùng phối hợp chẹn alpha",
+      "Dùng đồng thời cả thuốc chẹn beta và ức chế men chuyển",
+      "Dùng đơn độc thuốc chẹn beta liều cao liên tục trước mổ"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Quy tắc vàng trong u tủy thượng thận: PHẢI CHẸN ALPHA TRƯỚC, CHẸN BETA SAU. Nếu dùng chẹn beta trước, thụ thể beta-2 (giãn mạch) bị chặn lại, lượng lớn catecholamin sẽ gắn tự do vào thụ thể alpha-1 gây co mạch dữ dội, huyết áp tăng kịch phát dẫn tới đột quỵ hoặc phù phổi cấp tử vong.",
     "reference": "Sách Dược lý 2 tr. 74"
   },
@@ -4711,12 +4711,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Aliskiren là thuốc hạ huyết áp can thiệp vào khâu khởi đầu của trục RAA theo cơ chế sinh học phân tử nào?",
     "options": [
-      "Ức chế trực tiếp enzym Renin, ngăn chặn bước chuyển đổi Angiotensinogen thành Angiotensin I",
-      "Ức chế enzym men chuyển ACE, ngăn chặn chuyển Angiotensin I thành Angiotensin II",
-      "Chẹn chọn lọc thụ thể AT1 của Angiotensin II trên cơ trơn thành mạch",
-      "Ức chế thụ thể Mineralocorticoid tại tế bào biểu mô ống lượn xa của thận"
+      "Ức chế men chuyển angiotensin",
+      "Ức chế chọn lọc enzym renin",
+      "Chẹn thụ thể AT1 của angiotensin",
+      "Đối kháng thụ thể aldosteron"
     ],
-    "correct": 0,
+    "correct": 1,
     "explanation": "Aliskiren là thuốc ức chế trực tiếp enzym Renin (Direct Renin Inhibitor - DRI) đầu tiên được phê duyệt, liên kết với trung tâm hoạt động của Renin, ngăn cản sự phân cắt Angiotensinogen thành Angiotensin I, triệt tiêu trục RAA ngay từ khâu đầu tiên.",
     "reference": "Sách Dược lý 2 tr. 72"
   },
@@ -4765,10 +4765,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Hiện tượng 'Cướp máu mạch vành' (Coronary Steal Syndrome) xảy ra khi sử dụng thuốc giãn mạch vành nào sau đây?",
     "options": [
-      "Thuốc chẹn chọn lọc thụ thể beta-1 giao cảm như Bisoprolol",
-      "Thuốc ức chế men chuyển tác dụng kéo dài như Enalaprilat",
-      "Thuốc giãn mạnh tiểu động mạch vành như Dipyridamol",
-      "Thuốc tối ưu hóa chuyển hóa năng lượng cơ tim như Trimetazidine"
+      "Nitroglycerin",
+      "Trimetazidin",
+      "Dipyridamol",
+      "Nicorandil"
     ],
     "correct": 2,
     "explanation": "Dipyridamol hoặc DHP tác dụng nhanh làm giãn mạnh các tiểu động mạch vành ở vùng cơ tim lành, trong khi mạch máu vùng cơ tim thiếu máu đã giãn tối đa. Máu sẽ bị hút về vùng lành, làm vùng cơ tim thiếu máu càng bị thiếu máu trầm trọng hơn (hội chứng cướp máu).",
@@ -4819,12 +4819,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thử nghiệm lâm sàng nổi tiếng CAST (Cardiac Arrhythmia Suppression Trial) đã đưa ra kết luận cảnh báo sinh tử nào về việc sử dụng thuốc chống loạn nhịp Nhóm IC (Flecainid, Encainid)?",
     "options": [
-      "Thuốc làm gia tăng tỷ lệ mắc các khối u ác tính đường tiết niệu và suy tủy xương sau một thời gian ngắn điều trị",
-      "Dùng thuốc trên bệnh nhân có tổn thương tim thực thể làm tăng tỷ lệ tử vong do khởi phát các loạn nhịp thất ác tính",
-      "Thuốc gây hội chứng tiêu cơ vân cấp tính kèm lắng đọng sắc tố tại ống thận dẫn tới suy thận cấp vô niệu nguy hiểm",
-      "Thuốc khởi phát phản ứng tự miễn dịch toàn thể gây thiếu máu tan máu cấp tính và suy giảm nghiêm trọng chức năng gan"
+      "Tăng nguy cơ gây xơ hóa mô kẽ phổi tiến triển",
+      "Gây hội chứng tiêu cơ vân cấp dẫn đến suy thận",
+      "Gây suy tủy xương bất sản nặng không hồi phục",
+      "Tăng tỷ lệ tử vong do loạn nhịp thất ác tính"
     ],
-    "correct": 1,
+    "correct": 3,
     "explanation": "Thử nghiệm CAST chứng minh: mặc dù Flecainid và Encainid triệt tiêu rất tốt các ngoại tâm thu thất trên Holter ECG, nhưng trên bệnh nhân sau nhồi máu cơ tim có tổn thương thực thể cơ tim, thuốc lại làm tăng gấp 2.5 lần tỷ lệ tử vong do khởi phát các cơn loạn nhịp thất ác tính (hiệu ứng proarrhythmia).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -4837,12 +4837,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Biện pháp cấp cứu bằng thuốc được lựa chọn hàng đầu để cắt cơn nhịp nhanh thất Xoắn đỉnh (Torsades de Pointes) đang đe dọa biến thành rung thất là gì?",
     "options": [
-      "Tiêm tĩnh mạch dung dịch Calci clorid 10%",
-      "Truyền tĩnh mạch dung dịch Natri bicarbonat 8.4%",
-      "Tiêm tĩnh mạch Magnesi sulfat (MgSO4 1-2g trong 5-10 phút)",
-      "Tiêm tĩnh mạch chậm Digoxin 0.5 mg"
+      "Tiêm tĩnh mạch magnesi sulfat",
+      "Tiêm tĩnh mạch calci clorid",
+      "Tiêm truyền natri bicarbonat",
+      "Tiêm truyền tĩnh mạch lidocain"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Magnesi sulfat (MgSO4) tiêm tĩnh mạch là thuốc lựa chọn đầu tay để điều trị và cắt cơn xoắn đỉnh (kể cả khi nồng độ Mg2+ máu bình thường), nhờ cơ chế chẹn dòng calci đi vào màng tế bào làm triệt tiêu các điện thế hậu khử cực sớm (EADs).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -4855,12 +4855,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Nhóm thuốc chống loạn nhịp nào trong phân loại Vaughan Williams được chứng minh có khả năng làm giảm tỷ lệ đột tử và giảm tỷ lệ tử vong chung tốt nhất sau nhồi máu cơ tim?",
     "options": [
-      "Nhóm II gồm các thuốc chẹn thụ thể beta giao cảm",
-      "Nhóm IA gồm các thuốc chẹn dòng natri kéo dài tái cực",
-      "Nhóm IC gồm các thuốc chẹn mạnh dòng natri pha khử cực",
-      "Nhóm IV gồm các thuốc chẹn chọn lọc kênh calci typ L"
+      "Nhóm IA chẹn kênh natri kéo dài tái cực",
+      "Nhóm II chẹn thụ thể beta giao cảm",
+      "Nhóm IC chẹn mạnh kênh natri phân ly chậm",
+      "Nhóm IV chẹn chọn lọc kênh calci màng tim"
     ],
-    "correct": 0,
+    "correct": 1,
     "explanation": "Các thuốc chẹn beta-adrenergic (Nhóm II) là nhóm thuốc chống loạn nhịp duy nhất được chứng minh nhất quán trong các thử nghiệm lâm sàng lớn là làm giảm tỷ lệ đột tử do tim và cải thiện tỷ lệ sống còn sau nhồi máu cơ tim.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -4891,10 +4891,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Chỉ định lâm sàng độc đáo của thuốc lợi tiểu Acetazolamid trong y học thể thao và du lịch thám hiểm là trường hợp nào?",
     "options": [
-      "Tăng cường sức bền cơ bắp cho vận động viên cử tạ",
-      "Phòng ngừa và điều trị chứng Say độ cao cấp tính (Acute Mountain Sickness - AMS)",
-      "Dự phòng cơn say sóng và say tàu xe trên biển",
-      "Điều trị co cứng cơ do chuột rút khi chạy marathon"
+      "Dự phòng các cơn say sóng và say tàu xe",
+      "Giảm phù nề và co rút cơ khi vận động nặng",
+      "Phòng và điều trị chứng say độ cao cấp",
+      "Tăng sức bền cơ bắp trong thi đấu thể thao"
     ],
     "correct": 2,
     "explanation": "Khi lên vùng cao thiếu oxy, cơ thể thở nhanh bù trừ gây nhiễm kiềm hô hấp, làm ức chế trung khu hô hấp ở hành não. Acetazolamid làm tăng bài tiết HCO3- qua nước tiểu gây nhiễm toan chuyển hóa nhẹ, kích thích trung khu hô hấp thông khí sâu hơn, phòng ngừa chứng say độ cao cấp.",
@@ -4909,12 +4909,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Sử dụng thuốc ức chế bơm proton (PPI) liều cao kéo dài trên 1 năm làm tăng nguy cơ gãy xương (đặc biệt là gãy cổ xương đùi ở người cao tuổi) do cơ chế nào?",
     "options": [
-      "Tăng đào thải ion calci qua thận do ức chế trực tiếp kênh đồng vận chuyển tại quai Henle",
-      "Làm giảm độ acid dịch vị kéo dài cản trở quá trình ion hóa và hòa tan calci vô cơ từ thức ăn trong dạ dày",
-      "Ức chế trực tiếp hoạt tính biệt hóa của các tế bào tạo cốt bào tại cấu trúc bè xương",
-      "Kích thích tuyến cận giáp tăng cường tiết hormon dẫn đến kích hoạt tiêu xương liên tục"
+      "Tăng đào thải ion calci qua ống thận ở quai Henle",
+      "Ức chế trực tiếp hoạt tính của tế bào tạo cốt bào",
+      "Kích thích liên tục hoạt động tế bào hủy cốt bào",
+      "Giảm tiết acid dịch vị làm cản trở hấp thu calci"
     ],
-    "correct": 1,
+    "correct": 3,
     "explanation": "Acid dịch vị dạ dày cần thiết để ion hóa muối calci không tan (như calci carbonat) thành Ca2+ tự do để hấp thu ở ruột. PPI làm tăng pH dạ dày kéo dài dẫn tới giảm hấp thu calci, gây cường cận giáp thứ phát và loãng xương, tăng nguy cơ gãy xương.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -4945,12 +4945,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Cơ chế phân tử làm tiêu chất nhầy (Mucolytic) của N-Acetylcystein (NAC) trong các bệnh lý phế quản có đờm đặc quánh là gì?",
     "options": [
-      "Kích thích tế bào biểu mô phế quản tăng bài tiết dịch thanh dịch để làm loãng cơ học dịch nhầy",
-      "Nhóm sulfhydryl tự do khử và bẻ gãy cầu nối disulfid làm giảm độ quánh của chất nhầy",
-      "Ức chế enzym elastase của bạch cầu hạt trung tính giúp bảo tồn cấu trúc biểu mô đường dẫn khí",
-      "Cắt thủy phân trực tiếp các chuỗi phân tử DNA ngoại bào do tế bào viêm thoái hóa giải phóng ra"
+      "Nhóm sulfhydryl tự do khử và bẻ gãy cầu nối disulfid",
+      "Kích thích biểu mô phế quản tăng tiết dịch thanh dịch",
+      "Ức chế enzym elastase và men protease của bạch cầu",
+      "Thủy phân trực tiếp các chuỗi ADN ngoại bào trong đờm"
     ],
-    "correct": 1,
+    "correct": 0,
     "explanation": "N-Acetylcystein (NAC) mang nhóm sulfhydryl (-SH) tự do có tính khử, bẻ gãy các cầu nối disulfid (-S-S-) liên kết các sợi mucopolysaccharid của đờm, làm giảm độ quánh nhớt của chất nhầy và dễ tống đờm ra ngoài qua phản xạ ho.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -4963,12 +4963,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tại sao thuốc giảm ho trung ương có nguồn gốc opioid (như Codein, Dextromethorphan) bị chống chỉ định tuyệt đối trong cơn hen phế quản cấp tính?",
     "options": [
-      "Làm phá hủy lớp surfactant lót lòng phế nang",
-      "Làm tăng đào thải natri qua nước tiểu gây tụt huyết áp",
-      "Ức chế phản xạ ho tự nhiên dẫn đến ứ đọng dịch tiết gây bít tắc đường thở, đồng thời Codein kích thích giải phóng histamin làm co thắt phế quản nặng hơn",
-      "Kích hoạt enzym phosphodiesterase làm giảm AMP vòng"
+      "Kích thích enzym phosphodiesterase làm giảm nồng độ AMP vòng",
+      "Ức chế trung tâm ho gây ứ đọng đờm và giải phóng histamin",
+      "Phá hủy trực tiếp lớp chất có hoạt tính bề mặt ở phế nang",
+      "Ức chế dẫn truyền thần kinh giao cảm gây hạ huyết áp nặng"
     ],
-    "correct": 3,
+    "correct": 1,
     "explanation": "Trong cơn hen cấp, phản xạ ho giúp tống đờm dãi bít tắc lòng phế quản. Dùng thuốc giảm ho ức chế trung khu ho sẽ làm đờm ứ nghẽn bít hoàn toàn các tiểu phế quản gây suy hô hấp ngạt thở; ngoài ra Codein còn gây phóng thích histamin làm co thắt phế quản tăng thêm.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5071,12 +5071,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Bệnh nhân nam 54 tuổi đang dùng Simvastatin 40 mg/ngày xuất hiện triệu chứng đau mỏi cơ bắp toàn thân và nước tiểu có màu sẫm như nước ngọt coca. Bác sĩ cần chỉ định xét nghiệm sinh hóa máu cấp cứu nào ngay lập tức?",
     "options": [
-      "Định lượng nồng độ Amylase và Lipase huyết thanh",
-      "Định lượng Bilirubin toàn phần và trực tiếp",
-      "Định lượng men Creatine Kinase (CK) toàn phần và kiểm tra chức năng thận (Creatinin máu)",
-      "Định lượng Calci ion hóa và Phosphat máu"
+      "Định lượng amylase và lipase huyết thanh",
+      "Định lượng bilirubin toàn phần và trực tiếp",
+      "Định lượng creatin kinase và creatinin máu",
+      "Định lượng nồng độ calci ion hóa và phosphat"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "Đau cơ kèm nước tiểu sẫm màu là dấu hiệu kinh điển của tiêu cơ vân cấp (Rhabdomyolysis) do độc tính statin. Bắt buộc phải ngừng Statin ngay lập tức và xét nghiệm Creatine Kinase (CK) cùng Creatinin để đánh giá mức độ hủy cơ và tổn thương thận cấp do myoglobin.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5107,10 +5107,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Sốt tiểu đen (Blackwater fever) là một biến chứng nguy hiểm của bệnh sốt rét ác tính (hoặc do dùng Quinin) đặc trưng bởi các triệu chứng nào?",
     "options": [
-      "Sốt cao kịch phát, tan máu nội mạch ồ ạt, vàng da đậm, nước tiểu màu đen như nước vối (do chứa hemoglobin tự do) và suy thận cấp vô niệu",
-      "Phân có màu đen nhánh kèm theo hạ thân nhiệt",
-      "Da đổi thành màu đen sạm do lắng đọng melanin",
-      "Xuất huyết tiêu hóa dưới ồ ạt kèm chảy máu mũi"
+      "Xuất huyết tiêu hóa ồ ạt kèm theo chảy máu niêm mạc",
+      "Tăng lắng đọng sắc tố da gây sạm đen toàn thân kéo dài",
+      "Phân đen như hắc ín kèm theo các cơn sốt rét run",
+      "Tan máu nội mạch, đái huyết cầu tố và suy thận cấp"
     ],
     "correct": 3,
     "explanation": "Sốt tiểu đen (Blackwater fever) là biến chứng tan máu nội mạch cấp tính dữ dội ở người nhiễm P. falciparum điều trị bằng Quinin. Hồng cầu vỡ hàng loạt giải phóng lượng lớn hemoglobin vào huyết tương, vượt quá ngưỡng gắn haptoglobin, bài tiết qua nước tiểu gây nước tiểu màu đen/nâu sẫm và tắc ống thận suy thận cấp.",
@@ -5179,12 +5179,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Mifepriston (RU-486) được sử dụng trong phá thai nội khoa giai đoạn sớm (phối hợp với Misoprostol) hoạt động theo cơ chế dược lý nào?",
     "options": [
-      "Đối kháng cạnh tranh đặc hiệu tại thụ thể Progesteron, làm thoái hóa niêm mạc tử cung và bong túi thai",
-      "Chủ vận mạnh thụ thể Estrogen làm teo màng rụng tử cung",
-      "Ức chế enzym tổng hợp Prostaglandin tại bánh rau",
-      "Tiêu hủy tế bào hoàng thể buồng trứng qua cơ chế miễn dịch"
+      "Đối kháng cạnh tranh thụ thể progesteron",
+      "Chủ vận chọn lọc trên thụ thể estrogen",
+      "Ức chế men tổng hợp prostaglandin tử cung",
+      "Phong bế chọn lọc thụ thể hormon oxytocin"
     ],
-    "correct": 1,
+    "correct": 0,
     "explanation": "Mifepriston là chất đối kháng cạnh tranh tại thụ thể Progesteron. Thiếu hụt tác dụng của progesteron làm niêm mạc tử cung màng rụng bị hoại tử bong tróc, túi thai rời khỏi thành tử cung và làm tăng độ nhạy cảm của cơ tử cung với prostaglandin (Misoprostol dùng tiếp theo để tống thai).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5215,10 +5215,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Nhóm thuốc Thiazolidinedion (TZD như Pioglitazone) tăng nhạy cảm insulin ở tế bào cơ và mỡ thông qua việc gắn và kích hoạt thụ thể nhân nào?",
     "options": [
-      "Thụ thể nhân PPAR-gamma (Peroxisome Proliferator-Activated Receptor Gamma)",
-      "Thụ thể nhân FXR điều hòa acid mật",
-      "Thụ thể nhân LXR điều hòa cholesterol",
-      "Thụ thể nhân RXR liên kết acid retinoic"
+      "Thụ thể nhân PPAR-alpha",
+      "Thụ thể nhân PPAR-gamma",
+      "Thụ thể nhân LXR nội bào",
+      "Thụ thể nhân FXR đường mật"
     ],
     "correct": 1,
     "explanation": "Pioglitazone là chất chủ vận chọn lọc trên thụ thể nhân PPAR-gamma (có nhiều ở mô mỡ, cơ vân, gan). Hoạt hóa PPAR-gamma kích thích phiên mã các gen điều hòa chuyển hóa glucid và lipid, tăng tổng hợp chất vận chuyển GLUT-4 và adiponectin, làm tăng nhạy cảm insulin ngoại vi.",
@@ -5233,10 +5233,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Andexanet alfa là một phân tử mồi nhử tái tổ hợp biến đổi gen (Recombinant modified decoy protein) được dùng làm thuốc giải độc đặc hiệu cho nhóm thuốc chống đông nào?",
     "options": [
-      "Các thuốc ức chế trực tiếp Thrombin như Argatroban và Bivalirudin",
-      "Các thuốc chống đông ức chế Yếu tố Xa (Rivaroxaban, Apixaban, Edoxaban và Enoxaparin)",
-      "Thuốc chống đông kháng vitamin K Warfarin",
-      "Thuốc chống kết tập tiểu cầu Clopidogrel"
+      "Thuốc ức chế trực tiếp men thrombin",
+      "Thuốc kháng vitamin K dùng đường uống",
+      "Thuốc chống đông ức chế yếu tố Xa",
+      "Thuốc ức chế kết tập tiểu cầu máu"
     ],
     "correct": 2,
     "explanation": "Andexanet alfa là protein yếu tố Xa người tái tổ hợp bị đột biến (mất hoạt tính xúc tác đông máu), đóng vai trò như một phân tử 'mồi nhử' gắn chặt và giam giữ các thuốc ức chế Xa (Rivaroxaban, Apixaban), giải phóng yếu tố Xa nội sinh của cơ thể để phục hồi đông máu.",
@@ -5287,12 +5287,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Erythropoietin (EPO / Epoetin alfa) được sản sinh chủ yếu từ cơ quan nào trong cơ thể khi nồng độ oxy mô bị suy giảm và được chỉ định hàng đầu trong điều trị thiếu máu do nguyên nhân nào?",
     "options": [
-      "Tiết ra từ tế bào nội mô lách, điều trị thiếu máu cấp",
-      "Tiết ra từ tế bào Kupffer của gan, điều trị thiếu máu do xơ gan mất bù",
-      "Tiết ra từ tế bào kẽ quanh ống thận, điều trị thiếu máu do suy thận mạn tính",
-      "Tiết ra từ hệ thống tế bào mỡ đệm tại tủy xương, điều trị thiếu máu do tan máu miễn dịch"
+      "Tế bào tủy xương, điều trị thiếu máu do thiếu acid folic",
+      "Tế bào Kupffer gan, điều trị thiếu máu do xơ gan mất bù",
+      "Tế bào nội mô lách, điều trị thiếu máu do tan máu tự miễn",
+      "Tế bào kẽ thận, điều trị thiếu máu do suy thận mạn tính"
     ],
-    "correct": 2,
+    "correct": 3,
     "explanation": "Khoảng 90% Erythropoietin nội sinh được sản xuất bởi các nguyên bào sợi quanh ống lượn gần tại thận khi có thiếu oxy mô. Bệnh nhân suy thận mạn tính bị giảm sản xuất EPO trầm trọng dẫn đến thiếu máu đẳng sắc đẳng bào, bắt buộc phải dùng EPO tái tổ hợp (rHuEPO).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5305,12 +5305,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Vitamin E (Alpha-tocopherol) phát huy tác dụng sinh học bảo vệ cơ thể chủ yếu thông qua vai trò nào?",
     "options": [
-      "Chất vận chuyển acid amin qua màng tế bào",
-      "Chất chống oxy hóa tan trong lipid bảo vệ các acid béo chưa bão hòa của màng tế bào khỏi quá trình peroxy hóa lipid do gốc tự do",
-      "Coenzym kích hoạt quá trình đông máu nội sinh",
-      "Kích thích tuyến thượng thận tổng hợp steroid"
+      "Chống oxy hóa bảo vệ lipid màng tế bào",
+      "Coenzym tham gia vào quá trình đông máu",
+      "Vận chuyển acid amin qua màng sinh học",
+      "Kích thích tuyến thượng thận tiết hormon"
     ],
-    "correct": 2,
+    "correct": 0,
     "explanation": "Vitamin E là chất chống oxy hóa tan trong mỡ chính của cơ thể. Phân tử này bẫy các gốc tự do peroxyl, ngăn chặn phản ứng dây chuyền peroxy hóa lipid màng tế bào (đặc biệt màng hồng cầu và mô thần kinh), duy trì sự toàn vẹn của màng tế bào.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5377,12 +5377,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tại sao trong các phác đồ điều trị HIV, Ritonavir liều thấp thường được phối hợp cùng với các thuốc ức chế Protease khác (như Lopinavir/ritonavir hoặc Darunavir/ritonavir)?",
     "options": [
-      "Tăng tốc độ hòa tan và khuếch tán qua niêm mạc ống tiêu hóa của các hoạt chất dùng phối hợp",
-      "Cạnh tranh gắn kết protein huyết tương làm tăng lượng thuốc dạng tự do",
-      "Ức chế mạnh cytochrom P450 3A4 giúp tăng nồng độ và kéo dài tác dụng của thuốc phối hợp",
-      "Kiềm hóa dịch vị dạ dày giúp các thuốc ức chế protease không bị phân hủy bởi acid"
+      "Tăng hấp thu qua ruột nhờ ức chế bơm tống thuốc P-gp",
+      "Ức chế enzym CYP3A4 làm tăng nồng độ thuốc phối hợp",
+      "Cạnh tranh gắn protein huyết tương để tăng dạng tự do",
+      "Kiềm hóa dịch vị dạ dày nhằm giảm phân hủy bởi acid"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "Ritonavir ở liều thấp (100-200 mg) không dùng với mục đích diệt virus mà đóng vai trò là chất 'booster': ức chế enzym CYP3A4 ở gan và ruột, ngăn cản chuyển hóa thuốc PI đi kèm, giúp nâng nồng độ thuốc trong máu lên gấp nhiều lần và giảm tần suất uống thuốc.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5395,10 +5395,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thuốc chống ung thư nhóm Taxane (Paclitaxel chiết xuất từ vỏ cây Thông đỏ Taxus brevifolia) tác động lên vi ống thoi phân bào theo cơ chế đối lập với Vinca alkaloid như thế nào?",
     "options": [
-      "Paclitaxel ức chế sự tổng hợp protein tubulin tại ribosom",
-      "Paclitaxel thúc đẩy sự trùng hợp và làm bền vững quá mức các vi ống, ngăn cản sự phân rã bình thường của vi ống thoi vô sắc trong kỳ sau của phân bào",
-      "Paclitaxel hòa tan các sợi thoi phân bào ngay khi vừa hình thành",
-      "Paclitaxel làm xoắn ngược các sợi vi ống tạo cấu trúc vòng khép kín"
+      "Ức chế sinh tổng hợp chuỗi phân tử protein tubulin",
+      "Làm tan rã cấu trúc thoi phân bào ngay khi hình thành",
+      "Thúc đẩy trùng hợp và ức chế giải trùng hợp vi ống",
+      "Ức chế mạnh mẽ sự trùng hợp của các dimer tubulin"
     ],
     "correct": 2,
     "explanation": "Ngược lại với Vinca alkaloids (ức chế tạo vi ống), Paclitaxel gắn vào tiểu phần beta-tubulin làm tăng cường trùng hợp và ổn định hóa các bó vi ống bất thường, ngăn cản vi ống tự phân rã (depolymerization). Thoi phân bào bị 'đóng băng' cứng đờ, tế bào ung thư không thể hoàn tất phân chia và chết ở pha G2/M.",
@@ -5413,12 +5413,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng phụ thần kinh ngoại biên đặc trưng của Vincristin (Vincristine-induced peripheral neuropathy) biểu hiện qua các triệu chứng lâm sàng nào?",
     "options": [
-      "Tê bì giảm cảm giác đầu chi đối xứng, giảm phản xạ gân xương và táo bón do giảm nhu động ruột",
-      "Rối loạn tiền đình tiểu não với triệu chứng thất điều dáng đi và rung giật nhãn cầu hai bên",
-      "Run tay chân vô căn khi nghỉ ngơi, cứng đờ cơ kiểu bánh xe răng cưa và rối loạn nuốt tiến triển",
-      "Liệt vận động mềm hai chi dưới cấp tính kèm theo rối loạn cơ vòng bàng quang nặng nề"
+      "Thất điều dáng đi, rung giật nhãn cầu kèm chóng mặt",
+      "Run tay khi nghỉ và cứng đờ cơ kiểu bánh xe răng cưa",
+      "Liệt mềm hai chi dưới cấp tính kèm theo bí tiểu tiện",
+      "Tê bì đầu chi, giảm phản xạ gân xương và bị táo bón"
     ],
-    "correct": 0,
+    "correct": 3,
     "explanation": "Vi ống cần thiết cho quá trình vận chuyển sợi trục thần kinh (axonal transport) trong các dây thần kinh dài. Vincristin làm gián đoạn vi ống sợi trục gây bệnh thần kinh ngoại biên cảm giác - vận động (tê bì, yếu cơ, mất phản xạ gân xương) và tổn thương đám rối thần kinh tự chủ ruột gây táo bón nặng, liệt ruột cơ năng.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5449,12 +5449,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Trong ngộ độc cấp tính thuốc chống trầm cảm 3 vòng (TCA như Amitriptylin) có biểu hiện phức bộ QRS giãn rộng quá 0.12 giây và loạn nhịp thất, thuốc cấp cứu kiềm hóa máu giải độc số 1 là gì?",
     "options": [
-      "Amiodaron truyền tĩnh mạch chậm nhằm ổn định màng cơ tâm thất",
-      "Calci clorid tiêm tĩnh mạch nhằm đối kháng tương tác chẹn kênh canxi",
-      "Dung dịch ringer lactat truyền tĩnh mạch tốc độ nhanh bù dịch tuần hoàn",
-      "Natri bicarbonat tiêm truyền tĩnh mạch nhằm mục đích kiềm hóa máu"
+      "Dung dịch natri bicarbonat",
+      "Dung dịch ringer lactat",
+      "Dung dịch calci clorid",
+      "Thuốc amiodaron hydroclorid"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "TCA chẹn kênh Natri nhanh ở cơ tim làm chậm dẫn truyền gây QRS giãn rộng và xoắn đỉnh. Natri Bicarbonat làm tăng nồng độ Na+ ngoại bào cạnh tranh đẩy TCA khỏi kênh Natri, đồng thời kiềm hóa máu (pH 7.45-7.55) làm tăng tỷ lệ TCA ở dạng không ion hóa giảm ái lực với kênh Natri, giúp thu hẹp QRS và cắt loạn nhịp.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5467,12 +5467,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Kháng sinh hoặc độc chất kháng Cholinergic (Atropin, Cà độc dược, thuốc kháng H1 thế hệ 1) gây hội chứng Anticholinergic cấp tính (mê sảng, sốt cao, đồng tử giãn tối đa, da khô đỏ, bí tiểu) được giải độc đặc hiệu bằng thuốc nào?",
     "options": [
-      "Neostigmin có cấu trúc amin bậc bốn",
-      "Pyridostigmin có cấu trúc amin bậc bốn",
-      "Physostigmin có cấu trúc amin bậc ba qua được hàng rào máu não",
-      "Pralidoxim có tác dụng phục hồi enzym acetylcholinesterase"
+      "Pyridostigmin",
+      "Physostigmin",
+      "Neostigmin",
+      "Pralidoxim"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "Physostigmin là một amin bậc 3 thân dầu, có khả năng vượt qua hàng rào máu não rất tốt (khác với Neostigmin là amin bậc 4 chỉ tác dụng ngoại vi). Thuốc ức chế AChE làm tăng nồng độ acetylcholin cả ở não và ngoại vi, hóa giải nhanh chóng tình trạng mê sảng, co giật và các triệu chứng ngoại vi của ngộ độc Atropin.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5485,12 +5485,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Sự xuất hiện của 'sóng U' trên bản ghi điện tâm đồ của bệnh nhân đang điều trị bằng Digoxin thường gợi ý tình trạng rối loạn điện giải đi kèm nào?",
     "options": [
-      "Tăng nồng độ calci máu ác tính (> 3.0 mmol/L)",
-      "Nhiễm toan hô hấp nặng do ứ đọng CO2",
-      "Hạ kali máu đáng kể (K+ < 3.0 mmol/L)",
-      "Tăng natri máu ưu trương do mất nước ngoài tế bào"
+      "Tăng nồng độ calci máu",
+      "Tăng nồng độ natri máu",
+      "Hạ nồng độ kali máu",
+      "Nhiễm toan hô hấp cấp"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "Sóng U nổi bật trên ECG là dấu hiệu đặc trưng của hạ kali máu nặng. Khi kết hợp với điều trị Digoxin, đây là cảnh báo nguy cơ cực cao khởi phát loạn nhịp thất chết người (xoắn đỉnh, rung thất).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5503,12 +5503,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác động của Digoxin lên thời gian trơ và tốc độ dẫn truyền tại hệ thống dẫn truyền trong tim có đặc điểm phân hóa như thế nào giữa tầng nhĩ và tầng thất?",
     "options": [
-      "Tăng dẫn truyền qua nút nhĩ thất nhưng làm chậm dẫn truyền ở cơ tâm thất",
-      "Rút ngắn thời gian trơ của nút nhĩ thất và kéo dài thời gian trơ của cơ tâm nhĩ",
-      "Làm chậm dẫn truyền và kéo dài thời kỳ trơ của nút nhĩ thất, nhưng rút ngắn thời kỳ trơ của cơ thất",
-      "Kéo dài thời kỳ trơ đồng đều trên toàn bộ hệ thống nút xoang, nút AV và sợi Purkinje"
+      "Làm rút ngắn thời gian trơ nút nhĩ thất, kéo dài thời gian trơ cơ thất",
+      "Kéo dài thời gian trơ đồng đều trên toàn bộ các buồng tim ở người",
+      "Rút ngắn thời gian trơ đồng đều trên toàn bộ các mô dẫn truyền tim",
+      "Kéo dài thời gian trơ nút nhĩ thất, rút ngắn thời gian trơ cơ thất"
     ],
-    "correct": 2,
+    "correct": 3,
     "explanation": "Digitalis kích thích phế vị làm chậm dẫn truyền và kéo dài thời kỳ trơ của nút nhĩ thất (bảo vệ thất trong rung nhĩ). Tuy nhiên, trên cơ tâm thất, thuốc lại rút ngắn thời gian điện thế hoạt động và rút ngắn thời kỳ trơ, làm tăng tính kích thích thất ở liều cao.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5539,10 +5539,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Bệnh nhân nam 50 tuổi dùng Enalapril 10mg/ngày đạt huyết áp mục tiêu nhưng xuất hiện ho khan dữ dội từng cơn về đêm làm mất ngủ triền miên. Bác sĩ quyết định đổi thuốc. Hoạt chất thay thế hợp lý nhất bảo toàn lợi ích bảo vệ tim mạch mà không gây ho là:",
     "options": [
-      "Losartan đối kháng thụ thể angiotensin II",
-      "Lisinopril ức chế men chuyển kéo dài ở mô",
-      "Captopril ức chế men chuyển có nhóm thiol",
-      "Perindopril dạng tiền chất ức chế men chuyển"
+      "Losartan",
+      "Perindopril",
+      "Lisinopril",
+      "Captopril"
     ],
     "correct": 0,
     "explanation": "Khi bệnh nhân bị ho khan do ACEI, đổi sang một ACEI khác (như Lisinopril, Captopril, Perindopril) hoàn toàn vô tác dụng vì đây là tác dụng phụ chung của cả nhóm (class effect) do ức chế Kininase II. Lựa chọn chuẩn mực là chuyển sang nhóm ARB (Losartan, Valsartan) vì nhóm này chẹn thụ thể AT1 mà không làm tăng Bradykinin.",
@@ -5611,12 +5611,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Biến chứng nguy hiểm đến tính mạng nào sau đây có thể xuất hiện khi phối hợp thuốc lợi tiểu tiết kiệm Kali (Spironolacton hoặc Amilorid) với thuốc ức chế men chuyển (ACEI) hoặc thuốc chẹn thụ thể ARB?",
     "options": [
-      "Tăng Kali máu ác tính dẫn tới rối loạn dẫn truyền, rung thất và ngừng tim",
-      "Hạ Natri máu nghiêm trọng dẫn tới biến chứng phù não cấp tính, hôn mê và co giật",
-      "Nhiễm kiềm chuyển hóa nặng nề kèm theo cơn tetani co rút cơ toàn thân cấp tính",
-      "Cơn bão giáp trạng cấp tính do giải phóng ồ ạt lượng lớn hormon giáp vào máu"
+      "Hạ natri máu nặng gây phù não cấp tính",
+      "Tăng kali máu nặng đe dọa ngừng tim",
+      "Nhiễm kiềm chuyển hóa kèm cơn co cứng cơ",
+      "Cơn bão giáp kịch phát đe dọa tính mạng"
     ],
-    "correct": 0,
+    "correct": 1,
     "explanation": "Cả thuốc ức chế hệ RAA (ACEI/ARB) và thuốc lợi tiểu tiết kiệm Kali đều làm giảm bài tiết K+ tại ống thận. Phối hợp đồng thời hai nhóm này làm tăng vọt nguy cơ tăng Kali máu ác tính (đặc biệt ở người có suy thận hoặc đái tháo đường), có thể gây ngừng tim đột ngột.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5629,12 +5629,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Hội chứng 'Rebound acid hypersecretion' (Tăng tiết acid hồi ứng dội ngược) gây ợ nóng dữ dội sau khi dừng đột ngột thuốc điều trị loét dạ dày là do nguyên nhân sinh lý nào?",
     "options": [
-      "Tăng nồng độ gastrin máu bù trừ kéo dài dẫn đến phì đại và quá sản tế bào viền",
-      "Vi khuẩn Helicobacter pylori bùng phát nhân lên làm tăng phá hủy lớp nhầy bảo vệ",
-      "Tuyến tụy bị ức chế bài tiết dịch kiềm làm giảm khả năng trung hòa acid tại tá tràng",
-      "Hệ mạch máu dưới niêm mạc co thắt đột ngột gây hoại tử tế bào biểu mô bề mặt dạ dày"
+      "Bùng phát số lượng vi khuẩn Helicobacter pylori",
+      "Ức chế bài tiết dịch kiềm từ tụy vào tá tràng",
+      "Tăng tiết gastrin máu gây phì đại tế bào viền",
+      "Co thắt mạch máu niêm mạc dạ dày gây thiếu máu"
     ],
-    "correct": 0,
+    "correct": 2,
     "explanation": "Khi dùng PPI/kháng H2 kéo dài, nồng độ acid thấp kích thích tế bào G tăng tiết Gastrin liên tục. Nồng độ Gastrin máu cao gây tăng sinh và phì đại tế bào viền. Khi dừng thuốc đột ngột, các tế bào viền phì đại sẽ tiết acid ồ ạt (hiệu ứng rebound).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5665,12 +5665,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Kháng thể đơn dòng Omalizumab được chỉ định trong điều trị hen phế quản dị ứng nặng kháng trị có cơ chế tác dụng đặc hiệu nào?",
     "options": [
-      "Ức chế thụ thể IL-5 trên màng bạch cầu ái toan",
-      "Gắn chọn lọc vào phần Fc tự do của kháng thể IgE trong máu, ngăn cản IgE gắn lên thụ thể Fc-epsilon-RI trên màng dưỡng bào",
-      "Chẹn kênh calci typ L ở màng tế bào cơ trơn phế quản",
-      "Bất hoạt thụ thể TNF-alpha hòa tan trong tuần hoàn"
+      "Chẹn chọn lọc kênh calci typ L ở cơ trơn khí đạo",
+      "Bất hoạt thụ thể TNF-alpha hòa tan trong máu",
+      "Ức chế thụ thể IL-5 trên màng bạch cầu toan",
+      "Gắn chọn lọc lên IgE tự do trong tuần hoàn"
     ],
-    "correct": 2,
+    "correct": 3,
     "explanation": "Omalizumab là kháng thể đơn dòng nhân hóa tái tổ hợp liên kết đặc hiệu với phần Fc của IgE tự do trong tuần hoàn, ngăn chặn IgE gắn lên thụ thể có ái lực cao Fc-epsilon-RI trên bề mặt dưỡng bào (mast cell) và bạch cầu ái kiềm, ngăn chặn phản ứng giải phóng histamin.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5683,12 +5683,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Trong xử trí Cấp cứu Sốc phản vệ (Anaphylactic shock) đe dọa tính mạng do tụt huyết áp và co thắt thanh phế quản, thuốc cấp cứu đầu tay bắt buộc tiêm bắp ngay lập tức là gì?",
     "options": [
-      "Diphenhydramin tiêm bắp nhằm ức chế tức thì tác dụng giãn mạch của Histamin",
-      "Methylprednisolon tiêm tĩnh mạch để ngăn phản ứng pha muộn và giảm phù nề",
-      "Ranitidin truyền tĩnh mạch chậm để chẹn phối hợp thụ thể Histamin H2 mạch máu",
-      "Adrenalin tiêm bắp ngay lập tức ở mặt trước ngoài đùi để nâng áp và làm giãn cơ trơn phế quản"
+      "Adrenalin tiêm bắp",
+      "Diphenhydramin tiêm bắp",
+      "Promethazin tiêm bắp",
+      "Methylprednisolon tiêm bắp"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Adrenalin là thuốc cấp cứu sống còn duy nhất trong sốc phản vệ: kích thích alpha-1 làm co mạch nâng huyết áp, kích thích beta-1 tăng co bóp tim, và kích thích beta-2 làm giãn phế quản và ức chế dưỡng bào phóng thích hóa chất. Kháng H1 và Corticosteroid chỉ là thuốc hỗ trợ thứ yếu.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5719,12 +5719,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Atovaquon phối hợp với Proguanil (viên Malarone) là thuốc dự phòng và điều trị sốt rét hiện đại. Cơ chế phân tử của Atovaquon là gì?",
     "options": [
-      "Ức chế vận chuyển glucose qua màng hồng cầu",
-      "Ức chế phức hợp Cytochrom bc1 (phức hợp III) trong chuỗi hô hấp ty thể của ký sinh trùng, làm sụp đổ điện thế màng ty thể",
-      "Ức chế enzym polymerase sao chép ARN",
-      "Làm biến đổi pH dịch bào tương của tế bào gan"
+      "Ức chế vận chuyển glucose qua màng tế bào",
+      "Ức chế phức hợp cytochrom bc1 ở ty thể",
+      "Ức chế men ARN polymerase của ký sinh trùng",
+      "Làm thay đổi nồng độ pH nội bào tương tế bào"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "Atovaquon là dẫn xuất hydroxynaphthoquinone có cấu trúc tương tự ubiquinone. Thuốc ức chế chọn lọc phức hợp Cytochrom bc1 ở màng trong ty thể ký sinh trùng, chặn đứng chuỗi chuyền điện tử và ngừng tổng hợp pyrimidin, làm sụp đổ điện thế ty thể của ký sinh trùng.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5773,12 +5773,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng không mong muốn nghiêm trọng khiến Pioglitazone bị chống chỉ định tuyệt đối ở bệnh nhân có suy tim xung huyết (NYHA III - IV) là gì?",
     "options": [
-      "Gây thiếu máu cục bộ cơ tim tiến triển dẫn tới hoại tử tế bào cơ tim và giảm phân suất tống máu",
-      "Gây rối loạn tính tự động của hệ dẫn truyền tim làm khởi phát rung nhĩ kịch phát trơ với thuốc",
-      "Gây co thắt vi tuần hoàn mạch vành làm giảm trầm trọng lưu lượng máu nuôi dưỡng cơ tim thất trái",
-      "Gây ứ muối và nước qua kênh natri ở ống thận dẫn tới phù ngoại vi và làm trầm trọng suy tim ứ huyết"
+      "Co thắt vi tuần hoàn mạch vành",
+      "Rối loạn nhịp thất kịch phát",
+      "Ứ muối nước và phù ngoại vi",
+      "Hoại tử tế bào cơ tim thất trái"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "Hoạt hóa PPAR-gamma ở ống góp thận làm tăng biểu hiện kênh Natri ENaC, kích thích tăng tái hấp thu muối và nước, dẫn đến tăng thể tích tuần hoàn ngoại bào, gây phù ngoại biên và bùng phát suy tim sung huyết nặng. Thuốc chống chỉ định ở người có suy tim NYHA III-IV.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5791,12 +5791,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thuốc chống kết tập tiểu cầu Ticagrelor khác biệt cơ bản với Clopidogrel và Prasugrel ở đặc điểm dược lý nào sau đây?",
     "options": [
-      "Ticagrelor là thuốc có hoạt tính trực tiếp (không phải tiền chất) và gắn ức chế thuận nghịch tại vị trí dị lập thể trên thụ thể P2Y12",
-      "Ticagrelor chỉ tác dụng qua ức chế men COX-1 ở tiểu cầu",
-      "Ticagrelor gắn không hồi phục vào thụ thể P2Y12 suốt đời sống tiểu cầu",
-      "Ticagrelor chỉ được dùng đường tiêm truyền tĩnh mạch cấp cứu"
+      "Hoạt tính trực tiếp và gắn thuận nghịch thụ thể P2Y12",
+      "Tiền chất gắn không thuận nghịch thụ thể P2Y12 tiểu cầu",
+      "Hoạt tính trực tiếp ức chế chọn lọc enzym cyclooxygenase",
+      "Tiền chất chuyển hóa đối kháng thụ thể glycoprotein tim"
     ],
-    "correct": 1,
+    "correct": 0,
     "explanation": "Khác với Clopidogrel và Prasugrel (tiền chất gắn cộng hóa trị không hồi phục vào vị trí gắn ADP), Ticagrelor là dẫn chất cyclopentyltriazolopyrimidine có hoạt tính trực tiếp, gắn thuận nghịch vào vị trí dị lập thể (allosteric site) của thụ thể P2Y12, làm phục hồi chức năng tiểu cầu nhanh hơn khi ngừng thuốc.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5809,12 +5809,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Biến chứng tim mạch nguy hiểm có thể xảy ra khi điều trị bằng Erythropoietin (EPO) nếu nồng độ Hemoglobin trong máu tăng quá nhanh (> 1 g/dL trong 2 tuần) hoặc vượt ngưỡng mục tiêu (Hb > 11.5 g/dL) là gì?",
     "options": [
-      "Tụt huyết áp tư thế đứng kèm suy tim sung huyết",
-      "Rung nhĩ kịch phát có chu kỳ",
-      "Huyết khối động tĩnh mạch (nhồi máu não, nhồi máu cơ tim, tắc cầu nối động tĩnh mạch chạy thận) và cơn tăng huyết áp kịch phát",
+      "Tụt huyết áp tư thế đứng kèm suy tim",
+      "Tắc mạch huyết khối và cơn tăng huyết áp",
+      "Rung nhĩ kịch phát kèm tụt huyết áp nặng",
       "Viêm cơ tim tự miễn do kháng thể tái tổ hợp"
     ],
-    "correct": 3,
+    "correct": 1,
     "explanation": "EPO kích thích tủy xương tăng nhanh số lượng hồng cầu làm tăng độ nhớt của máu và tăng sức cản ngoại vi, dẫn đến cơn tăng huyết áp kịch phát kèm co giật; đồng thời kích hoạt tiểu cầu làm tăng vọt nguy cơ tắc mạch huyết khối (đột quỵ não, nhồi máu cơ tim, tắc catheter chạy thận).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5845,12 +5845,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thuốc chống chuyển hóa 5-Fluorouracil (5-FU) tiêu diệt tế bào ung thư thông qua ức chế enzym nào cần thiết cho quá trình sinh tổng hợp pyrimidin của DNA?",
     "options": [
-      "Enzym Ribonucleotid Reductase",
-      "Enzym Dihydroorotat Dehydrogenase",
-      "Enzym Thymidylate Synthase (TS) - ngăn chặn chuyển đổi dUMP thành dTMP",
-      "Enzym DNA Ligase I"
+      "Enzym ribonucleotid reductase",
+      "Enzym dihydrofolat reductase",
+      "Enzym thymidylate synthase",
+      "Enzym DNA topoisomerase hai"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "5-FU được chuyển hóa thành chất có hoạt tính 5-FdUMP. 5-FdUMP gắn chặt với enzym Thymidylate Synthase (TS) và cofactor N5,N10-methylen-THF tạo thành phức hợp ba bền vững, ức chế không hồi phục enzym TS, chặn đứng phản ứng methyl hóa dUMP thành dTMP (nguyên liệu tổng hợp thymidine của DNA).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -5863,10 +5863,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thuốc giải độc đặc hiệu Penicillamin (D-penicillamine) và Trientin được chỉ định trong điều trị bệnh lý quá tải hoặc ngộ độc kim loại nặng nào?",
     "options": [
-      "Ngộ độc Sắt cấp tính",
-      "Ngộ độc Thủy ngân vô cơ",
-      "Bệnh lý thoái hóa gan - đậu mềm do ứ đọng Đồng (Bệnh Wilson) và ngộ độc Đồng",
-      "Ngộ độc Khí than CO"
+      "Quá tải chì mạn tính và thiếu máu",
+      "Quá tải sắt cấp tính ở trẻ nhỏ",
+      "Quá tải thủy ngân dạng thể vô cơ",
+      "Quá tải đồng và mắc bệnh Wilson"
     ],
     "correct": 3,
     "explanation": "Penicillamin là dẫn xuất của penicillin mang nhóm sulfhydryl (-SH) tự do, có ái lực tạo phức chelate hòa tan rất mạnh với ion Đồng (Cu2+), giúp đào thải đồng ồ ạt qua nước tiểu trong bệnh Wilson (rối loạn chuyển hóa đồng di truyền) và ngộ độc đồng cấp/mạn.",
@@ -5971,12 +5971,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Bệnh nhân có hội chứng Wolff-Parkinson-White (WPW) kèm theo rung nhĩ xuất hiện cơn nhịp nhanh kịch phát. Nhóm thuốc nào sau đây bị chống chỉ định tuyệt đối vì có thể thúc đẩy dẫn truyền qua cầu Kent gây rung thất tử vong?",
     "options": [
-      "Các thuốc chống loạn nhịp như Procainamid hoặc Ibutilide sử dụng qua đường tiêm tĩnh mạch",
-      "Các thuốc làm chậm dẫn truyền nút nhĩ thất như Digoxin, Verapamil, Diltiazem và Adenosin",
-      "Phương pháp sốc điện chuyển nhịp đồng bộ cấp cứu sau khi đã tiến hành tiền mê thích hợp",
-      "Các thuốc chẹn kênh Natri phân nhóm IA sử dụng qua đường tiêm truyền tĩnh mạch cấp cứu"
+      "Thuốc làm chậm dẫn truyền qua nút nhĩ thất",
+      "Thuốc chẹn kênh natri thuộc phân nhóm IA",
+      "Thuốc chẹn kênh kali thuộc phân nhóm III",
+      "Thuốc chẹn calci phân nhóm dihydropyridin"
     ],
-    "correct": 1,
+    "correct": 0,
     "explanation": "Trong rung nhĩ kèm WPW, nếu dùng các thuốc ức chế chọn lọc nút AV (Digoxin, Verapamil, Diltiazem, Adenosin), các xung động rung nhĩ sẽ không thể đi qua nút AV mà bị dồn toàn bộ qua đường dẫn truyền phụ (cầu Kent) với tần số 300-400 ck/phút, dẫn tới rung thất và tử vong.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -6061,12 +6061,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Phản ứng phụ dị ứng chéo (phát ban da, hội chứng Stevens-Johnson) có thể xảy ra ở bệnh nhân có tiền sử dị ứng với Sulfamid khi sử dụng các thuốc lợi tiểu nào sau đây?",
     "options": [
-      "Spironolacton và Eplerenon",
-      "Amilorid và Triamteren",
-      "Furosemid, Bumetanid và các dẫn chất Thiazid (chứa nhóm sulfonamid -SO2NH2)",
-      "Manitol và Acid ethacrynic"
+      "Spironolacton và acid ethacrynic",
+      "Furosemid và hydrochlorothiazid",
+      "Amilorid dạng muối và triamteren",
+      "Manitol dịch truyền và eplerenon"
     ],
-    "correct": 3,
+    "correct": 1,
     "explanation": "Furosemid, Bumetanid, Torsemid, HCTZ, Indapamid và Acetazolamid đều mang nhóm cấu trúc sulfonamid (-SO2NH2), có thể gây dị ứng chéo ở bệnh nhân mẫn cảm với sulfamid. Acid ethacrynic là thuốc lợi tiểu quai duy nhất không có nhóm sulfonamid (dẫn xuất acid phenoxyacetic).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -6151,12 +6151,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng phụ run cơ đầu ngón tay (Tremor) và hồi hộp đánh trống ngực khi sử dụng Salbutamol liều cao là do cơ chế nào?",
     "options": [
-      "Kích thích thụ thể beta-2 tại cơ vân và phản xạ giao cảm kích thích tim do giãn mạch",
-      "Đối kháng chọn lọc thụ thể dopamin D2 tại nhân đuôi và thể vân thuộc hệ thần kinh ngoại tháp",
-      "Kích thích trực tiếp thụ thể muscarinic M3 làm hưng phấn hệ thần kinh phó giao cảm",
-      "Làm hạ natri máu sâu gây rối loạn dẫn truyền xung động thần kinh cơ toàn thân"
+      "Ức chế thụ thể dopamin D2 tại hệ ngoại tháp",
+      "Kích thích thụ thể muscarinic M3 tại cơ trơn",
+      "Kích thích thụ thể beta-2 cơ vân và thụ thể tim",
+      "Chẹn kênh dẫn truyền ion calci trên màng cơ vân"
     ],
-    "correct": 0,
+    "correct": 2,
     "explanation": "Run ngón tay là tác dụng phụ phổ biến nhất của SABA, do kích thích thụ thể beta-2 trên tế bào cơ vân. Đánh trống ngực xuất phát từ giãn tiểu động mạch ngoại vi gây tụt huyết áp kích hoạt phản xạ giao cảm, và một phần do thuốc liều cao kích thích thụ thể beta-1 ở tim.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -6205,12 +6205,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Đặc điểm dược động học của Bilastin - thuốc kháng H1 thế hệ 2 mới giúp thuốc này hầu như không có tương tác chuyển hóa qua gan là gì?",
     "options": [
-      "Hầu như không chuyển hóa qua CYP450, đào thải dạng nguyên vẹn qua phân và nước tiểu",
-      "Chuyển hóa hoàn toàn qua phản ứng liên hợp acid glucuronic tại tế bào ống thận để bài xuất",
-      "Bị bất hoạt tức thời bởi enzym monoamin oxidase tại niêm mạc ruột mà không vào tuần hoàn gan",
-      "Liên kết cộng hóa trị bền vững với albumin nên không bị các enzym microsom gan tiếp cận"
+      "Chuyển hóa hoàn toàn qua liên hợp glucuronid ở thận",
+      "Bị oxy hóa nhanh chóng bởi monoamin oxidase ở ruột",
+      "Thủy phân hoàn toàn bởi hệ enzym esterase huyết tương",
+      "Không chuyển hóa qua CYP450 và bài xuất nguyên vẹn"
     ],
-    "correct": 0,
+    "correct": 3,
     "explanation": "Bilastin hầu như không qua chuyển hóa gan (khoảng 95% đào thải dạng nguyên vẹn qua phân và nước tiểu), không tương tác với hệ enzym CYP450, do đó rất an toàn và không cần chỉnh liều ở bệnh nhân suy giảm chức năng gan.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -6295,12 +6295,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tafenoquine là một thuốc chống sốt rét dẫn chất 8-aminoquinolin thế hệ mới có ưu thế vượt trội so với Primaquin ở đặc điểm nào?",
     "options": [
-      "Hoàn toàn an toàn và không gây ra biến chứng tan máu cấp trên những người có cơ địa thiếu hụt enzym G6PD",
-      "Thời gian bán thải kéo dài cho phép điều trị tiệt căn P. vivax bằng một liều duy nhất thay vì 14 ngày",
-      "Thuốc được bào chế đặc biệt chỉ sử dụng qua đường tiêm tĩnh mạch chậm để đảm bảo sinh khả dụng tuyệt đối",
-      "Có thể sử dụng an toàn tuyệt đối cho phụ nữ mang thai ở mọi giai đoạn và trẻ em dưới sáu tháng tuổi"
+      "Thời gian bán thải dài và dùng một liều duy nhất",
+      "Không gây tan máu ở người có cơ địa thiếu G6PD",
+      "An toàn tuyệt đối cho phụ nữ mang thai mọi thời kỳ",
+      "Bào chế dạng tiêm truyền tĩnh mạch tác dụng kéo dài"
     ],
-    "correct": 1,
+    "correct": 0,
     "explanation": "Tafenoquine có T1/2 sinh học kéo dài 14-20 ngày. Trong điều trị tiệt căn P. vivax, Tafenoquine chỉ cần dùng một liều duy nhất 300 mg (sau khi điều trị cắt cơn), khắc phục triệt để vấn đề không tuân thủ phác đồ 14 ngày của Primaquin (tuy nhiên vẫn bắt buộc phải xét nghiệm G6PD trước khi dùng).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -6313,10 +6313,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Bệnh nhân nam 58 tuổi dùng thuốc trợ tim có biểu hiện vú to ở nam giới (gynecomastia) và giảm ham muốn tình dục sau thời gian dài điều trị. Tác dụng phụ nội tiết này của Digoxin bắt nguồn từ cơ chế phân tử nào?",
     "options": [
-      "Digoxin ức chế trực tiếp enzym aromatase tại mô mỡ ngoại vi",
-      "Cấu trúc steroid của aglycon có khả năng gắn chéo và kích hoạt nhẹ thụ thể Estrogen",
-      "Kích thích tuyến yên tăng bài tiết prolactin thông qua ức chế dopamin",
-      "Ức chế sản sinh testosterone tại tế bào Leydig tinh hoàn do làm hạ calci nội bào"
+      "Ức chế cạnh tranh enzym aromatase chuyển hóa ở mô mỡ",
+      "Cấu trúc aglycon gắn chéo và kích hoạt thụ thể estrogen",
+      "Kích thích tuyến yên tăng cường bài tiết hormon prolactin",
+      "Ức chế tổng hợp hormon testosterone tại tế bào kẽ tinh hoàn"
     ],
     "correct": 1,
     "explanation": "Khung steroid của aglycon trong phân tử Digoxin có độ tương đồng cấu trúc nhất định với các hormon sinh dục, có thể liên kết chéo với thụ thể Estrogen và cạnh tranh với thụ thể Androgen, gây chứng vú to ở nam giới (gynecomastia) khi dùng dài ngày.",
@@ -6331,12 +6331,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Khi bệnh nhân suy tim có phù phổi cấp kháng trị với thuốc lợi tiểu, Dopamin ở khoảng liều nào sau đây được gọi là 'liều thận' giúp kích hoạt thụ thể D1 gây giãn mạch thận và tăng lưu lượng nước tiểu?",
     "options": [
-      "Liều thấp từ 1 đến 3 mcg/kg/phút tác động ưu thế trên thụ thể dopaminergic D1",
-      "Liều trung bình từ 5 đến 10 mcg/kg/phút tác động ưu thế trên thụ thể beta-1 adrenergic",
-      "Liều cao trên 15 mcg/kg/phút tác động ưu thế trên thụ thể alpha-1 adrenergic co mạch",
-      "Liều bolus ngắt quãng 50 mcg/kg tiêm tĩnh mạch nhanh mỗi 4 giờ"
+      "Liều trung bình từ 5 đến 10 mcg/kg/phút",
+      "Liều tăng cao từ 10 đến 20 mcg/kg/phút",
+      "Liều thấp từ 1 đến 3 mcg/kg/phút",
+      "Liều tiêm nhanh từ 20 đến 50 mcg/kg"
     ],
-    "correct": 0,
+    "correct": 2,
     "explanation": "Dopamin liều thấp (1-3 mcg/kg/phút) kích thích thụ thể D1 ở giường mạch thận, mạc treo và vành, gây giãn mạch thận tăng dòng máu tưới thận và tăng lọc. Liều trung bình (5-10 mcg/kg/phút) kích thích beta-1 tăng co bóp tim. Liều cao (> 10 mcg/kg/phút) kích thích alpha-1 gây co mạch nâng HA.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -6349,12 +6349,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Phần lớn các thuốc ức chế men chuyển thải trừ chủ yếu qua thận nên phải giảm liều khi suy thận. Thuốc ức chế men chuyển nào sở hữu cấu trúc phosphinyl có cơ chế thải trừ bù trừ kép cân bằng 50:50 qua cả gan (mật/phân) và thận, an toàn cho người suy giảm chức năng thận vừa và nhẹ?",
     "options": [
-      "Lisinopril (thải 100% qua thận nguyên vẹn)",
-      "Enalapril (thải chủ yếu qua thận)",
-      "Fosinopril",
-      "Captopril (thải 95% qua thận)"
+      "Thuốc lisinopril",
+      "Thuốc enalapril",
+      "Thuốc perindopril",
+      "Thuốc fosinopril"
     ],
-    "correct": 2,
+    "correct": 3,
     "explanation": "Fosinopril là thuốc ức chế men chuyển duy nhất chứa nhóm phosphinyl, được thải trừ cân bằng kép 50% qua gan mật và 50% qua thận. Khi chức năng thận suy giảm, gan sẽ tăng cường thải trừ bù trừ và ngược lại, do đó không cần chỉnh liều ở bệnh nhân suy thận nhẹ đến trung bình.",
     "reference": "Sách Dược lý 2 tr. 67"
   },
@@ -6367,12 +6367,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Trong các thuốc chẹn thụ thể ARB, hoạt chất nào có thời gian bán thải sinh học kéo dài nhất (t₁/₂ xấp xỉ 24 giờ) giúp kiểm soát huyết áp ổn định suốt chu kỳ ngày đêm, đồng thời có hoạt tính kích hoạt thụ thể nhân PPAR-gamma giúp cải thiện chuyển hóa glucose và lipid?",
     "options": [
-      "Losartan (thời gian bán thải ngắn 6-9 giờ)",
-      "Valsartan (thời gian bán thải khoảng 6 giờ)",
-      "Eprosartan (thời gian bán thải khoảng 5-7 giờ)",
-      "Telmisartan"
+      "Thuốc telmisartan",
+      "Thuốc candesartan",
+      "Thuốc losartan kali",
+      "Thuốc valsartan"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Telmisartan có thời gian bán thải dài nhất trong nhóm ARB (t1/2 ~ 24 giờ) và thải trừ 98% qua gan mật/phân. Cấu trúc độc đáo của Telmisartan còn hoạt hóa thụ thể nhân PPAR-gamma (tương tự nhóm Thiazolidinedion), làm tăng nhạy cảm insulin và giảm triglycerid máu, rất có lợi cho bệnh nhân THA có hội chứng chuyển hóa.",
     "reference": "Sách Dược lý 2 tr. 71"
   },
@@ -6421,12 +6421,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Khi điều trị phối hợp thuốc cho bệnh nhân đau thắt ngực ổn định có kèm suy tim phân suất tống máu giảm (EF < 35%), nhóm thuốc chẹn kênh calci nào sau đây bị chống chỉ định tuyệt đối?",
     "options": [
-      "Thuốc chẹn kênh calci Non-Dihydropyridine do tác dụng ức chế co bóp cơ tim mạnh",
-      "Thuốc chẹn kênh calci Dihydropyridine thế hệ hai có tác dụng kéo dài toàn thân",
-      "Thuốc chẹn kênh calci có tính chọn lọc cao trên hệ thống vi mạch máu thận",
-      "Thuốc chẹn kênh calci thế hệ ba có tính thân dầu rất cao và tác dụng kéo dài"
+      "Nhóm dihydropyridin thế hệ một",
+      "Nhóm non-dihydropyridin",
+      "Nhóm dihydropyridin thế hệ hai",
+      "Nhóm dihydropyridin thế hệ ba"
     ],
-    "correct": 0,
+    "correct": 1,
     "explanation": "Verapamil và Diltiazem có tác dụng ức chế co bóp cơ tim (inotropic âm) rất mạnh và làm chậm nhịp tim, dẫn đến suy sụp huyết động, phù phổi cấp và tử vong ở bệnh nhân suy tim có phân suất tống máu giảm (HFrEF).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -6457,12 +6457,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Ibutilide và Dofetilide là các thuốc chống loạn nhịp Nhóm III 'tinh khiết' (pure class III) được chỉ định chủ yếu qua đường tĩnh mạch để đạt mục tiêu lâm sàng nào?",
     "options": [
-      "Nâng huyết áp trong sốc tim do nhồi máu cơ tim thất phải",
-      "Tăng dẫn truyền qua nút nhĩ thất để điều trị block AV hoàn toàn",
-      "Chuyển nhịp nhanh chóng rung nhĩ hoặc cuồng nhĩ mới xuất hiện về nhịp xoang",
-      "Ức chế co thắt mạch vành trong cơn đau thắt ngực thể Prinzmetal"
+      "Cắt cơn nhịp nhanh thất đa hình xoắn đỉnh",
+      "Nâng huyết áp động mạch trong sốc do tim cấp",
+      "Chuyển rung nhĩ hoặc cuồng nhĩ về nhịp xoang",
+      "Phục hồi dẫn truyền nhĩ thất trong block tim"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "Ibutilide (dạng tiêm tĩnh mạch) và Dofetilide (uống) là thuốc chẹn kênh K+ chọn lọc cao (IKr), được chỉ định hàng đầu để chuyển nhịp nhanh chóng rung nhĩ hoặc cuồng nhĩ mới khởi phát (< 48 giờ) về nhịp xoang bình thường.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -6475,12 +6475,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tolvaptan và Conivaptan thuộc nhóm thuốc lợi tiểu mới nào (Aquaretics) được chỉ định trong hội chứng tăng tiết ADH không thích hợp (SIADH) và hạ Natri máu do suy tim?",
     "options": [
-      "Thuốc ức chế thụ thể endothelin ETA tại cơ trơn mạch máu làm tăng đào thải muối nước mà không đổi nhịp tim",
-      "Thuốc đối kháng thụ thể Vasopressin V2 tại ống góp, gây thải trừ nước tự do mà không làm mất điện giải",
-      "Thuốc ức chế chọn lọc kênh rò rỉ Natri tại quai Henle làm tăng áp lực thẩm thấu dịch lọc và tăng bài niệu",
-      "Thuốc chủ vận thụ thể natriuretic peptid typ A tại tế bào nội mô mạch thận gây tăng lọc cầu thận rõ rệt"
+      "Ức chế thụ thể endothelin ETA tại cơ trơn mạch",
+      "Chủ vận thụ thể natriuretic peptid ở mạch thận",
+      "Chẹn kênh đồng vận chuyển ion natri quai Henle",
+      "Đối kháng thụ thể vasopressin V2 tại ống góp"
     ],
-    "correct": 1,
+    "correct": 3,
     "explanation": "Tolvaptan và Conivaptan là các chất đối kháng chọn lọc hoặc không chọn lọc thụ thể Vasopressin V2 (Vaptans) tại tế bào chính ống góp, ngăn cản sự di chuyển của các kênh dẫn nước Aquaporin-2 ra màng, làm tăng thải trừ nước tự do (Aquaresis) mà không làm mất điện giải, giúp nâng nồng độ Natri huyết tương.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -6511,10 +6511,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Vì sao Domperidon được ưa chuộng hơn Metoclopramid trong điều trị chứng trào ngược dạ dày thực quản và buồn nôn ở bệnh nhân cao tuổi?",
     "options": [
-      "Thuốc hầu như không qua hàng rào máu não nên rất hiếm khi gây tác dụng phụ ngoại tháp hoặc run ngón tay",
-      "Thuốc ức chế trực tiếp enzym bơm proton tại tế bào viền giúp kiểm soát acid tối ưu",
-      "Thuốc không bị chuyển hóa qua gan nên không cần hiệu chỉnh liều ở bệnh nhân xơ gan",
-      "Thuốc có thời gian bán thải sinh học kéo dài cho phép duy trì liều một lần mỗi tuần"
+      "Không qua hàng rào máu não và ít tác dụng phụ ngoại tháp",
+      "Không chuyển hóa qua gan và không gây suy giảm chức năng",
+      "Ức chế chọn lọc bơm proton và giảm tiết acid dịch vị dạ dày",
+      "Thời gian bán thải kéo dài và duy trì nồng độ thuốc ổn định"
     ],
     "correct": 0,
     "explanation": "Metoclopramid thân dầu qua được hàng rào máu não chẹn thụ thể D2 ở thể vân gây rối loạn vận động ngoại tháp (hội chứng Parkinson, loạn trương lực cấp, rối loạn vận động muộn). Domperidon khó qua hàng rào máu não nên rất ít nguy cơ này.",
@@ -6529,12 +6529,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Xét nghiệm vi khuẩn Helicobacter pylori bằng 'Test hơi thở Ure' (Urea Breath Test - UBT) đòi hỏi bệnh nhân phải ngừng sử dụng thuốc ức chế bơm proton (PPI) trong thời gian tối thiểu bao lâu trước khi làm test để tránh kết quả âm tính giả?",
     "options": [
-      "Ngừng trước 24 giờ",
-      "Ngừng tối thiểu 2 tuần (14 ngày)",
-      "Ngừng tối thiểu 3 tháng",
-      "Không cần ngừng thuốc nếu làm xét nghiệm vào buổi sáng"
+      "Tối thiểu 24 giờ",
+      "Tối thiểu 2 tuần",
+      "Tối thiểu 48 giờ",
+      "Tối thiểu một tháng"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "PPI ức chế sự nhân lên của H. pylori và ức chế hoạt tính enzym Urease của vi khuẩn. Dùng PPI gần ngày làm test sẽ làm enzym urease không phân giải được viên uống C13/C14-ure, gây kết quả âm tính giả. Bắt buộc ngừng PPI ít nhất 2 tuần và kháng sinh 4 tuần.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -6547,12 +6547,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Cơ chế tác dụng chống giun đũa và giun kim của Piperazin là gì?",
     "options": [
-      "Kích hoạt thụ thể nicotinic gây khử cực kéo dài và liệt cứng",
-      "Kích hoạt thụ thể GABA gây mở kênh clorid dẫn đến liệt mềm",
-      "Ức chế enzym fumarat reductase làm cạn kiệt nguồn năng lượng",
-      "Ức chế quá trình trùng hợp tubulin thành các vi ống bào tương"
+      "Kích hoạt thụ thể nicotinic gây liệt cứng",
+      "Ức chế phản ứng trùng hợp tubulin của giun",
+      "Kích hoạt thụ thể GABA gây liệt mềm cơ",
+      "Ức chế chọn lọc enzym fumarat reductase giun"
     ],
-    "correct": 1,
+    "correct": 2,
     "explanation": "Piperazin là chất chủ vận tại thụ thể GABA ở màng sau synap thần kinh cơ của giun. Mở kênh Clo gây ưu phân cực màng, làm cơ giun giãn hoàn toàn và bị liệt mềm (khác với liệt cứng của Pyrantel), giun sống bị nhu động ruột đẩy ra ngoài theo phân.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -6565,12 +6565,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tại sao khi điều trị bệnh ấu trùng sán dải lợn ở não (Neurocysticercosis) bằng Praziquantel hoặc Albendazol, bệnh nhân bắt buộc phải được điều trị phối hợp với Corticosteroid (Dexamethason)?",
     "options": [
-      "Để giảm phản ứng viêm và phù não kịch phát do xác ấu trùng sán giải phóng ra",
-      "Để làm tăng nồng độ đỉnh của thuốc diệt sán trong huyết tương và nhu mô não lên gấp mười lần",
-      "Để ngăn ngừa nguy cơ nhiễm nấm màng não và các vi khuẩn bội nhiễm cơ hội tại hệ thần kinh",
-      "Để kiểm soát tình trạng hạ glucose máu cấp tính do ấu trùng sán tiêu thụ năng lượng ồ ạt"
+      "Tăng nồng độ thuốc diệt sán trong dịch não tủy và nhu mô",
+      "Ngăn ngừa nhiễm nấm cơ hội và vi khuẩn tại màng não tủy",
+      "Kiểm soát hạ glucose máu cấp do ấu trùng sán tiêu thụ",
+      "Giảm phản ứng viêm và phù não khi ấu trùng sán chết"
     ],
-    "correct": 0,
+    "correct": 3,
     "explanation": "Khi thuốc diệt sán ngấm vào não giết chết các nang ấu trùng, kháng nguyên lạ thoát ra kích hoạt phản ứng viêm dữ dội xung quanh nang sán, gây phù não cấp tính bùng phát các cơn co giật, tăng áp lực nội sọ và tụt kẹt não tử vong. Corticosteroid dùng kèm giúp dập tắt phản ứng viêm này.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -6583,12 +6583,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Cromolyn natri và Nedocromil natri dự phòng cơn co thắt phế quản do dị ứng hoặc gắng sức theo cơ chế dược lý nào?",
     "options": [
-      "Giãn trực tiếp cơ trơn phế quản qua tăng cGMP",
-      "Chẹn thụ thể muscarinic tại hạch phó giao cảm",
-      "Làm ổn định màng tế bào dưỡng bào (Mast cell stabilizer), ngăn cản sự mất hạt và phóng thích các chất trung gian hóa học (Histamin, Leukotriene)",
-      "Ức chế trung khu hô hấp ở hành tủy"
+      "Ổn định màng dưỡng bào và ngăn phóng thích chất trung gian",
+      "Giãn trực tiếp cơ trơn phế quản thông qua tăng nồng độ cGMP",
+      "Chẹn chọn lọc thụ thể muscarinic M3 tại cơ trơn phế quản phổi",
+      "Kích thích chọn lọc thụ thể beta-2 giao cảm trên đường dẫn khí"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Cromolyn và Nedocromil chẹn các kênh Clo trên màng dưỡng bào, ức chế dòng Ca2+ đi vào, làm ổn định màng tế bào mast, ngăn chặn hiện tượng mất hạt giải phóng histamin và leukotriene khi có kháng nguyên kích thích. Thuốc chỉ dùng dự phòng, không có tác dụng cắt cơn.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -6655,10 +6655,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng phụ tăng nguy cơ hình thành sỏi mật Calci - Cholesterol (Gallstones / Cholelithiasis) là cảnh báo an toàn gắn liền với nhóm thuốc hạ mỡ máu nào?",
     "options": [
-      "Nhóm Fibrat (Fenofibrat, Gemfibrozil)",
-      "Nhóm thuốc ức chế PCSK9",
-      "Nhóm acid béo Omega-3 tinh chế",
-      "Nhóm thuốc Statin cường độ cao"
+      "Nhóm dẫn chất statin",
+      "Nhóm dẫn chất fibrat",
+      "Nhóm nhựa gắn acid mật",
+      "Nhóm ức chế men PCSK9"
     ],
     "correct": 1,
     "explanation": "Fibrat ức chế enzym 7-alpha-hydroxylase (bước giới hạn chuyển cholesterol thành acid mật), làm giảm tổng hợp acid mật và tăng bài tiết cholesterol tự do vào dịch mật. Tình trạng bão hòa cholesterol trong túi mật này dẫn đến dễ kết tinh và hình thành sỏi mật (cholelithiasis).",
@@ -6691,12 +6691,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Hiện tượng ký sinh trùng sốt rét Plasmodium falciparum kháng thuốc Chloroquin xuất phát từ cơ chế đột biến gen nào?",
     "options": [
-      "Đột biến enzym dihydrofolat reductase làm enzym không gắn thuốc",
-      "Đột biến protein vận chuyển màng Pfcrt (P. falciparum chloroquine resistance transporter), bơm tống Chloroquin ra khỏi không bào tiêu hóa",
-      "Ký sinh trùng ngừng hoàn toàn việc tiêu thụ hemoglobin",
-      "Tăng sinh lớp vỏ protein dày ngăn cản thuốc khuếch tán"
+      "Đột biến enzym dihydrofolat reductase",
+      "Đột biến enzym dihydropteroat synthase",
+      "Đột biến gen vận chuyển màng Pfcrt",
+      "Đột biến hệ enzym ty thể cytochrome b"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "Đột biến gen Pfcrt (đặc biệt là đột biến K76T) làm thay đổi điện tích protein vận chuyển màng không bào tiêu hóa, biến nó thành bơm tống thuốc chủ động tống Chloroquin mang điện tích dương ra khỏi không bào, làm nồng độ thuốc không đủ ức chế tạo hemozoin.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -6709,12 +6709,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Khi điều trị bệnh Parkinson, việc phối hợp Levodopa với Carbidopa (hoặc Benserazid) mang lại ưu thế dược động học quyết định nào?",
     "options": [
-      "Carbidopa vượt qua hàng rào máu não kích thích trực tiếp quá trình tổng hợp và giải phóng dopamin tại vỏ não",
-      "Carbidopa làm tăng bài tiết acid uric và tăng thanh thải levodopa qua nước tiểu để tránh lắng đọng ở thận",
-      "Carbidopa ức chế dopa-decarboxylase ngoại vi giúp bảo vệ levodopa vào não và giảm tác dụng phụ ngoại biên",
-      "Carbidopa đóng vai trò chất đối kháng thụ thể muscarinic tại thể vân giúp khôi phục cân bằng cholinergic"
+      "Kích thích tổng hợp và giải phóng dopamin tại vùng vỏ não",
+      "Tăng bài tiết acid uric và tăng thanh thải qua nước tiểu",
+      "Đối kháng chọn lọc thụ thể muscarinic tại thể vân của não",
+      "Ức chế dopa decarboxylase ngoại vi và tăng lượng vào não"
     ],
-    "correct": 2,
+    "correct": 3,
     "explanation": "Dopamin không qua được hàng rào máu não nhưng Levodopa qua được. Enzym Dopa-decarboxylase ở ngoại vi chuyển hóa 99% Levodopa thành dopamin ngay ngoài máu gây nôn mửa và tụt HA. Carbidopa chỉ ức chế enzym này ở ngoại vi (không vào não), bảo vệ Levodopa vào não tăng gấp 5 lần và triệt tiêu tác dụng phụ ngoại vi.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -6745,10 +6745,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Teriparatide là một đoạn peptid tái tổ hợp của hormon tuyến cận giáp người (rhPTH 1-34) có tác dụng kích thích tạo xương mạnh mẽ trong điều trị loãng xương nặng khi được sử dụng theo chế độ liều nào?",
     "options": [
-      "Tiêm dưới da ngắt quãng mỗi ngày một lần nhằm kích thích ưu thế hoạt động của tế bào tạo cốt bào",
-      "Truyền tĩnh mạch liên tục 24 giờ mỗi ngày bằng bơm tiêm điện để duy trì nồng độ thuốc hằng định",
-      "Uống liều cao định kỳ mỗi tuần một lần cùng bữa ăn nhiều chất béo để tối ưu hóa khả năng hấp thu",
-      "Cấy que phóng thích chậm dưới da để duy trì nồng độ thuốc cao liên tục trong cơ thể suốt 5 năm"
+      "Tiêm dưới da ngắt quãng một lần mỗi ngày",
+      "Truyền tĩnh mạch liên tục bằng bơm tiêm điện",
+      "Uống liều cao định kỳ một lần trong mỗi tuần",
+      "Cấy que phóng thích chậm liên tục dưới da bụng"
     ],
     "correct": 0,
     "explanation": "Nồng độ PTH cao liên tục (như trong cường cận giáp) sẽ kích thích hủy xương. Tuy nhiên, khi tiêm dưới da ngắt quãng 1 lần mỗi ngày (pulsatile administration), nồng độ Teriparatide tăng đỉnh ngắn hạn sẽ kích thích ưu thế các tế bào tạo cốt bào (osteoblast) tổng hợp chất nền xương mới.",
@@ -6781,12 +6781,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng không mong muốn phổ biến nhất khiến nhiều bệnh nhân phải ngừng thuốc Acarbose là gì do lượng carbohydrate không tiêu hóa bị đẩy xuống đại tràng?",
     "options": [
-      "Táo bón kéo dài kèm theo trướng bụng và suy giảm nhu động ruột đại tràng",
-      "Viêm trợt niêm mạc thực quản dưới do trào ngược dịch tiêu hóa có tính acid",
-      "Đầy hơi, chướng bụng, sôi bụng, tăng trung tiện và tiêu chảy do lên men đường",
-      "Xuất huyết niêm mạc đường tiêu hóa trên do tổn thương bào mòn thành dạ dày"
+      "Táo bón kéo dài, chướng bụng và tắc liệt ruột",
+      "Đầy hơi, chướng bụng, trung tiện và tiêu chảy",
+      "Viêm loét niêm mạc thực quản và trào ngược acid",
+      "Xuất huyết đường tiêu hóa trên và viêm trợt dạ dày"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "Carbohydrate không được hấp thu ở ruột non sẽ trôi xuống ruột già, bị hệ vi khuẩn kỵ khí đại tràng lên men yếm khí sinh ra nhiều khí (H2, CO2, CH4) và acid béo chuỗi ngắn, gây chướng bụng đầy hơi, sôi bụng, trung tiện liên tục và tiêu chảy phân lỏng.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -6817,10 +6817,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thuốc tiêu sợi huyết Alteplase (recombinant tissue plasminogen activator - rtPA) làm tan cục huyết khối thông qua phản ứng enzym sinh học nào?",
     "options": [
-      "Thủy phân trực tiếp các liên kết peptid của thrombin nhằm phân giải hoàn toàn cấu trúc enzym",
-      "Bất hoạt yếu tố mười ba hoạt hóa làm phân rã các liên kết chéo fibrin polymer trong cục huyết khối",
-      "Hoạt hóa plasminogen thành plasmin giúp tiêu hủy trực tiếp mạng lưới fibrin của cục máu đông",
-      "Tăng cường hoạt tính đồng vận của protein S giúp antithrombin bất hoạt các enzym tiền đông máu"
+      "Thủy phân trực tiếp liên kết peptid của thrombin",
+      "Bất hoạt yếu tố đông máu mười ba đã được hoạt hóa",
+      "Chuyển plasminogen thành plasmin tiêu hủy fibrin",
+      "Tăng cường hoạt tính đồng vận protein S và protein C"
     ],
     "correct": 2,
     "explanation": "Alteplase là chất hoạt hóa plasminogen mô tái tổ hợp (rtPA), có ái lực rất cao với fibrin trong cục huyết khối. Tại bề mặt cục đông, Alteplase chuyển hóa plasminogen gắn fibrin thành plasmin; plasmin là enzym protease tiêu hủy mạng lưới fibrin làm tan cục huyết khối tái thông mạch máu.",
@@ -6889,10 +6889,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Sofosbuvir là một hoạt chất mang tính cách mạng trong điều trị dứt điểm viêm gan virus C (HCV) mạn tính có cơ chế tác dụng phân tử là gì?",
     "options": [
-      "Ức chế protease NS3/4A làm gián đoạn phân cắt polyprotein của virus",
-      "Ức chế phức hợp phosphoprotein NS5A cản trở sao chép và đóng gói virion",
-      "Chẹn thụ thể CD81 và claudin-1 trên màng tế bào gan ngăn virus xâm nhập",
-      "Chất tương tự nucleotid ức chế enzym RNA polymerase NS5B gây kết thúc sớm chuỗi ARN"
+      "Ức chế enzym serine protease NS3/4A của virus",
+      "Ức chế phức hợp phosphoprotein NS5A của virus",
+      "Chẹn thụ thể xâm nhập CD81 trên màng tế bào gan",
+      "Ức chế enzym RNA polymerase NS5B của virus"
     ],
     "correct": 3,
     "explanation": "Sofosbuvir là một tiền chất nucleotide (dẫn xuất uridin), được chuyển hóa trong tế bào gan thành dạng có hoạt tính triphosphate (GS-461203). Dạng này cạnh tranh với UTP, gắn vào chuỗi RNA đang tổng hợp bởi enzym NS5B RNA polymerase của HCV gây kết thúc sớm chuỗi sao chép, chữa khỏi > 95% viêm gan C.",
@@ -6925,12 +6925,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Dimercaprol (BAL - British Anti-Lewisite) là thuốc gắp kim loại nặng qua đường tiêm bắp sâu được phát minh trong thế chiến để giải độc kim loại nào?",
     "options": [
-      "Ngộ độc muối Calci clorid",
-      "Ngộ độc Thạch tín (Asen), Thủy ngân và Vàng",
-      "Ngộ độc Kali clorid",
-      "Ngộ độc Nhôm phosphat"
+      "Ngộ độc asen, thủy ngân và muối vàng",
+      "Ngộ độc chì nặng kèm tổn thương não",
+      "Ngộ độc sắt cấp tính và mạn tính nặng",
+      "Ngộ độc nhôm phosphat và magnesi sulfat"
     ],
-    "correct": 2,
+    "correct": 0,
     "explanation": "Dimercaprol (BAL) chứa hai nhóm thiol (-SH) cạnh nhau, cạnh tranh với các enzym của tế bào để liên kết với các kim loại nặng có độc tính ái lực cao với nhóm -SH như Asen (thạch tín), Thủy ngân vô cơ và muối Vàng, tạo phức hợp vòng 5 cạnh bền vững đào thải qua nước tiểu và đường mật.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -7051,12 +7051,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Rối loạn điện giải nào sau đây thường đi kèm với tình trạng nhiễm kiềm chuyển hóa khi sử dụng thuốc lợi tiểu quai hoặc Thiazid liều cao kéo dài?",
     "options": [
-      "Tăng Natri máu và tăng Calci máu",
+      "Hạ Kali máu và hạ Magnesi máu",
       "Tăng Kali máu và tăng Magnesi máu",
-      "Hạ Kali máu (Hypokalemia) và hạ Magnesi máu (Hypomagnesemia)",
-      "Hạ Natri máu nhưng tăng Kali máu ưu thế"
+      "Hạ Natri máu và tăng Calci máu",
+      "Tăng Natri máu và tăng Kali máu"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Thiazid và Lợi tiểu quai làm tăng lượng Na+ và dịch chảy đến ống góp. Để tái hấp thu Na+, tế bào biểu mô ống góp tăng bài tiết K+ và H+ vào nước tiểu $\\rightarrow$ gây hạ K+ máu và nhiễm kiềm chuyển hóa; đồng thời thuốc cũng làm tăng đào thải Mg2+ qua nước tiểu gây hạ Mg2+ máu.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -7105,12 +7105,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng phụ viêm đại tràng giả mạc do vi khuẩn Clostridioides difficile (C. diff) bùng phát có nguy cơ gia tăng ở bệnh nhân dùng PPI dài ngày chủ yếu do nguyên nhân nào?",
     "options": [
-      "Thuốc làm tăng tính thấm mao mạch mạc treo ruột đối với độc tố vi khuẩn",
-      "PPI trực tiếp kích thích sự nảy mầm của nha bào vi khuẩn kỵ khí",
-      "Mất đi hàng rào acid dạ dày bảo vệ tự nhiên tạo điều kiện cho các nha bào vi khuẩn sống sót vượt qua dạ dày xuống đại tràng phát triển",
-      "PPI phá hủy lớp vi nhung mao của tế bào biểu mô đại tràng"
+      "Kích thích trực tiếp sự nảy mầm của các nha bào kỵ khí",
+      "Mất hàng rào acid dịch vị bảo vệ tự nhiên của dạ dày",
+      "Tăng tính thấm màng mao mạch mạc treo với độc tố vi khuẩn",
+      "Phá hủy lớp vi nhung mao trên bề mặt tế bào biểu mô ruột"
     ],
-    "correct": 3,
+    "correct": 1,
     "explanation": "Môi trường acid dịch vị dạ dày bình thường (pH 1.5 - 2) là hàng rào tiêu diệt hầu hết vi khuẩn và nha bào xâm nhập qua đường tiêu hóa. PPI làm tăng pH dạ dày triệt tiêu hàng rào này, tạo điều kiện cho nha bào Clostridioides difficile sống sót và bùng phát ở đại tràng.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -7159,12 +7159,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thuốc kháng H1 Diphenhydramin thường được thêm vào thành phần của các thuốc ngủ không kê đơn (OTC sleep aids) nhờ tác dụng dược lý nào?",
     "options": [
-      "Tác dụng an thần gây ngủ mạnh do chẹn thụ thể H1 trung ương và thụ thể Muscarinic trong não",
-      "Tác dụng hạ huyết áp qua giãn tiểu động mạch cảnh",
-      "Tác dụng làm giảm thân nhiệt qua ức chế trung tâm điều nhiệt",
-      "Tác dụng kích thích giải phóng melatonin từ tuyến tùng"
+      "Giãn tiểu động mạch cảnh và giảm sức cản ngoại vi",
+      "Kích thích tuyến tùng gia tăng tổng hợp melatonin",
+      "Chẹn thụ thể H1 và muscarinic ở thần kinh trung ương",
+      "Ức chế trung tâm điều nhiệt ở vùng dưới đồi thể tạng"
     ],
-    "correct": 1,
+    "correct": 2,
     "explanation": "Diphenhydramin có tác dụng an thần và gây ngủ rất mạnh, làm rút ngắn thời gian tiềm tàng vào giấc ngủ, do đó thường được bào chế trong các thuốc ngủ không kê đơn (như Nytol, Sominex) hoặc kết hợp hạ sốt giảm đau ban đêm (Panadol ban đêm).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -7321,10 +7321,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Một bệnh nhân trầm cảm đang dùng thuốc ức chế enzym Monoamine Oxidase (MAOI) ăn thực phẩm giàu Tyramine (như phô mai lên men lâu năm, rượu vang đỏ) xuất hiện cơn tăng huyết áp kịch phát đe dọa đột quỵ não. Đây là hiện tượng tương tác nổi tiếng nào?",
     "options": [
-      "Hội chứng xơ vữa động mạch cấp tính kèm theo vỡ mảng xơ vữa và thuyên tắc mạch tạng",
-      "Hội chứng ngộ độc thức ăn do độc tố tụ cầu gây viêm dạ dày ruột và sốc giảm thể tích",
-      "Hội chứng nhược cơ ác tính gây yếu liệt cơ hô hấp do cạn kiệt acetylcholin tiền synap",
-      "Hiệu ứng phô mai do tyramine không bị giáng hóa, vào máu kích thích giải phóng noradrenalin"
+      "Cơn bão giao cảm kịch phát",
+      "Hội chứng suy tủy ác tính",
+      "Hội chứng serotonin cấp tính",
+      "Hiệu ứng phô mai điển hình"
     ],
     "correct": 3,
     "explanation": "Tyramine trong phô mai, rượu vang bình thường bị enzym MAO-A ở ruột và gan phân hủy hoàn toàn. Khi dùng thuốc MAOI, enzym bị phong bế khiến Tyramine hấp thu nguyên vẹn vào máu, vào tận cùng thần kinh giao cảm đẩy Noradrenalin dự trữ ra ngoài ồ ạt, gây co mạch dữ dội và cơn tăng huyết áp ác tính.",
@@ -7357,12 +7357,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Fludrocortison là một dẫn xuất steroid tổng hợp được chỉ định trong điều trị suy vỏ thượng thận nguyên phát (Bệnh Addison) nhờ đặc tính nổi trội nào?",
     "options": [
-      "Có hoạt tính Mineralocorticoid (giữ muối nước) cực kỳ mạnh mẽ, cao gấp hơn 100 lần so với hoạt tính chống viêm",
-      "Chỉ tác dụng trên thụ thể glucocorticoid ở màng não",
-      "Không bao giờ gây tăng huyết áp dù dùng liều cao",
-      "Có khả năng kích thích tuyến tụy tăng tiết insulin"
+      "Hoạt tính mineralocorticoid giữ muối nước rất mạnh",
+      "Hoạt tính glucocorticoid kháng viêm chọn lọc tại não",
+      "Kích thích các tế bào đảo tụy tăng cường tiết insulin",
+      "Tăng tổng hợp hormon aldosteron nội sinh ở vỏ thượng thận"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Fludrocortison có tác dụng giữ muối nước (mineralocorticoid) cực mạnh, gấp 125-250 lần hydrocortison, trong khi tác dụng kháng viêm chỉ gấp 10 lần. Thuốc được dùng bổ sung tác dụng giữ muối nước thay thế aldosteron trong bệnh suy thượng thận nguyên phát Addison.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -7375,10 +7375,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Insulin tác dụng nhanh (Rapid-acting insulin analogues như Lispro, Aspart, Glulisine) có ưu thế khởi phát tác dụng cực nhanh (sau 10 - 15 phút) nhờ thay đổi cấu trúc nào ngăn cản sự tự kết hợp phân tử?",
     "options": [
-      "Đột biến đảo vị trí các acid amin ở đầu C của chuỗi B, ngăn cản các phân tử insulin monomer tự kết hợp thành dạng hexamer bền vững",
-      "Gắn thêm chuỗi acid béo 14 carbon vào chuỗi A",
+      "Gắn thêm chuỗi acid béo mười bốn carbon vào chuỗi A",
+      "Thay đổi acid amin chuỗi B ngăn cản tự tạo hexamer",
       "Bổ sung phức hợp kẽm protamin tạo tinh thể lắng đọng",
-      "Gia tăng cầu nối disulfid nội phân tử làm phân tử bền vững"
+      "Tăng số lượng cầu nối disulfid nội phân tử trong chuỗi"
     ],
     "correct": 1,
     "explanation": "Insulin người thông thường ở nồng độ cao tự trùng hợp thành dạng hexamer (6 phân tử) chậm phân ly. Lispro (đảo vị trí ProB28 và LysB29) và Aspart (thay ProB28 bằng Asp) làm giảm tương tác kỵ nước, ngăn tạo hexamer, phân tử tồn tại dạng monomer hấp thu vào máu cực nhanh sau 10-15 phút.",
@@ -7393,12 +7393,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Insulin tác dụng kéo dài Glargine (Lantus) duy trì nồng độ đáy phẳng, không có đỉnh (Peakless) kéo dài 24 giờ nhờ đặc tính hóa lý độc đáo nào tại vị trí tiêm dưới da?",
     "options": [
-      "Thuốc được bao bọc trong các hạt liposome giải phóng chậm",
-      "Gắn thuận nghịch với albumin huyết tương thông qua chuỗi acid myristic",
-      "Dung dịch thuốc có pH acid (pH 4.0), khi tiêm vào mô dưới da có pH sinh lý (pH 7.4) sẽ kết tủa tạo thành các hạt vi tinh thể giải phóng monomer cực kỳ chậm và đều đặn",
-      "Bị đại thực bào dưới da thực bào và nhả dần ra máu"
+      "Bao bọc trong hạt liposome phóng thích chậm kéo dài",
+      "Gắn thuận nghịch albumin huyết tương qua chuỗi acid béo",
+      "Kết tủa vi tinh thể ở mô dưới da tại pH sinh lý 7,4",
+      "Đại thực bào tại mô dưới da thực bào và nhả dần vào máu"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "Insulin Glargine hòa tan hoàn toàn ở pH 4.0 trong lọ thuốc. Khi tiêm dưới da có pH trung tính 7.4, thuốc bị trung hòa và kết tủa thành các vi tinh thể (microprecipitates). Các tinh thể này giải phóng monomer insulin cực chậm và đều đặn vào mao mạch, tạo đường cong nồng độ phẳng không đỉnh kéo dài 24h.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -7465,12 +7465,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Phụ nữ mang thai được khuyến cáo bổ sung Acid Folic (Vitamin B9) trước khi thụ thai và trong 3 tháng đầu thai kỳ nhằm mục đích phòng ngừa dị tật bẩm sinh nguy hiểm nào ở thai nhi?",
     "options": [
-      "Dị tật tim bẩm sinh bao gồm thông liên thất và còn ống động mạch cảnh",
-      "Dị tật hệ vận động như trật khớp háng bẩm sinh và loạn sản xương sụn",
-      "Các dị tật ống thần kinh nghiêm trọng như tật nứt đốt sống và thai vô sọ",
-      "Dị tật đường tiêu hóa gồm teo hẹp thực quản và hở thành bụng bẩm sinh"
+      "Dị tật tim bẩm sinh còn ống động mạch",
+      "Dị tật trật khớp háng và loạn sản sụn",
+      "Dị tật tiêu hóa teo thực quản bẩm sinh",
+      "Dị tật ống thần kinh nứt đốt sống"
     ],
-    "correct": 2,
+    "correct": 3,
     "explanation": "Ống thần kinh thai nhi đóng lại vào ngày thứ 28 sau thụ thai. Thiếu Acid Folic làm rối loạn tổng hợp purin/pyrimidin phân chia tế bào thần kinh, gây dị tật ống thần kinh (nứt đốt sống, thoát vị màng não tủy, thai vô sọ). Bổ sung 400 mcg - 5 mg acid folic/ngày giúp giảm tới 70% nguy cơ dị tật này.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -7537,12 +7537,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thuốc kháng virus dạng xịt hít Ribavirin được chỉ định điều trị nhiễm virus nào ở trẻ nhỏ có suy hô hấp nặng?",
     "options": [
-      "Virus cúm gia cầm H5N1",
-      "Virus hợp bào hô hấp (RSV - Respiratory Syncytial Virus) gây viêm tiểu phế quản nặng ở trẻ sơ sinh",
-      "Virus sởi thể ác tính",
-      "Virus thủy đậu biến chứng thần kinh"
+      "Virus hợp bào hô hấp RSV",
+      "Virus cúm gia cầm A H5N1",
+      "Virus thủy đậu biến chứng",
+      "Virus gây bệnh sởi ác tính"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Khí dung Ribavirin là chỉ định được phê chuẩn trong điều trị viêm phổi và viêm tiểu phế quản nặng do virus hợp bào hô hấp (RSV) ở trẻ sơ sinh và trẻ nhỏ có nguy cơ cao (bệnh tim bẩm sinh, đẻ non). Ribavirin ức chế enzym inosine monophosphate dehydrogenase của virus.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -7645,12 +7645,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tương tác thuốc làm giảm hấp thu các hoạt chất kháng nấm đường uống như Ketoconazol hoặc Itraconazol khi dùng chung với PPI hoặc Antacid xảy ra do cơ chế nào?",
     "options": [
-      "Tạo phức chelate không tan với các cation kim loại trong lòng ruột ngăn cản hấp thu",
-      "Kích thích enzym cytochrom P450 tại gan làm tăng thoái giáng thuốc kháng nấm nhanh chóng",
-      "Thuốc là base yếu cần môi trường acid dạ dày để ion hóa và hòa tan giúp hấp thu vào máu",
-      "Cạnh tranh vị trí liên kết với albumin huyết tương làm tăng đào thải thuốc qua cầu thận"
+      "Tạo phức chelate không tan với ion kim loại lòng ruột",
+      "Tăng pH dạ dày làm giảm hòa tan thuốc kháng nấm",
+      "Cảm ứng enzym cytochrom P450 làm tăng thoái giáng gan",
+      "Cạnh tranh vị trí gắn albumin làm tăng đào thải thận"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "Các thuốc kháng nấm nhóm Azol (Ketoconazol, Itraconazol) có tính base yếu, cần pH acid mạnh của dạ dày để hòa tan. PPI, kháng H2 hoặc Antacid làm tăng pH dạ dày khiến các thuốc này không hòa tan được và bị đào thải ra ngoài theo phân, dẫn đến thất bại điều trị.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -7681,12 +7681,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thuốc giảm ho ngoại vi Benzonatat có cơ chế tác dụng phân tử đặc thù nào giúp làm dịu phản xạ ho?",
     "options": [
-      "Kích thích thụ thể opioid delta tại hành não",
-      "Gây tê niêm mạc đường thở thông qua ức chế thụ thể kéo giãn (stretch receptors) tại đường dẫn khí và màng phổi",
-      "Làm tăng tiết dịch nhầy bảo vệ niêm mạc khí phế quản",
-      "Ức chế enzym tổng hợp acetylcholin tại tận cùng thần kinh X"
+      "Kích thích thụ thể opioid delta tại trung khu hành não",
+      "Tăng tiết dịch nhầy bảo vệ niêm mạc đường khí phế quản",
+      "Ức chế thụ thể kéo giãn tại niêm mạc đường dẫn khí",
+      "Chẹn tổng hợp acetylcholin tại ngọn dây thần kinh mười"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "Benzonatat có cấu trúc tương tự thuốc gây tê tại chỗ tetracain. Thuốc ức chế các thụ thể kéo giãn cảm giác ho (stretch receptors) tại niêm mạc khí phế quản và màng phổi, làm gián đoạn cung phản xạ ho ngoại biên mà không ức chế trung khu hô hấp.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -7736,11 +7736,11 @@ const DUOCLY2_EXAM_BANK = [
     "question": "Hoạt chất kháng H1 thế hệ 2 nào sau đây có thời gian khởi phát tác dụng nhanh nhất (chỉ sau 15 đến 30 phút) và có dạng viên ngậm phân tán trong miệng rất tiện dụng cho bệnh nhân bị mày đay cấp?",
     "options": [
       "Loratadin",
-      "Cetirizin (hoặc Levocetirizin)",
       "Fexofenadin",
-      "Astemizol"
+      "Desloratadin",
+      "Cetirizin"
     ],
-    "correct": 2,
+    "correct": 3,
     "explanation": "Cetirizin hấp thu rất nhanh qua đường tiêu hóa, nồng độ đỉnh trong huyết tương đạt được sau 30-60 phút và tác dụng kháng histamin xuất hiện chỉ sau 20 phút, nhanh hơn đáng kể so với Loratadin và Fexofenadin, rất thích hợp dập tắt triệu chứng ngứa mày đay cấp.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -7753,12 +7753,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Hiện tượng giãn mạch và tăng tính thấm thành mạch trong phản ứng dị ứng mày đay cấp tính do Histamin được trung gian bởi cơ chế nội mô nào?",
     "options": [
-      "Ức chế tổng hợp prostaglandin I2 tại màng tế bào nội mô",
-      "Chẹn kênh calci làm cơ trơn thành mạch mất trương lực",
-      "Kích thích thụ thể H1 trên tế bào nội mô làm giải phóng Nitric Oxid (NO) và làm co rút các tế bào nội mô tạo khe hở thoát dịch vào mô kẽ",
-      "Phá hủy mạng lưới collagen ngoại bào của thành mạch"
+      "Thụ thể H1 giải phóng NO và co rút nội mô",
+      "Ức chế tổng hợp prostacyclin tại nội mô",
+      "Chẹn kênh calci làm mất trương lực mạch",
+      "Thủy phân collagen phá hủy cấu trúc mạch"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Histamin gắn vào thụ thể H1 trên tế bào nội mô mao mạch kích hoạt eNOS sản sinh NO gây giãn tiểu động mạch; đồng thời kích hoạt các sợi actin/myosin làm tế bào nội mô co tròn lại, mở rộng khe hở giữa các tế bào (endothelial gaps) cho huyết tương thoát ra ngoài gây sẩn phù (wheal).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -7771,10 +7771,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tác dụng phụ làm tăng men gan (tăng AST/ALT gấp trên 3 lần giới hạn trên bình thường) khi sử dụng Statin thường có đặc điểm lâm sàng nào sau đây?",
     "options": [
-      "Thường xuất hiện sớm trong 3 tháng đầu, phụ thuộc vào liều dùng và có tính chất hồi phục hoàn toàn khi giảm liều hoặc ngừng thuốc",
-      "Tiến triển không hồi phục dẫn tới xơ gan mất bù trong vòng 1 năm",
-      "Chỉ xảy ra ở bệnh nhân nữ mang kiểu gen chậm chuyển hóa",
-      "Luôn đi kèm với tình trạng suy thận cấp hoại tử biểu mô"
+      "Tiến triển không hồi phục gây xơ gan mất bù",
+      "Phụ thuộc liều và hồi phục khi ngừng thuốc",
+      "Chỉ xuất hiện ở người có gen chuyển hóa chậm",
+      "Luôn đi kèm hoại tử ống thận cấp gây vô niệu"
     ],
     "correct": 1,
     "explanation": "Tăng men gan không triệu chứng xảy ra ở khoảng 0.5-2% người dùng Statin, phụ thuộc liều dùng và thường xuất hiện trong 12 tuần đầu điều trị. Hiện tượng này thường tự giới hạn hoặc hồi phục hoàn toàn về mức bình thường khi giảm liều hoặc ngưng thuốc, rất hiếm khi gây tổn thương gan thực thể.",
@@ -7789,12 +7789,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Chế phẩm acid béo Omega-3 tinh chế chứa Icosapent ethyl (dẫn xuất ethyl ester của EPA) được chứng minh trong thử nghiệm lâm sàng REDUCE-IT giúp giảm đáng kể biến cố tim mạch ở bệnh nhân nào?",
     "options": [
-      "Bệnh nhân có tăng cholesterol máu đơn thuần có nồng độ triglycerid bình thường",
-      "Bệnh nhân có bệnh tim mạch xơ vữa đã điều trị Statin nhưng vẫn còn tồn dư tăng Triglycerid máu (135 - 499 mg/dL)",
-      "Bệnh nhân tăng huyết áp kịch phát kèm suy thận mạn giai đoạn cuối",
-      "Trẻ em bị hội chứng thận hư tái phát"
+      "Tăng cholesterol đơn thuần có triglycerid bình thường",
+      "Tăng huyết áp kịch phát kèm theo suy thận mạn",
+      "Xơ vữa mạch dùng statin còn tăng triglycerid tồn dư",
+      "Trẻ em mắc hội chứng thận hư tái phát kháng corticoid"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "Thử nghiệm REDUCE-IT chứng minh Icosapent ethyl (EPA tinh chế liều cao 4g/ngày) làm giảm 25% các biến cố tim mạch lớn (tử vong do tim, nhồi máu cơ tim, đột quỵ) ở bệnh nhân có xơ vữa mạch máu hoặc đái tháo đường đang dùng statin nhưng vẫn còn tình trạng tăng triglycerid máu tồn dư.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -7825,10 +7825,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Trong 3 tháng đầu thai kỳ (quý 1), nếu thai phụ mắc sốt rét thông thường do P. falciparum, hướng dẫn quốc gia hiện nay khuyến cáo phác đồ an toàn nào?",
     "options": [
-      "Phác đồ Primaquin phối hợp Mefloquin",
-      "Phác đồ Quinin uống kết hợp Clindamycin trong 7 ngày",
-      "Phác đồ Doxycyclin liều cao trong 14 ngày",
-      "Phác đồ Fansidar liều duy nhất mỗi tuần"
+      "Primaquin phối hợp Mefloquin trong ba ngày",
+      "Doxycyclin phối hợp Artesunat trong bảy ngày",
+      "Fansidar liều duy nhất mỗi tuần trong thai kỳ",
+      "Quinin phối hợp Clindamycin trong bảy ngày"
     ],
     "correct": 3,
     "explanation": "Trong quý 1 thai kỳ, các thuốc nhóm Artemisinin có nguy cơ tiêu thai trên động vật thực nghiệm (chỉ dùng khi ác tính nguy cơ tử vong cao). Phác đồ an toàn nhất được khuyến cáo cho thai phụ quý 1 là Quinin sulfat uống phối hợp với Clindamycin trong 7 ngày.",
@@ -7915,10 +7915,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Biến chứng teo mô mỡ (Lipoatrophy) hoặc phì đại mô mỡ (Lipohypertrophy) tại vị trí tiêm Insulin dưới da thường xảy ra do nguyên nhân nào và làm ảnh hưởng ra sao đến điều trị?",
     "options": [
-      "Tiêm lặp lại tại một vị trí làm hấp thu insulin thất thường dẫn đến đường huyết dao động khó kiểm soát",
-      "Phản ứng dị ứng qua trung gian kháng thể IgE với tá dược bảo quản gây teo xơ các tổ chức liên kết da",
-      "Vi khuẩn kỵ khí xâm nhập tại vết kim tiêm gây viêm mủ mô bào mạn tính phá hủy cấu trúc đệm dưới da",
-      "Insulin kích thích tăng sinh quá mức tế bào sừng thượng bì tạo các khối u xơ biểu mô lành tính dưới da"
+      "Tiêm lặp lại một vị trí làm hấp thu insulin thất thường",
+      "Phản ứng dị ứng IgE làm teo xơ tổ chức liên kết dưới da",
+      "Vi khuẩn kỵ khí xâm nhập gây viêm mủ mạn tính mô dưới da",
+      "Kích thích quá mức tế bào thượng bì tạo khối u xơ biểu mô"
     ],
     "correct": 0,
     "explanation": "Lipohypertrophy xuất phát từ tác dụng kích thích đồng hóa tại chỗ của insulin khi tiêm liên tục tại cùng một điểm. Mô mỡ bị xơ hóa và phì đại làm cản trở và làm chậm tốc độ hấp thu insulin thất thường, gây ra các cơn tăng đường huyết không giải thích được hoặc hạ đường huyết muộn.",
@@ -7933,12 +7933,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Phân biệt giữa 'Hiệu ứng Somogyi' và 'Hiện tượng Bình minh' (Dawn phenomenon) ở bệnh nhân đái tháo đường có tăng đường huyết lúc sáng sớm dựa trên đặc điểm sinh lý nào?",
     "options": [
-      "Cả hai đều có nồng độ đường huyết lúc nửa đêm (2h - 3h sáng) tăng rất cao",
-      "Hiệu ứng Somogyi có hạ đường huyết lúc 2h - 3h sáng kích hoạt hormon phản điều hòa gây tăng đường huyết dội ngược; còn Hiện tượng Bình minh đường huyết 2h - 3h sáng bình thường hoặc tăng do tăng tiết GH và Cortisol sinh lý",
-      "Hiệu ứng Somogyi chỉ xảy ra ở bệnh nhân đái tháo đường typ 2 dùng Metformin",
-      "Hiện tượng Bình minh chỉ xuất hiện khi bệnh nhân ăn quá nhiều vào bữa tối"
+      "Cả hai tình trạng đều có đường huyết nửa đêm tăng cao",
+      "Somogyi có hạ đường huyết nửa đêm còn Bình minh thì không",
+      "Somogyi chỉ xuất hiện khi điều trị bằng metformin kéo dài",
+      "Hiện tượng Bình minh chỉ xảy ra khi bệnh nhân ăn quá nhiều"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "Đo đường huyết lúc 3 giờ sáng: Nếu đường huyết < 70 mg/dL là Hiệu ứng Somogyi (hạ đường huyết ban đêm kích thích tiết glucagon, cortisol, epinephrine làm đường huyết sáng tăng vọt $\\rightarrow$ cần giảm liều insulin ban đêm). Nếu đường huyết 3h sáng bình thường hoặc cao là Hiện tượng Bình minh (do đỉnh tiết GH/cortisol $\\rightarrow$ cần tăng liều insulin ban đêm).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -7951,12 +7951,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Chống chỉ định quan trọng nhất và phổ biến nhất của thuốc chống đông đường uống Warfarin cần ghi nhớ trong dược lâm sàng là đối tượng nào?",
     "options": [
-      "Bệnh nhân có van tim nhân tạo cơ học ở vị trí van 2 lá",
-      "Phụ nữ sau mãn kinh có nguy cơ loãng xương",
-      "Phụ nữ mang thai (đặc biệt trong 3 tháng đầu thai kỳ) do nguy cơ gây dị tật phôi thai (Hội chứng Warfarin bào thai) và xuất huyết thai nhi",
-      "Bệnh nhân bị thuyên tắc tĩnh mạch sâu chi dưới lần đầu"
+      "Bệnh nhân có van tim nhân tạo cơ học",
+      "Bệnh nhân thuyên tắc tĩnh mạch sâu",
+      "Phụ nữ đang trong thời kỳ mang thai",
+      "Phụ nữ sau mãn kinh có loãng xương"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "Warfarin qua được nhau thai rất dễ dàng. Dùng trong 3 tháng đầu gây hội chứng Warfarin thai nhi (khiếm khuyết xương mũi lõm, loạn sản đầu xương có đốm, teo dây thị giác, chậm phát triển trí tuệ) và gây xuất huyết não thai nhi trong quý 2-3. Thuốc chống chỉ định tuyệt đối trong thai kỳ (thay bằng LMWH).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -7969,12 +7969,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tại sao bệnh nhân cần phẫu thuật lớn theo chương trình (như mổ bắt con, phẫu thuật tim mạch) bắt buộc phải ngừng thuốc Aspirin trước ngày phẫu thuật ít nhất 7 đến 10 ngày?",
     "options": [
-      "Giúp các enzym cytochrom P450 tại gan phục hồi khả năng chuyển hóa và đào thải thuốc gây mê phẫu thuật",
-      "Giúp hệ thống bài tiết ở thận phục hồi khả năng điều hòa thăng bằng điện giải và thể tích dịch ngoại bào",
-      "Do aspirin ức chế COX-1 không hồi phục nên cần chờ tủy sinh lứa tiểu cầu mới có chức năng bình thường",
-      "Tránh tương tác làm giảm nồng độ kháng sinh dự phòng nhiễm khuẩn và giảm tác dụng thuốc giãn cơ dùng kèm"
+      "Phục hồi hoàn toàn khả năng chuyển hóa của hệ enzym gan",
+      "Phục hồi chức năng lọc cầu thận và thăng bằng kiềm toan",
+      "Tránh tương tác làm giảm nồng độ kháng sinh dự phòng mổ",
+      "Chờ tủy xương sinh lứa tiểu cầu mới có chức năng đông máu"
     ],
-    "correct": 2,
+    "correct": 3,
     "explanation": "Tiểu cầu bị aspirin acetyl hóa không thể phục hồi chức năng trong suốt vòng đời 7-10 ngày. Mỗi ngày tủy xương chỉ sinh ra khoảng 10-15% lượng tiểu cầu mới. Cần ngừng Aspirin ít nhất 7-10 ngày để có đủ > 80% số lượng tiểu cầu mới bình thường đảm bảo cầm máu trong phẫu thuật.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8095,12 +8095,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thuốc chống tạo mạch Bevacizumab (Avastin) ngăn chặn sự phát triển của các mạch máu mới nuôi khối u bằng cách trung hòa phân tử nào trong vi môi trường u?",
     "options": [
-      "Yếu tố phát triển nguyên bào sợi bFGF",
-      "Yếu tố hoại tử khối u TNF-alpha",
-      "Yếu tố phát triển nội mô mạch máu (VEGF-A / Vascular Endothelial Growth Factor A)",
-      "Chất ức chế hoạt hóa plasminogen PAI-1"
+      "Yếu tố phát triển nội mô mạch máu VEGF-A",
+      "Yếu tố phát triển nguyên bào sợi ngoại biên",
+      "Yếu tố hoại tử u dạng hòa tan TNF-alpha",
+      "Chất ức chế hoạt hóa men plasminogen PAI-1"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Khối u kích thước > 2mm cần tạo mạch máu mới để cung cấp oxy và dinh dưỡng. Khối u tiết ra VEGF-A kích thích tế bào nội mô mạch máu tăng sinh. Bevacizumab là kháng thể đơn dòng liên kết và trung hòa VEGF-A tự do, ngăn VEGF gắn vào thụ thể VEGFR, bỏ đói khối u và làm thoái triển mạng mạch máu nuôi u.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8131,12 +8131,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Than hoạt tính (Activated Charcoal) là chất hấp phụ tiêu hóa đầu tay trong xử trí ngộ độc cấp qua đường uống, nhưng KHÔNG CÓ HIỆU QUẢ hấp phụ đối với nhóm chất nào sau đây?",
     "options": [
-      "Các thuốc chống trầm cảm 3 vòng và Paracetamol",
-      "Các alcaloid tự nhiên và Morphin",
-      "Các acid mạnh, base mạnh (chất ăn mòn), các ion kim loại (Sắt, Lithi, Chì) và các alcol đơn giản (Ethanol, Methanol, Ethylene glycol)",
-      "Thuốc ngủ nhóm Benzodiazepin"
+      "Thuốc chống trầm cảm ba vòng và paracetamol liều cao",
+      "Acid base mạnh ion kim loại và các alcol đơn giản",
+      "Alcaloid tự nhiên amin bậc ba và dẫn xuất morphin",
+      "Các thuốc ngủ an thần giải lo âu nhóm benzodiazepin"
     ],
-    "correct": 3,
+    "correct": 1,
     "explanation": "Than hoạt tính có diện tích bề mặt khổng lồ (1000 m2/g) hấp phụ rất tốt các phân tử hữu cơ cồng kềnh không phân cực. Tuy nhiên, than hoạt KHÔNG hấp phụ được các ion kim loại nhỏ mang điện tích cao (Sắt, Lithi, Kali), các acid/kiềm ăn mòn mạnh, và các phân tử alcol phân cực nhỏ (Ethanol, Methanol).",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8149,10 +8149,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Chống chỉ định tuyệt đối của biện pháp Rửa dạ dày (Gastric lavage) hoặc Dùng thuốc gây nôn (Siro Ipeca) trong cấp cứu ngộ độc là tình huống nào?",
     "options": [
-      "Uống quá liều thuốc hạ sốt Paracetamol trong vòng 1 giờ",
-      "Ngộ độc các chất ăn mòn mạnh (Acid vô cơ mạnh hoặc Kiềm mạnh như nước tẩy rửa bồn cầu, xút) hoặc các Hydrocarbon dễ bay hơi (Xăng, dầu hỏa) do nguy cơ thủng thực quản, dạ dày và sặc gây viêm phổi hoại tử",
-      "Ngộ độc thuốc chống sốt rét Chloroquin",
-      "Bệnh nhân uống nhầm viên thuốc hạ huyết áp"
+      "Uống quá liều paracetamol trong vòng một giờ đầu ngộ độc",
+      "Uống nhầm các loại thuốc hạ huyết áp nhóm chẹn calci",
+      "Ngộ độc chất ăn mòn mạnh hoặc hydrocarbon dễ bay hơi",
+      "Ngộ độc cấp tính các thuốc chống sốt rét aminoquinolin"
     ],
     "correct": 2,
     "explanation": "Rửa dạ dày hoặc gây nôn khi uống acid/base mạnh sẽ làm chất ăn mòn tiếp xúc lần thứ hai với niêm mạc thực quản và hầu họng, nguy cơ làm thủng thực quản và trung thất tử vong. Uống xăng dầu nếu gây nôn sẽ hít sặc vào đường thở gây viêm phổi hóa chất hoại tử lan tỏa.",
@@ -8185,10 +8185,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thuốc giãn phế quản tác dụng kéo dài Tiotropium bromid có tính chọn lọc động học (kinh tế học phân tử) vượt trội hơn Ipratropium bromid ở điểm nào?",
     "options": [
-      "Thuốc chỉ dùng đường uống hấp thu 100% qua ruột non",
-      "Thuốc không có ái lực với bất kỳ thụ thể muscarinic nào tại phổi",
-      "Tách khỏi thụ thể M2 nhanh hơn nhưng gắn kết và tách khỏi thụ thể M3 rất chậm (thời gian bán hủy tách thụ thể M3 lên tới 35 giờ)",
-      "Thuốc chuyển hóa thành hợp chất có hoạt tính chẹn beta-1"
+      "Hấp thu hoàn toàn qua đường ruột mà không qua gan",
+      "Không gắn kết với phân typ thụ thể muscarinic phổi",
+      "Chuyển hóa thành chất có hoạt tính chẹn beta một tim",
+      "Tách khỏi thụ thể M2 nhanh nhưng tách khỏi M3 rất chậm"
     ],
     "correct": 3,
     "explanation": "Tiotropium gắn vào các thụ thể M1, M2, M3 nhưng tách khỏi thụ thể M2 (thụ thể ức chế tự điều hòa) rất nhanh, trong khi tách khỏi thụ thể M3 (thụ thể gây co thắt phế quản) cực kỳ chậm với T1/2 phân ly lên tới 35 giờ, cho phép dùng liều 1 lần duy nhất trong ngày.",
@@ -8203,12 +8203,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Trong điều trị hen phế quản nặng có tăng bạch cầu ái toan (Eosinophilic asthma), kháng thể đơn dòng Mepolizumab hoặc Benralizumab nhắm vào đích sinh học nào?",
     "options": [
-      "Thụ thể Histamin H4",
-      "Interleukin-5 (IL-5) hoặc thụ thể alpha của Interleukin-5 (IL-5Ralpha)",
-      "Enzym Cyclooxygenase-2",
-      "Phức hợp kháng nguyên HLA-DR"
+      "Interleukin-5 hoặc thụ thể alpha của Interleukin-5",
+      "Thụ thể histamin H4 trên màng tế bào mast phế quản",
+      "Enzym cyclooxygenase-2 tại biểu mô đường hô hấp trên",
+      "Phức hợp kháng nguyên phù hợp tổ chức bề mặt tế bào"
     ],
-    "correct": 2,
+    "correct": 0,
     "explanation": "IL-5 là cytokin chủ chốt điều hòa sự biệt hóa, tăng sinh, hoạt hóa và sống sót của bạch cầu ái toan (eosinophil). Mepolizumab trung hòa IL-5 hòa tan, còn Benralizumab gắn lên thụ thể IL-5Ralpha gây độc tế bào phụ thuộc kháng thể (ADCC) tiêu diệt bạch cầu ái toan.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8257,12 +8257,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Khi làm các nghiệm pháp lẩy da chẩn đoán dị ứng (Prick test), bệnh nhân bắt buộc phải ngừng sử dụng thuốc kháng Histamin H1 trong thời gian tối thiểu bao lâu để tránh kết quả âm tính giả?",
     "options": [
-      "Ngừng trước 12 giờ",
-      "Ngừng tối thiểu 3 đến 7 ngày (tùy thuộc vào thời gian bán thải của từng thuốc)",
-      "Ngừng tối thiểu 1 tháng",
-      "Không cần ngừng thuốc nếu làm test dị nguyên thức ăn"
+      "Tối thiểu mười hai giờ",
+      "Từ ba đến bảy ngày",
+      "Tối thiểu hai mươi tư giờ",
+      "Tối thiểu một tháng tròn"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "Kháng H1 ức chế phản xạ mày đay và ban đỏ (wheal and flare) tại da khi tiếp xúc dị nguyên. Do đó, bắt buộc phải ngừng thuốc kháng H1 từ 3 đến 7 ngày trước khi tiến hành test lẩy da (skin prick test) để phản ứng da phục hồi bình thường, tránh âm tính giả.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8365,10 +8365,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thời gian bán thải cực dài của thuốc chống sốt rét Cloroquin (lên tới 30 đến 60 ngày) xuất phát từ đặc tính dược động học nào?",
     "options": [
-      "Thuốc gắn cộng hóa trị vĩnh viễn với albumin huyết tương",
-      "Thuốc có tính kiềm yếu, bị tích tụ và bẫy ion trong các không bào lysosome của mô và gắn sâu vào các tế bào sắc tố gan, lách, thận, võng mạc với thể tích phân bố khổng lồ (Vd = 200 - 300 L/kg)",
-      "Thuốc không thể đào thải qua lọc cầu thận",
-      "Thuốc bị ức chế phân hủy bởi enzym MAO"
+      "Gắn liên kết cộng hóa trị không thuận nghịch với albumin",
+      "Không bị lọc qua cầu thận và không bài xuất ở thận",
+      "Bẫy ion trong lysosome mô và thể tích phân bố rất lớn",
+      "Bị ức chế hoàn toàn quá trình thoái biến bởi enzym gan"
     ],
     "correct": 2,
     "explanation": "Chloroquin là một base lưỡng tính thân dầu. Khi vào tế bào, nó bị proton hóa trong môi trường acid của lysosome, không thể khuếch tán ngược ra ngoài (hiện tượng bẫy ion). Thuốc tích lũy sâu trong gan, thận, phổi, da, mắt với Vd khổng lồ, đào thải rất chậm ra nước tiểu trong nhiều tuần đến nhiều tháng.",
@@ -8419,12 +8419,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Bệnh nhân ghép thận đang điều trị bằng thuốc chống thải ghép Cyclosporin hoặc Tacrolimus được kê thêm thuốc kháng nấm Ketoconazol. Bác sĩ cần phải điều chỉnh liều thuốc chống thải ghép như thế nào để tránh ngộ độc suy thận?",
     "options": [
-      "Tăng gấp đôi liều duy trì hàng ngày để bù trừ sự cạnh tranh gắn kết của thuốc kháng nấm tại thụ thể tế bào",
-      "Phải giảm mạnh liều thuốc chống thải ghép và theo dõi nồng độ máu vì ketoconazol ức chế mạnh men CYP3A4",
-      "Giữ nguyên mức liều điều trị và hướng dẫn bệnh nhân uống cách xa thời điểm dùng ketoconazol ít nhất 30 phút",
-      "Ngừng tạm thời hoàn toàn thuốc chống thải ghép trong vòng một tháng rồi sau đó tái lập liều bình thường"
+      "Tăng gấp đôi liều duy trì hàng ngày để bù trừ tương tác",
+      "Giữ nguyên liều và hướng dẫn uống cách xa nhau ba mươi phút",
+      "Ngừng tạm thời thuốc chống thải ghép trong vòng một tháng",
+      "Giảm mạnh liều và định lượng nồng độ thuốc trong máu"
     ],
-    "correct": 1,
+    "correct": 3,
     "explanation": "Ketoconazol là chất ức chế mạnh isoenzym CYP3A4 và P-glycoprotein. Cyclosporin và Tacrolimus chuyển hóa chủ yếu qua CYP3A4; khi dùng chung, nồng độ của chúng trong máu tăng vọt gấp 3-4 lần gây hoại tử ống thận và suy thận cấp. Bắt buộc phải giảm mạnh liều và định lượng nồng độ đáy thường xuyên.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8437,12 +8437,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tương tác dược lực học đối kháng giữa kháng sinh diệt khuẩn tác động lên thành tế bào vi khuẩn đang phân chia (như Penicillin, Cephalosporin) và kháng sinh kìm khuẩn ức chế tổng hợp protein (như Tetracyclin, Chloramphenicol) dẫn tới hậu quả gì?",
     "options": [
-      "Làm tăng mạnh tần suất và mức độ nghiêm trọng của phản ứng phản vệ nguy hiểm đe dọa tính mạng người bệnh",
-      "Kích thích chọn lọc đột biến gen gyrA tạo ra chủng vi khuẩn đề kháng chéo đa kháng thuốc ngay tức thì",
-      "Gây ly giải cơ vân cấp tính giải phóng lượng lớn myoglobin vào tuần hoàn dẫn tới hoại tử ống thận cấp",
-      "Làm giảm hoặc mất hiệu lực diệt khuẩn do thuốc kìm khuẩn làm ngừng quá trình nhân đôi của vi khuẩn"
+      "Giảm hoặc mất hiệu lực diệt khuẩn của penicillin",
+      "Tăng mạnh tần suất sốc phản vệ đe dọa tính mạng",
+      "Gây đột biến gen chọn lọc tạo chủng vi khuẩn kháng thuốc",
+      "Gây ly giải cơ vân cấp tính gây hoại tử ống thận"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Penicillin chỉ diệt khuẩn khi vi khuẩn đang trong pha phân chia tích cực (logarithmic phase) để ức chế tổng hợp thành peptidoglycan mới. Kháng sinh kìm khuẩn (Tetracyclin, Erythromycin) ức chế tổng hợp protein làm vi khuẩn ngừng phân chia, khiến Penicillin mất đích tác động, làm giảm hiệu lực điều trị.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8473,10 +8473,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Khi bệnh nhân đang điều trị bằng Corticoid dài ngày cần phải trải qua một cuộc đại phẫu thuật hoặc gặp chấn thương nặng (Stress sinh lý cấp), nguyên tắc điều chỉnh liều Corticoid bắt buộc là gì?",
     "options": [
-      "Ngừng thuốc hoàn toàn trước phẫu thuật ít nhất 24 giờ nhằm phòng ngừa nguy cơ xuất huyết và nhiễm trùng vết mổ",
-      "Tăng liều corticoid lên gấp hai đến ba lần liều duy trì nhằm bù đắp sự thiếu hụt đáp ứng stress của thượng thận",
-      "Giữ nguyên mức liều uống hàng ngày kết hợp truyền dịch glucose ưu trương để duy trì thể tích tuần hoàn ổn định",
-      "Ngừng corticoid và thay thế bằng thuốc kháng viêm không steroid đường tiêm tĩnh mạch để kiểm soát đau sau mổ"
+      "Ngừng thuốc trước phẫu thuật ít nhất hai mươi tư giờ",
+      "Tăng liều lên gấp hai đến ba lần liều duy trì",
+      "Giữ nguyên liều uống kết hợp truyền glucose ưu trương",
+      "Ngừng corticoid và thay bằng kháng viêm không steroid"
     ],
     "correct": 1,
     "explanation": "Bình thường khi bị stress nặng (phẫu thuật, chấn thương), tuyến thượng thận tiết cortisol tăng vọt gấp 5-10 lần để duy trì huyết áp và chuyển hóa. Ở người teo thượng thận do corticoid, cơ thể mất khả năng này; do đó bắt buộc phải tiêm Hydrocortison liều cao (liều stress 100-300mg/ngày) để tránh tử vong.",
@@ -8491,12 +8491,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thuốc điều hòa thụ thể Estrogen chọn lọc Raloxifene có ưu thế an toàn hơn Tamoxifen trong phòng ngừa và điều trị loãng xương sau mãn kinh ở đặc điểm nào?",
     "options": [
-      "Không có tác dụng chủ vận trên nội mạc tử cung nên hoàn toàn không làm tăng nguy cơ ung thư nội mạc tử cung",
-      "Có tác dụng hạ huyết áp và giảm cân mạnh",
-      "Không gây bốc hỏa hay chuột rút ở chi dưới",
-      "Uống 1 liều duy nhất mỗi năm tiêm dưới da"
+      "Có tác dụng hạ huyết áp và làm giảm thể trọng rõ rệt",
+      "Không bao giờ gây bốc hỏa hay chuột rút ở hai chi dưới",
+      "Không làm gia tăng nguy cơ ung thư nội mạc tử cung",
+      "Chỉ cần dùng liều duy nhất tiêm dưới da mỗi năm một lần"
     ],
-    "correct": 3,
+    "correct": 2,
     "explanation": "Raloxifene có tác dụng chủ vận Estrogen trên xương (tăng mật độ xương) và trên chuyển hóa lipid; nhưng đối kháng Estrogen ở cả mô vú VÀ nội mạc tử cung, do đó không kích thích tăng sinh nội mạc tử cung và không làm tăng nguy cơ ung thư nội mạc tử cung như Tamoxifen.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8509,12 +8509,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Cơ chế phân tử của Propylthiouracil (PTU) có ưu thế bổ sung so với Thiamazol trong điều trị cấp cứu cơn bão giáp trạng (Thyroid storm) ở điểm nào?",
     "options": [
-      "PTU phá hủy trực tiếp các kho dự trữ thyroglobulin trong lòng nang giáp",
-      "Ngoài ức chế enzym TPO ở tuyến giáp, PTU còn ức chế enzym 5'-deiodinase ở ngoại vi, ngăn cản chuyển hóa T4 thành T3 dạng có hoạt tính mạnh tại các mô",
-      "PTU có tác dụng chẹn thụ thể beta-1 adrenergic trực tiếp tại tim",
-      "PTU kích hoạt bổ thể tiêu diệt các kháng thể kích thích tuyến giáp TRAb"
+      "Phá hủy trực tiếp kho dự trữ thyroglobulin ở tuyến giáp",
+      "Chẹn chọn lọc trên thụ thể beta một giao cảm ở cơ tim",
+      "Kích hoạt hệ bổ thể tiêu diệt kháng thể kháng giáp TRAb",
+      "Ức chế enzym năm phẩy deiodinase ở mô ngoại vi"
     ],
-    "correct": 2,
+    "correct": 3,
     "explanation": "T3 có hoạt tính sinh học mạnh gấp 4-5 lần T4. PTU có ưu thế độc nhất là ức chế enzym 5'-deiodinase ở mô ngoại vi, ngăn cản sự chuyển đổi từ T4 thành T3 ở gan, thận và tim, làm giảm nhanh nồng độ T3 lưu hành trong cơn bão giáp; trong khi Thiamazol không có tác dụng ức chế ngoại vi này.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8527,12 +8527,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thuốc hạ đường huyết nhóm Meglitinide (Repaglinide, Nateglinide) có ưu thế lâm sàng đặc biệt nào phù hợp cho bệnh nhân có lối sống ăn uống không đều đặn?",
     "options": [
-      "Khởi phát nhanh và thời gian tác dụng rất ngắn, uống ngay trước bữa ăn (bữa ăn nào dùng bữa đó, không ăn không dùng thuốc) để kiểm soát đỉnh đường huyết sau ăn",
-      "Có thời gian bán thải kéo dài trên 48 giờ chỉ cần uống 1 lần mỗi tuần",
-      "Không bao giờ bị đào thải qua gan hay thận",
-      "Chỉ tác dụng trên sự phân giải lipid mà không ảnh hưởng insulin"
+      "Khởi phát nhanh tác dụng ngắn uống ngay trước bữa ăn",
+      "Thời gian bán thải kéo dài trên bốn mươi tám giờ dùng",
+      "Không chuyển hóa qua gan và không bài xuất qua thận",
+      "Kích thích phân giải lipid mà không tăng tiết insulin"
     ],
-    "correct": 1,
+    "correct": 0,
     "explanation": "Meglitinide cũng đóng kênh K_ATP nhưng ở vị trí khác Sulfonylurea, khởi phát tác dụng trong 15-30 phút và T1/2 rất ngắn (< 1-1.5 giờ). Bệnh nhân tuân thủ nguyên tắc: 'Ăn một bữa - uống một viên, không ăn - không uống', giúp kiểm soát chính xác đỉnh đường huyết sau ăn và giảm nguy cơ hạ đường huyết xa bữa ăn.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8545,12 +8545,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Trong cấp cứu Hôn mê hạ đường huyết nặng (bệnh nhân mất ý thức không thể nuốt được thức ăn) tại nhà hoặc tuyến y tế cơ sở, thuốc tiêm bắp hoặc tiêm dưới da cứu mạng đầu tay là gì?",
     "options": [
-      "Insulin tác dụng nhanh 10 đơn vị tiêm bắp",
-      "Dung dịch Natri clorid 0.9% truyền tĩnh mạch chậm",
-      "Glucagon 1 mg tiêm bắp hoặc tiêm dưới da (kích thích gan ly giải glycogen thành glucose)",
-      "Metformin tiêm bắp sâu 500 mg"
+      "Insulin tác dụng nhanh mười đơn vị tiêm bắp sâu",
+      "Glucagon một miligam tiêm bắp hoặc dưới da",
+      "Dung dịch natri clorid không phẩy chín phần trăm",
+      "Metformin năm trăm miligam tiêm bắp sâu khẩn cấp"
     ],
-    "correct": 3,
+    "correct": 1,
     "explanation": "Khi bệnh nhân hạ đường huyết nặng mất ý thức không thể uống đường, Glucagon 1mg tiêm bắp/tiêm dưới da (hoặc xịt mũi Baqsimi) là thuốc cấp cứu số 1: kích thích thụ thể glucagon ở gan ly giải glycogen phóng thích glucose vào máu trong vòng 10-15 phút giúp bệnh nhân tỉnh lại.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8671,12 +8671,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tenofovir alafenamide (TAF) là dạng tiền chất thế hệ mới của Tenofovir có ưu thế vượt trội so với Tenofovir disoproxil fumarate (TDF) ở điểm nào?",
     "options": [
-      "TAF bền vững hơn trong huyết tương, phân bố hướng đích cao vào các tế bào đích (tế bào lympho và tế bào gan), nồng độ thuốc trong máu thấp hơn 90% nên giảm thiểu tối đa độc tính trên thận và giảm nguy cơ loãng xương",
-      "TAF có thể dùng đường tiêm bắp ngắt quãng 6 tháng một lần",
-      "TAF không bao giờ gây tăng men gan",
-      "TAF chữa khỏi hoàn toàn virus HIV ra khỏi cơ thể"
+      "Dùng đường tiêm bắp định kỳ sáu tháng một lần kéo dài",
+      "Không bao giờ gây độc tính trên tế bào gan và men gan",
+      "Giảm độc tính trên thận và giảm nguy cơ loãng xương",
+      "Tiêu diệt hoàn toàn virus HIV khỏi bộ gen người bệnh"
     ],
-    "correct": 1,
+    "correct": 2,
     "explanation": "TDF bị thủy phân sớm trong huyết tương giải phóng nồng độ tenofovir tự do trong máu cao, gây tổn thương ống thận (hội chứng Fanconi) và mất mật độ khoáng của xương. TAF bền vững trong máu, chỉ được kích hoạt nội bào nhờ cathepsin A, do đó liều dùng thấp hơn 10 lần mà hiệu lực tương đương và an toàn cho thận, xương.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8690,9 +8690,9 @@ const DUOCLY2_EXAM_BANK = [
     "question": "Thuốc nào sau đây là chất ức chế hòa màng (Fusion inhibitor) tiêm dưới da, ngăn cản sự thay đổi cấu hình của glycoprotein gp41 của virus HIV ngăn không cho virus hòa nhập màng tế bào vật chủ?",
     "options": [
       "Maraviroc",
-      "Enfuvirtid (T-20)",
       "Ibalizumab",
-      "Fostemsavir"
+      "Fostemsavir",
+      "Enfuvirtid"
     ],
     "correct": 3,
     "explanation": "Enfuvirtid (T-20) là một peptid tổng hợp gồm 36 acid amin. Thuốc liên kết chọn lọc với tiểu đơn vị vỏ ngoài gp41 của HIV-1, ngăn cản gp41 gập lại thành cấu trúc 6 chuỗi xoắn (six-helix bundle), từ đó ngăn màng virus hòa nhập với màng tế bào lympho T CD4+.",
@@ -8707,12 +8707,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Hội chứng 'Bàn tay - Bàn chân' (Hand-Foot Syndrome / Palmar-plantar erythrodysesthesia) với ban đỏ, phù nề, đau rát và bong tróc da lòng bàn tay và lòng bàn chân là tác dụng phụ điển hình của hóa chất nào?",
     "options": [
-      "Vincristin",
-      "Capecitabin (tiền chất đường uống của 5-Fluorouracil)",
-      "Bleomycin",
-      "Cisplatin"
+      "Capecitabin",
+      "Cyclophosphamid",
+      "Doxorubicin",
+      "Methotrexat"
     ],
-    "correct": 2,
+    "correct": 0,
     "explanation": "Capecitabin hấp thu qua ruột và qua 3 bước enzym tại gan và mô u để giải phóng 5-FU. Một phần thuốc bài tiết qua tuyến mồ hôi ở lòng bàn tay và bàn chân, gây độc tế bào sừng và phản ứng viêm mạch tại chỗ, biểu hiện hội chứng bàn tay - bàn chân gây đau đớn, nứt nẻ và tróc da.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8725,10 +8725,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Hội chứng tiêu giải khối u cấp tính (Tumor Lysis Syndrome - TLS) sau đợt hóa trị liệu các khối u nhạy cảm (như u lympho, bạch cầu cấp) đặc trưng bởi bộ tứ rối loạn điện giải và chuyển hóa nguy hiểm nào?",
     "options": [
-      "Tăng Acid Uric máu, Tăng Kali máu, Tăng Phosphat máu và Hạ Calci máu thứ phát (nguy cơ suy thận cấp do kết tinh tinh thể urat và loạn nhịp tim ngừng tim)",
-      "Hạ Kali máu, hạ natri máu, tăng calci máu và hạ đường huyết",
-      "Nhiễm kiềm chuyển hóa, tăng natri máu và hạ phosphat máu",
-      "Tăng nồng độ protein toàn phần và hạ bilirubin máu"
+      "Hạ kali máu hạ natri máu tăng calci máu và hạ glucose",
+      "Tăng acid uric tăng kali tăng phosphat và hạ calci máu",
+      "Nhiễm kiềm chuyển hóa tăng natri máu và giảm phosphat",
+      "Tăng protein máu hạ bilirubin máu và tăng natri máu"
     ],
     "correct": 1,
     "explanation": "Khi hàng tỷ tế bào ung thư bị tiêu diệt đồng loạt, các chất nội bào tràn vào máu: Acid nucleic thoái hóa thành Acid Uric tăng vọt gây tắc ống thận suy thận cấp; Kali nội bào tràn ra gây tăng K+ máu nguy cơ ngừng tim; Phosphat nội bào tràn ra gắn Calci tạo kết tủa phosphat calci gây hạ Ca2+ máu co giật.",
@@ -8743,12 +8743,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Nhũ dịch Lipid đường tĩnh mạch (Intravenous Lipid Emulsion - ILE / Intralipid 20%) là liệu pháp cấp cứu hồi sức hồi sinh tim phổi đặc hiệu trong ngộ độc độc chất nào?",
     "options": [
-      "Ngộ độc thuốc hạ đường huyết Sulfonylurea",
-      "Ngộ độc cấp tính các thuốc gây tê cục bộ có tính thân dầu cao (như Bupivacain, Ropivacain, Lidocain) gây ngừng tim kháng trị (hiệu ứng bẫy chìm lipid - Lipid sink)",
-      "Ngộ độc thuốc kháng sinh Cephalosporin",
-      "Ngộ độc thuốc tiêu sợi huyết"
+      "Ngộ độc thuốc hạ đường huyết nhóm sulfonylurea kéo dài",
+      "Ngộ độc thuốc kháng sinh diệt khuẩn nhóm cephalosporin",
+      "Ngộ độc thuốc gây tê cục bộ có tính thân dầu rất cao",
+      "Ngộ độc thuốc tiêu sợi huyết tái tổ hợp gây chảy máu"
     ],
-    "correct": 0,
+    "correct": 2,
     "explanation": "Bupivacain là thuốc gây tê cực kỳ thân dầu, gắn chặt vào kênh natri cơ tim gây trụy mạch và ngừng tim kháng sốc điện. Truyền nhũ dịch mỡ Intralipid 20% tạo một khoang lipid khổng lồ trong lòng mạch ('Lipid sink'), hút sạch các phân tử thuốc gây tê thân dầu ra khỏi mô cơ tim, phục hồi chức năng co bóp tim nhanh chóng.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8761,12 +8761,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Trong ngộ độc thuốc chẹn kênh Calci (CCB) hoặc thuốc chẹn Beta liều cao gây tụt huyết áp nặng và nhịp chậm trơ kháng hồi sức, liệu pháp truyền hormone nào sau đây mang lại hiệu quả tăng co bóp cơ tim không qua thụ thể beta?",
     "options": [
-      "Glucagon tiêm tĩnh mạch liều cao (hoặc Liệu pháp Insulin liều cao kèm Glucose - HIE)",
       "Thyroxin tiêm tĩnh mạch chậm",
-      "Oxytocin truyền tĩnh mạch",
-      "Aldosteron tiêm bắp sâu"
+      "Oxytocin truyền tĩnh mạch liên tục",
+      "Aldosteron tiêm bắp sâu định kỳ",
+      "Glucagon tiêm tĩnh mạch liều cao"
     ],
-    "correct": 1,
+    "correct": 3,
     "explanation": "Glucagon gắn vào thụ thể glucagon riêng biệt trên màng tế bào cơ tim, kích hoạt adenylcyclase độc lập không phụ thuộc thụ thể beta-1, làm tăng cAMP nội bào, tăng dòng Ca2+ giúp tăng nhịp tim và lực co bóp. Liệu pháp Insulin liều cao kết hợp truyền glucose (HIE) cũng là phác đồ hàng đầu cung cấp năng lượng cho cơ tim.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8779,12 +8779,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Kháng thể hoặc xét nghiệm chẩn đoán nhanh sốt rét (RDT) tìm kháng nguyên nào của P. falciparum trong máu bệnh nhân?",
     "options": [
-      "Kháng nguyên vỏ HBsAg",
-      "Kháng nguyên protein giàu histidin-2 (HRP-2 / Histidine-Rich Protein 2) hoặc enzym pLDH",
-      "Kháng nguyên men troponin I",
-      "Kháng nguyên thụ thể CD4"
+      "Kháng nguyên HRP-2 và enzym pLDH",
+      "Kháng nguyên vỏ bề mặt virus HBsAg",
+      "Kháng nguyên protein Troponin I tim",
+      "Kháng nguyên thụ thể bề mặt CD4 T"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Các test chẩn đoán nhanh sốt rét (RDTs) phát hiện kháng nguyên HRP-2 (đặc hiệu cao cho P. falciparum) hoặc enzym lactate dehydrogenase của ký sinh trùng (pLDH) và aldolase (phát hiện cả P. vivax, P. malariae, P. ovale), cho kết quả nhanh sau 15 phút tại thực địa.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8815,12 +8815,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Khi điều trị phối hợp Sulfamethoxazol và Trimethoprim (thuốc Co-trimoxazol / Bactrim), tỷ lệ nồng độ thuốc tối ưu trong huyết tương được duy trì ở mức bao nhiêu để đạt hiệu lực diệt khuẩn hiệp đồng tối đa?",
     "options": [
-      "Tỷ lệ 1 phần Sulfamethoxazol : 1 phần Trimethoprim",
-      "Tỷ lệ 20 phần Sulfamethoxazol : 1 phần Trimethoprim (trong viên thuốc bào chế theo tỷ lệ liều 5:1)",
-      "Tỷ lệ 1 phần Sulfamethoxazol : 20 phần Trimethoprim",
-      "Tỷ lệ 100 phần Sulfamethoxazol : 1 phần Trimethoprim"
+      "Tỷ lệ một sulfamethoxazol trên một trimethoprim",
+      "Tỷ lệ hai mươi sulfamethoxazol trên một trimethoprim",
+      "Tỷ lệ một sulfamethoxazol trên hai mươi trimethoprim",
+      "Tỷ lệ một trăm sulfamethoxazol trên một trimethoprim"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "Mặc dù viên thuốc Co-trimoxazol được bào chế theo tỷ lệ 5:1 (400mg SMX + 80mg TMP), do Trimethoprim có thể tích phân bố lớn hơn nhiều và tan tốt hơn trong lipid, nên tỷ lệ nồng độ thuốc tự do trong huyết tương đạt được ở mức 20:1 - đây là tỷ lệ vàng đạt hiệu lực diệt khuẩn hiệp đồng tối ưu.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8833,12 +8833,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tương tác bất lợi giữa thuốc kháng virus Tenofovir disoproxil fumarate (TDF) và thuốc ức chế Protease tăng cường (như Lopinavir/ritonavir) dẫn tới nguy cơ tổn thương cơ quan nào cao nhất?",
     "options": [
-      "Tăng độc tính trên thận (hội chứng Fanconi thận, protein niệu và suy giảm tốc độ lọc cầu thận)",
-      "Gây điếc tai không hồi phục",
-      "Gây xơ hóa cơ tim thất trái",
-      "Gây hoại tử biểu mô giác mạc mắt"
+      "Gây điếc tai tiếp nhận và giảm thính lực vĩnh viễn",
+      "Gây xơ hóa cơ tim thất trái gây suy tim sung huyết mạn",
+      "Gây độc tính trên thận và suy giảm mức lọc cầu thận",
+      "Gây hoại tử biểu mô giác mạc mắt và mất thị lực sớm"
     ],
-    "correct": 1,
+    "correct": 2,
     "explanation": "Ritonavir ức chế các protein vận chuyển bài tiết Tenofovir ở ống thận, làm tăng nồng độ Tenofovir tích lũy trong tế bào biểu mô ống lượn gần lên gấp nhiều lần. Điều này dẫn đến tổn thương ty thể tế bào ống thận, gây hội chứng Fanconi mắc phải và suy thận tiến triển.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8851,10 +8851,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thời gian bán thải sinh học (T1/2) của một thuốc là 12 giờ. Theo nguyên lý dược động học lâm sàng, sau khoảng thời gian dùng thuốc lặp lại liên tục bao lâu thì nồng độ thuốc trong huyết tương sẽ đạt trạng thái cân bằng ổn định (Steady-state concentration - Css)?",
     "options": [
-      "Sau 12 giờ (đúng bằng 1 lần T1/2)",
-      "Sau 24 giờ (đúng bằng 2 lần T1/2)",
-      "Sau khoảng 48 đến 60 giờ (tương đương 4 đến 5 lần thời gian bán thải T1/2)",
-      "Sau 1 tháng dùng thuốc liên tục"
+      "Sau khoảng mười hai giờ dùng thuốc lặp lại",
+      "Sau khoảng hai mươi tư giờ dùng thuốc liên tục",
+      "Sau khoảng ba mươi ngày dùng thuốc đều đặn",
+      "Sau khoảng bốn mươi tám đến sáu mươi giờ"
     ],
     "correct": 3,
     "explanation": "Theo dược động học hằng định: Khi dùng liều lặp lại với khoảng cách liều đều đặn, nồng độ thuốc tích lũy và đạt trạng thái cân bằng (Css - khi lượng thuốc vào bằng lượng thải trừ) sau khoảng 4 đến 5 lần T1/2 (đạt 93.75% ở 4 T1/2 và 96.87% ở 5 T1/2). Với T1/2 = 12h, cần 48-60 giờ để đạt Css.",
@@ -8887,12 +8887,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Bệnh nhân đái tháo đường typ 2 có mức lọc cầu thận eGFR giảm xuống 25 mL/phút/1.73m2. Nhóm thuốc hạ đường huyết nào sau đây bị chống chỉ định khởi đầu hoặc bắt buộc phải ngừng sử dụng do nguy cơ tích lũy độc tính?",
     "options": [
-      "Insulin tiêm dưới da điều chỉnh liều",
-      "Metformin (chống chỉ định tuyệt đối khi eGFR < 30 mL/phút do nguy cơ toan lactic)",
-      "Linagliptin viên nén 5 mg",
-      "Thuốc đồng vận thụ thể GLP-1 như Dulaglutid"
+      "Metformin",
+      "Linagliptin",
+      "Dulaglutid",
+      "Insulin glargine"
     ],
-    "correct": 2,
+    "correct": 0,
     "explanation": "Theo khuyến cáo của ADA và KDIGO: Metformin chống chỉ định tuyệt đối khi eGFR < 30 mL/phút/1.73m2 vì nguy cơ tích lũy thuốc gây nhiễm toan acid lactic tử vong. Khi eGFR từ 30-44 mL/phút, liều tối đa của Metformin không quá 1000 mg/ngày và không được khởi đầu mới.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8905,12 +8905,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Xử trí cấp cứu biến chứng xuất huyết đe dọa tính mạng do quá liều Warfarin (chỉ số INR > 10 hoặc có xuất huyết não, nội tạng) gồm những biện pháp bắt buộc nào sau đây?",
     "options": [
-      "Tiêm tĩnh mạch chậm Vitamin K1 (Phytomenadion 5 - 10 mg) phối hợp truyền Phức hợp Prothrombin cô đặc (PCC 4 yếu tố) hoặc Huyết tương tươi đông lạnh (FFP)",
-      "Tiêm bắp sâu dung dịch Heparin tiêu chuẩn 5000 đơn vị",
-      "Truyền dung dịch Natri clorid 0.9% thể tích lớn kèm Furosemid",
-      "Uống viên sắt sulfat kèm theo truyền tiểu cầu đậm đặc"
+      "Heparin tiêu chuẩn phối hợp truyền protamin sulfat",
+      "Vitamin K1 phối hợp phức hợp prothrombin PCC",
+      "Dung dịch natri clorid phối hợp tiêm furosemid",
+      "Sắt sulfat đường uống phối hợp truyền khối tiểu cầu"
     ],
-    "correct": 3,
+    "correct": 1,
     "explanation": "Vitamin K1 đường tĩnh mạch mất ít nhất 6-24 giờ để gan tổng hợp lại các yếu tố đông máu mới. Do đó, trong xuất huyết đe dọa tính mạng, bắt buộc phải truyền ngay PCC (Phức hợp Prothrombin cô đặc chứa sẵn yếu tố II, VII, IX, X) hoặc FFP để đảo ngược tình trạng đông máu tức thì, kết hợp tiêm Vitamin K1 IV chậm.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -8923,10 +8923,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Dipyridamol làm tăng tác dụng chống kết tập tiểu cầu khi phối hợp với Aspirin trong dự phòng thứ phát đột quỵ nhồi máu não nhờ cơ chế phân tử nào?",
     "options": [
-      "Ức chế trực tiếp enzym COX-2 tại nội mô mạch máu não",
-      "Ức chế enzym Phosphodiesterase (PDE) và ức chế thu hồi Adenosin vào tế bào, làm tăng nồng độ cAMP nội bào của tiểu cầu ngăn cản hoạt hóa",
-      "Tăng cường giáng hóa fibrinogen trong tuần hoàn",
-      "Kích hoạt thụ thể thrombin PAR-1 trên màng tiểu cầu"
+      "Ức chế chọn lọc enzym cyclooxygenase hai nội mô",
+      "Tăng cường giáng hóa nồng độ fibrinogen tuần hoàn",
+      "Ức chế Phosphodiesterase và tăng adenosin nội bào",
+      "Kích hoạt thụ thể gắn thrombin trên màng tiểu cầu"
     ],
     "correct": 2,
     "explanation": "Dipyridamol ức chế enzym phosphodiesterase (làm tăng cAMP nội bào tiểu cầu) và ức chế bắt giữ adenosin ở hồng cầu (adenosin kích hoạt thụ thể A2 trên tiểu cầu tăng thêm cAMP). Nồng độ cAMP cao ngăn chặn sự huy động calci nội bào, ức chế kết tập tiểu cầu.",
@@ -8941,10 +8941,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Tại sao ở bệnh nhân thiếu máu hồng cầu to do thiếu hụt Vitamin B12, xét nghiệm sinh hóa lại thấy nồng độ Acid Methylmalonic (MMA) và Homocystein trong huyết tương tăng cao?",
     "options": [
-      "Do tế bào cơ vân tăng giải phóng myoglobin vào máu",
-      "Do tủy xương ngừng phân chia tế bào hoàn toàn",
-      "Do Vitamin B12 là cofactor thiết yếu cho enzym Methylmalonyl-CoA mutase (chuyển MMA thành succinyl-CoA) và enzym Methionine synthase (chuyển homocystein thành methionin)",
-      "Do acid uric cạnh tranh bài tiết qua thận"
+      "Tế bào cơ vân ly giải giải phóng nhiều acid amin vào máu",
+      "Ức chế hoàn toàn quá trình biệt hóa dòng tế bào tủy",
+      "Acid uric cạnh tranh đào thải ở thận làm ứ trệ chất",
+      "Thiếu hụt cofactor cho enzym mutase và methionine synthase"
     ],
     "correct": 3,
     "explanation": "Vitamin B12 cần cho 2 phản ứng enzym: Methylmalonyl-CoA mutase (cần adenosylcobalamin) và Methionine synthase (cần methylcobalamin). Thiếu B12 làm tắc nghẽn cả 2 phản ứng, khiến cả Methylmalonic acid (MMA) và Homocystein tích tụ tăng vọt trong máu (trong khi thiếu Acid folic chỉ làm tăng Homocystein mà không tăng MMA).",
@@ -8977,12 +8977,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Bệnh nhân mắc bệnh Thalassemia thể nặng phải truyền máu định kỳ hàng tháng thường gặp biến chứng ứ đọng sắt mạn tính (Hemochromatosis / Hemosiderosis). Thuốc thải sắt đường uống tiện dụng hiện nay là gì?",
     "options": [
-      "Deferoxamin tiêm dưới da liên tục qua bơm tiêm điện",
-      "Deferasirox (hoặc Deferiprone) dạng viên uống phân tán mỗi ngày 1 lần",
-      "Acid ascorbic liều cao kết hợp lợi tiểu",
-      "Natri thiosulfat truyền tĩnh mạch"
+      "Deferasirox",
+      "Deferoxamin",
+      "Dimercaprol",
+      "Penicillamin"
     ],
-    "correct": 2,
+    "correct": 0,
     "explanation": "Trước đây bệnh nhân phải tiêm truyền Deferoxamin dưới da chậm 8-12 tiếng mỗi đêm rất bất tiện. Hiện nay, Deferasirox (Exjade) là thuốc tạo phức chelate sắt đường uống thế hệ mới, chỉ cần uống 1 lần mỗi ngày, thải sắt qua đường mật và phân, giúp ngăn ngừa suy tim và suy gan do ứ sắt ở bệnh nhân Thalassemia.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -9031,12 +9031,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Maraviroc là thuốc kháng retrovirus độc đáo nhắm vào tế bào vật chủ của người thay vì nhắm vào virus HIV thông qua cơ chế nào?",
     "options": [
-      "Ức chế thụ thể CD4 trên tế bào lympho T",
-      "Đối kháng thụ thể đồng vận chemokine CCR5 trên bề mặt tế bào lympho người, ngăn cản protein gp120 của HIV-1 gắn kết và xâm nhập",
-      "Kích thích tế bào lympho tự thực bào",
-      "Bất hoạt thụ thể CXCR4 tại tủy xương"
+      "Ức chế thụ thể CD4 bề mặt tế bào lympho T người",
+      "Đối kháng thụ thể CCR5 ngăn virus xâm nhập",
+      "Kích thích tế bào lympho T tự thực bào hạt virus",
+      "Bất hoạt thụ thể chemokine CXCR4 tại tủy xương"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "Maraviroc là chất điều hòa dị lập thể gắn vào thụ thể CCR5 của tế bào miễn dịch người (đồng thụ thể cần thiết cho các chủng virus HIV-1 hướng CCR5 xâm nhập). Khóa thụ thể CCR5 ngăn gp120 của virus tương tác với tế bào. Bắt buộc phải làm xét nghiệm tính hướng đích (Tropism assay) trước khi dùng.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -9049,12 +9049,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Valacyclovir là dạng tiền chất ester L-valyl của Acyclovir được phát triển nhằm mục đích khắc phục nhược điểm dược động học nào của Acyclovir?",
     "options": [
-      "Tăng sinh khả dụng đường uống từ 15-20% của Acyclovir lên mức 55-70% nhờ hấp thu qua chất vận chuyển peptid ở ruột non",
-      "Giảm độ thanh thải qua thận để tránh suy thận",
-      "Tăng liên kết protein huyết tương lên 100%",
-      "Tránh chuyển hóa bước đầu qua phổi"
+      "Giảm độ thanh thải qua thận để tránh nguy cơ độc tính",
+      "Tăng tỷ lệ liên kết với protein huyết tương lên tối đa",
+      "Tăng sinh khả dụng uống qua chất vận chuyển màng ruột",
+      "Tránh chuyển hóa qua hệ enzym vi thể tại phổi và gan"
     ],
-    "correct": 1,
+    "correct": 2,
     "explanation": "Acyclovir đường uống có sinh khả dụng rất thấp (chỉ 15-20%) do khó qua màng ruột, phải uống 5 lần/ngày. Valacyclovir là tiền chất ester gắn acid amin L-valin, được các chất vận chuyển peptid (PEPT1) tại ruột non hấp thu tích cực, nâng sinh khả dụng lên 55-70%, chỉ cần uống 2-3 lần/ngày.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -9067,10 +9067,10 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Thuốc Rasburicase (Urate oxidase tái tổ hợp) được chỉ định trong cấp cứu Hội chứng tiêu giải khối u (TLS) phát huy tác dụng hạ nhanh nồng độ Acid Uric máu nhờ phản ứng enzym nào?",
     "options": [
-      "Ức chế enzym Xanthine Oxidase ngăn tạo acid uric",
-      "Tăng bài xuất acid uric qua đường mật theo phân",
-      "Chuyển đổi trực tiếp phân tử Acid Uric khó tan thành Allantoin hòa tan cao gấp 10 lần, dễ dàng đào thải qua nước tiểu mà không gây kết tinh ở ống thận",
-      "Phá hủy các phân tử purin tự do trong máu"
+      "Ức chế enzym xanthine oxidase tạo acid uric máu",
+      "Tăng bài xuất nồng độ acid uric qua dịch mật theo phân",
+      "Phân hủy trực tiếp các phân tử purin trong tuần hoàn",
+      "Chuyển acid uric thành allantoin dễ tan trong nước"
     ],
     "correct": 3,
     "explanation": "Con người thiếu enzym urate oxidase nên acid uric là sản phẩm thoái biến cuối cùng rất khó tan. Rasburicase là enzym urate oxidase tái tổ hợp, xúc tác oxy hóa acid uric thành allantoin - một chất chuyển hóa có độ tan trong nước cao gấp 10 lần acid uric, tống ra nước tiểu an toàn giúp hạ acid uric máu tức thì.",
@@ -9103,12 +9103,12 @@ const DUOCLY2_EXAM_BANK = [
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
     "question": "Octreotid (chất tương tự Somatostatin tổng hợp) được chỉ định đặc hiệu trong xử trí ngộ độc nhóm thuốc hạ đường huyết nào để ngăn chặn tái phát các cơn hạ đường huyết kéo dài?",
     "options": [
-      "Nhóm biguanid do ức chế tân tạo glucose tại gan và tăng nhạy cảm insulin ngoại vi",
-      "Nhóm ức chế SGLT-2 do làm tăng đào thải glucose qua đường nước tiểu",
-      "Nhóm thiazolidinedion do làm tăng hấp thu glucose vào mô mỡ và cơ vân",
-      "Nhóm sulfonylurea do octreotid ức chế bài tiết insulin từ tế bào beta tụy"
+      "Nhóm sulfonylurea",
+      "Nhóm thiazolidinedion",
+      "Nhóm ức chế SGLT-2",
+      "Nhóm ức chế DPP-4"
     ],
-    "correct": 3,
+    "correct": 0,
     "explanation": "Khi ngộ độc Sulfonylurea, truyền glucose liên tục có thể kích thích tế bào beta tụy tiết thêm insulin, gây hạ đường huyết dội ngược nguy hiểm. Octreotid gắn vào thụ thể Somatostatin type 2 ở tế bào beta đảo tụy, ức chế dòng calci đi vào màng tế bào, cắt đứt hoàn toàn sự bài tiết insulin, ngăn ngừa tái phát hạ đường huyết.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   },
@@ -9122,11 +9122,11 @@ const DUOCLY2_EXAM_BANK = [
     "question": "Thuốc tạo phức chelate Natri Calci Edetat (CaNa2-EDTA) và Succimer (DMSA) được chỉ định ưu tiên hàng đầu trong điều trị ngộ độc kim loại nặng tích lũy nào?",
     "options": [
       "Ngộ độc Sắt cấp tính",
-      "Ngộ độc Chì (Lead poisoning / Plumbism)",
-      "Ngộ độc Vàng nguyên tố",
-      "Ngộ độc Bạc nitrat"
+      "Ngộ độc Chì tích lũy",
+      "Ngộ độc Thủy ngân vô cơ",
+      "Ngộ độc Asen mạn tính"
     ],
-    "correct": 2,
+    "correct": 1,
     "explanation": "CaNa2-EDTA (tiêm tĩnh mạch) và Succimer (DMSA đường uống) là các chất tạo chelate số 1 trong điều trị ngộ độc Chì cấp và mạn tính. Ion Chì (Pb2+) thay thế ion Calci trong phức hợp EDTA do có ái lực cao hơn, tạo phức chì-EDTA bền vững không độc và đào thải nhanh chóng qua nước tiểu.",
     "reference": "Giáo trình Dược lý 2 Bộ Y tế (PGS.TS. Mai Tất Tố)"
   }
