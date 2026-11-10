@@ -309,6 +309,40 @@ function generateAll20LessonsHtml() {
           <li><strong>Thuốc giải độc đặc hiệu:</strong> <strong>Kháng thể kháng Digoxin (Digoxin Immune Fab / Digibind)</strong>. Bù K⁺ (nếu có hạ K⁺ và không có block AV), dùng Lidocain hoặc Phenytoin để chống loạn nhịp thất.</li>
         </ul>
 
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 4. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Trợ Tim - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #dc2626;">1. Cạnh tranh ion K⁺ tại bơm Na⁺/K⁺-ATPase — Cửa tử của ngộ độc Digoxin:</strong>
+              <br>&bull; <em>Cơ chế:</em> Digoxin và ion K⁺ cạnh tranh trực tiếp vị trí gắn trên enzym Na⁺/K⁺-ATPase ở màng cơ tim. Khi <strong>hạ K⁺ máu</strong>, vị trí gắn bị bỏ trống khiến Digoxin gắn chặt và ồ ạt hơn → gây ngộ độc nặng ngay cả khi nồng độ Digoxin trong máu ở mức bình thường (0.8 - 2.0 ng/mL)!
+              <br>&bull; <em>Thủ phạm thường gặp:</em> Dùng chung thuốc lợi tiểu thải kali (Furosemid, Thiazid) mà không bù kali là nguyên nhân số 1 kích hoạt ngộ độc Digoxin trên lâm sàng.
+            </li>
+            <li>
+              <strong style="color: #d97706;">2. Rối loạn thị giác màu vàng / xanh lá (Xanthopsia) &amp; Vầng hào quang sáng:</strong>
+              <br>&bull; <em>Đặc điểm độc nhất:</em> Ức chế Na⁺/K⁺-ATPase ở tế bào nón/que của võng mạc gây triệu chứng thị giác đặc trưng: nhìn mọi vật chuyển sang màu vàng hoặc xanh lá cây, nhìn thấy quầng sáng xung quanh ngọn đèn. Đây là dấu hiệu thần kinh giác quan kinh điển của ngộ độc Digitalis.
+            </li>
+            <li>
+              <strong style="color: #2563eb;">3. Đối lập chuyển hóa kinh điển: Digoxin (Thận, Ưa nước) vs Digitoxin (Gan, Ưa mỡ):</strong>
+              <br>&bull; <em>Digoxin:</em> Hấp thu 60-80%, gắn protein thấp (20-25%), <strong>thải trừ qua thận dạng nguyên vẹn (80%)</strong>, bán thải 36-40 giờ → Bắt buộc giảm liều khi bệnh nhân có suy giảm chức năng thận.
+              <br>&bull; <em>Digitoxin:</em> Hấp thu 90-100%, gắn protein cực cao (90-97%), <strong>chuyển hóa qua gan (90%) và có chu kỳ gan - ruột</strong>, bán thải cực dài 5-7 ngày → Không cần chỉnh liều khi suy thận nhưng tích lũy rất lâu, ngộ độc kéo dài khó xử trí.
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">4. Tương tác đẩy protein và giảm thanh thải của Quinidin, Amiodaron, Verapamil:</strong>
+              <br>&bull; Quinidin, Amiodaron và Verapamil đẩy Digoxin ra khỏi vị trí gắn ở cơ vân và ức chế protein vận chuyển P-glycoprotein ở ống thận → <strong>làm nồng độ Digoxin trong huyết tương tăng vọt gấp đôi</strong> → Bắt buộc giảm 50% liều Digoxin khi phối hợp.
+            </li>
+            <li>
+              <strong style="color: #059669;">5. Thuốc giải độc đặc hiệu kháng thể kháng Digoxin (Digoxin Immune Fab / Digibind):</strong>
+              <br>&bull; Các đoạn kháng thể Fab liên kết chọn lọc cực mạnh với Digoxin tự do trong lòng mạch, kéo Digoxin ra khỏi mô cơ tim và đào thải qua thận.
+              <br>&bull; <em>Lưu ý sinh tử:</em> Chống chỉ định sốc điện khử rung tim khi đang nghi ngờ ngộ độc Digoxin vì dễ khởi phát rung thất trơ kháng trị tử vong!
+            </li>
+            <li>
+              <strong style="color: #b45309;">6. Nhóm ức chế Phosphodiesterase-3 (Milrinon, Inamrinon) — Vừa bóp vừa giãn (Inodilator):</strong>
+              <br>&bull; Làm tăng cAMP nội bào ở cơ tim (tăng co bóp) và ở cơ trơn mạch máu (giãn mạch). Chỉ dùng cấp cứu ngắn hạn trong suy tim cấp nặng mất bù; CẤM dùng dài ngày vì làm tăng tỷ lệ tử vong do loạn nhịp tim.
+            </li>
+          </ul>
+        </div>
+
         <div class="exam-trap-box">
           <div class="exam-trap-title">🛑 Bẫy thi trắc nghiệm Bài 1:</div>
           &bull; <strong>Bẫy ion K⁺:</strong> K⁺ cạnh tranh với Digoxin tại vị trí gắn enzym Na⁺/K⁺-ATPase. Do đó khi <em>hạ Kali máu</em>, Digoxin gắn vào enzym nhiều hơn → <strong>làm tăng độc tính của Digoxin</strong> dù nồng độ thuốc trong máu ở mức bình thường!
@@ -553,6 +587,39 @@ function generateAll20LessonsHtml() {
           <li><strong>Ivabradin:</strong> Ức chế chọn lọc kênh I<sub>f</sub> ở nút xoang → giảm nhịp tim đơn thuần, không ảnh hưởng huyết áp và sức co bóp cơ tim.</li>
         </ul>
 
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Chữa Đau Thắt Ngực - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #dc2626;">1. Hiện tượng dung nạp Nitrat (Tolerance / "Bệnh Thứ Hai" - Monday Disease):</strong>
+              <br>&bull; <em>Cơ chế:</em> Dùng nitrat hữu cơ liên tục 24/24h làm cạn kiệt các nhóm sulfhydryl (-SH) tự do nội bào cần thiết để chuyển hóa tạo NO → thuốc mất hoàn toàn tác dụng giãn mạch.
+              <br>&bull; <em>Biện pháp bắt buộc:</em> Phải tạo ra <strong>"khoảng trống không có Nitrat" (Nitrate-free interval) kéo dài 8 - 12 giờ mỗi ngày</strong> (thường tháo miếng dán vào ban đêm) để cơ thể tự tái tổng hợp nhóm -SH.
+            </li>
+            <li>
+              <strong style="color: #b45309;">2. Tương tác chết người giữa Nitrat hữu cơ và Thuốc ức chế PDE-5 (Sildenafil, Tadalafil):</strong>
+              <br>&bull; Nitrat làm tăng tổng hợp cGMP, còn Sildenafil ức chế thoái giáng cGMP → <strong>bùng nổ cGMP gây giãn mạch toàn thân dữ dội</strong>, tụt huyết áp kịch phát, trụy tim mạch tử vong!
+              <br>&bull; <em>Khoảng cách an toàn bắt buộc:</em> Cấm dùng Nitrat trong vòng ít nhất 24 giờ sau Sildenafil và ít nhất 48 giờ sau Tadalafil.
+            </li>
+            <li>
+              <strong style="color: #2563eb;">3. Cơ chế chính chống đau thắt ngực của Nitroglycerin là Giảm Tiền Gánh (Không phải giãn vành):</strong>
+              <br>&bull; Ở liều điều trị, Nitroglycerin tác dụng ưu thế tuyệt đối trên hệ tĩnh mạch lớn ngoại vi → ứ máu ở ngoại vi, làm giảm lượng máu dồn về tim (giảm tiền gánh) → giảm thể tích thất trái và giảm sức căng thành tim → giảm mạnh nhu cầu tiêu thụ oxy cơ tim.
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">4. Hiện tượng "Cướp máu mạch vành" (Coronary Steal Syndrome):</strong>
+              <br>&bull; Khi dùng các thuốc giãn tiểu động mạch vành mạnh và ngắn (Dipyridamol hoặc Dihydropyridine tác dụng nhanh), thuốc chỉ làm giãn được các nhánh mạch lành (vốn còn co giãn tốt), trong khi nhánh mạch nuôi vùng thiếu máu đã giãn tối đa do thiếu oxy. Máu sẽ bị kéo về vùng lành, làm vùng thiếu máu cơ tim càng bị thiếu máu trầm trọng hơn!
+            </li>
+            <li>
+              <strong style="color: #059669;">5. Ivabradine — Thuốc ức chế dòng If tại nút xoang hạ nhịp tim thuần túy:</strong>
+              <br>&bull; Ức chế đặc hiệu dòng kênh If phụ thuộc điện thế tại nút xoang, làm chậm nhịp tim mà <strong>hoàn toàn không làm giảm sức co bóp cơ tim và không ảnh hưởng huyết áp</strong>. Tác dụng phụ độc nhất: hiện tượng chói sáng mắt (Phosphenes) do ức chế kênh h tương tự ở võng mạc.
+            </li>
+            <li>
+              <strong style="color: #e11d48;">6. Chống chỉ định Chẹn Beta đơn độc trong Đau thắt ngực thể co thắt (Prinzmetal):</strong>
+              <br>&bull; Trong cơn đau co thắt vành Prinzmetal, dùng chẹn beta đơn độc sẽ chẹn thụ thể β₂ (gây giãn mạch), để hở thụ thể α₁ không bị đối kháng → gây co thắt động mạch vành dữ dội hơn! Lựa chọn hàng đầu là thuốc chẹn kênh calci (CCB) hoặc Nitrat.
+            </li>
+          </ul>
+        </div>
+
         <div class="exam-trap-box">
           <div class="exam-trap-title">🛑 Bẫy thi trắc nghiệm Bài 3:</div>
           &bull; <strong>Bẫy cơ chế giảm đau thắt ngực của Nitroglycerin:</strong> Tác dụng chống đau ngực chủ yếu là nhờ <strong>GIẢM TIỀN GÁNH</strong> (giãn tĩnh mạch làm giảm đổ đầy tim), chứ không phải do giãn động mạch vành!
@@ -643,6 +710,38 @@ function generateAll20LessonsHtml() {
           <li><strong>Atropin:</strong> Thuốc kháng phó giao cảm dùng cấp cứu nhịp tim chậm xoang có triệu chứng hoặc block AV.</li>
         </ul>
 
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Chống Loạn Nhịp - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #2563eb;">1. Hội chứng Da Xanh Xám (Blue-Grey Skin) &amp; Lắng đọng giác mạc của Amiodaron:</strong>
+              <br>&bull; Amiodaron tích lũy kéo dài ở mô mỡ và da. Khi tiếp xúc với ánh sáng mặt trời, thuốc gây lắng đọng hạt sắc tố lipofuscin khiến da bệnh nhân đổi thành màu xanh xám (Smurf syndrome). Lắng đọng giác mạc hình xoáy (Corneal microdeposits) gặp ở hầu hết bệnh nhân nhưng không ảnh hưởng thị lực.
+            </li>
+            <li>
+              <strong style="color: #dc2626;">2. Xơ phổi mô kẽ tiến triển (Pulmonary Fibrosis) — Độc tính chết người của Amiodaron:</strong>
+              <br>&bull; Gặp ở 1-10% bệnh nhân dùng kéo dài, gây ho khan, khó thở tăng dần, thâm nhiễm phổi mô kẽ có thể tử vong. Bắt buộc chụp X-quang phổi định kỳ hàng năm và kiểm tra chức năng hô hấp.
+            </li>
+            <li>
+              <strong style="color: #d97706;">3. Rối loạn tuyến giáp 2 chiều do cấu trúc chứa 37% Iod của Amiodaron:</strong>
+              <br>&bull; <em>Suy giáp:</em> Do lượng iod quá lớn ức chế tổng hợp hormon giáp (Hiệu ứng Wolff-Chaikoff).
+              <br>&bull; <em>Cường giáp:</em> Do iod kích thích tuyến giáp tổng hợp hormon bùng phát (Hiệu ứng Jod-Basedow). Bắt buộc xét nghiệm TSH và FT4 định kỳ trước và trong suốt quá trình điều trị.
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">4. Bẫy Xoắn Đỉnh (Torsades de Pointes) do Kéo Dài Khoảng QT:</strong>
+              <br>&bull; Nhóm IA (Quinidin, Procainamid, Disopyramid) và Nhóm III (Sotalol, Dofetilide) làm chậm tái cực thất, kéo dài đoạn QT trên ECG → nguy cơ khởi phát cơn nhịp nhanh thất xoắn đỉnh gây đột tử, nhất là khi kèm hạ K⁺ và hạ Mg²⁺ máu. Xử trí cấp cứu bằng tiêm tĩnh mạch <strong>Magnesi sulfat (MgSO₄)</strong>.
+            </li>
+            <li>
+              <strong style="color: #be123c;">5. Hội chứng Giả Lupus Ban Đỏ (Drug-induced SLE) do Procainamid:</strong>
+              <br>&bull; Gặp ở 20-30% bệnh nhân dùng dài ngày, đặc biệt ở người có kiểu gen acetyl hóa chậm. Bệnh nhân sốt, đau khớp, viêm đa màng, xuất hiện kháng thể kháng nhân (ANA) và kháng Histone dương tính; hồi phục khi dừng thuốc.
+            </li>
+            <li>
+              <strong style="color: #059669;">6. Kỹ thuật tiêm tĩnh mạch Adenosin cấp cứu nhịp nhanh kịch phát trên thất (PSVT):</strong>
+              <br>&bull; Bán thải trong máu cực ngắn (< 10 giây). Bắt buộc phải <strong>tiêm tĩnh mạch bolus cực nhanh trong 1 - 2 giây</strong> qua đường truyền gần tim (tĩnh mạch cẳng tay/cảnh), sau đó bơm xả ngay 20mL dung dịch NaCl 0.9% để đẩy thuốc vào tim kịp thời gian bán hủy.
+            </li>
+          </ul>
+        </div>
+
         <div class="exam-trap-box">
           <div class="exam-trap-title">🛑 Bẫy thi trắc nghiệm Bài 4:</div>
           &bull; <strong>Amiodaron kéo dài QT nhưng hiếm gây xoắn đỉnh:</strong> Dù làm kéo dài khoảng QT mạnh nhưng Amiodaron chẹn cả dòng canxi và natri đồng đều nên nguy cơ gây xoắn đỉnh thấp hơn nhiều so với Sotalol hoặc Quinidin.
@@ -719,6 +818,38 @@ function generateAll20LessonsHtml() {
           <li><strong>Mannitol:</strong> Dùng điều trị phù não, giảm áp lực nội sọ cấp cứu và hạ nhãn áp trong cơn Glôcôm cấp. Chống chỉ định trong phù phổi cấp và suy tim ứ huyết (do kéo nước vào lòng mạch làm quá tải tuần hoàn).</li>
         </ul>
 
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Lợi Niệu - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #059669;">1. Sự đối nghịch ion Calci: Thiazid TĂNG Ca²⁺ vs Quai HẠ Ca²⁺:</strong>
+              <br>&bull; <em>Thiazid (HCTZ, Indapamid):</em> Tăng tái hấp thu Ca²⁺ ở ống lượn xa → <strong>làm tăng calci máu</strong> → Lợi tiểu ưu tiên hàng đầu cho người cao tuổi THA kèm loãng xương hoặc sỏi thận calci niệu.
+              <br>&bull; <em>Lợi tiểu quai (Furosemid):</em> Ức chế đồng vận chuyển Na⁺/K⁺/2Cl⁻ ở nhánh lên quai Henle làm mất điện thế dương trong lòng ống, ức chế tái hấp thu Ca²⁺ và Mg²⁺ → <strong>thải trừ mạnh Ca²⁺</strong> → Chuyên dùng cấp cứu tăng calci máu ác tính.
+            </li>
+            <li>
+              <strong style="color: #b45309;">2. Ranh giới hiệu lực suy thận GFR &lt; 30 mL/phút:</strong>
+              <br>&bull; Nhóm Thiazid <strong>mất hoàn toàn hiệu lực</strong> khi độ lọc cầu thận GFR &lt; 30 mL/phút; lúc này bắt buộc phải dùng <strong>Lợi tiểu quai (Furosemid)</strong> liều cao vì thuốc vẫn duy trì được hiệu quả tống muối nước ngay cả khi suy thận nặng.
+            </li>
+            <li>
+              <strong style="color: #dc2626;">3. Độc tính trên thính giác (Ototoxicity) không hồi phục của Furosemid:</strong>
+              <br>&bull; Furosemid phá hủy dải mạch vân (Stria vascularis) ở ốc tai gây ù tai và điếc vĩnh viễn; Nguy cơ tăng vọt khi tiêm tĩnh mạch nhanh liều cao hoặc phối hợp với kháng sinh Aminoglycosid (Gentamicin). Bắt buộc tốc độ truyền tĩnh mạch không quá 4 mg/phút.
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">4. Tác dụng phụ kháng Androgen của Spironolacton:</strong>
+              <br>&bull; Spironolacton có cấu trúc steroid tương tự nội tiết tố sinh dục, gắn cạnh tranh trên thụ thể Androgen và Progesterone → gây <strong>chứng vú to ở nam giới (Gynecomastia), bất lực và rối loạn kinh nguyệt</strong>. Dẫn chất Eplerenone chọn lọc cao trên thụ thể mineralocorticoid không gây tác dụng phụ này.
+            </li>
+            <li>
+              <strong style="color: #2563eb;">5. Nhiễm toan chuyển hóa tăng Clo máu do Acetazolamid:</strong>
+              <br>&bull; Ức chế enzym Carbonic Anhydrase (CA) ở ống lượn gần làm mất ion HCO₃⁻ vào nước tiểu → nước tiểu kiềm nhưng máu bị nhiễm toan chuyển hóa. Ứng dụng điều trị hạ nhãn áp Glaucoma góc mở và chống say độ cao cấp (Acute Mountain Sickness).
+            </li>
+            <li>
+              <strong style="color: #be123c;">6. Nguy cơ phù phổi cấp khi dùng Lợi tiểu thẩm thấu Mannitol:</strong>
+              <br>&bull; Mannitol kéo nước ồ ạt từ mô kẽ vào lòng mạch làm tăng vọt thể tích tuần hoàn cấp tính trước khi kịp bài niệu qua thận → CẤM TUYỆT ĐỐI dùng cho bệnh nhân suy tim ứ huyết nặng hoặc phù phổi cấp vì làm bệnh bùng phát dữ dội.
+            </li>
+          </ul>
+        </div>
+
         <div class="exam-trap-box">
           <div class="exam-trap-title">🛑 Bẫy thi trắc nghiệm Bài 5:</div>
           &bull; <strong>Bẫy mức lọc cầu thận (GFR):</strong> Khi suy thận nặng với mức lọc cầu thận GFR < 30 mL/phút, lợi niệu Thiazid hoàn toàn <strong>mất tác dụng</strong> → bắt buộc phải chuyển sang dùng <strong>Lợi niệu quai (Furosemid)</strong>!
@@ -761,6 +892,37 @@ function generateAll20LessonsHtml() {
           </li>
           <li><strong>Phác đồ diệt vi khuẩn HP (Helicobacter pylori):</strong> Phác đồ chuẩn 4 thuốc có Bismuth dùng 14 ngày: <strong>PPI + Bismuth + Metronidazol + Tetracyclin</strong>.</li>
         </ul>
+
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Điều Trị DDTT - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #2563eb;">1. Quy tắc thời điểm vàng uống PPI: Trước bữa ăn sáng 30 - 60 phút:</strong>
+              <br>&bull; <em>Cơ chế:</em> PPI chỉ gắn và bất hoạt không hồi phục các bơm H⁺/K⁺-ATPase đang ở trạng thái hoạt động (bơm acid ra lòng dạ dày). Bữa ăn sau đó 30-60 phút là tín hiệu kích thích các bơm hoạt động mạnh nhất, đúng lúc nồng độ PPI trong máu đạt đỉnh. Uống sau ăn làm giảm hiệu quả ức chế acid tới 50%!
+            </li>
+            <li>
+              <strong style="color: #dc2626;">2. Bản chất tiền chất (Prodrug) và Bẫy ion acid của PPI:</strong>
+              <br>&bull; PPI là base yếu, bị acid dịch vị phá hủy nên viên thuốc bắt buộc phải bao tan trong ruột. Thuốc hấp thu ở ruột non, theo máu đến tế bào viền, khuếch tán vào các vi quản tiết acid (pH &lt; 2) và bị proton hóa thành dẫn chất sulfenamid mang điện tích, bị "bẫy" lại và gắn cộng hóa trị vào cầu nối disulfid (-S-S-) của bơm proton.
+            </li>
+            <li>
+              <strong style="color: #b45309;">3. Tương tác cạnh tranh enzym CYP2C19 giữa Omeprazol và Clopidogrel:</strong>
+              <br>&bull; Clopidogrel là tiền chất cần enzym CYP2C19 ở gan để hoạt hóa chống đông. Omeprazol ức chế mạnh CYP2C19 làm giảm nồng độ dạng có hoạt tính của Clopidogrel → tăng nguy cơ tái phát nhồi máu cơ tim và tắc stent mạch vành. Khi cần phối hợp kháng tiểu cầu, nên ưu tiên dùng <strong>Pantoprazol</strong> vì ít ức chế enzym này.
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">4. Hiện tượng dung nạp nhanh (Tachyphylaxis / Tolerance) của Kháng H₂:</strong>
+              <br>&bull; Cimetidin, Ranitidin, Famotidin bị giảm hiệu lực ức chế acid nhanh chóng chỉ sau 3-5 ngày dùng liên tục do cơ thể tăng tiết gastrin phản ứng bù trừ làm tăng kích thích tế bào viền. Hiện tượng này hoàn toàn không xảy ra ở nhóm PPI.
+            </li>
+            <li>
+              <strong style="color: #475569;">5. Bismuth subsalicylat làm đen phân và đen lưỡi — Bẫy nhầm xuất huyết tiêu hóa:</strong>
+              <br>&bull; Bismuth phản ứng với khí hydro sulfid (H₂S) do vi khuẩn đường ruột sinh ra tạo thành kết tủa Bismuth sulfid (Bi₂S₃) màu đen nhánh, khiến phân và lưỡi có màu đen. Đây là hiện tượng hoàn toàn vô hại nhưng rất dễ bị nhầm lẫn với dấu hiệu phân đen do xuất huyết tiêu hóa trên!
+            </li>
+            <li>
+              <strong style="color: #059669;">6. Điều kiện môi trường acid để Sucralfat tạo màng che bảo vệ ổ loét:</strong>
+              <br>&bull; Sucralfat chỉ trùng hợp (polymer hóa) thành lớp gel dính kiên cố bao phủ mặt ổ loét khi ở môi trường acid (pH &lt; 4). CẤM dùng đồng thời Sucralfat với thuốc kháng toan Antacid hoặc PPI/kháng H₂ (phải uống cách xa nhau ít nhất 2 giờ).
+            </li>
+          </ul>
+        </div>
 
         <div class="exam-trap-box">
           <div class="exam-trap-title">🛑 Bẫy thi trắc nghiệm Bài 6:</div>
@@ -812,6 +974,34 @@ function generateAll20LessonsHtml() {
           <li><strong>Thuốc diệt amip trong lòng ruột (Diloxanid furoat, Paromomycin):</strong> Tác dụng chọn lọc trên thể kén (cyst) amip trong lòng đại tràng. Dùng tiếp nối sau Metronidazol để quét sạch kén phòng ngừa tái phát và người lành mang trùng.</li>
         </ul>
 
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Trị Giun Sán &amp; Amip - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #2563eb;">1. Nghịch lý hấp thu chất béo: Trị giun đường ruột đói vs Trị sán mô no:</strong>
+              <br>&bull; <em>Trị giun đường ruột (giun đũa, giun móc, giun tóc):</em> Uống Albendazole lúc bụng đói để thuốc ít hấp thu qua niêm mạc ruột, tập trung nồng độ tối đa tại lòng ống tiêu hóa để diệt giun tại chỗ.
+              <br>&bull; <em>Trị ấu trùng sán mô bào (Nang sán chó Echinococcus, Ấu trùng sán lợn ở não):</em> Bắt buộc <strong>uống cùng bữa ăn giàu chất béo</strong> để tăng độ tan và tăng hấp thu vào máu gấp 4 - 5 lần thì thuốc mới ngấm tới các mô bào sâu!
+            </li>
+            <li>
+              <strong style="color: #dc2626;">2. Phản ứng kiểu Disulfiram (Antabuse Effect) của Metronidazol khi uống rượu:</strong>
+              <br>&bull; Metronidazol ức chế enzym Aldehyd dehydrogenase tại gan khiến acetaldehyd ứ đọng dữ dội khi uống rượu → gây đỏ bừng mặt, nhịp tim nhanh, nôn mửa dữ dội, tụt huyết áp. Cấm uống rượu trong suốt đợt dùng và sau khi ngừng thuốc ít nhất 48 - 72 giờ!
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">3. Cơ chế mở kênh Calci gây co cứng cơ sán lập tức của Praziquantel:</strong>
+              <br>&bull; Praziquantel làm tăng vọt tính thấm của màng tế bào sán đối với ion Ca²⁺ → ion Ca²⁺ tràn vào bào tương gây co cứng cơ toàn thân sán tức thì, làm tổn thương và phân rã lớp vỏ ngoài, bộc lộ kháng nguyên cho hệ miễn dịch của vật chủ tấn công tiêu diệt.
+            </li>
+            <li>
+              <strong style="color: #059669;">4. Nguyên tắc bắt buộc: Điều trị amip thể mô phải phối hợp thuốc diệt amip lòng ruột:</strong>
+              <br>&bull; Metronidazol chỉ diệt thể amip hoạt động ăn hồng cầu ở mô (thành ruột, áp xe gan), hoàn toàn không diệt được thể bào nang amip trong lòng ruột → Sau đợt Metronidazol bắt buộc phải dùng tiếp thuốc diệt amip lòng ruột (như Diloxanid furoat) để tiệt trừ hoàn toàn mầm bệnh, tránh tái phát và ngừa người lành mang trùng.
+            </li>
+            <li>
+              <strong style="color: #d97706;">5. Bẫy thoát ấu trùng sán dải lợn của Niclosamid:</strong>
+              <br>&bull; Niclosamid giết chết đốt sán dây dải lợn (<em>Taenia solium</em>) nhưng không giết được trứng sán. Đốt sán bị phân rã giải phóng hàng triệu trứng sán trong lòng ruột; nếu trứng nở thành ấu trùng xuyên qua thành ruột vào máu lên não sẽ gây bệnh ấu trùng sán lợn ở não (Cysticercosis) cực kỳ nguy hiểm → Bắt buộc phải uống thuốc nhuận tràng muối (Magnesi sulfat) sau khi uống Niclosamid 2 giờ để tống sạch xác sán và trứng ra ngoài!
+            </li>
+          </ul>
+        </div>
+
         <div class="exam-trap-box">
           <div class="exam-trap-title">🛑 Bẫy thi trắc nghiệm Bài 7:</div>
           &bull; <strong>Bẫy phối hợp điều trị lỵ amip:</strong> Metronidazol chỉ diệt amip ở mô chứ <strong>không diệt được thể kén trong lòng ruột</strong>! Do đó sau khi hết triệu chứng lỵ cấp bằng Metronidazol, bắt buộc phải uống thêm thuốc diệt kén (Diloxanid hoặc Paromomycin).
@@ -853,6 +1043,33 @@ function generateAll20LessonsHtml() {
           <li><strong>Kháng thụ thể Leukotriene (LTRA):</strong> Montelukast, Zafirlukast. Rất hiệu quả trong hen do gắng sức, hen do dị ứng aspirin, hen kèm viêm mũi dị ứng.</li>
           <li><strong>Theophyllin:</strong> Ức chế enzym PDE làm tăng cAMP. Phạm vi điều trị hẹp, dễ ngộ độc loạn nhịp tim và co giật.</li>
         </ul>
+
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Điều Trị RLHH - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #dc2626;">1. Cảnh báo hộp đen (Black Box Warning): CẤM dùng LABA đơn độc trong Hen phế quản:</strong>
+              <br>&bull; Dùng thuốc chủ vận β₂ tác dụng kéo dài (Salmeterol, Formoterol) đơn độc mà không có Corticosteroid hít (ICS) đi kèm sẽ làm giảm nhạy cảm thụ thể β₂ mà không kiểm soát được quá trình viêm mạn tính → tăng tỷ lệ tử vong kịch phát do hen! Bắt buộc LABA luôn phải phối hợp đồng thời với ICS.
+            </li>
+            <li>
+              <strong style="color: #d97706;">2. Nấm miệng Candida và Khàn tiếng do Corticosteroid hít (ICS):</strong>
+              <br>&bull; Thuốc dạng xịt hít (Budesonid, Fluticason) bị đọng lại ở hầu họng gây ức chế miễn dịch tại chỗ và teo cơ dây thanh → Bắt buộc bệnh nhân phải <strong>súc miệng nhổ nước ngay sau khi hít thuốc</strong> và khuyến khích dùng buồng đệm (Spacer) để giảm lắng đọng hầu họng.
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">3. Ranh giới trị liệu hẹp và Độc tính chết người của Theophylline:</strong>
+              <br>&bull; Nồng độ trị liệu trong huyết tương rất hẹp (10 - 20 mcg/mL); khi nồng độ &gt; 20 mcg/mL gây nôn mửa dai dẳng, loạn nhịp tim thất nguy hiểm và co giật kháng trị tử vong. Bị tăng nồng độ vọt khi dùng chung thuốc ức chế enzym gan CYP1A2 (Ciprofloxacin, Erythromycin).
+            </li>
+            <li>
+              <strong style="color: #2563eb;">4. Cơ chế đối kháng thụ thể Adenosine của Theophylline:</strong>
+              <br>&bull; Khác với thuốc kích thích β₂, Theophylline vừa ức chế enzym PDE vừa đối kháng thụ thể Adenosine A₁ và A₂A tại cơ trơn phế quản và não → vừa gây giãn phế quản, vừa gây kích thích trung tâm hô hấp ở hành não (được ứng dụng điều trị cơn ngừng thở ở trẻ sơ sinh non tháng).
+            </li>
+            <li>
+              <strong style="color: #059669;">5. Hội chứng Churg-Strauss khi dùng thuốc đối kháng thụ thể Leukotriene:</strong>
+              <br>&bull; Bệnh nhân dùng Montelukast hoặc Zafirlukast có thể biểu hiện hội chứng viêm mạch u hạt dị ứng tăng bạch cầu ái toan (Churg-Strauss syndrome), thường xuất hiện khi đang bắt đầu giảm liều corticosteroid đường uống.
+            </li>
+          </ul>
+        </div>
 
         <div class="exam-trap-box">
           <div class="exam-trap-title">🛑 Bẫy thi trắc nghiệm Bài 8:</div>
@@ -912,6 +1129,29 @@ function generateAll20LessonsHtml() {
           </table>
         </div>
 
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Kháng Histamin H1 - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #dc2626;">1. Kháng H₁ Thế Hệ 1: Thân dầu qua hàng rào máu não &amp; Tác dụng Anticholinergic:</strong>
+              <br>&bull; Clorpheniramin, Promethazin, Diphenhydramin dễ dàng qua não gây <strong>buồn ngủ sâu, an thần, giảm phản xạ</strong>. Đồng thời kháng thụ thể Muscarinic gây khô miệng, nhìn mờ, táo bón, bí tiểu → Chống chỉ định tuyệt đối cho người phì đại tiền liệt tuyến, glaucom góc đóng, tài xế và vận hành máy móc.
+            </li>
+            <li>
+              <strong style="color: #059669;">2. Kháng H₁ Thế Hệ 2: Chọn lọc ngoại vi, hoàn toàn không gây buồn ngủ:</strong>
+              <br>&bull; Loratadin, Cetirizin, Fexofenadin có cấu trúc phân cực hoặc ion hóa ở pH sinh lý, gắn protein cao và là cơ chất của P-glycoprotein nên không qua được hàng rào máu não → không an thần, không gây buồn ngủ và không có tác dụng phụ kháng cholinergic.
+            </li>
+            <li>
+              <strong style="color: #b45309;">3. Thảm họa Xoắn Đỉnh của Terfenadin và Astemizol — Nguồn gốc ra đời Fexofenadin:</strong>
+              <br>&bull; Terfenadin là tiền chất có khả năng chẹn kênh K⁺ dẫn truyền tim mạch gây kéo dài khoảng QT và xoắn đỉnh tử vong khi nồng độ thuốc mẹ tăng cao do dùng chung thuốc ức chế CYP3A4 (Ketoconazol, Erythromycin). Thuốc đã bị thu hồi và thay thế bằng dạng chuyển hóa có hoạt tính an toàn là <strong>Fexofenadin</strong>.
+            </li>
+            <li>
+              <strong style="color: #2563eb;">4. Tác dụng chống say tàu xe và nôn tiền đình chỉ có ở Thế Hệ 1:</strong>
+              <br>&bull; Nhờ tác dụng ức chế thụ thể Muscarinic và Histamin H₁ tại nhân tiền đình và trung tâm nôn ở thân não (Dimenhydrinat, Diphenhydramin, Scopolamin). Các thuốc thế hệ 2 hoàn toàn không có tác dụng chống say tàu xe!
+            </li>
+          </ul>
+        </div>
+
         <div class="exam-trap-box">
           <div class="exam-trap-title">🛑 Bẫy thi trắc nghiệm Bài 9:</div>
           &bull; <strong>Chống chỉ định của Kháng H1 thế hệ 1:</strong> Do có tác dụng kháng cholinergic (khô dịch tiết, giãn cơ trơn bàng quang, giãn đồng tử) → chống chỉ định tuyệt đối cho bệnh nhân bị <strong>Glôcôm góc đóng</strong> và <strong>Phì đại lành tính tuyến tiền liệt (u xơ tiền liệt tuyến)</strong> vì gây bí tiểu cấp và tăng nhãn áp!
@@ -949,6 +1189,34 @@ function generateAll20LessonsHtml() {
           <li><strong>Resin gắn acid mật (Cholestyramin):</strong> Giữ acid mật trong ruột đào thải theo phân → gan phải lấy cholesterol để tái tạo acid mật. ADR: Táo bón, cản trở hấp thu các vitamin tan trong dầu (A, D, E, K).</li>
         </ul>
 
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Hạ Lipid Máu - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #dc2626;">1. Tiêu cơ vân cấp (Rhabdomyolysis) và Suy thận cấp do Statin:</strong>
+              <br>&bull; <em>Cơ chế:</em> Ức chế HMG-CoA Reductase làm suy giảm tổng hợp Mevalonate, kéo theo cạn kiệt Coenzym Q10 (Ubiquinone) trong ty thể tế bào cơ → ly giải cơ vân, giải phóng myoglobin làm nghẽn ống thận gây suy thận cấp.
+              <br>&bull; <em>Tương tác cấm kỵ:</em> Nguy cơ tiêu cơ vân tăng vọt gấp 10-20 lần khi phối hợp Statin với dẫn chất Fibrat (đặc biệt là <strong>Gemfibrozil</strong>) hoặc thuốc ức chế enzym CYP3A4.
+            </li>
+            <li>
+              <strong style="color: #2563eb;">2. Thời điểm uống Statin ban đêm trước khi ngủ:</strong>
+              <br>&bull; Enzym HMG-CoA Reductase ở tế bào gan tổng hợp cholesterol nội sinh mạnh nhất vào ban đêm (từ 0h - 4h sáng). Các Statin có thời gian bán thải ngắn (Simvastatin, Lovastatin, Pravastatin) <strong>bắt buộc phải uống vào buổi tối trước khi đi ngủ</strong>. Các Statin bán thải dài (Atorvastatin, Rosuvastatin) có thể uống vào bất kỳ thời điểm nào trong ngày.
+            </li>
+            <li>
+              <strong style="color: #d97706;">3. Cơn bốc hỏa đỏ bừng mặt và ngứa da do Acid Nicotinic (Niacin / Vitamin B3):</strong>
+              <br>&bull; Do kích thích giải phóng Prostaglandin D₂ và E₂ tại mạng lưới mao mạch da dưới biểu bì. Dự phòng hiệu quả bằng cách <strong>uống Aspirin 325mg trước khi dùng Niacin 30 phút</strong>.
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">4. Nhựa gắn acid mật (Cholestyramin) tạo phức trơ phong tỏa hấp thu thuốc khác:</strong>
+              <br>&bull; Cholestyramin và Colestipol mang điện tích dương mạnh, tạo phức chelate không hấp thu với các thuốc có tính acid yếu: Warfarin, Digoxin, Thiazid, Levothyroxin và các vitamin tan trong dầu (A, D, E, K). Bắt buộc uống các thuốc khác trước 1 giờ hoặc sau 4 - 6 giờ so với nhựa gắn acid mật.
+            </li>
+            <li>
+              <strong style="color: #059669;">5. Ezetimibe — Ức chế chọn lọc protein vận chuyển NPC1L1 tại ruột non:</strong>
+              <br>&bull; Thuốc duy nhất ức chế đặc hiệu protein vận chuyển Niemann-Pick C1-Like 1 (NPC1L1) tại diềm bàn chải ruột non, làm giảm hấp thu cholesterol từ thức ăn và dịch mật mà hoàn toàn không cản trở hấp thu triglycerid hay các vitamin tan trong dầu.
+            </li>
+          </ul>
+        </div>
+
         <div class="exam-trap-box">
           <div class="exam-trap-title">🛑 Bẫy thi trắc nghiệm Bài 10:</div>
           &bull; <strong>Tương tác nguy hiểm chết người Statin + Gemfibrozil:</strong> Gemfibrozil ức chế quá trình glucuronid hóa của statin → làm nồng độ statin trong máu tăng vọt, nguy cơ <strong>tiêu cơ vân cấp (Rhabdomyolysis) tăng gấp 10 lần</strong>! Nếu bắt buộc phải phối hợp Statin với Fibrat, phải chọn <strong>Fenofibrat</strong> (an toàn hơn nhiều).
@@ -983,6 +1251,33 @@ function generateAll20LessonsHtml() {
             <br>&bull; <em>CẢNH BÁO NGUY HIỂM:</em> Primaquin gây <strong>tan máu cấp tính (tán huyết)</strong> ở người thiếu men G6PD. Bắt buộc kiểm tra G6PD trước khi dùng. Chống chỉ định cho phụ nữ mang thai và trẻ dưới 6 tháng.
           </li>
         </ul>
+
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Chống Sốt Rét - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #dc2626;">1. Cơn tan máu cấp ở người thiếu hụt enzym G6PD do dùng Primaquin:</strong>
+              <br>&bull; Primaquin tạo ra các chất chuyển hóa có tính oxy hóa mạnh. Ở bệnh nhân thiếu enzym Glucose-6-Phosphat Dehydrogenase (G6PD), hồng cầu không tạo đủ NADPH để khử glutathion, màng hồng cầu bị oxy hóa vỡ ồ ạt gây tan máu cấp, tiểu huyết sắc tố, suy thận cấp. BẮT BUỘC xét nghiệm sàng lọc G6PD trước khi chỉ định!
+            </li>
+            <li>
+              <strong style="color: #059669;">2. Primaquin là thuốc DUY NHẤT diệt thể ẩn trong gan (Hypnozoite):</strong>
+              <br>&bull; Thuốc duy nhất có khả năng tiêu diệt thể ngủ trong gan của ký sinh trùng <em>Plasmodium vivax</em> và <em>Plasmodium ovale</em> để điều trị tiệt căn chống tái phát xa; đồng thời diệt thể giao bào trong máu ngăn ngừa muỗi hút máu truyền dịch bệnh cho cộng đồng.
+            </li>
+            <li>
+              <strong style="color: #d97706;">3. Hội chứng nhiễm độc Cinchonism kinh điển của Quinin:</strong>
+              <br>&bull; Xuất hiện khi dùng liều cao Quinin với tam chứng đặc trưng: <strong>ù tai, giảm thính lực, hoa mắt chóng mặt, nhìn mờ</strong> kèm buồn nôn và nhức đầu dữ dội; hồi phục hoàn toàn khi ngừng thuốc.
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">4. Bệnh võng mạc hình mắt bò (Bull's Eye Maculopathy) do Chloroquin:</strong>
+              <br>&bull; Chloroquin gắn chặt vào các tế bào sắc tố melanin ở võng mạc mắt, dùng liều cao kéo dài gây lắng đọng giác mạc và thoái hóa hoàng điểm không hồi phục hình "mắt bò". Cần khám thị trường và soi đáy mắt định kỳ mỗi 6-12 tháng.
+            </li>
+            <li>
+              <strong style="color: #be123c;">5. Cấm dùng dẫn chất Artemisinin trong 3 tháng đầu thai kỳ &amp; Nguyên tắc phối hợp ACT:</strong>
+              <br>&bull; Artemisinin và dẫn chất gây độc phôi thai và tiêu thai trong giai đoạn đầu thai kỳ. Để ngăn ngừa ký sinh trùng đột biến kháng thuốc, dẫn chất Artemisinin (Artesunat, Artemether) LUÔN LUÔN phải phối hợp với một thuốc có thời gian bán thải dài (phác đồ ACT như Artemether + Lumefantrine), cấm tuyệt đối dùng đơn độc!
+            </li>
+          </ul>
+        </div>
 
         <div class="exam-trap-box">
           <div class="exam-trap-title">🛑 Bẫy thi trắc nghiệm Bài 11:</div>
@@ -1022,6 +1317,41 @@ function generateAll20LessonsHtml() {
           <li><strong>Chất cảm ứng enzym (Inducers):</strong> <em>Rifampicin, Phenobarbital, Phenytoin, Carbamazepin, Rượu mạn tính, Cỏ St. John's</em> → kích thích tăng tổng hợp enzym gan → <strong>tăng chuyển hóa thuốc dùng chung → giảm nồng độ thuốc và giảm/mất hiệu lực điều trị</strong> (ví dụ dùng Rifampicin làm mất tác dụng của thuốc tránh thai hoặc Warfarin).</li>
           <li><strong>Chất ức chế enzym (Inhibitors):</strong> <em>Ketoconazol, Itraconazol, Clarithromycin, Erythromycin, Cimetidin, Nước bưởi chùm (Grapefruit juice)</em> → ức chế enzym gan → <strong>giảm chuyển hóa thuốc dùng chung → tăng nồng độ thuốc trong máu gây ngộ độc</strong> (ví dụ Ketoconazol phối hợp Statin làm nồng độ statin tăng vọt gây tiêu cơ vân).</li>
         </ul>
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở KTGHP &amp; Tương Tác Thuốc - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #dc2626;">1. Cảm ứng enzym vs Ức chế enzym CYP450 — Quy tắc tử huyệt dược lâm sàng:</strong>
+              <br>&bull; <em>Chất cảm ứng enzym (Rifampicin, Phenobarbital, Carbamazepin, Phenytoin):</em> Tăng tổng hợp enzym gan → <strong>tăng tốc độ chuyển hóa thuốc dùng chung → nồng độ thuốc giảm sâu dẫn đến THẤT BẠI ĐIỀU TRỊ</strong> (ví dụ: phụ nữ uống thuốc tránh thai uống kèm Rifampicin sẽ vỡ kế hoạch có thai ngoài ý muốn).
+              <br>&bull; <em>Chất ức chế enzym (Ketoconazol, Erythromycin, Clarithromycin, Cimetidin):</em> Bất hoạt enzym gan → <strong>giảm chuyển hóa thuốc dùng chung → nồng độ thuốc tăng vọt dẫn đến NGỘ ĐỘC TỬ VONG</strong> (ví dụ: Clarithromycin phối hợp Simvastatin làm tăng nồng độ statin gây tiêu cơ vân cấp và suy thận).
+            </li>
+            <li>
+              <strong style="color: #d97706;">2. Bẫy Nước Bưởi Chùm (Grapefruit Juice) ức chế không hồi phục CYP3A4 ruột:</strong>
+              <br>&bull; Nước bưởi chùm chứa furanocoumarin ức chế không hồi phục enzym CYP3A4 ở biểu mô ruột non kéo dài 24-72h. Làm tăng sinh khả dụng của các thuốc chuyển hóa bước đầu qua ruột như Amlodipin, Felodipin, Simvastatin lên gấp 3-5 lần gây tụt huyết áp trụy mạch hoặc hoại tử cơ!
+            </li>
+            <li>
+              <strong style="color: #2563eb;">3. Tương tác đẩy protein huyết tương: Nguy cơ xuất huyết và hạ đường huyết bùng phát:</strong>
+              <br>&bull; Các thuốc có ái lực cực mạnh với albumin huyết tương (NSAID như Aspirin, Ibuprofen; Sulfamid) sẽ đẩy các thuốc có ranh giới điều trị hẹp ra dạng tự do:
+              <br>&bull; Đẩy <strong>Warfarin</strong> tự do → xuất huyết ồ ạt đe dọa tính mạng.
+              <br>&bull; Đẩy <strong>Sulfonylurea (Glibenclamid)</strong> tự do → hạ đường huyết sâu, hôn mê kéo dài.
+              <br>&bull; Đẩy <strong>Methotrexat</strong> tự do → suy tủy xương cấp tính.
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">4. Tương tác cạnh tranh bơm tống thuốc P-glycoprotein (P-gp):</strong>
+              <br>&bull; P-glycoprotein là bơm tống thuốc ra ngoài ở tế bào ruột và tế bào ống thận. Thuốc ức chế P-gp (Amiodaron, Verapamil, Quinidin, Clarithromycin) làm tăng hấp thu từ ruột và giảm bài xuất qua thận của <strong>Digoxin</strong> và <strong>Dabigatran</strong> → nồng độ hai thuốc này tăng vọt gấp 2-3 lần gây ngộ độc.
+            </li>
+            <li>
+              <strong style="color: #be123c;">5. Hội chứng Serotonin đe dọa tính mạng (Serotonin Syndrome):</strong>
+              <br>&bull; Xảy ra khi phối hợp 2 hoặc nhiều thuốc làm tăng nồng độ Serotonin ở synap thần kinh (SSRI như Fluoxetin + MAOI, Tramadol, Linezolid, hoặc Triptan). Biểu hiện kích thích thần kinh, giật rung cơ (Clonus), tăng thân nhiệt ác tính, co giật và tử vong. Bắt buộc có khoảng nghỉ ít nhất 2 tuần khi chuyển đổi giữa SSRI và MAOI (riêng Fluoxetin cần 5 tuần vì bán thải dài).
+            </li>
+            <li>
+              <strong style="color: #059669;">6. Tương tác tạo phức Chelate không tan tại lòng ruột:</strong>
+              <br>&bull; Kháng sinh Fluoroquinolon (Ciprofloxacin) hoặc Tetracyclin tạo phức chelate không hấp thu với các cation kim loại đa hóa trị (Fe²⁺, Ca²⁺, Mg²⁺, Al³⁺) trong sữa, viên sắt, viên calci hoặc thuốc kháng toan Antacid → nồng độ kháng sinh giảm hơn 80% gây thất bại điều trị. Bắt buộc uống cách nhau ít nhất 2 giờ.
+            </li>
+          </ul>
+        </div>
+
         <div style="margin-top: 0.75rem;">
           <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('KTGHP')">
             🎯 Luyện đề trắc nghiệm Bài 12: KTGHP &amp; Tương Tác Thuốc
@@ -1070,6 +1400,34 @@ function generateAll20LessonsHtml() {
           <li><strong>Cơ chế tránh thai:</strong> Feedback âm lên tuyến yên ức chế tiết LH và FSH → <strong>ngăn cản hiện tượng rụng trứng</strong>; làm đặc chất nhầy cổ tử cung ngăn tinh trùng xâm nhập; làm mỏng nội mạc tử cung ngăn làm tổ.</li>
           <li><strong>Chống chỉ định tuyệt đối:</strong> Tiền sử huyết khối tắc mạch (DVT, thuyên tắc phổi), đột quỵ, ung thư vú hoặc ung thư phụ thuộc estrogen, phụ nữ trên 35 tuổi nghiện hút thuốc lá.</li>
         </ul>
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Hormon - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #dc2626;">1. Quy tắc 8 giờ sáng, teo vỏ thượng thận &amp; Cơn suy thượng thận cấp khi dùng Corticosteroid:</strong>
+              <br>&bull; Dùng Corticosteroid toàn thân liều cao kéo dài trên 2-3 tuần gây ức chế ngược trục Dưới đồi - Tuyến yên - Thượng thận (HPA) làm teo vỏ thượng thận. Bắt buộc <strong>uống 1 liều duy nhất vào 8 giờ sáng</strong> (trùng đỉnh tiết cortisol sinh lý) hoặc dùng phác đồ cách nhật; CẤM dừng đột ngột mà phải giảm liều từ từ (tapering) để tránh suy thượng thận cấp trụy mạch tử vong!
+            </li>
+            <li>
+              <strong style="color: #2563eb;">2. Lựa chọn thuốc kháng giáp trong thai kỳ: PTU quý 1 vs Thiamazol quý 2-3:</strong>
+              <br>&bull; <em>Quý 1 thai kỳ:</em> Ưu tiên dùng <strong>Propylthiouracil (PTU)</strong> vì gắn protein huyết tương cao, ít qua nhau thai, tránh dị tật bẩm sinh da đầu (Aplasia cutis) và hẹp thực quản do Thiamazol gây ra.
+              <br>&bull; <em>Từ quý 2 trở đi:</em> Chuyển sang dùng <strong>Thiamazol</strong> vì dùng PTU kéo dài có nguy cơ gây hoại tử tế bào gan cấp đe dọa tính mạng người mẹ.
+            </li>
+            <li>
+              <strong style="color: #b45309;">3. Mất bạch cầu hạt (Agranulocytosis) đe dọa tính mạng do thuốc kháng giáp:</strong>
+              <br>&bull; Biến chứng đặc ứng nguy hiểm nhất của PTU và Thiamazol (tỷ lệ 0.1 - 0.5%). Bệnh nhân bắt buộc phải đi khám và làm xét nghiệm công thức máu khẩn cấp nếu có triệu chứng sốt cao đột ngột hoặc đau rát họng, loét miệng!
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">4. Nguy cơ thuyên tắc huyết khối tĩnh mạch sâu (DVT) do Estrogen:</strong>
+              <br>&bull; Estrogen kích thích gan tăng tổng hợp các yếu tố đông máu và giảm tổng hợp Antithrombin III. Chống chỉ định tuyệt đối thuốc tránh thai kết hợp ở phụ nữ trên 35 tuổi có hút thuốc lá hoặc có tiền sử huyết khối tắc mạch.
+            </li>
+            <li>
+              <strong style="color: #059669;">5. Cơn Tetany hạ Calci máu sau phẫu thuật cắt tuyến giáp:</strong>
+              <br>&bull; Do phẫu thuật cắt nhầm hoặc tổn thương các tuyến cận giáp làm suy sụp hormon PTH dẫn đến tụt calci máu cấp tính gây co cứng cơ, dấu hiệu Chvostek và Trousseau dương tính. Xử trí cấp cứu bằng tiêm tĩnh mạch chậm dung dịch Calci gluconat.
+            </li>
+          </ul>
+        </div>
+
         <div style="margin-top: 0.75rem;">
           <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Hormon (4)')">
             🎯 Luyện đề trắc nghiệm Bài 13: Thuốc Hormon
@@ -1134,6 +1492,33 @@ function generateAll20LessonsHtml() {
           <li><strong>Sulfonylurea (Gliclazid, Glimepirid):</strong> Đóng kênh K<sub>ATP</sub> trên tế bào β tụy → kích thích tụy tiết insulin. ADR: Nguy cơ <strong>hạ đường huyết nặng kéo dài</strong> và gây tăng cân.</li>
           <li><strong>Ức chế SGLT-2 (Dapagliflozin, Empagliflozin):</strong> Ức chế tái hấp thu glucose ở ống lượn gần → thải đường qua nước tiểu. Ưu điểm: Bảo vệ tim mạch (giảm tử vong do suy tim) và bảo vệ thận. ADR: Nhiễm nấm sinh dục, nhiễm trùng đường tiểu.</li>
         </ul>
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Hạ Glucose Máu - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #dc2626;">1. Nhiễm toan Acid Lactic của Metformin &amp; Quy tắc chụp cản quang:</strong>
+              <br>&bull; Metformin ức chế tân tạo đường từ acid lactic tại gan. Chống chỉ định tuyệt đối khi GFR &lt; 30 mL/phút hoặc suy tim, suy hô hấp thiếu oxy mô. Bắt buộc <strong>ngừng Metformin trước 48 giờ và chỉ dùng lại sau 48 giờ chụp cản quang tĩnh mạch có iod</strong> để ngừa suy thận cấp tích lũy thuốc gây toan lactic tử vong.
+            </li>
+            <li>
+              <strong style="color: #b45309;">2. Cơn hạ đường huyết kéo dài chết người của Sulfonylurea cũ (Glibenclamid):</strong>
+              <br>&bull; Glibenclamid có thời gian bán thải sinh học rất dài, chuyển hóa thành các chất vẫn còn hoạt tính và thải trừ qua thận → Dễ gây hạ đường huyết sâu, hôn mê kéo dài nhiều ngày ở bệnh nhân cao tuổi suy giảm chức năng thận (Gliclazid chuyển hóa thành chất bất hoạt nên an toàn hơn nhiều).
+            </li>
+            <li>
+              <strong style="color: #059669;">3. Nhiễm toan Ceton đường huyết bình thường (Euglycemic DKA) của nhóm SGLT-2i:</strong>
+              <br>&bull; Dapagliflozin, Empagliflozin ức chế tái hấp thu đường ở ống lượn gần gây hạ đường huyết và giảm bài tiết insulin, kích hoạt ly giải mỡ tạo thể ceton mà mức đường huyết trong máu vẫn chỉ ở mức bình thường hoặc tăng nhẹ (&lt; 250 mg/dL). Đi kèm nguy cơ nhiễm nấm đường sinh dục - tiết niệu.
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">4. Hiện tượng loạn dưỡng mô mỡ tại vị trí tiêm Insulin:</strong>
+              <br>&bull; Tiêm insulin nhiều lần tại một vị trí cố định gây phì đại hoặc teo mô mỡ dưới da làm đảo lộn tốc độ hấp thu insulin thất thường → Bắt buộc phải luân chuyển xoay vòng đều đặn các vị trí tiêm ở bụng, đùi và cánh tay.
+            </li>
+            <li>
+              <strong style="color: #be123c;">5. Cảnh báo viêm tụy cấp và ung thư tuyến giáp thể tủy của nhóm Đồng vận GLP-1:</strong>
+              <br>&bull; Liraglutid, Semaglutid có cảnh báo nguy cơ viêm tụy cấp hoại tử; Chống chỉ định tuyệt đối ở bệnh nhân có tiền sử bản thân hoặc gia đình mắc ung thư biểu mô tuyến giáp thể tủy (MTC) hoặc hội chứng đa u nội tiết typ 2 (MEN 2).
+            </li>
+          </ul>
+        </div>
+
         <div style="margin-top: 0.75rem;">
           <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Thuốc hạ glucose máu')">
             🎯 Luyện đề trắc nghiệm Bài 14: Thuốc Hạ Glucose Máu
@@ -1172,6 +1557,37 @@ function generateAll20LessonsHtml() {
           <li><strong>Thuốc tiêu sợi huyết (Alteplase - rt-PA):</strong> Hoạt hóa Plasminogen thành Plasmin → làm tan cục máu đông fibrin. Dùng trong nhồi máu cơ tim cấp và đột quỵ thiếu máu não cấp giờ vàng.</li>
           <li><strong>Thuốc cầm máu:</strong> <strong>Acid tranexamic</strong> ức chế plasminogen → ngăn ngừa tiêu sợi huyết.</li>
         </ul>
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Đông Cầm Máu - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #dc2626;">1. Giảm tiểu cầu do Heparin qua trung gian miễn dịch (Hội chứng HIT):</strong>
+              <br>&bull; Cơ thể sinh kháng thể IgG kháng phức hợp Heparin - Yếu tố 4 tiểu cầu (PF4). Kháng thể này kích hoạt kết tập tiểu cầu ồ ạt làm số lượng tiểu cầu giảm sâu (&gt; 50%), nhưng nghịch lý lại <strong>gây bùng phát huyết khối tắc mạch đe dọa tính mạng</strong>! Xử trí: ngừng Heparin lập tức, cấm truyền tiểu cầu, chuyển sang thuốc ức chế trực tiếp Thrombin (Argatroban).
+            </li>
+            <li>
+              <strong style="color: #be123c;">2. Hoại tử da do Warfarin (Warfarin-induced Skin Necrosis) &amp; Nguyên tắc gối đầu:</strong>
+              <br>&bull; <em>Cơ chế:</em> Warfarin ức chế vitamin K epoxide reductase làm giảm các yếu tố II, VII, IX, X và cả các chất chống đông tự nhiên là Protein C và Protein S. Do Protein C có bán thải rất ngắn (8h) nên bị suy giảm trước, dẫn đến trạng thái tăng đông nghịch lý trong 2-3 ngày đầu gây tắc vi mạch hoại tử da.
+              <br>&bull; <em>Nguyên tắc bắt buộc:</em> Luôn phải <strong>gối đầu bằng Heparin ít nhất 5 ngày</strong> cho đến khi chỉ số INR đạt mục tiêu điều trị (2.0 - 3.0) trong 2 ngày liên tiếp mới được ngưng Heparin.
+            </li>
+            <li>
+              <strong style="color: #059669;">3. Bảng vàng Thuốc giải độc đặc hiệu (Antidotes) của thuốc chống đông:</strong>
+              <br>&bull; <strong>Heparin tiêu chuẩn:</strong> Protamin sulfat (1 mg trung hòa 100 UI heparin).
+              <br>&bull; <strong>Warfarin:</strong> Vitamin K₁ (Phytomenadion) tiêm tĩnh mạch chậm + Huyết tương tươi đông lạnh (FFP) hoặc Phức hợp Prothrombin cô đặc (PCC).
+              <br>&bull; <strong>Dabigatran (Kháng IIa):</strong> Kháng thể đơn dòng Idarucizumab (Praxbind).
+              <br>&bull; <strong>Rivaroxaban, Apixaban (Kháng Xa):</strong> Andexanet alfa.
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">4. Kháng kết tập tiểu cầu không hồi phục của Aspirin suốt đời sống tiểu cầu:</strong>
+              <br>&bull; Aspirin acetyl hóa cộng hóa trị không hồi phục enzym COX-1 của tiểu cầu. Do tiểu cầu không có nhân để tổng hợp enzym mới nên tác dụng ức chế kéo dài suốt 7 - 10 ngày đời sống của tiểu cầu → Bắt buộc phải ngừng Aspirin trước phẫu thuật lớn ít nhất 7 ngày.
+            </li>
+            <li>
+              <strong style="color: #2563eb;">5. Cửa sổ thời gian vàng của Thuốc tiêu sợi huyết (rtPA / Alteplase):</strong>
+              <br>&bull; Chỉ định trong <strong>nhồi máu não cấp trước 4.5 giờ</strong> và <strong>nhồi máu cơ tim cấp trước 12 giờ</strong> kể từ thời điểm khởi phát triệu chứng. Dùng muộn hơn nguy cơ xuất huyết não chuyển dạng tử vong cao hơn nhiều so với lợi ích tái tưới máu.
+            </li>
+          </ul>
+        </div>
+
         <div style="margin-top: 0.75rem;">
           <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Thuốc/QT đông cầm máu')">
             🎯 Luyện đề trắc nghiệm Bài 15: Thuốc Đông Cầm Máu
@@ -1207,6 +1623,33 @@ function generateAll20LessonsHtml() {
           <li><strong>Vitamin B₁₂ (Cyanocobalamin):</strong> Thiếu gây thiếu máu ác tính Biermer và thoái hóa tủy sống.</li>
           <li><strong>Vitamin C (Acid ascorbic):</strong> Tham gia tổng hợp collagen, tăng hấp thu sắt. Thiếu gây bệnh <strong>Scorbut</strong> (chảy máu chân răng, xuất huyết dưới da).</li>
         </ul>
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Vitamin - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #dc2626;">1. Hội chứng não Wernicke - Korsakoff &amp; Quy tắc cấp cứu truyền dịch ở người nghiện rượu:</strong>
+              <br>&bull; Nghiện rượu mạn tính gây thiếu hụt nghiêm trọng Vitamin B₁ (Thiamin). CẤM TUYỆT ĐỐI truyền dịch dung dịch Glucose trước khi tiêm Thiamin! Nạp glucose vào cơ thể sẽ thúc đẩy chu trình chuyển hóa glucid tiêu thụ sạch lượng thiamin dự trữ ít ỏi cuối cùng, đẩy bệnh nhân vào tổn thương tế bào não cấp tính (hội chứng não Wernicke) hôn mê tử vong!
+            </li>
+            <li>
+              <strong style="color: #b45309;">2. Bẫy Axit Folic (B₉) che giấu tổn thương thần kinh không hồi phục của Vitamin B₁₂:</strong>
+              <br>&bull; Thiếu máu hồng cầu to có thể do thiếu B₉ hoặc B₁₂. Nếu bệnh nhân thiếu B₁₂ mà chỉ bổ sung Acid folic đơn độc, công thức máu sẽ hồi phục bình thường nhưng tổn thương thoái hóa sợi trục cột bên và cột sau tủy sống do thiếu B₁₂ vẫn âm thầm tiến triển thành liệt tàn phế vĩnh viễn. Bắt buộc phải định lượng cả hai trước khi điều trị!
+            </li>
+            <li>
+              <strong style="color: #be123c;">3. Độc tính gây dị tật thai nhi nghiêm trọng của Vitamin A liều cao (Isotretinoin):</strong>
+              <br>&bull; Vitamin A liều cao gây biến dạng sọ mặt, dị tật tim mạch và hệ thần kinh trung ương thai nhi. Phụ nữ dùng thuốc trị mụn Isotretinoin bắt buộc phải cam kết tránh thai 1 tháng trước, trong khi dùng và 1 tháng sau khi ngừng thuốc.
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">4. Nguy cơ sỏi thận Oxalat và Cơn gút cấp do Vitamin C liều cao:</strong>
+              <br>&bull; Acid ascorbic chuyển hóa thành acid oxalic kết tủa với calci tạo sỏi Calci oxalat ở thận và niệu quản; đồng thời toan hóa nước tiểu cản trở bài tiết acid uric có thể kích hoạt cơn viêm khớp gút cấp tính.
+            </li>
+            <li>
+              <strong style="color: #059669;">5. Tương tác đối nghịch triệt tiêu giữa Vitamin K và Thuốc chống đông Warfarin:</strong>
+              <br>&bull; Vitamin K₁ trong thức ăn (rau có màu xanh đậm) đối kháng trực tiếp cơ chế của Warfarin làm chỉ số INR tụt sâu, mất hoàn toàn tác dụng chống đông ngừa huyết khối. Bệnh nhân dùng Warfarin cần giữ ổn định lượng rau xanh ăn hàng ngày.
+            </li>
+          </ul>
+        </div>
+
         <div style="margin-top: 0.75rem;">
           <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Vitamin')">
             🎯 Luyện đề trắc nghiệm Bài 16: Thuốc Vitamin
@@ -1238,6 +1681,30 @@ function generateAll20LessonsHtml() {
           <li><strong>Chỉ định chính:</strong> Thiếu máu do <strong>suy thận mạn tính</strong>, thiếu máu do hóa trị ung thư hoặc thuốc ARV (Zidovudine).</li>
           <li>Tác dụng phụ: Gây tăng huyết áp và tăng nguy cơ huyết khối tắc mạch.</li>
         </ul>
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Chữa Thiếu Máu - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #dc2626;">1. Ngộ độc Sắt cấp tính ở trẻ em &amp; Thuốc gắp sắt Deferoxamin:</strong>
+              <br>&bull; Trẻ uống nhầm viên sắt gây hoại tử niêm mạc đường tiêu hóa, nôn máu, đi ngoài phân đen, sốc trụy mạch và toan chuyển hóa nặng. Thuốc giải độc chelate đặc hiệu là <strong>Deferoxamin</strong> tạo phức ferrioxamine màu đỏ cam đào thải qua nước tiểu.
+            </li>
+            <li>
+              <strong style="color: #2563eb;">2. Bệnh thiếu máu ác tính Biermer: Tiêm bắp B₁₂ suốt đời, uống hoàn toàn vô tác dụng:</strong>
+              <br>&bull; Do tự kháng thể phá hủy tế bào viền dạ dày làm mất Yếu tố nội tại (Intrinsic Factor) cần thiết để hấp thu Vitamin B₁₂ tại đoạn cuối hồi tràng. Bệnh nhân bắt buộc phải tiêm bắp Hydroxocobalamin định kỳ suốt đời; dùng đường uống hoàn toàn không hấp thu được!
+            </li>
+            <li>
+              <strong style="color: #d97706;">3. Các yếu tố cản trở và tăng cường hấp thu Sắt đường uống:</strong>
+              <br>&bull; <em>Cản trở hấp thu:</em> Tanin trong trà, calci trong sữa, thuốc kháng toan Antacid và PPI làm giảm acid dạ dày ức chế chuyển Fe³⁺ thành Fe²⁺.
+              <br>&bull; <em>Tăng cường hấp thu:</em> Uống cùng <strong>Vitamin C (Acid ascorbic)</strong> hoặc nước cam giúp duy trì Fe²⁺ dạng hòa tan dễ hấp thu qua niêm mạc tá tràng.
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">4. Biến chứng tăng huyết áp kịch phát và Tắc mạch của Erythropoietin (EPO):</strong>
+              <br>&bull; Kích thích tủy xương tăng sản xuất hồng cầu quá nhanh làm tăng độ nhớt của máu và sức cản ngoại vi → gây tăng huyết áp dữ dội, cơn co giật tăng huyết áp và nguy cơ huyết khối mạch não, mạch vành nếu nồng độ Hemoglobin tăng quá nhanh (&gt; 1 g/dL trong 2 tuần).
+            </li>
+          </ul>
+        </div>
+
         <div style="margin-top: 0.75rem;">
           <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Thuốc chữa thiếu máu')">
             🎯 Luyện đề trắc nghiệm Bài 17: Thuốc Chữa Thiếu Máu
@@ -1274,6 +1741,33 @@ function generateAll20LessonsHtml() {
           <li><strong>PIs (Ức chế Protease):</strong> Ritonavir (ức chế rất mạnh CYP3A4 → dùng liều nhỏ làm "booster" tăng nồng độ các thuốc PI khác).</li>
           <li><strong>INSTIs (Ức chế Integrase):</strong> Dolutegravir (phác đồ ưu tiên hàng đầu hiện nay, hiệu lực cao, ít kháng thuốc).</li>
         </ul>
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Kháng Virus - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #059669;">1. Tính chọn lọc tuyệt đối của Acyclovir nhờ Enzym Thymidine Kinase của virus:</strong>
+              <br>&bull; Acyclovir là tiền chất trơ. Bước phosphoryl hóa đầu tiên bắt buộc phải có enzym Thymidine Kinase đặc hiệu của virus Herpes xúc tác tạo acyclovir monophosphat; các enzym của tế bào người không chuyển hóa được → Thuốc chỉ được tích tụ và hoạt hóa trong các tế bào đã bị nhiễm virus, cực kỳ an toàn cho các tế bào lành của cơ thể.
+            </li>
+            <li>
+              <strong style="color: #dc2626;">2. Suy thận cấp do kết tinh tinh thể Acyclovir tại ống thận:</strong>
+              <br>&bull; Khi truyền tĩnh mạch Acyclovir nhanh hoặc liều cao, thuốc ít tan kết tinh thành các tinh thể hình kim trong lòng ống thận gây tắc nghẽn vô niệu cấp tính. Bắt buộc phải <strong>truyền tĩnh mạch chậm ít nhất 60 phút</strong> và bù đủ dịch đảm bảo lưu lượng nước tiểu dồi dào.
+            </li>
+            <li>
+              <strong style="color: #2563eb;">3. Cửa sổ thời gian vàng 48 giờ của Oseltamivir (Tamiflu):</strong>
+              <br>&bull; Thuốc ức chế enzym Neuraminidase ngăn virus cúm A và B đâm chồi thoát khỏi tế bào vật chủ để lây lan. Thuốc chỉ có hiệu lực lâm sàng rõ rệt nếu được bắt đầu <strong>trong vòng 48 giờ đầu tiên kể từ khi khởi phát triệu chứng sốt cúm</strong>.
+            </li>
+            <li>
+              <strong style="color: #be123c;">4. Phản ứng quá mẫn toàn thân đe dọa tính mạng của Abacavir &amp; Gen HLA-B*5701:</strong>
+              <br>&bull; Thuốc kháng HIV Abacavir gây phản ứng sốc quá mẫn toàn thân (sốt cao, phát ban, suy hô hấp tụt huyết áp tử vong) ở bệnh nhân mang alen di truyền HLA-B*5701. Bắt buộc phải xét nghiệm sàng lọc gen HLA-B*5701 trước khi kê đơn.
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">5. Hội chứng loạn dưỡng mỡ và Rối loạn chuyển hóa do Thuốc ức chế Protease (PI):</strong>
+              <br>&bull; Ritonavir, Lopinavir gây hội chứng phân bố lại mỡ: teo mỡ ở mặt và chi nhưng tích mỡ nội tạng ở bụng và sau gáy ("gù trâu" - Buffalo hump), đi kèm tăng triglycerid máu, tăng đề kháng insulin gây đái tháo đường.
+            </li>
+          </ul>
+        </div>
+
         <div style="margin-top: 0.75rem;">
           <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Thuốc kháng virus')">
             🎯 Luyện đề trắc nghiệm Bài 18: Thuốc Kháng Virus
@@ -1332,6 +1826,37 @@ function generateAll20LessonsHtml() {
             </tbody>
           </table>
         </div>
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Chống Ung Thư - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #dc2626;">1. Viêm bàng quang chảy máu của Cyclophosphamid &amp; Thuốc giải độc MESNA:</strong>
+              <br>&bull; Cyclophosphamid chuyển hóa tạo thành chất Acrolein độc hại tích tụ ở bàng quang gây hoại tử niêm mạc và đái máu dữ dội. Thuốc giải độc bắt buộc dùng kèm là <strong>MESNA</strong> (Natri 2-mercaptoethanesulfonat) cung cấp nhóm -SH tự do liên kết trung hòa Acrolein không độc đào thải ra ngoài.
+            </li>
+            <li>
+              <strong style="color: #be123c;">2. Độc tính cơ tim suy tim tích lũy của Doxorubicin &amp; Thuốc bảo vệ tim Dexrazoxan:</strong>
+              <br>&bull; Doxorubicin tạo phức với sắt sinh gốc tự do phá hủy màng ty thể tế bào cơ tim gây bệnh cơ tim giãn và suy tim ứ huyết không hồi phục phụ thuộc liều tích lũy (&gt; 450 - 550 mg/m²). Thuốc giải độc bảo vệ tim là <strong>Dexrazoxan</strong> (chất chelate hóa sắt nội bào).
+            </li>
+            <li>
+              <strong style="color: #b45309;">3. Độc tính suy thận và điếc tai của Cisplatin &amp; Liệu pháp truyền dịch ồ ạt:</strong>
+              <br>&bull; Cisplatin tích tụ ở ống thận gây hoại tử ống thận cấp tính và phá hủy tế bào lông ốc tai. Bắt buộc phải truyền bù dịch NaCl 0.9% thể tích lớn (2-3 lít/ngày) kèm thuốc lợi tiểu thẩm thấu trước và sau khi truyền thuốc.
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">4. Xơ hóa phổi mô kẽ của Bleomycin:</strong>
+              <br>&bull; Tế bào mô phổi có nồng độ enzym bất hoạt Bleomycin hydrolase rất thấp nên thuốc tích lũy gây viêm phổi kẽ và xơ phổi tiến triển không hồi phục phụ thuộc liều tích lũy. Bắt buộc kiểm tra chức năng thông khí phổi định kỳ.
+            </li>
+            <li>
+              <strong style="color: #059669;">5. Liệu pháp "Giải Cứu" bằng Leucovorin (Acid Folinic) sau Methotrexat liều cao:</strong>
+              <br>&bull; Methotrexat ức chế enzym Dihydrofolate Reductase (DHFR) chặn đứng phân chia tế bào. Sau khi tiêu diệt tế bào ung thư, truyền <strong>Leucovorin</strong> để cung cấp folate dạng hoạt tính cho các tế bào lành của tủy xương và niêm mạc ruột hồi phục sống sót.
+            </li>
+            <li>
+              <strong style="color: #2563eb;">6. Độc tính thần kinh ngoại biên của Vincristin &amp; Cảnh báo cấm tiêm tủy sống:</strong>
+              <br>&bull; Vincristin ức chế trùng hợp vi ống gây dị cảm đầu chi dạng mang găng, mất phản xạ gân xương và táo bón liệt ruột. CẤM TUYỆT ĐỐI tiêm vào khoang dưới nhện tủy sống vì gây hoại tử tủy phù não tử vong 100%!
+            </li>
+          </ul>
+        </div>
+
         <div style="margin-top: 0.75rem;">
           <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Thuốc chống ung thư')">
             🎯 Luyện đề trắc nghiệm Bài 19: Thuốc Chống Ung Thư
@@ -1363,6 +1888,39 @@ function generateAll20LessonsHtml() {
         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.5rem;">
           Toàn bộ bảng thuốc giải độc đặc hiệu đã được tổng hợp chi tiết ở Tab <strong>"⚡ Thuốc Giải Độc Cấp Cứu (Antidotes)"</strong>. Hãy bấm sang tab đó để ôn tập trọn vẹn 18 cặp giải độc kinh điển!
         </p>
+                <!-- BẢNG VÀNG: CÁC ĐIỂM CHÚ Ý ĐẶC BIỆT ĐỘC NHẤT VÔ NHỊ -->
+        <div class="chapter-sec-heading" style="color: #dc2626;">🔥 3. Những Điểm Chú Ý Đặc Biệt &amp; Độc Nhất Vô Nhị (Chỉ Có Ở Thuốc Trị Ngộ Độc - Trọng Tâm Đề Thi):</div>
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+          <ul class="chapter-point-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <li>
+              <strong style="color: #dc2626;">1. Ngộ độc Paracetamol &amp; Cửa sổ thời gian vàng 8 - 10 giờ của N-Acetylcystein (NAC):</strong>
+              <br>&bull; Paracetamol liều cao cạn kiệt Glutathion của gan, chất độc NAPQI gắn vào đại phân tử gây hoại tử tế bào gan ồ ạt sau 24-72h. Thuốc giải độc đặc hiệu <strong>N-Acetylcystein (NAC)</strong> cung cấp nhóm -SH tiền chất glutathion; dùng trong 8-10 giờ đầu bảo vệ gan đạt tỷ lệ cứu sống gần như 100%.
+            </li>
+            <li>
+              <strong style="color: #b45309;">2. Ngộ độc thuốc trừ sâu Phospho hữu cơ: Bộ đôi Atropin + Pralidoxime (PAM):</strong>
+              <br>&bull; Ức chế không hồi phục enzym Acetylcholinesterase (AChE) làm ứ đọng acetylcholin gây hội chứng cường cholinergic (co đồng tử, tăng tiết đờm dãi, co thắt phế quản, suy hô hấp).
+              <br>&bull; <em>Xử trí:</em> Dùng <strong>Atropin</strong> liều cao để đối kháng thụ thể Muscarinic cắt đứt các triệu chứng ngạt thở tiết dịch; đồng thời dùng <strong>Pralidoxime (PAM)</strong> để giải phóng và tái hoạt hóa enzym AChE trước khi enzym bị "lão hóa" (Aging) gắn chặt vĩnh viễn.
+            </li>
+            <li>
+              <strong style="color: #2563eb;">3. Ngộ độc Morphin / Opiate &amp; Cảnh báo bán thải ngắn của Naloxone:</strong>
+              <br>&bull; Tam chứng kinh điển: ức chế trung khu hô hấp (thở chậm &lt; 8 lần/phút), đồng tử co nhỏ như đầu kim, hôn mê sâu. Giải độc bằng <strong>Naloxone</strong> tiêm tĩnh mạch đối kháng cạnh tranh thụ thể opioid. Lưu ý bán thải của Naloxone chỉ 30 - 90 phút (ngắn hơn morphin), do đó bệnh nhân có thể rơi lại vào hôn mê ngừng thở khi Naloxone hết tác dụng → bắt buộc phải theo dõi sát và tiêm nhắc lại.
+            </li>
+            <li>
+              <strong style="color: #7c3aed;">4. Ngộ độc Benzodiazepin (Thuốc an thần gây ngủ) &amp; Flumazenil:</strong>
+              <br>&bull; <strong>Flumazenil</strong> là chất đối kháng cạnh tranh đặc hiệu trên thụ thể GABA_A. Thận trọng đặc biệt: không dùng nếu bệnh nhân có tiền sử động kinh hoặc ngộ độc kèm thuốc chống trầm cảm 3 vòng vì Flumazenil làm mất tác dụng chống co giật của benzodiazepin gây bùng phát cơn động kinh kháng trị!
+            </li>
+            <li>
+              <strong style="color: #059669;">5. Ngộ độc Methemoglobin &amp; Thuốc giải độc Xanh Methylen (Methylene Blue):</strong>
+              <br>&bull; Các chất oxy hóa (Dapsone, Nitrit, thuốc trừ sâu) oxy hóa Fe²⁺ trong hemoglobin thành Fe³⁺ tạo Methemoglobin không vận chuyển được oxy khiến máu có màu nâu sô-cô-la và bệnh nhân tím tái toàn thân. Xanh methylen hoạt hóa hệ thống enzym NADPH-MetHb reductase khử Fe³⁺ trở lại Fe²⁺ khôi phục chức năng hô hấp của máu.
+            </li>
+            <li>
+              <strong style="color: #be123c;">6. Phác đồ giải độc Cyanua đa tầng:</strong>
+              <br>&bull; Cyanua ức chế enzym Cytochrom oxidase trong chuỗi hô hấp tế bào gây ngạt mô tức khắc.
+              <br>&bull; <em>Phác đồ:</em> Hít Amyl nitrit + Tiêm tĩnh mạch Natri nitrit (tạo Methemoglobin để hút cyanua ra khỏi tế bào tạo cyanmethemoglobin) → Sau đó tiêm tĩnh mạch Natri thiosulfat (cung cấp lưu huỳnh cho enzym rhodanese chuyển cyanua thành thiocyanat không độc đào thải qua thận); hoặc tiêm truyền tĩnh mạch Hydroxocobalamin (Vitamin B₁₂a) tạo Cyanocobalamin an toàn.
+            </li>
+          </ul>
+        </div>
+
         <div style="margin-top: 0.75rem;">
           <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Thuốc/trong điều trị ngộ độc')">
             🎯 Luyện đề trắc nghiệm Bài 20: Điều Trị Ngộ Độc
