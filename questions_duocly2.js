@@ -1,6 +1,8 @@
-// NGÂN HÀNG CÂU HỎI TRẮC NGHIỆM DƯỢC LÝ 2 CHUẨN BỘ Y TẾ (507 CÂU)
-// Đào tạo Dược sĩ Đại học - Bác sĩ Đa khoa (Bộ Y tế - PGS.TS. Mai Tất Tố, TS. Vũ Thị Trâm)
-// Chuẩn khung 20 bài (32 tiết) - 100% không mở ngoặc đơn lộ đáp án - Đáp án xáo trộn đều A/B/C/D
+/**
+ * NGÂN HÀNG CÂU HỎI TRẮC NGHIỆM DƯỢC LÝ 2 (CHUẨN BỘ Y TẾ)
+ * Khung 20 bài giảng chính khóa (32 tiết) - 507 câu hỏi chuẩn hóa
+ */
+
 const DUOCLY2_EXAM_BANK = [
   {
     "id": 1,
@@ -333,15 +335,15 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Theo cơ chế tác dụng, các nhóm thuốc chính được khuyến cáo hàng đầu trong điều trị tăng huyết áp bao gồm:",
+    "question": "Trong chiến lược can thiệp tim mạch toàn diện nhằm bảo vệ các cơ quan đích (tim, não, thận) và kéo dài thời gian sống cho bệnh nhân tăng huyết áp vô căn, 4 nhóm hoạt chất hạ áp nền tảng bậc một (First-line) được các hiệp hội tim mạch quốc tế đồng thuận khuyến cáo sử dụng thường quy nhờ sở hữu bằng chứng lâm sàng vượt trội về giảm tỷ lệ tử vong và biến cố tim mạch lớn bao gồm:",
     "options": [
-      "Thuốc kích thích thụ thể beta-2, thuốc ức chế phosphodiesterase và kháng sinh",
-      "Thuốc an thần gây ngủ, thuốc giảm đau chống viêm không steroid và vitamin",
-      "Thuốc lợi tiểu, chẹn kênh calci, ức chế men chuyển, chẹn thụ thể ARB và chẹn beta",
-      "Thuốc trợ tim digitalis, thuốc chống đông máu và thuốc tiêu sợi huyết"
+      "Thuốc ức chế men chuyển (ACEI), thuốc chẹn thụ thể Angiotensin II (ARB), thuốc giãn mạch trực tiếp mở kênh kali và thuốc chẹn alpha-1 adrenergic",
+      "Thuốc chẹn kênh calci nhóm DHP, thuốc lợi tiểu quai liều cao, thuốc kích thích thụ thể alpha-2 trung ương và thuốc chẹn thụ thể ARB",
+      "Thuốc ức chế men chuyển (ACEI), thuốc chẹn thụ thể Angiotensin II (ARB), thuốc chẹn kênh calci (CCB) và thuốc lợi tiểu thiazid / thiazid-like",
+      "Thuốc chẹn chọn lọc thụ thể beta-1, thuốc ức chế trực tiếp enzym renin, thuốc ức chế men chuyển và thuốc đối kháng aldosteron chọn lọc"
     ],
     "correct": 2,
-    "explanation": "5 nhóm thuốc điều trị tăng huyết áp cơ bản gồm: Lợi tiểu (Thiazid), Chẹn kênh calci (CCB), Ức chế men chuyển (ACEI), Chẹn thụ thể Angiotensin II (ARB) và Chẹn thụ thể beta adrenergic.",
+    "explanation": "4 nhóm thuốc hạ áp nền tảng bậc một (first-line) gồm: ACEI, ARB, CCB và Lợi tiểu thiazid / thiazid-like. Thuốc chẹn beta chỉ ưu tiên khi có chỉ định bắt buộc (sau nhồi máu cơ tim, suy tim, đau thắt ngực). Thuốc chẹn alpha-1, kích thích alpha-2 trung ương, giãn mạch trực tiếp hay lợi tiểu quai chỉ xếp vào nhóm bậc hai/bậc ba khi có chỉ định đặc biệt.",
     "reference": "Sách Dược lý 2 tr. 54-55"
   },
   {
@@ -351,15 +353,15 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Cơ chế hạ huyết áp của nhóm thuốc ức chế men chuyển (ACEI) là gì?",
+    "question": "Một hợp chất điều trị tim mạch phát huy tác dụng huyết động thông qua việc đồng thời làm suy giảm nồng độ của một peptide co mạch 8 acid amin trong tuần hoàn và ngăn cản quá trình thoái giáng của một nonapeptide giãn mạch nội sinh tại vi tuần hoàn. Đích tác động phân tử trực tiếp của hợp chất này trong cơ thể là:",
     "options": [
-      "Phong bế trực tiếp thụ thể AT1 của angiotensin II tại cơ trơn mạch máu",
-      "Chẹn dòng Ca2+ đi vào tế bào cơ tim và cơ trơn thành động mạch",
-      "Ức chế enzym chuyển angiotensin I thành angiotensin II và ngăn thoái giáng bradykinin",
-      "Kích thích thụ thể alpha-2 adrenergic ở trung tâm vận mạch hành não"
+      "Phong bế chọn lọc thụ thể AT1 gắn kết Angiotensin II trên màng tế bào cơ trơn tiểu động mạch",
+      "Ức chế enzym Peptidyl-dipeptidase A (Kininase II / Angiotensin Converting Enzyme)",
+      "Ức chế enzym Aminopeptidase A chịu trách nhiệm chuyển đổi Angiotensin II thành Angiotensin III",
+      "Bất hoạt enzym Neutral Endopeptidase (Neprilysin) làm tăng tích lũy các peptide lợi niệu nhĩ ANP và BNP"
     ],
-    "correct": 2,
-    "explanation": "Thuốc ức chế men chuyển (ACEI) ức chế enzym converting enzym (ACE), làm giảm tạo Angiotensin II (chất co mạch mạnh và kích thích tiết aldosteron), đồng thời ức chế enzym giáng hóa bradykinin (chất giãn mạch), dẫn đến giãn mạch và hạ huyết áp.",
+    "correct": 1,
+    "explanation": "ACE chính là enzym Kininase II (Peptidyl-dipeptidase A), vừa có chức năng bẻ gãy Angiotensin I (10 acid amin) thành Angiotensin II (8 acid amin - chất co mạch mạnh), vừa giáng hóa Bradykinin (nonapeptide 9 acid amin - chất giãn mạch). Thuốc ACEI ức chế enzym này nên vừa giảm Angiotensin II vừa tích lũy Bradykinin.",
     "reference": "Sách Dược lý 2 tr. 66-67"
   },
   {
@@ -369,15 +371,15 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Tác dụng không mong muốn đặc trưng và phổ biến nhất của nhóm ức chế men chuyển (như Captopril, Enalapril) khiến bệnh nhân phải đổi thuốc là gì?",
+    "question": "Một bệnh nhân tăng huyết áp kiểm soát số đo huyết áp rất tốt sau một tháng dùng thuốc tim mạch đường uống. Tuy nhiên, bệnh nhân đi khám vì xuất hiện hội chứng kích ứng đường thở: ho từng cơn không có đờm, ngứa rát họng, tăng nhiều về đêm khi nằm ngủ, hoàn toàn không đáp ứng với thuốc giảm ho trung ương hay kháng histamin. Khám tim phổi và X-quang lồng ngực không ghi nhận bất thường. Cơ chế sinh hóa giải thích triệu chứng ho khan dai dẳng đặc trưng này là:",
     "options": [
-      "Hạ kali huyết nghiêm trọng",
-      "Phù mắt cá chân vào buổi chiều",
-      "Rậm lông và phì đại nướu răng",
-      "Ho khan dai dẳng không kèm đờm"
+      "Sự tích tụ bất thường của Bradykinin và chất P ở đường dẫn khí do enzym thoái giáng chúng bị phong bế cạnh tranh",
+      "Sự tăng giải phóng Histamin và Leukotriene C4/D4 từ dưỡng bào phế quản do phản ứng quá mẫn typ I qua trung gian IgE",
+      "Sự kích thích trực tiếp của phân tử thuốc lên thụ thể TRPV1 (Transient Receptor Potential Vanilloid 1) của sợi thần kinh cảm giác C",
+      "Sự tích tụ Angiotensin I chuyển hướng kích thích thụ thể AT2 gây co thắt phế quản và tăng tiết dịch nhầy đường thở"
     ],
-    "correct": 3,
-    "explanation": "Ho khan dai dẳng (tỷ lệ 5-20%) là ADR điển hình của nhóm ACEI do ức chế thoái giáng bradykinin và chất P ở đường hô hấp trên. Khi gặp ho khan do ACEI, giải pháp là chuyển sang nhóm chẹn thụ thể ARB.",
+    "correct": 0,
+    "explanation": "Ho khan dai dẳng (tỷ lệ 5-20%) là phản ứng bất lợi đặc trưng chỉ gặp ở nhóm ACEI, do ức chế enzym Kininase II làm ứ đọng Bradykinin và chất P ở đường hô hấp trên. Khi gặp tác dụng phụ này, giải pháp tối ưu là chuyển sang nhóm chẹn thụ thể ARB.",
     "reference": "Sách Dược lý 2 tr. 68"
   },
   {
@@ -387,16 +389,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Vận dụng",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Chống chỉ định tuyệt đối của nhóm thuốc ức chế men chuyển (ACEI) và nhóm chẹn thụ thể Angiotensin II (ARB) là gì?",
+    "question": "Một hoạt chất can thiệp vào trục thể dịch điều hòa huyết áp có thể gây sụt giảm cấp tính mức lọc cầu thận (GFR) dẫn đến vô niệu hoàn toàn và đe dọa tính mạng nếu chỉ định trên bệnh nhân có tổn thương giải phẫu mạch máu thận nào dưới đây?",
     "options": [
-      "Bệnh nhân đái tháo đường có kèm protein niệu vi thể",
-      "Bệnh nhân tăng huyết áp kèm phì đại lành tính tuyến tiền liệt",
-      "Phụ nữ có thai, hẹp động mạch thận hai bên và tiền sử phù mạch do thuốc",
-      "Bệnh nhân sau nhồi máu cơ tim có kèm suy tim sung huyết"
+      "Xơ vữa vi mạch thận ở bệnh nhân đái tháo đường có tổn thương cầu thận xuất hiện microalbumin niệu",
+      "Hẹp động mạch thận một bên trên bệnh nhân có quả thận đối bên chức năng hoàn toàn bình thường",
+      "Tăng áp lực tĩnh mạch thận thứ phát do suy tim sung huyết phân suất tống máu giảm",
+      "Hẹp động mạch thận hai bên hoặc hẹp động mạch thận trên bệnh nhân chỉ còn một quả thận chức năng duy nhất"
     ],
-    "correct": 2,
-    "explanation": "ACEI và ARB chống chỉ định tuyệt đối cho: Phụ nữ mang thai (gây quái thai, suy thận thai nhi, vô niệu, sọ chậm phát triển), Hẹp động mạch thận hai bên (làm tụt áp lực lọc cầu thận gây suy thận cấp), Tiền sử phù mạch dị ứng, và Tăng kali máu nặng.",
-    "reference": "Sách Dược lý 2 tr. 68-70"
+    "correct": 3,
+    "explanation": "Khi hẹp động mạch thận hai bên (hoặc thận độc nhất), áp lực tưới máu cầu thận phụ thuộc hoàn toàn vào tác dụng co tiểu động mạch đi của Angiotensin II để duy trì GFR. Uống ACEI/ARB làm giãn tiểu động mạch đi, áp lực lọc cầu thận sập về 0 gây suy thận cấp vô niệu ngay lập tức.",
+    "reference": "Sách Dược lý 2 tr. 69"
   },
   {
     "id": 23,
@@ -405,15 +407,15 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Thuốc nào sau đây thuộc nhóm chẹn thụ thể Angiotensin II (ARB)?",
+    "question": "Nhóm thuốc tác động trên hệ RAA phong bế cạnh tranh thụ thể AT1 trên màng tế bào đích gồm những hoạt chất sở hữu cấu trúc phân tử có đuôi tên chung đặc trưng nào sau đây?",
     "options": [
-      "Captopril, Enalapril, Lisinopril",
-      "Amlodipin, Nifedipin, Nicardipin",
-      "Atenolol, Metoprolol, Bisoprolol",
-      "Losartan, Valsartan, Telmisartan"
+      "Đuôi '-pril' (như Captopril, Lisinopril, Perindopril)",
+      "Đuôi '-sartan' (như Losartan, Valsartan, Telmisartan)",
+      "Đuôi '-olol' (như Atenolol, Metoprolol, Bisoprolol)",
+      "Đuôi '-dipin' (như Amlodipin, Felodipin, Nicardipin)"
     ],
-    "correct": 3,
-    "explanation": "Nhóm thuốc chẹn thụ thể AT1 của angiotensin II (ARB) có đuôi '-sartan' như Losartan, Valsartan, Irbesartan, Candesartan, Telmisartan.",
+    "correct": 1,
+    "explanation": "Các thuốc chẹn chọn lọc thụ thể Angiotensin II (ARB) đều mang hậu tố '-sartan' (Losartan, Valsartan, Candesartan, Telmisartan). Nhóm '-pril' là ACEI, nhóm '-olol' là chẹn Beta, nhóm '-dipin' là CCB DHP.",
     "reference": "Sách Dược lý 2 tr. 70"
   },
   {
@@ -423,16 +425,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Vận dụng",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Ưu điểm vượt trội của nhóm ARB so với nhóm ACEI là gì?",
+    "question": "Trong cùng nhóm can thiệp lên trục Renin - Angiotensin, ưu thế dược lý vượt trội nhất phân biệt nhóm thuốc chẹn thụ thể ARB với nhóm thuốc ức chế men chuyển ACEI là:",
     "options": [
-      "Hầu như không làm tích lũy bradykinin nên không gây ho khan dai dẳng",
-      "Có thể dùng an toàn cho phụ nữ có thai trong 3 tháng cuối",
-      "Gây thải trừ hoàn toàn kali qua nước tiểu tránh tăng kali máu",
-      "Tác dụng hạ áp tức thì sau 30 giây dùng ngậm dưới lưỡi"
+      "Có thể sử dụng an toàn tuyệt đối cho phụ nữ mang thai trong suốt 3 quý của thai kỳ mà không gây độc thận thai nhi",
+      "Thúc đẩy đào thải triệt để ion Kali qua nước tiểu, không bao giờ gây biến chứng tăng Kali huyết thanh",
+      "Không gây hiện tượng tụt huyết áp liều đầu tiên ngay cả khi dùng liều cao trên bệnh nhân đang dùng thuốc lợi tiểu",
+      "Chẹn trực tiếp tại thụ thể AT1 nên không can thiệp vào sự thoái giáng của Bradykinin, triệt tiêu gần như hoàn toàn nguy cơ ho khan dai dẳng"
     ],
-    "correct": 0,
-    "explanation": "Do ARB chỉ phong bế chọn lọc trên thụ thể AT1 mà không ức chế men chuyển ACE, nên không làm tích lũy bradykinin và chất P, nhờ đó khắc phục được tác dụng phụ ho khan và giảm tỷ lệ phù mạch so với ACEI.",
-    "reference": "Sách Dược lý 2 tr. 70"
+    "correct": 3,
+    "explanation": "Do ARB đối kháng chọn lọc trên thụ thể AT1 mà không ức chế men chuyển ACE (Kininase II), thuốc không làm tăng nồng độ Bradykinin và chất P trong đường thở, nhờ đó hầu như không gây ho khan (tỷ lệ tương đương giả dược), là lựa chọn thay thế hoàn hảo cho bệnh nhân không dung nạp ACEI.",
+    "reference": "Sách Dược lý 2 tr. 71"
   },
   {
     "id": 25,
@@ -441,16 +443,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Thuốc chẹn kênh calci phân nhóm Dihydropyridin (DHP) tác dụng ưu tiên trên thành mạch gồm các thuốc nào?",
+    "question": "Nhóm thuốc chẹn kênh calci có cấu trúc nhân dihydropyridin (DHP) sở hữu tính chọn lọc mô rất cao trên mạch máu so với cơ tim. Các hoạt chất kinh điển thuộc phân nhóm này là:",
     "options": [
+      "Amlodipin, Nifedipin, Felodipin, Nicardipin",
       "Verapamil và Diltiazem",
-      "Propranolol và Atenolol",
-      "Captopril và Enalapril",
-      "Amlodipin, Nifedipin, Felodipin, Nicardipin"
+      "Propranolol, Timolol và Sotalol",
+      "Hydralazin, Minoxidil và Diazoxid"
     ],
-    "correct": 3,
-    "explanation": "Dẫn xuất Dihydropyridin (DHP) có tận cùng '-dipin' (Amlodipin, Nifedipin, Felodipin...) có ái lực mạnh trên kênh L-type ở cơ trơn mạch máu hơn cơ tim, gây giãn mạnh tiểu động mạch và hạ huyết áp.",
-    "reference": "Sách Dược lý 2 tr. 62"
+    "correct": 0,
+    "explanation": "Phân nhóm CCB DHP có cấu trúc nhân 1,4-dihydropyridin gồm các thuốc có đuôi '-dipin' (Amlodipin, Nifedipin, Nicardipin, Felodipin), tác dụng ưu thế trên cơ trơn tiểu động mạch. Verapamil (phenylalkylamin) và Diltiazem (benzothiazepin) thuộc nhóm Non-DHP tác dụng ưu thế trên cơ tim.",
+    "reference": "Sách Dược lý 2 tr. 58-59"
   },
   {
     "id": 26,
@@ -459,16 +461,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Vận dụng",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Tác dụng không mong muốn thường gặp nhất của Amlodipin và các thuốc chẹn kênh calci nhóm DHP là gì?",
+    "question": "Một bệnh nhân tăng huyết áp được điều trị đơn trị liệu bằng một hoạt chất chẹn kênh calci phân nhóm dihydropyridin. Sau một tháng, bệnh nhân nhận thấy hai bàn chân và mắt cá chân sưng mọng, tăng rõ rệt vào buổi chiều, không kèm khó thở, tĩnh mạch cổ không nổi, BNP máu bình thường. Cơ chế vi tuần hoàn chính xác gây ra hiện tượng tích tụ dịch này là gì?",
     "options": [
-      "Phù mắt cá chân hai bên và nóng bừng mặt do giãn tiểu động mạch",
-      "Khô miệng dai dẳng và bí tiểu cấp tính",
-      "Hạ đường huyết nghiêm trọng khi đói",
-      "Ho khan về đêm kèm co thắt phế quản"
+      "Giãn chọn lọc hệ tiểu tĩnh mạch sau mao mạch làm giảm lưu lượng máu về tim, gây ứ trệ tuần hoàn ngoại vi",
+      "Ứ muối nước thứ phát tại ống thận do thuốc kích thích phản xạ tiết Aldosteron từ tuyến vỏ thượng thận",
+      "Giãn chọn lọc tiểu động mạch trước mao mạch làm tăng áp lực thủy tĩnh trong lòng mao mạch, đẩy dịch thấm vào mô kẽ",
+      "Tăng tính thấm thành mao mạch toàn thân do giải phóng ồ ạt Histamin và Bradykinin từ tế bào nội mô"
     ],
-    "correct": 0,
-    "explanation": "Nhóm DHP (như Amlodipin) gây giãn tiểu động mạch mạnh nhưng ít giãn tĩnh mạch, làm tăng áp lực thủy tĩnh mao mạch đẩy dịch ra khoang kẽ, gây phù mắt cá chân (phù ngoại vi) và bốc hỏa, nhức đầu.",
-    "reference": "Sách Dược lý 2 tr. 64"
+    "correct": 2,
+    "explanation": "Phù mắt cá chân do CCB DHP là 'phù giả' do cơ chế huyết động: thuốc làm giãn mạnh tiểu động mạch trước mao mạch trong khi tiểu tĩnh mạch sau mao mạch không giãn tương xứng, dẫn tới tăng áp lực thủy tĩnh mao mạch đẩy dịch ra khoang kẽ vùng thấp. Thuốc lợi tiểu không có hiệu quả trong tình huống này; phối hợp thêm ACEI/ARB (làm giãn tiểu tĩnh mạch) sẽ cân bằng áp lực mao mạch và giải quyết triệt để phù.",
+    "reference": "Sách Dược lý 2 tr. 61"
   },
   {
     "id": 27,
@@ -477,16 +479,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Verapamil và Diltiazem thuộc nhóm chẹn kênh calci Non-DHP có đặc điểm tác dụng nổi bật nào?",
+    "question": "Khác biệt cơ bản nhất về đặc tính huyết động của các thuốc chẹn kênh calci phân nhóm Non-DHP (Verapamil, Diltiazem) so với phân nhóm DHP (Amlodipin) là:",
     "options": [
-      "Chỉ tác dụng trên cơ trơn phế quản làm giãn cơ trơn đường thở",
-      "Làm tăng nhịp tim phản xạ mạnh mẽ hơn nhiều so với Nifedipin",
-      "Chỉ làm giãn tĩnh mạch lớn mà không tác dụng trên tiểu động mạch",
-      "Tác dụng ưu tiên trên cơ tim, làm giảm nhịp tim và giảm dẫn truyền nhĩ thất"
+      "Chỉ làm giãn tĩnh mạch lớn mà hoàn toàn không tác động lên hệ thống tiểu động mạch ngoại vi",
+      "Gây kích thích phản xạ giao cảm làm tăng nhịp tim mạnh mẽ hơn rất nhiều so với phân nhóm DHP",
+      "Chỉ tác động chọn lọc trên cơ trơn phế quản và cơ trơn bàng quang mà không ảnh hưởng huyết áp",
+      "Có ái lực cao trên kênh Calci ở nút xoang, nút nhĩ thất và cơ tim, làm giảm nhịp tim, giảm sức co bóp và làm chậm dẫn truyền nhĩ thất"
     ],
     "correct": 3,
-    "explanation": "Verapamil (nhóm phenylalkylamin) và Diltiazem (nhóm benzothiazepin) tác dụng ức chế trực tiếp trên kênh calci ở nút xoang và nút nhĩ thất, làm giảm co bóp cơ tim, giảm nhịp tim và làm chậm dẫn truyền nhĩ thất.",
-    "reference": "Sách Dược lý 2 tr. 62-63"
+    "explanation": "Verapamil và Diltiazem (Non-DHP) gắn vào vị trí đặc hiệu trên kênh Calci type L ở tim mạnh hơn ở mạch, có tác dụng inotropic âm tính (giảm co bóp), chronotropic âm tính (giảm nhịp tim) và dromotropic âm tính (chậm dẫn truyền AV), do đó thường dùng hạ áp ở bệnh nhân có kèm nhịp nhanh, rung nhĩ hoặc đau thắt ngực.",
+    "reference": "Sách Dược lý 2 tr. 62"
   },
   {
     "id": 28,
@@ -495,16 +497,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Vận dụng cao",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Phối hợp thuốc hạ huyết áp nào sau đây bị CHỐNG CHỈ ĐỊNH do nguy cơ gây ngừng tim hoặc blốc nhĩ thất độ nặng?",
+    "question": "Một phác đồ phối hợp thuốc hạ áp có nguy cơ gây hiệp đồng ức chế quá mức tính tự động của nút xoang và làm ngừng trệ hoàn toàn sự dẫn truyền xung động qua nút nhĩ thất, dẫn đến trụy mạch vô tâm thu hoặc block nhĩ thất độ 3. Sự kết hợp cấm kỵ đó là giữa:",
     "options": [
-      "Thuốc chẹn beta giao cảm phối hợp với Verapamil đường tĩnh mạch",
-      "Thuốc chẹn thụ thể ARB phối hợp với thuốc chẹn kênh calci DHP",
-      "Thuốc ức chế men chuyển phối hợp với thuốc lợi tiểu Thiazid",
-      "Thuốc chẹn kênh calci nhóm DHP phối hợp với thuốc chẹn beta"
+      "Thuốc chẹn kênh calci DHP (Amlodipin) phối hợp cùng thuốc chẹn thụ thể beta-adrenergic",
+      "Thuốc chẹn kênh calci Non-DHP (Verapamil/Diltiazem) phối hợp cùng thuốc chẹn thụ thể beta-adrenergic",
+      "Thuốc ức chế men chuyển Enalapril phối hợp cùng thuốc chẹn kênh calci DHP Felodipin",
+      "Thuốc lợi tiểu Thiazid phối hợp cùng thuốc chẹn thụ thể ARB Losartan"
     ],
-    "correct": 0,
-    "explanation": "Cả thuốc chẹn beta và Verapamil đều có tác dụng ức chế mạnh cơ tim, làm chậm nhịp xoang và ức chế dẫn truyền qua nút nhĩ thất. Khi phối hợp cùng nhau (đặc biệt đường tiêm tĩnh mạch) có nguy cơ cao gây blốc nhĩ thất hoàn toàn, suy tim cấp hoặc ngừng tim.",
-    "reference": "Sách Dược lý 2 tr. 64-66"
+    "correct": 1,
+    "explanation": "Chống chỉ định phối hợp Verapamil hoặc Diltiazem với thuốc chẹn beta vì cả hai nhóm đều ức chế mạnh nút xoang và nút nhĩ thất, hiệp đồng gây nhịp tim chậm nghiêm trọng, block AV độ 3 hoặc ngừng tim vô tâm thu. Ngược lại, chẹn beta phối hợp CCB nhóm DHP (Amlodipin) lại là phối hợp kinh điển hợp lý.",
+    "reference": "Sách Dược lý 2 tr. 63"
   },
   {
     "id": 29,
@@ -513,16 +515,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Methyldopa hạ huyết áp theo cơ chế nào sau đây?",
+    "question": "Một thuốc hạ áp đường uống bản chất là tiền dược, sau khi vào hệ thần kinh trung ương được chuyển hóa thành chất đồng vận kích thích chọn lọc thụ thể alpha-2 adrenergic tiền synap ở nhân bó đơn độc thuộc hành não. Tác dụng sinh học cốt lõi hạ huyết áp của cơ chế này là:",
     "options": [
-      "Phong bế thụ thể beta-1 adrenergic chọn lọc trên cơ tim",
-      "Mở trực tiếp kênh kali trên cơ trơn tiểu động mạch",
-      "Ức chế cạnh tranh thụ thể angiotensin II typ AT1 tại ngoại vi",
-      "Chuyển thành alpha-methylnoradrenalin kích thích thụ thể alpha-2 ở trung ương vận mạch"
+      "Làm giảm trương lực và tần số phát xung thần kinh giao cảm ly tâm từ trung ương tới tim và mạch máu ngoại vi",
+      "Kích thích trực tiếp các tế bào nội mô mạch máu não giải phóng Nitric Oxide gây giãn mạch toàn thân",
+      "Chẹn thụ thể alpha-1 adrenergic hậu synap ngăn cản tác động co mạch của noradrenaline tại các tiểu động mạch",
+      "Kích thích trung tâm phế vị ở hành tủy gây cường phó giao cảm làm liệt cơ trơn mạch máu"
     ],
-    "correct": 3,
-    "explanation": "Methyldopa vào thần kinh trung ương được chuyển hóa thành alpha-methylnoradrenalin, chất này kích thích thụ thể alpha-2 adrenergic ở hành não, làm giảm phát xung giao cảm từ trung ương ra ngoại biên, gây hạ huyết áp.",
-    "reference": "Sách Dược lý 2 tr. 71-72"
+    "correct": 0,
+    "explanation": "Methyldopa được vận chuyển qua hàng rào máu não, chuyển hóa thành alpha-methylnoradrenalin. Chất này kích thích mạnh thụ thể alpha-2 tiền synap tại hành não, ức chế giải phóng noradrenalin, làm giảm trương lực giao cảm ly tâm, hạ huyết áp êm dịu và không làm giảm dòng máu đến thận/tử cung bánh rau.",
+    "reference": "Sách Dược lý 2 tr. 74-75"
   },
   {
     "id": 30,
@@ -531,16 +533,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Vận dụng",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Thuốc hạ huyết áp nào được coi là lựa chọn an toàn hàng đầu cho phụ nữ mang thai bị tăng huyết áp mạn tính hoặc tiền sản giật?",
+    "question": "Một phụ nữ mang thai ở tuần thứ 20 được chẩn đoán tăng huyết áp thai kỳ. Thuốc hạ huyết áp nào được đồng thuận lựa chọn là an toàn nhất qua nhiều thập kỷ, không gây suy giảm lưu lượng tưới máu bánh rau và không gây độc tính dị tật thận thai nhi?",
     "options": [
-      "Aliskiren",
+      "Enalapril",
+      "Losartan",
       "Methyldopa",
-      "Captopril",
-      "Losartan"
+      "Aliskiren"
     ],
-    "correct": 1,
-    "explanation": "Methyldopa là thuốc điều trị tăng huyết áp được lựa chọn an toàn hàng đầu cho phụ nữ có thai vì có dữ liệu an toàn lâu năm nhất, không làm giảm lưu lượng máu tử cung - rau thai và không gây quái thai. Các lựa chọn khác gồm Labetalol, Hydralazin.",
-    "reference": "Sách Dược lý 2 tr. 72, 76"
+    "correct": 2,
+    "explanation": "Methyldopa là thuốc lựa chọn hàng đầu (first-line) cho tăng huyết áp thai kỳ vì hồ sơ an toàn cho thai nhi đã được kiểm chứng lâu đời. Các thuốc ức chế hệ RAA (ACEI, ARB, Aliskiren) bị chống chỉ định tuyệt đối trong thai kỳ vì gây quái thai, suy thận và tử vong thai nhi.",
+    "reference": "Sách Dược lý 2 tr. 76"
   },
   {
     "id": 31,
@@ -549,16 +551,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Cơn tăng huyết áp kịch phát (cấp cứu tăng huyết áp) thường ưu tiên sử dụng thuốc nào đường truyền tĩnh mạch có thời gian khởi phát cực nhanh và thời gian bán thải ngắn?",
+    "question": "Trong xử trí cơn tăng huyết áp cấp cứu (HA ≥ 180/120 mmHg kèm tổn thương cơ quan đích tiến triển như xuất huyết não, phình tách động mạch chủ, phù phổi cấp), đường dùng và nhóm thuốc bắt buộc ưu tiên lựa chọn là:",
     "options": [
-      "Natri nitroprusiat hoặc Nicardipin truyền tĩnh mạch",
-      "Spironolacton dạng viên uống giải phóng kéo dài",
-      "Hydrochlorothiazid dạng viên nén uống buổi sáng",
-      "Bisoprolol dạng viên uống liều duy nhất mỗi ngày"
+      "Đường tiêm truyền tĩnh mạch liên tục với các thuốc có thời gian khởi phát nhanh và dễ chỉnh liều (như Nicardipine, Labetalol, Nitroprussid)",
+      "Đường uống viên nén tác dụng kéo dài kết hợp tăng liều gấp ba lần ngay tại giường cấp cứu",
+      "Đường ngậm dưới lưỡi viên Nifedipin nang mềm chọc thủng để hạ nhanh huyết áp về mức bình thường trong 10 phút",
+      "Đường tiêm bắp sâu các thuốc lợi tiểu Thiazid kết hợp tiêm tĩnh mạch bolus Digoxin"
     ],
     "correct": 0,
-    "explanation": "Trong cấp cứu cơn tăng huyết áp kịch phát đe dọa tổn thương cơ quan đích, Natri nitroprusiat hoặc Nicardipin truyền tĩnh mạch liên tục được ưu tiên vì có tác dụng hạ áp tức thì, kiểm soát được tốc độ hạ huyết áp.",
-    "reference": "Sách Dược lý 2 tr. 73-74"
+    "explanation": "Cơn tăng huyết áp cấp cứu (Hypertensive Emergency) có tổn thương cơ quan đích bắt buộc phải dùng thuốc đường tĩnh mạch liên tục (Nicardipine IV, Labetalol IV, Nitroprussid IV) trong phòng hồi sức tích cực để kiểm soát chính xác tốc độ hạ áp, giảm không quá 20-25% trong giờ đầu.",
+    "reference": "Sách Dược lý 2 tr. 77"
   },
   {
     "id": 32,
@@ -567,16 +569,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Vận dụng",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Tác dụng không mong muốn nghiêm trọng khi dùng Natri nitroprusiat truyền tĩnh mạch kéo dài hoặc liều cao là tích tụ chất độc nào?",
+    "question": "Khi truyền tĩnh mạch liên tục Natri nitroprussid liều cao hoặc kéo dài quá 48 giờ để kiểm soát cơn tăng huyết áp ác tính, bệnh nhân có nguy cơ xuất hiện toan chuyển hóa tăng khoảng trống anion, lú lẫn và thở nhanh sâu do sự tích lũy chất độc nào trong cơ thể?",
     "options": [
-      "Amoniac và Ure",
-      "Cyanid và Thiocyanat",
-      "Methemoglobin và Bilirubin tự do",
-      "Axit lactic và Pyruvat"
+      "Khí Nitric Oxide (NO) tự do gây ức chế chọn lọc enzym tổng hợp năng lượng ATP tại thận",
+      "Gốc Xyanua (Cyanide - CN⁻) và Thiocyanat do thuốc bị chuyển hóa khử bởi hemoglobin",
+      "Các ion Natri và Sắt tự do gây quá tải thể tích và nhiễm sắc tố huyết mô cấp tính",
+      "Acid Uric và tinh thể Urat kết tủa làm hoại tử ống thận cấp"
     ],
     "correct": 1,
-    "explanation": "Phân tử natri nitroprusiat chứa 5 nhóm cyanid. Khi chuyển hóa trong cơ thể giải phóng cyanid, gan chuyển cyanid thành thiocyanat để bài xuất qua thận. Truyền liều cao hoặc dùng cho người suy gan suy thận dễ gây ngộ độc cyanid và thiocyanat nguy hiểm.",
-    "reference": "Sách Dược lý 2 tr. 74"
+    "explanation": "Natri nitroprussid trong hồng cầu giải phóng NO đồng thời phóng thích 5 gốc Cyanide (CN⁻). Cyanide được enzym Rhodanase ở gan chuyển thành Thiocyanat thải qua thận. Khi dùng liều cao hoặc suy thận, CN⁻ tự do tích lũy ức chế chuỗi hô hấp tế bào gây toan lactic nặng và tử vong. Thuốc giải độc là Natri thiosulfat hoặc Hydroxocobalamin.",
+    "reference": "Sách Dược lý 2 tr. 78"
   },
   {
     "id": 33,
@@ -585,16 +587,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Thuốc lợi tiểu nào được khuyến cáo dùng phổ biến nhất trong điều trị tăng huyết áp vô căn đơn trị liệu hoặc phối hợp?",
+    "question": "Trong điều trị tăng huyết áp vô căn đơn thuần, nhóm thuốc lợi tiểu nào được khuyến cáo ưu tiên lựa chọn hàng đầu nhờ hiệu quả hạ áp ổn định, giảm tỷ lệ đột quỵ và giá thành kinh tế?",
     "options": [
-      "Acetazolamid viên uống",
-      "Furosemid liều cao tiêm tĩnh mạch",
-      "Hydrochlorothiazid và Indapamid",
-      "Mannitol dung dịch truyền ưu trương"
+      "Lợi tiểu quai tác dụng mạnh (Furosemid, Bumetanid)",
+      "Lợi tiểu giữ Kali kháng Aldosteron (Spironolacton, Eplerenone)",
+      "Lợi tiểu thẩm thấu qua đường tĩnh mạch (Mannitol, Glycerol)",
+      "Lợi tiểu Thiazid và Thiazid-like (Hydrochlorothiazid, Indapamid, Chlorthalidon)"
     ],
-    "correct": 2,
-    "explanation": "Lợi tiểu nhóm Thiazid (Hydrochlorothiazid) và Thiazid-like (Indapamid, Chlorthalidon) là thuốc nền tảng trong điều trị tăng huyết áp lâu dài do thải trừ natri ban đầu và giãn mạch ngoại vi khi dùng kéo dài.",
-    "reference": "Sách Dược lý 2 tr. 56-57"
+    "correct": 3,
+    "explanation": "Thiazid (Hydrochlorothiazid) và Thiazid-like (Indapamid, Chlorthalidon) là lợi tiểu nền tảng được khuyến cáo hàng đầu trong tăng huyết áp vô căn nhờ tác dụng hạ áp kéo dài, giảm biến cố tim mạch và đột quỵ. Lợi tiểu quai chỉ ưu tiên khi có phù nặng, suy tim sung huyết hoặc suy thận nặng GFR < 30.",
+    "reference": "Sách Dược lý 2 tr. 56"
   },
   {
     "id": 34,
@@ -603,16 +605,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Vận dụng",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Hiện tượng tụt huyết áp liều đầu tiên (hiệu ứng liều đầu - first dose phenomenon) kèm ngất xỉu thường hay gặp nhất ở nhóm thuốc hạ áp nào?",
+    "question": "Hiện tượng 'liều đầu tiên' (First-dose phenomenon) đặc trưng bởi tụt huyết áp tư thế đứng nghiêm trọng kèm chóng mặt, hoa mắt hoặc ngất xỉu ngay sau khi uống liều khởi đầu thường gặp nhất ở nhóm thuốc nào?",
     "options": [
-      "Thuốc lợi tiểu giữ kali triamteren",
-      "Thuốc đối kháng thụ thể aldosterone",
-      "Thuốc chẹn thụ thể alpha-1 giao cảm",
-      "Thuốc chẹn kênh calci nhóm dihydropyridin"
+      "Thuốc chẹn chọn lọc kênh Calci nhóm dihydropyridin (như Amlodipin)",
+      "Thuốc chẹn chọn lọc thụ thể beta-1 adrenergic ở tim (như Bisoprolol)",
+      "Thuốc phong bế chọn lọc thụ thể alpha-1 adrenergic ngoại vi (như Prazosin, Doxazosin)",
+      "Thuốc chẹn thụ thể Angiotensin II phân nhóm AT1 (như Telmisartan)"
     ],
     "correct": 2,
-    "explanation": "Thuốc chẹn chọn lọc thụ thể alpha-1 adrenergic ngoại vi (Prazosin, Terazosin, Doxazosin) gây giãn cả tiểu động mạch và tiểu tĩnh mạch nhanh, dễ gây tụt huyết áp tư thế đứng nghiêm trọng ngay liều đầu tiên, nên phải uống liều đầu trước khi đi ngủ.",
-    "reference": "Sách Dược lý 2 tr. 61-62"
+    "explanation": "Thuốc chẹn alpha-1 ngoại vi (Prazosin, Doxazosin) gây giãn đồng thời cả tiểu động mạch và tiểu tĩnh mạch, làm giảm nhanh lượng máu tĩnh mạch đổ về tim. Ở liều đầu tiên, phản xạ co mạch tư thế bị triệt tiêu đột ngột dẫn đến tụt huyết áp tư thế đứng và ngất (First-dose syncope). Khắc phục: Khởi đầu bằng liều nhỏ và uống ngay trước lúc đi ngủ.",
+    "reference": "Sách Dược lý 2 tr. 73"
   },
   {
     "id": 35,
@@ -621,16 +623,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Vận dụng cao",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Bệnh nhân tăng huyết áp kèm đái tháo đường typ 2 và có microalbumin niệu. Nhóm thuốc hạ áp nào được khuyến cáo ưu tiên lựa chọn hàng đầu để bảo vệ thận?",
+    "question": "Một bệnh nhân 52 tuổi mắc đái tháo đường typ 2 kèm tăng huyết áp, xét nghiệm nước tiểu ghi nhận có microalbumin niệu (tỷ lệ Albumin/Creatinin niệu tăng). Nhóm thuốc hạ áp nào bắt buộc được ưu tiên lựa chọn hàng đầu để bảo vệ thận và làm chậm tiến triển suy thận?",
     "options": [
-      "Thuốc lợi tiểu quai furosemid liều cao",
-      "Thuốc chẹn beta giao cảm không chọn lọc",
-      "Thuốc ức chế men chuyển ACEI hoặc thuốc chẹn thụ thể ARB",
-      "Thuốc giãn mạch trực tiếp hydralazin"
+      "Thuốc ức chế men chuyển (ACEI) hoặc thuốc chẹn thụ thể Angiotensin II (ARB)",
+      "Thuốc chẹn kênh calci Non-DHP (Verapamil, Diltiazem)",
+      "Thuốc chẹn thụ thể beta giao cảm không chọn lọc (Propranolol)",
+      "Thuốc giãn mạch trực tiếp trên động mạch (Hydralazin)"
     ],
-    "correct": 2,
-    "explanation": "ACEI và ARB làm giãn ưu thế tiểu động mạch đi ở cầu thận, làm giảm áp lực nội cầu thận, do đó làm giảm tiết protein qua nước tiểu và làm chậm tiến triển của bệnh thận đái tháo đường, là lựa chọn hàng đầu cho bệnh nhân THA kèm đái tháo đường.",
-    "reference": "Sách Dược lý 2 tr. 69, 76"
+    "correct": 0,
+    "explanation": "ACEI và ARB là thuốc bảo vệ thận số 1 cho bệnh nhân đái tháo đường vì thuốc làm giãn chọn lọc tiểu động mạch đi nhiều hơn tiểu động mạch đến của cầu thận, làm giảm áp lực thủy tĩnh nội cầu thận, giảm rò rỉ protein qua màng lọc và ngăn ngừa xơ hóa cầu thận.",
+    "reference": "Sách Dược lý 2 tr. 68-70"
   },
   {
     "id": 36,
@@ -3285,16 +3287,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Captopril khác biệt với các thuốc ức chế men chuyển khác (như Enalapril, Lisinopril) ở đặc điểm hóa học nào?",
+    "question": "Trong nhóm ức chế men chuyển, Captopril sở hữu nhóm chức hóa học chứa lưu huỳnh tự do (-SH). Sự hiện diện của nhóm chức này liên quan trực tiếp đến những tác dụng không mong muốn đặc thù nào hiếm gặp ở các thuốc cùng nhóm khác?",
     "options": [
-      "Có cấu trúc steroid tổng hợp từ cholesterol",
-      "Chứa nhóm este etylic cần gan hoạt hóa",
-      "Chứa vòng benzen gắn hai nguyên tử clo",
-      "Chứa nhóm sulfhydryl -SH trong phân tử liên quan đến tác dụng phụ mất vị giác và phát ban"
+      "Phù mắt cá chân hai bên và tăng men gan cấp tính kiểu ứ mật",
+      "Hội chứng bão giao cảm dội ngược và cơn đau thắt ngực khi ngừng thuốc",
+      "Rối loạn vị giác (mất vị hoặc có vị kim loại trong miệng), phát ban da dạng dát sần và giảm bạch cầu hạt",
+      "Tăng áp lực nội sọ và xuất huyết dưới màng nhện"
     ],
-    "correct": 3,
-    "explanation": "Captopril là thuốc ACEI đầu tiên có nhóm chức sulfhydryl (-SH). Nhóm -SH này chịu trách nhiệm cho các tác dụng không mong muốn đặc thù như rối loạn vị giác (kim loại), phát ban da ngứa và giảm bạch cầu trung tính.",
-    "reference": "Sách Dược lý 2 tr. 67-68"
+    "correct": 2,
+    "explanation": "Nhóm sulfhydryl (-SH) trong Captopril gắn vào ion Zn2+ của men ACE, nhưng nhóm thiol này cũng chính là thủ phạm gây ra các ADR đặc thù: mất vị giác/vị kim loại (dysgeusia), phát ban da dị ứng và hiếm gặp là giảm bạch cầu hạt. Các ACEI thế hệ sau chứa nhóm carboxyl (Enalapril) hoặc phosphinyl (Fosinopril) ít gặp các tác dụng phụ này hơn.",
+    "reference": "Sách Dược lý 2 tr. 67"
   },
   {
     "id": 184,
@@ -3303,16 +3305,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Thuốc ức chế men chuyển nào sau đây là thuốc có hoạt tính trực tiếp, không phải tiền chất và thải trừ qua thận dạng không đổi?",
+    "question": "Hầu hết các thuốc ức chế men chuyển được dùng dưới dạng tiền dược (prodrug) cần gan thủy phân để tạo dạng có hoạt tính. Hai hoạt chất hiếm hoi trong nhóm đã có hoạt tính sinh học trực tiếp, hấp thu không cần chuyển hóa qua gan là:",
     "options": [
-      "Perindopril",
-      "Lisinopril",
-      "Enalapril",
-      "Ramipril"
+      "Enalapril và Ramipril",
+      "Captopril và Lisinopril",
+      "Perindopril và Fosinopril",
+      "Benazepril và Quinapril"
     ],
     "correct": 1,
-    "explanation": "Đa số các thuốc ACEI (Enalapril, Ramipril, Perindopril...) là tiền chất dạng este (prodrug) cần enzym esterase ở gan thủy phân thành dạng acid có hoạt tính. Riêng Captopril và Lisinopril là dạng có hoạt tính trực tiếp; Lisinopril thải trừ nguyên vẹn qua thận.",
-    "reference": "Sách Dược lý 2 tr. 67"
+    "explanation": "Captopril và Lisinopril là 2 thuốc ức chế men chuyển duy nhất KHÔNG PHẢI tiền dược (không có đuôi -at), có hoạt tính trực tiếp ngay khi vào cơ thể và đào thải nguyên vẹn. Các thuốc khác (Enalapril -> Enalaprilat, Perindopril -> Perindoprilat, Ramipril -> Ramiprilat) đều là ester tiền dược cần gan thủy phân.",
+    "reference": "Sách Dược lý 2 tr. 66"
   },
   {
     "id": 185,
@@ -3321,16 +3323,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Vận dụng",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Vì sao việc dùng viên Nifedipin nang mềm tác dụng nhanh chọc thủng nhỏ dưới lưỡi để hạ áp cấp cứu hiện nay bị NGHIÊM CẤM?",
+    "question": "Trước đây thực hành chọc thủng viên Nifedipin nang mềm nhỏ dưới lưỡi để xử trí huyết áp tăng vọt khá phổ biến, nhưng hiện nay bị CẤM TUYỆT ĐỐI do cơ chế bệnh sinh nào?",
     "options": [
-      "Làm tắc nghẽn đường thở do phù thanh môn dị ứng",
-      "Gây xuất huyết bàng quang ồ ạt do co thắt mạch",
-      "Gây phù phổi cấp tức thì do ức chế cơ tim",
-      "Gây tụt huyết áp quá nhanh và kích hoạt phản xạ giao cảm gây nhịp nhanh, thiếu máu cơ tim và đột quỵ não"
+      "Thuốc ức chế tức thì nút xoang dẫn đến ngừng tim đột ngột do phong bế kênh canxi ở tim",
+      "Thuốc gây co thắt khí phế quản cấp tính dẫn đến suy hô hấp do kích thích thụ thể histamin",
+      "Thuốc kích hoạt giải phóng renin ồ ạt làm huyết áp tăng vọt thành cơn bão tăng huyết áp ác tính",
+      "Thuốc hấp thu quá nhanh gây tụt huyết áp ồ ạt, kích hoạt phản xạ giao cảm dữ dội gây nhịp nhanh, thiếu máu não và nhồi máu cơ tim cấp"
     ],
     "correct": 3,
-    "explanation": "Nifedipin tác dụng ngắn hấp thu qua niêm mạc miệng gây tụt huyết áp đột ngột không kiểm soát được, kích hoạt phản xạ giao cảm dữ dội gây nhịp tim nhanh vọt, thiếu máu cơ tim cục bộ, nhồi máu cơ tim và đột quỵ não do giảm tưới máu mạch vành và mạch não.",
-    "reference": "Sách Dược lý 2 tr. 63-64"
+    "explanation": "Nifedipin nang mềm nhỏ dưới lưỡi làm tụt huyết áp quá nhanh và không kiểm soát được, kích hoạt phản xạ giao cảm cường độ cực mạnh gây nhịp tim nhanh, co thắt mạch vành và hiện tượng 'cướp máu', dẫn tới nhồi máu cơ tim và thiếu máu não cục bộ. Phương pháp này đã bị cấm hoàn toàn.",
+    "reference": "Sách Dược lý 2 tr. 60"
   },
   {
     "id": 186,
@@ -3339,16 +3341,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Thuốc chẹn kênh calci DHP Nicardipin có đặc điểm dược lý nổi bật nào được ứng dụng trong cấp cứu?",
+    "question": "Trong cấp cứu tăng huyết áp có tổn thương cơ quan đích (đặc biệt trong xuất huyết não hoặc tai biến mạch máu não), thuốc chẹn kênh calci nào có dạng tiêm truyền tĩnh mạch với đặc tính khởi phát nhanh, dễ chuẩn liều và không làm tăng áp lực nội sọ?",
     "options": [
-      "Gây tăng tiết aldosteron mạnh ở vỏ thượng thận",
-      "Tác dụng chọn lọc cao trên mạch máu não và mạch vành, dùng dạng truyền tĩnh mạch để kiểm soát huyết áp trong đột quỵ xuất huyết não",
-      "Chỉ tác dụng trên tĩnh mạch chi dưới điều trị suy giãn tĩnh mạch",
-      "Ức chế chọn lọc nút xoang tương đương adenosin"
+      "Nicardipin",
+      "Amlodipin",
+      "Nimodipin đường uống",
+      "Felodipin"
     ],
-    "correct": 1,
-    "explanation": "Nicardipin có tính chọn lọc cao trên mạch máu não và mạch vành, dạng tiêm truyền tĩnh mạch khởi phát tác dụng nhanh và dễ điều chỉnh tốc độ, là thuốc hạ áp được khuyến cáo hàng đầu trong cấp cứu cơn tăng huyết áp kèm đột quỵ não.",
-    "reference": "Sách Dược lý 2 tr. 63, 74"
+    "correct": 0,
+    "explanation": "Nicardipin truyền tĩnh mạch (IV) là thuốc chẹn kênh calci DHP được ưu tiên hàng đầu trong cấp cứu tăng huyết áp, đột quỵ xuất huyết não và tiền sản giật nặng nhờ tác dụng chọn lọc cao trên mạch máu não và mạch vành, khởi phát nhanh trong vài phút, dễ điều chỉnh liều và không gây ức chế cơ tim.",
+    "reference": "Sách Dược lý 2 tr. 61"
   },
   {
     "id": 187,
@@ -3357,16 +3359,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Minoxidil là thuốc hạ áp giãn mạch trực tiếp mạnh, cơ chế tác dụng phân tử của thuốc là gì?",
+    "question": "Sau khi vào cơ thể, hoạt chất Minoxidil được chuyển hóa thành Minoxidil sulfat có tác dụng giãn mạch trực tiếp rất mạnh. Cơ chế phân tử chính xác của thuốc tại tế bào cơ trơn tiểu động mạch là gì?",
     "options": [
-      "Chẹn kênh natri phụ thuộc điện thế trên tế bào cơ tim",
-      "Ức chế thụ thể endothelin ET-A",
-      "Kích thích enzym adenylcyclase ở cơ trơn tĩnh mạch",
-      "Mở kênh Kali phụ thuộc ATP K-ATP làm ưu cực hóa màng tế bào cơ trơn tiểu động mạch"
+      "Ức chế enzym phosphodiesterase type 5 làm tích lũy cGMP trong tế bào cơ trơn mạch máu",
+      "Kích hoạt trực tiếp enzym adenylate cyclase làm tăng tổng hợp cAMP gây giãn cơ trơn",
+      "Phong bế chọn lọc thụ thể Endothelin ETA trên bề mặt tế bào nội mô mạch máu",
+      "Mở kênh Kali nhạy cảm với ATP (K_ATP channel) gây ưu phân cực màng tế bào cơ trơn, ngăn dòng Ca²⁺ đi vào"
     ],
     "correct": 3,
-    "explanation": "Minoxidil sulfat làm mở kênh K+ nhạy cảm ATP trên màng tế bào cơ trơn thành mạch, làm ion K+ thoát ra ngoài gây ưu cực hóa màng, ngăn cản mở kênh Ca2+, dẫn đến giãn mạnh tiểu động mạch.",
-    "reference": "Sách Dược lý 2 tr. 73"
+    "explanation": "Minoxidil sulfat gắn vào tiểu đơn vị SUR của kênh Kali nhạy cảm ATP (K_ATP channel) trên màng tế bào cơ trơn mạch máu, mở kênh làm ion K+ ùa ra ngoài tế bào, gây hiện tượng ưu phân cực màng (hyperpolarization), đóng kênh Canxi phụ thuộc điện thế và làm giãn cơ trơn tiểu động mạch rất mạnh.",
+    "reference": "Sách Dược lý 2 tr. 79"
   },
   {
     "id": 188,
@@ -3375,16 +3377,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Vận dụng",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Tác dụng phụ gây rậm lông (hypertrichosis) của Minoxidil đã được ứng dụng trong y học để làm gì?",
+    "question": "Tác dụng không mong muốn gây tăng mọc lông tóc (Hypertrichosis) của hoạt chất Minoxidil bắt nguồn từ cơ chế giãn vi mạch tại nang lông, hiện nay được ứng dụng phổ biến trên lâm sàng để:",
     "options": [
-      "Điều trị bệnh nhược cơ mạn tính",
-      "Chống nấm móng tay chân mạn tính",
-      "Bào chế dung dịch hoặc bọt dùng ngoài da điều trị rụng tóc và hói đầu",
-      "Kích thích sản xuất collagen ở người lão hóa da"
+      "Điều trị hội chứng rậm lông vô căn ở phụ nữ sau mãn kinh",
+      "Bào chế dung dịch dùng ngoài bôi tại chỗ điều trị rụng tóc, hói đầu androgen",
+      "Kích thích mọc lông mày cho bệnh nhân suy giáp trạng mạn tính",
+      "Bào chế kem triệt lông vĩnh viễn nhờ làm teo nang lông khi dùng nồng độ cao"
     ],
-    "correct": 2,
-    "explanation": "Minoxidil làm giãn mạch da đầu, tăng dòng máu nuôi dưỡng các nang tóc và kéo dài giai đoạn anagen của sợi tóc. Dung dịch bôi ngoài da 2% và 5% hiện được dùng phổ biến để điều trị rụng tóc kiểu hói (androgenetic alopecia).",
-    "reference": "Sách Dược lý 2 tr. 73"
+    "correct": 1,
+    "explanation": "Khi dùng đường uống trị THA kháng trị, Minoxidil gây rậm lông mặt, tay chân (hypertrichosis) sau vài tuần. Tác dụng phụ này đã được ứng dụng để bào chế dung dịch/bọt bôi ngoài da (Minoxidil 2%, 5%) kích thích mọc tóc trong điều trị chứng rụng tóc từng mảng và hói đầu di truyền.",
+    "reference": "Sách Dược lý 2 tr. 80"
   },
   {
     "id": 189,
@@ -3393,16 +3395,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Hiện tượng huyết áp dội ngược tăng vọt nguy hiểm (rebound hypertension) xảy ra khi bệnh nhân đột ngột ngừng sử dụng thuốc hạ áp nào?",
+    "question": "Hiện tượng tăng huyết áp dội ngược nguy hiểm (Rebound hypertension) với huyết áp vọt lên rất cao kèm bồn chồn, nhịp nhanh, vã mồ hôi và nguy cơ nhồi máu cơ tim cấp thường xảy ra khi bệnh nhân ngừng đột ngột thuốc nào?",
     "options": [
-      "Amlodipin",
-      "Hydrochlorothiazid",
-      "Enalapril",
-      "Clonidin"
+      "Thuốc lợi tiểu Thiazid",
+      "Thuốc ức chế men chuyển Captopril",
+      "Clonidin hoặc thuốc chẹn beta-adrenergic liều cao",
+      "Thuốc chẹn thụ thể ARB Losartan"
     ],
-    "correct": 3,
-    "explanation": "Clonidin kích thích thụ thể alpha-2 trung ương làm giảm trương lực giao cảm ngoại biên. Nếu ngừng thuốc đột ngột, lượng catecholamin dự trữ được phóng thích ồ ạt gây cơn tăng huyết áp ác tính đe dọa xuất huyết não và nhồi máu cơ tim.",
-    "reference": "Sách Dược lý 2 tr. 72"
+    "correct": 2,
+    "explanation": "Ngừng đột ngột Clonidin (thuốc chủ vận alpha-2 trung ương) hoặc thuốc chẹn beta liều cao gây ra hiện tượng tăng huyết áp dội ngược (Rebound hypertension) do sự tăng vọt catecholamin nội sinh tác động lên các thụ thể đã bị tăng sinh (up-regulation). Do đó luôn phải giảm liều từ từ (tapering) trong 1-2 tuần.",
+    "reference": "Sách Dược lý 2 tr. 75"
   },
   {
     "id": 190,
@@ -3411,16 +3413,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Vận dụng cao",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Phối hợp thuốc hạ huyết áp nào sau đây được coi là kinh điển, hợp lý và tối ưu nhất cho người cao tuổi bị tăng huyết áp tâm thu đơn độc?",
+    "question": "Trong phối hợp thuốc hạ áp, sự kết hợp giữa 2 nhóm thuốc nào dưới đây bị KHUYẾN CÁO TRÁNH / CHỐNG CHỈ ĐỊNH do không tăng thêm hiệu quả bảo vệ tim mạch mà làm tăng vọt biến cố suy thận cấp, hạ huyết áp quá mức và tăng kali máu?",
     "options": [
-      "Thuốc chẹn beta giao cảm phối hợp với thuốc chẹn kênh calci Non-DHP",
-      "Thuốc chẹn alpha-1 phối hợp với thuốc giãn mạch trực tiếp hydralazin",
-      "Thuốc chẹn kênh calci DHP phối hợp với thuốc lợi tiểu Thiazid",
-      "Thuốc ức chế men chuyển phối hợp với thuốc chẹn thụ thể ARB"
+      "Phối hợp thuốc ức chế men chuyển (ACEI) cùng thuốc chẹn thụ thể Angiotensin II (ARB)",
+      "Phối hợp thuốc ức chế men chuyển (ACEI) cùng thuốc chẹn kênh calci DHP",
+      "Phối hợp thuốc chẹn thụ thể ARB cùng thuốc lợi tiểu Thiazid",
+      "Phối hợp thuốc chẹn kênh calci DHP cùng thuốc chẹn beta-1 chọn lọc"
     ],
-    "correct": 2,
-    "explanation": "Ở người cao tuổi tăng HA tâm thu đơn độc cơ chế chủ yếu do xơ cứng động mạch lớn và giảm bài tiết natri. Phối hợp CCB DHP (Amlodipin) với Thiazid (Hydrochlorothiazid hoặc Indapamid) tác động hiệp đồng vừa giãn động mạch vừa thải muối nước, mang lại hiệu quả hạ áp tối ưu.",
-    "reference": "Sách Dược lý 2 tr. 75-76"
+    "correct": 0,
+    "explanation": "Nghiên cứu ONTARGET và hướng dẫn quốc tế khuyến cáo KHÔNG ĐƯỢC PHỐI HỢP ACEI VÀ ARB cùng lúc vì cùng can thiệp vào một trục sinh học (Dual-RAAS blockade), không làm giảm thêm tỷ lệ tử vong nhưng làm tăng gấp đôi nguy cơ suy thận cấp, tụt huyết áp kịch phát và tăng Kali máu nguy hiểm.",
+    "reference": "Sách Dược lý 2 tr. 72"
   },
   {
     "id": 191,
@@ -4653,16 +4655,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Thuốc hạ áp nhóm chẹn thụ thể beta nào sau đây vừa chẹn chọn lọc thụ thể beta-1 vừa có tác dụng kích thích giải phóng Nitric oxid (NO) gây giãn mạch?",
+    "question": "Một thuốc chẹn beta thế hệ 3 có ái lực chọn lọc rất cao trên thụ thể beta-1 ở tim, đồng thời kích hoạt enzym eNOS nội mô giải phóng Nitric Oxide (NO) gây giãn mạch và cải thiện chức năng nội mạc là:",
     "options": [
-      "Metoprolol",
-      "Propranolol",
+      "Atenolol",
       "Nebivolol",
-      "Atenolol"
+      "Propranolol",
+      "Metoprolol"
     ],
-    "correct": 2,
-    "explanation": "Nebivolol là thuốc chẹn beta-1 thế hệ thứ ba có tính chọn lọc trên thụ thể beta-1 cao nhất, đồng thời kích hoạt enzym eNOS làm giải phóng NO tại tế bào nội mô mạch máu, gây giãn mạch và giảm sức cản ngoại vi.",
-    "reference": "Sách Dược lý 2 tr. 60"
+    "correct": 1,
+    "explanation": "Nebivolol là thuốc chẹn beta thế hệ 3 chọn lọc cao nhất trên thụ thể beta-1, đồng thời đồng vận thụ thể beta-3 kích hoạt eNOS giải phóng NO gây giãn mạch ngoại vi, giảm sức cản mạch và không ảnh hưởng xấu đến chuyển hóa lipid và đường máu như các thuốc chẹn beta cũ.",
+    "reference": "Sách Dược lý 2 tr. 65"
   },
   {
     "id": 260,
@@ -4671,16 +4673,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Carvedilol và Labetalol có cơ chế hạ áp hỗn hợp nào sau đây?",
+    "question": "Cơ chế tác động kép trên hệ thần kinh thực vật của hai thuốc Carvedilol và Labetalol giúp hạ áp hiệu quả mà không làm tăng sức cản ngoại vi là do phong bế đồng thời các thụ thể nào?",
     "options": [
-      "Chẹn thụ thể AT1 và ức chế trực tiếp men renin",
-      "Mở kênh kali và chẹn kênh calci typ L",
-      "Chẹn đồng thời thụ thể alpha-1 và cả hai thụ thể beta-1, beta-2 adrenergic",
-      "Ức chế enzym carbonic anhydrase và chẹn thụ thể histamin H1"
+      "Kích thích thụ thể alpha-2 trung ương và phong bế thụ thể beta-1 ở tim",
+      "Phong bế thụ thể alpha-2 tiền synap và kích thích thụ thể beta-2 mạch máu",
+      "Phong bế thụ thể alpha-1 adrenergic ngoại vi và phong bế cả thụ thể beta (beta-1, beta-2)",
+      "Phong bế thụ thể Dopamin D2 và ức chế enzym monoamine oxidase (MAO)"
     ],
     "correct": 2,
-    "explanation": "Carvedilol và Labetalol là thuốc chẹn giao cảm hỗn hợp: chẹn thụ thể alpha-1 ngoại vi gây giãn mạch hạ áp, đồng thời chẹn thụ thể beta-1 ở tim ngăn cản nhịp tim nhanh phản xạ.",
-    "reference": "Sách Dược lý 2 tr. 61"
+    "explanation": "Labetalol và Carvedilol là các thuốc chẹn hỗn hợp: phong bế thụ thể alpha-1 ở mạch máu (gây giãn mạch, giảm sức cản ngoại vi) kết hợp phong bế thụ thể beta-1 ở tim (ngăn phản xạ tim nhanh bù trừ) và beta-2. Nhờ đó kiểm soát huyết áp rất êm dịu, bảo vệ bệnh nhân suy tim và cơn tăng huyết áp.",
+    "reference": "Sách Dược lý 2 tr. 65"
   },
   {
     "id": 261,
@@ -4689,16 +4691,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Vận dụng",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Bệnh nhân tăng huyết áp có kèm u tủy thượng thận (Pheochromocytoma) đang chuẩn bị phẫu thuật bắt buộc phải được điều trị kiểm soát huyết áp bằng nhóm thuốc nào trước tiên?",
+    "question": "Trong phác đồ chuẩn bị tiền phẫu cho bệnh nhân u tủy thượng thận (Pheochromocytoma) tiết nhiều catecholamin, nguyên tắc dùng thuốc bắt buộc để tránh xảy ra cơn tăng huyết áp ác tính kịch phát và phù phổi cấp là:",
     "options": [
-      "Thuốc lợi tiểu Thiazid liều tối đa",
-      "Thuốc ức chế men chuyển phối hợp chẹn thụ thể ARB",
-      "Thuốc chẹn thụ thể alpha-adrenergic",
-      "Thuốc chẹn beta giao cảm đơn độc liều cao"
+      "Bắt buộc phải dùng thuốc chẹn beta liều cao trước để khống chế nhịp tim, sau đó mới dùng thuốc chẹn alpha",
+      "Dùng đồng thời thuốc ức chế men chuyển và thuốc chẹn beta ngay từ ngày đầu tiên",
+      "Tuyệt đối không dùng bất kỳ thuốc chẹn thụ thể giao cảm nào trước khi phẫu thuật cắt khối u",
+      "Bắt buộc phải dùng thuốc chẹn alpha-adrenergic trước vài tuần, sau khi mạch đã giãn mới được dùng thêm thuốc chẹn beta"
     ],
-    "correct": 2,
-    "explanation": "Trong u tủy thượng thận giải phóng ồ ạt catecholamin. Nếu dùng chẹn beta đơn độc trước sẽ làm mất tác dụng giãn mạch của beta-2, để lại tác dụng co mạch của alpha-1 không đối kháng gây tăng huyết áp kịch phát chết người. Bắt buộc phải dùng thuốc chẹn alpha trước để mở rộng lòng mạch, sau đó mới thêm chẹn beta để khống chế nhịp tim.",
-    "reference": "Sách Dược lý 2 tr. 61-62"
+    "correct": 3,
+    "explanation": "Quy tắc vàng trong u tủy thượng thận: PHẢI CHẸN ALPHA TRƯỚC, CHẸN BETA SAU. Nếu dùng chẹn beta trước, thụ thể beta-2 (giãn mạch) bị chặn lại, lượng lớn catecholamin sẽ gắn tự do vào thụ thể alpha-1 gây co mạch dữ dội, huyết áp tăng kịch phát dẫn tới đột quỵ hoặc phù phổi cấp tử vong.",
+    "reference": "Sách Dược lý 2 tr. 74"
   },
   {
     "id": 262,
@@ -4707,16 +4709,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Aliskiren là thuốc hạ huyết áp tác động vào khâu đầu tiên của hệ RAA theo cơ chế nào?",
+    "question": "Aliskiren là thuốc hạ huyết áp can thiệp vào khâu khởi đầu của trục RAA theo cơ chế sinh học phân tử nào?",
     "options": [
-      "Ức chế enzym ACE ngăn cản tạo Angiotensin II",
-      "Ức chế trực tiếp enzym Renin ngăn cản chuyển Angiotensinogen thành Angiotensin I",
-      "Kháng thụ thể AT1 ngăn gắn kết của Angiotensin II",
-      "Kích thích tuyến vỏ thượng thận tăng bài tiết aldosteron"
+      "Ức chế trực tiếp enzym Renin, ngăn chặn bước chuyển đổi Angiotensinogen thành Angiotensin I",
+      "Ức chế enzym men chuyển ACE, ngăn chặn chuyển Angiotensin I thành Angiotensin II",
+      "Chẹn chọn lọc thụ thể AT1 của Angiotensin II trên cơ trơn thành mạch",
+      "Ức chế thụ thể Mineralocorticoid tại tế bào biểu mô ống lượn xa của thận"
     ],
-    "correct": 1,
-    "explanation": "Aliskiren là thuốc ức chế renin trực tiếp (Direct Renin Inhibitor - DRI), gắn vào vị trí xúc tác của enzym renin, ngăn cản sự phân cắt phân tử angiotensinogen thành angiotensin I.",
-    "reference": "Sách Dược lý 2 tr. 71"
+    "correct": 0,
+    "explanation": "Aliskiren là thuốc ức chế trực tiếp enzym Renin (Direct Renin Inhibitor - DRI) đầu tiên được phê duyệt, liên kết với trung tâm hoạt động của Renin, ngăn cản sự phân cắt Angiotensinogen thành Angiotensin I, triệt tiêu trục RAA ngay từ khâu đầu tiên.",
+    "reference": "Sách Dược lý 2 tr. 72"
   },
   {
     "id": 263,
@@ -4725,16 +4727,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Vận dụng",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Tác dụng không mong muốn gây phì đại nướu răng (tăng sản lợi) là biến chứng thường gặp ở nhóm thuốc hạ áp nào?",
+    "question": "Một bệnh nhân điều trị tăng huyết áp đơn trị liệu được 6 tháng xuất hiện tình trạng phì đại mô nướu quanh chân răng (tăng sản lợi), lợi sưng nề che phủ một phần thân răng và dễ chảy máu khi đánh răng. Nhóm thuốc nào có nguy cơ cao nhất gây ra tác dụng phụ mô nha chu đặc trưng này?",
     "options": [
-      "Thuốc chẹn thụ thể ARB",
-      "Thuốc ức chế men chuyển ACEI",
-      "Thuốc lợi tiểu quai furosemid",
-      "Thuốc chẹn kênh calci"
+      "Thuốc ức chế men chuyển (như Enalapril, Lisinopril)",
+      "Thuốc lợi tiểu Thiazid (như Hydrochlorothiazid)",
+      "Thuốc chẹn kênh calci (như Amlodipin, Nifedipin)",
+      "Thuốc chẹn beta giao cảm (như Bisoprolol, Metoprolol)"
     ],
-    "correct": 3,
-    "explanation": "Thuốc chẹn kênh calci (đặc biệt là Nifedipin, Amlodipin, Diltiazem) gây kích thích tăng sinh tế bào nguyên bào sợi và chất nền ngoại bào ở nướu răng, dẫn tới phì đại nướu răng (gingival hyperplasia), thường gặp sau vài tháng điều trị.",
-    "reference": "Sách Dược lý 2 tr. 64"
+    "correct": 2,
+    "explanation": "Phì đại nướu răng (Gingival hyperplasia) là tác dụng phụ kinh điển của thuốc chẹn kênh Calci (đặc biệt là Nifedipin, Amlodipin) do kích thích tăng sinh nguyên bào sợi nướu và lắng đọng chất nền ngoại bào. Tác dụng phụ này cũng gặp ở Phenytoin và Cyclosporin.",
+    "reference": "Sách Dược lý 2 tr. 61"
   },
   {
     "id": 264,
@@ -4743,16 +4745,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Hydralazin gây tác dụng phụ hạ áp kèm theo phản xạ bù trừ nào cần phải phối hợp thêm thuốc chẹn beta?",
+    "question": "Khi sử dụng Hydralazin đơn độc để hạ huyết áp, sự giãn nhanh tiểu động mạch kích thích phản xạ giao cảm làm tim đập nhanh, tăng nhu cầu oxy cơ tim và kích hoạt thận giữ muối nước gây phù. Để triệt tiêu hai phản xạ bù trừ này, phác đồ 'kiềng ba chân' kinh điển phối hợp Hydralazin với:",
     "options": [
-      "Nhịp tim chậm xoang dưới 40 chu kỳ/phút",
-      "Nhịp tim nhanh phản xạ và tăng tiêu thụ oxy cơ tim",
-      "Ức chế hô hấp gây ngừng thở",
-      "Hạ đường huyết nghiêm trọng"
+      "Một thuốc chẹn kênh calci DHP và một thuốc giãn mạch trực tiếp Minoxidil",
+      "Một thuốc chẹn beta (để chặn nhịp nhanh phản xạ) và một thuốc lợi tiểu (để chặn ứ dịch bù trừ)",
+      "Một thuốc chủ vận beta-2 khí dung và một thuốc kháng histamin H1 thế hệ 2",
+      "Một thuốc trợ tim Digoxin và một thuốc chống đông kháng vitamin K"
     ],
     "correct": 1,
-    "explanation": "Hydralazin làm giãn mạnh tiểu động mạch gây tụt huyết áp kích thích thụ thể áp lực xoang cảnh, gây phản xạ giao cảm làm tim đập rất nhanh, tăng co bóp và tăng nhu cầu oxy cơ tim, có thể gây khởi phát cơn đau thắt ngực hoặc nhồi máu cơ tim nếu không phối hợp cùng thuốc chẹn beta.",
-    "reference": "Sách Dược lý 2 tr. 72-73"
+    "explanation": "Hydralazin làm giãn mạnh tiểu động mạch gây ra 2 phản xạ bù trừ mãnh liệt: (1) Nhịp tim nhanh phản xạ qua trung gian giao cảm (ngăn ngừa bằng thuốc chẹn beta); (2) Giữ muối và nước qua trục RAA tại thận (ngăn ngừa bằng thuốc lợi tiểu). Phối hợp kiềng ba chân 'Hydralazin + Chẹn Beta + Lợi tiểu' là phác đồ kinh điển kiểm soát THA kháng trị.",
+    "reference": "Sách Dược lý 2 tr. 79"
   },
   {
     "id": 265,
@@ -5517,16 +5519,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Vận dụng cao",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Bệnh nhân nam 50 tuổi bị tăng huyết áp độ 2 kèm phì đại lành tính tuyến tiền liệt có triệu chứng tiểu khó, tiểu ngập ngừng. Nhóm thuốc hạ huyết áp nào mang lại lợi ích kép điều trị cả hai bệnh cho bệnh nhân?",
+    "question": "Một bệnh nhân nam 62 tuổi vừa mắc tăng huyết áp, vừa có phì đại lành tính tuyến tiền liệt (BPH) gây tiểu khó, tiểu ngập ngừng và tiểu đêm nhiều lần. Nhóm thuốc hạ áp nào mang lại lợi ích kép cải thiện cùng lúc cả huyết áp và lưu lượng dòng tiểu nhờ giãn cơ trơn cổ bàng quang?",
     "options": [
-      "Thuốc chẹn kênh calci Non-DHP",
-      "Thuốc chẹn thụ thể beta-1 chọn lọc",
-      "Thuốc lợi tiểu Thiazid",
-      "Thuốc chẹn thụ thể alpha-1 adrenergic ngoại vi"
+      "Thuốc chẹn kênh calci Non-DHP (như Verapamil, Diltiazem)",
+      "Thuốc chẹn chọn lọc thụ thể beta-1 adrenergic (như Atenolol, Metoprolol)",
+      "Thuốc lợi tiểu Thiazid (như Hydrochlorothiazid, Indapamid)",
+      "Thuốc chẹn chọn lọc thụ thể alpha-1 adrenergic (như Doxazosin, Terazosin, Prazosin)"
     ],
     "correct": 3,
-    "explanation": "Thuốc chẹn chọn lọc alpha-1 adrenergic (Doxazosin, Terazosin, Prazosin) vừa làm giãn tiểu động mạch giúp hạ huyết áp, vừa làm giãn cơ trơn ở cổ bàng quang và vỏ tuyến tiền liệt, giúp bệnh nhân tiểu tiện dễ dàng, là chỉ định lý tưởng cho bệnh nhân có cả 2 bệnh.",
-    "reference": "Sách Dược lý 2 tr. 61-62"
+    "explanation": "Thuốc chẹn alpha-1 adrenergic (Doxazosin, Terazosin) vừa ức chế thụ thể alpha-1 ở tiểu động mạch gây giãn mạch hạ áp, vừa ức chế thụ thể alpha-1A ở cơ trơn tuyến tiền liệt và cổ bàng quang, làm giảm trương lực cơ thắt, cải thiện rõ rệt dòng nước tiểu ở bệnh nhân phì đại tuyến tiền liệt.",
+    "reference": "Sách Dược lý 2 tr. 73"
   },
   {
     "id": 308,
@@ -5535,16 +5537,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Vận dụng cao",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Bệnh nhân nam 48 tuổi đang dùng Enalapril 10mg/ngày để điều trị tăng huyết áp. Sau 2 tuần bệnh nhân ho khan nhiều không ngủ được nhưng huyết áp kiểm soát tốt. Hướng xử trí hợp lý và chuẩn mực nhất là gì?",
+    "question": "Bệnh nhân nam 50 tuổi dùng Enalapril 10mg/ngày đạt huyết áp mục tiêu nhưng xuất hiện ho khan dữ dội từng cơn về đêm làm mất ngủ triền miên. Bác sĩ quyết định đổi thuốc. Hoạt chất thay thế hợp lý nhất bảo toàn lợi ích bảo vệ tim mạch mà không gây ho là:",
     "options": [
-      "Kê thêm thuốc kháng sinh cephalosporin phổ rộng để điều trị nhiễm khuẩn hô hấp",
-      "Ngừng Enalapril và chuyển sang một thuốc thuộc nhóm chẹn thụ thể Angiotensin II",
-      "Tăng gấp đôi liều Enalapril lên 20mg/ngày để ức chế phản xạ ho",
-      "Cho bệnh nhân uống thêm thuốc giãn phế quản Salbutamol khí dung"
+      "Losartan (thuốc chẹn thụ thể ARB)",
+      "Lisinopril (vẫn thuộc nhóm ức chế men chuyển ACEI)",
+      "Captopril (vẫn thuộc nhóm ức chế men chuyển ACEI)",
+      "Perindopril (vẫn thuộc nhóm ức chế men chuyển ACEI)"
     ],
-    "correct": 1,
-    "explanation": "Ho khan là tác dụng phụ đặc trưng do ACEI ức chế thoái giáng bradykinin và chất P. Không thể điều trị ho này bằng kháng sinh hay thuốc giảm ho thông thường. Biện pháp chuẩn nhất là chuyển sang nhóm ARB (Losartan, Valsartan) vì nhóm này không làm tích tụ bradykinin nên không gây ho.",
-    "reference": "Sách Dược lý 2 tr. 68, 70"
+    "correct": 0,
+    "explanation": "Khi bệnh nhân bị ho khan do ACEI, đổi sang một ACEI khác (như Lisinopril, Captopril, Perindopril) hoàn toàn vô tác dụng vì đây là tác dụng phụ chung của cả nhóm (class effect) do ức chế Kininase II. Lựa chọn chuẩn mực là chuyển sang nhóm ARB (Losartan, Valsartan) vì nhóm này chẹn thụ thể AT1 mà không làm tăng Bradykinin.",
+    "reference": "Sách Dược lý 2 tr. 71"
   },
   {
     "id": 309,
@@ -5553,16 +5555,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Vận dụng cao",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Bệnh nhân nữ 28 tuổi mang thai 16 tuần, khám thai phát hiện huyết áp 155/100 mmHg. Thuốc hạ huyết áp nào sau đây TUYỆT ĐỐI KHÔNG ĐƯỢC KÊ ĐƠN cho bệnh nhân vì nguy cơ gây dị tật thận thai nhi và vô ối?",
+    "question": "Một phụ nữ 27 tuổi mang thai ở tuần thứ 16 đi khám định kỳ phát hiện huyết áp 150/95 mmHg. Nhóm thuốc hạ áp nào sau đây TUYỆT ĐỐI CHỐNG CHỈ ĐỊNH do gây suy thận thai nhi, thiểu ối và biến dạng xương sọ thai nhi?",
     "options": [
-      "Nifedipin tác dụng kéo dài",
-      "Labetalol",
-      "Methyldopa",
-      "Captopril hoặc Losartan"
+      "Thuốc kích thích thụ thể alpha-2 trung ương (Methyldopa)",
+      "Thuốc ức chế men chuyển (ACEI) và thuốc chẹn thụ thể Angiotensin II (ARB)",
+      "Thuốc chẹn hỗn hợp thụ thể alpha và beta (Labetalol)",
+      "Thuốc chẹn kênh calci nhóm DHP tác dụng kéo dài (Nifedipin phóng thích kéo dài)"
     ],
-    "correct": 3,
-    "explanation": "Nhóm ACEI (Captopril) và ARB (Losartan) gây độc tính nghiêm trọng trên thai nhi: thiểu ối, loạn sản thận thai nhi, vô niệu sơ sinh, chậm cốt hóa vòm sọ, hạ huyết áp sơ sinh và tử vong thai. Chống chỉ định tuyệt đối trong thai kỳ.",
-    "reference": "Sách Dược lý 2 tr. 69-70, 76"
+    "correct": 1,
+    "explanation": "ACEI và ARB chống chỉ định tuyệt đối trong thai kỳ (nhóm X/D). Thuốc qua nhau thai gây loạn sản thận thai nhi, vô niệu thai nhi, thiểu ối (thiểu ối làm phổi giảm sản và co cứng chi), chậm cốt hóa sọ và tử vong chu sinh.",
+    "reference": "Sách Dược lý 2 tr. 69, 71"
   },
   {
     "id": 310,
@@ -6345,15 +6347,15 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Thuốc hạ áp nhóm ức chế men chuyển nào sau đây được thải trừ qua cả gan và thận ở tỷ lệ cân bằng 50:50, an toàn cho bệnh nhân suy giảm chức năng thận?",
+    "question": "Phần lớn các thuốc ức chế men chuyển thải trừ chủ yếu qua thận nên phải giảm liều khi suy thận. Thuốc ức chế men chuyển nào sở hữu cấu trúc phosphinyl có cơ chế thải trừ bù trừ kép cân bằng 50:50 qua cả gan (mật/phân) và thận, an toàn cho người suy giảm chức năng thận vừa và nhẹ?",
     "options": [
-      "Lisinopril",
-      "Enalapril",
-      "Captopril",
-      "Fosinopril"
+      "Lisinopril (thải 100% qua thận nguyên vẹn)",
+      "Enalapril (thải chủ yếu qua thận)",
+      "Fosinopril",
+      "Captopril (thải 95% qua thận)"
     ],
-    "correct": 3,
-    "explanation": "Fosinopril có con đường đào thải kép cân bằng: 50% qua gan mật và 50% qua thận. Khi chức năng thận suy giảm, gan sẽ tăng cường đào thải bù trừ, do đó ít phải chỉnh liều ở bệnh nhân suy thận vừa và nhẹ.",
+    "correct": 2,
+    "explanation": "Fosinopril là thuốc ức chế men chuyển duy nhất chứa nhóm phosphinyl, được thải trừ cân bằng kép 50% qua gan mật và 50% qua thận. Khi chức năng thận suy giảm, gan sẽ tăng cường thải trừ bù trừ và ngược lại, do đó không cần chỉnh liều ở bệnh nhân suy thận nhẹ đến trung bình.",
     "reference": "Sách Dược lý 2 tr. 67"
   },
   {
@@ -6363,16 +6365,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Telmisartan là thuốc chẹn thụ thể ARB có đặc điểm dược động học nổi bật nào?",
+    "question": "Trong các thuốc chẹn thụ thể ARB, hoạt chất nào có thời gian bán thải sinh học kéo dài nhất (t₁/₂ xấp xỉ 24 giờ) giúp kiểm soát huyết áp ổn định suốt chu kỳ ngày đêm, đồng thời có hoạt tính kích hoạt thụ thể nhân PPAR-gamma giúp cải thiện chuyển hóa glucose và lipid?",
     "options": [
-      "Chỉ dùng qua đường tiêm tĩnh mạch",
-      "Có thời gian bán thải dài nhất trong nhóm và thải trừ hầu như hoàn toàn qua mật/phân",
-      "Gây ho khan tương tự như Captopril",
-      "Tan nhiều trong nước và thải 100% qua nước tiểu"
+      "Losartan (thời gian bán thải ngắn 6-9 giờ)",
+      "Valsartan (thời gian bán thải khoảng 6 giờ)",
+      "Eprosartan (thời gian bán thải khoảng 5-7 giờ)",
+      "Telmisartan"
     ],
-    "correct": 1,
-    "explanation": "Telmisartan có thời gian bán thải dài nhất (24 giờ), tính thân dầu cao nhất trong nhóm ARB và đào thải gần như hoàn toàn qua mật vào phân (> 98%), không tích lũy ở bệnh nhân suy thận.",
-    "reference": "Sách Dược lý 2 tr. 70"
+    "correct": 3,
+    "explanation": "Telmisartan có thời gian bán thải dài nhất trong nhóm ARB (t1/2 ~ 24 giờ) và thải trừ 98% qua gan mật/phân. Cấu trúc độc đáo của Telmisartan còn hoạt hóa thụ thể nhân PPAR-gamma (tương tự nhóm Thiazolidinedion), làm tăng nhạy cảm insulin và giảm triglycerid máu, rất có lợi cho bệnh nhân THA có hội chứng chuyển hóa.",
+    "reference": "Sách Dược lý 2 tr. 71"
   },
   {
     "id": 355,
@@ -6381,16 +6383,16 @@ const DUOCLY2_EXAM_BANK = [
     "level": "Nhận biết",
     "source": "BYT",
     "sourceName": "Giáo trình Dược lý 2 Bộ Y tế",
-    "question": "Thuốc hạ huyết áp nào sau đây có thể gây hội chứng Raynaud (co thắt mạch ngoại vi gây tím lạnh đầu ngón tay ngón chân) do phong bế thụ thể beta-2?",
+    "question": "Một bệnh nhân nữ điều trị tăng huyết áp than phiền mỗi khi ra lạnh các đầu ngón tay bị tê cóng, chuyển sang trắng bệch rồi tím tái do co thắt mạch đầu chi (hiện tượng Raynaud thứ phát). Thuốc hạ áp nào có nguy cơ cao nhất gây ra biến chứng này do phong bế thụ thể beta-2 làm tăng trương lực thụ thể alpha-1 co mạch ngoại vi?",
     "options": [
-      "Losartan",
-      "Amlodipin",
-      "Propranolol",
-      "Indapamid"
+      "Bisoprolol (chẹn chọn lọc cao trên thụ thể beta-1 tim)",
+      "Amlodipin (thuốc chẹn kênh calci gây giãn mạch ngoại vi)",
+      "Propranolol (thuốc chẹn beta không chọn lọc)",
+      "Losartan (thuốc chẹn thụ thể AT1 gây giãn mạch)"
     ],
     "correct": 2,
-    "explanation": "Thuốc chẹn beta không chọn lọc như Propranolol chẹn cả thụ thể beta-2 ở mạch máu chi, làm mất tác dụng giãn mạch của beta-2, dẫn tới co mạch chi dưới tác động của alpha-1 không bị đối kháng, gây tím lạnh đầu chi hoặc hội chứng Raynaud.",
-    "reference": "Sách Dược lý 2 tr. 59-60"
+    "explanation": "Propranolol là thuốc chẹn beta không chọn lọc, phong bế cả thụ thể beta-1 và beta-2. Thụ thể beta-2 ở cơ trơn mạch máu ngoại vi có tác dụng giãn mạch; khi bị Propranolol phong bế, tác dụng co mạch của thụ thể alpha-1 chiếm ưu thế hoàn toàn, gây co thắt mạch ngoại vi nặng và khởi phát hội chứng Raynaud hoặc đau cách hồi.",
+    "reference": "Sách Dược lý 2 tr. 64"
   },
   {
     "id": 356,
@@ -9157,4 +9159,3 @@ const DUOCLY2_MATRIX_32H = [
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { DUOCLY2_EXAM_BANK, DUOCLY2_MATRIX_32H };
 }
-
