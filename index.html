@@ -27,13 +27,16 @@
           <div class="brand-logo" id="brand-logo" aria-hidden="true">💊</div>
           <div class="brand-titles">
             <h1 id="header-main-title">DƯỢC LÝ 2 • 60 CÂU</h1>
-            <span class="subtitle" id="header-main-subtitle">Giáo trình Bộ Y tế (PGS.TS. Mai Tất Tố) &amp; Khung 20 Bài Giảng</span>
+            <span class="subtitle" id="header-main-subtitle">Giáo trình Bộ Y tế (PGS.TS. Mai Tất Tố) &amp; Khung 20 Bài
+              Giảng</span>
             <span class="mobile-active-tag" id="mobile-active-tab-tag">⏱️ Thi Thử 60 Câu</span>
           </div>
 
           <!-- MÔN HỌC DUY NHẤT: DƯỢC LÝ 2 -->
-          <div class="subject-badge-pill" id="subject-badge-pill" style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.8rem; background: var(--primary-light); color: var(--primary); border: 1px solid rgba(5,150,105,0.3); border-radius: var(--radius-full); font-size: 0.82rem; font-weight: 700;">
-            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--primary);"></span>
+          <div class="subject-badge-pill" id="subject-badge-pill"
+            style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.8rem; background: var(--primary-light); color: var(--primary); border: 1px solid rgba(5,150,105,0.3); border-radius: var(--radius-full); font-size: 0.82rem; font-weight: 700;">
+            <span
+              style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--primary);"></span>
             <span>💊 Dược Lý 2 (60 Câu • 60 Phút)</span>
           </div>
 
@@ -94,7 +97,8 @@
           <span aria-hidden="true">💡</span> <span class="tab-label">Câu Hỏi Tủ</span>
         </button>
         <button class="tab-btn" data-tab="cheatsheet" id="tab-cheatsheet-btn">
-          <span aria-hidden="true" id="tab-cheatsheet-icon">📖</span> <span class="tab-label" id="tab-cheatsheet-label">Ôn Kiến Thức 20 Bài</span>
+          <span aria-hidden="true" id="tab-cheatsheet-icon">📖</span> <span class="tab-label"
+            id="tab-cheatsheet-label">Ôn Kiến Thức 20 Bài</span>
         </button>
         <button class="tab-btn mobile-only-tab" data-tab="sync" id="tab-sync-menu-btn" onclick="openSyncModal()">
           <span aria-hidden="true">🔄</span> <span class="tab-label">Đồng Bộ &amp; Sao Lưu Dữ Liệu</span>
@@ -134,7 +138,8 @@
               📈 Độ phủ kho: <span id="header-coverage-badge">0 / 507 (0%)</span>
             </button>
             <button class="matrix-info-btn" id="btn-matrix-open" onclick="openMatrixModal()"
-              title="Xem chi tiết phân bổ câu hỏi theo số tiết">📊 <span id="btn-matrix-text">Ma trận 32h</span></button>
+              title="Xem chi tiết phân bổ câu hỏi theo số tiết">📊 <span id="btn-matrix-text">Ma trận
+                32h</span></button>
             <button class="matrix-info-btn" id="btn-quick-study-guide" onclick="showView('cheatsheet')"
               style="background: var(--primary-light); color: var(--primary); font-weight: 600; border: 1px solid var(--primary);"
               title="Mở Sổ tay ôn kiến thức trọng tâm 20 bài Dược lý 2">
@@ -150,7 +155,8 @@
               <div class="progress-fill" id="progress-fill"></div>
             </div>
           </div>
-          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;" id="exam-mode-buttons-container">
+          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;"
+            id="exam-mode-buttons-container">
             <label class="toggle-unseen-label"
               title="Khi bật, hệ thống sẽ ưu tiên chọn các câu bạn CHƯA TỪNG LÀM để quét sạch toàn bộ ngân hàng câu hỏi">
               <input type="checkbox" id="chk-prioritize-unseen" checked onchange="togglePrioritizeUnseen(this.checked)">
@@ -168,8 +174,7 @@
               <span class="btn-text" id="btn-text-unseen">✨ Đề 60 Câu Chưa Làm</span>
               <span class="active-badge-indicator"><span class="badge-dot"></span> ĐANG CHỌN</span>
             </button>
-            <button class="btn btn-secondary btn-exam-mode" id="btn-exam-schools"
-              onclick="openUniversityExamModal()"
+            <button class="btn btn-secondary btn-exam-mode" id="btn-exam-schools" onclick="openUniversityExamModal()"
               title="Lựa chọn làm đề thi chuyên sâu của ĐH Dược Hà Nội, ĐH Y Dược TP.HCM, ĐH Y Hà Nội"
               style="display: none;">
               <span class="btn-text">🏛️ Đề Các Trường Y Dược</span>
@@ -182,8 +187,7 @@
               <span class="active-badge-indicator"><span class="badge-dot"></span> ĐANG CHỌN</span>
             </button>
             <button class="btn btn-secondary btn-exam-mode btn-random-exam" id="btn-exam-random"
-              onclick="generateRandomExam()"
-              title="Tạo đề trộn ngẫu nhiên theo chuẩn ma trận">
+              onclick="generateRandomExam()" title="Tạo đề trộn ngẫu nhiên theo chuẩn ma trận">
               <span class="btn-text" id="btn-text-random">🎲 Tạo Đề Random Mới (60 Câu)</span>
               <span class="active-badge-indicator"><span class="badge-dot"></span> ĐANG CHỌN</span>
             </button>
@@ -231,7 +235,8 @@
         <div style="display: flex; gap: 0.35rem; align-items: center;">
           <button class="btn btn-secondary"
             style="padding: 0.25rem 0.5rem; font-size: 0.72rem; background: var(--secondary-light); color: var(--secondary);"
-            onclick="regenerateCurrentExam()" title="Tạo lại đề mới cùng loại bạn đang chọn" aria-label="Tạo lại đề mới cùng loại">
+            onclick="regenerateCurrentExam()" title="Tạo lại đề mới cùng loại bạn đang chọn"
+            aria-label="Tạo lại đề mới cùng loại">
             <span aria-hidden="true">🔄</span> Đề mới
           </button>
           <button class="btn btn-secondary btn-to-scratchpad"
@@ -531,9 +536,11 @@
         <div id="sync-send-result" style="display: none;">
           <!-- 6-Digit PIN Display -->
           <div class="sync-pin-display-card">
-            <div style="font-size: 0.8rem; font-weight: 700; color: #1e40af; text-transform: uppercase;">🔑 MÃ PIN ĐỒNG BỘ (6 SỐ)</div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: #1e40af; text-transform: uppercase;">🔑 MÃ PIN ĐỒNG
+              BỘ (6 SỐ)</div>
             <div class="sync-pin-value" id="sync-generated-pin">------</div>
-            <div style="font-size: 0.78rem; color: #2563eb;">Nhập 6 số này vào tab "Kéo Về Máy" trên thiết bị kia hoặc quét mã QR bên dưới!</div>
+            <div style="font-size: 0.78rem; color: #2563eb;">Nhập 6 số này vào tab "Kéo Về Máy" trên thiết bị kia hoặc
+              quét mã QR bên dưới!</div>
           </div>
 
           <!-- QR Code Container -->
@@ -580,7 +587,8 @@
           <label for="sync-input-code" style="font-size: 0.88rem; font-weight: 600; color: var(--text-main);">
             Mã PIN (6 số) hoặc Link đồng bộ:
           </label>
-          <input type="text" id="sync-input-code" placeholder="Nhập 6 số PIN (ví dụ: 868038) hoặc dán link chứa ?sync_id=..." />
+          <input type="text" id="sync-input-code"
+            placeholder="Nhập 6 số PIN (ví dụ: 868038) hoặc dán link chứa ?sync_id=..." />
         </div>
 
         <!-- Merge Mode Option Selection -->
@@ -664,7 +672,8 @@
           <div class="sync-icon-circle">🎯</div>
           <div>
             <h2 class="sync-modal-title">Ma Trận Đề Thi Chuẩn Dược Lý 2 (32 Tiết - 60 Câu)</h2>
-            <p class="sync-modal-subtitle">Khung 20 bài giảng chính khóa theo Giáo trình Dược lý học Tập 2 Bộ Y tế (PGS.TS. Mai Tất Tố)</p>
+            <p class="sync-modal-subtitle">Khung 20 bài giảng chính khóa theo Giáo trình Dược lý học Tập 2 Bộ Y tế
+              (PGS.TS. Mai Tất Tố)</p>
           </div>
         </div>
         <button class="btn-icon sync-close-btn" onclick="closeMatrixModal()" title="Đóng hộp thoại">✕</button>
@@ -682,26 +691,146 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>Bài 1</td><td>Thuốc trợ tim</td><td>2h</td><td><strong>4 câu</strong></td><td>6.7%</td></tr>
-            <tr><td>Bài 2</td><td>Thuốc điều trị THA</td><td>2h</td><td><strong>4 câu</strong></td><td>6.7%</td></tr>
-            <tr><td>Bài 3</td><td>Thuốc chữa CĐTN</td><td>1h</td><td><strong>2 câu</strong></td><td>3.3%</td></tr>
-            <tr><td>Bài 4</td><td>Thuốc chống loạn nhịp</td><td>1h</td><td><strong>2 câu</strong></td><td>3.3%</td></tr>
-            <tr><td>Bài 5</td><td>Thuốc lợi niệu</td><td>2h</td><td><strong>4 câu</strong></td><td>6.7%</td></tr>
-            <tr><td>Bài 6</td><td>Thuốc điều trị DDTT</td><td>2h</td><td><strong>4 câu</strong></td><td>6.7%</td></tr>
-            <tr><td>Bài 7</td><td>Thuốc chống giun sán, amibe</td><td>2h</td><td><strong>4 câu</strong></td><td>6.7%</td></tr>
-            <tr><td>Bài 8</td><td>Thuốc ĐC RLHH</td><td>1h</td><td><strong>2 câu</strong></td><td>3.3%</td></tr>
-            <tr><td>Bài 9</td><td>Thuốc kháng H1</td><td>1h</td><td><strong>2 câu</strong></td><td>3.3%</td></tr>
-            <tr><td>Bài 10</td><td>Thuốc hạ lipid máu</td><td>2h</td><td><strong>4 câu</strong></td><td>6.7%</td></tr>
-            <tr><td>Bài 11</td><td>Thuốc chống sốt rét</td><td>2h</td><td><strong>4 câu</strong></td><td>6.7%</td></tr>
-            <tr><td>Bài 12</td><td>KTGHP</td><td>1h</td><td><strong>2 câu</strong></td><td>3.3%</td></tr>
-            <tr><td>Bài 13</td><td>Hormon (4)</td><td>3h</td><td><strong>6 câu</strong></td><td>10.0%</td></tr>
-            <tr><td>Bài 14</td><td>Thuốc hạ glucose máu</td><td>2h</td><td><strong>4 câu</strong></td><td>6.7%</td></tr>
-            <tr><td>Bài 15</td><td>Thuốc/QT đông cầm máu</td><td>2h</td><td><strong>4 câu</strong></td><td>6.7%</td></tr>
-            <tr><td>Bài 16</td><td>Vitamin</td><td>0h</td><td><strong>2 câu</strong></td><td>3.3%</td></tr>
-            <tr><td>Bài 17</td><td>Thuốc chữa thiếu máu</td><td>2h</td><td><strong>3 câu</strong></td><td>5.0%</td></tr>
-            <tr><td>Bài 18</td><td>Thuốc kháng virus</td><td>2h</td><td><strong>4 câu</strong></td><td>6.7%</td></tr>
-            <tr><td>Bài 19</td><td>Thuốc chống ung thư</td><td>1h</td><td><strong>2 câu</strong></td><td>3.3%</td></tr>
-            <tr><td>Bài 20</td><td>Thuốc/trong điều trị ngộ độc</td><td>1h</td><td><strong>3 câu</strong></td><td>5.0%</td></tr>
+            <tr>
+              <td>Bài 1</td>
+              <td>Thuốc trợ tim</td>
+              <td>2h</td>
+              <td><strong>4 câu</strong></td>
+              <td>6.7%</td>
+            </tr>
+            <tr>
+              <td>Bài 2</td>
+              <td>Thuốc điều trị THA</td>
+              <td>2h</td>
+              <td><strong>4 câu</strong></td>
+              <td>6.7%</td>
+            </tr>
+            <tr>
+              <td>Bài 3</td>
+              <td>Thuốc chữa CĐTN</td>
+              <td>1h</td>
+              <td><strong>2 câu</strong></td>
+              <td>3.3%</td>
+            </tr>
+            <tr>
+              <td>Bài 4</td>
+              <td>Thuốc chống loạn nhịp</td>
+              <td>1h</td>
+              <td><strong>2 câu</strong></td>
+              <td>3.3%</td>
+            </tr>
+            <tr>
+              <td>Bài 5</td>
+              <td>Thuốc lợi niệu</td>
+              <td>2h</td>
+              <td><strong>4 câu</strong></td>
+              <td>6.7%</td>
+            </tr>
+            <tr>
+              <td>Bài 6</td>
+              <td>Thuốc điều trị DDTT</td>
+              <td>2h</td>
+              <td><strong>4 câu</strong></td>
+              <td>6.7%</td>
+            </tr>
+            <tr>
+              <td>Bài 7</td>
+              <td>Thuốc chống giun sán, amibe</td>
+              <td>2h</td>
+              <td><strong>4 câu</strong></td>
+              <td>6.7%</td>
+            </tr>
+            <tr>
+              <td>Bài 8</td>
+              <td>Thuốc ĐC RLHH</td>
+              <td>1h</td>
+              <td><strong>2 câu</strong></td>
+              <td>3.3%</td>
+            </tr>
+            <tr>
+              <td>Bài 9</td>
+              <td>Thuốc kháng H1</td>
+              <td>1h</td>
+              <td><strong>2 câu</strong></td>
+              <td>3.3%</td>
+            </tr>
+            <tr>
+              <td>Bài 10</td>
+              <td>Thuốc hạ lipid máu</td>
+              <td>2h</td>
+              <td><strong>4 câu</strong></td>
+              <td>6.7%</td>
+            </tr>
+            <tr>
+              <td>Bài 11</td>
+              <td>Thuốc chống sốt rét</td>
+              <td>2h</td>
+              <td><strong>4 câu</strong></td>
+              <td>6.7%</td>
+            </tr>
+            <tr>
+              <td>Bài 12</td>
+              <td>KTGHP</td>
+              <td>1h</td>
+              <td><strong>2 câu</strong></td>
+              <td>3.3%</td>
+            </tr>
+            <tr>
+              <td>Bài 13</td>
+              <td>Hormon (4)</td>
+              <td>3h</td>
+              <td><strong>6 câu</strong></td>
+              <td>10.0%</td>
+            </tr>
+            <tr>
+              <td>Bài 14</td>
+              <td>Thuốc hạ glucose máu</td>
+              <td>2h</td>
+              <td><strong>4 câu</strong></td>
+              <td>6.7%</td>
+            </tr>
+            <tr>
+              <td>Bài 15</td>
+              <td>Thuốc/QT đông cầm máu</td>
+              <td>2h</td>
+              <td><strong>4 câu</strong></td>
+              <td>6.7%</td>
+            </tr>
+            <tr>
+              <td>Bài 16</td>
+              <td>Vitamin</td>
+              <td>0h</td>
+              <td><strong>2 câu</strong></td>
+              <td>3.3%</td>
+            </tr>
+            <tr>
+              <td>Bài 17</td>
+              <td>Thuốc chữa thiếu máu</td>
+              <td>2h</td>
+              <td><strong>3 câu</strong></td>
+              <td>5.0%</td>
+            </tr>
+            <tr>
+              <td>Bài 18</td>
+              <td>Thuốc kháng virus</td>
+              <td>2h</td>
+              <td><strong>4 câu</strong></td>
+              <td>6.7%</td>
+            </tr>
+            <tr>
+              <td>Bài 19</td>
+              <td>Thuốc chống ung thư</td>
+              <td>1h</td>
+              <td><strong>2 câu</strong></td>
+              <td>3.3%</td>
+            </tr>
+            <tr>
+              <td>Bài 20</td>
+              <td>Thuốc/trong điều trị ngộ độc</td>
+              <td>1h</td>
+              <td><strong>3 câu</strong></td>
+              <td>5.0%</td>
+            </tr>
           </tbody>
           <tfoot>
             <tr style="background: var(--primary-light); font-weight: 700;">
@@ -715,7 +844,8 @@
       </div>
 
       <div class="matrix-note-box">
-        💡 <strong>Cam kết chuẩn hóa:</strong> Khi làm bài thi 60 câu Dược Lý 2, hệ thống bốc câu hỏi chuẩn xác bám sát 100% cấu trúc 20 bài giảng (32 tiết) theo Giáo trình Dược lý học Bộ Y tế (PGS.TS. Mai Tất Tố).
+        💡 <strong>Cam kết chuẩn hóa:</strong> Khi làm bài thi 60 câu Dược Lý 2, hệ thống bốc câu hỏi chuẩn xác bám sát
+        100% cấu trúc 20 bài giảng (32 tiết) theo Giáo trình Dược lý học Bộ Y tế (PGS.TS. Mai Tất Tố).
       </div>
     </div>
   </div>
@@ -729,7 +859,8 @@
       </div>
       <div style="padding: 0.5rem 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-main);">
         <p style="margin-bottom: 0.85rem; color: var(--text-muted);">
-          Hệ thống đã tích hợp <strong>507 câu hỏi</strong> chuẩn hóa gồm 20 bài giảng Giáo trình Dược lý học Bộ Y tế (PGS.TS. Mai Tất Tố):
+          Hệ thống đã tích hợp <strong>507 câu hỏi</strong> chuẩn hóa gồm 20 bài giảng Giáo trình Dược lý học Bộ Y tế
+          (PGS.TS. Mai Tất Tố):
         </p>
 
         <div class="uni-exam-card" data-uni-mode="dls-pdf" onclick="generateSubjectStandardExam()"
@@ -739,7 +870,8 @@
             <span class="badge" style="background: #dbeafe; color: #1d4ed8; font-weight: 700;">60 câu • 60 phút</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
-            Trọn bộ 60 câu hỏi bám sát 100% khung 20 bài giảng chính khóa: Trợ tim, THA, Loạn nhịp, Lợi niệu, DDTT, Giun sán, H1, Lipid máu, Sốt rét, Hormon, Hạ đường huyết, Đông máu, Vitamin, Kháng virus...
+            Trọn bộ 60 câu hỏi bám sát 100% khung 20 bài giảng chính khóa: Trợ tim, THA, Loạn nhịp, Lợi niệu, DDTT, Giun
+            sán, H1, Lipid máu, Sốt rét, Hormon, Hạ đường huyết, Đông máu, Vitamin, Kháng virus...
           </div>
         </div>
 
@@ -747,10 +879,12 @@
           style="border-left: 4px solid #d97706; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
             <strong style="color: #b45309; font-size: 1rem;">✨ Đề 60 Câu Hoàn Toàn Chưa Làm (100% Mới)</strong>
-            <span class="badge badge-unseen" id="modal-unseen-badge" style="font-weight: 700;">60 câu • 100% Chưa làm</span>
+            <span class="badge badge-unseen" id="modal-unseen-badge" style="font-weight: 700;">60 câu • 100% Chưa
+              làm</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
-            Tự động lọc và bốc chính xác 60 câu bạn <strong>chưa từng gặp lần nào</strong>, phân bổ chuẩn theo ma trận 20 bài giảng 32h để quét sạch toàn bộ ngân hàng câu hỏi.
+            Tự động lọc và bốc chính xác 60 câu bạn <strong>chưa từng gặp lần nào</strong>, phân bổ chuẩn theo ma trận
+            20 bài giảng 32h để quét sạch toàn bộ ngân hàng câu hỏi.
           </div>
         </div>
 
@@ -758,10 +892,12 @@
           style="border-left: 4px solid #10b981; margin-bottom: 0.75rem; padding: 0.85rem 1rem; background: var(--surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--border); border-left-width: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
             <strong style="color: #059669; font-size: 1rem;">🎯 Đề Phân Hóa Năng Lực Chuẩn (Tỉ lệ 2:4:4)</strong>
-            <span class="badge" style="background: #d1fae5; color: #047857; font-weight: 700;">60 câu • 12 NB : 24 VD : 24 VDC</span>
+            <span class="badge" style="background: #d1fae5; color: #047857; font-weight: 700;">60 câu • 12 NB : 24 VD :
+              24 VDC</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
-            Cấu trúc phân loại 3 cấp độ chuẩn hóa: <strong>12 câu Nhận biết (20%)</strong> • <strong>24 câu Vận dụng (40%)</strong> • <strong>24 câu Vận dụng cao (40%)</strong> theo đúng ma trận 32h.
+            Cấu trúc phân loại 3 cấp độ chuẩn hóa: <strong>12 câu Nhận biết (20%)</strong> • <strong>24 câu Vận dụng
+              (40%)</strong> • <strong>24 câu Vận dụng cao (40%)</strong> theo đúng ma trận 32h.
           </div>
         </div>
 
@@ -772,7 +908,8 @@
             <span class="badge badge-category">60 câu • 60 phút</span>
           </div>
           <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
-            Trộn thông minh câu hỏi bám sát ma trận 20 bài giảng 32h, ưu tiên các câu chưa làm để tăng cường phản xạ thi kết thúc học phần.
+            Trộn thông minh câu hỏi bám sát ma trận 20 bài giảng 32h, ưu tiên các câu chưa làm để tăng cường phản xạ thi
+            kết thúc học phần.
           </div>
         </div>
       </div>
