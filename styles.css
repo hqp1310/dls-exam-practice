@@ -5398,3 +5398,204 @@ main.app-main.full-width-view .palette-container {
   display: flex !important;
 }
 
+/* ==========================================================================
+   DƯỢC LÝ 2: ÔN TẬP 20 BÀI - ĐÁNH DẤU ĐÃ HỌC (LEARNING PROGRESS & CHECKBOXES)
+   ========================================================================== */
+
+.dl2-learning-progress-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.15rem 1.35rem;
+  margin-bottom: 1.35rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.dl2-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.dl2-progress-main-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.dl2-progress-highlight {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.dl2-progress-pct {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.dl2-progress-sub-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  line-height: 1.5;
+}
+
+.dl2-progress-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.dl2-progress-track {
+  height: 10px;
+  background: var(--surface-alt);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+  border: 1px solid var(--border);
+}
+
+.dl2-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+  border-radius: 999px;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dl2-progress-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  padding-top: 0.65rem;
+  border-top: 1px dashed var(--border);
+}
+
+.dl2-filter-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.dl2-filter-pills {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.dl2-filter-pill {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.dl2-filter-pill:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.dl2-filter-pill.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.dl2-filter-pill.dl2-pill-learned.active {
+  background: #10b981;
+  border-color: #10b981;
+  color: #fff;
+}
+
+/* Checkbox Button on Accordion Header */
+.dl2-lesson-check-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.24rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-card);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.dl2-lesson-check-btn:hover {
+  border-color: #10b981;
+  color: #059669;
+  background: rgba(16, 185, 129, 0.08);
+  transform: translateY(-1px);
+}
+
+.dl2-lesson-check-btn.checked {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.16);
+  color: #059669;
+  box-shadow: 0 1px 3px rgba(16, 185, 129, 0.25);
+}
+
+[data-theme="dark"] .dl2-lesson-check-btn.checked {
+  background: rgba(16, 185, 129, 0.25);
+  color: #34d399;
+  border-color: #059669;
+}
+
+.dl2-chk-icon {
+  font-size: 0.82rem;
+  display: inline-block;
+}
+
+.dl2-chk-text {
+  font-size: 0.76rem;
+  letter-spacing: -0.01em;
+}
+
+/* Accordion Item Highlight when Learned */
+.chapter-accordion-item.is-learned {
+  border-color: rgba(16, 185, 129, 0.45);
+  box-shadow: 0 1px 4px rgba(16, 185, 129, 0.1);
+}
+
+.chapter-accordion-item.is-learned > .chapter-accordion-header {
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.06) 0%, var(--surface-card) 100%);
+}
+
+.chapter-accordion-item.is-learned > .chapter-accordion-header.active {
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.12) 0%, var(--surface-alt) 100%);
+}
+
+/* Mark Learned Button at Bottom of Lesson */
+.dl2-mark-learned-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.dl2-mark-learned-btn:hover {
+  transform: translateY(-1px);
+}
+

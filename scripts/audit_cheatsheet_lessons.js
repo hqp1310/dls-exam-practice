@@ -23,3 +23,4 @@ for (let i = 1; i <= 20; i++) {
   
   console.log(`Bài ${i}: ${title} -> Length: ${length} chars`);
 }
+

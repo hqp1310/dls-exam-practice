@@ -15,3 +15,4 @@ chapters.forEach((ch, idx) => {
   const nextPos = (idx < 19) ? chapters[idx + 1].pos : c.indexOf('<!-- PHẦN 2: BẢNG TRA CỨU HOẠT CHẤT');
   console.log(`Bài ${ch.num}: start at ${ch.pos}, end at ${nextPos}, length = ${nextPos - ch.pos}`);
 });
+

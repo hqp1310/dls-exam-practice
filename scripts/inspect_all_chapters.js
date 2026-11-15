@@ -17,3 +17,4 @@ for (let i = 1; i <= 20; i++) {
   
   console.log(`Bài ${i}: item starts at ${p1}, body starts at ${pBody}, length = ${p2 - p1}`);
 }
+

@@ -9,3 +9,4 @@ const closeTag = c.indexOf('>', p1);
 const nextItem = c.indexOf('<!-- BÀI 2: THUỐC ĐIỀU TRỊ THA -->');
 console.log('Body tag open:', c.slice(p1 - 40, closeTag + 1));
 console.log('Body end slice:', c.slice(nextItem - 60, nextItem));
+

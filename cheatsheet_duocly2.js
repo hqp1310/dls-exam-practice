@@ -7,6 +7,263 @@ let dl2CheatsheetSubtab = 'dl2_chapters';
 let dl2CheatsheetSearchQuery = '';
 let dl2OpenAccordions = { dl2_ch1: true };
 
+
+let dl2LearnedLessons = {};
+let dl2LearningStatusFilter = 'all'; // 'all', 'unlearned', 'learned'
+
+function loadDl2LearnedLessons() {
+  try {
+    const raw = localStorage.getItem('dl2_learned_lessons');
+    dl2LearnedLessons = raw ? JSON.parse(raw) : {};
+  } catch (e) {
+    dl2LearnedLessons = {};
+  }
+}
+
+function saveDl2LearnedLessons() {
+  try {
+    localStorage.setItem('dl2_learned_lessons', JSON.stringify(dl2LearnedLessons));
+  } catch (e) {}
+}
+
+function isDl2LessonLearned(chId) {
+  if (!dl2LearnedLessons || Object.keys(dl2LearnedLessons).length === 0) {
+    loadDl2LearnedLessons();
+  }
+  return !!dl2LearnedLessons[chId];
+}
+
+function getDl2LearnedCount() {
+  if (!dl2LearnedLessons || Object.keys(dl2LearnedLessons).length === 0) {
+    loadDl2LearnedLessons();
+  }
+  let count = 0;
+  for (let i = 1; i <= 20; i++) {
+    if (dl2LearnedLessons['dl2_ch' + i]) count++;
+  }
+  return count;
+}
+
+function toggleDl2LessonLearned(chId, explicitState) {
+  loadDl2LearnedLessons();
+  const newState = (explicitState !== undefined) ? !!explicitState : !dl2LearnedLessons[chId];
+  if (newState) {
+    dl2LearnedLessons[chId] = true;
+  } else {
+    delete dl2LearnedLessons[chId];
+  }
+  saveDl2LearnedLessons();
+
+  updateDl2LessonLearnedDOM(chId, newState);
+  updateDl2LearningProgressBar();
+  applyDl2ChapterFilters();
+
+  const chNum = chId.replace('dl2_ch', '');
+  if (newState) {
+    if (typeof playChime === 'function') playChime('success');
+    const totalLearned = getDl2LearnedCount();
+    if (totalLearned === 20) {
+      if (typeof showToast === 'function') {
+        showToast('🎉 Xuất sắc! Bạn đã hoàn thành toàn bộ 20 bài Dược Lý 2!');
+      }
+    } else {
+      if (typeof showToast === 'function') {
+        showToast(`✅ Đã đánh dấu: Hoàn thành Bài ${chNum}! (${totalLearned}/20 bài)`);
+      }
+    }
+  } else {
+    if (typeof playChime === 'function') playChime('click');
+    if (typeof showToast === 'function') {
+      showToast(`Đã bỏ đánh dấu Bài ${chNum}`);
+    }
+  }
+}
+
+function updateDl2LessonLearnedDOM(chId, isLearned) {
+  // 1. Update header button
+  const headBtn = document.getElementById('dl2-chk-' + chId);
+  if (headBtn) {
+    headBtn.classList.toggle('checked', isLearned);
+    headBtn.setAttribute('title', isLearned ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này');
+    headBtn.innerHTML = `
+      <span class="dl2-chk-icon">${isLearned ? '✅' : '⬜'}</span>
+      <span class="dl2-chk-text">${isLearned ? 'Đã học' : 'Chưa học'}</span>
+    `;
+  }
+
+  // 2. Update item container highlight
+  const item = document.getElementById('dl2-item-' + chId);
+  if (item) {
+    item.classList.toggle('is-learned', isLearned);
+  }
+
+  // 3. Update bottom button in body
+  const bottomBtn = document.getElementById('dl2-bottom-chk-' + chId);
+  if (bottomBtn) {
+    bottomBtn.className = isLearned ? 'btn btn-success dl2-mark-learned-btn' : 'btn btn-outline-success dl2-mark-learned-btn';
+    bottomBtn.innerHTML = isLearned ? '✓ Đã học xong bài này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này';
+  }
+}
+
+function updateDl2LearningProgressBar() {
+  const count = getDl2LearnedCount();
+  const pct = Math.round((count / 20) * 100);
+
+  const countEl = document.getElementById('dl2-learned-count');
+  if (countEl) countEl.textContent = count;
+
+  const pctEl = document.getElementById('dl2-learned-pct');
+  if (pctEl) pctEl.textContent = `(${pct}%)`;
+
+  const fillEl = document.getElementById('dl2-learned-bar-fill');
+  if (fillEl) fillEl.style.width = pct + '%';
+
+  const unlearnedEl = document.getElementById('dl2-count-unlearned');
+  if (unlearnedEl) unlearnedEl.textContent = 20 - count;
+
+  const learnedEl = document.getElementById('dl2-count-learned');
+  if (learnedEl) learnedEl.textContent = count;
+}
+
+function markAllDl2LessonsLearned(learned) {
+  loadDl2LearnedLessons();
+  for (let i = 1; i <= 20; i++) {
+    const chId = 'dl2_ch' + i;
+    if (learned) {
+      dl2LearnedLessons[chId] = true;
+    } else {
+      delete dl2LearnedLessons[chId];
+    }
+    updateDl2LessonLearnedDOM(chId, learned);
+  }
+  saveDl2LearnedLessons();
+  updateDl2LearningProgressBar();
+  applyDl2ChapterFilters();
+
+  if (learned) {
+    if (typeof playChime === 'function') playChime('success');
+    if (typeof showToast === 'function') showToast('✅ Đã đánh dấu hoàn thành tất cả 20 bài!');
+  } else {
+    if (typeof playChime === 'function') playChime('click');
+    if (typeof showToast === 'function') showToast('🔄 Đã đặt lại trạng thái học tập của 20 bài');
+  }
+}
+
+function setDl2LearningStatusFilter(filter) {
+  dl2LearningStatusFilter = filter;
+  document.querySelectorAll('.dl2-filter-pill').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-filter') === filter);
+  });
+  applyDl2ChapterFilters();
+  if (typeof playChime === 'function') playChime('click');
+}
+
+function applyDl2ChapterFilters() {
+  loadDl2LearnedLessons();
+  const items = document.querySelectorAll('.chapter-accordion-item');
+  let matchCount = 0;
+
+  items.forEach(el => {
+    const chId = el.getAttribute('data-chid') || el.id.replace('dl2-item-', '');
+    const isLearned = !!dl2LearnedLessons[chId];
+
+    // Status filter match
+    let statusMatch = true;
+    if (dl2LearningStatusFilter === 'learned') {
+      statusMatch = isLearned;
+    } else if (dl2LearningStatusFilter === 'unlearned') {
+      statusMatch = !isLearned;
+    }
+
+    // Text search query match
+    let textMatch = true;
+    if (dl2CheatsheetSearchQuery) {
+      const text = el.innerText.toLowerCase();
+      textMatch = text.includes(dl2CheatsheetSearchQuery);
+    }
+
+    if (statusMatch && textMatch) {
+      el.style.display = '';
+      matchCount++;
+      if (dl2CheatsheetSearchQuery) {
+        const header = el.querySelector('.chapter-accordion-header');
+        const body = el.querySelector('.chapter-accordion-body');
+        if (header && body) {
+          header.classList.add('active');
+          body.style.display = 'block';
+        }
+      }
+    } else {
+      el.style.display = 'none';
+    }
+  });
+
+  const countEl = document.getElementById('dl2-search-count');
+  if (countEl) {
+    if (dl2CheatsheetSearchQuery || dl2LearningStatusFilter !== 'all') {
+      let filterDesc = '';
+      if (dl2LearningStatusFilter === 'learned') filterDesc = 'đã học';
+      else if (dl2LearningStatusFilter === 'unlearned') filterDesc = 'chưa học';
+      
+      const queryDesc = dl2CheatsheetSearchQuery ? ` với từ khóa "${dl2CheatsheetSearchQuery}"` : '';
+      countEl.innerText = `Tìm thấy ${matchCount}/20 bài ${filterDesc}${queryDesc}`;
+    } else {
+      countEl.innerText = '';
+    }
+  }
+}
+
+function generateDl2LearningProgressCardHtml() {
+  loadDl2LearnedLessons();
+  const count = getDl2LearnedCount();
+  const pct = Math.round((count / 20) * 100);
+
+  return `
+    <div class="dl2-learning-progress-card">
+      <div class="dl2-progress-header">
+        <div class="dl2-progress-title-wrap">
+          <div class="dl2-progress-main-title">
+            <span>🎯</span>
+            <span>Tiến Độ Ôn Tập 20 Bài:</span>
+            <span class="dl2-progress-highlight"><strong id="dl2-learned-count">${count}</strong>/20 bài</span>
+            <span class="dl2-progress-pct" id="dl2-learned-pct">(${pct}%)</span>
+          </div>
+          <div class="dl2-progress-sub-desc">
+            Chủ động tích chọn vào các ô để ghi nhận bài đã học. Dữ liệu được lưu tự động trên thiết bị!
+          </div>
+        </div>
+        <div class="dl2-progress-actions">
+          <button type="button" class="btn btn-sm btn-outline-success" onclick="markAllDl2LessonsLearned(true)" title="Đánh dấu đã hoàn thành tất cả 20 bài">
+            ✅ Đã học tất cả
+          </button>
+          <button type="button" class="btn btn-sm btn-secondary" onclick="markAllDl2LessonsLearned(false)" title="Đặt lại trạng thái chưa học">
+            🔄 Đặt lại
+          </button>
+        </div>
+      </div>
+
+      <div class="dl2-progress-track">
+        <div class="dl2-progress-fill" id="dl2-learned-bar-fill" style="width: ${pct}%;"></div>
+      </div>
+
+      <div class="dl2-progress-filter-bar">
+        <div class="dl2-filter-label">Lọc bài học:</div>
+        <div class="dl2-filter-pills">
+          <button type="button" class="dl2-filter-pill ${dl2LearningStatusFilter === 'all' ? 'active' : ''}" data-filter="all" onclick="setDl2LearningStatusFilter('all')">
+            📋 Tất cả (20)
+          </button>
+          <button type="button" class="dl2-filter-pill dl2-pill-unlearned ${dl2LearningStatusFilter === 'unlearned' ? 'active' : ''}" data-filter="unlearned" onclick="setDl2LearningStatusFilter('unlearned')">
+            ⬜ Chưa học (<span id="dl2-count-unlearned">${20 - count}</span>)
+          </button>
+          <button type="button" class="dl2-filter-pill dl2-pill-learned ${dl2LearningStatusFilter === 'learned' ? 'active' : ''}" data-filter="learned" onclick="setDl2LearningStatusFilter('learned')">
+            ✅ Đã học (<span id="dl2-count-learned">${count}</span>)
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 function switchDl2CheatsheetSubtab(subtab) {
   dl2CheatsheetSubtab = subtab;
   try {
@@ -78,33 +335,7 @@ function setAllDl2Accordions(open) {
 
 function onDl2SearchInput(e) {
   dl2CheatsheetSearchQuery = (e.target.value || '').trim().toLowerCase();
-  const items = document.querySelectorAll('.dl2-searchable-item');
-  let matchCount = 0;
-
-  items.forEach(el => {
-    const text = el.innerText.toLowerCase();
-    if (!dl2CheatsheetSearchQuery || text.includes(dl2CheatsheetSearchQuery)) {
-      el.style.display = '';
-      matchCount++;
-      if (dl2CheatsheetSearchQuery && el.classList.contains('chapter-accordion-item')) {
-        const header = el.querySelector('.chapter-accordion-header');
-        const body = el.querySelector('.chapter-accordion-body');
-        if (header && body) {
-          header.classList.add('active');
-          body.style.display = 'block';
-        }
-      }
-    } else {
-      el.style.display = 'none';
-    }
-  });
-
-  const countEl = document.getElementById('dl2-search-count');
-  if (countEl) {
-    countEl.innerText = dl2CheatsheetSearchQuery
-      ? ('Tìm thấy ' + matchCount + ' nội dung phù hợp với "' + dl2CheatsheetSearchQuery + '"')
-      : '';
-  }
+  applyDl2ChapterFilters();
 }
 
 function jumpToDl2Topic(chapterName) {
@@ -118,6 +349,7 @@ function jumpToDl2Topic(chapterName) {
 }
 
 function renderDuocLy2CheatsheetView() {
+  loadDl2LearnedLessons();
   const container = document.getElementById('view-cheatsheet');
   if (!container) return;
 
@@ -200,6 +432,8 @@ function renderDuocLy2CheatsheetView() {
           </button>
         </div>
       </div>
+      ${generateDl2LearningProgressCardHtml()}
+
       <p style="font-size: 0.86rem; color: var(--text-muted); margin-bottom: 1.25rem;">
         Nhấn vào từng bài để mở nội dung chi tiết. Có nút <strong>🎯 Luyện đề trắc nghiệm bài này</strong> để chuyển nhanh sang phần thực hành câu hỏi bám sát!
       </p>
@@ -256,11 +490,16 @@ function renderDuocLy2CheatsheetView() {
 }
 
 function generateAll20LessonsHtml() {
+  loadDl2LearnedLessons();
   return `
     <!-- BÀI 1: THUỐC TRỢ TIM -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch1">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch1'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch1" data-chid="dl2_ch1">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch1'] ? 'active' : ''}" id="dl2-head-dl2_ch1" onclick="toggleDl2Accordion('dl2_ch1')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch1'] ? 'checked' : ''}" id="dl2-chk-dl2_ch1" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch1')" title="${dl2LearnedLessons['dl2_ch1'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch1'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch1'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-primary">🔥 2 Tiết • 4 Câu</span>
           <span class="chapter-acc-title">Bài 1: Thuốc Trợ Tim (Glycosid Tim, Ức Chế PDE-3, Chủ Vận Beta-1)</span>
         </div>
@@ -383,13 +622,27 @@ function generateAll20LessonsHtml() {
             <li><strong>Thuốc giải độc đặc hiệu số 1</strong>: Kháng thể kháng Digoxin Fab (<strong>Digibind / DigiFab</strong>). Với loạn nhịp thất do digitalis, thuốc chống loạn nhịp được ưu tiên lựa chọn là <strong>Lidocain hoặc Phenytoin</strong> (không dùng Quinidin hay Calci).</li>
           </ul>
         </div>
+        
+        <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch1'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch1" onclick="toggleDl2LessonLearned('dl2_ch1')">
+            ${dl2LearnedLessons['dl2_ch1'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Thuốc trợ tim')">
+            🎯 Luyện đề trắc nghiệm Bài 1: Thuốc Trợ Tim
+          </button>
         </div>
+      </div>
     </div>
 
     <!-- BÀI 2: THUỐC ĐIỀU TRỊ THA -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch2">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch2'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch2" data-chid="dl2_ch2">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch2'] ? 'active' : ''}" id="dl2-head-dl2_ch2" onclick="toggleDl2Accordion('dl2_ch2')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch2'] ? 'checked' : ''}" id="dl2-chk-dl2_ch2" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch2')" title="${dl2LearnedLessons['dl2_ch2'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch2'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch2'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-primary">🔥 2 Tiết • 4 Câu</span>
           <span class="chapter-acc-title">Bài 2: Thuốc Điều Trị Tăng Huyết Áp (ACEI, ARB, CCB, Thiazid, Chẹn Beta)</span>
         </div>
@@ -571,18 +824,26 @@ function generateAll20LessonsHtml() {
           &bull; <strong>Bẫy phù chân do CCB:</strong> Phù chân do Amlodipin là do <em>giãn mạch tại chỗ</em>, không phải phù do ứ trệ dịch hay suy tim/suy thận → không dùng thuốc lợi tiểu để điều trị tác dụng phụ này mà phối hợp với ACEI/ARB (giúp giãn tiểu ĐM sau mao mạch làm cân bằng áp lực mao mạch).
           <br>&bull; <strong>Bẫy thuốc hạ áp cho người đái tháo đường / bệnh thận:</strong> ACEI hoặc ARB là lựa chọn số 1 vì làm giãn tiểu động mạch đi của cầu thận → giảm áp lực lọc cầu thận, giảm protein niệu, làm chậm suy thận.
         </div>
-        <div style="margin-top: 0.75rem;">
-          <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Thuốc điều trị THA')">
-            🎯 Luyện đề trắc nghiệm Bài 2: Thuốc Điều Trị THA
+        <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch2'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch2" onclick="toggleDl2LessonLearned('dl2_ch2')">
+            ${dl2LearnedLessons['dl2_ch2'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Thuốc điều trị THA')">
+            🎯 Luyện đề trắc nghiệm Bài 2: Điều Trị Tăng Huyết Áp
           </button>
         </div>
       </div>
     </div>
 
     <!-- BÀI 3: THUỐC CHỮA CĐTN -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch3">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch3'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch3" data-chid="dl2_ch3">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch3'] ? 'active' : ''}" id="dl2-head-dl2_ch3" onclick="toggleDl2Accordion('dl2_ch3')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch3'] ? 'checked' : ''}" id="dl2-chk-dl2_ch3" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch3')" title="${dl2LearnedLessons['dl2_ch3'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch3'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch3'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-warning">⚡ 1 Tiết • 2 Câu</span>
           <span class="chapter-acc-title">Bài 3: Thuốc Chữa Cơn Đau Thắt Ngực (Nitrat Hữu Cơ, Chẹn Beta, CCB)</span>
         </div>
@@ -644,13 +905,27 @@ function generateAll20LessonsHtml() {
             <li><strong>Prinzmetal cấm Chẹn Beta không chọn lọc</strong>: Đau thắt ngực Prinzmetal bắt buộc dùng Nitrat hoặc CCB, cấm dùng Propranolol vì phong bế thụ thể giãn mạch β₂ sẽ làm co thắt mạch vành ác tính.</li>
           </ul>
         </div>
+        
+        <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch3'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch3" onclick="toggleDl2LessonLearned('dl2_ch3')">
+            ${dl2LearnedLessons['dl2_ch3'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Thuốc chữa CĐTN')">
+            🎯 Luyện đề trắc nghiệm Bài 3: Thuốc Chữa Cơn Đau Thắt Ngực
+          </button>
         </div>
+      </div>
     </div>
 
     <!-- BÀI 4: THUỐC CHỐNG LOẠN NHỊP -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch4">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch4'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch4" data-chid="dl2_ch4">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch4'] ? 'active' : ''}" id="dl2-head-dl2_ch4" onclick="toggleDl2Accordion('dl2_ch4')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch4'] ? 'checked' : ''}" id="dl2-chk-dl2_ch4" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch4')" title="${dl2LearnedLessons['dl2_ch4'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch4'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch4'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-warning">⚡ 1 Tiết • 2 Câu</span>
           <span class="chapter-acc-title">Bài 4: Thuốc Chống Loạn Nhịp Tim (Hệ Thống Vaughan Williams &amp; Amiodaron)</span>
         </div>
@@ -749,13 +1024,27 @@ function generateAll20LessonsHtml() {
             <li><strong>Cấm thuốc chậm nút AV trong Hội chứng WPW kèm rung nhĩ</strong>: Rung nhĩ có đường dẫn truyền phụ (cầu Kent) tuyệt đối cấm dùng Digoxin, Verapamil, Diltiazem, Adenosin vì chặn nút AV sẽ đẩy toàn bộ xung động qua cầu Kent dẫn tới rung thất tử vong tức khắc!</li>
           </ul>
         </div>
+        
+        <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch4'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch4" onclick="toggleDl2LessonLearned('dl2_ch4')">
+            ${dl2LearnedLessons['dl2_ch4'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Thuốc chống loạn nhịp')">
+            🎯 Luyện đề trắc nghiệm Bài 4: Thuốc Chống Loạn Nhịp
+          </button>
         </div>
+      </div>
     </div>
 
     <!-- BÀI 5: THUỐC LỢI NIỆU -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch5">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch5'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch5" data-chid="dl2_ch5">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch5'] ? 'active' : ''}" id="dl2-head-dl2_ch5" onclick="toggleDl2Accordion('dl2_ch5')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch5'] ? 'checked' : ''}" id="dl2-chk-dl2_ch5" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch5')" title="${dl2LearnedLessons['dl2_ch5'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch5'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch5'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-primary">🔥 2 Tiết • 4 Câu</span>
           <span class="chapter-acc-title">Bài 5: Thuốc Lợi Niệu (Quai Henle, Thiazid, Giữ Kali, Thẩm Thấu)</span>
         </div>
@@ -846,13 +1135,27 @@ function generateAll20LessonsHtml() {
             <li><strong>Acetazolamid phòng chứng Say độ cao (AMS)</strong>: Ức chế CA làm mất kiềm qua nước tiểu, gây toan chuyển hóa nhẹ bù trừ &rarr; kích thích trung khu hô hấp ở hành não tăng thông khí, giúp thích nghi với môi trường thiếu oxy trên núi cao.</li>
           </ul>
         </div>
+        
+        <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch5'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch5" onclick="toggleDl2LessonLearned('dl2_ch5')">
+            ${dl2LearnedLessons['dl2_ch5'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Thuốc lợi niệu')">
+            🎯 Luyện đề trắc nghiệm Bài 5: Thuốc Lợi Niệu
+          </button>
         </div>
+      </div>
     </div>
 
     <!-- BÀI 6: THUỐC ĐIỀU TRỊ DDTT -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch6">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch6'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch6" data-chid="dl2_ch6">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch6'] ? 'active' : ''}" id="dl2-head-dl2_ch6" onclick="toggleDl2Accordion('dl2_ch6')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch6'] ? 'checked' : ''}" id="dl2-chk-dl2_ch6" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch6')" title="${dl2LearnedLessons['dl2_ch6'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch6'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch6'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-primary">🔥 2 Tiết • 4 Câu</span>
           <span class="chapter-acc-title">Bài 6: Thuốc Điều Trị Loét Dạ Dày - Tá Tràng (PPI, Kháng H2, Antacid, Diệt HP)</span>
         </div>
@@ -916,13 +1219,27 @@ function generateAll20LessonsHtml() {
             <li><strong>Quy tắc làm Test hơi thở Ure (UBT) chẩn đoán H. pylori</strong>: Bệnh nhân bắt buộc phải <strong>ngừng PPI tối thiểu 2 tuần</strong> và <strong>ngừng kháng sinh / Bismuth tối thiểu 4 tuần</strong> trước khi làm test hơi thở hoặc xét nghiệm kháng nguyên phân, nếu không sẽ bị <strong>âm tính giả</strong> do thuốc ức chế tạm thời enzym urease của vi khuẩn.</li>
           </ul>
         </div>
+        
+        <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch6'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch6" onclick="toggleDl2LessonLearned('dl2_ch6')">
+            ${dl2LearnedLessons['dl2_ch6'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Thuốc điều trị DDTT')">
+            🎯 Luyện đề trắc nghiệm Bài 6: Thuốc Điều Trị Loét DDTT
+          </button>
         </div>
+      </div>
     </div>
 
     <!-- BÀI 7: THUỐC CHỐNG GIUN SÁN, AMIBE -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch7">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch7'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch7" data-chid="dl2_ch7">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch7'] ? 'active' : ''}" id="dl2-head-dl2_ch7" onclick="toggleDl2Accordion('dl2_ch7')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch7'] ? 'checked' : ''}" id="dl2-chk-dl2_ch7" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch7')" title="${dl2LearnedLessons['dl2_ch7'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch7'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch7'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-primary">🔥 2 Tiết • 4 Câu</span>
           <span class="chapter-acc-title">Bài 7: Thuốc Chống Giun Sán &amp; Amip (Toàn bộ thuốc Trị Giun, Sán &amp; Amip Chuẩn BYT)</span>
         </div>
@@ -1009,18 +1326,26 @@ function generateAll20LessonsHtml() {
           <div class="exam-trap-title">🛑 Bẫy thi trắc nghiệm Bài 7:</div>
           &bull; <strong>Bẫy phối hợp điều trị lỵ amip:</strong> Metronidazol chỉ diệt amip ở mô chứ <strong>không diệt được thể kén trong lòng ruột</strong>! Do đó sau khi hết triệu chứng lỵ cấp bằng Metronidazol, bắt buộc phải uống thêm thuốc diệt kén (Diloxanid hoặc Paromomycin).
         </div>
-        <div style="margin-top: 0.75rem;">
-          <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Thuốc chống giun sán, amibe')">
-            🎯 Luyện đề trắc nghiệm Bài 7: Thuốc Chống Giun Sán &amp; Amip
+        <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch7'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch7" onclick="toggleDl2LessonLearned('dl2_ch7')">
+            ${dl2LearnedLessons['dl2_ch7'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Thuốc chống giun sán, amibe')">
+            🎯 Luyện đề trắc nghiệm Bài 7: Thuốc Chống Giun Sán & Amip
           </button>
         </div>
       </div>
     </div>
 
     <!-- BÀI 8: THUỐC ĐC RLHH -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch8">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch8'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch8" data-chid="dl2_ch8">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch8'] ? 'active' : ''}" id="dl2-head-dl2_ch8" onclick="toggleDl2Accordion('dl2_ch8')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch8'] ? 'checked' : ''}" id="dl2-chk-dl2_ch8" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch8')" title="${dl2LearnedLessons['dl2_ch8'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch8'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch8'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-warning">⚡ 1 Tiết • 2 Câu</span>
           <span class="chapter-acc-title">Bài 8: Thuốc Điều Trị Rối Loạn Hô Hấp (Giảm Ho, Tiêu Nhầy, Hen &amp; COPD)</span>
         </div>
@@ -1099,13 +1424,27 @@ function generateAll20LessonsHtml() {
             <li><strong>Bẫy Hội chứng Churg-Strauss khi dùng LTRA</strong>: Khi giảm liều corticoid đường toàn thân ở bệnh nhân chuyển sang dùng Montelukast/Zafirlukast, có thể bộc lộ hội chứng viêm mạch u hạt dị ứng Churg-Strauss (bạch cầu ái toan tăng cao, viêm mạch máu mô mềm và tổn thương tim).</li>
           </ul>
         </div>
+        
+        <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch8'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch8" onclick="toggleDl2LessonLearned('dl2_ch8')">
+            ${dl2LearnedLessons['dl2_ch8'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Thuốc ĐC RLHH')">
+            🎯 Luyện đề trắc nghiệm Bài 8: Thuốc Điều Trị Rối Loạn Hô Hấp
+          </button>
         </div>
+      </div>
     </div>
 
     <!-- BÀI 9: THUỐC KHÁNG H1 -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch9">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch9'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch9" data-chid="dl2_ch9">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch9'] ? 'active' : ''}" id="dl2-head-dl2_ch9" onclick="toggleDl2Accordion('dl2_ch9')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch9'] ? 'checked' : ''}" id="dl2-chk-dl2_ch9" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch9')" title="${dl2LearnedLessons['dl2_ch9'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch9'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch9'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-warning">⚡ 1 Tiết • 2 Câu</span>
           <span class="chapter-acc-title">Bài 9: Thuốc Kháng Histamin H1 (Thế Hệ 1 vs Thế Hệ 2)</span>
         </div>
@@ -1198,13 +1537,27 @@ function generateAll20LessonsHtml() {
             <li><strong>Chống chỉ định kháng H₁ thế hệ 1</strong>: Glaucom góc đóng (do làm giãn đồng tử tăng nhãn áp), u phì đại lành tính tuyến tiền liệt (do bí tiểu cấp), tài xế lái xe và người vận hành máy móc nguy hiểm (do ngủ gật).</li>
           </ul>
         </div>
+        
+        <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch9'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch9" onclick="toggleDl2LessonLearned('dl2_ch9')">
+            ${dl2LearnedLessons['dl2_ch9'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Thuốc kháng H1')">
+            🎯 Luyện đề trắc nghiệm Bài 9: Thuốc Kháng Histamin H1
+          </button>
         </div>
+      </div>
     </div>
 
     <!-- BÀI 10: THUỐC HẠ LIPID MÁU -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch10">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch10'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch10" data-chid="dl2_ch10">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch10'] ? 'active' : ''}" id="dl2-head-dl2_ch10" onclick="toggleDl2Accordion('dl2_ch10')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch10'] ? 'checked' : ''}" id="dl2-chk-dl2_ch10" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch10')" title="${dl2LearnedLessons['dl2_ch10'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch10'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch10'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-primary">🔥 2 Tiết • 4 Câu</span>
           <span class="chapter-acc-title">Bài 10: Thuốc Hạ Lipid Máu (Statin, Fibrat, Ezetimibe, Resin, PCSK9)</span>
         </div>
@@ -1293,13 +1646,27 @@ function generateAll20LessonsHtml() {
             <li><strong>Chống chỉ định Statin tuyệt đối</strong>: Phụ nữ có thai và cho con bú (do cholesterol cần thiết cho sự phát triển não bộ và màng tế bào phôi thai; gây quái thai); bệnh gan tiến triển có men gan tăng cao kéo dài.</li>
           </ul>
         </div>
+        
+        <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch10'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch10" onclick="toggleDl2LessonLearned('dl2_ch10')">
+            ${dl2LearnedLessons['dl2_ch10'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Thuốc hạ lipid máu')">
+            🎯 Luyện đề trắc nghiệm Bài 10: Thuốc Hạ Lipid Máu
+          </button>
         </div>
+      </div>
     </div>
 
     <!-- BÀI 11: THUỐC CHỐNG SỐT RÉT -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch11">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch11'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch11" data-chid="dl2_ch11">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch11'] ? 'active' : ''}" id="dl2-head-dl2_ch11" onclick="toggleDl2Accordion('dl2_ch11')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch11'] ? 'checked' : ''}" id="dl2-chk-dl2_ch11" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch11')" title="${dl2LearnedLessons['dl2_ch11'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch11'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch11'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-primary">🔥 2 Tiết • 4 Câu</span>
           <span class="chapter-acc-title">Bài 11: Thuốc Chống Sốt Rét (Artemisinin, Primaquin, Quinin, Cloroquin)</span>
         </div>
@@ -1373,13 +1740,27 @@ function generateAll20LessonsHtml() {
             <li><strong>Sốt Tiểu Đen (Blackwater Fever)</strong>: Biến chứng kinh hoàng xảy ra khi dùng Quinin ở bệnh nhân sốt rét ác tính có cơ địa mẫn cảm. Biểu hiện: tan máu nội mạch cấp dữ dội, hồng cầu vỡ giải phóng hemoglobin ồ ạt làm nước tiểu chuyển sang **màu đen sẫm như nước vối/coca**, kèm sốt cao kịch phát, vàng da sẫm và suy thận cấp vô niệu.</li>
           </ul>
         </div>
+        
+        <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch11'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch11" onclick="toggleDl2LessonLearned('dl2_ch11')">
+            ${dl2LearnedLessons['dl2_ch11'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Thuốc chống sốt rét')">
+            🎯 Luyện đề trắc nghiệm Bài 11: Thuốc Chống Sốt Rét
+          </button>
         </div>
+      </div>
     </div>
 
     <!-- BÀI 12: KTGHP - TƯƠNG TÁC THUỐC -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch12">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch12'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch12" data-chid="dl2_ch12">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch12'] ? 'active' : ''}" id="dl2-head-dl2_ch12" onclick="toggleDl2Accordion('dl2_ch12')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch12'] ? 'checked' : ''}" id="dl2-chk-dl2_ch12" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch12')" title="${dl2LearnedLessons['dl2_ch12'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch12'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch12'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-warning">⚡ 1 Tiết • 2 Câu</span>
           <span class="chapter-acc-title">Bài 12: KTGHP • Tương Tác Dược Lực Học &amp; Dược Động Học CYP450</span>
         </div>
@@ -1442,13 +1823,27 @@ function generateAll20LessonsHtml() {
             <li><strong>Hội chứng Người đỏ (Red Man Syndrome) do Vancomycin</strong>: Không phải là phản ứng dị ứng qua kháng thể IgE, mà do truyền tĩnh mạch Vancomycin quá nhanh kích thích trực tiếp dưỡng bào giải phóng histamin ồ ạt &rarr; bừng đỏ da dữ dội nửa thân trên, ngứa, tụt huyết áp. Xử trí: <strong>Kéo dài thời gian truyền tĩnh mạch ít nhất trên 60 phút</strong> và dùng thuốc kháng histamin.</li>
           </ul>
         </div>
+        
+        <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch12'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch12" onclick="toggleDl2LessonLearned('dl2_ch12')">
+            ${dl2LearnedLessons['dl2_ch12'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('KTGHP')">
+            🎯 Luyện đề trắc nghiệm Bài 12: KTGHP
+          </button>
         </div>
+      </div>
     </div>
 
     <!-- BÀI 13: HORMON -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch13">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch13'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch13" data-chid="dl2_ch13">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch13'] ? 'active' : ''}" id="dl2-head-dl2_ch13" onclick="toggleDl2Accordion('dl2_ch13')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch13'] ? 'checked' : ''}" id="dl2-chk-dl2_ch13" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch13')" title="${dl2LearnedLessons['dl2_ch13'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch13'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch13'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-danger">🔥 3 Tiết • 6 Câu</span>
           <span class="chapter-acc-title">Bài 13: Thuốc Hormon (Corticosteroid, Tuyến Giáp, Tuyến Sinh Dục &amp; Tránh Thai)</span>
         </div>
@@ -1628,18 +2023,26 @@ function generateAll20LessonsHtml() {
             </ul>
           </div>
 
-          <div style="margin-top: 0.75rem;">
-            <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Hormon')">
-              🎯 Luyện đề trắc nghiệm Bài 13: Thuốc Hormon
-            </button>
-          </div>
+          <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch13'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch13" onclick="toggleDl2LessonLearned('dl2_ch13')">
+            ${dl2LearnedLessons['dl2_ch13'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Hormon')">
+            🎯 Luyện đề trắc nghiệm Bài 13: Thuốc Hormon
+          </button>
+        </div>
         </div>
     </div>
 
     <!-- BÀI 14: THUỐC HẠ GLUCOSE MÁU -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch14">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch14'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch14" data-chid="dl2_ch14">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch14'] ? 'active' : ''}" id="dl2-head-dl2_ch14" onclick="toggleDl2Accordion('dl2_ch14')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch14'] ? 'checked' : ''}" id="dl2-chk-dl2_ch14" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch14')" title="${dl2LearnedLessons['dl2_ch14'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch14'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch14'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-primary">🔥 2 Tiết • 4 Câu</span>
           <span class="chapter-acc-title">Bài 14: Thuốc Hạ Glucose Máu (Insulin &amp; Các Nhóm Thuốc Uống)</span>
         </div>
@@ -1785,18 +2188,26 @@ function generateAll20LessonsHtml() {
             </ul>
           </div>
 
-          <div style="margin-top: 0.75rem;">
-            <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Thuốc hạ glucose máu')">
-              🎯 Luyện đề trắc nghiệm Bài 14: Thuốc Hạ Glucose Máu
-            </button>
-          </div>
+          <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch14'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch14" onclick="toggleDl2LessonLearned('dl2_ch14')">
+            ${dl2LearnedLessons['dl2_ch14'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Thuốc hạ glucose máu')">
+            🎯 Luyện đề trắc nghiệm Bài 14: Thuốc Hạ Glucose Máu
+          </button>
+        </div>
         </div>
     </div>
 
     <!-- BÀI 15: THUỐC ĐÔNG CẦM MÁU -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch15">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch15'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch15" data-chid="dl2_ch15">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch15'] ? 'active' : ''}" id="dl2-head-dl2_ch15" onclick="toggleDl2Accordion('dl2_ch15')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch15'] ? 'checked' : ''}" id="dl2-chk-dl2_ch15" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch15')" title="${dl2LearnedLessons['dl2_ch15'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch15'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch15'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-primary">🔥 2 Tiết • 4 Câu</span>
           <span class="chapter-acc-title">Bài 15: Thuốc Tác Dụng Lên Quá Trình Đông Cầm Máu</span>
         </div>
@@ -1930,18 +2341,26 @@ function generateAll20LessonsHtml() {
             </ul>
           </div>
 
-          <div style="margin-top: 0.75rem;">
-            <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Thuốc/QT đông cầm máu')">
-              🎯 Luyện đề trắc nghiệm Bài 15: Thuốc Đông Cầm Máu
-            </button>
-          </div>
+          <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch15'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch15" onclick="toggleDl2LessonLearned('dl2_ch15')">
+            ${dl2LearnedLessons['dl2_ch15'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Thuốc/QT đông cầm máu')">
+            🎯 Luyện đề trắc nghiệm Bài 15: Thuốc Đông Cầm Máu
+          </button>
+        </div>
         </div>
     </div>
 
     <!-- BÀI 16: VITAMIN -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch16">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch16'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch16" data-chid="dl2_ch16">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch16'] ? 'active' : ''}" id="dl2-head-dl2_ch16" onclick="toggleDl2Accordion('dl2_ch16')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch16'] ? 'checked' : ''}" id="dl2-chk-dl2_ch16" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch16')" title="${dl2LearnedLessons['dl2_ch16'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch16'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch16'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-warning">⚡ 0 Tiết • 2 Câu</span>
           <span class="chapter-acc-title">Bài 16: Thuốc Vitamin (Vitamin Tan Trong Dầu &amp; Tan Trong Nước)</span>
         </div>
@@ -2074,18 +2493,26 @@ function generateAll20LessonsHtml() {
             </ul>
           </div>
 
-          <div style="margin-top: 0.75rem;">
-            <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Vitamin')">
-              🎯 Luyện đề trắc nghiệm Bài 16: Thuốc Vitamin
-            </button>
-          </div>
+          <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch16'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch16" onclick="toggleDl2LessonLearned('dl2_ch16')">
+            ${dl2LearnedLessons['dl2_ch16'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Vitamin')">
+            🎯 Luyện đề trắc nghiệm Bài 16: Thuốc Vitamin
+          </button>
+        </div>
         </div>
     </div>
 
     <!-- BÀI 17: THUỐC CHỮA THIẾU MÁU -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch17">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch17'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch17" data-chid="dl2_ch17">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch17'] ? 'active' : ''}" id="dl2-head-dl2_ch17" onclick="toggleDl2Accordion('dl2_ch17')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch17'] ? 'checked' : ''}" id="dl2-chk-dl2_ch17" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch17')" title="${dl2LearnedLessons['dl2_ch17'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch17'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch17'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-primary">🔥 2 Tiết • 4 Câu</span>
           <span class="chapter-acc-title">Bài 17: Thuốc Chữa Thiếu Máu (Sắt, B12, Acid Folic, Erythropoietin)</span>
         </div>
@@ -2198,18 +2625,26 @@ function generateAll20LessonsHtml() {
             </ul>
           </div>
 
-          <div style="margin-top: 0.75rem;">
-            <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Thuốc chữa thiếu máu')">
-              🎯 Luyện đề trắc nghiệm Bài 17: Thuốc Chữa Thiếu Máu
-            </button>
-          </div>
+          <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch17'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch17" onclick="toggleDl2LessonLearned('dl2_ch17')">
+            ${dl2LearnedLessons['dl2_ch17'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Thuốc chữa thiếu máu')">
+            🎯 Luyện đề trắc nghiệm Bài 17: Thuốc Chữa Thiếu Máu
+          </button>
+        </div>
         </div>
     </div>
 
     <!-- BÀI 18: THUỐC KHÁNG VIRUS -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch18">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch18'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch18" data-chid="dl2_ch18">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch18'] ? 'active' : ''}" id="dl2-head-dl2_ch18" onclick="toggleDl2Accordion('dl2_ch18')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch18'] ? 'checked' : ''}" id="dl2-chk-dl2_ch18" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch18')" title="${dl2LearnedLessons['dl2_ch18'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch18'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch18'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-primary">🔥 2 Tiết • 4 Câu</span>
           <span class="chapter-acc-title">Bài 18: Thuốc Kháng Virus (Acyclovir, Tamiflu, ARV Điều Trị HIV, Viêm Gan)</span>
         </div>
@@ -2366,18 +2801,26 @@ function generateAll20LessonsHtml() {
             </ul>
           </div>
 
-          <div style="margin-top: 0.75rem;">
-            <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Thuốc kháng virus')">
-              🎯 Luyện đề trắc nghiệm Bài 18: Thuốc Kháng Virus
-            </button>
-          </div>
+          <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch18'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch18" onclick="toggleDl2LessonLearned('dl2_ch18')">
+            ${dl2LearnedLessons['dl2_ch18'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Thuốc kháng virus')">
+            🎯 Luyện đề trắc nghiệm Bài 18: Thuốc Kháng Virus
+          </button>
+        </div>
         </div>
     </div>
 
     <!-- BÀI 19: THUỐC CHỐNG UNG THƯ -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch19">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch19'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch19" data-chid="dl2_ch19">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch19'] ? 'active' : ''}" id="dl2-head-dl2_ch19" onclick="toggleDl2Accordion('dl2_ch19')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch19'] ? 'checked' : ''}" id="dl2-chk-dl2_ch19" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch19')" title="${dl2LearnedLessons['dl2_ch19'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch19'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch19'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-warning">⚡ 1 Tiết • 2 Câu</span>
           <span class="chapter-acc-title">Bài 19: Thuốc Chống Ung Thư (Hóa Trị Liệu &amp; Độc Tính Đặc Trưng)</span>
         </div>
@@ -2523,18 +2966,26 @@ function generateAll20LessonsHtml() {
             </ul>
           </div>
 
-          <div style="margin-top: 0.75rem;">
-            <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Thuốc chống ung thư')">
-              🎯 Luyện đề trắc nghiệm Bài 19: Thuốc Chống Ung Thư
-            </button>
-          </div>
+          <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch19'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch19" onclick="toggleDl2LessonLearned('dl2_ch19')">
+            ${dl2LearnedLessons['dl2_ch19'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Thuốc chống ung thư')">
+            🎯 Luyện đề trắc nghiệm Bài 19: Thuốc Chống Ung Thư
+          </button>
+        </div>
         </div>
     </div>
 
     <!-- BÀI 20: THUỐC TRONG ĐIỀU TRỊ NGỘ ĐỘC -->
-    <div class="chapter-accordion-item dl2-searchable-item" id="dl2-item-dl2_ch20">
+    <div class="chapter-accordion-item dl2-searchable-item ${dl2LearnedLessons['dl2_ch20'] ? 'is-learned' : ''}" id="dl2-item-dl2_ch20" data-chid="dl2_ch20">
       <div class="chapter-accordion-header ${dl2OpenAccordions['dl2_ch20'] ? 'active' : ''}" id="dl2-head-dl2_ch20" onclick="toggleDl2Accordion('dl2_ch20')">
         <div class="chapter-acc-title-group">
+          <button type="button" class="dl2-lesson-check-btn ${dl2LearnedLessons['dl2_ch20'] ? 'checked' : ''}" id="dl2-chk-dl2_ch20" onclick="event.stopPropagation(); toggleDl2LessonLearned('dl2_ch20')" title="${dl2LearnedLessons['dl2_ch20'] ? 'Nhấn để bỏ đánh dấu' : 'Nhấn để đánh dấu đã học xong bài này'}">
+            <span class="dl2-chk-icon">${dl2LearnedLessons['dl2_ch20'] ? '✅' : '⬜'}</span>
+            <span class="dl2-chk-text">${dl2LearnedLessons['dl2_ch20'] ? 'Đã học' : 'Chưa học'}</span>
+          </button>
           <span class="cs-pill cs-pill-danger">⚡ 1 Tiết • 2 Câu • CỰC KỲ QUAN TRỌNG</span>
           <span class="chapter-acc-title">Bài 20: Thuốc Trong Điều Trị Ngộ Độc &amp; Thuốc Giải Độc Đặc Hiệu (Antidotes)</span>
         </div>
@@ -2745,11 +3196,15 @@ function generateAll20LessonsHtml() {
             </ul>
           </div>
 
-          <div style="margin-top: 0.75rem;">
-            <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" onclick="jumpToDl2Topic('Thuốc/trong điều trị ngộ độc')">
-              🎯 Luyện đề trắc nghiệm Bài 20: Điều Trị Ngộ Độc Cấp
-            </button>
-          </div>
+          <!-- BOTTOM ACTIONS: ĐÁNH DẤU ĐÃ HỌC & LUYỆN ĐỀ -->
+        <div class="dl2-lesson-footer-actions">
+          <button type="button" class="btn ${dl2LearnedLessons['dl2_ch20'] ? 'btn-success' : 'btn-outline-success'} dl2-mark-learned-btn" id="dl2-bottom-chk-dl2_ch20" onclick="toggleDl2LessonLearned('dl2_ch20')">
+            ${dl2LearnedLessons['dl2_ch20'] ? '✓ Đã hoàn thành bài học này (Nhấn để hủy)' : '✅ Đánh dấu đã học xong bài này'}
+          </button>
+          <button type="button" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;" onclick="jumpToDl2Topic('Thuốc/trong điều trị ngộ độc')">
+            🎯 Luyện đề trắc nghiệm Bài 20: Điều Trị Ngộ Độc Cấp
+          </button>
+        </div>
         </div>
     </div>
   `;

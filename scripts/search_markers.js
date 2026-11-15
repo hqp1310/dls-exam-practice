@@ -9,3 +9,4 @@ let m;
 while ((m = regex.exec(c)) !== null) {
   console.log('Match:', m[1]);
 }
+

@@ -7740,6 +7740,12 @@ function getDeviceSyncPayload() {
     flashcardStarred: Array.from(flashcardStarred),
     flashcardMastered: Array.from(flashcardMastered),
     studyAnswers: studyAnswers || {},
+    dl2LearnedLessons: (function() {
+      try {
+        const raw = localStorage.getItem('dl2_learned_lessons');
+        return raw ? JSON.parse(raw) : {};
+      } catch (e) { return {}; }
+    })(),
     theme: localStorage.getItem('dls_theme') || 'light'
   };
 }
@@ -7984,6 +7990,12 @@ function smartMergeSyncData(remoteData, mode = 'merge') {
       studyAnswers = remoteData.studyAnswers;
       localStorage.setItem(STORAGE_STUDY_ANSWERS_KEY, JSON.stringify(studyAnswers));
     }
+    if (remoteData.dl2LearnedLessons && typeof remoteData.dl2LearnedLessons === 'object') {
+      try {
+        localStorage.setItem('dl2_learned_lessons', JSON.stringify(remoteData.dl2LearnedLessons));
+        if (typeof loadDl2LearnedLessons === 'function') loadDl2LearnedLessons();
+      } catch (e) {}
+    }
     return {
       totalHistory: remoteData.examHistory ? remoteData.examHistory.length : 0,
       addedHistory: remoteData.examHistory ? remoteData.examHistory.length : 0,
@@ -8067,6 +8079,18 @@ function smartMergeSyncData(remoteData, mode = 'merge') {
   if (remoteData.studyAnswers && typeof remoteData.studyAnswers === 'object') {
     studyAnswers = { ...studyAnswers, ...remoteData.studyAnswers };
     localStorage.setItem(STORAGE_STUDY_ANSWERS_KEY, JSON.stringify(studyAnswers));
+  }
+
+  // Merge DL2 Learned Lessons
+  if (remoteData.dl2LearnedLessons && typeof remoteData.dl2LearnedLessons === 'object') {
+    try {
+      let current = {};
+      const raw = localStorage.getItem('dl2_learned_lessons');
+      if (raw) current = JSON.parse(raw);
+      const merged = { ...current, ...remoteData.dl2LearnedLessons };
+      localStorage.setItem('dl2_learned_lessons', JSON.stringify(merged));
+      if (typeof loadDl2LearnedLessons === 'function') loadDl2LearnedLessons();
+    } catch (e) {}
   }
 
   return {

@@ -85,3 +85,4 @@ for (const chNum of chaptersToUpdate) {
 
 fs.writeFileSync(cheatsheetPath, content, 'utf8');
 console.log('Successfully upgraded cheatsheet_duocly2.js! New length:', content.length);
+
