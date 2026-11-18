@@ -3494,7 +3494,20 @@ function renderTopicStudyView() {
     `;
   }
 
-  container.innerHTML = chipsHtml + schoolPillsHtml + levelPillsHtml + dashboardHtml + listHtml + loadMoreHtml;
+  // 5. FOOTER BOTTOM SPACER (Khoảng trắng đệm thoáng phía dưới trang chuyên đề)
+  const footerSpacerHtml = `
+    <div class="topic-bottom-spacer">
+      <div class="topic-bottom-indicator">
+        <span>📖</span>
+        <span>Bạn đã xem hết danh sách câu hỏi trong chuyên đề này</span>
+      </div>
+      <button type="button" class="btn btn-secondary btn-topic-scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+        ⬆️ Cuộn lên đầu trang chuyên đề
+      </button>
+    </div>
+  `;
+
+  container.innerHTML = chipsHtml + schoolPillsHtml + levelPillsHtml + dashboardHtml + listHtml + loadMoreHtml + footerSpacerHtml;
 
   // Auto-center active chapter chip in the horizontal ribbon
   setTimeout(() => {

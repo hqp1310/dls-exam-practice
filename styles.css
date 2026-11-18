@@ -1315,12 +1315,64 @@ main.app-main.full-width-view .palette-container {
 /* ==========================================
    TOPIC & FLASHCARD VIEW (Mobile First Overhaul)
    ========================================== */
-.topic-container, .flashcard-container {
+.topic-container {
   display: flex;
   flex-direction: column;
   gap: 1.15rem;
   min-width: 0;
   max-width: 100%;
+  padding-bottom: 7.5rem; /* Khoảng trống đệm thoáng phía dưới trang chuyên đề */
+}
+
+.flashcard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Khoảng trống đệm & nút cuộn lên đầu trang ở cuối chuyên đề */
+.topic-bottom-spacer {
+  margin-top: 1.5rem;
+  padding: 1.5rem 1rem 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+  user-select: none;
+}
+
+.topic-bottom-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.15rem;
+  border-radius: 999px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  font-weight: 500;
+}
+
+.btn-topic-scroll-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-topic-scroll-top:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* HORIZONTAL SWIPEABLE RIBBON */
@@ -2461,6 +2513,10 @@ main.app-main.full-width-view .palette-container {
     gap: 0.75rem;
     min-width: 0;
     max-width: 100%;
+  }
+
+  .topic-container {
+    padding-bottom: calc(9rem + env(safe-area-inset-bottom, 24px));
   }
 
   /* Hide static palette on mobile / tablet - only shown when opened via dock bottom sheet */
