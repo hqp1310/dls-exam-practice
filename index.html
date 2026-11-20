@@ -145,6 +145,21 @@
               title="Mở Sổ tay ôn kiến thức trọng tâm 20 bài Dược lý 2">
               <span id="btn-quick-study-text">📖 Ôn Kiến Thức 20 Bài</span>
             </button>
+            <button class="matrix-info-btn btn-live-update" id="btn-live-update-exam" onclick="hotReloadQuestionBank()"
+              title="Cập nhật câu hỏi &amp; giải thích chi tiết mới nhất mà KHÔNG bị mất bài làm hiện tại">
+              🔄 Cập nhật dữ liệu <span style="font-size: 0.72rem; opacity: 0.85;">(Giữ nguyên bài)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Live In-Flight Update Notification Banner -->
+        <div id="exam-live-update-alert" class="exam-live-update-alert" style="display: none;">
+          <div>
+            <span>📢 <strong>Đã có cập nhật câu hỏi &amp; giải thích chi tiết mới!</strong> Bạn có thể đồng bộ ngay mà không lo mất bài thi dở dang.</span>
+          </div>
+          <div style="display: flex; gap: 0.4rem; align-items: center;">
+            <button class="btn-update-now" onclick="hotReloadQuestionBank()">⚡ Cập nhật ngay (Không mất bài làm)</button>
+            <button class="btn-close-alert" onclick="document.getElementById('exam-live-update-alert').style.display='none'" title="Đóng thông báo">✕</button>
           </div>
         </div>
 
@@ -1100,11 +1115,11 @@
     </div>
   </div>
 
-  <script src="questions_800.js?v=60"></script>
-  <script src="questions_duocly2.js?v=61"></script>
-  <script src="cheatsheet_duocly2.js?v=60"></script>
-  <script src="flashcards.js?v=60"></script>
-  <script src="app.js?v=60"></script>
+  <script src="questions_800.js?v=62"></script>
+  <script src="questions_duocly2.js?v=62"></script>
+  <script src="cheatsheet_duocly2.js?v=62"></script>
+  <script src="flashcards.js?v=62"></script>
+  <script src="app.js?v=62"></script>
 </body>
 
 </html>

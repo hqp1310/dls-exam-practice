@@ -419,6 +419,147 @@ function clearExamDraft() {
   } catch (e) { }
 }
 
+function syncExamQuestionsWithMasterBank() {
+  if (!EXAM_QUESTIONS || !EXAM_QUESTIONS.length) return 0;
+  const masterBank = getActiveBank();
+  if (!masterBank || !masterBank.length) return 0;
+  const bankMap = new Map(masterBank.map(q => [q.id, q]));
+
+  let count = 0;
+  EXAM_QUESTIONS.forEach(q => {
+    const fresh = bankMap.get(q.id);
+    if (fresh) {
+      q.question = fresh.question;
+      q.options = fresh.options;
+      q.correct = fresh.correct;
+      q.explanation = fresh.explanation;
+      q.distractorExplanations = fresh.distractorExplanations || fresh.distractor_explanations || q.distractorExplanations;
+      q.reference = fresh.reference || q.reference;
+      q.chapter = fresh.chapter || q.chapter;
+      q.level = fresh.level || q.level;
+      count++;
+    }
+  });
+
+  saveExamDraft();
+  return count;
+}
+
+async function hotReloadQuestionBank(silent = false) {
+  const btn = document.getElementById('btn-live-update-exam');
+  const originalText = btn ? btn.innerHTML : '';
+  if (btn) {
+    btn.classList.add('is-updating');
+    btn.innerHTML = '🔄 Đang cập nhật... ⏳';
+  }
+
+  try {
+    const isDL2 = currentSubject === 'duocly2';
+    const scriptFiles = isDL2 ? ['questions_duocly2.js'] : ['questions_800.js'];
+    const cacheBuster = 't=' + Date.now();
+
+    for (const file of scriptFiles) {
+      try {
+        const res = await fetch(`${file}?${cacheBuster}`);
+        if (res.ok) {
+          const code = await res.text();
+          const runner = new Function(code);
+          runner.call(window);
+        } else {
+          await new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = `${file}?${cacheBuster}`;
+            s.onload = () => { s.remove(); resolve(); };
+            s.onerror = (e) => { s.remove(); reject(e); };
+            document.head.appendChild(s);
+          });
+        }
+      } catch (subErr) {
+        console.warn(`Fetch error for ${file}, trying script tag fallback:`, subErr);
+        await new Promise((resolve) => {
+          const s = document.createElement('script');
+          s.src = `${file}?${cacheBuster}`;
+          s.onload = () => { s.remove(); resolve(); };
+          s.onerror = () => { s.remove(); resolve(); };
+          document.head.appendChild(s);
+        });
+      }
+    }
+
+    const updatedCount = syncExamQuestionsWithMasterBank();
+
+    if (typeof renderExamQuestion === 'function' && typeof currentQuestionIndex === 'number') {
+      renderExamQuestion(currentQuestionIndex);
+    }
+    if (typeof updatePalette === 'function') {
+      updatePalette();
+    }
+    if (typeof updateCoverageDisplays === 'function') {
+      updateCoverageDisplays();
+    }
+
+    const alertEl = document.getElementById('exam-live-update-alert');
+    if (alertEl) alertEl.style.display = 'none';
+
+    if (!silent) {
+      const msg = `🎉 Cập nhật thành công ${updatedCount} câu hỏi & giải thích mới nhất!\n\nToàn bộ bài làm của bạn (Câu ${currentQuestionIndex + 1}/${EXAM_QUESTIONS.length}, các phương án đã chọn, thời gian còn lại) được bảo toàn 100%.`;
+      if (typeof showToast === 'function') {
+        showToast(msg);
+      } else {
+        alert(msg);
+      }
+    }
+    return true;
+  } catch (err) {
+    console.error('Hot reload question bank failed:', err);
+    syncExamQuestionsWithMasterBank();
+    if (!silent) {
+      if (typeof showToast === 'function') {
+        showToast('💡 Đã đồng bộ lại dữ liệu câu hỏi trong bộ nhớ máy. Đề thi được giữ nguyên.');
+      }
+    }
+    return false;
+  } finally {
+    if (btn) {
+      btn.classList.remove('is-updating');
+      btn.innerHTML = originalText || '🔄 Cập nhật dữ liệu';
+    }
+  }
+}
+
+let appUpdateCheckInterval = null;
+function initAppUpdateChecker() {
+  if (typeof window === 'undefined') return;
+  setTimeout(checkForAppUpdates, 30000);
+  if (!appUpdateCheckInterval) {
+    appUpdateCheckInterval = setInterval(checkForAppUpdates, 60000);
+  }
+  if (typeof window.addEventListener === 'function') {
+    window.addEventListener('focus', () => {
+      checkForAppUpdates();
+    });
+  }
+}
+
+let lastKnownUpdateHash = null;
+async function checkForAppUpdates() {
+  try {
+    const file = currentSubject === 'duocly2' ? 'questions_duocly2.js' : 'questions_800.js';
+    const res = await fetch(`${file}?check=${Date.now()}`, { method: 'HEAD' });
+    if (!res.ok) return;
+    const etag = res.headers.get('etag') || res.headers.get('last-modified');
+    if (etag) {
+      if (lastKnownUpdateHash && lastKnownUpdateHash !== etag) {
+        const banner = document.getElementById('exam-live-update-alert');
+        if (banner) banner.style.display = 'flex';
+      }
+      lastKnownUpdateHash = etag;
+    }
+  } catch (e) {
+    // Ignore offline errors
+  }
+}
+
 function restoreExamDraft() {
   try {
     const raw = localStorage.getItem(STORAGE_ACTIVE_DRAFT_KEY);
@@ -432,7 +573,25 @@ function restoreExamDraft() {
       applySubjectUI();
     }
 
-    EXAM_QUESTIONS = draft.questions;
+    // Synchronize saved questions with the latest master bank to get latest explanations and distractors
+    const masterBank = getActiveBank();
+    const bankMap = new Map((masterBank || []).map(q => [q.id, q]));
+    EXAM_QUESTIONS = (draft.questions || []).map(savedQ => {
+      const fresh = bankMap.get(savedQ.id);
+      if (!fresh) return savedQ;
+      return {
+        ...savedQ,
+        question: fresh.question,
+        options: fresh.options,
+        correct: fresh.correct,
+        explanation: fresh.explanation,
+        distractorExplanations: fresh.distractorExplanations || fresh.distractor_explanations || savedQ.distractorExplanations,
+        reference: fresh.reference || savedQ.reference,
+        chapter: fresh.chapter || savedQ.chapter,
+        level: fresh.level || savedQ.level
+      };
+    });
+
     userAnswers = draft.userAnswers || {};
     flaggedQuestions = new Set(draft.flagged || []);
     currentQuestionIndex = typeof draft.currentQuestionIndex === 'number' ? draft.currentQuestionIndex : 0;
@@ -2139,8 +2298,11 @@ function cleanTextForVietnameseSpeech(rawText) {
   return rawText
     .replace(/<[^>]*>/g, ' ')
     .replace(/[•*#_~|]/g, ' ')
+    .replace(/✓\s*ĐÁP ÁN ĐÚNG/gi, 'Đáp án đúng. ')
+    .replace(/[✕✗xX]\s*ĐÁP ÁN SAI/gi, 'Đáp án sai. ')
     .replace(/✓/g, 'Đáp án đúng. ')
-    .replace(/✗/g, 'Đáp án chưa đúng. ')
+    .replace(/[✕✗]/g, 'Đáp án chưa đúng. ')
+    .replace(/👈\s*Bạn đã chọn[^\n.]*/gi, ' ')
     // Date formats (e.g. ngày 11/02/1998, tháng 11/1990)
     .replace(/(?:ngày\s*)?(\d{1,2})\/(\d{1,2})\/(\d{4})/gi, 'ngày $1 tháng $2 năm $3')
     .replace(/(?:tháng\s*)?(\d{1,2})\/(\d{4})/gi, 'tháng $1 năm $2')
@@ -2497,6 +2659,197 @@ function toggleExplanationBox(btn) {
   }
 }
 
+function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+function generateIntelligentDistractorRationale(q, optIdx, optText) {
+  const isCorrect = (optIdx === q.correct);
+  if (isCorrect) {
+    return q.explanation || 'Đáp án đúng theo chuẩn cơ chế Dược lý 2 Bộ Y tế.';
+  }
+
+  const correctText = q.options && q.options[q.correct] ? q.options[q.correct] : '';
+  const stem = (q.question || '').toLowerCase();
+  const opt = (optText || '').trim();
+  const optLower = opt.toLowerCase();
+  const ch = q.chapter || '';
+
+  // Specific keyword detections
+  if (/na\+\-cl\-|ống lượn xa/i.test(optLower)) {
+    return 'Đồng vận chuyển Na+-Cl- tại ống lượn xa là vị trí tác dụng đặc hiệu của nhóm Thiazid (Hydrochlorothiazid), không phải đích tác dụng của câu hỏi này.';
+  }
+  if (/na\+\-k\+\-2cl\-|quai henle/i.test(optLower) && !isCorrect) {
+    return 'Đồng vận chuyển Na+-K+-2Cl- ở quai Henle là đích tác dụng của nhóm lợi tiểu quai (Furosemid), không thỏa mãn tiêu chí câu hỏi này.';
+  }
+  if (/enac|ống góp/i.test(optLower) && !isCorrect) {
+    return 'Kênh natri biểu mô ENaC ở ống góp là vị trí tác dụng của nhóm lợi tiểu giữ kali (Amilorid, Triamteren), không phải phương án đúng.';
+  }
+  if (/ống lượn gần|na\+\-h\+|carbonic anhydrase/i.test(optLower) && !isCorrect) {
+    return 'Hệ thống trao đổi Na+-H+ và enzym CA tại ống lượn gần là cơ chế của Acetazolamid, không phù hợp với câu hỏi này.';
+  }
+
+  // THA choices
+  if (ch.includes('THA') || ch.includes('huyết áp')) {
+    if (/chẹn beta/i.test(optLower) && /hàng đầu|khởi đầu|bậc một/i.test(stem)) {
+      return 'Thuốc chẹn beta giao cảm hiện nay không còn là lựa chọn hàng đầu cho tăng huyết áp không biến chứng (chỉ ưu tiên khi có bệnh mạch vành, suy tim hoặc sau nhồi máu cơ tim).';
+    }
+    if (/chẹn alpha|đồng vận alpha|giãn trực tiếp/i.test(optLower) && /bậc một|first-line|ưu tiên/i.test(stem)) {
+      return 'Thuốc chẹn alpha-1, kích thích alpha-2 trung ương (Methyldopa, Clonidin) và thuốc giãn mạch trực tiếp chỉ là nhóm thuốc bậc 2 hoặc bậc 3 trong điều trị THA.';
+    }
+  }
+
+  // Ngộ độc & chuyển hóa paracetamol
+  if (ch.includes('ngộ độc') || /paracetamol/i.test(stem)) {
+    if (/glucuronid/i.test(optLower) && !isCorrect) {
+      return 'Con đường liên hợp glucuronid là con đường chuyển hóa chính không độc và an toàn của Paracetamol (chiếm ~60%), không phải nguyên nhân gây hoại tử tế bào gan.';
+    }
+    if (/nguyên dạng/i.test(optLower) && !isCorrect) {
+      return 'Paracetamol nguyên dạng không tích tụ gây hoại tử trực tiếp mà độc tính gan hoàn toàn do chất chuyển hóa ái điện tử NAPQI khi cạn kiệt Glutathione.';
+    }
+    if (/hydroxyl|acid citric/i.test(optLower) && !isCorrect) {
+      return 'Độc tính gan của Paracetamol đặc hiệu do NAPQI gắn cộng hóa trị vào đại phân tử protein của tế bào gan, không phải do cơ chế ức chế chu trình acid citric.';
+    }
+  }
+
+  // Antacid Al vs Mg
+  if (/al\(oh\)3|nhôm/i.test(optLower) && /tiêu chảy/i.test(stem)) {
+    return 'Al(OH)3 làm săn se niêm mạc và giảm nhu động ruột nên gây tác dụng phụ TÁO BÓN, không gây tiêu chảy.';
+  }
+  if (/mg\(oh\)2|magnesi/i.test(optLower) && /táo bón/i.test(stem)) {
+    return 'Mg(OH)2 có tính thẩm thấu giữ nước trong lòng ruột gây tác dụng phụ TIÊU CHẢY, không gây táo bón.';
+  }
+
+  // PPI vs H2RA
+  if (/cimetidin|ranitidin|famotidin/i.test(optLower) && /bơm proton|h\+\/k\+-atpase/i.test(stem)) {
+    return 'Cimetidin/Ranitidin là thuốc kháng thụ thể H2 histamin ở màng đáy tế bào viền, không tác động trực tiếp ức chế bơm H+/K+-ATPase.';
+  }
+  if (/omeprazol|esomeprazol|pantoprazol/i.test(optLower) && /kháng h2/i.test(stem)) {
+    return 'Nhóm Prazol là thuốc ức chế bơm proton (PPI), không phải thuốc kháng thụ thể H2 histamin.';
+  }
+
+  // Đông máu Warfarin vs Heparin vs Aspirin vs Clopidogrel
+  if (/heparin/i.test(optLower) && /uống|vitamin k|inr/i.test(stem)) {
+    return 'Heparin dùng đường tiêm và tác dụng qua Antithrombin III theo dõi bằng aPTT, không phải thuốc uống kháng vitamin K theo dõi bằng PT/INR.';
+  }
+  if (/warfarin/i.test(optLower) && /tiêm|antithrombin|cấp cứu tức thì/i.test(stem)) {
+    return 'Warfarin là thuốc kháng vitamin K đường uống có tác dụng chậm (cần vài ngày để đào thải hết yếu tố đông máu cũ), không dùng cấp cứu tác dụng tức thì như Heparin.';
+  }
+  if (/aspirin/i.test(optLower) && /p2y12/i.test(stem)) {
+    return 'Aspirin ức chế không hồi phục COX-1 giảm tạo TXA2, không chẹn thụ thể ADP P2Y12 (chẹn P2Y12 là của Clopidogrel, Ticagrelor).';
+  }
+  if (/clopidogrel/i.test(optLower) && /cox-1|txa2/i.test(stem)) {
+    return 'Clopidogrel chẹn thụ thể ADP P2Y12, không tác động trực tiếp lên enzym COX-1 để giảm TXA2 như Aspirin.';
+  }
+
+  // Sốt rét
+  if (/chloroquin/i.test(optLower) && /thể ngủ|tái phát xa/i.test(stem)) {
+    return 'Chloroquin chỉ diệt thể vô tính trong hồng cầu (cắt cơn sốt), hoàn toàn không diệt được thể ngủ ở gan (hypnozoite) để chống tái phát xa.';
+  }
+  if (/primaquin/i.test(optLower) && /cắt cơn sốt|ác tính/i.test(stem)) {
+    return 'Primaquin chủ yếu diệt thể ngủ ở gan và thể giao bào để chống lây lan/tái phát, không phải thuốc chính để cắt cơn sốt rét lâm sàng cấp tính.';
+  }
+
+  // Giun sán
+  if (/albendazol|mebendazol/i.test(optLower) && /sán lá|sán máng/i.test(stem)) {
+    return 'Albendazol/Mebendazol chủ yếu tác dụng trên giun tròn đường ruột; với sán lá, sán máng thuốc ưu tiên số một là Praziquantel.';
+  }
+  if (/praziquantel/i.test(optLower) && /tubulin/i.test(stem)) {
+    return 'Praziquantel tăng tính thấm màng tế bào với ion Ca2+ gây co cứng và liệt cơ sán, không ức chế trùng hợp tubulin như nhóm Benzimidazol.';
+  }
+
+  // Fallback
+  return `Phương án này không đúng vì "${opt}" không phù hợp với cơ chế tác dụng, chỉ định hoặc tiêu chuẩn lâm sàng trong câu hỏi này.`;
+}
+
+function getDetailedOptionRationale(q, optIdx, optText) {
+  if (q && q.distractorExplanations) {
+    if (Array.isArray(q.distractorExplanations) && q.distractorExplanations[optIdx]) {
+      return q.distractorExplanations[optIdx];
+    }
+    if (typeof q.distractorExplanations === 'object') {
+      const letter = ['A', 'B', 'C', 'D'][optIdx];
+      if (q.distractorExplanations[optIdx]) return q.distractorExplanations[optIdx];
+      if (q.distractorExplanations[letter]) return q.distractorExplanations[letter];
+    }
+  }
+
+  const isCorrect = (optIdx === q.correct);
+  if (isCorrect) {
+    return q.explanation || 'Đáp án đúng theo chuẩn cơ chế Dược lý 2 Bộ Y tế.';
+  }
+
+  return generateIntelligentDistractorRationale(q, optIdx, optText);
+}
+
+function formatDetailedExplanationHTML(q, userSelectedIdx) {
+  if (!q) return '';
+  const letters = ['A', 'B', 'C', 'D'];
+  const hasOptions = Array.isArray(q.options) && q.options.length > 0;
+
+  let html = '';
+
+  // 1. Core pharmacological rationale summary
+  html += `
+    <div class="explanation-main-summary">
+      <div class="exp-summary-title">💡 Cơ chế &amp; Luận giải then chốt:</div>
+      <div class="exp-summary-text">${q.explanation || 'Không có giải thích chi tiết cho câu hỏi này.'}</div>
+    </div>
+  `;
+
+  // 2. Breakdown of all options (Correct and Wrong)
+  if (hasOptions) {
+    html += `
+      <div class="distractor-breakdown">
+        <div class="distractor-breakdown-title">
+          <span>🔍</span> <strong>Phân tích chi tiết từng phương án (Đúng &amp; Sai):</strong>
+        </div>
+        <div class="distractor-list">
+    `;
+
+    q.options.forEach((optText, idx) => {
+      const letter = letters[idx] || (idx + 1);
+      const isCorrect = (idx === q.correct);
+      const isUserChoice = (userSelectedIdx !== undefined && userSelectedIdx === idx);
+      const rationale = getDetailedOptionRationale(q, idx, optText);
+
+      html += `
+        <div class="distractor-card ${isCorrect ? 'is-correct' : 'is-wrong'} ${isUserChoice ? 'is-user-selected' : ''}">
+          <div class="distractor-card-header">
+            <span class="distractor-badge ${isCorrect ? 'badge-correct' : 'badge-wrong'}">
+              ${isCorrect ? '✓ ĐÁP ÁN ĐÚNG' : '✕ ĐÁP ÁN SAI'} [${letter}]
+            </span>
+            ${isUserChoice ? `
+              <span class="distractor-user-tag ${isCorrect ? 'user-tag-correct' : 'user-tag-wrong'}">
+                👈 ${isCorrect ? 'Bạn đã chọn đúng phương án này' : 'Lựa chọn của bạn (Cần lưu ý phân biệt)'}
+              </span>
+            ` : ''}
+          </div>
+          <div class="distractor-card-body">
+            <div class="distractor-option-text"><strong>Phương án [${letter}]:</strong> ${escapeHtml(optText)}</div>
+            <div class="distractor-rationale">
+              <strong>${isCorrect ? '✓ Vì sao đúng:' : '✕ Vì sao sai:'}</strong> ${rationale}
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    html += `
+        </div>
+      </div>
+    `;
+  }
+
+  return html;
+}
+
 function speakExplanationFromCard(btn) {
   if (!btn) return;
   const container = btn.closest('.explanation-box') || btn.closest('.review-explanation-box');
@@ -2729,7 +3082,7 @@ function renderExamQuestion(index) {
               <button class="btn-speak-settings" onclick="openTtsSettingsModal()" title="Cài đặt giọng đọc &amp; tốc độ" aria-label="Cài đặt giọng đọc">⚙️</button>
             </div>
           </div>
-          <div class="explanation-content">${q.explanation}</div>
+          <div class="explanation-content">${formatDetailedExplanationHTML(q, selected)}</div>
           <div class="explanation-ref">📖 Nguồn tài liệu: ${q.reference}</div>
         </div>
       </div>
@@ -3595,7 +3948,7 @@ function renderTopicQuestionCardsHtml(questionsList) {
                 <button class="btn-speak-settings" onclick="openTtsSettingsModal()" title="Cài đặt giọng đọc &amp; tốc độ" aria-label="Cài đặt giọng đọc">⚙️</button>
               </div>
             </div>
-            <div class="explanation-content">${q.explanation}</div>
+            <div class="explanation-content">${formatDetailedExplanationHTML(q, ansIdx)}</div>
             <div class="explanation-ref">📖 Nguồn: ${q.reference || 'Giáo trình Dược lâm sàng - Bộ Y tế'}</div>
           </div>
         </div>
@@ -3703,7 +4056,7 @@ function updateStudyCardDOM(qId, oIdx, q) {
           <button class="btn-speak-settings" onclick="openTtsSettingsModal()" title="Cài đặt giọng đọc &amp; tốc độ" aria-label="Cài đặt giọng đọc">⚙️</button>
         </div>
       </div>
-      <div class="explanation-content">${q.explanation}</div>
+      <div class="explanation-content">${formatDetailedExplanationHTML(q, selectedOptionIdx)}</div>
       <div class="explanation-ref">📖 Nguồn: ${q.reference || defaultRef}</div>
     </div>
   `;
@@ -7336,7 +7689,7 @@ function renderDetailedReviewQuestions() {
               </div>
             </div>
             <div class="exp-text">
-              ${q.explanation}
+              ${formatDetailedExplanationHTML(q, q.userAnswer)}
             </div>
             <div class="exp-ref">
               <span>📖</span> Nguồn: ${q.reference || 'Giáo trình Dược lâm sàng - Bộ Y tế'}
@@ -8539,6 +8892,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   initTTS();
   initDesktopScratchpad();
+  initAppUpdateChecker();
   loadStudyAnswers();
   loadTopicCustomOrder();
   loadFlashcardState();
@@ -8598,6 +8952,13 @@ window.getActiveMatrix = getActiveMatrix;
 window.getBankCoverageStats = getBankCoverageStats;
 window.getActiveFlashcards = getActiveFlashcards;
 
+window.hotReloadQuestionBank = hotReloadQuestionBank;
+window.syncExamQuestionsWithMasterBank = syncExamQuestionsWithMasterBank;
+window.formatDetailedExplanationHTML = formatDetailedExplanationHTML;
+window.getDetailedOptionRationale = getDetailedOptionRationale;
+window.restoreExamDraft = restoreExamDraft;
+window.saveExamDraft = saveExamDraft;
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     switchSubject,
@@ -8616,6 +8977,12 @@ if (typeof module !== 'undefined' && module.exports) {
     getActiveQuestionCount,
     getActiveFlashcards,
     getBankCoverageStats,
+    hotReloadQuestionBank,
+    syncExamQuestionsWithMasterBank,
+    formatDetailedExplanationHTML,
+    getDetailedOptionRationale,
+    restoreExamDraft,
+    saveExamDraft,
     getCurrentSubject: () => currentSubject,
     getExamQuestions: () => EXAM_QUESTIONS,
     getTimeRemaining: () => timeRemaining
